@@ -97,8 +97,11 @@
 		</table>
 	</div>
 
-	<link id="moduleTab_Tasks" />
-	<browser assert="Tasks" />
+	<link id="moduleTab_Activities" />
+	<browser assert="Task List" />
+	<div id="Activities">
+		<link text="View Tasks" />
+	</div>
 	<button id="search_form_clear" />
 	<textfield id="name_basic" set="{@pre_activity_subpanel_name}" />
 	<button id="search_form_submit" />

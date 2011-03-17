@@ -45,7 +45,7 @@
 	<wait timeout="3" />
 	<link text="salutation_dom" />
 
-	<wait timeout="15" />
+	<wait timeout="10" />
 	<li id="Senor">
 		<image index="2" click="true" jscriptevent="onclick" />
 	</li>

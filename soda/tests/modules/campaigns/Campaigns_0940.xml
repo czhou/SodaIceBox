@@ -4,16 +4,18 @@
 	<csv file="{@global.scriptsdir}/csvs/campaigns/CampaignAssertText.csv" var="campaign" />
 
 	<!--Nav to the Campaigns module-->
-	<link id="moduleTab_ProspectLists" />
+	<link id="moduleTab_Campaigns" />
 	<div class="moduleTitle">
-		<link href="index.php?module=ProspectLists&amp;action=index" click="false" />
+		<link href="index.php?module=Campaigns&amp;action=index" click="false" />
 	</div>
 
 	<timestamp />
 	
 	<!-- Create target lists. -->
 	<csv file="{@global.scriptsdir}/csvs/campaigns/Campaigns_0940.csv" var="Campaign0940">
-		<link text="Create Target List" />
+		<div id="Campaigns">
+			<link text="Create Target List" />
+		</div>
 		<form id="EditView">
 			<textfield name="name" set="{@Campaign0940.targetlist} {@stamp}" />
 			<button value="Save" />

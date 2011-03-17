@@ -38,7 +38,8 @@
         <textfield id="primary_address_city" set="{@studio10100.city}" />
         <textfield id="primary_address_city" click="false" jscriptevent="onchange" />
         <textfield id="primary_address_state" set="{@studio10100.state}" />
-        <textfield id="description" set="{@studio10100.des}" />
+        <textfield id="primary_address_state" click="false" jscriptevent="onchange" />
+        <textfield id="description" assert="{@studio10100.des}" />
         <button value="Save" />
       </form>
       <wait timeout="3" />

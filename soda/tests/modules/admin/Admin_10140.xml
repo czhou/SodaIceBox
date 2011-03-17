@@ -25,7 +25,7 @@
 	
 	<button value="Add Field" />
 	
-	<textfield id="field_name_id" set="uppercity" />
+	<textfield id="field_name_id" set="upperCity" />
 	<checkbox id="calculated" set="true" />
 	<button name="editFormula" />
 	
@@ -40,7 +40,7 @@
 	<wait timeout="12" />
 
 	<div id="sugarMsgWindow">
-		<div id="sugarMsgWindow_h" assert="Invalid Formula" />
+		<div id="sugarMsgWindow_h" assert="Validation Failed" />
 		<div class="bd" assert="/.*All parameters must be of type.*/" />
 	</div>
 	

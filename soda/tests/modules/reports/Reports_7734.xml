@@ -13,7 +13,7 @@
 		<link text="Documents" />
 	</table>
 
-	<link id="ygtvlabelel8" />
+	<link id="ygtvlabelel3" />
 
 	<div text="Address City" click="true" />
 	<wait timeout="2" />

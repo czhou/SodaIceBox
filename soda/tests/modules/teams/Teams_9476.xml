@@ -137,8 +137,8 @@
 		</table>
 
 		<!--Check the new appointment-->
-		<link id="moduleTabCalls" />
-		<link text="Calls" />
+		<link id="moduleTab_Activities" />
+		<link text="View Calls" />
 		<browser assert="Calls" />
 
 		<button id="search_form_clear" />

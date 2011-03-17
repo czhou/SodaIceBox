@@ -4,13 +4,13 @@
 	<timestamp />
 
 	<!--Go to modules that can edit team info-->        
-	<link id="moduleTab_Calendar" />
+	<link id="moduleTab_Activities" />
 	<div id="content">
 		<browser assert="Calendar" />
 	</div>
 
 	<div id="Activities">
-		<link text="Create Note or Attachment" />
+		<link text="Create Note or Add Attachment" />
 	</div>
 	<browser assert="Notes" />
 
