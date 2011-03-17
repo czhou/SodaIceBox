@@ -76,7 +76,7 @@
 	</div>
 
 	<!--assert it exist in meeting module-->
-	<link id="moduleTab_Calendar" />
+	<link id="moduleTab_Activities" />
 	<wait timeout="5" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Calendar&amp;action=index" click="false" />

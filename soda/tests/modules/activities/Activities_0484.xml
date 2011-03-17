@@ -1,15 +1,10 @@
 <soda>
-        <puts text='-------------Activities_0484:Search Task_Verify that search conditions can be cleared.-------------'/>
-        
-        <link id='moduleTab_Tasks'/>
-	<browser assert="Tasks"/>
-        <link text='View Tasks'/>
+	<!-- Search Task_Verify that search conditions can be cleared. -->
+	<puts text="Test: Activities_0484.xml starting" />
 
-    <link id="moduleTab_Activities" />
-    <browser assert="Task List" />
-    <link text="View Tasks" />
-
-
+	<link id="moduleTab_Activities" />
+	<browser assert="Task List" />
+	<link text="View Tasks" />
 	<wait timeout="3" />
 	<textfield id="name_basic" set="Search This"/>
 	<button id="search_form_clear" />

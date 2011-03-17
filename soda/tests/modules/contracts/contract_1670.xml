@@ -11,8 +11,8 @@
     <browser assert="Contracts"/>
 	<link text="Advanced Search"/>
     <textfield id='name_advanced' set='{@Contract_Create_Lib}'/>
-	<textfield id='range_start_date_advanced' set='{@Contract_Create.start_date}'/>
-	<textfield id='range_end_date_advanced' set='{@Contract_Create.end_date}'/>
+	<textfield id='start_date_advanced' set='{@Contract_Create.start_date}'/>
+	<textfield id='end_date_advanced' set='{@Contract_Create.end_date}'/>
 	<select name="status_advanced[]" set='{@Contract_Create.status}'/>
 				<!--Account select-->
                 <button name='btn_account_name_advanced'/>
@@ -30,7 +30,8 @@
 
 	<!-- go back to basic search -->
 	<button id="search_form_clear"/>
-	<link text="Basic Search"/>
+	<link id="basic_search_link"/>
+	<wait timeout="2"/> 
 	<button id="search_form_clear"/>
     <button id="search_form_submit"/>
 
