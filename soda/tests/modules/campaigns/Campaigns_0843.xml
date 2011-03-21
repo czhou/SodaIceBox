@@ -7,7 +7,7 @@
 	<script file="{@global.scriptsdir}/modules/lib/TargetList_Create_Lib.xml" />
 
 	<!--Delete the record-->
-	<button class="button" type="submit" value="Delete" alert="true" />
+	<button class="button" value="Delete" alert="true" />
 
 	<!--Search the record-->
 	<link text="View Target Lists" />

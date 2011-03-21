@@ -13,7 +13,7 @@
 
 			<textfield id="name" set="{@Campaign0889.name} {@user.name} {@stamp}" />
 			<select id="status" set="{@Campaign0889.status}" />
-			<button class="button" type="submit" value="Cancel" alert="true" />
+			<button class="button" value="Cancel" alert="true" />
 		</form>
 		<browser assert="{@Campaign_Name}" />
 	</csv>
