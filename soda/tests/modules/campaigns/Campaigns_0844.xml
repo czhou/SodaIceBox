@@ -17,7 +17,7 @@
 	</div>
 
 	<!--Search the record-->
-	<textfield id="name_basic" type="text" set="{@TargetList_Name}" />
+	<textfield id="name_basic" set="{@TargetList_Name}" />
 	<button id="search_form_submit" />
 	<span class="pageNumbers" assert="(1 - 1 of 1)" />
 

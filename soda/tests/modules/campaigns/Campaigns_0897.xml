@@ -11,7 +11,6 @@
 		<textfield id="user_name" set="{@Campaign0897.user}" default="admin" />
 		<textfield id="user_password" set="{@Campaign0897.pass}" default="asdf" />
 		<button id="login_button" />
-		<browser assert="Welcome" required="false" />
  
 		<!--Create a campaign record -->
 		<link id="moduleTab_Campaigns" />

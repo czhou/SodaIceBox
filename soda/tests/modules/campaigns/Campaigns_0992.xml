@@ -26,9 +26,9 @@
 		<button name="clear" />
 
 		<!--Search the record-->
-		<textfield id="name_basic" type="text" set="{@TargetList_Name}" />
+		<textfield id="name_basic" set="{@TargetList_Name}" />
 		<select name="list_type" set="{@targetlist0992.type}" />
-		<button class="button" type="submit" value="Search" />
+		<button class="button" value="Search" />
 	</div>
 
 	<form id="MassUpdate">
