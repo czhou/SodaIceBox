@@ -1,0 +1,46 @@
+<soda>
+    <puts text='Contract 1723: Select Quote_Verify that Quote can be specified by check box for Contract'/>
+
+	<timestamp/>
+    <!--Create a contract with filling all the fields-->
+    <script file='{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml'/>
+    <script file='{@global.scriptsdir}/modules/lib/Contract_Create_Lib.xml'/>
+
+	<!--Search the contract record in list view-->
+    <link id='moduleTab_Contracts'/>
+    <browser assert="Contracts"/>
+    <textfield id='name_basic' set='{@Contract_Create_Lib}'/> 
+    <button id="search_form_submit"/>
+    <table class='list view'>
+        <link text='{@Contract_Create_Lib}'/>
+    </table>
+	<browser assert='{@Contract_Create_Lib}'/>
+
+	<!--Select Quote from Contact list view -->
+	<div id='list_subpanel_quotes'>
+		<button id="contracts_quotes_select_button"/>
+	</div>
+
+	<textfield id="name_advanced" set="{@pre_Quote_name}"/>
+	<button name="button" value="Search"/>
+
+	<checkbox id="massall" click="true"/>
+	<link text="{@pre_Quote_name}" click="false" exist="true"/>
+	<button class="button" value="Select"/>
+
+
+	<div id='list_subpanel_quotes'>
+		<link text="{@pre_Quote_name}" click="false" exist="true"/>
+		<browser assert="{@pre_Quote_name}"/>
+	</div>
+
+
+	<!--Delete the records -->
+	<script file='{@global.scriptsdir}/modules/lib/Contract_Delete_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/Quote_Delete_Lib.xml'/>
+
+	<puts text='-------------------Contract_1723: finished-------------------'/>
+
+</soda>
