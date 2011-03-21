@@ -1,0 +1,54 @@
+<soda>
+    <puts text='Contract 1715: Delete Contact_Verify that Contact can be deleted for Contract'/>
+
+	<timestamp/>
+    <!--Create a contract with filling all the fields-->
+    <script file='{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml'/>
+    <script file='{@global.scriptsdir}/modules/lib/Contract_Create_Lib.xml'/>
+
+	<!--Search the contract record in list view-->
+    <link id='moduleTab_Contracts'/>
+    <browser assert="Contracts"/>
+    <textfield id='name_basic' set='{@Contract_Create_Lib}'/> 
+    <button id="search_form_submit"/>
+    <table class='list view'>
+        <link text='{@Contract_Create_Lib}'/>
+    </table>
+	<browser assert='{@Contract_Create_Lib}'/>
+
+	<!--Select contact from Contact list view -->
+	<div id='list_subpanel_contacts'>
+		<button id="contracts_contacts_select_button"/>
+	</div>
+
+	<textfield id="first_name_advanced" set="{@pre_contact_first_name}"/>
+	<button name="button" value="Search"/>
+	<link text="{@pre_contact_first_name} {@pre_contact_last_name}"/>
+
+	<!-- Edit relate contact -->
+	<div id="list_subpanel_contacts">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" click="false" exist="true"/>
+		<link text="edit" class="listViewTdToolsS1" />
+	</div>
+
+	<timestamp/>
+	<textfield id="first_name" set="{@pre_contact_first_name}{@stamp}"/>
+	<textfield id="last_name" set="{@pre_contact_last_name}{@stamp}"/>
+	<button name="button" value="Cancel" alert="true" />
+
+	<!-- Check  change doesn't apply -->
+	<div id="list_subpanel_contacts">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" click="false" exist="true"/>
+		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}"/>
+	</div>
+	
+
+	<!--Delete the records -->
+	<script file='{@global.scriptsdir}/modules/lib/Contract_Delete_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml'/>
+
+	<puts text='-------------------Contract_1715: finished-------------------'/>
+
+</soda>
