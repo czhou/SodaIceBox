@@ -29,9 +29,9 @@
 	<!-- Clear the search conditions -->
 	<div id="content">
 		<button name="clear" />
-		<textfield id="name_basic" type="text" set="{@TargetList_Name}" />
+		<textfield id="name_basic" set="{@TargetList_Name}" />
 		<checkbox name="current_user_only_basic" click="true" />
-		<button class="button" type="submit" value="Search" />
+		<button class="button" value="Search" />
 	</div>
 	<form id="MassUpdate">
 		<span class="pageNumbers" assert="(0 - 0 of 0)" />
