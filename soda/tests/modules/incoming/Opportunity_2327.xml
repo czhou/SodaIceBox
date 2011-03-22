@@ -62,7 +62,7 @@
 		<button value="Search" />
 		<link text="{@Opportunity_2327.team_name}" />
 		<form id="EditView">
-			<button value="Cancel" />
+			<button value="Cancel" alert="true"/>
 		</form>
 
 		<div id="list_subpanel_activities">
