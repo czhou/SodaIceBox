@@ -69,7 +69,9 @@
 	<wait timeout="3" />
 	
 	<div id="subpanel_history">
+		<!--
 		<link class="listViewTdToolsS1" index="1" jscriptevent="onhover" />
+		-->
 		<link class="listViewTdToolsS1" index="1" />
 	</div>
 	
@@ -87,6 +89,7 @@
 
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
 	
 	<puts text="Test: Calendar_0722.xml finished." />
 </soda>
