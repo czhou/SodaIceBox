@@ -10,7 +10,7 @@
 		Expectation:
 			6. The note record for call/meeting disappears in "Notes" sub-panel.
 	-->
-	<puts text="Test: Calendar_0723.xml starting." />
+	<puts text="Test: Calendar_0724.xml starting." />
 	
 	<!-- First, Calls -->
 	
@@ -76,5 +76,5 @@
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
 	
-	<puts text="Test: Calendar_0723.xml finished." />
+	<puts text="Test: Calendar_0724.xml finished." />
 </soda>
