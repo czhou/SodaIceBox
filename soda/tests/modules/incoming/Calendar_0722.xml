@@ -11,7 +11,7 @@
 		Expectation:
 			6. The selected note modified successfully.
 	-->
-	<puts text="Test: Calendar_0721.xml starting." />
+	<puts text="Test: Calendar_0722.xml starting." />
 	
 	<!-- First, Calls -->
 	
@@ -88,5 +88,5 @@
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 	
-	<puts text="Test: Calendar_0721.xml finished." />
+	<puts text="Test: Calendar_0722.xml finished." />
 </soda>
