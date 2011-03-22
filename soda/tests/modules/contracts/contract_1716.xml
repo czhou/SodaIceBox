@@ -30,7 +30,8 @@
 		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" click="false" exist="true"/>
 		<link text="rem" class="listViewTdToolsS1" alert="true"/>
 	</div>
-
+	
+	<wait timeout="2"/>
 	<!-- Check delete works fine -->
 	<div id="list_subpanel_contacts">
 		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" click="false" exist="false"/>
