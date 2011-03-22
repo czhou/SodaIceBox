@@ -1,0 +1,58 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click "Calls" link in Navigation shortcuts.
+			4. Fill the "Contact" field.
+			5. Click "Search" button.
+		Expectation:
+			5. Calls matching the "Contact" search condition are
+				displayed in bug list.
+	-->
+	
+	<puts text="Test: Calendar_0726.xml starting." />
+
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+
+	<button id="edit_button" />
+
+	<select id="parent_type" set="Contact" />
+	<textfield id="parent_name" set="{@pre_contact_first_name} {@pre_contact_last_name}"
+		jscriptevent="onkeydown" />
+	<textfield id="parent_name" click="false" jscriptevent="onkeyup" />
+	
+	<wait timeout="5" />
+	
+	<button value="Save" />
+	<wait timeout="8" />
+	
+	<link id="moduleTab_Meetings" />
+	
+	<link text="Advanced Search" />
+	
+	<button id="search_form_clear" />
+
+	<!-- Below is reason for blocking: BUG:42919 -->
+	<!-- search for contact association (#2) -->
+	<select id="parent_type" set="Contact" />
+	<textfield id="parent_name_advanced" set="{@pre_contact_first_name} {@pre_contact_last_name}"
+		jscriptevent="onkeydown" />
+	<textfield id="parent_name_advanced" jscriptevent="onkeyup" click="false" />
+	<wait timeout="4" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<browser assert="{@pre_call_name}" />
+	</table>
+	
+	<link text="Basic Search" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_0726.xml finished." />
+</soda>
