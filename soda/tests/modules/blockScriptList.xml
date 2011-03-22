@@ -65,6 +65,34 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Calendar_0703</testfile>
+		<bugnumber>39955</bugnumber>
+		<reason>bug 39955 - false duplicate account warning</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0705</testfile>
+		<bugnumber>39955</bugnumber>
+		<reason>bug 39955 - false duplicate account warning</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0706</testfile>
+		<bugnumber>39955</bugnumber>
+		<reason>bug 39955 - false duplicate account warning</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0716</testfile>
+		<bugnumber>39955</bugnumber>
+		<reason>bug 39955 - false duplicate account warning</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
 		<testfile>Accounts_0130</testfile>
 		<bugnumber>39955</bugnumber>
 		<reason>bug 39955 - false duplicate account warning</reason>
