@@ -70,5 +70,5 @@
 	</div>
 	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
-	<puts test="Test: leads_1926.xml finished." />
+	<puts text="Test: leads_1926.xml finished." />
 </soda>

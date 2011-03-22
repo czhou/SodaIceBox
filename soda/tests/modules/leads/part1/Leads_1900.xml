@@ -29,7 +29,7 @@
 	<textfield id="search_name_basic" set="{@pre_lead_first_name}" />
 	<button id="search_form_submit" />
 
-	<puts var="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+	<!-- <puts var="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />  -->
 
 	<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}"
 		click="false" exist="false" />
