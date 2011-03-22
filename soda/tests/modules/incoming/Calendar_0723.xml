@@ -1,0 +1,97 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click "Calls"/"Meeting" link on Navigation shortcuts.
+			4. Click any call/meeting subject link in "Call/Meeting List" view.
+			5. Click "edit" link for a note record in "Notes" sub-panel
+				of "Call/Meeting Detail View" page.
+			6. Cancel editing the information of the note for the call/meeting.
+		Expectation:
+			6. The information of the note for the call/meeting is not changed.
+	-->
+	<puts text="Test: Calendar_0723.xml starting." />
+	
+	<!-- First, Calls -->
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+	
+	<button value="  Create Note or Attachment  " />
+	
+	<wait timeout="4" />
+	
+	<timestamp />
+	<var var="note_name" set="Note_{@stamp}" />
+	
+	<textfield id="name" set="{@note_name}" />
+	
+	<textarea id="description" set="Something about a Note..." />
+	
+	<button id="Notes_subpanel_save_button" />
+	
+	<wait timeout="3" />
+	
+	<div id="subpanel_history">
+		<link class="listViewTdToolsS1" index="1" jscriptevent="onhover" />
+		<link class="listViewTdToolsS1" index="1" />
+	</div>
+	
+	<textfield id="name" set="Amended_{@note_name}" />
+	
+	<textarea id="description" set="Something else about a Note..." />
+	
+	<button value="Cancel" alert="true" />
+
+	<wait timeout="3" />
+	
+	<div id="subpanel_history">
+		<browser assertnot="Amended_{@note_name}" />
+		<browser assert="{@note_name}" />
+	</div>
+	
+	<!-- now do Meetings -->
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
+	
+	<button value="  Create Note or Attachment  " />
+	
+	<wait timeout="4" />
+	
+	<timestamp />
+	<var var="note_name" set="Note_{@stamp}" />
+	
+	<textfield id="name" set="{@note_name}" />
+	
+	<textarea id="description" set="Something about a Note..." />
+	
+	<button id="Notes_subpanel_save_button" />
+	
+	<wait timeout="3" />
+	
+	<div id="subpanel_history">
+		<!--
+		<link class="listViewTdToolsS1" index="1" jscriptevent="onhover" />
+		-->
+		<link class="listViewTdToolsS1" index="1" />
+	</div>
+	
+	<textfield id="name" set="Amended_{@note_name}" />
+	
+	<textarea id="description" set="Something else about a Note..." />
+	
+	<button value="Cancel" alert="true" />
+
+	<wait timeout="3" />
+	
+	<div id="subpanel_history">
+		<browser assertnot="Amended_{@note_name}" />
+		<browser assert="{@note_name}" />
+	</div>
+
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_0723.xml finished." />
+</soda>
