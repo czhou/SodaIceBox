@@ -27,13 +27,23 @@
 
 
 	<!-- Look for pagination column header -->
-	<row class="pagination" assertnot="/.*Created Date.*/" />
+	<row class="pagination">
+		<browser assertnot="/.*Created Date.*/" />
+	</row> 
 
 	<!-- ensure that the new Accounts appear in the correct order -->
-	<row class="oddListRowS1" index="1" assert="/.*{@account4_name}.*/" />
-	<row class="evenListRowS1" index="1" assert="/.*{@account3_name}.*/" />
-	<row class="oddListRowS1" index="2" assert="/.*{@account2_name}.*/" />
-	<row class="evenListRowS1" index="2" assert="/.*{@account1_name}.*/" />
+	<row class="oddListRowS1" index="1">
+		<browser assert="/.*{@account4_name}.*/" />
+	</row>
+	<row class="evenListRowS1" index="1">
+		<browser assert="/.*{@account3_name}.*/" />
+	</row>
+	<row class="oddListRowS1" index="2">
+		<browser assert="/.*{@account2_name}.*/" />
+	</row>
+	<row class="evenListRowS1" index="2">
+		<browser assert="/.*{@account1_name}.*/" />
+	</row>
 
 
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
