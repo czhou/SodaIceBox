@@ -16,7 +16,7 @@
 	<wait timeout="5" />
 
 	<!--Go its detail view $ "Duplicate"-->
-	<link text="{@pre_contact_first_name} {@pre_contact_last_name}"/>
+	<!--link text="{@pre_contact_first_name} {@pre_contact_last_name}"/-->
 	<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	<wait timeout="2"/>
 
