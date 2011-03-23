@@ -29,11 +29,11 @@
 	<button value="  Next Step >  " />
 	<checkbox name="massall" set="true" />
 	<button value="  Perform Merge  " />
-	<wait timetou="5" />
+	<wait timetout="5" />
 	<link text="Remove" index="1" />
-	<wait timetou="5" />
+	<wait timetout="5" />
 	<button value="  Save Merge  " alert="true" />
-	<wait timetou="5" />
+	<wait timetout="5" />
 	<!--verify -->
 	<link id="moduleTab_Leads" />
 	<div class="moduleTitle">
