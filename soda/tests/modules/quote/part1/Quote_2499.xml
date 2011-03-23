@@ -20,7 +20,6 @@
         </table>
         <!-- Somehow the following two statements can't be asserted inside edit view. -->
         <browser assert='Missing required field: Billing Account Name'/>
-        <browser assert='Missing required field: No match for field: Billing Account Name'/>
     </csv>
     <button value="Cancel" alert="true" />  <!-- bug 39160 -->
 
