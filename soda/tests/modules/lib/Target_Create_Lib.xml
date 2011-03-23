@@ -2,10 +2,7 @@
 	<puts text="Lib: Target_Create_Lib.xml starting." />
 	<csv file="{@global.scriptsdir}/csvs/campaigns/CampaignAssertText.csv" var="campaign" />
 
-	<link href="index.php?module=Campaigns&amp;action=index" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Campaigns&amp;action=index" click="false" />
-	</div>
+	<link href="index.php?module=Prospects&amp;action=index" />
 
 	<link text="Create Target" />
 	<div class="moduleTitle">
