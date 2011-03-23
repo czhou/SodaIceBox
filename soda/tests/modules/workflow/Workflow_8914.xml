@@ -118,6 +118,6 @@
 
    <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
    <script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
-   <puts test="Text: Cases_8914: Finished." />
+   <puts text="Text: Cases_8914: Finished." />
 </soda>
 
