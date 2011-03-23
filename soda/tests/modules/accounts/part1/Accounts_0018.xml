@@ -59,7 +59,7 @@
 	<table class="list view" jscriptevent="onclick">
 		<checkbox name="massall" click="true" />
 	</table>
-	<button value="  Copy Address to Checked Contacts  " />
+	<button value="  Copy to Primary Address  " />
 	<wait timeout="3" />
 	
 	<!-- Verify -->
