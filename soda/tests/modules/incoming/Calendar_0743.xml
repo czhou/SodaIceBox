@@ -1,0 +1,112 @@
+<soda>
+	<!--
+		Action:
+			Existing call/meeting/call record needed. "Due Date & Time"
+				text field for call record should be entered.
+			1. Login to system as a valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click any call/meeting/call subject link
+				in Calendar panel of "Calendar" page.
+		Expectation:
+			3. The call/meeting/call detail view page is displayed.
+	-->
+	<puts text="Test: Calendar_0743.xml starting." />
+	
+	<!-- create a call for today -->
+	
+	<timestamp />
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+
+	
+	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record">
+		<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
+		
+		<textfield name="duration_hours" set="{@call_record.duration_hours}" />
+		<select name="duration_minutes" set="{@call_record.duration_minutes}" />
+
+		<select id="direction" set="{@call_record.direction}" />
+		<select id="status" set="{@call_record.status}" />
+
+		<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
+		<textfield id="description" set="{@call_record.description}" />
+
+		<button value="Save" />
+		
+		<browser assert="{@call_record.name} {@user.name} {@stamp}" />
+
+		<var var="pre_call_name" set="{@call_record.name} {@user.name} {@stamp}" />
+	</csv>
+	
+	<!-- now check for calendar presence and link destination -->
+	
+	<link id="moduleTab_Calendar" />
+	
+	<table id="daily_cal_table">
+		<browser assert="{@call_record.status}: {@pre_call_name}" />
+		<link text="{@call_record.status}: {@pre_call_name}" />
+	</table>
+	
+	<!-- DetailView Check -->
+	<button id="edit_button" click="false" />
+
+	<table id="detailpanel_1">
+		<browser assert="{@pre_call_name}" />
+	</table>
+
+	
+	<!-- now make a meeting for today -->
+	<timestamp />
+		<link id="moduleTab_Meetings" />
+		<link text="Schedule Meeting" />
+		<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record">
+			<textfield id="name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+			
+			
+			<textfield id="location" set="{@meeting_record.location}" />
+			<textfield id="description" set="{@meeting_record.description}" />
+			<select id="status" set="{@meeting_record.status}" />
+			
+			<select id="date_start_hours" set="{@meeting_record.date_start_hours}" />
+			<select id="date_start_minutes" set="{@meeting_record.date_start_minutes}" />
+			<textfield name="duration_hours" set="{@meeting_record.duration_hours}" />
+			<select name="duration_minutes" set="{@meeting_record.duration_minutes}" />
+			<checkbox name="reminder_checked" set="{@meeting_record.reminder_checked}" />
+
+
+			<button value="Save" />
+
+			<browser assert="{@meeting_record.name} {@user.name} {@stamp}" />
+
+			<!--Save the account id & name-->
+			<form name="DetailView">
+				<hidden name="record" var="pre_meeting_id" />
+			</form>
+			<var var="pre_meeting_name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+		</csv>
+	
+	
+	
+	<!-- now check for calendar presence -->
+	
+	<link id="moduleTab_Calendar" />
+	
+	
+	<table id="daily_cal_table">
+		<browser assert="{@meeting_record.status}: {@pre_meeting_name}" />
+		<link text="{@meeting_record.status}: {@pre_meeting_name}" />
+	</table>
+	
+	<!-- DetailView Check -->
+	<button id="edit_button" click="false" />
+
+	<table id="detailpanel_1">
+		<browser assert="{@pre_meeting_name}" />
+	</table>
+	
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_0743.xml finished." />
+</soda>

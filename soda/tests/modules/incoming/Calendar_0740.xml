@@ -1,0 +1,396 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click "Month" button on "Calendar" page.
+		Expectation:
+			3.1. Start Day in current month's call/meeting
+				are displayed in Current Month calendar panel.
+			3.2. Start Day in previous month's call/meeting
+				are displayed in Next Month Calendar panel.
+			3.3. Start Day in next month's Call/meeting
+				are displayed in Next Month Calendar panel.
+	-->
+	<puts text="Test: Calendar_0740.xml starting." />
+	
+	<!-- create a call for next month -->
+	
+	<timestamp />
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+
+	
+	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record">
+		<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
+
+		<javascript addUtils="true">
+				var theDate = new Date();
+
+                
+                theDate.setDate(theDate.getDate() + 30);
+
+                
+                var day;
+                if (theDate.getDate() &lt; 10) {
+                    day = '0' + theDate.getDate();
+                } else {
+                    day = '' + theDate.getDate();
+                }
+
+                
+                var month;
+                if (theDate.getMonth() + 1 &lt; 10) {
+                    month = '0' + (theDate.getMonth()+1);
+                } else {
+                    month = '' + (theDate.getMonth()+1);
+                }
+                
+                var year;
+                year = theDate.getFullYear();
+                
+				var sugardate;
+				sugardate = month+'/'+day+'/'+year;
+				
+				var date_field;
+				date_field = document.getElementById('date_start_date');
+				
+				document.getElementById('date_start_date').value = sugardate;
+				document.getElementById('date_start_date').onchange();
+			</javascript>
+		
+		
+		<wait timeout="4" />
+		
+		
+		
+		
+		<textfield name="duration_hours" set="{@call_record.duration_hours}" />
+		<select name="duration_minutes" set="{@call_record.duration_minutes}" />
+		
+
+
+		<select id="direction" set="{@call_record.direction}" />
+		<select id="status" set="{@call_record.status}" />
+
+		<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
+		<textfield id="description" set="{@call_record.description}" />
+
+		<button value="Save" />
+		
+		<browser assert="{@call_record.name} {@user.name} {@stamp}" />
+
+		<var var="pre_call_name" set="{@call_record.name} {@user.name} {@stamp}" />
+	</csv>
+	
+
+	
+	<!-- now make a meeting for next month -->
+	<timestamp />
+		<link id="moduleTab_Meetings" />
+		<link text="Schedule Meeting" />
+		<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record">
+			<textfield id="name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+			
+			<javascript addUtils="true">
+				var theDate = new Date();
+
+                
+                theDate.setDate(theDate.getDate() + 30);
+
+                
+                var day;
+                if (theDate.getDate() &lt; 10) {
+                    day = '0' + theDate.getDate();
+                } else {
+                    day = '' + theDate.getDate();
+                }
+
+                
+                var month;
+                if (theDate.getMonth() + 1 &lt; 10) {
+                    month = '0' + (theDate.getMonth()+1);
+                } else {
+                    month = '' + (theDate.getMonth()+1);
+                }
+                
+                var year;
+                year = theDate.getFullYear();
+                
+				var sugardate;
+				sugardate = month+'/'+day+'/'+year;
+				
+				var date_field;
+				date_field = document.getElementById('date_start_date');
+				
+				document.getElementById('date_start_date').value = sugardate;
+				document.getElementById('date_start_date').onchange();
+			</javascript>
+			
+			
+			
+			<textfield id="location" set="{@meeting_record.location}" />
+			<textfield id="description" set="{@meeting_record.description}" />
+			<select id="status" set="{@meeting_record.status}" />
+			
+			<select id="date_start_hours" set="{@meeting_record.date_start_hours}" />
+			<select id="date_start_minutes" set="{@meeting_record.date_start_minutes}" />
+			<textfield name="duration_hours" set="{@meeting_record.duration_hours}" />
+			<select name="duration_minutes" set="{@meeting_record.duration_minutes}" />
+			<checkbox name="reminder_checked" set="{@meeting_record.reminder_checked}" />
+
+
+			<button value="Save" />
+
+			<browser assert="{@meeting_record.name} {@user.name} {@stamp}" />
+
+			<!--Save the account id & name-->
+			<form name="DetailView">
+				<hidden name="record" var="pre_meeting_id" />
+			</form>
+			<var var="pre_meeting_name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+		</csv>
+	
+	
+	
+	<!-- now check for calendar presence -->
+	
+	<link id="moduleTab_Calendar" />
+	
+	<button value=" Month " />
+	<link text="Next Month" />
+	
+	
+	<table id="daily_cal_table">
+		<browser assert="{@call_record.status}: {@pre_call_name}" />
+		<browser assert="{@meeting_record.status}: {@pre_meeting_name}" />
+	</table>
+	
+	<!-- create a call for previous month -->
+	
+	<timestamp />
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+
+	
+	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record">
+		<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
+
+		<javascript addUtils="true">
+				var theDate = new Date();
+
+                
+                theDate.setDate(theDate.getDate() - 30);
+
+                
+                var day;
+                if (theDate.getDate() &lt; 10) {
+                    day = '0' + theDate.getDate();
+                } else {
+                    day = '' + theDate.getDate();
+                }
+
+                
+                var month;
+                if (theDate.getMonth() + 1 &lt; 10) {
+                    month = '0' + (theDate.getMonth()+1);
+                } else {
+                    month = '' + (theDate.getMonth()+1);
+                }
+                
+                var year;
+                year = theDate.getFullYear();
+                
+				var sugardate;
+				sugardate = month+'/'+day+'/'+year;
+				
+				var date_field;
+				date_field = document.getElementById('date_start_date');
+				
+				document.getElementById('date_start_date').value = sugardate;
+				document.getElementById('date_start_date').onchange();
+			</javascript>
+		
+		
+		<wait timeout="4" />
+		
+		
+		
+		
+		<textfield name="duration_hours" set="{@call_record.duration_hours}" />
+		<select name="duration_minutes" set="{@call_record.duration_minutes}" />
+		
+
+
+		<select id="direction" set="{@call_record.direction}" />
+		<select id="status" set="{@call_record.status}" />
+
+		<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
+		<textfield id="description" set="{@call_record.description}" />
+
+		<button value="Save" />
+		
+		<browser assert="{@call_record.name} {@user.name} {@stamp}" />
+
+		<var var="pre_call_name" set="{@call_record.name} {@user.name} {@stamp}" />
+	</csv>
+	
+
+	
+	<!-- now make a meeting for next month -->
+	<timestamp />
+		<link id="moduleTab_Meetings" />
+		<link text="Schedule Meeting" />
+		<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record">
+			<textfield id="name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+			
+			<javascript addUtils="true">
+				var theDate = new Date();
+
+                
+                theDate.setDate(theDate.getDate() - 30);
+
+                
+                var day;
+                if (theDate.getDate() &lt; 10) {
+                    day = '0' + theDate.getDate();
+                } else {
+                    day = '' + theDate.getDate();
+                }
+
+                
+                var month;
+                if (theDate.getMonth() + 1 &lt; 10) {
+                    month = '0' + (theDate.getMonth()+1);
+                } else {
+                    month = '' + (theDate.getMonth()+1);
+                }
+                
+                var year;
+                year = theDate.getFullYear();
+                
+				var sugardate;
+				sugardate = month+'/'+day+'/'+year;
+				
+				var date_field;
+				date_field = document.getElementById('date_start_date');
+				
+				document.getElementById('date_start_date').value = sugardate;
+				document.getElementById('date_start_date').onchange();
+			</javascript>
+			
+			
+			
+			<textfield id="location" set="{@meeting_record.location}" />
+			<textfield id="description" set="{@meeting_record.description}" />
+			<select id="status" set="{@meeting_record.status}" />
+			
+			<select id="date_start_hours" set="{@meeting_record.date_start_hours}" />
+			<select id="date_start_minutes" set="{@meeting_record.date_start_minutes}" />
+			<textfield name="duration_hours" set="{@meeting_record.duration_hours}" />
+			<select name="duration_minutes" set="{@meeting_record.duration_minutes}" />
+			<checkbox name="reminder_checked" set="{@meeting_record.reminder_checked}" />
+
+
+			<button value="Save" />
+
+			<browser assert="{@meeting_record.name} {@user.name} {@stamp}" />
+
+			<!--Save the account id & name-->
+			<form name="DetailView">
+				<hidden name="record" var="pre_meeting_id" />
+			</form>
+			<var var="pre_meeting_name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+		</csv>
+	
+	<!-- now check for calendar presence -->
+	
+	<link id="moduleTab_Calendar" />
+	
+	<button value=" Month " />
+	<link text="Previous Month" />
+	
+	
+	<table id="daily_cal_table">
+		<browser assert="{@call_record.status}: {@pre_call_name}" />
+		<browser assert="{@meeting_record.status}: {@pre_meeting_name}" />
+	</table>
+	
+	<!-- create a call for today / this month -->
+	
+	<timestamp />
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+
+	
+	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record">
+		<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
+		
+		<wait timeout="4" />
+		
+		<textfield name="duration_hours" set="{@call_record.duration_hours}" />
+		<select name="duration_minutes" set="{@call_record.duration_minutes}" />
+		
+
+
+		<select id="direction" set="{@call_record.direction}" />
+		<select id="status" set="{@call_record.status}" />
+
+		<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
+		<textfield id="description" set="{@call_record.description}" />
+
+		<button value="Save" />
+		
+		<browser assert="{@call_record.name} {@user.name} {@stamp}" />
+
+		<var var="pre_call_name" set="{@call_record.name} {@user.name} {@stamp}" />
+	</csv>
+	
+
+	
+	<!-- now make a meeting for today / this month -->
+	<timestamp />
+		<link id="moduleTab_Meetings" />
+		<link text="Schedule Meeting" />
+		<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record">
+			<textfield id="name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+
+			<textfield id="location" set="{@meeting_record.location}" />
+			<textfield id="description" set="{@meeting_record.description}" />
+			<select id="status" set="{@meeting_record.status}" />
+			
+			<select id="date_start_hours" set="{@meeting_record.date_start_hours}" />
+			<select id="date_start_minutes" set="{@meeting_record.date_start_minutes}" />
+			<textfield name="duration_hours" set="{@meeting_record.duration_hours}" />
+			<select name="duration_minutes" set="{@meeting_record.duration_minutes}" />
+			<checkbox name="reminder_checked" set="{@meeting_record.reminder_checked}" />
+
+
+			<button value="Save" />
+
+			<browser assert="{@meeting_record.name} {@user.name} {@stamp}" />
+
+			<!--Save the account id & name-->
+			<form name="DetailView">
+				<hidden name="record" var="pre_meeting_id" />
+			</form>
+			<var var="pre_meeting_name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+		</csv>
+	
+	<!-- now check for calendar presence -->
+	
+	<link id="moduleTab_Calendar" />
+	
+	<button value=" Month " />
+	
+	<table id="daily_cal_table">
+		<browser assert="{@call_record.status}: {@pre_call_name}" />
+		<browser assert="{@meeting_record.status}: {@pre_meeting_name}" />
+	</table>
+	
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_0740.xml finished." />
+</soda>
