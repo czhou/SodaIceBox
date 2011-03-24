@@ -42,7 +42,7 @@
 	</table>
 	
 	<!--check note record-->
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Notes" />
 	<link text="View Notes" />
 	<div id="Notesbasic_searchSearchForm" >
     <textfield id="name_basic" set="Contacts.csv" />
@@ -56,7 +56,7 @@
 	  <browser assert="{@email_record_9680.team_name0}, {@email_record_9680.team_name1}" />
 	</div>
 	
-	<script file="{@global.scriptsdir}/modules/Lib/Note_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
 	
 	<puts text="Test: Emails_9680.xml finished." />
 </soda>

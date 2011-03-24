@@ -7,7 +7,7 @@
 	<link text="Admin" />
 	<link text="Email Settings" />
 	<wait timeout="2" />
-	<browser assert="Configure Email Settings" />
+	<browser assert="Outgoing Mail Configuration" />
 
 	<csv file="{@global.scriptsdir}/modules/lib/Email_Setting_Lib.csv" var="email_record_9709">
 		<table class="edit view">
