@@ -16,14 +16,11 @@
 	</table>
 
 	<!--Create a note record from Notes subpanel in Contract detail view.-->
-	<form id="formformNotes">
-		<button value="  Create Note or Attachment  "/>
-	</form>
+	<button id="History_createnoteorattachment_button"/>
 	<wait timeout="2"/>
 	<browser assert="Subject"/>
-	<div id="DEFAULT">
-		<textfield id="name" set="Note record"/>
-	</div>
+	<textfield id="name" set="Note record"/>
+
 	<button id="Notes_subpanel_save_button"/>
 	<wait timeout="2"/>
 	
