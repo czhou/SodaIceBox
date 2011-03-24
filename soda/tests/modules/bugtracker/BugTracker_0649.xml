@@ -36,7 +36,7 @@
 	<csv file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.csv" var="bug_record_0648"> 
 		<select name="nameSearchType" set="Contains" />
 		<textfield id="nameSearchField" set="{@bug_record_0648.name}" />
-		<puts var="{@bug_record_0648.name}" />
+		<puts text="{@bug_record_0648.name}" />
 		<button value="  Next Step >  " />
 	</csv>
 	<div class="moduleTitle">

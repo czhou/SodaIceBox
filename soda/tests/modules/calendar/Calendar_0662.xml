@@ -10,7 +10,7 @@
 	</div>
 	<browser assert="{@calendar.calendar_task_list}" />
 
-	<button value=" Day " selected="selected" click="false" />
+	<button value=" Day " click="false" />
 
 	<puts text="Test: Calendar_0662.xml finished." />
 </soda>
