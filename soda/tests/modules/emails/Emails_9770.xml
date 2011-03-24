@@ -6,6 +6,16 @@
 	<textfield id="user_name" set="qauser" />
 	<textfield id="user_password" set="QAuser1" />
 	<button id="login_button" />
+	<button name="next_tab1" required="false"/>
+	<wait timeout="1"/>
+	<button name="next_tab1" required="false"/>
+	<wait timeout="1"/>
+	<button name="next_tab1" required="false"/>
+	<wait timeout="1"/>
+	<button name="next_tab1" required="false"/>
+	<wait timeout="1"/>
+	<button name="save" required="false"/>
+
 	<wait timeout="3" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 	<timestamp />

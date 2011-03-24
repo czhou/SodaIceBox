@@ -9,6 +9,7 @@
 		<button name="next_tab1" required="false" timeout="2" />
 		<button name="next_tab1" required="false" timeout="2" />
 		<button name="next_tab1" required="false" timeout="2" />
+		<button name="next_tab1" required="false" timeout="2" />
 		<button name="save" required="false" timeout="2" />
 		<browser assert="Welcome" />
 	</csv>
