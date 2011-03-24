@@ -2,7 +2,7 @@
 	<puts text='Contract_1634:Navigate to Contracts Module_Verify that the Contracts page is displayed correctly with clicking "Contracts" tab.'/>
 
 	<!--Click contract tab in navigation bar and verify the list view-->
-	<link id='moduleTab_Contacts'/>
+	<link id='moduleTab_Contracts'/>
 	<wait timeout="2"/>
 	<browser assert="Contract Name"/>
 
