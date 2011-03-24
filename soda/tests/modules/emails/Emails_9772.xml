@@ -101,7 +101,7 @@
 	<table id="composeHeaderTable0">
 		<button index="1" />
 	</table>
-	<wait timout="5" />
+	<wait timeout="5" />
 
 	<!--delete-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
