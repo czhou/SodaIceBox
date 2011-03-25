@@ -93,7 +93,7 @@
 	
 	<table id="daily_cal_table">
 		<browser assert="{@call_record.status}: {@pre_call_name}" />
-		<browser assert="{@meeting_record.status}:{@pre_meeting_name}" />
+		<browser assert="{@meeting_record.status}: {@pre_meeting_name}" />
 	</table>
 	
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />

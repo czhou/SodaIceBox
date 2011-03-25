@@ -314,4 +314,11 @@
 		<reason>mfleeger: meeting format discrepency on Shared calendar</reason>
 		<modulename>Calendar</modulename>
 	</block>
+	
+	<block>
+		<testfile>Calendar_0748</testfile>
+		<bugnumber>43121</bugnumber>
+		<reason>mfleeger: meeting format discrepency on Shared calendar</reason>
+		<modulename>Calendar</modulename>
+	</block>
 </soda>
