@@ -18,7 +18,7 @@
 	
 	<!--Go to Contact Edit View-->
 	<button id="edit_button" />
-	<link id="tab2"/>
+	<!--link id="tab2"/-->
 	<button name="teamSelect" />
 	<form id="popup_query_form">
 		<textfield name="name" set="labolG" />
