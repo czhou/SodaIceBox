@@ -1,0 +1,64 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click "Calls"/"Meeting" link on Navigation shortcuts.
+			4. Click any call/meeting subject link in "Call/Meeting List" view.
+			5. Click "Create Note or Attachment" button in "Notes" sub-panel.
+			6. Cancel creating a note for the selected call/meeting.
+		Expectation:
+			6. There is no new note for the selected 
+				call/meeting is displayed in "Notes" sub-panel.
+	-->
+	<puts text="Test: Calendar_0721.xml starting." />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+	
+	<button value="  Create Note or Attachment  " />
+	
+	<wait timeout="4" />
+	
+	<timestamp />
+	<var var="note_name" set="Note_{@stamp}" />
+	
+	<textfield id="name" set="{@note_name}" />
+	
+	<textarea id="description" set="Something about a Note..." />
+	
+	<button id="Notes_subpanel_cancel_button" alert="true" />
+	
+	<wait timeout="3" />
+	
+	<div id="subpanel_history">
+		<browser assertnot="{@note_name}" />
+	</div>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
+	
+	<button value="  Create Note or Attachment  " />
+	
+	<wait timeout="4" />
+	
+	<timestamp />
+	<var var="note_name" set="Note_{@stamp}" />
+	
+	<textfield id="name" set="{@note_name}" />
+	
+	<textarea id="description" set="Something about a Note..." />
+	
+	<button id="Notes_subpanel_cancel_button" alert="true" />
+	
+	<wait timeout="3" />
+	
+	<div id="subpanel_history">
+		<browser assertnot="{@note_name}" />
+	</div>
+	
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	
+	
+	<puts text="Test: Calendar_0721.xml finished." />
+</soda>

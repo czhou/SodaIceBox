@@ -5,7 +5,7 @@
 	<link text="Admin" />
 	<browser assert="Administration" />
 	<link text="Email Settings" />
-	<browser assert="Configure Email Settings" />
+	<browser assert="Outgoing Mail Configuration" />
 
 	<!--Field validation-->
 	<textfield id="mail_smtpserver" set="" />

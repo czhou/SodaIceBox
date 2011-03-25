@@ -1,0 +1,47 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calls" tab in the navigation bar.
+			3. Create a saved view for calls and then click "Save" button.
+				(Under Advanced Search -> Layout Options)
+		Expectation:
+			3.  Saved Search appears under drop-down.
+	-->
+	<puts text="Test: Calendar_0725.xml starting." />
+	
+	<link id="moduleTab_Calls" />
+	<link text="Advanced Search" />
+	<link text="Layout Options" />
+	
+	<select id="hide_tabs" set="TEAM_NAME" />
+	<javascript addUtils="true">
+		SUGAR.tabChooser.right_to_left('display_tabs','hide_tabs', '7', '7', '');
+	</javascript>
+	
+	<timestamp />
+	
+	<var var="layout_name" set="Layout_{@stamp}" />
+	
+	<textfield name="saved_search_name" set="{@layout_name}" />
+	<button value="Save" />
+	
+	<select id="saved_search_select" assert="{@layout_name}" />
+	
+	<!-- clean things up -->
+	
+	<link text="Layout Options" />
+	
+	<!-- put team back - should this be needed?  -->
+	
+	<select id="display_tabs" set="TEAM_NAME" />
+	<javascript addUtils="true">
+		SUGAR.tabChooser.left_to_right('display_tabs','hide_tabs', '7', '7', '');
+	</javascript>
+	
+	<link text="Basic Search" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	
+	<puts text="Test: Calendar_0725.xml finished." />
+</soda>

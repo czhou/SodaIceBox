@@ -24,7 +24,7 @@
 	 <form id='EditView'>
             <timestamp/>
             <textfield name='document_name' set='{@Doc_New_Record.document_name} {@user.name} {@stamp}'/> 
-            <filefield name='uploadfile' set='scripts\SugarCRM\Modules\Lib\{@Doc_New_Record.attach_path}'/>
+            <!--filefield name='uploadfile' set='scripts\SugarCRM\Modules\Lib\{@Doc_New_Record.attach_path}'/-->
             <textfield name='revision' set='{@Doc_New_Record.revision}'/> 
             <select id='category_id' set='{@Doc_New_Record.category}'/>
             <select id='template_type' set='{@Doc_New_Record.template_type}'/>
@@ -33,9 +33,10 @@
             <textfield name='active_date' set='{@Doc_New_Record.active_date}'/>
             <textfield name='exp_date' set='{@Doc_New_Record.exp_date}'/>         
             <textfield name='description' set='{@Doc_New_Record.description}'/>         
-            <button value='Save'/>
-    </form>
+            <button id="Notes_subpanel_save_button"/>
+	</form>
 	</csv>
+	<wait timeout="2"/>
 	<browser assert='{@Contract_Create_Lib}'/>
 	<div id='list_subpanel_contract_documents'>
 		<link text='{@Doc_New_Record.document_name} {@user.name} {@stamp}' click='false'/>

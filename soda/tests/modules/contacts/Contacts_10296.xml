@@ -19,14 +19,18 @@
 	<textfield id="user_password" set="QAuser1" />
 	<button id="login_button" />
 
+	<wait timeout="2"/>
+
 	<!-- Match a new user login or an existing user login, but not a failed login. -->
 	<browser assert="/Welcome(, | to Sugar!)/" />
 	
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 
 	<!-- Search for Global within detailview only -->
-	<table id="detailpanel_3" assert="/.*Global.*/" />
-	
+	<table id="detailpanel_3">
+		<browser assert="/.*Global.*/" />
+	</table>
+
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	
 	

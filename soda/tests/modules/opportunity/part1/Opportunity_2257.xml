@@ -20,8 +20,8 @@
 			<button id='search_form_clear' />
 			<link text='Advanced Search' />
 			<textfield id='name_advanced' set='{@pre_opp_name}' />
-			<textfield id='amount_advanced' set='{@Opportunity_2257.amount}' />
-			<textfield id='date_closed_advanced' set='{@Opportunity_2257.date_closed}' />
+			<textfield id='range_amount_advanced' set='{@Opportunity_2257.amount}' />
+			<textfield id='range_date_closed_advanced' set='{@Opportunity_2257.date_closed}' />
 			<textfield id='next_step_advanced' set='{@Opportunity_2257.next_step}' />
 			<select name='sales_stage_advanced[]' set='{@Opportunity_2257.sales_stage}' />
 			<select name='lead_source_advanced[]' set='{@Opportunity_2257.lead_source}' />

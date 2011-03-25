@@ -22,7 +22,7 @@
                 <link text='{@Contract_Create_1643.team_name}'/>
 		
 		<form name="EditView">
-            <textfield name="name" set="{@Contract_Create_1643.name} {@user.name} {@stamp}"/>
+            <textfield id="name" set="{@Contract_Create_1643.name} {@user.name} {@stamp}"/>
 			<select id="status" set="{@Contract_Create_1643.status}"/>
 			<textfield id='account_name' set='{@Contract_Create_1643.account_name}'/>
 	    <button value="Save" name="button"/>

@@ -300,4 +300,11 @@
 		<reason>mfleeger: Advanced Search not functioning on Meetings</reason>
 		<modulename>Calendar</modulename>
 	</block>
+	
+	<block>
+		<testfile>Calendar_0726</testfile>
+		<bugnumber>42919</bugnumber>
+		<reason>mfleeger: Advanced Search not functioning on Meetings (See 0706)</reason>
+		<modulename>Calendar</modulename>
+	</block>
 </soda>

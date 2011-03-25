@@ -43,7 +43,7 @@
 		</form>
 		<link text="Advanced Search" />
 		<div id="Campaignsadvanced_searchSearchForm">
-			<textfield id="end_date_advanced" set="{@Campaign0921.end_date}" />
+			<textfield id="range_end_date_advanced" set="{@Campaign0921.end_date}" />
 		</div>
 		<form id="search_form">
 			<button id = "search_form_submit" />

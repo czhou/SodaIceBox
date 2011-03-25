@@ -1,9 +1,9 @@
 <soda>
 	<puts text="Lib: TargetList_Delete_Lib.xml starting." />
 
-	<!-- Nav to campaigns module. -->
-	<link href="index.php?module=Campaigns&amp;action=index" />
-	<browser assert="Campaigns" />
+	<!-- Nav to TargetLists module. -->
+	<link href="index.php?module=ProspectLists&amp;action=index" />
+	<browser assert="Target List" />
 
 	<link text="View Target Lists" />
 	

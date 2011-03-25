@@ -1,6 +1,6 @@
 <soda>
 	<puts text="Meeting_Delete_Lib: Starting" />
-	<link href="index.php?module=Activities&amp;action=index" />
+	<link id="moduleTab_Meetings" />
 	<link text="View Meetings" />
 	<button value="Clear" />
 	<button id="search_form_submit" />

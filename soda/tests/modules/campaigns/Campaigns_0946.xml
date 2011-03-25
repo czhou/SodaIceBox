@@ -18,7 +18,7 @@
 	</csv>
 
 	<link text="Create Lead Form" click="false" />
-	<browser assert="{@Campaign0946.tracker_url}" exist="false" />
+	<browser assertnot="{@Campaign0946.tracker_url}" />
 
 	<script file="{@global.scriptsdir}/modules/lib/Campaign_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/TargetList_Delete_Lib.xml" />

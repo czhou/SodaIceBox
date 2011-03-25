@@ -2,8 +2,7 @@
 	<puts text="Lib: Task_Delete_Lib.xml starting." />
 	<csv file="{@global.scriptsdir}/csvs/calendar/CalendarAssertText.csv" var="calendar" />
 
-	<link id="moduleTab_Activities" />
-	<link text="View Tasks" />
+	<link id="moduleTab_Tasks" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Tasks&amp;action=index" click="false" />
 	</div>

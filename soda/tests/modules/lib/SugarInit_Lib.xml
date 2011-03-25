@@ -21,6 +21,7 @@
 			timeout="2" />
 		<button name="next_tab1" required="false" timeout="2" />
 		<button name="next_tab1" required="false" timeout="2" />
+		<button name="next_tab1" required="false" timeout="2" />
 		<button name="save" required="false" timeout="2" />
 
 		<!--
@@ -180,6 +181,7 @@
 		<button id="login_button" />
 
 		<!-- deal with new user wizard! -->
+		<button name="next_tab1" required="false" timeout="2" />
 		<button name="next_tab1" required="false" timeout="2" />
 		<button name="next_tab1" required="false" timeout="2" />
 		<button name="next_tab1" required="false" timeout="2" />

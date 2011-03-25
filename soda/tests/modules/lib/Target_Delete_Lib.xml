@@ -2,8 +2,8 @@
 	<puts text="Lib: Target_Delete_Lib.xml starting." />
 	<csv file="{@global.scriptsdir}/csvs/campaigns/CampaignAssertText.csv" var="campaigns"/>
 
-	<!--Nav to campaigns module -->
-	<link href="index.php?module=Campaigns&amp;action=index" />
+	<!--Nav to Targets module -->
+	<link href="index.php?module=Prospects&amp;action=index" />
 	
 	<link text="View Targets" />
 	
