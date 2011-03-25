@@ -22,8 +22,8 @@
             <select name='reminder_time' set='{@User7980.defaultreminder1}'/>
         </div>
         <button value='Save'/>
-        <!--schedule meeting-->
-        <link id='moduleTab_Activities'/>
+        <!--schedule call-->
+        <link id='moduleTab_Calls'/>
         <link text='Log Call'/>
         <form id='EditView'>
             <textfield name='name' set='{@User7980.subject}'/>
