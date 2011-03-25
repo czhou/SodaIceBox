@@ -5,7 +5,7 @@
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Task_Create_Lib.xml" />
 
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Calendar" />
 	<browser assert="Task List" />
 	<link text="View Tasks" />
 
@@ -17,7 +17,7 @@
 		<link text="{@pre_task_name}" />
 	</table>
 
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Calendar" />
 	<browser assert="Task List" />
 	<link text="View Tasks" />
 	<link text="/Basic Search/" />

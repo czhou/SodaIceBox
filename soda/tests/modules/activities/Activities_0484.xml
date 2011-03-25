@@ -2,7 +2,7 @@
 	<!-- Search Task_Verify that search conditions can be cleared. -->
 	<puts text="Test: Activities_0484.xml starting" />
 
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Calendar" />
 	<browser assert="Task List" />
 	<link text="View Tasks" />
 	<wait timeout="3" />

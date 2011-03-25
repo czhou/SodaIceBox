@@ -6,7 +6,7 @@
 	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
 
 
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Calendar" />
 	<browser assert="Task List" />
 	<link text="Create Note or Add Attachment" />
 
@@ -34,7 +34,7 @@
 
 		<browser assert="{@note_record_0790.name}" />
 	</csv>
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Calendar" />
 	<link text="View Calls" />
 
 	<button id="search_form_clear" />
