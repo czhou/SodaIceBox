@@ -307,4 +307,11 @@
 		<reason>mfleeger: Advanced Search not functioning on Meetings (See 0706)</reason>
 		<modulename>Calendar</modulename>
 	</block>
+	
+	<block>
+		<testfile>Calendar_0744</testfile>
+		<bugnumber>43121</bugnumber>
+		<reason>mfleeger: meeting format discrepency on Shared calendar</reason>
+		<modulename>Calendar</modulename>
+	</block>
 </soda>
