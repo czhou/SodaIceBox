@@ -58,9 +58,9 @@
 		<textfield name="portal_name" set="{@Leads_2017.portal_name}" />
 		<textfield name="portal_app" set="{@Leads_2017.portal_app}" />
 	</csv>
-	<wait timetout="5" />
+	<wait timeout="5" />
 	<button value="  Save Merge  " alert="true" />
-	<wait timetout="5" />
+	<wait timeout="5" />
 	<!--verify-->
 	<browser assert="{@Leads_2017.salutation}" />
 	<browser assert="{@Leads_2017.title}" />
