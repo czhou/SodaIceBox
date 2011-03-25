@@ -54,8 +54,7 @@
 		<wait />
 		<div id="list_subpanel_history">
 			<table class="list view">
-				<browser assert="{@Opportunity_2297.note_name} {@user.name} {@stamp}"
-					click="false" />
+				<browser assert="{@Opportunity_2297.note_name} {@user.name} {@stamp}" />
 			</table>
 		</div>
 

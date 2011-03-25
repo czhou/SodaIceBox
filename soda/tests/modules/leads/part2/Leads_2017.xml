@@ -58,9 +58,9 @@
 		<textfield name="portal_name" set="{@Leads_2017.portal_name}" />
 		<textfield name="portal_app" set="{@Leads_2017.portal_app}" />
 	</csv>
-	<wait timetou="5" />
+	<wait timeout="5" />
 	<button value="  Save Merge  " alert="true" />
-	<wait timetou="5" />
+	<wait timeout="5" />
 	<!--verify-->
 	<browser assert="{@Leads_2017.salutation}" />
 	<browser assert="{@Leads_2017.title}" />
@@ -85,5 +85,5 @@
 	<browser assert="{@Leads_2017.status_description}" />
 
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
-	<puts test="Test: Leads_2017.xml finished." />
+	<puts text="Test: Leads_2017.xml finished." />
 </soda>

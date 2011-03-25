@@ -30,8 +30,7 @@
 
 	<!-- go back to basic search -->
 	<button id="search_form_clear"/>
-	<link id="basic_search_link"/>
-	<wait timeout="2"/> 
+	<link text="Basic Search"/>
 	<button id="search_form_clear"/>
     <button id="search_form_submit"/>
 

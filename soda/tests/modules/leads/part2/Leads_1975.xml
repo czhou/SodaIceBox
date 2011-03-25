@@ -16,5 +16,5 @@
 	<browser assert="Missing required field: Last Name" />
 	<link id="moduleTab_Leads" alert="true" />
 	<!--browser assert="No Primary Team specified"/-->
-	<puts test="Test: Leads_1975.xml finished." />
+	<puts text="Test: Leads_1975.xml finished." />
 </soda>

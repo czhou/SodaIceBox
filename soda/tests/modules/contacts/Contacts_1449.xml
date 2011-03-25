@@ -13,12 +13,13 @@
 	<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
 	<button id="search_form_submit" />
 	<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
-	<wait timeout="5" />
+	<wait timeout="10" />
 
-	<!--Go its detail view $ "Duplicate" -->
-	<div class="moduleTitle">
-		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
-	</div>
+	<!--Go its detail view $ "Duplicate"-->
+	<link text="{@pre_contact_first_name} {@pre_contact_last_name}"/>
+	<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	<wait timeout="2"/>
+
 	<button id="duplicate_button" />
 	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_1449.csv" var="contact_record_1449">

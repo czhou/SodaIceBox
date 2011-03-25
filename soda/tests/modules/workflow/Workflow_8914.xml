@@ -65,38 +65,60 @@
       <wait timeout="3" />
       <button value="  Save  " />
 
-      <!--Trigger the workflow-->
-      <!--create account and verify-->
-      <link id="moduleTab_Accounts" />
-      <link text="Create Account" />
-      <textfield id="name" set="{@wf_8914.future_trigger__field_value}" />
-      <textfield id="description" set="{@wf_8914.description}" />
-      <button value="Save" />
-      <div id="list_subpanel_activities">
-         <span class="pageNumbers" assert="(0 - 0 of 0)" />
-      </div>
-      <button id="edit_button" />
-      <textfield id="name" set="{@wf_8914.past_trigger__field_value}" />
-      <button value="Save" />
-      <div id="list_subpanel_activities">
-         <span class="pageNumbers" assert="(0 - 0 of 0)" />
-      </div>
-      <button id="edit_button" />
-      <textfield id="name" set="{@wf_8914.future_trigger__field_value}" />
-      <button value="Save" />
-      <div id="list_subpanel_activities">
-         <span class="pageNumbers" assert="(1 - 1 of 1)" />
-         <table class="list view">
-            <link text="{@wf_8914.task_name}" click="false" />
-         </table>
-      </div>
+		
+			<!--create action-->
+			<table class='formHeader h3Row' index='3'>
+				<button value='  Create'/>
+			</table>
+			<radio id='action_type2' set='true'/>
+			<wait timeout='2'/>
+			<link id='href_new'/>
+			<select id='selector' set='{@wf_8914.selector_select_module}'/>
+			<button value='Save'/>
+			<button value='Next'/>
+			<link id='href_0'/>
+			<wait timeout='3'/>
+			<textfield id='field_0__field_value' set='{@wf_8914.task_name}'/>
+			<wait timeout='3'/>
+			<button value='Save'/>
+			<link id='href_5'/>
+			<wait timeout='3'/>
+			<button value='Save'/>
+			<link id='href_10'/>
+			<wait timeout='3'/>
+			<button value='Save'/>
+			<wait timeout='3'/>
+			<button value='  Save  '/>
 
-      <!--delete wf-->
-      <script file="{@global.scriptsdir}/modules/lib/Workflow_Delete_Lib.xml" />
-   </csv>
+			<!--Trigger the workflow-->
+				<!--create account and verify-->
+				<link id='moduleTab_Accounts'/>
+				<link text='Create Account'/>
+				<textfield id='name' set='{@wf_8914.future_trigger__field_value}'/>
+				<textfield id='description' set='{@wf_8914.description}'/>
+				<button value='Save'/>
+				<div id="list_subpanel_activities">
+					<span class='pageNumbers' assert='(0 - 0 of 0)'/>
+				</div>
+				<button id='edit_button'/>
+				<textfield id='name' set='{@wf_8914.past_trigger__field_value}'/>
+				<button value='Save'/>
+				<div id="list_subpanel_activities">
+					<span class='pageNumbers' assert='(0 - 0 of 0)'/>
+				</div>
+				<button id='edit_button'/>
+				<textfield id='name' set='{@wf_8914.future_trigger__field_value}'/>
+				<button value='Save'/>
+				<div id="list_subpanel_history">
+					<span class='pageNumbers' assert='(1 - 1 of 1)'/>
+					<table class='list view'>
+						<link text='{@wf_8914.task_name}' click='false'/>
+					</table>
+				</div>
+	</csv>	
 
    <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
    <script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
-   <puts test="Text: Cases_8914: Finished." />
+   <puts text="Text: Cases_8914: Finished." />
 </soda>
 

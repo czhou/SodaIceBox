@@ -74,5 +74,5 @@
 
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
-	<puts test="Test: Leads_1932.xml finished" />
+	<puts text="Test: Leads_1932.xml finished" />
 </soda>

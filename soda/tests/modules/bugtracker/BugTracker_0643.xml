@@ -16,9 +16,19 @@
 
 	<button id="edit_button" />
 
-	<textfield id="assigned_user_name" set="{@bugtracker_0643.user}" jscriptevent="onkeydown" />
-	<textfield id="assigned_user_name" click="false" jscriptevent="onkeyup" />
-	<wait timeout="2" />
+	<!-- A bit of a hack here.  If you move directly from the user box to the
+			Save button, it doesn"t save.  A bit of JavaScript doesn"t have time to
+			finish, maybe?  So we set another field after the user box to give it
+			some time. -->
+	<button id="btn_assigned_user_name"/>
+	
+	<textfield id="user_name_advanced" set="{@bugtracker_0643.user}"/>
+	<button name="button" value="Search"/>
+	<link text="{@bugtracker_0643.user}" index="1"/>
+
+	<!--textfield id="assigned_user_name" set="{@bugtracker_0643.user}" /-->
+	<textfield id="work_log" set="Changed assigned to user." />
+
 	<button value="Save" />
 	
 	<link id="moduleTab_Bugs" />

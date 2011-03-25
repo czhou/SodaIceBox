@@ -117,5 +117,5 @@
 
 	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-	<puts test="Test: Leads_1976.xml finished." />
+	<puts text="Test: Leads_1976.xml finished." />
 </soda>

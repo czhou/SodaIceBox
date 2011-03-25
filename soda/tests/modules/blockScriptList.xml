@@ -65,6 +65,34 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Calendar_0703</testfile>
+		<bugnumber>39955</bugnumber>
+		<reason>bug 39955 - false duplicate account warning</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0705</testfile>
+		<bugnumber>39955</bugnumber>
+		<reason>bug 39955 - false duplicate account warning</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0706</testfile>
+		<bugnumber>39955</bugnumber>
+		<reason>bug 39955 - false duplicate account warning</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0716</testfile>
+		<bugnumber>39955</bugnumber>
+		<reason>bug 39955 - false duplicate account warning</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
 		<testfile>Accounts_0130</testfile>
 		<bugnumber>39955</bugnumber>
 		<reason>bug 39955 - false duplicate account warning</reason>
@@ -152,7 +180,6 @@
 		<modulename>opportunity</modulename>
 	</block>
 	
-	
 	<block>
 		<testfile>Opportunity_2311</testfile>
 		<bugnumber>-1</bugnumber>
@@ -201,21 +228,44 @@
 		<reason>bug 37260</reason>
 		<modulename>Knowledge Base</modulename>
 	</block>
-	
-	<!--Randy's modules-->
+
+	<!--Randy's Modules-->	
 	<block>
-		<testfile>contract_1661</testfile>
-		<bugnumber>42741</bugnumber>
-		<reason>we don't support YUI custom jsevent</reason>
+                <testfile>contract_1661</testfile>
+                <bugnumber>42741</bugnumber>
+                <reason>bug 42741</reason>
+                <modulename>contracts</modulename>
+        </block>
+
+	<block>
+                <testfile>contract_1667</testfile>
+                <bugnumber>42741</bugnumber>
+                <reason>bug 42741</reason>
+                <modulename>contracts</modulename>
+        </block>
+
+	<block>
+		<testfile>contract_1655</testfile>
+		<bugnumber>42824</bugnumber>
+		<reason>bug 42824</reason>
 		<modulename>contracts</modulename>
 	</block>
 
 	<block>
-		<testfile>contract_1667</testfile>
-		<bugnumber>42741</bugnumber>
-		<reason>we don't suport YUI custom jsevent</reason>
-		<modulename>contracts</modulename>
-	</block>
+                <testfile>contract_1662</testfile>
+                <bugnumber>42824</bugnumber>
+                <reason>bug 42824</reason>
+                <modulename>contracts</modulename>
+        </block>
+
+	<block>
+                <testfile>contract_1668</testfile>
+                <bugnumber>42824</bugnumber>
+                <reason>bug 42824</reason>
+                <modulename>contracts</modulename>
+        </block>
+
+
 	<block>
 		<testfile>contract_1688</testfile>
 		<bugnumber>36446</bugnumber>
@@ -237,4 +287,45 @@
 		<modulename>workflow</modulename>
 	</block>
 
+    <block>
+		<testfile>Accounts_0068</testfile>
+		<bugnumber>34670</bugnumber>
+		<reason>accounts_opportunities_select_button has been removed</reason>
+		<modulename>Accounts</modulename>
+	</block>
+
+    <block>
+		<testfile>Accounts_0070</testfile>
+		<bugnumber>34670</bugnumber>
+		<reason>accounts_opportunities_select_button has been removed</reason>
+		<modulename>Accounts</modulename>
+	</block>
+
+    <block>
+		<testfile>Accounts_0224</testfile>
+		<bugnumber>34670</bugnumber>
+		<reason>accounts_opportunities_select_button has been removed</reason>
+		<modulename>Accounts</modulename>
+	</block>
+
+    <block>
+		<testfile>Accounts_0225</testfile>
+		<bugnumber>34670</bugnumber>
+		<reason>accounts_opportunities_select_button has been removed</reason>
+		<modulename>Accounts</modulename>
+	</block>
+
+    <block>
+		<testfile>Accounts_0255</testfile>
+		<bugnumber>34670</bugnumber>
+		<reason>accounts_opportunities_select_button has been removed</reason>
+		<modulename>Accounts</modulename>
+	</block>
+
+	<block>
+		<testfile>Calendar_0706</testfile>
+		<bugnumber>42919</bugnumber>
+		<reason>mfleeger: Advanced Search not functioning on Meetings</reason>
+		<modulename>Calendar</modulename>
+	</block>
 </soda>

@@ -39,8 +39,7 @@
 
 		<div id="list_subpanel_history">
 			<table class="list view">
-				<browser assert="{@Opportunity_2295.note_name} {@user.name} {@stamp}"
-					click="false" exist="false" />
+				<browser assert="{@Opportunity_2295.note_name} {@user.name} {@stamp}" exist="false" />
 			</table>
 		</div>
 	</csv>
