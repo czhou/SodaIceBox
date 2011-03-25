@@ -4,7 +4,8 @@
         <timestamp/>
 
         <link id='moduleTab_Quotes'/>
-        <browser assert='Quotes'/>
+	<wait timeout="2"/>
+        <browser assert='Quote Subject'/>
         <link text='Create Quote'/>
 
         <form id='EditView'>
