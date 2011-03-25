@@ -16,9 +16,7 @@
 	<browser assert='{@Contract_Create_Lib}'/>
 
 	<!--Create a new Note against the Contract-->
-	<div id="subpanel_history">
-		<button name="History_create_button"/>
-	</div>
+	<button id="History_createnoteorattachment_button"/>
 
 	<div id="subpanel_history_newDiv">
 		<textfield id="name" set="{@Contract_Create_Lib}{@stamp}"/>

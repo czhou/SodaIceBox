@@ -15,9 +15,8 @@
     </table>
 	<browser assert='{@Contract_Create_Lib}'/>
 
-	<form id='formcontracts_documents'>
-		<button name='Documents_create_button'/>
-	</form>
+	<button id="Documents_create_button"/>
+	<wait timeout="2"/>
 
 	<!-- create a document in sub panel-->
 	 <csv file='{@global.scriptsdir}/modules/lib/Document_Create_Lib.csv' var='Doc_New_Record'> 
@@ -36,6 +35,7 @@
             <button value='Save'/>
     </form>
 	</csv>
+	<wait timeout="2"/>
 	<browser assert='{@Contract_Create_Lib}'/>
 	<div id='list_subpanel_contract_documents'>
 		<link text='{@Doc_New_Record.document_name} {@user.name} {@stamp}' click='false'/>

@@ -119,6 +119,13 @@
 		<reason>Send key re-attached to previous window</reason>
 		<modulename>Contacts</modulename>
 	</block>
+
+	<block>
+		<testfile>Contacts_10296</testfile>
+		<bugnumber>43056</bugnumber>
+		<reason>Bug 43056</reason>
+		<modulename>Contacts</modulename>
+	</block>
 	
 	<block>
 		<testfile>Studio_8287</testfile>

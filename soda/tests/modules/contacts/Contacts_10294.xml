@@ -15,12 +15,15 @@
 	<puts text="Test: Contacts_10294.xml starting." />
 	
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
-
-	<button name="contacts_cases_create_button" />
-	<button name="teamSelect" />
 	
-	<textfield name="name" set="labolG" />
-	<button value="Search" />
+	<!--Go to Contact Edit View-->
+	<button id="edit_button" />
+	<!--link id="tab2"/-->
+	<button name="teamSelect" />
+	<form id="popup_query_form">
+		<textfield name="name" set="labolG" />
+		<button value="Search" />
+	</form>
 	<browser assertnot="Global" />
 	
 	<button value="Clear" />
@@ -30,7 +33,7 @@
 	<button value="Search" />
 	<link text="Global" />
 	
-	<button id="Cases_subpanel_cancel_button" alert="true" />
+	<button id="CANCEL_HEADER" alert="true" />
 	
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 
