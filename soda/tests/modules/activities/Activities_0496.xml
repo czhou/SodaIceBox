@@ -4,7 +4,7 @@
 
 	<script file="{@global.scriptsdir}/modules/activities/Activities_0489.xml" />
 
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Calendar" />
 	<browser assert="Task List" />
 	<link text="View Notes" />
 	<button id="search_form_clear" />

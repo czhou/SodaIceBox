@@ -2,7 +2,7 @@
 	<!-- Create Note_Verify that creating a note can be canceled -->
 	<puts text="Test: Activities_0462.xml starting" />
 
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Calendar" />
 	<browser assert="Task List" />
 	<link text="Create Note or Add Attachment" />
 	<csv file="{@global.scriptsdir}/modules/lib/Note_Create_Lib.csv" var="activity_record_0462">
