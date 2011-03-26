@@ -62,7 +62,7 @@
         <row index='2'>
             <cell index='3' vartext='record'/>
             <cell index='4' assert=''/>
-            <puts var='{@record}'/>
+            <puts text='{@record}'/>
         </row>
         <row index='3'>
             <cell index='4' assert='Regular User'/>
