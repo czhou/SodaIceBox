@@ -14,8 +14,7 @@
 			<textfield id="name_basic" set="{@Opportunity_2330.name} {@user.name} {@stamp}" />
 		</form>
 
-		<button id="search_form_submit" class="button" type="submit" value="Search"
-			name="button" onclick="SUGAR.savedViews.setChooser()" />
+		<button id="search_form_submit" />
 
 		<table class="list view">
 			<browser assert="{@Opportunity_2330.name} {@user.name} {@stamp}" />

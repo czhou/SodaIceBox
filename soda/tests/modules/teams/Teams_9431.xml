@@ -9,8 +9,8 @@
 	<link text="Create Contact" />
 
 	<table id="EditView_team_name_table">
-		<button value="Add" click="false" assert="enabled" />
-		<button value="Select" click="false" assert="enabled" />
+		<button value="Add" click="false" exists="true" />
+		<button value="Select" click="false" exists="true" />
 		<image id="remove_team_name_collection_0" click="false" />
 		<radio id="primary_team_name_collection_0" set="true" />
 	</table>      

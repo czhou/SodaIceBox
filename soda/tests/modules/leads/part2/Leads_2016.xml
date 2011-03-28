@@ -25,9 +25,9 @@
 	<checkbox name="massall" set="true" />
 	<button value="  Perform Merge  " />
 	<button value="&lt;&lt;" index="1" />
-	<wait timetou="5" />
+	<wait timeout="5" />
 	<button value="  Save Merge  " alert="true" />
-	<wait timetou="5" />
+	<wait timeout="5" />
 	<!--verify -->
 	<browser assert="Mr. {@old_first_name} {@old_last_name}" />
 	<link id="moduleTab_Leads" />

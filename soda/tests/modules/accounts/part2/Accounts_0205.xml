@@ -31,7 +31,7 @@
 	</table>
 	<div class="moduleTitle">
 		<link href="index.php?module=Accounts&amp;action=index" click="false" />
-		<browser asser="{@second_account}" />
+		<browser assert="{@second_account}" />
 	</div>
 
 	<!-- Remove relation of first account under Member Org subpanel and verify -->
@@ -39,7 +39,7 @@
 		<link class="listViewTdToolsS1" index="2" alert="true" />
 	</div>
 	<div id="list_subpanel_accounts">
-		<link text="{@first_account}" exisits="false" />
+		<link text="{@first_account}" exist="false" />
 	</div>
 
 	<!--Delete the record-->

@@ -49,6 +49,6 @@
 
    <!--delete wf-->
    <script file="{@global.scriptsdir}/modules/lib/Workflow_Delete_Lib.xml" />
-   <puts test="Text: Cases_8880: Finished." />
+   <puts text="Text: Cases_8880: Finished." />
 </soda>
 
