@@ -1,0 +1,47 @@
+<soda>
+	<!--
+		Action:
+			1. Login to SugarCRM as a valid user.
+			2. Go to Calendar module.
+			3. Go to call list view.
+			4. Click &8220;Contact&8221; column title to sort call records.
+			5. Click a call record name link to go to its detail view.
+		Expectation:
+			5. Call detail view is displayed.
+	-->
+	<puts text="Test: Calendar_0762.xml starting." />
+
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+	
+	<button id="edit_button" />
+	
+	<select id="parent_type" set="Contact" />
+	<textfield id="parent_name" set="{@pre_contact_first_name} {@pre_contact_last_name}"
+		jscriptevent="onkeydown" />
+	<textfield id="parent_name" jscriptevent="onkeyup" click="false" />
+	<wait timeout="2" />
+	
+	<button value="Save" />
+	
+	<link id="moduleTab_Calls" />
+	
+	<table class="list view">
+		<link class="listViewThLinkS1"
+			text="/.*Contact.*/" />
+		<link text="{@pre_call_name}" />
+	</table>
+	
+	<!-- assert detailview + record -->
+	<button id="edit_button" click="false" />
+	<table id="detailpanel_1">
+		<browser assert="{@pre_call_name}" />
+	</table>
+	
+	<!-- cleanup -->
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_0762.xml finished." />
+</soda>

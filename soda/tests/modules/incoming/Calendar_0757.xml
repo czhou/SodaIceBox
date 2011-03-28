@@ -1,0 +1,36 @@
+<soda>
+	<!--
+		Action:
+			 Schedule call_Verify that a call is not scheduled
+			 by "Create Appointment" Quick New Item box when
+			 entering invalid value to "Start Date" or "Start Time"
+			 text fields.
+		Expectation:
+			Record is not created.  Error is shown.
+	-->
+	<puts text="Test: Calendar_0757.xml starting." />
+
+	<!-- start to create call -->
+
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+	
+	<timestamp />
+	<textfield id="name" set="temp_{@stamp}" />
+	<textfield id="date_start_date" set="99/99/2792" />
+	<textfield id="duration_hours" set="A" />
+	<select id="duration_minutes" set="00" />
+	
+	<button value="Save" />
+
+	<wait timeout="2" />
+	
+	<div id="EditView_tabs">
+		<browser assert="Invalid Value: Start Date" />
+		<browser assert="Invalid Value: Duration Hours" />
+	</div>
+	
+	<button value="Cancel" alert="true" />
+	
+	<puts text="Test: Calendar_0757.xml finished." />
+</soda>

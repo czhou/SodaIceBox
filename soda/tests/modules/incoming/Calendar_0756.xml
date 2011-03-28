@@ -1,0 +1,53 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click "Log Call" shortcut
+			4. In the call's edtiview, select invalid start
+				date or time, or invalid Duration(0 hours 00 mins)
+			4. Explicit '0' duration is now handled via js popup, so test hours
+		Expectation:
+			4. Verify the warning msg should be shown
+	-->
+	<puts text="Test: Calendar_0756.xml starting." />
+
+	<!-- start to create call -->
+
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+
+	
+	<!-- first test lack of date start -->
+	
+	<timestamp />
+	
+	<textfield id="name" set="temp_{@stamp}" />
+	<textfield id="date_start_date" set="" />
+	
+	<button value="Save" />
+	
+	<wait timeout="2" />
+	
+	<div id="EditView_tabs">
+		<browser assert="Missing required field: Start Date" />
+	</div>
+	
+	<!-- Re-fill start date and unset duration...  -->
+	
+	<textfield id="date_start_date" set="12/21/2011" />
+	<textfield id="duration_hours" set="" />
+	<select id="duration_minutes" set="00" />
+	
+	<button value="Save" />
+
+	<wait timeout="2" />
+	
+	<div id="EditView_tabs">
+		<browser assert="Missing required field: Duration Hours" />
+	</div>
+	
+	<button value="Cancel" alert="true" />
+	
+	<puts text="Test: Calendar_0756.xml finished." />
+</soda>

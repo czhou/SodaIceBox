@@ -1,0 +1,55 @@
+<soda>
+	<!--
+		Action:
+			Verify that selected calls record information is not
+			updated by Mass Update with invalid date format for
+			"Start Date" text field.
+
+		Expectation:
+			Record is not updated and there is a warning.
+	-->
+	<puts text="Test: Calendar_0767.xml starting." />
+
+	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+	
+	<link id="moduleTab_Calls" />
+	
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Mass Update" />
+	
+	<textfield id="date_start_date" set="33/33/3333" />
+	
+	<button id="update_button" />
+	
+	<wait timeout="2" />
+	
+	<table id="mass_update_table">
+		<browser assert="Invalid Value: Start Date" />
+	</table>
+	
+	<textfield id="date_start_date" set="1972/01/01" />
+	
+	<button id="update_button" />
+	
+	<wait timeout="2" />
+	
+	<table id="mass_update_table">
+		<browser assert="Invalid Value: Start Date" />
+	</table>
+	
+	<textfield id="date_start_date" set="23/12/2007" />
+	
+	<button id="update_button" />
+	
+	<wait timeout="2" />
+	
+	<table id="mass_update_table">
+		<browser assert="Invalid Value: Start Date" />
+	</table>	
+	
+	<!-- cleanup -->
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_0767.xml finished." />
+</soda>
