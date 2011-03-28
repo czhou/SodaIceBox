@@ -3,7 +3,7 @@
 	<link id="moduleTab_Emails" />
 	<button id="settingsButton" />
   <wait timeout="10" />
-  <div id="settingsDialog_c" >
+  <div id="settingsDialog" >
 	  <link text="Mail Accounts" />
   </div>
 	<browser assert="Outgoing SMTP Mail Servers" />
