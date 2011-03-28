@@ -42,7 +42,7 @@
 			<textfield id="billing_address_street" click="false" jscriptevent="onchange" />
 			<textfield id="billing_address_city" set="{@studio10088.city}" />
 
-			<textfield id="description" set="{@studio10088.des}" />
+			<!--textfield id="description" set="{@studio10088.des}" /-->
 
 			<button value="Save" />
 		</form>
