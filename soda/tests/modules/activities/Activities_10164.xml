@@ -1,7 +1,7 @@
 <soda>
 	<puts text="Test: Activities_10064 starting." />
 	
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Calendar" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Calendar&amp;action=index" click="false" />
 	</div>

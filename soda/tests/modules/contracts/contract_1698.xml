@@ -33,7 +33,7 @@
             <textfield name='active_date' set='{@Doc_New_Record.active_date}'/>
             <textfield name='exp_date' set='{@Doc_New_Record.exp_date}'/>         
             <textfield name='description' set='{@Doc_New_Record.description}'/>         
-            <button id="Notes_subpanel_save_button"/>
+            <button id="SAVE_FOOTER"/>
 	</form>
 	</csv>
 	<wait timeout="2"/>

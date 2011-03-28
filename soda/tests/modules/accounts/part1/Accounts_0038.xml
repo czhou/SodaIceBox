@@ -30,7 +30,7 @@
 			<textfield id="name" set="{@history_record_0036.name} {@user.name} {@stamp}" />
 			<wait timeout="10" />
 			<textfield id="description" set="{@history_record_0036.description}" />
-			<filefield name="uploadfile" set="{@history_record_0036.uploadfile}" />
+			<filefield name="filename_file" set="{@history_record_0036.uploadfile}" />
 		</form>
 
 		<!--teams select-->
@@ -69,9 +69,9 @@
 	</div>
 	<wait />
 	<!--Goto the Note Module to search the record-->
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Notes" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Calendar&amp;action=index" click="false" />
+		<link href="index.php?module=Notes&amp;action=index" click="false" />
 	</div>
 	<link text="View Notes" />
 	<div class="moduleTitle">
