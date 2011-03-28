@@ -1,12 +1,9 @@
 <soda>
-	<!--
-		Account Detail - Member Organizations sub-panel_Verify that a Member
-		Organization information related to this Member Organization is removed
-		correctly.
-	-->
+	<!-- Account Detail - Member Organizations sub-panel_Verify that a Member Organization 
+		information related to this Member Organization is removed correctly. -->
 	<puts text="Test: Accounts_0205.xml starting." />
 
-	<!--Create 2 account records-->
+	<!--Create 2 account records -->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" />
 	<var var="first_account" set="{@pre_account_name}" />
 
@@ -38,11 +35,12 @@
 	<div id="list_subpanel_accounts">
 		<link class="listViewTdToolsS1" index="2" alert="true" />
 	</div>
+	<wait timeout="5" />
 	<div id="list_subpanel_accounts">
 		<link text="{@first_account}" exist="false" />
 	</div>
 
-	<!--Delete the record-->
+	<!--Delete the record -->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0205.xml finished." />
 </soda>
