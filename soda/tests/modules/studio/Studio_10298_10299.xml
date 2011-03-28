@@ -33,7 +33,7 @@
     <!-- Ensure we can still load the module field page -->
     <link text="Accounts" class="crumbLink" assertPage="false" />
     <link text="Fields" class="studiolink" assertPage="false" />
-    <button name="addfieldbtn" assertExists="true" assertPage="false" click="false" />
+    <button name="addfieldbtn" exist="true" assertPage="false" click="false" />
     
     <puts text="Test: Studio_10298_10299.xml finished." />
 </soda>
