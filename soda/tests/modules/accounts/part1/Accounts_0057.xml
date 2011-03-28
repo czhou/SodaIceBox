@@ -23,7 +23,7 @@
 	<div id="list_subpanel_history">
 		<button value="  Archive Email  " />
 	</div>
-	<browser assert="Create Archived Emails:" />
+	<browser assert="Create Archived Emails" />
 
 	<!--Edit Email-->
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0057.csv" var="history_record_0057">

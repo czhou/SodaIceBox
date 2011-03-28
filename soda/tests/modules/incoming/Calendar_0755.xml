@@ -1,0 +1,51 @@
+<soda>
+	<!--
+		Action:
+			Verify that a call is not scheduled by editview
+			when mandatory fields are not entered.
+		Expectation:
+			1. Call is not scheduled..
+	-->
+	<puts text="Test: Calendar_0755.xml starting." />
+
+	<!-- start to create call -->
+
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+	
+	<button value="Save" />
+
+	<wait timeout="2" />
+	
+	<div id="EditView_tabs">
+		<browser assert="Missing required field: Subject" />
+	</div>
+	
+	<timestamp />
+	
+	<textfield id="name" set="temp_{@stamp}" />
+	<textfield id="date_start_date" set="" />
+	
+	<button value="Save" />
+	
+	<wait timeout="2" />
+	
+	<div id="EditView_tabs">
+		<browser assert="Missing required field: Start Date" />
+	</div>
+	
+	<textfield id="date_start_date" set="12/21/2011" />
+	<textfield id="duration_hours" set="" />
+	
+	<button value="Save" />
+
+	<wait timeout="2" />
+	
+	<div id="EditView_tabs">
+		<browser assert="Missing required field: Duration Hours" />
+	</div>
+	
+	<button value="Cancel" alert="true" />
+	
+	<puts text="Test: Calendar_0755.xml finished." />
+</soda>

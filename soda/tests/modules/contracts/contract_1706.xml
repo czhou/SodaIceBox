@@ -30,7 +30,7 @@
 	</div>
 	<browser assert="Note record»Edit"/>
 	<textfield id="name" set="New note record"/>
-	<button value="Cancel"/>
+	<button value="Cancel" alert="true"/>
 	<wait timeout="2"/>
 	<browser assert="Note record"/>
 

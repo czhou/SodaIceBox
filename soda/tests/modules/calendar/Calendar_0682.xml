@@ -8,7 +8,7 @@
 
 
 	<!--Create a call record/-->
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Calendar" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Calendar&amp;action=index" click="false" />
 	</div>
@@ -20,7 +20,7 @@
 	<button value="Save" />
 	<wait timeout="3" />
 	
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Calendar" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Calendar&amp;action=index" click="false" />
 	</div>

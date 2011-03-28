@@ -2,7 +2,7 @@
 	<puts text="Test: Activities_0504.xml starting" />
 
 
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Calendar" />
 	<browser assert="Task List" />
 	<link text="Create Task" />
 	<wait timeout="3" />

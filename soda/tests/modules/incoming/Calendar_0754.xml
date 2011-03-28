@@ -1,0 +1,34 @@
+<soda>
+	<!--
+		Action:
+			Verify that a call is not scheduled by edit view
+			when non-existing record for field is entered
+			(For example, "Assigned to", "Team" text field.)
+			(assigned_user_id is no longer required, so just use Team field...)
+		Expectation:
+			1. Call is not scheduled..
+	-->
+	<puts text="Test: Calendar_0754.xml starting." />
+
+	<!-- start to create call -->
+
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+
+	<timestamp />
+	
+	<textfield id="name" set="temp_name_{@stamp}"/>
+	
+	<textfield id="team_name_collection_0" set="non_existent_team123" jscriptevent="onkeydown" />
+	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+	
+	<button value="Save" />
+	
+	<span id="EditView_team_name_input_div_0">
+		<browser assert="No Primary Team specified" />
+	</span>
+	
+	<button value="Cancel" alert="true" />
+	
+	<puts text="Test: Calendar_0754.xml finished." />
+</soda>

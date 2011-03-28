@@ -11,7 +11,7 @@
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
 	<var var="meeting3_name" set="{@pre_meeting_name}" />
 
-	<link id="moduleTab_Activities" />
+	<link id="moduleTab_Calendar" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Calendar&amp;action=index" click="false" />
 	</div>
