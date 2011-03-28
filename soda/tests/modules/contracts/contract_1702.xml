@@ -31,7 +31,7 @@
 	<div id="list_subpanel_contract_documents">
 		<link class="listViewTdToolsS1" index="2" alert="true"/>
 		<wait timeout="2"/>
-		<browser assert="{@Doc_Name}" exist="false"/>
+		<browser assertnot="{@Doc_Name}" />
 	</div>
 
 	<!--Delete the records-->
