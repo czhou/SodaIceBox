@@ -23,6 +23,8 @@
 
 	<!--Create Lead Subpanel-->
 	<button id="account_leads_create_button" />
+	<wait timeout="3" />
+	
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0044.csv" var="lead_record_0418">
 		<form id="form_SubpanelQuickCreate_Leads">
 			<textfield id="refered_by" set="{@lead_record_0418.refered_by}" />

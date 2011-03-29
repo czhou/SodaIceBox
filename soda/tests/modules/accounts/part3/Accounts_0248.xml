@@ -30,10 +30,10 @@
 	<div id="form_SubpanelQuickCreate_Notes_tabs">
 		<textfield id="name" set="{@note_248.name}" />
 	</div>
-	<button id="Notes_subpanel_save_button" />
+	<button id="Notes_subpanel_cancel_button" alert="true" />
 	<wait timeout="5" />
 	<div id="list_subpanel_history">
-		<link text="{@note_248.name}" exisit="false" />
+		<link text="{@note_248.name}" exists="false" />
 	</div>
 
 

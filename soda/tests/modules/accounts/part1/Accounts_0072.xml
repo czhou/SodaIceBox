@@ -20,13 +20,14 @@
 
 	<!--Create Case Subpanel & click "Cancel"-->
 	<button name="account_cases_create_button" />
+	<wait timeout="3" />
+	
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0105.csv" var="case_record_0072">
 		<form id="form_SubpanelQuickCreate_Cases">
 			<textfield id="name" set="{@case_record_0072.name} {@user.name} {@stamp}" />
 			<textfield id="description" set="{@case_record_0072.description}" />
 			<select id="status" set="{@case_record_0072.status}" />
 			<select id="priority" set="{@case_record_0072.priority}" />
-
 
 			<!--user select-->
 			<button id="btn_assigned_user_name" />

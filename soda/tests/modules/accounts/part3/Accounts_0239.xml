@@ -48,6 +48,7 @@
 		</form>
 
 		<button id="Tasks_subpanel_save_button" />
+		<wait timeout="3" />
 	</csv>
 
 	<!-- Verify task has been created -->
