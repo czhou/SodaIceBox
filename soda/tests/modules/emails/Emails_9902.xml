@@ -5,8 +5,8 @@
 	<!--Nav to emails module-->
 	<link id="moduleTab_Emails" />
 	<button id="settingsButton" />
-	<div id="settingsTabDiv">
-	<link text="Mail Accounts" />
+	<div id="settingsDialog">
+		<link text="Mail Accounts" />
 	</div>
 	<wait timeout="1" />
 	<button id="outbound_email_add_button" />

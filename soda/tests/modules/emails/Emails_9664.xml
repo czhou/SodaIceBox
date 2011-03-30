@@ -6,7 +6,9 @@
 	<wait timeout="10" />
 	<button id="settingsButton" />
 	<wait timeout="10" />
-	<link text="Mail Accounts" />
+	<div id="settingsDialog">
+		<link text="Mail Accounts" />
+	</div>
 	<browser assert="Outgoing SMTP Mail Servers" />
 	<browser
 		assert="Provide SMTP mail server information to use for outgoing email in Mail Accounts" />
