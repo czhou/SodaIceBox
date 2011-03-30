@@ -35,7 +35,7 @@
 	<link id="moduleTab_Leads" />
 	<wait timeout="3" />
 	<link text="Basic Search" />
-
+	<wait timeout="3" />
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
 	

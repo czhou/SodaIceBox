@@ -48,6 +48,7 @@
 		<link href="index.php?module=Leads&amp;action=index" click="false" />
 	</div>
 	<link text="Basic Search" />
+	<wait timeout="3" />
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
 	<wait timeout="3" />
