@@ -1,12 +1,10 @@
 <soda>
-	<!--
-		Edit Scheduled Call_Verify that editing scheduled call related to a lead can
-		be canceled
-	-->
+	<!-- Edit Scheduled Call_Verify that editing scheduled call related to a lead can 
+		be canceled -->
 	<puts text="Test: Leads_1941.xml starting." />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 
-	<!--go to the leads-->
+	<!--go to the leads -->
 	<link id="moduleTab_Leads" />
 	<browser assert="Leads" />
 	<button id="search_form_clear" />
@@ -14,12 +12,13 @@
 	<button id="search_form_submit" />
 	<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
 
-	<!--create a call-->
+	<!--create a call -->
 	<div id="list_subpanel_activities">
 		<table class="list view">
 			<button value="  Log Call  " />
 		</table>
 	</div>
+	<wait timeout="5" />
 	<csv file="{@global.scriptsdir}/csvs/leads/Leads_1941.csv" var="Leads_1941">
 		<textfield id="name" set="{@Leads_1941.name}" />
 		<textfield id="date_start_date" set="{@Leads_1941.date_start_date}" />
@@ -35,14 +34,14 @@
 		<checkbox name="reminder_checked" set="{@Leads_1941.reminder_checked}" />
 		<textfield id="description" set="{@Leads_1941.description}" />
 
-		<!--user select-->
+		<!--user select -->
 		<button id="btn_assigned_user_name" />
 		<browser assert="User Search" />
 		<textfield name="last_name_advanced" set="{@Leads_1941.assigned_user_name}" />
 		<button value="Search" />
 		<link text="{@Leads_1941.assigned_user_name}" />
 
-		<!--teams select-->
+		<!--teams select -->
 		<table id="form_SubpanelQuickCreate_Calls_team_name_table">
 			<button value="Select" />
 		</table>
@@ -55,7 +54,7 @@
 		<button value="Save" />
 	</csv>
 	<wait timeout="20" />
-	<!--modify the call record-->
+	<!--modify the call record -->
 	<div id="list_subpanel_activities">
 		<link class="listViewTdToolsS1" index="1" />
 	</div>
