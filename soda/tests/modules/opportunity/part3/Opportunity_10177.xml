@@ -8,7 +8,7 @@
 		<link text="Basic Search" />
 	</wait>
 	<button id="search_form_clear" />
-	<textfield id="amount_advanced" set="{@opp_record.amount}" />
+	<textfield id="range_amount_advanced" set="{@opp_record.amount}" />
 	<button id="search_form_submit" />
 	<browser assert="{@pre_opp_name}" />
 	<link text="Basic Search" />
