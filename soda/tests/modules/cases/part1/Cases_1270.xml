@@ -51,7 +51,7 @@
 		<form id="form_SubpanelQuickCreate_Notes">
 			<textfield id="name" set="{@Case_1270.name} {@user.name} {@stamp}" />
 			<textfield id="description" set="{@Case_1270.description}" />
-			<filefield id="filename_file" set="{@global.scriptsdir}/export/Accounts.csv" />
+			<filefield name="uploadfile" set="{@global.scriptsdir}/export/Accounts.csv" />
 			
 			<button id="Notes_subpanel_save_button" />
 		</form>
