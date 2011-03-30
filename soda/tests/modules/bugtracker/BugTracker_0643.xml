@@ -48,13 +48,13 @@
 			list will break it (as will filling more or fewer fields in the bug
 			record).  Feel free to suggest a better way to do it. -->
 	<table class="tabform">
-		<row index="8">
+		<row index="9">
 			<cell index="3">
 				<browser assert="{@bugtracker_0643.user2}" />
 			</cell>
 		</row>
 	</table>
-
+	
 	<!-- Delete the records. -->
 	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
 

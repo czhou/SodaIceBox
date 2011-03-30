@@ -14,7 +14,7 @@
              <textfield name="sugar_user_name" set="{@User0621.name}{@stamp}" jscriptevent="onkeyup" />
              <textfield id="unique_name" set="{@User0621.username}{@stamp}" jscriptevent="onkeyup" />
              <select name="status" set="{@User0621.status}"/>
-             <textfield id="Users0emailAddress0" set="{@User0621.email_address}" jscriptevent="onkeyup" />
+             <textfield id="Users0emailAddress0" set="{@User0621.email_address}" jscriptevent="onchange" />
              <link text="Password"/>
              <textfield id="new_password" set="{@User0621.password}" jscriptevent="onkeyup"/>
 			 

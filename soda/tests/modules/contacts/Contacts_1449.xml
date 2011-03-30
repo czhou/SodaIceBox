@@ -13,7 +13,7 @@
 	<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
 	<button id="search_form_submit" />
 	<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
-	<wait timeout="5" />
+	<wait timeout="10" />
 
 	<!--Go its detail view $ "Duplicate"-->
 	<!--link text="{@pre_contact_first_name} {@pre_contact_last_name}"/-->
