@@ -23,9 +23,11 @@
 		<button id="Notes_subpanel_save_button"/>
 	</div>
 
+	<wait timeout="5"/>
+
 	<!--Verify the Note created succeffully-->
 	<div id="list_subpanel_history">
-		<link text="{@Contract_Create_Lib}{@stamp}" click="false" required="true"/>
+		<link text="{@Contract_Create_Lib}{@stamp}" click="false" exist="true"/>
 	</div>
 
 	<!--Delete the records-->
