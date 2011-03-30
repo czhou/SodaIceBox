@@ -31,7 +31,6 @@
 		<button value="Save" />
 	</csv>
 	<browser assert="Missing required field: Account Name" />
-	<browser assert="Missing required field: No match for field: Account Name" />
 
 	<button value="Cancel" alert="true" />
 

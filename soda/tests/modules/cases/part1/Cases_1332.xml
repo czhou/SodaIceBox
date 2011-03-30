@@ -25,7 +25,6 @@
 	<textfield id="name" clear="true" />
 	<button value="Save" />
 	<browser assert="Missing required field: Account Name" />
-	<browser assert="Missing required field: No match for field: Account Name" />
 	<browser assert="Missing required field: Subject" />
 
 	<link id="moduleTab_Cases" alert="true" />

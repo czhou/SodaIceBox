@@ -54,6 +54,7 @@
 			<filefield id="filename_file" set="{@global.scriptsdir}/export/Accounts.csv" />
 			
 			<button id="Notes_subpanel_save_button" />
+			<wait timeout="3" />
 		</form>
 
 		<!--verify the create note-->

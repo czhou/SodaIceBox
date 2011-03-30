@@ -30,7 +30,6 @@
 		
 		<!--verify the warning message show-->
 		<browser assert="Missing required field: Account Name" />
-		<browser assert="Missing required field: No match for field: Account Name" />
 
 		<!--verify the list is empty-->
 		<link id="moduleTab_Cases" alert="true" />

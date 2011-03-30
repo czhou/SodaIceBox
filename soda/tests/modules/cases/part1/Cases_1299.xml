@@ -43,7 +43,7 @@
 		</form>
 
 		<!--verify the create call-->
-		<browser assert="Missing required field: Note Subject" />
+		<browser assert="Missing required field: Subject" />
 		<form id="form_SubpanelQuickCreate_Notes">
 			<button value="Cancel" alert="true" />
 		</form>
