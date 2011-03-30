@@ -4,9 +4,12 @@
 	<script file="{@global.scriptsdir}/modules/lib/Emails_Acct_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Emails_OutGoing_Create_Lib.xml" />
 	<link id="moduleTab_Emails" />
+	<wait timeout="5" />
 	<button id="settingsButton" />
-	<wait timeout="3" />
-	<link text="Mail Accounts" />
+	<wait timeout="5" />
+	<div id="settingsDialog">
+		<link text="Mail Accounts" />
+	</div>
 	<div id="outboundAccountsTable">
 		<image
 			src="index.php?entryPoint=getImage&amp;themeName=Sugar&amp;imageName=edit_inline.gif"
