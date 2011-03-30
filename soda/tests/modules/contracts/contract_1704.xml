@@ -20,13 +20,13 @@
 
 	<div id="subpanel_history_newDiv">
 		<textfield id="name" set="{@Contract_Create_Lib}{@stamp}"/>
-		<button id="Notes_subpanel_save_button" alert="true"/>
+		<button id="Notes_subpanel_cancel_button" alert="true"/>
 	</div>
 
 	<!--Verify the Note created succeffully-->
 	<div id="list_subpanel_history">
-		<browser assert="{@Contract_Create_Lib}{@stamp}"/>
-		<link text="{@Contract_Create_Lib}{@stamp}" exist="true" click="false"/>
+		<browser assertnot="{@Contract_Create_Lib}{@stamp}"/>
+		<link text="{@Contract_Create_Lib}{@stamp}" exist="false" click="false"/>
 	</div>
 
 	<!--Delete the records-->
