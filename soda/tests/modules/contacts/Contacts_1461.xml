@@ -31,10 +31,14 @@
 	</csv>
 	
 	<link id="moduleTab_Contacts" />
+	<wait timeout="3" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Contacts&amp;action=index" click="false" />
 	</div>
-	<link text="Basic Search" required="false" />
+	<link text="Basic Search" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	<wait timeout="3" />
 	<!--Delete contact record-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<puts text="Test: Contacts_1461.xml finished." />
