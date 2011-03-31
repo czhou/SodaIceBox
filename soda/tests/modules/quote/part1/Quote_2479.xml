@@ -98,6 +98,7 @@
         <textfield id='name_basic' set='{@Quote_2479.name} {@user.name} {@stamp}'/>
     </form>
     <button id='search_form_submit'/>
+	<wait timeout="2"/>
     <checkbox name='massall' click='true' />
     <link id='actions_link' />
     <link text='Delete' alert='true' />
