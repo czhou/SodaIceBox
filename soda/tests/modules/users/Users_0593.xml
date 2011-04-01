@@ -1,5 +1,5 @@
 <soda>
-    <puts text="---User_0593:remove team from user---Start!"/>
+    <puts text="---User_0593:remove public team from user---Start!"/>
     <!--goto Admin-->
     <div id='globalLinks'>
         <link text='Admin'/>
@@ -9,19 +9,20 @@
     <browser assert='Teams'/>
     <!--Search team-->
     <button value='Clear'/>
-    <textfield name='name_basic' set='Administrator'/>
+    <textfield name='name_basic' set='Global'/>
     <button value='Search'/>
+    <wait timeout='3' />
     <table class='list view'>
-        <link text='Administrator'/>
+        <link text='Global'/>
     </table>
     <!--remove user from team and verify remove successful-->
-    <browser assert='Teams: Administrator'/>
+    <browser assert='Teams: Global'/>
     <div id='list_subpanel_users'>
         <table class='list view'>
-            <link text='Administrator' click='false'/>
+            <link text='Global' click='false'/>
         </table>
         <link class='listViewTdToolsS1' index='1' alert='true'/>
-		<wait/>
+		<wait timeout='3' />
         <link text='Administrator' click='false' exist='false'/>
     </div>    
     <!--restore:add removed user-->
@@ -34,7 +35,7 @@
     <link text='Administrator'/>
     <!--Verify add succeccful-->
     <table class='list view'>
-        <span class='pageNumbers' assert='(1 - 1 of 1)'/>
+        <span class='pageNumbers' assert='(1 - 2 of 2)'/>
     </table>
     <puts text="---User_0593:Remove team from user---Finished!"/>
 </soda>

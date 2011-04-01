@@ -5,6 +5,7 @@
 	<browser assert="Roles" />
 	<textfield id="name_basic" set="{@pre_role_name}" />
 	<button id="search_form_submit" />
+	<wait timeout='3' />
 	<table class='list view'>
 		<link text='{@pre_role_name}' />
 
@@ -12,6 +13,13 @@
 	<browser assert="{@pre_role_name}" />
 	<browser assert="Edit" />
 	<button value=" Delete " alert="true" />
+	<wait timeout='3' />
+	<table class='list view'>
+		<browser assert='(0 - 0 of 0)' />
+	</table>
+	<form id='search_form'>
+		<button id='search_form_clear' />
+	</form>
 	<puts text="Lib: Role_Delete_Lib.xml finished." />
 </soda>
 
