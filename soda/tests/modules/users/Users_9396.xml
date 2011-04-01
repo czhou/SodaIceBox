@@ -30,19 +30,14 @@
         <browser assert='Calendar Options'/>
     </div>
     <browser assert='User Holidays'/>
-    <link text='Advanced'/>
-    <browser assert='Access'/>
-    <browser assert='Access Type'/>
-    <browser assert='Delete'/>
-    <browser assert='Edit'/>
-    <browser assert='Export'/>
-    <browser assert='Import'/>
-    <browser assert='List'/>
-    <browser assert='View'/>
-    <div id='subpanel_title_aclroles'> 
+    <link text='Access'/>
+    <browser assert='My Teams'/>
+    <browser assertnot='Access Type'/>
+    
+    <!--div id='subpanel_title_aclroles'> 
         <browser assert='Roles'/>
     </div>
-    <browser assert='My Teams'/>
+    <browser assert='My Teams'/-->
    
     <puts text='---User_9396:verify my account---Finished!'/>
 </soda>

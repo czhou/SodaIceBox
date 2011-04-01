@@ -7,8 +7,8 @@
         <link id='moduleTab_Reports'/>
         <browser assert="Reports"/>
         <!--Verify enterprise reporting-->
-       <link text='Manage Enterprise Reports'/>
-       <browser assert="Enterprise Reports"/>
+       <link text='Manage Advanced Reports'/>
+       <browser assert="Advanced Reports"/>
        <!--Verify 'create custom query' link-->
        <link text='Create Custom Query' click='false'/>
        <puts text="---User_0617:see 'create custom query' link---Finished!--"/>

@@ -4,11 +4,12 @@
     <script file='{@global.scriptsdir}/modules/lib/Role_Create_Lib.xml'/>
     <!--link href='index.php?module=Administration&amp;action=index'/-->
     <!--link text='Role Management'/-->
-    <link text='List Roles'/> 
+    <link id='moduleTab_ACLRoles'/> 
     <form id='search_form'>
-          <textfield name='name_basic' set='{@pre_role_name}'/>
-          <button value='Search'/>
+          <textfield id='name_basic' set='{@pre_role_name}'/>
+          <button id='search_form_submit'/>
     </form>
+    <wait timeout='3'/>
     <link text='{@pre_role_name}'/>
     <browser assert='{@pre_role_name}'/>
     <csv file='{@global.scriptsdir}/csvs/users/Users_0631.csv' var='users_record_0631'>
@@ -19,7 +20,7 @@
     </csv>
     <csv file='{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv' var='SugarInit0631'>
          <div id='list_subpanel_users'>
-            <button id='acl_roles_users_select_button' value='Select'/>
+            <button id='acl_roles_users_select_button' />
          </div>
          <browser assert='User Search'/>
          <textfield name='last_name_advanced' set='{@SugarInit0631.last_name}'/>                        
