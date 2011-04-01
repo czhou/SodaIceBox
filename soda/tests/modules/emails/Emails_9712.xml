@@ -10,7 +10,7 @@
 	<wait timeout="5" />
 
 	<!--click "TO"-->
-	<table id="composeHeaderTable1">
+	<table id="/composeHeaderTable\d{1,}/">
 		<button index="6" />
 	</table>
 	<browser assert="Select Email Recipients" />
