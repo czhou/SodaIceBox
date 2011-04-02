@@ -91,7 +91,7 @@
 	<textfield id="ext_eapm_lotuslive_oauth_consumer_key" set="9399cf0ce6e4ca4d30d56a76b21da89" />
 	<textfield id="ext_eapm_lotuslive_oauth_consumer_secret" set="7704b27829c5715445e14637415b67c1" />
 	<button value="Save" />
-	<image name="connectorConfig" assertExists="true" />
+	<image name="connectorConfig" />
 	<link text="{@user.logname}" />
 	
 	<link text="External Accounts" />
