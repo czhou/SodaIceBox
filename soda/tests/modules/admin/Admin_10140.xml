@@ -30,17 +30,17 @@
 	<button name="editFormula" />
 	
 	<!-- wait for textarea to become active? -->
-	<wait timeout="9" />
+	<wait timeout="5" />
 
 	<textarea id="formulaInput" set="abs($billing_address_city)" />
-	<wait timeout="6" />
+	<wait timeout="3" />
 
 	<button id="fomulaSaveButton" />
 	<button name="fsavebtn" />
-	<wait timeout="12" />
+	<wait timeout="5" />
 
 	<div id="sugarMsgWindow">
-		<div id="sugarMsgWindow_h" assert="Validation Failed" />
+		<div id="sugarMsgWindow_h" assert="Invalid Formula" />
 		<div class="bd" assert="/.*All parameters must be of type.*/" />
 	</div>
 	
