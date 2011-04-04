@@ -27,7 +27,7 @@
 	<csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" 
       var="SugarInit0595">
 		<div id="list_subpanel_users">
-			<button id="acl_roles_users_select_button" value="Select" />
+			<button id="acl_roles_users_select_button" />
 		</div>
 		<browser assert="User Search" />
 		<textfield id="last_name_advanced" set="{@SugarInit0595.last_name}" />

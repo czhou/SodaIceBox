@@ -31,7 +31,7 @@
       var="SugarInit0629">
 		
       <div id="list_subpanel_users">
-			<button id="acl_roles_users_select_button" value="Select" />
+			<button id="acl_roles_users_select_button" />
 		</div>
 		<browser assert="User Search" />
 		<textfield id="last_name_advanced" set="{@SugarInit0629.last_name}" />
