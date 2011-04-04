@@ -16,7 +16,10 @@
 	<wait timeout="10" />
 
 	<!--Go its detail view $ "Duplicate"-->
+<<<<<<< HEAD
 	<!--link text="{@pre_contact_first_name} {@pre_contact_last_name}"/-->
+=======
+>>>>>>> refs/remotes/origin/6_1_5
 	<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	<wait timeout="2"/>
 
