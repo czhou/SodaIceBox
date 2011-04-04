@@ -14,7 +14,9 @@
 	</table>
 	<button value="Cancel" alert="true" />
 	<div class="detail view">
-		<browser assert="{@Doc_Name}" />
+		<browser assert="{@Doc_Name}" />		
+	</div>
+	<div id='LBL_PANEL_ASSIGNMENT'>
 		<browser assert="{@Teams_9455.teamname}" />
 	</div>
 
