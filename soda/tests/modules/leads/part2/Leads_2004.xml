@@ -34,6 +34,15 @@
 		<browser assert="Mr. {@pre_lead_first_name} {@Leads_2004.Contactslast_name}" />
 
 	</csv>
+	<link id="moduleTab_Leads" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Leads&amp;action=index" click="false" />
+	</div>
+	<link text="Basic Search" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	<wait timeout="5" />
+	
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />

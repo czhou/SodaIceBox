@@ -16,7 +16,7 @@
 		<textfield id="last_name" set="{@lead_1976.sugar_user_name_1}" />
 		<textfield id="Users0emailAddress0" set="{@lead_1976.Users0emailAddress1}" />
 		<link href="#tab2" />
-		<wait timeout="3" />
+		<wait timeout="5" />
 		<textfield id="new_password" set="{@lead_1976.new_password}" jscriptevent="onkeyup"/>
 		<textfield id="new_password" set="{@lead_1976.new_password}" jscriptevent="onkeyup"/>
 		<textfield id="confirm_pwd" set="{@lead_1976.new_password}" jscriptevent="onkeyup"/>
@@ -30,7 +30,7 @@
 		<textfield id="last_name" set="{@lead_1976.sugar_user_name_2}" />
 		<textfield id="Users0emailAddress0" set="{@lead_1976.Users0emailAddress2}" />
 		<link href="#tab2" />
-		<wait timeout="3" />
+		<wait timeout="5" />
 		<textfield id="new_password" set="{@lead_1976.new_password}" jscriptevent="onkeyup"/>
 		<textfield id="new_password" set="{@lead_1976.new_password}" jscriptevent="onkeyup"/>
 		<textfield id="confirm_pwd" set="{@lead_1976.new_password}" jscriptevent="onkeyup"/>
