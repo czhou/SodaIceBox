@@ -4,14 +4,8 @@
 	<timestamp />
 
 	<!--Go to modules that can edit team info-->        
-	<link id="moduleTab_Calendar" />
-	<div id="content">
-		<browser assert="Calendar" />
-	</div>
-
-	<div id="Activities">
-		<link text="Create Note or Add Attachment" />
-	</div>
+	<link id="moduleTab_Notes" />
+	<link text="Create Note or Attachment" />	
 	<browser assert="Notes" />
 
 	<!--Create record with multi teams-->
@@ -30,8 +24,9 @@
 
 		<!--Remove teams--> 
 		<table id="EditView_team_name_table">
-			<image id="remove_team_name_collection_0" click="true" />  
-			<radio id="primary_team_name_collection" click="true" />
+			<image id="remove_team_name_collection_0" click="true" /> 
+			<radio id="primary_team_name_collection" click="true" />            
+
 		</table>
 		<form id="EditView">
 			<textfield id="name" set="{@teams_9442.subject} {@user.name} {@stamp}" />                            
