@@ -23,7 +23,9 @@
 	<!--Nav to emails module-->
 	<link id="moduleTab_Emails" />
 	<button id="settingsButton" />
-	<link text="Mail Accounts" />
+	<div id="settingsDialog"/>
+		<link text="Mail Accounts" />
+	</div>
 
 	<browser assert="Gmail" />
 	<browser assert="Warning: Missing username and password for outgoing mail account." />
