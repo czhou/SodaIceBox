@@ -38,7 +38,7 @@
 	<div class="moduleTitle">
 		<link href="index.php?module=Leads&amp;action=index" click="false" />
 	</div>
-	<link text="Basic Search" />
+	<link text="Basic Search" required="false" />
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
 	<wait timeout="5" />
