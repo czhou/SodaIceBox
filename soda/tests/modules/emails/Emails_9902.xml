@@ -6,10 +6,7 @@
 	<link id="moduleTab_Emails" />
 	<wait timeout="5"/>
 	<button id="settingsButton" />
-<<<<<<< HEAD
-=======
 	<wait timeout="5"/>
->>>>>>> refs/remotes/origin/6_1_5
 	<div id="settingsDialog">
 		<link text="Mail Accounts" />
 	</div>
