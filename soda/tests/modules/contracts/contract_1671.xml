@@ -26,6 +26,7 @@
 		<!--Search the contract record in list view-->
 		<link id='moduleTab_Contracts'/>
 		<browser assert="Contracts"/>
+		<link id="basic_search_link" required="false"/>
 		<textfield id='name_basic' set='{@contract_1671.name} {@user.name} {@stamp}'/> 
 		<button id="search_form_submit"/>
 		<table class='list view'>

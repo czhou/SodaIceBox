@@ -1,5 +1,5 @@
 <soda>
-	<puts text='Contract 1703: Create Note verify that note can be created for a Contract '/>
+	<puts text='Contract 1704: Create Note verify that note can be created for a Contract '/>
 
 	<timestamp/>
 	<!--Create a contract with filling all the fields-->
@@ -8,6 +8,7 @@
 	<!--Search the contract record in list view-->
 	<link id='moduleTab_Contracts'/>
 	<browser assert="Contracts"/>
+	<link id="basic_search_link" required="false"/>
 	<textfield id='name_basic' set='{@Contract_Create_Lib}'/> 
 	<button id="search_form_submit"/>
 	<table class='list view'>
@@ -36,6 +37,6 @@
 	<script file='{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml'/>
 	<!--<script file='{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml'/>-->
 
-	<puts text='-------------------Contract_1703: finished-------------------'/>
+	<puts text='-------------------Contract_1704: finished-------------------'/>
 
 </soda>
