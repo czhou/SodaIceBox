@@ -23,7 +23,9 @@
 		<link href="index.php?module=Cases&amp;action=index" click="false" />
 	</div>
 
-	<button value="Clear" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+
 	<table class="list view">
 		<span class="pageNumbers" assert="(1 - 2 of 6)" />
 	</table>
