@@ -4,9 +4,9 @@
 	<csv file="{@global.scriptsdir}/csvs/calendar/CalendarAssertText.csv" var="calendar" />
 	<timestamp />
 
-	<link id="moduleTab_Calendar" />
+	<link id="moduleTab_Meetings" />
 
-	<div id="Activities">
+	<div id="Meetings">
 		<link text="Schedule Meeting" />
 	</div>
 
@@ -46,9 +46,8 @@
 			<link href="index.php?module=Meetings&amp;action=index" click="false" />
 		</div>
 
-		<form id="search_form">
-			<button name="clear" />
-		</form>
+		<button id="search_form_clear" />
+		<button id="search_form_submit" />
 		<table class="list view">
 			<span class="pageNumbers" assert="(0 - 0 of 0)" />
 		</table>

@@ -33,15 +33,9 @@
 	<select name="duration_minutes" set="45"/>
 	<button value="Save" />
 
-	<table id="detailpanel_1">
-		<span id="name" assert="EditMeeting{@stamp}" />
-		<row index="2">
-			<cell index="2" assert="09/17/2009 10:30" />
-		</row>
-		<row index="3">
-			<cell index="2" assert="1h 45m" />
-		</row>
-	</table>
+	<span id="name" assert="EditMeeting{@stamp}" />
+	<span id="date_start" assert="09/17/2009 10:30" />
+	<span id="duration_hours" assert="1h 45m" />
 
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 

@@ -5,17 +5,14 @@
 	<puts text="Test: Calendar_0683.xml starting." />
 
 
-	<!--Create a call record/ -->
-	<link id="moduleTab_Calendar" />
+	<link id="moduleTab_Calls" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Calendar&amp;action=index" click="false" />
+		<link href="index.php?module=Calls&amp;action=index" click="false" />
 	</div>
-	<div id="Activities">
-		<link text="View Calls" />
-	</div>
-	<wait timeout="3" />
+
 	<link text="/Advanced Search/" />
 	<wait timeout="3" />
+
 	<textfield id="name_advanced" set="@$*&amp;" />
 	<checkbox id="current_user_only_advanced" click="true" />
 	<select name="status_advanced[]" set="Planned" />
@@ -25,5 +22,8 @@
 	<wait timeout="3" />
 	<textfield id="name_advanced" assert="" />
 
+	<link text="Basic Search" />
+	<wait timeout="2" />
+	<button id="search_form_submit" />
 	<puts text="Test: Calendar_0683.xml finished." />
 </soda>
