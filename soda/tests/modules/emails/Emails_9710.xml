@@ -23,7 +23,7 @@
 	<!--Nav to emails module-->
 	<link id="moduleTab_Emails" />
 	<button id="settingsButton" />
-	<div id="settingsDialog"/>
+	<div id="settingsDialog">
 		<link text="Mail Accounts" />
 	</div>
 
