@@ -1,0 +1,51 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click a contact name in list view.
+			3. Click "Schedule Meeting" in Activities sub-panel.
+			4. Click "Full form".
+			5. Creating a meeting with related to information.
+			6. Go to the meeting list view.
+		Expectations:
+			6. Both the contact and related to information
+				are displayed in the meeting list view.
+	-->
+	<puts text="Test: Calendar_0826.xml starting." />
+
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />>
+	<var var="account_name" set="{@pre_account_name}" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<var var="contact_name" set="{@pre_contact_first_name} {@pre_contact_last_name}" />9oo
+	
+	<button id="Activities_logcall_button" />
+	<wait timeout="4" />
+	
+	<button id="Calls_subpanel_full_form_button" />
+	
+	<timestamp />
+	<var var="call_name" set="Call for {@user.name} {@stamp}" />
+	<textfield id="name" set="{@call_name}" />
+	<select id="parent_type" set="Account" />
+	<textfield id="parent_name" set="{@account_name}" jscriptevent="onkeydown" />
+	<textfield id="parent_name" jscriptevent="onkeyup" click="false" />
+	<wait timeout="6" />
+	
+	<button value="Save" />
+	<wait timeout="14" />
+	
+	<link id="moduleTab_Calls" />
+	
+	<table class="list view">
+		<browser assert="{@call_name}" />
+		<browser assert="{@contact_name}" />
+		<browser assert="{@account_name}" />
+	</table>
+	<!--
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	-->
+	<puts text="Test: Calendar_0826.xml finished." />
+</soda>

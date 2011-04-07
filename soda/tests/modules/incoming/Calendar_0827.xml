@@ -1,0 +1,113 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as admin user.
+			2. Create a user such as "will".
+			3. Schedule a meeting such as "Meeting1" with "Team"
+				and "Assigned to" fields set to be "admin".
+			4. Create a second meeting such as "Meeting2" with "Team"
+			field set to be "Global" and "Assigned to" field set to be "admin".
+			5. Create a third meeting such as "Meeting3" with "Team"
+			field set to be "will" and "Assigned to" field set to be "will".
+			6. Logout.
+			7. Login to system as "will".
+			8. Go to meeting list view.
+		Expectations:
+			8.Meeting2 & Meeting3 scheduled are displayed in the list.
+	-->
+	<puts text="Test: Calendar_0827.xml starting." />
+	
+	<csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" var="sugar_init">
+		<var var="qa_name" set="{@sugar_init.last_name}" />
+		<var var="qa_pass" set="{@sugar_init.pass}" />
+	</csv>
+	
+	<!-- admin / admin -->
+	<link id="moduleTab_Meetings" />
+	<link text="Schedule Meeting" />
+	
+	<timestamp />
+	<var var="meeting1_name" set="Meeting for {@user.name} {@stamp}" />
+	<textfield id="name" set="{@meeting1_name}" />
+	
+	<textfield id="assigned_user_name" set="Administrator" jscriptevent="onkeydown" />
+	<textfield id="assigned_user_name" jscriptevent="onkeyup" click="false" />
+	<wait timeout="3" />
+	
+	<textfield id="team_name_collection_0" set="admin" jscriptevent="onkeydown" />
+	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+	<wait timeout="6" />
+	
+	<button value="Save" />
+	<wait timeout="20" />
+	
+	<!-- admin / Global -->
+	<link id="moduleTab_Meetings" />
+	<link text="Schedule Meeting" />	
+
+	<timestamp />
+	<var var="meeting2_name" set="Meeting for {@user.name} {@stamp}" />
+	<textfield id="name" set="{@meeting2_name}" />
+	
+	<textfield id="assigned_user_name" set="Administrator" jscriptevent="onkeydown" />
+	<textfield id="assigned_user_name" jscriptevent="onkeyup" click="false" />
+	<wait timeout="3" />
+	
+	<textfield id="team_name_collection_0" set="Global" jscriptevent="onkeydown" />
+	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+	<wait timeout="6" />
+	
+	<button value="Save" />
+	<wait timeout="20" />
+	
+	<!-- qauser / qauser -->
+	<link id="moduleTab_Meetings" />
+	<link text="Schedule Meeting" />	
+	
+	<timestamp />
+	<var var="meeting3_name" set="Meeting for {@user.name} {@stamp}" />
+	<textfield id="name" set="{@meeting3_name}" />
+	
+	<textfield id="assigned_user_name" set="{@qa_name}" jscriptevent="onkeydown" />
+	<textfield id="assigned_user_name" jscriptevent="onkeyup" click="false" />
+	<wait timeout="3" />
+	
+	<textfield id="team_name_collection_0" set="{@qa_name}" jscriptevent="onkeydown" />
+	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+	<wait timeout="6" />
+	
+	<button value="Save" />
+	<wait timeout="20" />
+	
+	<!--  Login as qauser, per init_lib -->
+	
+	<browser url="{@global.url}" />
+
+	<link text="Log Out" required="false" timeout="2" />
+	<browser assert="Please enter your user name and password" />
+
+	<textfield id="user_name" set="{@qa_name}" default="admin" />
+	<textfield id="user_password" set="{@qa_pass}" default="admin" />
+	
+	<button id="login_button" />
+
+	<browser assert="/Welcome(, | to Sugar!)/" />
+		
+	<link id="moduleTab_Meetings" />
+	
+	<wait timeout="10" />
+	
+	<table class="list view">
+		<browser assertnot="{@meeting1_name}" />
+		<browser assert="{@meeting2_name}" />
+		<browser assert="{@meeting3_name}" />
+	</table>
+
+	<!-- clean up as admin -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	
+	
+	<puts text="Test: Calendar_0827.xml finished." />
+</soda>

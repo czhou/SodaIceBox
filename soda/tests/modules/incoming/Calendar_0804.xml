@@ -1,0 +1,44 @@
+<soda>
+	<!--
+		Action:
+			1. Log in as a valid user.
+			2. Create a Lead
+			3. Go to Lead's Detailview
+			4. Click on the Schedule Meeting button on the Activities subpanel.
+			5. Fill in all required fields.
+			6. Click the Save button.
+		Expectations:
+			6. The scheduled call record is displayed in "Activities" sub-panel.
+	-->
+	<puts text="Test: Calendar_0804.xml starting." />
+
+	
+	<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
+
+	<div id="list_subpanel_activities">
+		<button id="Activities_schedulemeeting_button" />
+	</div>
+	
+	<wait timeout="2" />
+	
+	<div id="subpanel_activities_newDiv">
+		<timestamp />
+		<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record">
+			<textfield id="name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+		</csv>
+	</div>
+	
+	<button id="Meetings_subpanel_save_button" />
+
+	<wait timeout="14" />
+	
+	<div id="list_subpanel_activities">
+		<browser assert="{@meeting_record.name} {@user.name} {@stamp}" />
+	</div>
+	
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />	
+	
+	<puts text="Test: Calendar_0804.xml finished." />
+</soda>
