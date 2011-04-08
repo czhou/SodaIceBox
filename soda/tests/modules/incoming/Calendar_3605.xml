@@ -1,0 +1,94 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calendar" tab in navigation bar.
+			3. Click "Shared" button on "Calendar" page.
+			4. Click "Edit" link on "Calendar Shared" page.
+			5. Select a team by "Filter user list by team" drop down list.
+			6. Select a user form "User" sub-panel.
+			7. Click "Select" button in "User" sub-panel.
+		Expectation:
+			7. The selected users' calendar is displayed in Shared Calendar panel.
+	-->
+	<puts text="Test: Calendar_3605.xml starting." />
+
+	<timestamp />
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+
+	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record" />
+		<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
+
+		<textfield name="duration_hours" set="{@call_record.duration_hours}" />
+		<select name="duration_minutes" set="{@call_record.duration_minutes}" />
+
+		<select id="direction" set="{@call_record.direction}" />
+		<select id="status" set="{@call_record.status}" />
+
+		<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
+		<textfield id="description" set="{@call_record.description}" />
+
+		<var var="call1_name" set="{@call_record.name} {@user.name} {@stamp}" />
+	<button value="Save" />
+
+	<timestamp />
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+
+	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record" />
+		<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />	
+		
+		<csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" var="init_lib" />
+		<var var="qa_user" set="{@init_lib.last_name}" />
+		
+		<textfield id="assigned_user_name" set="{@qa_user}" jscriptevent="onkeydown" />
+		<textfield id="assigned_user_name" jscriptevent="onkeyup" click="false" />
+		<wait timeout="4" />
+		
+		<textfield name="duration_hours" set="{@call_record.duration_hours}" />
+		<select name="duration_minutes" set="{@call_record.duration_minutes}" />
+
+		<select id="direction" set="{@call_record.direction}" />
+		<select id="status" set="{@call_record.status}" />
+
+		<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
+		<textfield id="description" set="{@call_record.description}" />
+
+		<var var="call2_name" set="{@call_record.name} {@user.name} {@stamp}" />
+	<button value="Save" />
+	
+	<link id="moduleTab_Calendar" />
+	<button value=" Shared " />
+	
+	<table id="calendarModule">
+		<link text="Edit" />
+	</table>
+	
+	<select id="shared_ids" set="{@qa_user}" />
+	
+	<table id="calendarModule">
+		<button value="Select" />
+	</table>
+	
+	<table id="daily_cal_table">
+		<browser assert="{@call2_name}" />
+		<browser assertnot="{@call1_name}" />
+	</table>
+	
+	<!-- important to reset the value for whose calendar is shown / persistent -->
+	
+	<table id="calendarModule">
+		<link text="Edit" />
+	</table>
+	
+	<select id="shared_ids" set="Administrator" />
+	
+	<table id="calendarModule">
+		<button value="Select" />
+	</table>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_3605.xml finished." />
+</soda>
