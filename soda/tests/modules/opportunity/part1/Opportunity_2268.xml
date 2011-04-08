@@ -59,6 +59,7 @@
 
 	<!--Run Delete XML-->
 	<link id="moduleTab_Contacts" />
+	<link text="Basic Search" required="false" />
 	<button id="search_form_clear" />
 	<form id="search_form">
 		<textfield id="search_name_basic"
