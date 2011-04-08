@@ -6,8 +6,7 @@
 	<!--create call record-->
 	<script file="{@global.scriptsdir}/modules/lib/Note_Create_Lib.xml" />
 
-	<link id="moduleTab_Calendar" />
-	<browser assert="Task List" />
+	<link id="moduleTab_Notes" />
 	<link text="View Notes" />
 
 	<button id="search_form_clear" />

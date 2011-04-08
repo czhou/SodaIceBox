@@ -78,6 +78,7 @@
 		<!--Contact select-->
 		<button id="btn_billing_contact_name" />
 		<browser assert="Contact Search" />
+		<button value="Clear" />
 		<textfield name="first_name_advanced" set="{@pre_contact_first_name}" />
 		<button value="Search" />
 		<table class="list view">

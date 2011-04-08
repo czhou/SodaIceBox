@@ -3,8 +3,7 @@
     
          <script file='{@global.scriptsdir}/modules/activities/Activities_0489.xml'/>     
          
-         <link id='moduleTab_Activities'/>
-	 <browser assert="Task List"/>
+         <link id='moduleTab_Notes'/>
          <link text='View Notes'/>
 
          <button id='search_form_clear'/>

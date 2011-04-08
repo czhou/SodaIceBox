@@ -11,8 +11,7 @@
 	<var var="second_note" set="{@pre_note_name}" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 
-	<link id="moduleTab_Calendar" />
-	<browser assert="Task List" />
+	<link id="moduleTab_Notes" />
 	<link text="View Notes" />
 
 	<button id="search_form_clear" />
