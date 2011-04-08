@@ -2,7 +2,7 @@
 	<!-- Activities_10507.xml: Activities tab does not appear on the navbar. -->
 	<puts text="Test: Activities_10507.xml starting." />
 	
-	<link id="moduleTac_Calendar" exists="false" />
+	<link id="moduleTab_Calendar" exists="false" />
 
 	<puts text="Test: Activities_10507.xml finished." />
 </soda>

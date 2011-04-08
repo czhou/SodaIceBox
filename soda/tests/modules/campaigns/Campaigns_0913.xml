@@ -33,28 +33,28 @@
 	<!--Verify the start pagination button-->
 	<link id="moduleTab_Campaigns" />
 	<button name="listViewNextButton" />
-	<wait timeout="1" />
 	<span class="pageNumbers" assert="(3 - 4 of 6)" />
-
+	<wait timeout="1" />
+	
 	<button name="listViewNextButton" />
-	<wait timeout="1" />
 	<span class="pageNumbers" assert="(5 - 6 of 6)" />
-
-	<button name="listViewPrevButton" />
 	<wait timeout="1" />
+	
+	<button name="listViewPrevButton" />
 	<span class="pageNumbers" assert="(3 - 4 of 6)" />
+	<wait timeout="1" />
 
 	<button name="listViewPrevButton" />
-	<wait timeout="1" />
 	<span class="pageNumbers" assert="(1 - 2 of 6)" />
+	<wait timeout="1" />
 
 	<button name="listViewEndButton" />
-	<wait timeout="1" />
 	<span class="pageNumbers" assert="(5 - 6 of 6)" />
+	<wait timeout="1" />
 
 	<button name="listViewStartButton" />
-	<wait timeout="1" />
 	<span class="pageNumbers" assert="(1 - 2 of 6)" />
+	<wait timeout="1" />
 
 	<!--change the item number of list view-->
 	<link text="Admin" />

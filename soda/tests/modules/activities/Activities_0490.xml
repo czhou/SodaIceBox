@@ -6,7 +6,7 @@
          <script file='{@global.scriptsdir}/modules/lib/Note_Create_Lib.xml'/>     
          <script file='{@global.scriptsdir}/modules/lib/Note_Create_Lib.xml'/>     
          
-         <link id='moduleTac_Notes'/>
+         <link id='moduleTab_Notes'/>
          <link text='View Notes'/>
 
 

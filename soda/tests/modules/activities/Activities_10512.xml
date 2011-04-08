@@ -9,10 +9,10 @@
 
 	<div id="themeTabGroup_Activities">
 		<ul class="first-of-type">
-			<link id="moduleTac_Calls" exists="true" />
-			<link id="moduleTac_Meetings" exists="true" />
-			<link id="moduleTac_Notes" exists="true" />
-			<link id="moduleTac_Tasks" exists="true" />
+			<link id="moduleTab_Calls" exists="true" />
+			<link id="moduleTab_Meetings" exists="true" />
+			<link id="moduleTab_Notes" exists="true" />
+			<link id="moduleTab_Tasks" exists="true" />
 		</ul>
 	</div>
 

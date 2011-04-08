@@ -20,7 +20,7 @@
 
 	<browser assert="{@pre_call_name}" />
 	<link text="Print" click="false" />
-	<link id="moduleTac_Calendar" alert="true" />
+	<link id="moduleTab_Calendar" alert="true" />
 	<!--delete task record-->
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<puts text="Test: Activities_0732.xml finisheds" />

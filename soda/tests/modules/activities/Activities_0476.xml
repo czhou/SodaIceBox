@@ -5,7 +5,7 @@
         <script file='{@global.scriptsdir}/modules/lib/Task_Create_Lib.xml'/>    
         <timestamp/>
         
-        <link id='moduleTac_Tasks'/>
+        <link id='moduleTab_Tasks'/>
         <link text='View Tasks'/>
         
         <button id="search_form_clear"/>
