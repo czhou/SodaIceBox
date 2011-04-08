@@ -7,7 +7,8 @@
 	<link text="Admin" />
 	<browser assert="Administration" />
 	<link text="License Management" />
-	<browser assert="Manage license properties" />
+	<browser assert="License Management" />
+	<browser assert="License Validation" />
 	<button value="  Edit  " />
 	<textfield name="license_key" set="cfe914866b7c871b231d42abc805b638" />
 	<button value="  Save  " />
