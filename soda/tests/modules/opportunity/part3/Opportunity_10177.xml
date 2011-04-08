@@ -8,11 +8,7 @@
 		<link text="Basic Search" />
 	</wait>
 	<button id="search_form_clear" />
-<<<<<<< HEAD
 	<textfield id="range_amount_advanced" set="{@opp_record.amount}" />
-=======
-	<textfield id="amount_advanced" set="{@opp_record.amount}" />
->>>>>>> refs/remotes/origin/6_1_5
 	<button id="search_form_submit" />
 	<browser assert="{@pre_opp_name}" />
 	<link text="Basic Search" />

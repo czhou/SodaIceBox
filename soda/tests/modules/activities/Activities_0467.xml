@@ -4,8 +4,7 @@
         <!--create call record-->
         <script file='{@global.scriptsdir}/modules/lib/Note_Create_Lib.xml'/>    
         
-        <link id='moduleTab_Activities'/>
-	<browser assert="Task List"/>
+        <link id='moduleTac_Notes'/>
         <link text='View Notes'/>
         
         <button id="search_form_clear"/>
@@ -17,7 +16,7 @@
         
         <button name='Delete' alert='true'/>
         
-        <link id='moduleTab_Activities'/>
+        <link id='moduleTac_Notes'/>
 	<browser assert="Task List"/>
         <link text='View Notes'/>
         
