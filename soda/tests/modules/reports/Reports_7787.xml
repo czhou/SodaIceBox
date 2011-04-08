@@ -1,0 +1,37 @@
+<soda>
+	<!-- Report_print_as_PDF -->
+	<puts text="Test: Reports_7787.xml started." />
+
+	<script file="{@global.scriptsdir}/modules/reports/Reports_7734.xml" />
+
+	<!--goto Report module -->
+	<link id="moduleTab_Reports" />
+	<link text="Basic Search" required="false" />
+	<wait timeout="5" />
+	<button value=" Clear " />
+	<textfield name="name_basic" set="{@report_record_7734.save_report_as}" />
+	<button value="Search" />
+	<wait timeout="5" />
+	<table class="list view">
+		<link text="{@report_record_7734.save_report_as}" />
+	</table>
+	<browser assert="Title: {@report_record_7734.save_report_as}" />
+
+	<button id="printPDFButton" alert="false" />
+	
+	<!--Delete created Report -->
+	<link id="moduleTab_Reports" />
+	<link text="Basic Search" required="false" />
+	<wait timeout="5" />
+	<form class="search_form">
+		<button name="clear" />
+		<textfield name="name_basic" set="{@report_record_7734.save_report_as}" />
+		<button value="Search" />
+	</form>
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+
+	<puts text="Test: Reports_7787.xml finished." />
+</soda>

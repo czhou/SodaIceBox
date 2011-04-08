@@ -1,0 +1,62 @@
+<soda>
+	<!-- filter data field without data seletor -->
+	<puts text="Test: Reports_8440.xml started." />
+	<timestamp />
+
+	<!--goto Report module -->
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<browser assert="Report Wizard" />
+
+	<!--create row and column report -->
+	<image name="rowsColsImg" click="true" />
+	<table id="Calls">
+		<link text="Calls" />
+	</table>
+
+	<wait timeout="3" />
+	<div text="Date End" click="true" />
+	<wait timeout="2" />
+	<div text="Date Created" click="true" />
+	<wait timeout="2" />
+	<div text="Date Modified" click="true" />
+	<wait timeout="2" />
+
+	<div id="filter_designer_div">
+		<select name="qualify" index="1" set="Tomorrow" />
+		<select name="qualify" index="2" set="Yesterday" />
+		<select name="qualify" index="3" set="Today" />
+	</div>
+
+	<button name="Next &gt;" />
+
+	<div text="Date End" click="true" />
+	<div text="Date Created" click="true" />
+	<div text="Date Modified" click="true" />
+
+	<button name="Next &gt;" />
+
+	<csv file="{@global.scriptsdir}\csvs\reports\Reports_7734.csv" var="report_record_8440">
+		<textfield name="save_report_as" set="{@report_record_8440.save_report_as} {@stamp}" />
+	</csv>
+
+	<button name="Save and Run" />
+	<wait />
+	<browser assert="Title: {@report_record_8440.save_report_as} {@stamp}" />
+	<!--Delete created Report -->
+	<link id="moduleTab_Reports" />
+	<link text="Basic Search" required="false" />
+	<wait timeout="5" />
+	<form class="search_form">
+		<button name="clear" />
+		<textfield name="name_basic" set="{@report_record_8440.save_report_as} {@stamp}" />
+		<button value="Search" />
+	</form>
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	
+	
+	<puts text="Test: Reports_8440.xml finished." />
+</soda>

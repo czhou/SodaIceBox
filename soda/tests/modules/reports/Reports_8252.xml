@@ -1,0 +1,32 @@
+<soda>
+	<!-- create data format -->
+	<puts text="Test: Reports_8252.xml starting" />
+
+	<!--goto Report module -->
+	<link id="moduleTab_Reports" />
+	<link text="Manage Enterprise Reports" />
+	<link text="Create Custom Query" />
+
+	<browser assert="Custom Queries" />
+
+	<csv file="{@global.scriptsdir}\csvs\reports\Reports_8252.csv" var="report_record_8252">
+		<textfield name="name" set="{@report_record_8252.name}" />
+		<textfield name="description" set="{@report_record_8252.description}" />
+		<textfield name="custom_query" set="{@report_record_8252.custom_query}" />
+	</csv>
+	<button value="Save" />
+
+	<browser assertnot="This Query is invalid" />
+
+	<link id="moduleTab_Reports" />
+	<link text="Manage Enterprise Reports" />
+	<button name="clear" />
+	<button value="Search" />
+	<wait timeout="5" />
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+
+	<puts text="Test: Reports_8252.xml finished" />
+</soda>
