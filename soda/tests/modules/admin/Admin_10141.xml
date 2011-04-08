@@ -36,16 +36,17 @@
 	
 	<wait timeout="3" />
 	<textarea id="formulaInput" set="abs(0,3,2)" />
-	<wait timeout="6" />
+	<wait timeout="3" />
 
 	<button id="fomulaSaveButton" />
-	<wait timeout="9" />
+	<wait timeout="5" />
 
 	<div id="sugarMsgWindow">
-		<div id="sugarMsgWindow_h" assert="Validation Failed" />
+		<div id="sugarMsgWindow_h" assert="Invalid Formula" />
 		<div class="bd" assert="/.*Requires exactly \d+ parameter.*/" />
+		<link href="#" />
 	</div>
-
+	
 	<button value="Cancel" />
 
 	<button name="cancelbtn" />

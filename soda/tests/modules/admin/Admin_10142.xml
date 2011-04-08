@@ -41,8 +41,9 @@
 	<wait timeout="9" />
 
 	<div id="sugarMsgWindow">
-		<div id="sugarMsgWindow_h" assert="Validation Failed" />
+		<div id="sugarMsgWindow_h" assert="Invalid Formula" />
 		<div class="bd" assert="/.*Syntax Error.*/" />
+		<link href="#" />
 	</div>
 
 	<button value="Cancel" />

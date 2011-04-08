@@ -4,7 +4,7 @@
 		b) Go to Admin | Connectors | Set Connector Properties | Twitter tab
 		
 		Results:
-		b) Make sure Twitter tab is shown and its URL is set to "http://widgets.twimg.com/j/2/widget.js".
+		b) Make sure Twitter tab is shown ".
 	-->
 	<puts text="Text: Reports_9894.xml Starting." />
 
@@ -19,9 +19,11 @@
 			</li>
 		</div>
 	</div>
-	
-	<textarea id="ext_rest_twitter_company_url"
-		assert="http://widgets.twimg.com/j/2/widget.js" />
-	
+	<div class="yui-content">
+		<browser assert="Consumer Key:" />
+		<browser assert="Consumer Secret:" />
+		<textfield id="ext_rest_twitter_oauth_consumer_key"	assert="" />
+		<textfield id="ext_rest_twitter_oauth_consumer_secret" assert="" />
+	</div>
 	<puts text="Test: Reports_9892.xml finished." />
 </soda>

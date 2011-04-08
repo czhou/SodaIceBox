@@ -19,7 +19,7 @@
     <browser assert='Teams: Global'/>
     <div id='list_subpanel_users'>
         <table class='list view'>
-            <link text='Global' click='false'/>
+            <link text='Administrator' click='false'/>
         </table>
         <link class='listViewTdToolsS1' index='1' alert='true'/>
 		<wait timeout='3' />

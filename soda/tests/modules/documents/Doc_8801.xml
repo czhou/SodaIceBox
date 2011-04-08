@@ -10,8 +10,10 @@
 	<button name="clear" />
 	<textfield id="document_name_basic" set="{@Doc_Name}" />
 	<button id="search_form_submit" />
-
-	<link text="{@Doc_Name}" />
+	<wait timeout="3" />
+	<table class="list view">
+		<link text="{@Doc_Name}" />
+	</table>
 	<browser assert="Documents" />
 
 	<button id="duplicate_button" />
