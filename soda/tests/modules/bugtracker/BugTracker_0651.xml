@@ -34,7 +34,7 @@
 			<textfield id="description" set="{@bug_tracker_record_651.description}" />
 		
 			<button id="Calls_subpanel_save_button" />
-			<wait timeout="3" />
+			<wait timeout="5" />
 		</form>
 	
 		<div id="list_subpanel_history">

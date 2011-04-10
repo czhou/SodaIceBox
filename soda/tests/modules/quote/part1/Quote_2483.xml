@@ -33,7 +33,7 @@
 	<!--Set payment_terms back because of case 2502-->
 	<button id='edit_button'/>
 	<select id='payment_terms' set="Net 15" />
-	<button id="SAVE_HEADER"/>
+	<button value="Save" name="button"/>
     </csv>
     <!--Run Delete XML-->
     <puts text='---Quote_2483.xml---Finished!'/>

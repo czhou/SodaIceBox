@@ -1,0 +1,32 @@
+<soda>
+	<!-- edit advance search -->
+	<puts text="Test: Reports_8342.xml starting" />
+
+
+	<!--goto Report module -->
+	<link id="moduleTab_Reports" />
+	<link text="Advanced Search" />
+	<textfield name="name" set="test_for_advance_search" />
+	<select name="report_module[]" set="Contracts" />
+	<select name="report_type[]" set="Rows and Columns" />
+	<checkbox name="favorite" set="true" />
+	<select name="team_id[]" set="qauser" />
+	<checkbox name="current_user_only" set="true" />
+	<button name="clear" />
+
+
+	<textfield name="name" assert="" />
+	<select name="report_module[]" assert="" />
+	<select name="report_type[]" assert="" />
+	<checkbox name="favorite" assert="false" />
+	<select name="team_id[]" assert="" />
+	<checkbox name="current_user_only" assert="false" />
+
+	<link id="moduleTab_Reports" />
+	<link text="Basic Search" />
+	<button name="clear" />
+	<button value="Search" />
+	<wait timeout="5" />
+	
+	<puts text="Test: Reports_8342.xml finished" />
+</soda>

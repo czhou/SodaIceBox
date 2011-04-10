@@ -1,0 +1,21 @@
+<soda>
+	<!-- run row and column reports -->
+	<puts text="Test: Reports_8067.xml starting" />
+
+	<!--goto Report module -->
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<browser assert="Report Wizard" />
+
+	<!--create row and column report -->
+	<image name="rowsColsImg" click="true" />
+	<table id="Contracts">
+		<link text="Contracts" />
+	</table>
+
+	<div id="module_tree_panel">
+		<link text="Contracts" click="false" />
+	</div>
+
+	<puts text="Test: Reports_8067.xml finished" />
+</soda>

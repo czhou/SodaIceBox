@@ -1,0 +1,53 @@
+<soda>
+	<!-- Remove Note_Verify that note can be removed from "Notes" sub-panel when using "rem" function. -->
+	
+	<puts text="Test: Calendar_0724.xml starting" />
+
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
+
+	<link id="moduleTab_Activities" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Calendar&amp;action=index" click="false" />
+	</div>
+	<link text="View Meetings" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Meetings&amp;action=index" click="false" />
+		<browser assert="Search" />
+	</div>
+	<textfield id="name_basic" set="{@pre_meeting_name}" />
+	<button id="search_form_submit" />
+	<wait timeout="3" />
+
+	<link text="{@pre_meeting_name}" />
+	<wait timeout="3" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Meetings&amp;action=index" click="false" />
+		<browser assert="{@pre_meeting_name}" />
+	</div>
+	<csv file="{@global.scriptsdir}/csvs/calendar/Calendar_0722.csv" var="calendar_0724" />
+	<div id="list_subpanel_history">
+		<button name="History_createnoteorattachment_button" />
+	</div>
+	<div id="form_SubpanelQuickCreate_Notes_tabs">
+		<textfield id="name" set="{@calendar_0724.subject}" />
+		<textfield id="description" set="{@calendar_0724.description}" />
+	</div>
+
+	<form id="form_SubpanelQuickCreate_Notes">
+		<button id="Notes_subpanel_save_button" />
+	</form>
+	<wait timeout="5" />
+
+	<div id="list_subpanel_history">
+		<link class="listViewTdToolsS1" index="2" />
+	</div>
+	<wait timeout="3" />
+
+	<div id="list_subpanel_history">
+		<link text="{@calendar_0724.subject2}" exist="false" />
+	</div>
+
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+
+	<puts text="Test: Calendar_0724.xml finished" />
+</soda>
