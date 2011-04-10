@@ -39,7 +39,7 @@
 	<wait timeout="5" />
 
 	<div id="list_subpanel_history">
-		<link class="listViewTdToolsS1" index="2" />
+		<link class="listViewTdToolsS1" index="2" alert="true" />
 	</div>
 	<wait timeout="3" />
 

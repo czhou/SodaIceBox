@@ -44,7 +44,7 @@
 	<textfield id="name" set="{@calendar_0723.subject2}" />
 	<textfield id="description" set="{@calendar_0723.description2}" />
 
-	<button value="Cancel" alert="false" />
+	<button value="Cancel" alert="true" />
 	<wait timeout="3" />
 	
 	<div id="list_subpanel_history">
