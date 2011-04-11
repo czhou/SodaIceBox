@@ -5,8 +5,8 @@
 
 	<!--goto Report module -->
 	<link id="moduleTab_Reports" />
-	<link text="Manage Enterprise Reports" />
-	<link text="Create Enterprise Report" />
+	<link text="Manage Advanced Reports" />
+	<link text="Create Advanced Report" />
 
 	<csv file="{@global.scriptsdir}\csvs\reports\Reports_7734.csv" var="report_record_8127">
 		<textfield name="name" set="{@report_record_8127.save_report_as} {@stamp}" />
