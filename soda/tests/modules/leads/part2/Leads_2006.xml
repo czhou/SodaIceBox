@@ -20,6 +20,8 @@
 		<textfield name="Callsdescription" set="{@Leads_2006.Appointmentsdescription}" />
 		<button value="Save" />
 		<wait timeout="5" />
+		
+		<button value="Create Account" required="false"/>
 		<!--verify -->
 		<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
 		<wait timeout="5" />
