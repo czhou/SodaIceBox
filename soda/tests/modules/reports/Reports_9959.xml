@@ -102,7 +102,7 @@
 	</div>
 	
 	<table id="Accounts" jscriptevent="onclick" />
-	<wiat timeout="1"/>	
+	<wait timeout="1"/>	
 	<row id="yui-rec17" click="true" />		<!-- Office Phone -->
 	
 	<row id="Filter.1_table_filter_row_1">
