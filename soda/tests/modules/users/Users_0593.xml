@@ -34,8 +34,8 @@
     <button value='Search'/>
     <link text='Administrator'/>
     <!--Verify add succeccful-->
-    <table class='list view'>
-        <span class='pageNumbers' assert='(1 - 2 of 2)'/>
-    </table>
+    <div id='list_subpanel_users'>
+        <browser assert="Administrator" />
+    </div>
     <puts text="---User_0593:Remove team from user---Finished!"/>
 </soda>
