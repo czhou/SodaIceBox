@@ -11,8 +11,8 @@
         <!--create portal user-->
         <link text="Create Portal API User"/>
         <csv file="{@global.scriptsdir}/csvs/users/Users_0621.csv" var="User0621">
-             <textfield name="sugar_user_name" set="{@User0621.name}{@stamp}" jscriptevent="onkeyup" />
-             <textfield id="unique_name" set="{@User0621.username}{@stamp}" jscriptevent="onkeyup" />
+             <textfield name="sugar_user_name" set="{@User0621.name}{@stamp}" jscriptevent="onchange" />
+             <textfield id="unique_name" set="{@User0621.username}{@stamp}" jscriptevent="onchange" />
              <select name="status" set="{@User0621.status}"/>
              <textfield id="Users0emailAddress0" set="{@User0621.email_address}" jscriptevent="onchange" />
              <link text="Password"/>
