@@ -35,7 +35,7 @@
 	<button id="listViewNextButton" />
 	<wait timeout="1" />
 	<span class="pageNumbers" assert="(3 - 4 of 6)" />
-	<wait timeout="10" />
+	<wait timeout="8" />
 	
 	<button id="listViewNextButton" />
 	<wait timeout="1" />
