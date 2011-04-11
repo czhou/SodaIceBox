@@ -21,7 +21,7 @@
 		<button value="Save" />
 		<wait timeout="5" />
 		<!--verify -->
-		<link text="Mr. {@pre_lead_first_name} {@pre_lead_last_name}" />
+		<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
 		<wait timeout="5" />
 		<div id="subpanel_activities">
 			<table class="list view">
