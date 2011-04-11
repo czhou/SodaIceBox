@@ -133,6 +133,13 @@
 		<reason>bug41276 php error in activities calendar</reason>
 		<modulename>Accounts</modulename>
 	</block>
+	
+	<block>
+		<testfile>Admin_9918</testfile>
+		<bugnumber>43354</bugnumber>
+		<reason>Product JavaScript Error</reason>
+		<modulename>Admin</modulename>
+	</block>
 
 	<block>
 		<testfile>Contacts_4326</testfile>
