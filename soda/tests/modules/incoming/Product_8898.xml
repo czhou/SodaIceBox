@@ -1,0 +1,32 @@
+<soda>
+
+	<puts text="Test: Product_8898.xml starting" />
+
+	<csv file="{@global.scriptsdir}/csvs/product/product_8898.csv" var="product_8898">
+
+		<!--Create Product -->
+		<timestamp />
+		<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Create_Lib.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+		<link href="index.php?module=Products&amp;action=index" />
+		<link text="Create Product" />
+		<form id="EditView">
+			<button value="Select" />
+		</form>
+		<table class="list view">
+			<link text="{@pre_ProductCatalog_name}" />
+		</table>
+		<button name="button" value="Save" />
+
+		<var var="product_8898" set="{@product_8898.name} {@user.name} {@stamp}" />
+	</csv>
+	<!--Run Delete XML -->
+
+	<script file="{@global.scriptsdir}/modules/lib/Product_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductCategory_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Manufacturer_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductType_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Delete_Lib.xml" />
+	<puts text="Test: Product_8898.xml finished" />
+</soda>
