@@ -26,7 +26,7 @@
 	<div class="moduleTitle">
 		<link href="index.php?module=Leads&amp;action=index" click="false" />
 		<browser
-			assert="{@Lead_New_Record.first_name} {@user.name} {@stamp} {@Lead_New_Record.last_name}" />
+			assert="Mr. {@Lead_New_Record.first_name} {@user.name} {@stamp} {@Lead_New_Record.last_name}" />
 	</div>
 
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
