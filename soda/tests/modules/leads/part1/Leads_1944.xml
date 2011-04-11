@@ -37,7 +37,7 @@
 			<link text="{@Leads_1944.emailSubject0}" />
 		</table>
 	</div>
-	<browser assert="Sent Emails&gt;&gt;{@Leads_1944.emailSubject0}" />
+	<browser assert="{@Leads_1944.emailSubject0}" />
 	<!--delete the email-->
 	<button value="    Delete    " alert="true" />
 	<wait timeout="5" />
