@@ -20,7 +20,7 @@
 			assert="{@Lead_New_Record.first_name} {@user.name} {@stamp} {@Lead_New_Record.last_name}" />
 	</table>
 
-	<span id="adspan_{@pre_lead_id}" jscriptevent="onmouseover" exists="true" />
+	<span id="adspan_{@pre_lead_id}" exists="true" />
 
 	<wait timeout="3" />
 	<div id="overDiv">
