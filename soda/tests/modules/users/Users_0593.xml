@@ -11,7 +11,7 @@
     <button value='Clear'/>
     <textfield name='name_basic' set='Global'/>
     <button value='Search'/>
-    <wait timeout='3' />
+    <wait timeout='5' />
     <table class='list view'>
         <link text='Global'/>
     </table>
