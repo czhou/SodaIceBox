@@ -23,7 +23,7 @@
 	<div class="moduleTitle" assert="{@pre_bug_name}" click="false" />
 
 	<span id="bug_number" vartext="bug_number" />
-	<puts text="{@bug_number}" />
+	<puts var="{@bug_number}" />
 
 	<!--edit and save this bug-->
 	<button id="edit_button" />

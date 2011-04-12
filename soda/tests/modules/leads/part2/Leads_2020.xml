@@ -30,9 +30,9 @@
 		<textfield id="last_name" set="{@Leads_2020.last_name}" />
 
 	</csv>
-	<wait timeout="5" />
+	<wait timetou="5" />
 	<button value="  Cancel  " alert="true" />
-	<wait timeout="5" />
+	<wait timetou="5" />
 	<!--verify-->
 	<link id="moduleTab_Leads" />
 	<div class="moduleTitle">

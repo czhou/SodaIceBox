@@ -103,5 +103,5 @@
 	</csv>
 
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
-	<puts text="Test: Leads_2024.xml finished." />
+	<puts test="Test: Leads_2024.xml finished." />
 </soda>

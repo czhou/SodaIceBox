@@ -27,7 +27,7 @@
 	<textfield id="name_advanced" set="{@pre_account_name}" />
 	<button value="Search" />
 	<link text="{@pre_account_name}" />
-	<wait timeout="3" />
+	<wait timeout="1" />
 	<button id="update_button" alert="true" />
 	<wait timeout="3" />
 	<!--first note record-->
@@ -41,7 +41,7 @@
 	<table class="list view">
 		<link text="{@first_note}" />
 	</table>
-	<wait timeout="5" />
+	<wait timeout="2" />
 	<browser assert="{@pre_account_name}" />
 
 	<!--create note record-->

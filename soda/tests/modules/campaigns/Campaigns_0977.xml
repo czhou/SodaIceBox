@@ -17,8 +17,8 @@
 	<browser assert="My Items" />
 	<div id="content">
 		<button name="clear" />
-		<textfield id="name_basic" set="{@TargetList_Name}" />
-		<button class="button" value="Search" />
+		<textfield id="name_basic" type="text" set="{@TargetList_Name}" />
+		<button class="button" type="submit" value="Search" />
 	</div>
 
 	<form id="MassUpdate">

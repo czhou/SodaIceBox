@@ -65,34 +65,6 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
-		<testfile>Calendar_0703</testfile>
-		<bugnumber>39955</bugnumber>
-		<reason>bug 39955 - false duplicate account warning</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0705</testfile>
-		<bugnumber>39955</bugnumber>
-		<reason>bug 39955 - false duplicate account warning</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0706</testfile>
-		<bugnumber>39955</bugnumber>
-		<reason>bug 39955 - false duplicate account warning</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0716</testfile>
-		<bugnumber>39955</bugnumber>
-		<reason>bug 39955 - false duplicate account warning</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
 		<testfile>Accounts_0130</testfile>
 		<bugnumber>39955</bugnumber>
 		<reason>bug 39955 - false duplicate account warning</reason>
@@ -133,13 +105,6 @@
 		<reason>bug41276 php error in activities calendar</reason>
 		<modulename>Accounts</modulename>
 	</block>
-	
-	<block>
-		<testfile>Admin_9918</testfile>
-		<bugnumber>43354</bugnumber>
-		<reason>Product JavaScript Error</reason>
-		<modulename>Admin</modulename>
-	</block>
 
 	<block>
 		<testfile>Contacts_4326</testfile>
@@ -153,34 +118,6 @@
 		<bugnumber></bugnumber>
 		<reason>Send key re-attached to previous window</reason>
 		<modulename>Contacts</modulename>
-	</block>
-	
-	<block>
-		<testfile>Leads_1993</testfile>
-		<bugnumber>43347</bugnumber>
-		<reason>43347</reason>
-		<modulename>Leads</modulename>
-	</block>
-	
-	<block>
-		<testfile>Leads_1908</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Pagination buttons not working</reason>
-		<modulename>Leads</modulename>
-	</block>
-	
-	<block>
-		<testfile>Leads_10170</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Pagination buttons not working</reason>
-		<modulename>Leads</modulename>
-	</block>
-	
-	<block>
-		<testfile>Accounts_0017</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Pagination buttons not working</reason>
-		<modulename>Accounts</modulename>
 	</block>
 	
 	<block>
@@ -214,6 +151,7 @@
 		<reason>feature changed</reason>
 		<modulename>opportunity</modulename>
 	</block>
+	
 	
 	<block>
 		<testfile>Opportunity_2311</testfile>
@@ -263,44 +201,21 @@
 		<reason>bug 37260</reason>
 		<modulename>Knowledge Base</modulename>
 	</block>
-
-	<!--Randy's Modules-->	
+	
+	<!--Randy's modules-->
 	<block>
-                <testfile>contract_1661</testfile>
-                <bugnumber>42741</bugnumber>
-                <reason>bug 42741</reason>
-                <modulename>contracts</modulename>
-        </block>
-
-	<block>
-                <testfile>contract_1667</testfile>
-                <bugnumber>42741</bugnumber>
-                <reason>bug 42741</reason>
-                <modulename>contracts</modulename>
-        </block>
-
-	<block>
-		<testfile>contract_1655</testfile>
-		<bugnumber>42824</bugnumber>
-		<reason>bug 42824</reason>
+		<testfile>contract_1661</testfile>
+		<bugnumber>42741</bugnumber>
+		<reason>we don't support YUI custom jsevent</reason>
 		<modulename>contracts</modulename>
 	</block>
 
 	<block>
-                <testfile>contract_1662</testfile>
-                <bugnumber>42824</bugnumber>
-                <reason>bug 42824</reason>
-                <modulename>contracts</modulename>
-        </block>
-
-	<block>
-                <testfile>contract_1668</testfile>
-                <bugnumber>42824</bugnumber>
-                <reason>bug 42824</reason>
-                <modulename>contracts</modulename>
-        </block>
-
-
+		<testfile>contract_1667</testfile>
+		<bugnumber>42741</bugnumber>
+		<reason>we don't suport YUI custom jsevent</reason>
+		<modulename>contracts</modulename>
+	</block>
 	<block>
 		<testfile>contract_1688</testfile>
 		<bugnumber>36446</bugnumber>
@@ -322,45 +237,4 @@
 		<modulename>workflow</modulename>
 	</block>
 
-    <block>
-		<testfile>Accounts_0068</testfile>
-		<bugnumber>34670</bugnumber>
-		<reason>accounts_opportunities_select_button has been removed</reason>
-		<modulename>Accounts</modulename>
-	</block>
-
-    <block>
-		<testfile>Accounts_0070</testfile>
-		<bugnumber>34670</bugnumber>
-		<reason>accounts_opportunities_select_button has been removed</reason>
-		<modulename>Accounts</modulename>
-	</block>
-
-    <block>
-		<testfile>Accounts_0224</testfile>
-		<bugnumber>34670</bugnumber>
-		<reason>accounts_opportunities_select_button has been removed</reason>
-		<modulename>Accounts</modulename>
-	</block>
-
-    <block>
-		<testfile>Accounts_0225</testfile>
-		<bugnumber>34670</bugnumber>
-		<reason>accounts_opportunities_select_button has been removed</reason>
-		<modulename>Accounts</modulename>
-	</block>
-
-    <block>
-		<testfile>Accounts_0255</testfile>
-		<bugnumber>34670</bugnumber>
-		<reason>accounts_opportunities_select_button has been removed</reason>
-		<modulename>Accounts</modulename>
-	</block>
-
-	<block>
-		<testfile>Calendar_0706</testfile>
-		<bugnumber>42919</bugnumber>
-		<reason>mfleeger: Advanced Search not functioning on Meetings</reason>
-		<modulename>Calendar</modulename>
-	</block>
 </soda>

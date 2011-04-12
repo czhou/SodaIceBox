@@ -6,7 +6,7 @@
 	<wait timeout="3" />
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
-	<checkbox id="massall" click="true" />
+	<checkbox name="massall" click="true" />
 	<link id="actions_link" />
 	<link text="Delete" alert="true" />
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />

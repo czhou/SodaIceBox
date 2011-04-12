@@ -19,7 +19,7 @@
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 
 	<link id="moduleTab_Leads" />
-	<wait timeout="3" />
+	
 	<link text="Advanced Search" required="false" />
 	<textfield id="first_name_advanced" set="{@pre_lead_first_name}" />
 	<button id="search_form_submit" />
@@ -31,11 +31,8 @@
 	<textfield id="first_name_advanced" assertnot="{@pre_lead_first_name}" />
 	<browser assertnot = "{@lead1_first_name}" />
 	
-	<!--Restore back to basic search-->
-	<link id="moduleTab_Leads" />
-	<wait timeout="3" />
 	<link text="Basic Search" />
-	<wait timeout="3" />
+	<wait timeout="2" />
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
 	

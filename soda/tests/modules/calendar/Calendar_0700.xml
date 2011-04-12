@@ -18,7 +18,6 @@
 			<link text="{@pre_meeting_name}" />
 		</table>
 	</form>
-	<wait timeout="3" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Meetings&amp;action=index" click="false" />
 		<browser assert="{@pre_meeting_name}" />

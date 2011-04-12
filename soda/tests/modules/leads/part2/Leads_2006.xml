@@ -19,7 +19,6 @@
 		<textfield name="Callsname" set="{@Leads_2006.Appointmentsname}" />
 		<textfield name="Callsdescription" set="{@Leads_2006.Appointmentsdescription}" />
 		<button value="Save" />
-		<wait timeout="5" />
 		<!--verify -->
 		<link text="Mr. {@pre_lead_first_name} {@pre_lead_last_name}" />
 		<wait timeout="5" />

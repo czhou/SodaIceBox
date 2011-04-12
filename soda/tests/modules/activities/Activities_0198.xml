@@ -1,18 +1,19 @@
 <soda>
-	<!-- Account Detail Activities sub-panel Task_Verify that corresponding contact 
-		detail view -->
+	<!--
+		Account Detail Activities sub-panel Task_Verify that corresponding contact
+		detail view
+	-->
 	<puts text="Test: Activities_0198.xml starting." />
 
-	<!--Create a account record -->
+	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 
-	<!--Go its detail view -->
+	<!--Go its detail view-->
 	<browser assert="{@pre_account_name}" />
 
-	<!--Create Activities Subpanel -->
+	<!--Create Activities Subpanel-->
 	<button name="Activities_createtask_button" />
-	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0032.csv" var="activity_record_0197">
 		<div id="form_SubpanelQuickCreate_Tasks_tabs">
 			<textfield id="name" set="{@activity_record_0197.name} {@user.name} {@stamp}" />
@@ -20,27 +21,27 @@
 			<select id="status" set="{@activity_record_0197.status}" />
 			<textfield id="description" set="{@activity_record_0197.description}" />
 
-			<!--Due Date -->
+			<!--Due Date-->
 			<textfield id="date_due_date" set="{@activity_record_0197.date_due_date}" />
 			<select id="date_due_hours" set="{@activity_record_0197.date_due_hours}" />
 			<select id="date_due_minutes" set="{@activity_record_0197.date_due_minutes}" />
 			<checkbox id="date_due_flag" set="{@activity_record_0197.date_due_flag}" />
 
-			<!--Start Date -->
+			<!--Start Date-->
 			<textfield id="date_start_date" set="{@activity_record_0197.date_start_date}" />
 			<select id="date_start_hours" set="{@activity_record_0197.date_start_hours}" />
 			<select id="date_start_minutes" set="{@activity_record_0197.date_start_minutes}" />
 			<checkbox id="date_start_flag" set="{@activity_record_0197.date_start_flag}" />
 		</div>
 
-		<!--user select -->
+		<!--user select-->
 		<button id="btn_assigned_user_name" />
 		<browser assert="User Search" />
 		<textfield name="last_name_advanced" set="{@activity_record_0197.assigned_user_name}" />
 		<button value="Search" />
 		<link text="{@activity_record_0197.assigned_user_name}" />
 
-		<!--teams select -->
+		<!--teams select-->
 		<table id="form_SubpanelQuickCreate_Tasks_team_name_table">
 			<button value="Select" />
 		</table>
@@ -49,7 +50,7 @@
 		<button value="Search" />
 		<link text="{@activity_record_0197.team_name}" />
 
-		<!--Contact select -->
+		<!--Contact select-->
 		<button id="btn_contact_name" />
 		<browser assert="Contact Search" />
 		<textfield id="first_name_advanced" set="{@pre_contact_first_name}" />
@@ -60,7 +61,7 @@
 		<button id="Tasks_subpanel_save_button" />
 		<wait timeout="5" />
 
-		<!--Verify the task record created in subpanel -->
+		<!--Verify the task record created in subpanel-->
 		<div id="list_subpanel_activities">
 			<table class="list view">
 				<link text="{@activity_record_0197.name} {@user.name} {@stamp}" />
@@ -68,14 +69,14 @@
 		</div>
 		<browser assert="{@activity_record_0197.name} {@user.name} {@stamp}" />
 
-		<!--Save the subpanel task id & name -->
+		<!--Save the subpanel task id & name-->
 		<form name="DetailView">
 			<hidden name="record" var="pre_task_subpanel_id" />
 		</form>
 		<var var="pre_task_subpanel_name" set="{@activity_record_0197.name} {@user.name} {@stamp}" />
 	</csv>
 
-	<!--Search the record -->
+	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<browser assert="Accounts" />
 	<button id="search_form_clear" />
@@ -85,10 +86,10 @@
 		<link text="{@pre_account_name}" />
 	</table>
 
-	<!--Go its detail view -->
+	<!--Go its detail view-->
 	<browser assert="{@pre_account_name}" />
 
-	<!--Verify the task record created in subpanel -->
+	<!--Verify the task record created in subpanel-->
 	<div id="list_subpanel_activities">
 		<table class="list view">
 			<link text="{@pre_task_subpanel_name}" />

@@ -1,6 +1,6 @@
 <soda>
 	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2368.csv" var="Opportunity_2368">
-		<puts text="Test: Opportunity_2368.xml starting" />
+		<puts text="----Opportunity_2368.xml--------Start!" />
 		<!--script file="scripts/sugarcrm/modules/lib/Team_Create_Lib.xml"/ -->
 		<script file="{@global.scriptsdir}/modules/lib/Contract_Create_Lib.xml" />
 		<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
@@ -13,7 +13,8 @@
 			<textfield id="name_basic" set="{@Opportunity_2368.name} {@user.name} {@stamp}" />
 		</form>
 
-		<button id="search_form_submit" />
+		<button id="search_form_submit" class="button" type="submit" value="Search"
+			name="button" onclick="SUGAR.savedViews.setChooser()" />
 
 		<table class="list view">
 			<browser assert="{@Opportunity_2368.name} {@user.name} {@stamp}" />
@@ -82,5 +83,5 @@
 	<script file="{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contract_Delete_Lib.xml" />
 	<!--script file="scripts/sugarcrm/modules/lib/Team_Delete_Lib.xml"/ -->
-	<puts text="Test: Opportunity_2368.xml finished" />
+	<puts text="---Opportunity_2368.xml---Finished!" />
 </soda>

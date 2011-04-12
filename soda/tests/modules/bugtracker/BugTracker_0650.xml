@@ -25,7 +25,6 @@
 	<!--create a task in activities sub panel with all fields filled-->
 	<div id="list_subpanel_activities">
 		<button value="  Create Task  " />
-		<wait timeout="3" />
 	</div>
 	
 	<csv file="{@global.scriptsdir}/csvs/bugtracker/Bug Tracker_0650.csv" var="bug_tracker_record_650">

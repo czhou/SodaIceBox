@@ -25,9 +25,7 @@
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 
 	<!-- Search for Global within detailview only -->
-	<table id="detailpanel_3">
-		<browser assert="/.*Global.*/" />
-	</table>
+	<table id="detailpanel_3" assert="/.*Global.*/" />
 	
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	

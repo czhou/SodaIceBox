@@ -1,12 +1,11 @@
 ﻿<soda>
 	<puts text="Lib: Emails_OutGoing_Create.xml starting." />
 	<link id="moduleTab_Emails" />
-	<wait timeout="5" />
 	<button id="settingsButton" />
-	<wait timeout="10" />
-	<div id="settingsDialog" >
-		<link text="Mail Accounts" />
-	</div>
+  <wait timeout="10" />
+  <div id="settingsDialog_c" >
+	  <link text="Mail Accounts" />
+  </div>
 	<browser assert="Outgoing SMTP Mail Servers" />
 	<browser
 		assert="Provide SMTP mail server information to use for outgoing email in Mail Accounts" />

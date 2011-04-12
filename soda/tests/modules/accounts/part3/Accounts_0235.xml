@@ -15,7 +15,7 @@
 	<div class="moduleTitle">
 		<link href="index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
-	<wait timeout="7" />
+	<wait timeout="3" />
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">

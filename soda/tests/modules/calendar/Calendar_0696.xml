@@ -18,8 +18,6 @@
 		<link href="index.php?module=Meetings&amp;action=index" click="false" />
 		<browser assert="meeting_record{@stamp}" />
 	</div>
-	
-	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 
 	<puts text="Test: Calendar_0696.xml finished." />
 </soda>

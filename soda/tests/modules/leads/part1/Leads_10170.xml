@@ -19,7 +19,7 @@
 	
 	<link text="Name" />
 	<button id="listViewNextButton" />	
-	<wait timeout="3" />
+	
 	<browser assert="(4 - 4 of 4)" />
 	<button id="search_form_clear" />
 	

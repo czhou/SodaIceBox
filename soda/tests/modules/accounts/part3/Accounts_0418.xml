@@ -1,12 +1,14 @@
 <soda>
-	<!-- Create_Verify that creating new lead related to the account is canceled in-line 
-		on "LEADS" sub-panel. -->
+	<!--
+		Create_Verify that creating new lead related to the account is canceled
+		in-line on "LEADS" sub-panel.
+	-->
 	<puts text="Test: Accounts_0418.xml starting." />
 
-	<!--Create a account record -->
+	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 
-	<!--Search the record -->
+	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<browser assert="Accounts" />
 
@@ -16,12 +18,11 @@
 		<link text="{@pre_account_name}" />
 	</table>
 
-	<!--Go its detail view -->
+	<!--Go its detail view-->
 	<browser assert="{@pre_account_name}" />
 
-	<!--Create Lead Subpanel -->
+	<!--Create Lead Subpanel-->
 	<button id="account_leads_create_button" />
-	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0044.csv" var="lead_record_0418">
 		<form id="form_SubpanelQuickCreate_Leads">
 			<textfield id="refered_by" set="{@lead_record_0418.refered_by}" />
@@ -38,7 +39,7 @@
 			<checkbox id="do_not_call" set="{@lead_record_0418.do_not_call}" />
 		</form>
 
-		<!--user select -->
+		<!--user select-->
 		<button id="btn_assigned_user_name" />
 		<wait timeout="10" />
 		<browser assert="User Search" />
@@ -46,7 +47,7 @@
 		<button value="Search" />
 		<link text="{@lead_record_0418.assigned_user_name}" />
 
-		<!--teams select -->
+		<!--teams select-->
 		<table id="form_SubpanelQuickCreate_Leads_team_name_table">
 			<button value="Select" />
 		</table>
@@ -57,12 +58,12 @@
 
 		<button id="Leads_subpanel_cancel_button" alert="true" />
 	</csv>
-	<!--Verify -->
+	<!--Verify-->
 	<div id="list_subpanel_leads">
 		<span class="pageNumbers" assert="(0 - 0 of 0)" />
 	</div>
 
-	<!--Delete the record -->
+	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0044.xml finished." />
 </soda>

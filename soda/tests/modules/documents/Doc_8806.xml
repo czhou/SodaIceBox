@@ -7,7 +7,7 @@
 
 	<link text="Create Document" />
 	<button value="Save" />               
-	<browser assert="Missing required field: File" />
+	<browser assert="Missing required field: File Name" />
 	<browser assert="Missing required field: Document Name" />
 
 	<link text="View Documents" alert="true" />

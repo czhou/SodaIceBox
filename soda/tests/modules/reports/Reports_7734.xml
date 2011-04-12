@@ -45,6 +45,6 @@
 	<wait />
 
 	<browser assert="Title: {@report_record_7734.save_report_as}" />
-	
+
 	<puts text="Test: Reports_7734 finished." />
 </soda>

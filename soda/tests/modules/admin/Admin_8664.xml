@@ -34,7 +34,6 @@
 		<button value="  Next  " required="false" timeout="3" />
 		<button value="  Next  " required="false" timeout="3" />
 		<button value="  Finish  " required="false" timeout="3" />
-		<wait timeout="3" />
 		<link href="index.php?module=Leads&amp;action=index" />
 		<browser assert="Leads" />
 		<checkbox name="massall" click="true" />

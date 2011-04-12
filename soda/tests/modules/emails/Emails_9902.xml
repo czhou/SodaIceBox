@@ -4,12 +4,8 @@
 
 	<!--Nav to emails module-->
 	<link id="moduleTab_Emails" />
-	<wait timeout="5"/>
 	<button id="settingsButton" />
-	<wait timeout="5"/>
-	<div id="settingsDialog">
-		<link text="Mail Accounts" />
-	</div>
+	<link text="Mail Accounts" />
 	<wait timeout="1" />
 	<button id="outbound_email_add_button" />
 	<wait timeout="3" />

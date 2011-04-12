@@ -64,7 +64,7 @@
 	<textfield id="name_basic" set="{@pre_case_subpanel_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">
-		<span class="pageNumbers" assert="(1 - 1 of 1)" />
+		<span class="pageNumbers" set="(1 - 1 of 1)" />
 	</table>
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />

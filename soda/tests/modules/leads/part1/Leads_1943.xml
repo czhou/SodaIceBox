@@ -65,5 +65,5 @@
 
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
-	<puts text="Test: Leads_1943.xml finished" />
+	<puts test="Test: Leads_1943.xml finished" />
 </soda>

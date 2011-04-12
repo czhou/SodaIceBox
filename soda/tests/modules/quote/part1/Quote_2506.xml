@@ -3,7 +3,7 @@
     <link id='moduleTab_Quotes'/>
     <browser assert='Quotes'/>
     <form id='search_form'>
-        <link text="Advanced Search" required='false'/>
+        <link text='Advanced Search' required='false'/>
         <wait timeout='2'/>
         <button id='search_form_clear'/>
         <textfield id='name_advanced' set='{@pre_Quote_name}' />
@@ -20,14 +20,13 @@
     </table>
     <browser assert='»{@pre_Quote_name}'/>
 
-    <!--Set search form back to Basic Search-->
+    <!--Run Delete XML-->
     <link id='moduleTab_Quotes'/>
     <browser assert='Quotes'/>
     <form id='search_form'>
-        <link id="basic_search_link" required='false'/>
+        <link text='Basic Search' required='false'/>
         <wait timeout='2'/>
         <button id='search_form_clear'/>
-	<button id="search_form_submit"/>
     </form>
     <puts text='---Quote_2506.xml---Finished!'/>
 </soda>

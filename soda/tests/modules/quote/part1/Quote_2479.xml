@@ -53,7 +53,7 @@
             <textfield id='bundle_name_group_0' set='{@Quote_2479.bundle_name_group_0}'/>
             <select id='bundle_stage_group_0' set='{@Quote_2479.bundle_stage_group_0}'/>
 
-            <button name='Add Row' value='Add Row'/>
+            <button type='button' name='Add Row' value='Add Row'/>
             <wait timeout='3'/>
             <button id='product_name_select_1' click='true'/>
         </form>
@@ -98,7 +98,6 @@
         <textfield id='name_basic' set='{@Quote_2479.name} {@user.name} {@stamp}'/>
     </form>
     <button id='search_form_submit'/>
-	<wait timeout="2"/>
     <checkbox name='massall' click='true' />
     <link id='actions_link' />
     <link text='Delete' alert='true' />

@@ -24,7 +24,7 @@
 	<textfield id="user_name" set="qauser" />
 	<textfield id="user_password" set="QAuser1" />
 	<button id="login_button" />
-	<wait timeout="3" />
+
    <!-- Match a new user login or an existing user login, but not a failed login. -->
 	<browser assert="/Welcome(, | to Sugar!)/" />
 

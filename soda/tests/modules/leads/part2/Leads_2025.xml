@@ -69,5 +69,5 @@
 		<browser assert="Invalid Value: Email Address" />
 	</csv>
 	<link id="moduleTab_Leads" alert="true" />
-	<puts text="Test: Leads_2025.xml finished." />
+	<puts test="Test: Leads_2025.xml finished." />
 </soda>

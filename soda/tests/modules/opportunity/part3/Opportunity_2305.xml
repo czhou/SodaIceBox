@@ -83,7 +83,8 @@
 		</form>
 		<div id="list_subpanel_quotes">
 			<table class="list view">
-				<browser assert="{@Opportunity_2305.quote_name} {@user.name} {@stamp}" exist="false" />
+				<browser assert="{@Opportunity_2305.quote_name} {@user.name} {@stamp}"
+					click="false" exist="false" />
 			</table>
 		</div>
 	</csv>

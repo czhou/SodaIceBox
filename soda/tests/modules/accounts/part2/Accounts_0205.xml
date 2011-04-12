@@ -1,9 +1,12 @@
 <soda>
-	<!-- Account Detail - Member Organizations sub-panel_Verify that a Member Organization 
-		information related to this Member Organization is removed correctly. -->
+	<!--
+		Account Detail - Member Organizations sub-panel_Verify that a Member
+		Organization information related to this Member Organization is removed
+		correctly.
+	-->
 	<puts text="Test: Accounts_0205.xml starting." />
 
-	<!--Create 2 account records -->
+	<!--Create 2 account records-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" />
 	<var var="first_account" set="{@pre_account_name}" />
 
@@ -28,19 +31,18 @@
 	</table>
 	<div class="moduleTitle">
 		<link href="index.php?module=Accounts&amp;action=index" click="false" />
-		<browser assert="{@second_account}" />
+		<browser asser="{@second_account}" />
 	</div>
 
 	<!-- Remove relation of first account under Member Org subpanel and verify -->
 	<div id="list_subpanel_accounts">
 		<link class="listViewTdToolsS1" index="2" alert="true" />
 	</div>
-	<wait timeout="5" />
 	<div id="list_subpanel_accounts">
-		<link text="{@first_account}" exist="false" />
+		<link text="{@first_account}" exisits="false" />
 	</div>
 
-	<!--Delete the record -->
+	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0205.xml finished." />
 </soda>

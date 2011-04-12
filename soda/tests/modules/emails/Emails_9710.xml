@@ -1,5 +1,7 @@
 ﻿<soad>
-	<!-- Disable users to use the system outgoing mail account for outbound email -->
+	<!--
+		Unenable users to use the system outgoing mail account for outbound email
+	-->
 	<puts text="Test: Emails_9710.xml starting." />
 
 	<!--goto my account-->
@@ -21,9 +23,7 @@
 	<!--Nav to emails module-->
 	<link id="moduleTab_Emails" />
 	<button id="settingsButton" />
-	<div id="settingsDialog">
-		<link text="Mail Accounts" />
-	</div>
+	<link text="Mail Accounts" />
 
 	<browser assert="Gmail" />
 	<browser assert="Warning: Missing username and password for outgoing mail account." />

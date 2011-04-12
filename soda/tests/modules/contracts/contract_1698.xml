@@ -8,7 +8,6 @@
 	<!--Search the contract record in list view-->
     <link id='moduleTab_Contracts'/>
     <browser assert="Contracts"/>
-    <link text="Basic Search" required="false" timeout="3"/>
     <textfield id='name_basic' set='{@Contract_Create_Lib}'/> 
     <button id="search_form_submit"/>
     <table class='list view'>

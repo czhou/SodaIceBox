@@ -38,6 +38,6 @@
    <!--delete wf-->
    <script file="{@global.scriptsdir}/modules/lib/Workflow_Delete_Lib.xml" />
 
-   <puts text="Text: Cases_8319: Finished." />
+   <puts test="Test: Cases_8319: Finished." />
 </soda>
 

@@ -30,8 +30,7 @@
 
 		<!--Remove teams--> 
 		<table id="EditView_team_name_table">
-			<image id="remove_team_name_collection_0" click="true" />  
-			<radio id="primary_team_name_collection" click="true" />
+			<image id="remove_team_name_collection_0" click="true" />                
 		</table>
 		<form id="EditView">
 			<textfield id="name" set="{@teams_9442.subject} {@user.name} {@stamp}" />                            

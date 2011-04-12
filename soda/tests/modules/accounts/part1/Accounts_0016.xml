@@ -41,7 +41,7 @@
 	<form id="MassUpdate">
 		<link class="listViewThLinkS1" />
 	</form>
-	<wait timeout="3" />
+
 	<table class="list view">
 		<row class="oddListRowS1" index="1" >
 			<link text="{@account_name3}" click="false" />

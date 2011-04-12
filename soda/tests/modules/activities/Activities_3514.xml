@@ -3,7 +3,7 @@
 	<puts text="Test: Activities_3514.xml starting" />
 
 	<!--create call record-->
-	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" csv="{@global.scriptsdir}/csvs/activities/Activities_3514.csv" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" csv="scripts/sugarcrm/csvs/activities/Activities_3514.csv" />
 
 
 	<link id="moduleTab_Activities" />

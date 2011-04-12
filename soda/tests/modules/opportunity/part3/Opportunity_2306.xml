@@ -103,7 +103,8 @@
 		</form>
 		<div id="list_subpanel_quotes">
 			<table class="list view">
-				<browser assert="{@Opportunity_2306.quote_name_edit} {@user.name} {@stamp}" />
+				<browser assert="{@Opportunity_2306.quote_name_edit} {@user.name} {@stamp}"
+					click="false" />
 			</table>
 		</div>
 		<div id="list_subpanel_quotes">

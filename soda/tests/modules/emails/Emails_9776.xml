@@ -49,9 +49,7 @@
 				</row>
 			</table>
 		</div>
-		<!--<link text="/My Drafts/" />-->
-		<link id="ygtvlabelel2"/>
-
+		<link text="/My Drafts/" />
 	</div>
 	<wait timeout="3" />
 	<div text="{@email_record_9776.subject} {@stamp}" click="true"

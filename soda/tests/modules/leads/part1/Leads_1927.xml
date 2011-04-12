@@ -66,5 +66,5 @@
 		<span class="pageNumbers" assert="(0 - 0 of 0)" />
 	</div>
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
-	<puts text="Test: Leads_1927.xml finished" />
+	<puts test="Test: Leads_1927.xml finished" />
 </soda>

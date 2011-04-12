@@ -1,10 +1,12 @@
 <soda>
-	<!-- Edit Leads_Verify that the lead can be canceled editing by clicking the edit 
-		icon at the right edge of each lead record in list view after advanced search. -->
+	<!--
+		Edit Leads_Verify that the lead can be canceled editing by clicking the edit
+		icon at the right edge of each lead record in list view after advanced search.
+	-->
 	<puts text="Test: Leads_1973.xml starting" />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 
-	<!--Search the record -->
+	<!--Search the record-->
 	<link id="moduleTab_Leads" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Leads&amp;action=index" click="false" />
@@ -43,12 +45,10 @@
 	</div>
 
 	<link id="moduleTab_Leads" />
-	<wait timeout="3" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Leads&amp;action=index" click="false" />
 	</div>
-	<link text="Basic Search" />
-	<wait timeout="3" />
+	<link text="Basic Search" required="false" />
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
 	<wait timeout="3" />
