@@ -1,0 +1,70 @@
+<soda>
+<!-- PLEASE NOTE: This Soda test follows the steps to reproduce the problem in the bug description -->
+
+	<puts text='--------Bug 43059 Started--------'/>
+	<puts text='-- Clicking Save on Recipient Pop-up Form Without Changing Anything Causes workflow_alerts.address_type Column, in the DB to Become NULL --'/>
+
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<!-- Setup variables for testing -->
+	<timestamp />
+	<var var="base" set="Bug 43059 SODA TEST {@stamp}" />
+	<var var="workflow" set="{@base}: Workflow" />
+	<var var="alert" set="{@base}: Alert" />
+
+
+	<!-- Create a new Workflow for Opportunities -->
+
+	<div id="globalLinks">
+		<link text="Admin" />
+	</div>
+	<link text="Workflow Management" />
+
+	<link id="moduleTab_WorkFlow" />
+	<link text="Create Workflow Definition" />
+
+	<textfield name="name" set="{@workflow}" />
+	<select name="type" set="Time" />
+	<select name="base_module" set="Contacts" />
+
+	<button value="/Save/" />
+
+	<!-- Create new Alert -->
+	<button value="/Create/" index="2" />
+	<textfield name="name" set="{@alert}" />
+	<button value="/Save/" />
+
+	<!-- Create recipient using Select custom email and name -->
+	<button value="/Create/" />
+	<radio value="trig_user_custom" set="true"/>
+	<button id="next" />
+	<checkbox id="mod_rel_custom1" set="true" />
+
+	<link id="href_rel_custom1" /> <!-- Set Email field -->
+	<select id="selector" set="email1" />
+	<button name="Save" />
+
+	<link id="href_rel_custom1b" /> <!-- Set Name field -->
+	<select id="selector" set="last_name" />
+	<button name="Save" />
+
+	<link id="href_add_lang_rel_custom1" /> <!-- Set Address type -->
+	<select id="selector" set="to" />
+	<button name="Save" />
+
+	<button id="save" />
+
+	<!-- First time open, verify and save without changing anything -->
+	<link text="/Send alert to the following recipient/" />
+	<browser assert="To:" />
+	<hidden id="address_type" assert="to" />
+	<button id="save" />
+
+	<!-- Open recipient again and make sure the address type is still set to 'To' -->
+	<link text="/Send alert to the following recipient/" />
+	<browser assert="To:" />
+	<hidden id="address_type" assert="to" />
+
+	<puts text='--------Bug 43059 Finished--------'/>
+</soda>

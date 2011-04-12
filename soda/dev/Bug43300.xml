@@ -1,0 +1,51 @@
+<soda>
+<!-- PLEASE NOTE: This Soda test follows the steps in the bug description to reproduce the problem  -->
+
+	<puts text='--------Bug 43300 Started--------'/>
+	<puts text='-- Creating a Task, issue with the time format --'/>
+
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<!-- Setup variables for testing -->
+	<timestamp />
+	<var var="base" set="Bug 43300 SODA TEST {@stamp}" />
+	<var var="task" set="{@base}: Task" />
+
+	<!-- Change time format to use a dot ('.') as separator -->
+
+	<div id="welcome">
+		<link text="Administrator" />
+	</div>
+	<div id="EditView_tabs">
+		<link text="/Advanced/" />
+	</div>
+	<select name="timeformat" set="H.i" />
+	<button id="Save" />
+
+
+	<!-- Create new Task -->
+
+	<link id="moduleTab_Activities" />
+	<link text="Create Task" />
+
+	<textfield name="name" set="{@task}" />
+
+	<textfield id="date_start_date" set="4/4/2011" />
+	<select id="date_start_hours" set="06" />
+	<select id="date_start_minutes" set="00" />
+
+	<textfield id="date_due_date" set="4/4/2011" />
+	<select id="date_due_hours" set="07" />
+	<select id="date_due_minutes" set="00" />
+
+	<button value="/Save/" />
+
+
+	<!-- Verify that there is no error message on the page -->
+
+ 	<browser assertnot="is not before" />
+
+
+	<puts text='--------Bug 43300 Finished--------'/>
+</soda>

@@ -1,0 +1,66 @@
+<soda>
+	<puts text='--------Bug 42396 Started--------'/>
+	<puts text='-- Account address does not auto populate contact when contact is created using the Shortcut bar --'/>
+
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<timestamp />
+	<var var="base" set="Bug 42396 SODA TEST {@stamp}" />
+	<var var="account" set="Account {@base}" />
+	<var var="phone" set="Phone {@base}" />
+	<var var="street" set="Street {@base}" />
+	<var var="city" set="City {@base}" />
+	<var var="contact" set="Contact {@base}" />
+
+
+	<!-- Create test Account -->
+
+	<link id="moduleTab_Accounts" />
+	<link text="Create Account" />
+	<textfield name="name" set="{@account}" />
+	<textfield name="phone_office" set="{@phone}" />
+	<textfield name="billing_address_street" set="{@street}" />
+	<textfield name="billing_address_city" set="{@city}" />
+	<button value="Save" />
+
+
+	<!-- Verify the details page has the above information -->
+
+ 	<browser assert="{@account}" />
+ 	<browser assert="{@phone}" />
+ 	<browser assert="{@street}" />
+ 	<browser assert="{@city}" />
+
+
+	<!-- Use Short cut bar to quick create contact -->
+
+	<div id="dcmenuContainer">
+		<link href="/Create Contact/" />
+	</div>
+
+
+	<!-- Verify Quick Create form fields -->
+
+	<form id="form_DCQuickCreate_Contacts" >
+		<textfield name="account_name" assert="{@account}" />
+		<textfield name="phone_work" assert="{@phone}" />
+
+		<!-- Open Full Form -->
+		<button value="Full Form" />
+	</form>
+
+
+	<!-- Verify full form fields -->
+
+	<form id="EditView" >
+		<textfield name="account_name" assert="{@account}" />
+		<textfield name="phone_work" assert="{@phone}" />
+		<textfield name="primary_address_street" assert="{@street}" />
+		<textfield name="primary_address_city" assert="{@city}" />
+	</form>
+
+
+
+    <puts text='--------Bug 42396 Finished--------'/>
+</soda>

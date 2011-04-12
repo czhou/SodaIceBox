@@ -1,0 +1,29 @@
+<soda>
+	<puts text='--------Bug 43260 Started--------'/>
+	<puts text='-- Not able to set drop down field back to "blank" (in Mass Update form) --'/>
+
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<!-- Using the Opportunities list for testing -->
+
+	<link id="moduleTab_Opportunities" />
+
+	<!-- Select all records for mass update -->
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Mass Update" />
+	
+	<!-- Set the Sales Stage which shows in the list for all records to nothing -->
+	<select id="mass_sales_stage" set="" />
+	<button id="update_button" alert="true" />
+
+	<!-- Verify that there is no Sales Stage set on any of the records of the page -->
+
+ 	<browser assertnot="Proposal" />
+ 	<browser assertnot="Closed" />
+ 	<browser assertnot="Needs Analysis" />
+ 	<browser assertnot="Prospecting" />
+
+	<puts text='--------Bug 43260 Finished--------'/>
+</soda>

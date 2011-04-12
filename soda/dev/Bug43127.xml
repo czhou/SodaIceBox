@@ -1,0 +1,54 @@
+<soda>
+<!-- PLEASE NOTE: This Soda test follows the steps to reproduce the problem in the bug description -->
+
+	<puts text='--------Bug 43127 Started--------'/>
+	<puts text='-- Workflow recipient created even if input error occurs --'/>
+
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<!-- Setup variables for testing -->
+	<timestamp />
+	<var var="base" set="Bug 43127 SODA TEST {@stamp}" />
+	<var var="workflow" set="{@base}: Workflow" />
+	<var var="alert" set="{@base}: Alert" />
+	<var var="street" set="Street {@base}" />
+	<var var="city" set="City {@base}" />
+	<var var="contact" set="Contact {@base}" />
+
+
+	<!-- Create a new Workflow for Opportunities -->
+
+	<div id="globalLinks">
+		<link text="Admin" />
+	</div>
+	<link text="Workflow Management" />
+
+	<link id="moduleTab_WorkFlow" />
+	<link text="Create Workflow Definition" />
+
+	<textfield name="name" set="{@workflow}" />
+	<select name="type" set="Time" />
+	<select name="base_module" set="Opportunities" />
+
+	<button value="/Save/" />
+
+	<!-- Create new Alert -->
+	<button value="/Create/" index="2" />
+	<textfield name="name" set="{@alert}" />
+	<button value="/Save/" />
+
+	<!-- Create recipient without specifying a user, try save, and then cancel out -->
+	<button value="/Create/" />
+	<radio value="specific_user" set="true"/>
+	<button id="save" alert="true" />
+	<button value="/Cancel/" />
+
+	<!-- Refresh page to pick up the incorrectly inserted incomplete recipient if it exists -->
+	<browser action="refresh" />
+
+	<!-- Verify that there is no error message on the page -->
+ 	<browser assertnot="contains errors" />
+
+	<puts text='--------Bug 43127 Finished--------'/>
+</soda>
