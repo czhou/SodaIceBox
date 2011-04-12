@@ -5,15 +5,13 @@
 
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
 
-	<link id="moduleTab_Activities" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Calendar&amp;action=index" click="false" />
-	</div>
-	<link text="View Meetings" />
+	<link id="moduleTab_Meetings" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Meetings&amp;action=index" click="false" />
 		<browser assert="Search" />
 	</div>
+	<link text="View Meetings" />
+
 	<textfield id="name_basic" set="{@pre_meeting_name}" />
 	<button id="search_form_submit" />
 	<wait timeout="3" />
