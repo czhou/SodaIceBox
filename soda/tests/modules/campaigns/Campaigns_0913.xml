@@ -35,10 +35,10 @@
 	<button id="listViewNextButton" />
 	<wait timeout="1" />
 	<span class="pageNumbers" assert="(3 - 4 of 6)" />
-	<wait timeout="10" />
+	<wait timeout="5" />
 	
 	<button id="listViewNextButton" />
-	<wait timeout="1" />
+	<wait timeout="10" />
 	<span class="pageNumbers" assert="(5 - 6 of 6)" />
 	<wait timeout="1" />
 	
@@ -50,10 +50,10 @@
 	<button id="listViewPrevButton" />
 	<wait timeout="1" />
 	<span class="pageNumbers" assert="(1 - 2 of 6)" />
-	<wait timeout="1" />
+	<wait timeout="5" />
 
 	<button id="listViewEndButton" />
-	<wait timeout="1" />
+	<wait timeout="10" />
 	<span class="pageNumbers" assert="(5 - 6 of 6)" />
 	<wait timeout="1" />
 
