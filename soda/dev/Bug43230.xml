@@ -1,0 +1,15 @@
+<soda>
+    <csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
+    <script file="{@global.scriptsdir}/modules/lib/login.xml" />
+    
+    <!-- Test Creating A calculated Field with no formula. The calculated property should NOT save-->
+    <puts text="Test: Bug43230.xml starting" />
+
+    <!--click "Navigate to Project Task List View"-->
+    <browser url='{@global.url}?module=ProjectTask&amp;action=index'/> 
+    <link text="Create" exists='false'/>  
+    <puts text="Test: Bug43230.xml finished." />
+    <script file="{@global.scriptsdir}/modules/lib/logout.xml" />
+    
+    <browser action="close" />
+</soda>
