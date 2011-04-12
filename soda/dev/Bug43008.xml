@@ -1,0 +1,64 @@
+<soda>
+<!-- PLEASE NOTE: This Soda test follows the steps to reproduce the problem in the bug description -->
+
+	<puts text='--------Bug 43008 Started--------'/>
+	<puts text='-- contacts > accounts > name not displayed correctly in report IE 8 --'/>
+
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<!-- Setup variables for testing -->
+	<timestamp />
+	<var var="base" set="Bug 43127 SODA TEST {@stamp}" />
+	<var var="workflow" set="{@base}: Workflow" />
+	<var var="alert" set="{@base}: Alert" />
+
+	<!-- Create a new Report -->
+
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<browser assert="Report Wizard" />
+
+	<div id="report_type_div">
+		<table index="1">
+			<row index="2">
+				<cell index="1">
+					<table index="1">
+						<row index="1">
+							<cell index="1">
+								<image index="1" click="true" />
+							</cell>
+						</row>
+					</table>
+				</cell>
+			</row>
+		</table>
+	</div>
+
+	<!-- Base it on Contacts -->
+
+	<table id="Contacts" click="true" />
+
+	<!-- Use Search first time (note that the problem manifest itself when not searching) -->
+
+	<textfield id="dt_input" set="name" jscriptevent="onkeydown" />
+	<textfield id="dt_input" click="false" jscriptevent="onkeyup" />
+
+	<row id="yui-rec35"  click="true" />
+
+	<!-- Select Contacts and use search a second time before selecting name again -->
+
+	<link id="ygtvlabelel2" />
+
+	<textfield id="dt_input" set="name" jscriptevent="onkeydown" />
+	<textfield id="dt_input" click="false" jscriptevent="onkeyup" />
+
+	<row id="yui-rec65"  click="true" />
+
+	<!-- Verify that there is a filter for both the contact name and the related account name -->
+
+	<browser assert="Contacts &gt; Name" />
+	<browser assert="Contacts &gt; Account &gt; Name" />
+
+	<puts text='--------Bug 43008 Finished--------'/>
+</soda>
