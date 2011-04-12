@@ -93,6 +93,20 @@
 	</block>
 	
 	<block>
+		<testfile>Accounts_0074</testfile>
+		<bugnumber>43348</bugnumber>
+		<reason>Soda issue with Global vs Timeout timestamps</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
+		<testfile>Accounts_0075</testfile>
+		<bugnumber>43348</bugnumber>
+		<reason>Soda issue with Global vs Timeout timestamps</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
 		<testfile>Accounts_0130</testfile>
 		<bugnumber>39955</bugnumber>
 		<reason>bug 39955 - false duplicate account warning</reason>
