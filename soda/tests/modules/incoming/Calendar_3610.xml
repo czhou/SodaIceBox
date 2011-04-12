@@ -1,0 +1,23 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click "Create call" link on Navigation shortcuts
+		Expectation:
+			3. Calls EditView is displayed
+	-->
+	<puts text="Test: Calendar_3610.xml starting." />
+	
+	<link id="moduleTab_Calendar" />
+
+	<link text="Log Call" />
+	
+	<button id="edit_button" exists="false" />
+	<button value="Save" click="false" />
+	<div class="moduleTitle">
+		<browser assert="Create" />
+	</div>
+	
+	<puts text="Test: Calendar_3610.xml finished." />
+</soda>
