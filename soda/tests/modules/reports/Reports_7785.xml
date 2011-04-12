@@ -1,0 +1,52 @@
+<soda>
+	<!-- Create a row and column Quotes report -->
+	<puts text="Test: Reports_7785.xml started." />
+	<timestamp />
+
+	<!--goto Report module -->
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<browser assert="Report Wizard" />
+
+	<!--create row and column report -->
+	<image name="rowsColsImg" click="true" />
+	<table id="Quotes">
+		<link text="Quotes" />
+	</table>
+
+	<csv file="{@global.scriptsdir}/csvs/reports/Reports_7785.csv" var="report_record_7785">
+		<wait timeout="3" />
+		<div text="Valid Until" click="true" />
+		<row id="Filter.1_table_filter_row_1">
+			<textfield id="jscal_field" set="{@report_record_7785.valid_until}" />
+		</row>
+		<button name="Next &gt;" />
+
+		<div text="Billing City" click="true" />
+		<div text="Billing Country" click="true" />
+		<div text="Billing Postal Code" click="true" />
+		<button name="Next &gt;" />
+
+		<textfield name="save_report_as" set="{@report_record_7785.save_report_as} {@stamp}" />
+	</csv>
+
+	<button name="Save and Run" />
+	<wait />
+	<browser assert="Title: {@report_record_7785.save_report_as} {@stamp}" />
+	
+	<!--Delete created Report -->
+	<link id="moduleTab_Reports" />
+	<link text="Basic Search" required="false" />
+	<wait timeout="5" />
+	<form class="search_form">
+		<button name="clear" />
+		<textfield name="name_basic" set="{@report_record_7785.save_report_as} {@stamp}" />
+		<button value="Search" />
+	</form>
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+
+	<puts text="Test: Reports_7785.xml finished." />
+</soda>

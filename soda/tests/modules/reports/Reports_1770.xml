@@ -1,0 +1,28 @@
+<soda>
+	<!-- Customizing dashboard_Verify that the name of summation report -->
+	<puts text="Test: Reports_1770.xml starting" />
+
+	<!--admin logout -->
+	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
+
+	<!--normal user -->
+	<textfield id="user_name" set="qauser" />
+	<textfield id="user_password" set="QAuser1" />
+	<button id="login_button" />
+	<browser assert="Welcome" />
+	<browser assert="Server response time" />
+	<button value="  Save  " required="false" timeout="3" />
+
+	<!--goto Report module -->
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<browser assert="Report Wizard" />
+
+	<!--create summation report -->
+	<image name="summationImg" click="true" />
+
+	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	
+	<puts text="Test: Reports_1770.xml finished" />
+</soda>

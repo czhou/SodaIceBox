@@ -21,6 +21,9 @@
              <textfield id="confirm_pwd" set="{@User0621.password}" jscriptevent="onkeyup"/>
 			 
              <button value="Save"/>
+	     <div id="sugarMsgWindow_c">
+	     	<link text="Close"/>
+	     </div>
              <wait timeout="2"/>
              <browser assert="{@User0621.name}{@stamp}"/>
              <!--logout and then login in as portal user-->

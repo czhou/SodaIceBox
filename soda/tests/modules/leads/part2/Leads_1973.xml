@@ -20,12 +20,10 @@
 			assert="{@Lead_New_Record.first_name} {@user.name} {@stamp} {@Lead_New_Record.last_name}" />
 	</table>
 
-	<span id="adspan_{@pre_lead_id}" jscriptevent="onmouseover" exists="true" />
-
 	<wait timeout="3" />
-	<div id="overDiv">
+	<tr class="evenListRowS1>
 		<image index="1" click="true" />
-	</div>
+	</tr>
 	<wait timeout="3" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Leads&amp;action=index" click="false" />

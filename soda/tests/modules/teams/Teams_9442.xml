@@ -5,9 +5,7 @@
 
 	<!--Go to modules that can edit team info-->        
 	<link id="moduleTab_Notes" />
-
-	<link text="Create Note or Attachment" />	
-
+	<link text="Create Note or Attachment" />
 	<browser assert="Notes" />
 
 	<!--Create record with multi teams-->
