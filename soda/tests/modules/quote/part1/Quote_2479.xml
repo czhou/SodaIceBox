@@ -18,6 +18,9 @@
         <!--Billing Contact select-->
         <button id='btn_billing_contact_name'/>
         <browser assert='Contact Search'/>
+	<button value="Clear"/>
+	<button value="Search"/>
+	<wait timeout="1"/>
         <textfield id='first_name_advanced' set='{@pre_contact_first_name}'/> 
         <textfield id='last_name_advanced' set='{@pre_contact_last_name}'/> 
         <button value='Search'/>
