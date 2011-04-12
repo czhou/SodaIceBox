@@ -67,6 +67,13 @@
       <button value="Next" />
       <link id="href_0" />
       <textfield id="field_0__field_value" set="{@wf_8146.task_name}" />
+	<link id ="href_5"/>
+	<browser assert="Set&nbsp;Status: as&nbsp;"/>
+	<button value="Save"/>
+	<link id="href_10"/>
+	<browser assert="Set&nbsp;Priority: as&nbsp;"/>
+	<button value="Save"/>
+	<wait timeout="1"/>
       <button value="Save" />
       <wait timeout="2" />
       <button value="  Save  " />
