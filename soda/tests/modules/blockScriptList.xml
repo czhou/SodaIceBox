@@ -15,16 +15,9 @@
 	</block>
 
 	<block>
-		<testfile>Campaigns_0987</testfile>
-		<bugnumber>33289</bugnumber>
-		<reason>Bug33289</reason>
-		<modulename>Campaigns</modulename>
-	</block>
-
-	<block>
-		<testfile>Campaigns_0988</testfile>
-		<bugnumber>33289</bugnumber>
-		<reason>Bug33289</reason>
+		<testfile>Campaigns_0913</testfile>
+		<bugnumber>43294</bugnumber>
+		<reason>Bug43294</reason>
 		<modulename>Campaigns</modulename>
 	</block>
 
