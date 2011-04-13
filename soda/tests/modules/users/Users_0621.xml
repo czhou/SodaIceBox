@@ -19,7 +19,7 @@
              <textfield id="new_password" set="{@User0621.password}" jscriptevent="onkeyup"/>
 			 
              <textfield id="confirm_pwd" set="{@User0621.password}" jscriptevent="onkeyup"/>
-			 
+			 <link text="User Profile" />
              <button value="Save"/>
              <wait timeout="2"/>
              <browser assert="{@User0621.name}{@stamp}"/>
