@@ -26,9 +26,12 @@
 	</div>
 
 	<csv file="{@global.scriptsdir}/csvs/cases/Case_1372.csv" var="Case_1372">
-      <div id="Default_Calls_Subpanel">
-   		<textfield id="name" set="{@Case_1372.name} {@user.name} {@stamp}" />
-      </div>
+      <!--      <div id="Default_Calls_Subpanel"> -->
+         <div id="Default_Calls_Subpanel">
+            <textfield id="name" set="{@Case_1372.name} {@user.name} {@stamp}" 
+               jscriptevent="onkeyup" />
+         </div>
+         <!--      </div> -->
 		<button id="Calls_subpanel_save_button" />
 		<wait timeout="3" />
 	</csv>
