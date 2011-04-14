@@ -70,10 +70,10 @@
       <button value="Save" />
       <wait timeout="2" />
 	<link id ="href_5"/>
-	<browser assert="Set&nbsp;Status: as&nbsp;"/>
+	<wait timeout="2"/>
 	<button value="Save"/>
 	<link id="href_10"/>
-	<browser assert="Set&nbsp;Priority: as&nbsp;"/>
+	<wait timeout="2"/>
 	<button value="Save"/>
 	<wait timeout="1"/>
       <button value="  Save  " />
