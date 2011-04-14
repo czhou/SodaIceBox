@@ -9,7 +9,7 @@
 
 	<!--create row and column report -->
 	<image name="rowsColsImg" click="true" />
-	<table id="Contacts">
+	<table id="Contacts" click="false">
 		<link text="Contacts" />
 	</table>
 
