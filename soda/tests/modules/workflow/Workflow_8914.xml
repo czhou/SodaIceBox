@@ -60,6 +60,7 @@
       <link id="href_0" />
       <wait timeout="3" />
       <textfield id="field_0__field_value" set="{@wf_8914.task_name}" />
+      <button value="Save" />
       <wait timeout="1" />
 	<link id ="href_5"/>
 	<browser assert="Set&nbsp;Status: as&nbsp;"/>
@@ -68,8 +69,6 @@
 	<browser assert="Set&nbsp;Priority: as&nbsp;"/>
 	<button value="Save"/>
 	<wait timeout="1"/>
-      <button value="Save" />
-      <wait timeout="3" />
       <button value="  Save  " />
 
 			<!--Trigger the workflow-->
