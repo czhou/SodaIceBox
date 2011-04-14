@@ -21,9 +21,9 @@
 	</table>
 
 	<wait timeout="3" />
-	<tr class="evenListRowS1>
+	<table class="list view">
 		<image index="1" click="true" />
-	</tr>
+	</table>
 	<wait timeout="3" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Leads&amp;action=index" click="false" />
