@@ -1,8 +1,6 @@
 <soda>
         <puts text='Quote_2509:Search Quote_Verify that all quotes can be displayed when clicking "Clear" button in "Quote Search" sub-panel after doing search.'/>
 	
-	<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml"/>
-
 	<!--Go to Quotes module and search out the quote record create in lib-->
         <link id='moduleTab_Quotes'/>
         <browser assert='Quotes'/>
@@ -16,6 +14,5 @@
         </table>
 
     <!--Run Delete XML-->
-    <script file='{@global.scriptsdir}/modules/lib/Quote_Delete_Lib.xml'/>
     <puts text='Quote_2509.xml---Finished!'/>   
 </soda>
