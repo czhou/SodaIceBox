@@ -7,7 +7,7 @@
 	<!--goto Report module -->
 	<link id="moduleTab_Reports" />
 	<link id="Basic Search" required="false" />
-	<wait timeout="5" />
+	<wait timeout="2" />
 	<form class="search_form">
 		<button name="clear" />
 		<textfield name="name_basic" set="{@report_record_7734.save_report_as}" />
@@ -23,6 +23,11 @@
 	<table class="list view">
 		<span class="pageNumbers" assert="(0 - 0 of 0)" />
 	</table>
-
+	
+	<!--Cear the search result-->
+	<link id<link id="Basic Search" required="false" />
+	<wait timeout="2"/>
+	<button value="Clear"/>
+	<button value="Search"/>
 	<puts text="Test: Reports_8047.xml finished." />
 </soda>
