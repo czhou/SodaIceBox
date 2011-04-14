@@ -30,7 +30,7 @@
 	<button id="search_form_submit"/>
 	<checkbox id="massall" click="true"/>
 	<link id="actions_link"/>
-	<link text="Delete"/>
+	<link text="Delete" alert="true"/>
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />
 	<puts text='Quote_2556.xml---Finished!'/>   
 </soda>
