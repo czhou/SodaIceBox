@@ -60,35 +60,17 @@
       <link id="href_0" />
       <wait timeout="3" />
       <textfield id="field_0__field_value" set="{@wf_8914.task_name}" />
-      <wait timeout="3" />
+      <wait timeout="1" />
+	<link id ="href_5"/>
+	<browser assert="Set&nbsp;Status: as&nbsp;"/>
+	<button value="Save"/>
+	<link id="href_10"/>
+	<browser assert="Set&nbsp;Priority: as&nbsp;"/>
+	<button value="Save"/>
+	<wait timeout="1"/>
       <button value="Save" />
       <wait timeout="3" />
       <button value="  Save  " />
-
-		
-			<!--create action-->
-			<table class='formHeader h3Row' index='3'>
-				<button value='  Create'/>
-			</table>
-			<radio id='action_type2' set='true'/>
-			<wait timeout='2'/>
-			<link id='href_new'/>
-			<select id='selector' set='{@wf_8914.selector_select_module}'/>
-			<button value='Save'/>
-			<button value='Next'/>
-			<link id='href_0'/>
-			<wait timeout='3'/>
-			<textfield id='field_0__field_value' set='{@wf_8914.task_name}'/>
-			<wait timeout='3'/>
-			<button value='Save'/>
-			<link id='href_5'/>
-			<wait timeout='3'/>
-			<button value='Save'/>
-			<link id='href_10'/>
-			<wait timeout='3'/>
-			<button value='Save'/>
-			<wait timeout='3'/>
-			<button value='  Save  '/>
 
 			<!--Trigger the workflow-->
 				<!--create account and verify-->
