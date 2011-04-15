@@ -1,0 +1,43 @@
+<soda>
+	<!--
+		Action:
+			Search meeting_Verify that searching meetings with
+			special characters works correctly.
+			(For example, with "@$*&" characters, etc)
+
+		Expectation:
+		`	1. The match scheduled meetings are displayed in the "Meeting List" view.
+	-->
+	
+	<puts text="Test: Calendar_3647.xml starting." />
+	
+	<var var="sp_char" set="@$*&amp;" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
+	<var var="meeting1_name" set="{@pre_meeting_name}" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
+	<var var="meeting2_name" set="{@pre_meeting_name}" />
+	
+	<button id="edit_button" />
+	
+	<textfield id="name" set="{@sp_char} {@meeting2_name}" />
+	
+	<button value="Save" />
+	
+	<wait timeout="3" />
+	
+	<link id="moduleTab_Meetings" />
+	
+	<textfield id="name_basic" set="{@sp_char}" />
+	<button id="search_form_submit" />
+	
+	<table class="list view">
+		<browser assert="{@sp_char} {@meeting2_name}" />
+		<browser assertnot="{@meeting1_name}" />
+	</table>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_3647.xml finished." />
+</soda>

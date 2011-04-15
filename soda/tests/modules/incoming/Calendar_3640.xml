@@ -1,0 +1,59 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click "Meetings" link on Navigation shortcuts.
+			4. Click any meeting subject link in "Meeting List" view.
+			5. Click "Edit" button on "Meeting Detail View" page.
+			6. Update meeting information on "Edit Meeting" page.
+			7. Click "Cancel" button on "Edit Meeting" page.
+		Expectation:
+		`	7. Updated meeting information is displayed on "Meeting Detail View" page
+	-->
+	<puts text="Test: Calendar_3640.xml starting." />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
+	<var var="meeting_name" set="{@pre_meeting_name}" />
+	<var var="meeting_timestamp"
+		set="{@meeting_record.start_date} {@meeting_record.date_start_hours}:{@meeting_record.date_start_minutes}" />
+	<var var="meeting_orig_status" set="{@meeting_record.status}" />
+	<var var="meeting_orig_desc" set="{@meeting_record.description}" />
+		
+	<link id="moduleTab_Meetings" />
+	
+	<table class="list view">
+		<link text="{@meeting_name}" />
+	</table>
+	
+	<button id="edit_button" />
+	
+	<textarea id="name" set="{@meeting_name} Modified" />
+	<select id="status" set="Held" />
+	<textfield id="date_start_date" set="12/21/2012" />
+	<select id="date_start_hours" set="01" />
+	<select id="date_start_minutes" set="45" />
+	<textfield id="location" set="White Room" />
+	<textarea id="description" set= "Amended Description" />
+	
+	<button value="Cancel" alert="true" />
+	
+	<wait timeout="6" />
+	
+	<div id="LBL_MEETING_INFORMATION">
+		<browser assert="{@meeting_name}" />
+		<browser assert="{@meeting_timestamp}" />
+		<browser assert="{@meeting_orig_status}" />
+		<browser assert="{@meeting_orig_desc}" />
+		<browser assertnot="{@meeting_name} Modified" />
+		<browser assertnot="Held" />
+		<browser assertnot="12/21/2012 01:45" />
+		<browser assertnot="White Room" />
+		<browser assertnot="Amended Description" />
+	</div>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	
+	
+	<puts text="Test: Calendar_3640.xml finished." />
+</soda>

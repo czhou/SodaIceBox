@@ -1,0 +1,38 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click "Meetings" link on Navigation shortcuts.
+			2,3. moduleTab_Meetings now
+			4. Click any "Close" icon for a meeting in "Meeting List" view.
+		Expectation:
+		`	4. Meeting edit page is displayed and the meeting status change to "Held" automatically.
+	-->
+	<puts text="Test: Calendar_3642.xml starting." />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
+	<var var="meeting_name" set="{@pre_meeting_name}" />
+	
+	<link id="moduleTab_Meetings" />
+	<table class="list view">
+		<row class="oddListRowS1">
+			<link index="3" jscriptevent="onclick" />
+		</row>
+	</table>
+	
+	<button value="OK" />
+	
+	<table class="list view">
+		<link text="{@meeting_name}" />
+	</table>
+	
+	<div id="LBL_MEETING_INFORMATION">
+		<browser assert="{@meeting_name}" />
+		<browser assert="Held" />
+	</div>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_3642.xml finished." />
+</soda>
