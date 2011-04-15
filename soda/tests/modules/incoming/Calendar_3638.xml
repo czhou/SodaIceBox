@@ -10,7 +10,7 @@
 		Expectation:
 		`	6. The deleted meeting is still displayed in the meeting list view.
 	-->
-	<puts text="Test: Calendar_3637.xml starting." />
+	<puts text="Test: Calendar_3638.xml starting." />
 	
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
 	<var var="meeting_name" set="{@pre_meeting_name}" />
@@ -24,5 +24,5 @@
 	
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 	
-	<puts text="Test: Calendar_3637.xml finished." />
+	<puts text="Test: Calendar_3638.xml finished." />
 </soda>
