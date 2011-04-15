@@ -11,5 +11,6 @@
             <browser assert="Missing required field: Product Name"/>
         </form>
     </csv>
+    <link text="Product Catalog" alert="true"/>
     <puts text="---product_7840.xml---Finished!"/>
 </soda>
