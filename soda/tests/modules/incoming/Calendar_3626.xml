@@ -1,0 +1,46 @@
+<soda>
+	<!--
+		Action:
+			Verify that all call records are displayed in "Call List"
+				view when clicking "Clear" button.
+			mfleeger - note that you must also click "Search" to refresh the list as of 6.1.0.
+
+
+		Expectation:
+			1. All call records are displayed in "Call List" view
+	-->
+	<puts text="Test: Calendar_3626.xml starting." />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+	<var var="call1_name" set="{@pre_call_name}" />
+
+	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+	<var var="call2_name" set="{@pre_call_name}" />
+
+	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+	<var var="call3_name" set="{@pre_call_name}" />
+	
+	<link id="moduleTab_Calls" />
+	
+	<textfield id="name_basic" set="{@call1_name}" />
+	<button id="search_form_submit" />
+	
+	<table class="list view">
+		<browser assert="{@call1_name}" />
+		<browser assertnot="{@call2_name}" />
+		<browser assertnot="{@call3_name}" />
+	</table>
+	
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	
+	<table class="list view">
+		<browser assert="{@call1_name}" />
+		<browser assert="{@call2_name}" />
+		<browser assert="{@call3_name}" />
+	</table>	
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_3626.xml finished." />
+</soda>

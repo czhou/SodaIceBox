@@ -1,0 +1,50 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click "Calls" link on Navigation shortcuts.
+			4. Check one or more check boxes on the left of 
+				call record in "Call List" view.
+			5. Enter fields in "Mass Update" sub-panel. For example
+				"Assigned to", "Team ID", "Start Day", etc.
+			6. Click "Update" button in "Mass Update" sub-panel.
+		Expectation:
+			6. The selected calls record information is updated as entered.
+	-->
+	<puts text="Test: Calendar_3630.xml starting." />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+	<var var="call1_name" set="{@pre_call_name}" />
+	
+	<link id="moduleTab_Calls" />
+	
+	<checkbox id="massall" set="true" />
+	
+	<link id="actions_link" />
+	<link class="menuItem" text="Mass Update" />
+	
+	<select id="mass_direction" set="Outbound" />
+	<select id="mass_status" set="Held" />
+
+	<textfield id="date_start_date" set="12/21/2012" />
+	<select id="date_start_hours" set="11" />
+	<select id="date_start_minutes" set="45" />
+	
+	<button id="update_button" alert="true" />
+
+	<wait timeout="7" />
+	
+	<table class="list view">
+		<link text="{@call1_name}" />
+	</table>
+	
+	<div id="LBL_CALL_INFORMATION">
+		<browser assert="12/21/2012 11:45" />
+		<browser assert="Outbound Held" />
+	</div>
+
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_3630.xml finished." />
+</soda>

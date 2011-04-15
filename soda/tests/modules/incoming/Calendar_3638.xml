@@ -1,0 +1,28 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click "Meetings" link on Navigation shortcuts.
+			4. Click any meeting subject link in "Meeting List" view.
+			5. Click "Delete" button on "Meeting Detail View" page.
+			6. Click "Cancel" button on confirm dialog box.
+		Expectation:
+		`	6. The deleted meeting is still displayed in the meeting list view.
+	-->
+	<puts text="Test: Calendar_3637.xml starting." />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
+	<var var="meeting_name" set="{@pre_meeting_name}" />
+	
+	<button value="Delete" alert="false" />
+	<link id="moduleTab_Meetings" />
+	
+	<table class="list view">
+		<browser assert="{@meeting_name}" />
+	</table>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_3637.xml finished." />
+</soda>
