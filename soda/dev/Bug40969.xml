@@ -1,0 +1,126 @@
+<soda>
+<!-- PLEASE NOTE: This Soda test follows the steps in the bug description to reproduce the problem  -->
+
+	<puts text='--------Bug 40969 Started--------'/>
+	<puts text='-- Flex Relate Fields Do Not Display Data in ListView --'/>
+
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<!-- Setup variables for testing -->
+	<timestamp />
+	<var var="base" set="Bug 40969 SODA TEST {@stamp}" />
+	<var var="contact" set="{@base}: Contact" />
+	<var var="opportunity" set="{@base}: Opportunity" />
+
+
+	<!-- Add Flex Relate field to opportunities -->
+
+	<link text="Admin" />
+	<link text="Studio" assertPage="false" />
+	<link text="Opportunities" class="studiolink" assertPage="false" />
+	<link text="Fields" class="studiolink" assertPage="false" />
+	<button value="/Add Field/" assertPage="false" />
+
+	<select id="type" set="Flex Relate" jscriptevent="onchange" assertPage="false" />
+	<wait timeout="30" condition="true">
+		<div id="ajaxStatusDiv" text="Done" />
+	</wait>
+
+	<textfield id="label_value_id" set="{@base}" />
+	<textfield name="help" set="{@base}" />
+	<button name="fsavebtn" assertPage="false" />
+	<wait timeout="30" condition="true">
+		<div id="ajaxStatusDiv" text="Done" />
+	</wait>
+
+
+
+	<!-- Add Flex Relate field to edit and list layouts -->
+
+	<link text="Opportunities" class="crumbLink" assertPage="false" />
+	<link text="Layouts" class="studiolink" assertPage="false" />
+	<link text="EditView" class="studiolink" assertPage="false" />
+
+	<wait timeout="30" condition="true">
+		<div id="panels" />
+	</wait>
+
+	<javascript addUtils="true">
+		<!-- Add a new row to the edit view -->
+		var start = YAHOO.util.Selector.query('div#toolbox > div.le_row.special')[0];
+		var end = YAHOO.util.Selector.query('div#panels div.le_row')[0];
+		SUGAR.soda.fakeDrag(start, end);
+		<!-- Add a field to the new row -->
+		start = YAHOO.util.Selector.query('div#availablefields > div:contains(Bug 40969)')[0];
+		end = YAHOO.util.Selector.query('#panels div.le_field.special')[0];
+		SUGAR.soda.fakeDrag(start, end);
+	</javascript>
+
+	<button id="publishBtn" assertPage="false" />
+	<wait timeout="30" condition="true">
+		<div id="ajaxStatusDiv" text="Done" />
+	</wait>
+
+	<link text="Layouts" class="crumbLink" assertPage="false" />
+	<link text="ListView" class="studiolink" assertPage="false" />
+
+	<wait timeout="30" condition="true">
+		<table class="list-editor" />
+	</wait>
+
+	<javascript addUtils="true">
+		<!-- Put the field on the list view -->
+		var start = YAHOO.util.Selector.query('li:contains(Bug 40969)')[0];
+		var end = YAHOO.util.Selector.query('td#Default>ul>li')[0];
+		SUGAR.soda.fakeDrag(start, end);
+	</javascript>
+
+	<button id="savebtn" assertPage="false" />
+	<wait timeout="30" condition="true">
+		<div id="ajaxStatusDiv" text="Done" />
+	</wait>
+
+
+	<!-- Create a test contact to link -->
+
+	<link id="moduleTab_Contacts" />
+	<link text="Create Contact" />
+	<textfield id="last_name" set="{@contact}" />
+	<button value="Save" />
+
+	<!-- Create a test opportunity -->
+
+	<link id="moduleTab_Opportunities" />
+	<link text="Create Opportunity" />
+	<textfield id="name" set="{@opportunity}" />
+	<textfield id="amount" set="1" />
+	<textfield id="date_closed" set="04/14/2011" />
+
+	<button id="btn_account_name" />
+	<browser assert="Account Search" />
+	<textfield id="name_advanced" set="B.H. Edwards Inc" />
+	<button value="Search" />
+	<link text="B.H. Edwards Inc" />
+
+	<select id="parent_type" set="Contacts" />
+	<button id="btn_parent_name" />
+	<browser assert="Contact Search" />
+	<textfield id="last_name_advanced" set="{@contact}" />
+	<button value="Search" />
+	<link text="{@contact}" />
+
+	<button value="Save" />
+
+	<!-- Verify that the linked field shows up in the list -->
+
+	<link id="moduleTab_Opportunities" />
+	<link text="View Opportunities" />
+	<textfield id="name_basic" set="{@opportunity}" />
+	<button value="Search" />
+	<browser assert="{@contact}" />
+
+
+
+	<puts text='--------Bug 40969 Finished--------'/>
+</soda>
