@@ -1,0 +1,33 @@
+<soda>
+    <puts text='--------Bug 42025 Started--------'/>
+    <!-- Login -->
+    <script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+    <timestamp />
+    <var var="subject_base" set="Bug 42025 SODA TEST {@stamp}" />
+
+    <!-- Create a test Task to modify -->
+
+    <link id="moduleTab_Activities" />
+    <link text="Create Task" />
+    <textfield id="name" set="{@subject_base}" />
+    <select id="date_start_hours" set="" />
+    <select id="date_start_minutes" set="" />
+    <select id="date_start_meridiem" set="" />
+    <textfield id="date_start_date" set="1/1/2011" />
+    <textfield id="date_start_date" click="false" jscriptevent="onchange" />
+    <select id="date_due_hours" set="" />
+    <select id="date_due_minutes" set="" />
+    <select id="date_due_meridiem" set="" />
+    <textfield id="date_due_date" set="1/1/2011" />
+    <textfield id="date_due_date" click="false" jscriptevent="onchange" />
+    <button value="Save" />
+
+    <!-- Test we don't have an error -->
+    <browser assertnot="Missing required field: Hours" />
+    <browser assertnot="Missing required field: Minutes" />
+    <browser assertnot="Missing required field: Meridiem" />
+
+
+    <puts text='--------Bug 42025 Finished--------'/>
+</soda>

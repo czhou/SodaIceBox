@@ -1,0 +1,63 @@
+<soda>
+	<puts text='--------Bug 42924 Started--------'/>
+
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<timestamp />
+	<var var="subject_base" set="Bug 42924 SODA TEST {@stamp}" />
+
+ 	<!-- Go to workflow section -->
+	<div id="globalLinks">
+		<link text="Admin" />
+	</div>
+	<link text="Workflow Management" />
+
+
+	<!-- Create test workflow -->
+
+	<link id="moduleTab_WorkFlow" />
+	<link text="Create Workflow Definition" />
+	<textfield name="name" set="{@subject_base}: Test Workflow" />
+	<button value="  Save  " />
+
+	<!-- Create alert and verify that workflow tab is still there and the current active tab -->
+
+	<div id="main">
+		<button value="  Create  " />
+	</div>
+	<!-- verify tab -->
+	<div id="themeTabGroup_All" >
+		<li class="/current/">
+			<link id="moduleTab_WorkFlow" click='false' exists='true' />
+		</li>
+	</div>
+
+	<textfield name="name" set="{@subject_base}: Test Alert" />
+	<button value="  Save  " />
+	<!-- verify tab -->
+	<div id="themeTabGroup_All" >
+		<li class="/current/">
+			<link id="moduleTab_WorkFlow" click='false' exists='true' />
+		</li>
+	</div>
+
+	<button value="  Edit  " />
+	<!-- verify tab -->
+	<div id="themeTabGroup_All" >
+		<li class="/current/">
+			<link id="moduleTab_WorkFlow" click='false' exists='true' />
+		</li>
+	</div>
+
+	<button value="  Cancel  " />
+	<!-- verify tab -->
+	<div id="themeTabGroup_All" >
+		<li class="/current/">
+			<link id="moduleTab_WorkFlow" click='false' exists='true' />
+		</li>
+	</div>
+
+
+    <puts text='--------Bug 42924 Finished--------'/>
+</soda>
