@@ -5,22 +5,22 @@
 	<!--Upload a custom module zip file-->
 	<script file="{@global.scriptsdir}/modules/lib/ModuleLoader_Upload_Lib.xml"/>
 
-	<link id="moduleTab_b1_label"/>
+	<link id="moduleTab_Eric_b1"/>
 	<browser assert="b1_label"/>
 
-	<link id="moduleTab_c1_label"/>
+	<link id="moduleTab_Eric_c1"/>
 	<browser assert="c1_label"/>
 
-	<link id="moduleTab_f1_label"/>
+	<link id="moduleTab_Eric_f1"/>
 	<browser assert="f1_label"/>
 
-	<link id="moduleTab_i1_label"/>
+	<link id="moduleTab_Eric_i1"/>
 	<browser assert="i1_label"/>
 
-	<link id="moduleTab_p1_label"/>
+	<link id="moduleTab_Eric_p1"/>
 	<browser assert="p1_label"/>
 
-	<link id="moduleTab_s1_label"/>
+	<link id="moduleTab_Eric_s1"/>
 	<browser assert="s1_label"/>
 
 	<!--Delete a custom package-->

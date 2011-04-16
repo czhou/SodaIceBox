@@ -4,7 +4,7 @@
 
 	<!--Upload a custom module zip file-->
 	<script file="{@global.scriptsdir}/modules/lib/ModuleLoader_Upload_Lib.xml"/>
-	<link id="moduleTab_b1_label" click="false"/>
+	<link id="moduleTab_Eric_b1" click="false"/>
 
 	<button value="Disable"/>
 	<browser assert="Ready To Disable"/>
@@ -14,7 +14,7 @@
 	<browser assert="Module Disabled Successfully"/>
 
 	<button value="Back to Module Loader"/>
-	<link id="moduleTab_b1_label" click="false" exist="false"/>
+	<link id="moduleTab_Eric_b1" click="false" exist="false"/>
 
 	<button value="Enable"/>
 	<browser assert="Ready To Enable"/>
@@ -24,7 +24,7 @@
 	<browser assert="Module Enabled Successfully"/>
 
 	<button value="Back to Module Loader"/>
-	<link id="moduleTab_b1_label" click="false"/>
+	<link id="moduleTab_Eric_b1" click="false"/>
 
 	<!--Disable a custom module and delete the package-->
 	<script file="{@global.scriptsdir}/modules/lib/ModuleLoader_Delete_Lib.xml"/>

@@ -1,7 +1,5 @@
 <soda>
         <puts text='Quote_2486:Create Quote_Verify that quote is not duplicated when using cancel function.'/>
-	
-	<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml"/>
 
 	<!--Go to Quotes module and search out the quote record create in lib-->
         <link id='moduleTab_Quotes'/>
@@ -33,7 +31,5 @@
         </form>
 	<link text="Duplicated {@pre_Quote_name}" exist="false"/>
 
-    <!--Run Delete XML-->
-    <script file='{@global.scriptsdir}/modules/lib/Quote_Delete_Lib.xml'/>
     <puts text='Quote_2486.xml---Finished!'/>   
 </soda>

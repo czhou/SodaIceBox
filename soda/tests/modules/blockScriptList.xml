@@ -13,7 +13,14 @@
 		<reason>Requires new suites for setup and cleanup of releases.</reason>
 		<modulename>Bug Tracker</modulename>
 	</block>
-
+	
+	<block>
+		<testfile>Accounts_0017</testfile>
+		<bugnumber>43294</bugnumber>
+		<reason>Bug43294</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
 	<block>
 		<testfile>Campaigns_0913</testfile>
 		<bugnumber>43294</bugnumber>
