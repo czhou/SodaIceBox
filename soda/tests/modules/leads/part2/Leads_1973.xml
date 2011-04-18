@@ -22,7 +22,9 @@
 
 	<wait timeout="3" />
 	<table class="list view">
-		<image index="1" click="true" />
+		<tr class="oddListRowS1" index="1">
+			<image index="1" click="true" />
+		</tr>
 	</table>
 	<wait timeout="3" />
 	<div class="moduleTitle">
