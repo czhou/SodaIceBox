@@ -13,20 +13,6 @@
 		<reason>Requires new suites for setup and cleanup of releases.</reason>
 		<modulename>Bug Tracker</modulename>
 	</block>
-
-	<block>
-		<testfile>Campaigns_0913</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Bug43294</reason>
-		<modulename>Campaigns</modulename>
-	</block>
-
-	<block>
-		<testfile>Campaigns_0987</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Bug43294</reason>
-		<modulename>Campaigns</modulename>
-	</block>
 	
 	<block>
 		<testfile>Cases_1304</testfile>
@@ -181,27 +167,6 @@
 		<bugnumber>43347</bugnumber>
 		<reason>43347</reason>
 		<modulename>Leads</modulename>
-	</block>
-	
-	<block>
-		<testfile>Leads_1908</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Pagination buttons not working</reason>
-		<modulename>Leads</modulename>
-	</block>
-	
-	<block>
-		<testfile>Leads_10170</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Pagination buttons not working</reason>
-		<modulename>Leads</modulename>
-	</block>
-	
-	<block>
-		<testfile>Accounts_0017</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Pagination buttons not working</reason>
-		<modulename>Accounts</modulename>
 	</block>
 	
 	<block>
