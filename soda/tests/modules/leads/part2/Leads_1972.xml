@@ -9,17 +9,17 @@
 	<!--Search the record-->
 	<link id="moduleTab_Leads" />
 	<div class="moduleTitle">
-		<tr class="oddListRowS1" index="1">
-			<link href="index.php?module=Leads&amp;action=index" click="false" />
-		</tr>
+		<link href="index.php?module=Leads&amp;action=index" click="false" />
 	</div>
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
 
 	<!-- Edit the record via the "edit" button -->
 	<table class="list view">
-		<image index="1" click="true" />
-	</talbe>
+		<tr class="oddListRowS1" index="1">
+			<image index="1" click="true" />
+		</tr>
+	</table>
 	<div class="moduleTitle">
 		<link href="index.php?module=Leads&amp;action=index" click="false" />
 		<browser
