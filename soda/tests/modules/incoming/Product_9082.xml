@@ -1,0 +1,41 @@
+<soda>
+	<!-- Product_detail_view_display_create_form_quote -->
+
+	<puts text="Test: Product_9082.xml starting" />
+
+	<csv file="{@global.scriptsdir}/csvs/product/Product_9082.csv" var="Product_9082">
+		<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/ProductCategory_Create_Lib.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/Product_Create_Lib.xml" />
+		<link href="index.php?module=Products&amp;action=index" />
+		<wait timeout="5" />
+		<link text="Basic Search" required="false" />
+		<button value="Clear" />
+
+		<form id="search_form">
+			<textfield id="name_basic" set="{@Product_9082.name} {@user.name} {@stamp}" />
+		</form>
+
+		<button id="search_form_submit" />
+
+		<table class="list view">
+			<link text="{@Product_9082.name} {@user.name} {@stamp}" click="true" />
+		</table>
+		<wait timeout="3" />
+		<div class="moduleTitle">
+			<browser assert="{@Product_9082.name} {@user.name} {@stamp}" />
+		</div>
+
+
+		<var var="Product_9082" set="{@Product_9082.name} {@user.name} {@stamp}" />
+	</csv>
+
+	<!--Run Delete XML -->
+	<script file="{@global.scriptsdir}/modules/lib/Product_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductCategory_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Manufacturer_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductType_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<puts text="Test: Product_9082.xml finished" />
+</soda>

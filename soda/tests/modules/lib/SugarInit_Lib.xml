@@ -190,9 +190,7 @@
 
 		<!--Save the new user to a var-->
 		<var var="pre_user_name" set="{@SugarInit.last_name}" />
-		<link text="Log Out" />
 	</csv>
-	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
 	<puts text="Lib: SugarInit_Lib.xml finished." />
 </soda>
 

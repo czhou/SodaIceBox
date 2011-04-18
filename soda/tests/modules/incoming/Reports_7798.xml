@@ -1,0 +1,51 @@
+<soda>
+	<!-- verify that currency symbol displayed under display column. -->
+	<puts text="Test: Reports_7798.xml started." />
+
+	<!--goto Report module-->
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<browser assert="Report Wizard" />
+
+	<!--create row and column report-->
+	<image name="rowsColsImg" click="true" />
+	<table id="Quotes">
+		<link text="Quotes" />
+	</table>
+
+	<button name="Next &gt;" />
+	<div text="Quote Subject" click="true" />
+	<wait timeout="2" />
+	<div text="discount total" click="true" />
+	<wait timeout="2" />
+
+	<div id="display_cols_div">
+		<browser assert="Quotes &gt; Quote Subject" />
+		<browser assert="Quotes &gt; discount total" />
+	</div>
+	<button name="Next &gt;" />
+
+	<csv file="{@global.scriptsdir}/csvs/reports/Reports_7734.csv" var="report_record_7798" >
+		<textfield name="save_report_as" set="{@report_record_7798.save_report_as} {@stamp}" />
+	</csv>
+
+	<button name="Save and Run" />
+	<wait />
+	<browser assert="Title: {@report_record_7798.save_report_as}" />
+	
+	<!--Delete created Report -->
+	<link id="moduleTab_Reports" />
+	<link text="Basic Search" required="false" />
+	<wait timeout="5" />
+	<form class="search_form">
+		<button name="clear" />
+		<textfield name="name_basic" set="{@report_record_7798.save_report_as} {@stamp}" />
+		<button value="Search" />
+	</form>
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+
+	<puts text="Test: Reports_7798.xml finished." />
+</soda>

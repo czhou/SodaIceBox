@@ -1,0 +1,103 @@
+<soda>
+    <puts text='--------Bug 42361 Started--------'/>
+    <!-- Login -->
+    <!-- NOTE that overwriting the csv file currently doesn't work
+    <csv file="{@global.scriptsdir}/../dev/csvs/myusers.csv" var="user">
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" cvs="{@global.scriptsdir}/../dev/csvs/myusers.csv"/>
+    </csv>
+    -->
+    <script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+    <timestamp />
+    <var var="subject_base" set="Bug 42361 SODA TEST {@stamp}" />
+    <var var="subject_default" set="{@subject_base}: Default Value" />
+    <var var="subject_new" set="{@subject_base}: New Value" />
+
+    <!-- Set the default value of the call name/subject -->
+	<div id="globalLinks">
+		<link text="Admin" />
+	</div>
+	<link text="Studio" />
+	<link class="studiolink" text="Calls" />
+	<link class="studiolink" text="Fields" />
+	<link text="name" />
+	<textfield id="default" var="subject_default_old" />
+	<textfield id="default" set="{@subject_default}" />
+	<button value="Save" />
+
+
+    <!-- Create a test call to modify -->
+
+    <link id="moduleTab_Activities" />
+    <link text="Log Call" />
+    <textfield id="name" assert="{@subject_default}" />
+    <textfield id="name" set="{@subject_new}" />
+    <button value="Save" />
+
+
+    <!-- Search for the unique subject field so that we only have 1 record in the list -->
+
+    <link id="moduleTab_Activities" />
+    <link text="View Calls" />
+    <textfield id="name_basic" set="{@subject_base}" />
+    <button value="Search" />
+
+    <!-- Making sure our record is unique -->
+    <span class="pageNumbers" assert="(1 - 1 of 1)" />
+
+	<!-- Click the Calls tab as a workaround to prevent the browser from prompting to re-submit the form. -->
+	<link id="moduleTab_Calls" />
+
+
+    <!-- Close the call using the dialog -->
+	<table class="list view">
+		<row class="oddListRowS1">
+			<!-- Verify the call is there with the proper subject -->
+			<cell index="6">
+				<link text="/{@subject_new}$/" click='false' exists='true'/>
+			</cell>
+			<!-- Click the close button -->
+			<cell index="4">
+				<link index="2" />
+			</cell>
+		</row>
+	</table>
+
+
+	<div class="ft">
+		<button value="OK" />
+	</div>
+
+	<!-- Click the Calls tab as a workaround to prevent the browser from prompting to re-submit the form. -->
+	<link id="moduleTab_Calls" />
+
+    <!-- Verify the call subject is still correct and not switched to the default -->
+	<table class="list view">
+		<row class="oddListRowS1">
+			<!-- Verify the call is there with the proper subject -->
+			<cell index="6">
+				<link text="/{@subject_new}$/" click='false' exists='true'/>
+			</cell>
+		</row>
+	</table>
+
+
+    <!-- Remove the test record -->
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+
+    <!-- Restoring the default value of the call name/subject -->
+	<div id="globalLinks">
+		<link text="Admin" />
+	</div>
+	<link text="Studio" />
+	<link class="studiolink" text="Calls" />
+	<link class="studiolink" text="Fields" />
+	<link text="name" />
+	<textfield id="default" set="{@subject_default_old}" />
+	<button value="Save" />
+
+
+    <puts text='--------Bug 42361 Finished--------'/>
+</soda>

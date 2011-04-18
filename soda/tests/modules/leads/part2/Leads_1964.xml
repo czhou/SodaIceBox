@@ -22,6 +22,7 @@
 			<button value="  Schedule Meeting  " />
 		</table>
 	</div>
+	<wait timeout="5" />
 	<csv file="{@global.scriptsdir}/csvs/leads/Leads_1964.csv" var="Leads_1964">
 		<textfield id="name" set="{@Leads_1964.name}" />
 		<textfield id="location" set="{@Leads_1964.location}" />

@@ -100,6 +100,27 @@
 	</block>
 	
 	<block>
+		<testfile>Accounts_0016</testfile>
+		<bugnumber>123456</bugnumber>
+		<reason>Can't not properly verify listview with asc/dsc</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
+		<testfile>Accounts_0074</testfile>
+		<bugnumber>43348</bugnumber>
+		<reason>Soda issue with Global vs Timeout timestamps</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
+		<testfile>Accounts_0075</testfile>
+		<bugnumber>43348</bugnumber>
+		<reason>Soda issue with Global vs Timeout timestamps</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
 		<testfile>Accounts_0130</testfile>
 		<bugnumber>39955</bugnumber>
 		<reason>bug 39955 - false duplicate account warning</reason>
@@ -140,6 +161,13 @@
 		<reason>bug41276 php error in activities calendar</reason>
 		<modulename>Accounts</modulename>
 	</block>
+	
+	<block>
+		<testfile>Admin_9918</testfile>
+		<bugnumber>43354</bugnumber>
+		<reason>Product JavaScript Error</reason>
+		<modulename>Admin</modulename>
+	</block>
 
 	<block>
 		<testfile>Contacts_4326</testfile>
@@ -160,6 +188,34 @@
 		<bugnumber>43056</bugnumber>
 		<reason>Bug 43056</reason>
 		<modulename>Contacts</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_1993</testfile>
+		<bugnumber>43347</bugnumber>
+		<reason>43347</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_1908</testfile>
+		<bugnumber>43294</bugnumber>
+		<reason>Pagination buttons not working</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_10170</testfile>
+		<bugnumber>43294</bugnumber>
+		<reason>Pagination buttons not working</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Accounts_0017</testfile>
+		<bugnumber>43294</bugnumber>
+		<reason>Pagination buttons not working</reason>
+		<modulename>Accounts</modulename>
 	</block>
 	
 	<block>

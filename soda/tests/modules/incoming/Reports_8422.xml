@@ -1,0 +1,28 @@
+<soda>
+	<!-- verify the runtime checkbox -->
+	<puts text="Test: Reports_8422.xml started." />
+
+	<!--goto Report module-->
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<browser assert="Report Wizard" />
+
+	<!--create row and column report-->
+	<image name="rowsColsImg" click="true" />
+	<table id="Accounts">
+		<link text="Accounts" />
+	</table>
+
+	<wait timeout="3" />
+	<div text="Type" click="true" />
+	<wait timeout="2" />
+	<div text="Annual Revenue" click="true" />
+	<wait timeout="2" />
+
+	<checkbox id="runtime_filter_Filter.1_table_filter_row_1" set="true" />
+	<checkbox id="runtime_filter_Filter.1_table_filter_row_2" set="true" />
+	<checkbox id="runtime_filter_Filter.1_table_filter_row_1" assert="true" />
+	<checkbox id="runtime_filter_Filter.1_table_filter_row_2" assert="true" />
+
+	<puts text="Test: Reports_8422.xml finished." />
+</soda>

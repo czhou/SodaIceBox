@@ -93,4 +93,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Contract_Delete_Lib.xml" />
 		
 	<puts text="Test: Reports_8067.xml finished." />
-</soda>	
+</soda>

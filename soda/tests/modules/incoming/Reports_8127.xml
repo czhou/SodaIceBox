@@ -1,0 +1,47 @@
+<soda>
+	<!-- enterprise report -->
+	<puts text="Test: Reports_8127.xml starting" />
+	<timestamp />
+
+	<!--goto Report module -->
+	<link id="moduleTab_Reports" />
+	<link text="Manage Enterprise Reports" />
+	<link text="Create Enterprise Report" />
+
+	<csv file="{@global.scriptsdir}\csvs\reports\Reports_7734.csv" var="report_record_8127">
+		<textfield name="name" set="{@report_record_8127.save_report_as} {@stamp}" />
+	</csv>
+
+	<button value="  Save  " />
+	
+	<wait timeout="5" />
+	<form class="search_form">
+		<button name="clear" />
+		<textfield name="name_basic" set="{@report_record_8127.save_report_as} {@stamp}" />
+		<button value="Search" />
+	</form>
+
+	<table class="list view">
+		<row class="oddListRowS1">
+			<image index="1" jscriptevent="onclick" />
+		</row>
+	</table>
+	<browser assert="{@report_record_8127.save_report_as} {@stamp}" />
+	
+	<!--Delete created Report -->
+	<link id="moduleTab_Reports" />
+	<link text="Basic Search" required="false" />
+	<wait timeout="5" />
+	<form class="search_form">
+		<button name="clear" />
+		<textfield name="name_basic" set="{@report_record_8127.save_report_as} {@stamp}" />
+		<button value="Search" />
+	</form>
+	<wait timeout="5" />
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	
+	<puts text="Test: Reports_8127.xml finished" />
+</soda>

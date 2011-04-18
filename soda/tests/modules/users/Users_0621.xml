@@ -11,15 +11,15 @@
         <!--create portal user-->
         <link text="Create Portal API User"/>
         <csv file="{@global.scriptsdir}/csvs/users/Users_0621.csv" var="User0621">
-             <textfield name="sugar_user_name" set="{@User0621.name}{@stamp}" jscriptevent="onkeyup" />
-             <textfield id="unique_name" set="{@User0621.username}{@stamp}" jscriptevent="onkeyup" />
+             <textfield name="sugar_user_name" set="{@User0621.name}{@stamp}" jscriptevent="onchange" />
+             <textfield id="unique_name" set="{@User0621.username}{@stamp}" jscriptevent="onchange" />
              <select name="status" set="{@User0621.status}"/>
              <textfield id="Users0emailAddress0" set="{@User0621.email_address}" jscriptevent="onchange" />
              <link text="Password"/>
              <textfield id="new_password" set="{@User0621.password}" jscriptevent="onkeyup"/>
 			 
              <textfield id="confirm_pwd" set="{@User0621.password}" jscriptevent="onkeyup"/>
-			 
+			 <link text="User Profile" />
              <button value="Save"/>
 	     <div id="sugarMsgWindow_c">
 	     	<link text="Close"/>

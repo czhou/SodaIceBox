@@ -21,6 +21,7 @@
 			<button value="  Log Call  " />
 		</table>
 	</div>
+	<wait timeout="5" />
 	<csv file="{@global.scriptsdir}/csvs/leads/Leads_1942.csv" var="Leads_1942">
 		<textfield id="name" set="{@Leads_1942.name}" />
 		<textfield id="date_start_date" set="{@Leads_1942.date_start_date}" />
@@ -38,7 +39,6 @@
 
 		<!--user select -->
 		<button id="btn_assigned_user_name" />
-		<wait timeout="5" />
 		<browser assert="User Search" />
 		<textfield name="last_name_advanced" set="{@Leads_1942.assigned_user_name}" />
 		<button value="Search" />
