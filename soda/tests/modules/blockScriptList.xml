@@ -412,4 +412,18 @@
 		<reason>Pagenation button needs double click in list view</reason>
 		<modulename>Leads</modulename>
 	</block>
+
+	<block>
+		<testfile>Leads_1972</testfile>
+		<bugnumber>43484</bugnumber>
+		<reason>Can't click edit link for lead record in list view</reason>
+		<modulename>Leads</modulename>
+	</block>
+
+	<block>
+		<testfile>Leads_1973</testfile>
+		<bugnumber>43484</bugnumber>
+		<reason>Can't click edit link for lead record in list view</reason>
+		<modulename>Leads</modulename>
+	</block>
 </soda>
