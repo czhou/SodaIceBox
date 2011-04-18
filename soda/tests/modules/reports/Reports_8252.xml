@@ -9,7 +9,7 @@
 
 	<browser assert="Custom Queries" />
 
-	<csv file="{@global.scriptsdir}\csvs\reports\Reports_8252.csv" var="report_record_8252">
+	<csv file="{@global.scriptsdir}/csvs/reports/Reports_8252.csv" var="report_record_8252">
 		<textfield name="name" set="{@report_record_8252.name}" />
 		<textfield name="description" set="{@report_record_8252.description}" />
 		<textfield name="custom_query" set="{@report_record_8252.custom_query}" />

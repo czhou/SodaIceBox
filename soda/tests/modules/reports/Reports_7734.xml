@@ -9,8 +9,8 @@
 
 	<!--create row and column report-->
 	<image name="rowsColsImg" click="true" />
-	<table id="Documents" click="false">
-		<link text="Documents" />
+	<table id="Documents"> 
+		<link text="Documents" alert="true" />
 	</table>
 
 	<link id="ygtvlabelel8" />
@@ -35,7 +35,7 @@
 	<div text="Publish Date" click="true" />
 	<button name="Next &gt;" />
 
-	<csv file="{@global.scriptsdir}\csvs\reports\Reports_7734.csv"
+	<csv file="{@global.scriptsdir}/csvs/reports/Reports_7734.csv"
 		var="report_record_7734">
 		<textfield name="save_report_as"
 			set="{@report_record_7734.save_report_as}" />
@@ -45,6 +45,20 @@
 	<wait />
 
 	<browser assert="Title: {@report_record_7734.save_report_as}" />
-	
+
+	<!--Clear the report record created in this test-->
+	<link id="moduleTab_Reports"/>
+	<button value=" Clear "/>
+	<textfield name="name_basic" set="{@report_record_7734.save_report_as}"/>
+	<button value="Search"/>
+
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+
+        <button name="clear" />
+        <button id="search_form_submit" />
+
 	<puts text="Test: Reports_7734 finished." />
 </soda>

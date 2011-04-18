@@ -7,7 +7,7 @@
 	<link id="moduleTab_Reports" />
 	<link text="Basic Search" required="false" />
 	<wait timeout="5" />
-	<button name="clear" />
+	<button value=" Clear " />
 	<button value="Search" />
 	<wait timeout="5" />
 	<table class="list view">

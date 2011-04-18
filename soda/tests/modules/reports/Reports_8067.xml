@@ -9,8 +9,8 @@
 
 	<!--create row and column report -->
 	<image name="rowsColsImg" click="true" />
-	<table id="Contracts" click="false">
-		<link text="Contracts" />
+	<table id="Contracts" >
+		<link text="Contracts" alert="true" />
 	</table>
 
 	<div id="module_tree_panel">

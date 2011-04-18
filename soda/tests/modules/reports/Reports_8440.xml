@@ -10,8 +10,8 @@
 
 	<!--create row and column report -->
 	<image name="rowsColsImg" click="true" />
-	<table id="Calls" click="false">
-		<link text="Calls" />
+	<table id="Calls"> 
+		<link text="Calls" alert="true" />
 	</table>
 
 	<wait timeout="3" />
@@ -36,7 +36,7 @@
 
 	<button name="Next &gt;" />
 
-	<csv file="{@global.scriptsdir}\csvs\reports\Reports_7734.csv" var="report_record_8440">
+	<csv file="{@global.scriptsdir}/csvs/reports/Reports_7734.csv" var="report_record_8440">
 		<textfield name="save_report_as" set="{@report_record_8440.save_report_as} {@stamp}" />
 	</csv>
 

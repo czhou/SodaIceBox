@@ -2,7 +2,48 @@
 	<!-- delete report -->
 	<puts text="Test: Reports_8047.xml started." />
 
-	<script file="{@global.scriptsdir}/modules/reports/Reports_7734.xml" />
+	<link id="moduleTab_Reports" />
+        <link text="Create Report" />
+        <browser assert="Report Wizard" />
+
+        <!--create row and column report-->
+        <image name="rowsColsImg" click="true" />
+        <table id="Documents">
+                <link text="Documents" alert="true" />
+        </table>
+
+        <link id="ygtvlabelel8" />
+
+        <div text="Address City" click="true" />
+        <wait timeout="1" />
+        <div text="Address Country" click="true" />
+        <wait timeout="1" />
+
+        <div id="filter_designer_div">
+                <browser assert="Documents &gt; Created User &gt; Address City" />
+                <browser assert="Documents &gt; Created User &gt; Address Country" />
+                <row id="Filter.1_table_filter_row_1">
+                        <select name="qualify" set="Is Empty" />
+                </row>
+		<row id="Filter.1_table_filter_row_2">
+                        <select name="qualify" set="Is Empty" />
+                </row>
+        </div>
+        <button name="Next &gt;" />
+
+        <div text="Publish Date" click="true" />
+        <button name="Next &gt;" />
+
+        <csv file="{@global.scriptsdir}/csvs/reports/Reports_7734.csv"
+                var="report_record_7734">
+                <textfield name="save_report_as"
+                        set="{@report_record_7734.save_report_as}" />
+        </csv>
+
+        <button name="Save and Run" />
+        <wait />
+
+        <browser assert="Title: {@report_record_7734.save_report_as}" />
 
 	<!--goto Report module -->
 	<link id="moduleTab_Reports" />
@@ -25,9 +66,18 @@
 	</table>
 	
 	<!--Cear the search result-->
-	<link id<link id="Basic Search" required="false" />
-	<wait timeout="2"/>
-	<button value="Clear"/>
-	<button value="Search"/>
+	<link id="moduleTab_Reports"/>
+        <button value=" Clear "/>
+        <textfield name="name_basic" set="{@report_record_7734.save_report_as}"/>
+        <button value="Search"/>
+
+        <checkbox name="massall" click="true" />
+        <link id="actions_link" />
+        <link text="Delete" alert="true" />
+        <span class="pageNumbers" assert="(0 - 0 of 0)" />
+
+        <button name="clear" />
+        <button id="search_form_submit" />
+
 	<puts text="Test: Reports_8047.xml finished." />
 </soda>
