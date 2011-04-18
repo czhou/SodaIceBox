@@ -363,4 +363,18 @@
 		<reason>mfleeger: meeting format discrepency on Shared calendar</reason>
 		<modulename>Calendar</modulename>
 	</block>
+	
+	<block>
+		<testfile>Leads_1908</testfile>
+		<bugnumber></bugnumber>
+		<reason>Pagenation button needs double click in list view</reason>
+		<modulename>Leads</modulename>
+	</block>
+
+	<block>
+		<testfile>Leads_10170</testfile>
+		<bugnumber></bugnumber>
+		<reason>Pagenation button needs double click in list view</reason>
+		<modulename>Leads</modulename>
+	</block>
 </soda>
