@@ -198,27 +198,6 @@
 	</block>
 	
 	<block>
-		<testfile>Leads_1908</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Pagination buttons not working</reason>
-		<modulename>Leads</modulename>
-	</block>
-	
-	<block>
-		<testfile>Leads_10170</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Pagination buttons not working</reason>
-		<modulename>Leads</modulename>
-	</block>
-	
-	<block>
-		<testfile>Accounts_0017</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Pagination buttons not working</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
 		<testfile>Studio_8287</testfile>
 		<bugnumber></bugnumber>
 		<reason>Can't find element during CI only</reason>
