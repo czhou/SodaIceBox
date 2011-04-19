@@ -20,7 +20,7 @@
 	<wait timeout="2"/>
 	<textfield id="name" set="New note record"/>
 	<button id="Notes_subpanel_save_button"/>
-	<wait timeout="2"/>
+	<wait timeout="5"/>
 	<browser assert="New note record"/>
 	
 	<!--Delete the note record created in this case.-->
