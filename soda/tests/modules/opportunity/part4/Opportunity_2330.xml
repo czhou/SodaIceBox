@@ -30,7 +30,7 @@
 
 		<timestamp />
 		<!--teams select -->
-
+		<wait timeout="10" />
 		<button name="teamSelect" />
 
 		<browser assert="Team Search" />
