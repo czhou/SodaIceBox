@@ -1,9 +1,10 @@
 <soda>
-	
-	<puts text="Test: Admin_10393 Set minimum dashlet auto-refresh interval in system setting starting." />
+
+	<puts
+		text="Test: Admin_10393 Set minimum dashlet auto-refresh interval in system setting starting." />
 
 	<div id="globalLinks">
-				<link text="Admin" />
+		<link text="Admin" />
 	</div>
 	<link text="System Settings" />
 	<browser assert="User Interface" />
@@ -12,17 +13,18 @@
 	<button value="  Save  " />
 	<wait timeout="3" />
 	<link id="moduleTab_Home" />
-	<div class="dashletToolSet" >
-		<link index="1" jscriptevent="onclick" />	
+	<div class="hd" jscriptevent="onmouseover" />
+	<div class="dashletToolSet">
+		<link index="1" />
 	</div>
-	
-	<div id ="dlg_c">
+	<wait timeout="5" />
+	<div id="dlg_c">
 		<browser assertnot="Auto-Refresh Interval" />
 		<button value="Save" />
-    </div>
+	</div>
 
 	<div id="globalLinks">
-				<link text="Admin" />
+		<link text="Admin" />
 	</div>
 	<link text="System Settings" />
 	<browser assert="User Interface" />
@@ -31,11 +33,13 @@
 	<button value="  Save  " />
 	<wait timeout="3" />
 	<link id="moduleTab_Home" />
-	
-	<div class="dashletToolSet" >
-		<link index="1" jscriptevent="onclick" />	
+
+	<div class="hd" jscriptevent="onmouseover" />
+	<div class="dashletToolSet">
+		<link index="1" />
 	</div>
-	<div id ="dlg_c">
+	<wait timeout="5" />
+	<div id="dlg_c">
 		<browser assert="Auto-Refresh Interval " />
 		<browser assert="Do not auto-refresh" />
 		<browser assert="Every 5 minutes" />
@@ -44,7 +48,7 @@
 		<browser assertnot="Every 1 minute" />
 		<browser assertnot="Every 3 minute" />
 		<button value="Save" />
-    </div>	
+	</div>
 
 	<puts text="Test: Admin_10393.xml finished." />
 </soda>
