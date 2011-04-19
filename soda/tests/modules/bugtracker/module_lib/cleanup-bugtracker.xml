@@ -1,4 +1,6 @@
 <soda>
+	<script file="{@global.scriptsdir}/modules/lib/Enable_Defaults_Lib.xml"/>
+
 	<!-- Delete releases. -->
 	<link text="Admin" />
 	<link text="Releases" />
