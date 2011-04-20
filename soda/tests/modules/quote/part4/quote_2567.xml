@@ -1,0 +1,47 @@
+<soda>
+        <puts text="Test Case 2567: Relationship - Edit Task_Verify that task can be successful modified on the "Activity" sub-panel."/>
+
+        <!--Go to Quotes module and search out the quote record create in lib-->
+        <link id='moduleTab_Quotes'/>
+        <browser assert='Quotes'/>
+        <form id='search_form'>
+            <button id='search_form_clear'/>
+            <textfield id='name_basic' set='{@pre_Quote_name}'/>
+            <button id='search_form_submit'/>
+        </form>
+
+        <table class='list view'>
+            <link text='{@pre_Quote_name}'/>
+        </table>
+
+        <!--Create a task in Activities subpanel.-->
+        <browser assert="Quote Overview"/>
+        <button id="Activities_createtask_button"/>
+        <wait timeout="2"/>
+        <textfield id="name" set="New task record"/>
+        <button id="Tasks_subpanel_save_button"/>
+        <wait timeout="5"/>
+        <browser assert="New task record"/>
+	
+	<!--Modify the task record-->
+	<table class="list view">
+		<link class="listViewTdToolsS1" index="1"/>
+	</table>
+	<wait timeout="2"/>
+	<textfield id="name" set="Modified task record"/>
+        <button id="Tasks_subpanel_save_button"/>
+        <wait timeout="5"/>
+        <browser assert="Modified task record"/>
+
+        <!--Delete the note record created in this case.-->
+        <link id="moduleTab_Tasks"/>
+        <button id="search_form_clear"/>
+        <textfield id="name_basic" set="Modified note record"/>
+        <button id="search_form_submit"/>
+        <checkbox id="massall" click="true"/>
+        <link id="actions_link"/>
+        <link text="Delete" alert="true"/>
+        <span class="pageNumbers" assert="(0 - 0 of 0)" />
+        <puts text='Quote_2567.xml---Finished!'/>
+</soda>
+
