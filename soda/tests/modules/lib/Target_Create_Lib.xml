@@ -19,6 +19,9 @@
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Target_New_Record.teamname}" /> 
 		<button value="Search" />
+		<wait timeout="10" condition="true">
+   			<checkbox id="massall" />
+		</wait>
 		<link text="{@Target_New_Record.teamname}" />
 
 		<!--user select-->

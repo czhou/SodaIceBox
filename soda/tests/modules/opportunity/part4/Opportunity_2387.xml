@@ -32,6 +32,9 @@
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2387.team_name}" />
 		<button value="Search" />
+		<wait timeout="10" condition="true">
+   			<checkbox id="massall" />
+		</wait>
 		<link text="{@Opportunity_2387.team_name}" />
 
 		<!--Select Campaign record -->
