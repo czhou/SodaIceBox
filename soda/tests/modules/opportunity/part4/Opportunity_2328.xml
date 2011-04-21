@@ -31,6 +31,9 @@
 			</table>
 		</div>
 		<!--teams select -->
+		<wait timeout="10" condition="true">
+   			<button name="teamSelect" />
+		</wait>
 		<button name="teamSelect" />
 
 		<browser assert="Team Search" />
