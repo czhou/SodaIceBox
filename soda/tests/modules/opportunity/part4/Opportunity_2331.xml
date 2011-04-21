@@ -30,7 +30,7 @@
 		<!--teams select -->
 
 		<button name="teamSelect" />
-
+		<wait timeout="5" />
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2331.team_name}" />
 		<button value="Search" />
