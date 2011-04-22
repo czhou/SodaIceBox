@@ -20,14 +20,17 @@
 		<link href="index.php?module=Cases&amp;action=index" click="false" />
 	</div>
 
-	<button name="clear" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+
 	<checkbox name="massall" set="true" />
+	<link text="Actions" />
+	<link text="Mass Update" />
 
 	<timestamp />
 
 	<!--mass update case-->
 	<csv file="{@global.scriptsdir}/csvs/cases/Case_1284.csv" var="Case_1284">
-
 		<!--user select-->
 		<table id="mass_update_table">
 			<button value="Select" index="1" />
