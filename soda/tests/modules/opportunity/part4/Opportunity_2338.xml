@@ -29,9 +29,10 @@
 		<button id="opportunity_leads_create_button" />
 
 		<!--teams select -->
-
+		<wait timeout="10" condition="true">
+   			<button name="teamSelect" />
+		</wait>
 		<button name="teamSelect" />
-		<wait timeout="10" />
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2338.team_name}" />
 		<button value="Search" />
