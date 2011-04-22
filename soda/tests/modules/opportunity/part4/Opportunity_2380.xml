@@ -1,11 +1,10 @@
 <soda>
 	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2380.csv" var="Opportunity_2380">
 		<puts text="Test: Opportunity_2380.xml starting" />
-		<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 		<script file="{@global.scriptsdir}/modules/lib/Campaign_Create_Lib.xml" />
 
 		<link id="moduleTab_Opportunities" />
-
+		<timestamp />
 		<link text="Create Opportunity" />
 		<textfield id="name" set="{@Opportunity_2380.name} {@user.name} {@stamp}" />
 		<textfield id="amount" set="{@Opportunity_2380.amount}" />
@@ -46,12 +45,11 @@
 
 		<browser assert="{@Opportunity_2380.name} {@user.name} {@stamp}" />
 		<browser assert="{@Opportunity_2380.amount}" />
-
+		<form id="form">
+            <button value="Delete" alert='true'/>
+        </form>
 	</csv>
 	<!--Run Delete XML -->
-	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
-	<!--script file="scripts/sugarcrm/modules/lib/Team_Delete_Lib.xml"/ -->
 	<script file="{@global.scriptsdir}/modules/lib/Campaign_Create_Lib.xml" />
 	<puts text="Test: Opportunity_2380.xml finished" />
 </soda>

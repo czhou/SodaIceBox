@@ -16,7 +16,6 @@
 
 	<!-- Create Opp -->
 	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2386.csv" var="Opportunity_2386">
-		<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" />
 		<timestamp />
 		<link id="moduleTab_Opportunities" />
 		<link text="Create Opportunity" />
@@ -46,7 +45,9 @@
 			<link href="index.php?module=Opportunities&amp;action=index" click="false" />
 			<browser assert="{@Opportunity_2386.name} {@user.name} {@stamp}" />
 		</div>
-
+		<form id="form">
+            <button value="Delete" alert='true'/>
+        </form>
 		<!-- Set 1000s separator and Decimal symbol back to their original values-->
 		<link text="Administrator" />
 		<div id="EditView_tabs">
@@ -57,8 +58,5 @@
 		<button value="Save" />
 
 	</csv>
-	<!--Run Delete XML-->
-	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
 	<puts text="Test: Opportunity_2386.xml finished" />
 </soda>

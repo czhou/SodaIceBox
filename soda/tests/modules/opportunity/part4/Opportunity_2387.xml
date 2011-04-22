@@ -3,7 +3,6 @@
 		creating an opportunity. -->
 	<puts text="Test: Opportunity_2387.xml started." />
 	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2387.csv" var="Opportunity_2387">
-		<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 		<script file="{@global.scriptsdir}/modules/lib/Campaign_Create_Lib.xml" />
 
 		<link id="moduleTab_Opportunities" />
@@ -76,11 +75,11 @@
 		<browser assert="{@Opportunity_2387.assigned_user_name}" />
 		<browser assert="{@Opportunity_2387.team_name}" />
 		<link text="{@Campaign_Name}" click="false" />
-
+		<form id="form">
+            <button value="Delete" alert='true'/>
+        </form>
 	</csv>
 	<!--Run Delete XML -->
-	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Campaign_Delete_Lib.xml" />
 	<puts text="---Opportunity_2387.xml---Finished!" />
 </soda>

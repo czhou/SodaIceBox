@@ -3,33 +3,26 @@
 
 	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2346.csv" var="Opportunity_2346">
 
-		<!--script file="scripts/sugarcrm/modules/lib/Team_Create_Lib.xml"/ -->
-		<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
-		<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
 		<link id="moduleTab_Opportunities" />
-
-		<link text="Basic Search" required="false" />
-
+		<browser assert="Opportunities" />
 		<button id="search_form_clear" />
-
 		<form id="search_form">
-			<textfield id="name_basic" set="{@Opportunity_2346.name} {@user.name} {@stamp}" />
+			<textfield id="name_basic" set="{@pre_opp_name}" />
 		</form>
-
 		<button id="search_form_submit" />
 
 		<table class="list view">
-			<browser assert="{@Opportunity_2346.name} {@user.name} {@stamp}" />
-			<link text="{@Opportunity_2346.name} {@user.name} {@stamp}" click="true" />
+			<browser assert="{@pre_opp_name}" />
+			<link text="{@pre_opp_name}" />
 		</table>
-		<table id="detailpanel_1">
 
-			<browser assert="{@Opportunity_2346.name} {@user.name} {@stamp}" />
+		<table id="detailpanel_1">
+			<browser assert="{@pre_opp_name}" />
 		</table>
 
 		<button id="opportunities_contacts_create_button" />
-
-		<wait timeout="10" />
+		<timestamp />
+		<wait timeout="5" />
 
 		<!--Account select -->
 		<button id="btn_account_name" />
@@ -41,7 +34,9 @@
 		</table>
 
 		<!--teams select -->
-
+		<wait timeout="10" condition="true">
+   			<button name="teamSelect" />
+		</wait>
 		<button name="teamSelect" />
 
 		<browser assert="Team Search" />
@@ -51,7 +46,7 @@
 
 
 		<!--goto contact edit view -->
-		<textfield name="first_name" set="{@Opportunity_2346.contact_first_name}" />
+		<textfield name="first_name" set="{@Opportunity_2346.contact_first_name} {@stamp}" />
 		<textfield id="last_name" set="{@Opportunity_2346.contact_last_name}" />
 		<textfield id="title" set="{@Opportunity_2346.contact_title}" />
 
@@ -68,18 +63,21 @@
 		<div id="list_subpanel_contacts">
 			<table class="list view">
 				<browser
-					assert="{@Opportunity_2346.contact_first_name} {@Opportunity_2346.contact_last_name}" />
+					assert="{@Opportunity_2346.contact_first_name} {@stamp} {@Opportunity_2346.contact_last_name}" />
 			</table>
+			
 		</div>
-		<hidden name="record" var="pre_opp_id" />
-
-		<var var="pre_opp_name" set="{@Opportunity_2346.name} {@user.name} {@stamp}" />
 
 	</csv>
-	<!--Run Delete XML -->
-	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
-	<!--script file="scripts/sugarcrm/modules/lib/Team_Delete_Lib.xml"/ -->
+	<!--Delete the created contact -->
+	<link id="moduleTab_Contacts" />
+	<link text="Basic Search" required="false" />
+	<button id="search_form_clear" />
+	<textfield id="search_name_basic" set="{@Opportunity_2346.contact_first_name} {@stamp}" />
+	<button id="search_form_submit" />
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />
 	<puts text="Test: Opportunity_2346.xml finished." />
 </soda>

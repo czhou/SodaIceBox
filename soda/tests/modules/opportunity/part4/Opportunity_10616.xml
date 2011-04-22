@@ -12,16 +12,30 @@
 	<textfield name="list_max_entries_per_subpanel" set="2" />
 	<button value="  Save  " />
 
-	<!-- Create 6 tasks to be related to Opp -->
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" />
+	<!-- Create 5 tasks to be related to Opp -->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" />
 
-	<!-- Create Opp -->
-	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
+	<!-- Search an Opp -->
+	<link id="moduleTab_Opportunities" />
+	<browser assert="Opportunities" />
+	<button id="search_form_clear" />
+	<form id="search_form">
+		<textfield id="name_basic" set="{@pre_opp_name}" />
+	</form>
+	<button id="search_form_submit" />
+
+	<table class="list view">
+		<browser assert="{@pre_opp_name}" />
+		<link text="{@pre_opp_name}" />
+	</table>
+
+	<table id="detailpanel_1">
+		<browser assert="{@pre_opp_name}" />
+	</table>
 
 	<!-- Via Contacts Subpanel relate all the created contracts to this Opp -->
 	<div id="list_subpanel_contacts">
@@ -97,11 +111,11 @@
 	<link text="System Settings" />
 	<textfield name="list_max_entries_per_subpanel" set="10" />
 	<button value="  Save  " />
-
+	
 	<!--Run Delete XML-->
-	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
-
+    <script file='{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml'/>
+	<!--Keep a valid contact for Opp-part4 -->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" />
+		
 	<puts text="Test: Opportunity_10616.xml finished" />
 </soda>

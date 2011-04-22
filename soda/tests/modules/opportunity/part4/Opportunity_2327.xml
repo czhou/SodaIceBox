@@ -3,27 +3,23 @@
 
 	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2327.csv" var="Opportunity_2327">
 
-		<!--script file="scripts/sugarcrm/modules/lib/Team_Create_Lib.xml"/ -->
-		<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
 		<link id="moduleTab_Opportunities" />
-
-		<link text="Basic Search" required="false" />
-
+		<browser assert="Opportunities" />
 		<button id="search_form_clear" />
 		<form id="search_form">
-			<textfield id="name_basic" set="{@Opportunity_2327.name} {@user.name} {@stamp}" />
+			<textfield id="name_basic" set="{@pre_opp_name}" />
 		</form>
-
 		<button id="search_form_submit" />
 
 		<table class="list view">
-			<browser assert="{@Opportunity_2327.name} {@user.name} {@stamp}" />
-			<link text="{@Opportunity_2327.name} {@user.name} {@stamp}" click="true" />
+			<browser assert="{@pre_opp_name}" />
+			<link text="{@pre_opp_name}" />
 		</table>
-		<table id="detailpanel_1">
 
-			<browser assert="{@Opportunity_2327.name} {@user.name} {@stamp}" />
+		<table id="detailpanel_1">
+			<browser assert="{@pre_opp_name}" />
 		</table>
+		
 		<div id="list_subpanel_activities">
 			<table class="list view">
 				<button value="  Create Task  " />
@@ -70,15 +66,9 @@
 				<browser assertnot="{@Opportunity_2327.task_name} {@user.name} {@stamp}" />
 			</table>
 		</div>
-		<hidden name="record" var="pre_opp_id" />
-
-		<var var="pre_opp_name" set="{@Opportunity_2327.name} {@user.name} {@stamp}" />
 
 	</csv>
 	<!--Run Delete XML -->
-	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
-	<!--script file="scripts/sugarcrm/modules/lib/Team_Delete_Lib.xml"/ -->
 	<puts text="Test: Opportunity_2327.xml finished." />
 </soda>
