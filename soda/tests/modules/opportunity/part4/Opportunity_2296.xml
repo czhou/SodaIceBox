@@ -19,8 +19,10 @@
              <textfield id="name_basic" set="{@Opportunity_2296.name} {@user.name} {@stamp}"/>
         </form>
         
-             <button id="search_form_submit" />
-        
+        <button id="search_form_submit" />
+        <wait timeout="10" condition="true">
+   			<link text="{@Opportunity_2296.name} {@user.name} {@stamp}" /> 
+		</wait>
         <table class="list view">
              <browser assert="{@Opportunity_2296.name} {@user.name} {@stamp}"/>
              <link text="{@Opportunity_2296.name} {@user.name} {@stamp}" click="true"/>             
