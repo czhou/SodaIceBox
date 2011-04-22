@@ -29,7 +29,7 @@
         </table>
         <wait timeout="2"/>
         <textfield id="name" set="Modified meeting record"/>
-        <button id="CANCEL"/>
+        <button id="CANCEL" alert="true"/>
         <wait timeout="5"/>
         <browser assert="New meeting record"/>
 
