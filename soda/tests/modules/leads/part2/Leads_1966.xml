@@ -36,8 +36,10 @@
 		<textfield id="description" set="{@Leads_1966.description}" />
 
 		<!--user select -->
-		<button id="btn_assigned_user_name" />
-		<wait timeout="10" />
+		<div id="Default_Calls_Subpanel">
+			<button id="btn_assigned_user_name" />
+		</div>
+		<wait timeout="5" />
 		<browser assert="User Search" />
 		<textfield name="last_name_advanced" set="{@Leads_1966.assigned_user_name}" />
 		<button value="Search" />
