@@ -48,6 +48,8 @@
 
 	<!--Clear the report record created in this test-->
 	<link id="moduleTab_Reports"/>
+	<link text="Basic Search" required="false"/>
+	<wait timeout="2"/>
 	<button value=" Clear "/>
 	<textfield name="name_basic" set="{@report_record_7734.save_report_as}"/>
 	<button value="Search"/>
