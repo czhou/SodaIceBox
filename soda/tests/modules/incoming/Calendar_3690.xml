@@ -1,0 +1,51 @@
+<soda>
+	<!--
+		Action:
+			Verify that a call is not scheduled by edit view
+				when mandatory fields are not entered.
+		Expectation:
+			1. Call is not scheduled.
+	-->
+	
+	<puts text="Test: Calendar_3690.xml starting." />
+
+	<timestamp />
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+
+	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record" />
+		<textfield id="name" set="" />
+
+		<textfield id="date_start_date" set="" />
+		<select id="date_start_hours" set="00" />
+		<select id="date_start_minutes" set="00" />
+
+		<textfield name="duration_hours" set="" />
+		<select name="duration_minutes" set="00" />
+
+		<select id="direction" set="{@call_record.direction}" />
+		<select id="status" set="{@call_record.status}" />
+
+		<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
+		<textfield id="description" set="{@call_record.description}" />
+
+		<textfield id="team_name_collection_0" set="Nonexistent {@stamp}" jscriptevent="onkeydown" />
+		<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+		
+		<var var="call1_name" set="{@call_record.name} {@user.name} {@stamp}" />
+
+		<button value="Save" />
+		
+		<div id="LBL_CALL_INFORMATION">
+			<browser assert="Missing required field: Subject" />
+			<browser assert="Missing required field: Start Date" />
+			<browser assert="Missing required field: Hours" />
+			<browser assert="Missing required field: Minutes" />
+		</div>
+		
+		<button id="edit_button" exists="false" />
+	
+		<button id="CANCEL" alert="true" />
+	
+	<puts text="Test: Calendar_3690.xml finished." />
+</soda>
