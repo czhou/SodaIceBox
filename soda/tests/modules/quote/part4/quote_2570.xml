@@ -1,5 +1,5 @@
 <soda>
-        <puts text="Test Case 2570: Relationship - Edit Meeting_Verify that modifying "Schedule Meeting" can be successful canceled on the "Cases" sub-panel."/>
+        <puts text="Test Case 2570: Relationship - Edit Meeting_Verify that modifying 'Schedule Meeting' can be successful canceled on the 'Cases' sub-panel."/>
 
         <!--Go to Quotes module and search out the quote record create in lib-->
         <link id='moduleTab_Quotes'/>

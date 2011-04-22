@@ -1,0 +1,48 @@
+<soda>
+	<!--
+		Action:
+			Verify that a call is not scheduled by edit view when
+				entering invalid value in "Start Date" or "Duration"
+				text fields.
+		Expectation:
+			1. Call is not scheduled.
+	-->
+	
+	<puts text="Test: Calendar_3691.xml starting." />
+
+	<timestamp />
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+
+	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record" />
+		<textfield id="name" set="Temp Call {@stamp}" />
+
+		<textfield id="date_start_date" set="66/77/8888" />
+		<select id="date_start_hours" set="03" />
+		<select id="date_start_minutes" set="00" />
+
+		<textfield name="duration_hours" set="ABC" />
+		<select name="duration_minutes" set="15" />
+
+		<select id="direction" set="{@call_record.direction}" />
+		<select id="status" set="{@call_record.status}" />
+
+		<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
+		<textfield id="description" set="{@call_record.description}" />
+		
+		<var var="call1_name" set="{@call_record.name} {@user.name} {@stamp}" />
+
+		<button value="Save" />
+		
+		<div id="LBL_CALL_INFORMATION">
+			<browser assert="Invalid Value: date_start" />
+			<browser assert="Invalid Value: Start Date" />
+			<browser assert="Invalid Value: Duration Hours" />
+		</div>
+		
+		<button id="edit_button" exists="false" />
+	
+		<button id="CANCEL" alert="true" />
+	
+	<puts text="Test: Calendar_3691.xml finished." />
+</soda>

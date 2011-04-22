@@ -1,0 +1,73 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click "Calls"/"Meeting" link on Navigation shortcuts.
+			4. Click any call/meeting subject link in "Call/Meeting List" view.
+			5. Click "edit" link for a note record in "Notes" sub-panel of 
+				"Call/Meeting Detail View" page.
+			6. Cancel editing the information of the note for the call/meeting.
+		Expectation:
+			6. The information of the note for the call/meeting is not changed.
+	-->
+	
+	<puts text="Test: Calendar_3663.xml starting." />
+
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
+	<var var="meeting1_name" set="{@pre_meeting_name}" />
+	
+	<button id="History_createnoteorattachment_button" />
+	<textfield id="name" set="Note for {@meeting1_name}" />
+	<button id="Notes_subpanel_save_button" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+	<var var="call1_name" set="{@pre_call_name}" />
+	
+	<button id="History_createnoteorattachment_button" />
+	<textfield id="name" set="Note for {@call1_name}" />
+	<button id="Notes_subpanel_save_button" />
+	
+	<link id="moduleTab_Meetings" />
+	<table class="list view">
+		<link text="{@meeting1_name}" />
+	</table>
+	
+	<div id="list_subpanel_history">
+		<link class="listViewTdToolsS1" index="1" />
+	</div>
+	
+	<textfield id="name" set="Modified {@meeting1_name}" />
+	<button id="CANCEL" alert="true" />
+	
+	<div id="list_subpanel_history">
+		<browser assertnot="Modified {@meeting1_name}" />
+		<browser assert="Note for {@meeting1_name}" />
+	</div>
+	
+	
+	<link id="moduleTab_Calls" />
+	<table class="list view">
+		<link text="{@call1_name}" />
+	</table>
+	
+	<div id="list_subpanel_history">
+		<link class="listViewTdToolsS1" index="1" />
+	</div>
+	
+	<textfield id="name" set="Modified {@call1_name}" />
+	<button id="CANCEL" alert="true" />
+	
+	<div id="list_subpanel_history">
+		<browser assertnot="Modified {@call1_name}" />
+		<browser assert="Note for {@call1_name}" />
+	</div>
+	
+	
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
+		
+	<puts text="Test: Calendar_3663.xml finished." />
+</soda>
