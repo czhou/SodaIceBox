@@ -44,5 +44,11 @@
 	
 		<button id="CANCEL" alert="true" />
 	
+		<link id="moduleTab_Calls" />
+		
+		<table class="list view">
+			<browser assertnot="{@call1_name}" />
+		</table>
+	
 	<puts text="Test: Calendar_3689.xml finished." />
 </soda>
