@@ -1,0 +1,28 @@
+<soda>
+	<puts text='--------Bug 42459 Started--------'/>
+	<puts text='-- Team Filter Does Not Force a Value Causing Database Error --'/>
+
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<image name="rowsColsImg" click="true" />
+	<link class="studiolink" text="Accounts" />
+	<table id="ygtvtableel24"><!-- Account - Teams -->
+		<link text="Teams" />
+	</table>
+	<row id="yui-rec33" click="true" /> <!-- Teams field -->
+	<button name="Next >" alert="true" />
+	<!-- Check if we are still on the same page because of empty Teams field -->
+	<link text="Choose Display Columns" exists="false" />
+
+	<button name="teamSelect" />
+	<link text="/Test Team/" />
+	<button name="Next >" alert="true" />
+	<!-- Check if we are on the next page -->
+	<link text="Choose Display Columns" exists="true" click="false" />
+
+	<puts text='--------Bug 42459 Finished--------'/>
+
+</soda>
