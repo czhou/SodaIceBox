@@ -13,8 +13,10 @@
 
 		<table class="list view">
 			<browser assertnot="{@pre_opp_name}" />
-			<link text="{@pre_opp_name}" exit="false" />
+			<link text="{@pre_opp_name}" exists="false" />
 		</table>
+		<button id="search_form_clear" />
+		<button id="search_form_submit" />
 	</csv>
 	<puts text="Test: Opportunity_2409.xml finished." />
 </soda>

@@ -25,7 +25,9 @@
 		<wait timeout="10" condition="true">
    			<button name="teamSelect" />
 		</wait>
-		<button name="teamSelect" />
+		<div id="Default_Calls_Subpanel">
+			<button name="teamSelect" />
+		</div>
 
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2341.team_name}" />

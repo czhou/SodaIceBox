@@ -12,6 +12,8 @@
 
 	<!-- Verify that the navigation from 1 Opp to the next and previous works -->
 	<link id="moduleTab_Opportunities" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
 	<wait timeout="3" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Opportunities&amp;action=index" click="false" />
