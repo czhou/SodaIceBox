@@ -71,6 +71,210 @@
 	</block>
 	
 	<!-- Mazen's Modules -->
+	<!-- Beginning of illegal javascript related blocks -->
+	<block>
+		<testfile>Calendar_0692</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0701</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0725</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0735</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0736</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0737</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0738</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0739</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0740</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0741</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_0742</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_7734</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_1770</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_1771</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_1774</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_7735</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_7736</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_7785</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_8047</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_8067</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_8137</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_8145</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_8153</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_8160</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_8342</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_8348</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_8452</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_8458</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_8598</testfile>
+		<bugnumber></bugnumber>
+		<reason>illegal javascript accessor</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	<!-- End of illegal javascript related blocks -->
 	<block>
 		<testfile>Calendar_0703</testfile>
 		<bugnumber>39955</bugnumber>
