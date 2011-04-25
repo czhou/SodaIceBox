@@ -27,7 +27,9 @@
    			<button name="teamSelect" />
 		</wait>
 		<button name="teamSelect" />
-
+		<wait timeout="10" condition="true">
+   			<button name="teamSelect" />
+		</wait>
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2333.team_name}" />
 		<button value="Search" />

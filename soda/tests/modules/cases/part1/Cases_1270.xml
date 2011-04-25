@@ -26,12 +26,11 @@
 
 	<!--create a note-->
 	<csv file="{@global.scriptsdir}/csvs/cases/Case_1270.csv" var="Case_1270">
-		
 		<button name="History_createnoteorattachment_button" />
+		<wait timeout="5" />
 
 		<!--set data-->
 		<button id="btn_contact_name" />
-		<wait timeout="5" />
 		<browser assert="Contact Search" />
 
 		<textfield id="first_name_advanced" set="{@contact_record_firstname}" />

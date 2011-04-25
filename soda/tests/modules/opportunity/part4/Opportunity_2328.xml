@@ -11,7 +11,9 @@
 			<textfield id="name_basic" set="{@pre_opp_name}" />
 		</form>
 		<button id="search_form_submit" />
-
+		<wait timeout="10" condition="true">
+   			<link text="{@Opportunity_2328.name} {@user.name} {@stamp}" />
+		</wait>
 		<table class="list view">
 			<browser assert="{@pre_opp_name}" />
 			<link text="{@pre_opp_name}" />
@@ -31,7 +33,9 @@
    			<button name="teamSelect" />
 		</wait>
 		<button name="teamSelect" />
-
+		<wait timeout="10" condition="true">
+   			<button name="teamSelect" />
+		</wait>
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2328.team_name}" />
 		<button value="Search" />
