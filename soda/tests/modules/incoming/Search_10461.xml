@@ -86,8 +86,8 @@
 			<button id="search_form_submit" />
 			<table class="list view">
 					<span class='pageNumbers' assert='(1 - 8 of 8)' />
-					<browser assernot="Closed Won" />
-					<browser assernot="Closed Lost" />
+					<browser assertnot="Closed Won" />
+					<browser assertnot="Closed Lost" />
 			</table>
 
 			<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />

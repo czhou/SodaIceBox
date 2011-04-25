@@ -4,7 +4,7 @@
 
 	<!--goto Report module -->
 	<link id="moduleTab_Reports" />
-	<link text="Manage Enterprise Reports" />
+	<link text="Manage Advanced Reports" />
 	<link text="Create Custom Query" />
 
 	<browser assert="Custom Queries" />
