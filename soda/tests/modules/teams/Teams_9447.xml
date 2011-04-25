@@ -1,6 +1,7 @@
 <soda>
 	<!-- Create record-Add duplicated teams. -->
 	<puts text="Test: Teams_9447.xml starting." />
+	<script file="{@global.scriptsdir}/modules/lib/Enable_All_Lib.xml" />
 	<timestamp />
 
 	<!--Go to modules that can edit team info-->        
@@ -38,5 +39,6 @@
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Bug_delete_Lib.xml" />
 
+	<script file="{@global.scriptsdir}/modules/lib/Enable_Defaults_Lib.xml" />
 	<puts text="Test: Teams_9447.xml finished." />
 </soda>
