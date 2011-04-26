@@ -34,6 +34,10 @@
 	<wait timeout="3" />
 	<link text="Test Account" click="false" exist="true" />
 
+	<link id="moduleTab_Contacts" />
+	<link text="Basic Search" />
+	<button name="clear" />
+
 	<!--Delete all pre existed data -->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_lib.xml" />
 	<puts text="Test: Contacts_8091.xml finished." />
