@@ -6,11 +6,12 @@
 
 	<!--Nav to emails module-->
 	<link id="moduleTab_Emails" />
+       <wait timeout="5" />
 	<button id="composeButton" />
-	<wait timeout="5" />
+	<wait timeout="10" />
 
 	<!--click "TO"-->
-	<table id="/composeHeaderTable/">
+	<table id="composeHeaderTable1">
 		<button text="/To:/" />
 	</table>
 	<browser assert="Select Email Recipients" />
