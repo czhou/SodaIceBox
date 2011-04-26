@@ -13,7 +13,7 @@
 
 		<table class="list view">
 			<browser assertnot="{@pre_opp_name}" />
-			<link text="{@pre_opp_name}" exists="false" />
+			<link text="{@pre_opp_name}" exist="false" />
 		</table>
 		<button id="search_form_clear" />
 		<button id="search_form_submit" />

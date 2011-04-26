@@ -23,11 +23,12 @@
 
 
 		<!--teams select -->
-
-		<button name="teamSelect" />
 		<wait timeout="10" condition="true">
    			<button name="teamSelect" />
 		</wait>
+		<div id="Default_Calls_Subpanel">
+			<button name="teamSelect" />
+		</div>
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2331.team_name}" />
 		<button value="Search" />

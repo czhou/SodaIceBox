@@ -43,12 +43,11 @@
 		<link text="{@Campaign_Name}" />
 		<!--/table -->
 		<button value="Save" alert="true" />
+		
 		<browser assert="Probability (%) value 120 is not within the valid range (0 - 100)" />
-		<form id="form">
-            <button value="Delete" alert='true'/>
-        </form>
 	</csv>
 	<!--Run Delete XML -->
-	<script file="{@global.scriptsdir}/modules/lib/Campaign_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Campaign_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/TargetList_Delete_Lib.xml" />
 	<puts text="Test: Opportunity_2385.xml finished." />
 </soda>

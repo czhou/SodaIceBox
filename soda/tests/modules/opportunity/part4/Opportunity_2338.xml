@@ -47,7 +47,9 @@
 		<checkbox id="do_not_call" set="{@Opportunity_2338.lead_do_not_call}" />
 
 		<button id="Leads_subpanel_save_button" />
-
+		<wait timeout="15" condition="true">
+   			<link text="{@Opportunity_2338.lead_first_name} {@stamp} {@Opportunity_2338.lead_last_name}" />
+		</wait>
 		<browser
 			assert="{@Opportunity_2338.lead_first_name} {@stamp} {@Opportunity_2338.lead_last_name}" />
 

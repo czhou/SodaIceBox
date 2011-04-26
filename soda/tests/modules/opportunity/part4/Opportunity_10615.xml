@@ -30,7 +30,7 @@
 		<browser assert="{@pre_opp_name}" />
 	</table>
 	
-	<!-- Create 6 tasks to be related to Opp -->
+	<!-- Create 6 notes to be related to Opp -->
 	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_10615.csv" var="Opportunity_10615">
 	
 		<div id="list_subpanel_history">
@@ -38,7 +38,10 @@
 		</div>
 		<textfield name="name" set="{@Opportunity_10615.name_note}" />
 		<button id="Notes_subpanel_save_button" />
-		<wait timeout="5" />
+		<wait timeout="10" condition="true">
+   			<link text="{@Opportunity_10615.name_note}" />
+		</wait>
+		<browser assert="{@Opportunity_10615.name_note}" />
 	</csv>
 
 

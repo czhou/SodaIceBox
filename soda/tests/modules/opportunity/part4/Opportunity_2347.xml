@@ -59,7 +59,9 @@
 		<checkbox id="do_not_call" set="{@Opportunity_2347.contact_do_not_call}" />
 
 		<button value="Save" />
-
+		<wait timeout="15" condition="true">
+   			<link text="{@Opportunity_2347.contact_first_name} {@stamp} {@Opportunity_2347.contact_last_name}" />
+		</wait>
 		<browser
 			assert="{@Opportunity_2347.contact_first_name} {@stamp} {@Opportunity_2347.contact_last_name}" />
 

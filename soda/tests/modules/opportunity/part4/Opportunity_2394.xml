@@ -26,7 +26,7 @@
 		<browser assert="{@pre_opp_name_1}" />
 	</div>
 	<span class="pagination">
-		<button index="1" />
+		<button index="2" />
 	</span>
 	<wait timeout="3" />
 
@@ -35,16 +35,23 @@
 		<browser assert="{@pre_opp_name_a}" />
 	</div>
 	<span class="pagination">
-		<button index="2" />
+		<button index="1" />
 	</span>
 	<wait timeout="3" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Opportunities&amp;action=index" click="false" />
 		<browser assert="{@pre_opp_name_1}" />
 	</div>
-	<form id="form">
-        <button value="Delete" alert='true'/>
-    </form>
+	<wait timeout="3" />
+	<!-- Delete the Opp -->
+	<link id='moduleTab_Opportunities'/>
+   	<button id='search_form_clear' />
+   	<textfield id="name_basic" set="{@pre_opp_name_1}" />
+   	<button id='search_form_submit'/>
+   	<checkbox name='massall' click='true' />
+   	<link id='actions_link' />
+   	<link text='Delete' alert='true' />
+   	<span class='pageNumbers' assert='(0 - 0 of 0)' />
     <var var="pre_opp_name" set="{@pre_opp_name_a}" />
 	<puts text="Test: Opportunity_2394.xml finished" />
 </soda>
