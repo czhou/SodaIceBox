@@ -16,9 +16,9 @@
 	<div class="detail view">
 		<browser assert="{@Doc_Name}" />		
 	</div>
-	<div id='LBL_PANEL_ASSIGNMENT'>
+	<table id='detailpanel_1'>
 		<browser assert="{@Teams_9455.teamname}" />
-	</div>
+	</table>
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Document_Delete_Lib.xml" />
