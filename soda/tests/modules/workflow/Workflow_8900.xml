@@ -45,7 +45,9 @@
       <wait timeout="2" />
       <button value="Next" />
       <wait timeout="2" />
-      <checkbox id="mod_field_0" set="true" />
+	<table class="edit view">
+		<checkbox id="mod_field_0" set="true" />
+	</table>
       <link id="href_0" />
       <textfield id="field_0__field_value" 
          set="{@wf_8900.field_1__field_value}" />
