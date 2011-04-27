@@ -408,22 +408,6 @@
 		<modulename>Studio</modulename>
 	</block>
 
-	<!-- Franklin's Modules -->
-
-	<block>
-		<testfile>Quote_2536</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>subpanel contracts is hidden by default</reason>
-		<modulename>Quote</modulename>
-	</block>
-
-	<block>
-		<testfile>Quote_2562</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>subpanel contracts is hidden by default</reason>
-		<modulename>Quote</modulename>
-	</block>
-
 	<!-- Emily's Modules -->
 	
 	<block>
