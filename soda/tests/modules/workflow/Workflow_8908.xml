@@ -47,9 +47,6 @@
       <button name="Save" />
       <button value="Next" />
       <wait timeout="2" />
-	<table class="edit view">
-		<checkbox id="mod_field_0" set="true" />
-	</table>
       <link id="href_0" />
       <textfield id="field_0__field_value" 
          set="{@wf_8908.field_1__field_value}" />
@@ -66,7 +63,7 @@
          <!--create a Task-->
       <div id="list_subpanel_activities">
          <table class="list view">
-            <button name="Activities_create_button" />
+            <button name="Activities_createtask_button" />
          </table>
       </div>
       <textfield id="name" set="{@wf_8908.task_name}" />
