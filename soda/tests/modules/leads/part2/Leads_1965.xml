@@ -22,6 +22,8 @@
 			<button value="  Log Call  " />
 		</table>
 	</div>
+	<wait timeout="5"/>
+	<browser assert=" Reminder: "/>
 	<csv file="{@global.scriptsdir}/csvs/leads/Leads_1965.csv" var="Leads_1965">
 		<textfield id="name" set="{@Leads_1965.name}" />
 		<textfield id="date_start_date" set="{@Leads_1965.date_start_date}" />
