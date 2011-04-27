@@ -408,22 +408,6 @@
 		<modulename>Studio</modulename>
 	</block>
 
-	<!-- Franklin's Modules -->
-
-	<block>
-		<testfile>Quote_2536</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>subpanel contracts is hidden by default</reason>
-		<modulename>Quote</modulename>
-	</block>
-
-	<block>
-		<testfile>Quote_2562</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>subpanel contracts is hidden by default</reason>
-		<modulename>Quote</modulename>
-	</block>
-
 	<!-- Emily's Modules -->
 	
 	<block>
@@ -526,20 +510,6 @@
 		<modulename>contracts</modulename>
 	</block>
 	
-	<block>
-		<testfile>Workflow_8908</testfile>
-		<bugnumber>null</bugnumber>
-		<reason>bug null</reason>
-		<modulename>workflow</modulename>
-	</block>
-	
-	<block>
-		<testfile>Workflow_8900</testfile>
-		<bugnumber>null</bugnumber>
-		<reason>bug null</reason>
-		<modulename>workflow</modulename>
-	</block>
-
     <block>
 		<testfile>Accounts_0068</testfile>
 		<bugnumber>34670</bugnumber>
