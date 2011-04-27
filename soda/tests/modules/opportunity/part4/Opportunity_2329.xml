@@ -33,7 +33,7 @@
 		<wait timeout="10" condition="true">
    			<button name="teamSelect" />
 		</wait>
-		<div id="Default_Calls_Subpanel">
+		<div id="Default_Meetings_Subpanel">
 			<button name="teamSelect" />
 		</div>
 		

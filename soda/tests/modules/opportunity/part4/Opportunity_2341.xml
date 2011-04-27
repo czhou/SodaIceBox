@@ -25,7 +25,7 @@
 		<wait timeout="10" condition="true">
    			<button name="teamSelect" />
 		</wait>
-		<div id="Default_Calls_Subpanel">
+		<div id="form_SubpanelQuickCreate_Leads_tabs">
 			<button name="teamSelect" />
 		</div>
 

@@ -81,7 +81,7 @@
 	<!--Delete the created lead -->
 	<link href="index.php?module=Leads&amp;action=index" />
 	<button id="search_form_clear" />
-	<textfield id="search_name_basic" set="{@Opportunity_2338.lead_first_name} {@stamp}" />
+	<textfield id="search_name_basic" set="{@Opportunity_2340.lead_first_name} {@stamp}" />
 	<button id="search_form_submit" />
 	<checkbox name="massall" click="true" />
 	<link id="actions_link" />
