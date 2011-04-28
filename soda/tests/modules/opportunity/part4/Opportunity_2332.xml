@@ -25,10 +25,13 @@
 
 		<!--teams select -->
 
-		<wait timeout="10" />
+		<wait timeout="10" condition="true">
+   			<button name="teamSelect" />
+		</wait>
 
-		<button name="teamSelect" />
-		<wait timeout="10" />
+		<table id="EditView_team_name_table">
+			<button value="Select" />
+		</table>
 
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2332.team_name}" />

@@ -30,7 +30,9 @@
          	<wait timeout="10" condition="true">
    				<button name="teamSelect" />
 			</wait>
-            <button name="teamSelect" />
+            <table id="EditView_team_name_table">
+				<button value="Select" />
+			</table>
             <browser assert='Team Search'/>
             <textfield name='name' set='{@Opportunity_2296.team_name}'/> 
             <button value='Search'/>

@@ -32,7 +32,9 @@
 		<wait timeout="10" condition="true">
    			<button name="teamSelect" />
 		</wait>
-		<button name="teamSelect" />
+		<table id="EditView_team_name_table">
+			<button value="Select" />
+		</table>
 		<wait timeout="10" condition="true">
    			<button name="teamSelect" />
 		</wait>

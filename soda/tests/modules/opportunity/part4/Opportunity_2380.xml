@@ -25,8 +25,12 @@
 		<link text="{@pre_account_name}" />
 
 		<!--teams select -->
-
-		<button name="teamSelect" />
+		<wait timeout="10" condition="true">
+   			<button name="teamSelect" />
+		</wait>
+		<table id="EditView_team_name_table">
+			<button value="Select" />
+		</table>
 
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2380.team_name}" />

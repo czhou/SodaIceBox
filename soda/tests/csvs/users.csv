@@ -1,2 +1,1 @@
-name,password,url
-admin,asdf,http://localhost/sugar2070/index.php
+name,password,url,lognameadmin,asdf,http://localhost/sugar2070/index.php,Administrator
