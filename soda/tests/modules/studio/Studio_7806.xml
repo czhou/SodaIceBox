@@ -30,7 +30,7 @@
 	<wait timeout="3" />
 	
 	<!-- Verify deletion of custom field -->
-	<browser assert="testfield_c" exist="false" />
+	<browser assertnot="testfield_c" />
 
 	<puts text="Test: Studio_7805.xml finished." />
 </soda>
