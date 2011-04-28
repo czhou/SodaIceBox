@@ -6,7 +6,7 @@
 
 		<link text="Create Lead" />
 		<timestamp />
-
+		<wait timeout="5"/>
 		<!--goto lead edit view-->
 		<select id="lead_source" set="{@Lead_New_Record.lead_source}" />
 		<select id="status" set="{@Lead_New_Record.status}" />
