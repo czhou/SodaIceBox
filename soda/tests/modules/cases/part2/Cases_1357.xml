@@ -1,11 +1,9 @@
 <soda>
    <!-- Schedule Meeting_Verify that scheduled meeting cannot be created 
       for case when several mandatory fields are left empty for the 
-      "Schedule Meeting" function 
-   -->
+      "Schedule Meeting" function. -->
 	<puts text="Test: Cases_1357.xml starting." />
-   <csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" 
-      var="cases" />
+   <csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
 
 	<!--Create a case record-->
 	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
@@ -17,7 +15,7 @@
 		<link href="index.php?module=Cases&amp;action=index" click="false" />
 	</div>
 
-	<button value="Clear" />
+	<button id="search_form_clear" />
 	<textfield id="name_basic" set="{@case_record}" />
 	<button id="search_form_submit" />
 	<link text="{@case_record}" />
