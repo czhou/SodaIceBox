@@ -30,12 +30,10 @@
 				<button value="  Create Task  " />
 			</table>
 		</div>
-		<wait timeout="60" condition="true">
-			<textfield id="name" />
-		</wait>
+		<wait timeout="10"/>
 		<textfield id="name" set="{@Leads_2037.name_task}" />
 		<button id="Tasks_subpanel_save_button" />
-		<wait timeout="20" />
+		<wait timeout="10" />
 	</csv>
 
 	<!--verify list_subpanel_activities-->
