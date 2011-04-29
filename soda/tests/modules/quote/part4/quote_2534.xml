@@ -1,0 +1,38 @@
+<soda>
+        <puts text="Test Case 2534: _Verify that Archived email related to this Quote can be viewed successfully."/>
+
+        <!--Go to Quotes module and search out the quote record create in lib-->
+        <link id='moduleTab_Quotes'/>
+        <browser assert='Quotes'/>
+        <form id='search_form'>
+            <button id='search_form_clear'/>
+            <textfield id='name_basic' set='{@pre_Quote_name}'/>
+            <button id='search_form_submit'/>
+        </form>
+
+        <table class='list view'>
+            <link text='{@pre_Quote_name}'/>
+        </table>
+
+        <!--Create a note in History subpanel.-->
+        <browser assert="Quote Overview"/>
+        <button id="ArchiveEmail_button"/>
+        <wait timeout="2"/>
+        <textfield id="jscal_field" set="2011-04-29"/>
+        <textfield name="time_start" set="0:00"/>
+	<textfield id="subjectfield" set="New Archived Email"/>
+        <button value="  Save  "/> 
+        <wait timeout="5"/>
+        <browser assert="New Archived Email"/>
+
+        <!--Verify we can go to note detail view via clicking the link in history subpanel-->
+        <div id="list_subpanel_history">
+                <link text="New Archived Email"/>
+        </div>
+        <wait timeout="2"/>
+        <browser assert="Date Sent"/>
+
+        <!--Delete the note record created in this case.-->
+        <puts text="End Test Case 2534"/>
+</soda>
+
