@@ -42,7 +42,9 @@
 
 		<!--teams select -->
 
-		<button name="teamSelect" />
+		<table id="form_SubpanelQuickCreate_Contacts_team_name_table">
+			<button value="Select" />
+		</table>
 
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2346.team_name}" />
