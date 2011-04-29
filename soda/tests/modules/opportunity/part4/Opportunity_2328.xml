@@ -29,15 +29,9 @@
 			</table>
 		</div>
 		<!--teams select -->
-		<wait timeout="10" condition="true">
-   			<button name="teamSelect" />
-		</wait>
-		<table id="EditView_team_name_table">
+		<table id="form_SubpanelQuickCreate_Meetings_team_name_table">
 			<button value="Select" />
 		</table>
-		<wait timeout="10" condition="true">
-   			<button name="teamSelect" />
-		</wait>
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2328.team_name}" />
 		<button value="Search" />

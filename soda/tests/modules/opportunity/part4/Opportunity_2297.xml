@@ -22,10 +22,9 @@
 		<button value="  Create Note or Attachment  " />
 
 
-		<button name="teamSelect" />
-       	<wait timeout="10" condition="true">
-			<button name="teamSelect" />
-		</wait>
+		<table id="form_SubpanelQuickCreate_Notes_team_name_table">
+				<button value="Select" />
+		</table>
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2297.team_name}" />
 		<button value="Search" />

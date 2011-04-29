@@ -23,10 +23,7 @@
 		<button value="  Create Note or Attachment  " />
 
 		<!--teams select -->
-		<wait timeout="10" condition="true">
-   			<button name="teamSelect" />
-		</wait>
-		<table id="EditView_team_name_table">
+		<table id="form_SubpanelQuickCreate_Notes_team_name_table">
 			<button value="Select" />
 		</table>
 		<browser assert="Team Search" />

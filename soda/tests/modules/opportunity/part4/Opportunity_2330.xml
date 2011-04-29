@@ -25,12 +25,9 @@
 
 		<timestamp />
 		<!--teams select -->
-		<wait timeout="10" condition="true">
-   			<button name="teamSelect" />
-		</wait>
-		<div id="Default_Calls_Subpanel">
-			<button name="teamSelect" />
-		</div>
+		<table id="form_SubpanelQuickCreate_Calls_team_name_table">
+			<button value="Select" />
+		</table>
 
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2330.team_name}" />
