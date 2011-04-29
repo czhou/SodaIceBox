@@ -35,7 +35,7 @@
 	<link text="Test Account" click="false" exist="true" />
 
 	<link id="moduleTab_Contacts" />
-	<link text="Basic Search" />
+	<link text="Basic Search" required="false"/>
 	<button name="clear" />
 
 	<!--Delete all pre existed data -->
