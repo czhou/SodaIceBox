@@ -20,7 +20,9 @@
 	
 	<!--Nav to emails module-->
 	<link id="moduleTab_Emails" />
+        <wait timeout="5/>
 	<button id="settingsButton" />
+        <wait timeout="5/>
 	<div id="settingsDialog">
 		<link text="Mail Accounts" />
 	</div>
