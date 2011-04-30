@@ -8,7 +8,7 @@
 	<browser assert="Application:" />
 	<select name="application" set="GoToMeeting" />
 	<textfield id="name" set="qa@sugarcrm.com" />
-	<textfield id="password" set="Lambretta713" />
+	<textfield id="password" set="Sugarqa123" />
 	<button value="Cancel" alert="true" />
 	
 
