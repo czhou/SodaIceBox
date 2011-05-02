@@ -29,7 +29,9 @@
 
 	<!-- Delete added quote for contract-->
 	<div id="list_subpanel_quotes">
-		<image index="2" alert="true"/>
+                <table class="list view">
+		    <link text="rem" alert="true"/>
+                </table>
 		<link text="{@pre_Quote_name}" click="false" exist="false"/>
 		<browser assertnot="{@pre_Quote_name}"/>
 	</div>
