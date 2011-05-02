@@ -1,5 +1,7 @@
 <soda>
 	<!-- Enable only the default tabs and subpanels. -->
+	<puts text="Lib: Enable_Defaults_Lib.xml starting." />
+
 	<link text="Admin" />
 	<div class="moduleTitle">
 		<browser assert="Administration" />
@@ -9,4 +11,6 @@
 
 	<browser
 		url="{@global.url}?module=Administration&amp;action=SaveTabs&amp;enabled_tabs=%5B%22Home%22%2C%22Accounts%22%2C%22Contacts%22%2C%22Opportunities%22%2C%22Leads%22%2C%22Reports%22%2C%22Documents%22%2C%22Emails%22%2C%22Campaigns%22%2C%22Quotes%22%2C%22Forecasts%22%2C%22Cases%22%2C%22Calls%22%2C%22Meetings%22%2C%22Tasks%22%2C%22Notes%22%2C%22Prospects%22%2C%22ProspectLists%22%2C%22Calendar%22%5D&amp;disabled_tabs=%5B%22project%22%2C%22bugs%22%2C%22products%22%2C%22contracts%22%5D&amp;return_module=&amp;return_action=&amp;user_edit_tabs=1&amp;button=Save" />
+
+	<puts text="Lib: Enable_Defaults_Lib.xml finished." />
 </soda>
