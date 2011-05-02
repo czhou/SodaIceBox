@@ -29,7 +29,7 @@
             </ul>
          </div>
       </div>
-      <wait timeout="2" />
+      <wait timeout="3" />
 
 		<textfield id="name" jscriptevent="onfocus" />
 		<wait timeout="5" />

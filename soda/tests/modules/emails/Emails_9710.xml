@@ -1,4 +1,4 @@
-﻿<soad>
+<soad>
 	<!-- Disable users to use the system outgoing mail account for outbound email -->
 	<puts text="Test: Emails_9710.xml starting." />
 
@@ -45,7 +45,6 @@
 	<browser assert="Outgoing Mail Configuration" />
 	<checkbox name="notify_allow_default_outbound" set="true" />
 	<button value=" Save " alert="true"/>
-
 
 	<puts text="Test: Emails_9710.xml finished." />
 </soad>

@@ -1,5 +1,5 @@
 <soda>
-	<puts text="Cases_1351: Edit Task_Verify that task detail view is displayed after clicking the subject name of an existing task in Activities sub-panel" />
+	<puts text="Test: Cases_1351: Edit Task_Verify that task detail view is displayed after clicking the subject name of an existing task in Activities sub-panel" />
 	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
 
 	<!--Create a case record-->
@@ -20,6 +20,7 @@
 	<!--create a task-->
 	<div id="list_subpanel_activities">
 		<button value="  Create Task  " />
+		<wait timeout="3" />
 	</div>
 
 	<timestamp />
@@ -29,6 +30,7 @@
 			<textfield id="name" set="{@Case_1351.name} {@user.name} {@stamp}" />
 		</div>
 		<button id="Tasks_subpanel_save_button" />
+		<wait timeout="3" />
 
 		<!--go to the Task detailview-->
 		<div id="list_subpanel_activities">
@@ -46,5 +48,5 @@
 	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
 
-	<puts text="Cases_1351: Finished" />
+	<puts text="Test: Cases_1351: Finished" />
 </soda>

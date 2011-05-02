@@ -39,6 +39,7 @@
 		<table id="form_SubpanelQuickCreate_Contacts_team_name_table">
 			<button value="Select" />
 		</table>
+
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2347.team_name}" />
 		<button value="Search" />

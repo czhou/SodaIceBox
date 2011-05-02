@@ -15,6 +15,9 @@
     <!--/table-->
     <button id='delete_articles' alert='true'/>
     <wait timeout='1'/>
+    <checkbox id='selected_tags[]' click='true'/>
+    <wait timeout='2'/>
+    <span class='pageNumbers' assert='(0 - 0 of 0)' />
     <link id='moduleTab_KBDocuments'/>
     <puts text='========KnowledgeBase_Delete_Lib Finished========'/>
 </soda>

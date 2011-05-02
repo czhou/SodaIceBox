@@ -33,7 +33,7 @@
 		<table id="form_SubpanelQuickCreate_Meetings_team_name_table">
 			<button value="Select" />
 		</table>
-		
+
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2329.team_name}" />
 		<button value="Search" />

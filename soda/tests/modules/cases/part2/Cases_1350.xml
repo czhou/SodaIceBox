@@ -25,6 +25,7 @@
 	<!--create a task-->
 	<div id="list_subpanel_activities">
 		<button value="  Create Task  " />
+		<wait timeout="3" />
 	</div>
 
 	<csv file="{@global.scriptsdir}/csvs/cases/Case_1350.csv" var="Case_1350">
@@ -32,6 +33,7 @@
 			<textfield id="name" set="{@Case_1350.name} {@user.name} {@stamp}" />
 		</div>
 		<button id="Tasks_subpanel_save_button" />
+		<wait timeout="3" />
 
 		<!--modify the Task-->
 		<div id="list_subpanel_activities">
@@ -43,6 +45,7 @@
 
 		<textfield id="name" set="{@Case_1350.new_name} {@user.name} {@stamp}" />
 		<button value="Save" />
+		<wait timeout="3" />
 		<div id="list_subpanel_activities">
 			<table class="list view">
 				<link text="{@Case_1350.new_name} {@user.name} {@stamp}" click="false" />
