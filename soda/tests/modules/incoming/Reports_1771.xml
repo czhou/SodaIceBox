@@ -27,11 +27,10 @@
 	
 	<link text="Create Report" />
 	
-	<wait timeout="3" />
-	
-	<javascript addUtils="true">
-			SUGAR.reports.selectReportType('summation');
-	</javascript>
+	<wait timeout="2" />
+	<div id="report_type_div">
+		<image name="summationImg" jscriptevent="onclick" click="true" />
+	</div>
 	
 	<wait timeout="3" />
 	
@@ -39,73 +38,50 @@
 		<link text="Accounts" />
 	</table>
 	
-	<javascript addUtils="true">
-		SUGAR.reports.populateFieldGrid('Accounts','','');
-		SUGAR.reports.showWizardStep(0);
-	</javascript>
+	<button value="Next &gt;" />
 	
-	<div text="Name" click="true" />
-	
-	
-	<!-- step through the "next" buttons of report generation,
-		then "back" to capture "Count" field... -->
-	<javascript addUtils="true">
-		SUGAR.reports.showWizardStep(0);
-		SUGAR.reports.showWizardStep(0);
-		SUGAR.reports.showWizardStep(1);
-	</javascript>
-	
+	<button value="Next &gt;" />
 	<div text="Count" click="true" />
+	<wait timeout="5" />
+	<select id="chart_type" set="Pie" />
 	
-	<javascript addUtils="true">
-		SUGAR.reports.showWizardStep(0);
-	</javascript>	
 	
-	<select id="chart_type" set="Horizontal Bar" />
-	
-	<javascript addUtils="true">
-		SUGAR.reports.showWizardStep(0);
-	</javascript>
+	<button value="Next &gt;" />
 	
 	<timestamp />
+	<var var="report_name" set="Report_{@stamp}" />
 	
-	<var var="report_name" set="QA_Created_Report_{@stamp}" />
-	
-	<!-- hack to enable field validation to work -->
 	
 	<textfield name="save_report_as" set="{@report_name}" />
-	<textfield id="team_name_collection_0" set="Global" 
-		jscriptevent="onkeydown" />
-	<textfield id="team_name_collection_0" jscriptevent="onkeyup" 
-		click="false" />
+	<textfield id="team_name_collection_0" set="{@user.last_name}" jscriptevent="onkeydown" />
+	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
 	<wait timeout="2" />
 	
-	<javascript addUtils="true">
-		SUGAR.reports.saveReport();
-	</javascript>
+	<button value="Save" />
 	
-	<wait timeout="2" />
 	
 	<link id="moduleTab_Home" />
 	<link id="add_dashlets" />
-	<link id="chartCategoryAnchor" />
-	
-	<javascript addUtils="true">
-		SUGAR.mySugar.collapseReportList('myTeam');
-	</javascript>
 
-	<browser assert="{@report_name}" />
-	<link text="{@report_name}" />
+	<link id="chartCategoryAnchor" />
+	<span id="myTeamExpCol">
+		<link index="1" />
+	</span>
 	
-	<!-- clean up -->
+	<link text="{@report_name}" />
+
+	<wait timeout="4" />
+	
+	<ul id="col_0_0">
+		<browser assert="{@report_name}" />
+	</ul>
+	
 	
 	<div class="dashletToolSet" index="1">
-		<link index="3" alert="true" />
+		<link index="2" alert="true" />
 	</div>
 
 	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-	
 	<puts text="Test: Reports_1771.xml finished." />
 </soda>
-	

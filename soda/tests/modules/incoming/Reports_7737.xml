@@ -1,0 +1,62 @@
+<soda>
+	<!--
+		Action:
+			1. Login to SugarCRM as a valid user.
+			2. Click "Reports" tab on navigation bar.
+			3. Click "Create Custom Report" link from navigation Shortcuts.
+			4. Select one report type, such as "Rows and Columns" report.
+			5. Select one module.
+				
+		Expectation:
+			5. All related modules are displayed as module names in
+				"Related Modules" panel.
+	-->
+	
+	<puts text="Test: Reports_7737.xml starting." />
+	
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	
+	<!-- this should click the Rows / Cols button without js -->
+	<wait timeout="2" />
+	<div id="report_type_div">
+		<image name="rowsColsImg" jscriptevent="onclick" click="true" />
+	</div>
+	
+	<table id="Accounts">
+		<link text="Accounts" />
+	</table>
+	
+	<!-- wait for js -->
+	<wait timeout="3" />
+	
+	<div id="module_tree">
+		<browser assert="Assigned to User" />
+		<browser assert="Bugs" />
+		<browser assert="Calls" />
+		<browser assert="CampaignLog" />
+		<browser assert="Campaigns" />
+		<browser assert="Cases" />
+		<browser assert="Contacts" />
+		<browser assert="Contracts" />
+		<browser assert="Created by User" />
+		<browser assert="Documents" />
+		<browser assert="Email Address" />
+		<browser assert="Emails" />
+		<browser assert="Leads" />
+		<browser assert="Meetings" />
+		<browser assert="Member of" />
+		<browser assert="Members" />
+		<browser assert="Modified by User" />
+		<browser assert="Notes" />
+		<browser assert="Opportunity" />
+		<browser assert="Products" />
+		<browser assert="Projects" />
+		<browser assert="Quotes" />
+		<browser assert="Quotes Ship to" />
+		<browser assert="Tasks" />
+		<browser assert="Teams" />
+	</div>
+	
+	<puts text="Test: Reports_7737.xml finished." />
+</soda>

@@ -17,19 +17,16 @@
 	
 	<link text="Create Report" />
 	
-	<wait timeout="3" />
-	
-	<javascript addUtils="true">
-		SUGAR.reports.selectReportType('tabular');
-	</javascript>
+	<wait timeout="2" />
+	<div id="report_type_div">
+		<image name="rowsColsImg" jscriptevent="onclick" click="true" />
+	</div>
 	
 	<table id="Leads">
 		<link text="Leads" />
 	</table>
 	
-	<javascript addUtils="true">
-		SUGAR.reports.showWizardStep(0);
-	</javascript>
+	<button value="Next &gt;" />
 	
 	<div id="module_fields_panel">
 		<div text="Reports To" exists="false" />

@@ -31,11 +31,14 @@
 	
 	<link text="Create Report" />
 	
-	<wait timeout="3" />
+	<wait timeout="2" />
+	<div id="report_type_div">
+		<image name="summationImg" jscriptevent="onclick" click="true" />
+	</div>
 	
-	<javascript addUtils="true">
-			SUGAR.reports.selectReportType('summation');
-	</javascript>
+	<div id="report_type_div">
+		<image name="summationImg" jscriptevent="onclick" click="true" />
+	</div>
 	
 	<wait timeout="3" />
 	
@@ -43,33 +46,20 @@
 		<link text="Accounts" />
 	</table>
 	
-	<javascript addUtils="true">
-		SUGAR.reports.populateFieldGrid('Accounts','','');
-		SUGAR.reports.showWizardStep(0);
-	</javascript>
-	
-	<div text="Name" click="true" />
-	
-	
-	<!-- step through the "next" buttons of report generation,
-		then "back" to capture "Count" field... -->
-	<javascript addUtils="true">
-		SUGAR.reports.showWizardStep(0);
-		SUGAR.reports.showWizardStep(0);
-		SUGAR.reports.showWizardStep(1);
-	</javascript>
-	
+	<button value="Next &gt;" />
+
+	<wait timeout="3" />
 	<div text="Count" click="true" />
+	<wait timeout="6" />
 	
-	<javascript addUtils="true">
-		SUGAR.reports.showWizardStep(0);
-	</javascript>	
+	
+	<button value="Next &gt;" />
+	
+	<wait timeout="6" />
 	
 	<select id="chart_type" set="Horizontal Bar" />
 	
-	<javascript addUtils="true">
-		SUGAR.reports.showWizardStep(0);
-	</javascript>
+	<button value="Next &gt;" />
 	
 	<timestamp />
 	
@@ -84,9 +74,7 @@
 		click="false" />
 	<wait timeout="2" />
 	
-	<javascript addUtils="true">
-		SUGAR.reports.saveReport();
-	</javascript>
+	<button value="Save" />
 	
 	<wait timeout="2" />
 	
@@ -94,9 +82,9 @@
 	<link id="add_dashlets" />
 	<link id="chartCategoryAnchor" />
 	
-	<javascript addUtils="true">
-		SUGAR.mySugar.collapseReportList('myTeam');
-	</javascript>
+	<span id="myTeamExpCol">
+		<link index="1" />
+	</span>
 
 	<browser assert="{@report_name}" />
 	<link text="{@report_name}" />
