@@ -23,6 +23,7 @@
 						<row index="1">
 							<cell index="1">
 								<image index="1" click="true" />
+								<wait timeout="3" />
 							</cell>
 						</row>
 					</table>
@@ -30,9 +31,9 @@
 			</row>
 		</table>
 	</div>
-
+	<browser assert="Click an icon to select a Module." />
 	<table id="Accounts" click="true" />
-
+	<browser assert="Define Filters" />
 	<link id="ygtvlabelel1" click="true" />
 
 	<row id="yui-rec40" click="true" />		<!-- Account Name -->
@@ -62,6 +63,10 @@
 
 	<textfield name="text_input" assert="{@pre_account_name}" />
 	<browser assert="{@pre_account_name}" />
+	
+	<table id="contentTable">
+		<button id="deleteReportButton" alert="true" />
+	</table>
 
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 
