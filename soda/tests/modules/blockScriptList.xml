@@ -502,6 +502,12 @@
                 <modulename>contracts</modulename>
         </block>
 
+	<block>
+                <testfile>contract_1725</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>send_keys</reason>
+                <modulename>contracts</modulename>
+        </block>
 
 	<block>
 		<testfile>contract_1688</testfile>
