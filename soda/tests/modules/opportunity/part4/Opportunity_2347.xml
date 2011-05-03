@@ -70,7 +70,7 @@
 	<link id="moduleTab_Contacts" />
 	<link text="Basic Search" required="false" />
 	<button id="search_form_clear" />
-	<textfield id="search_name_basic" set="{@Opportunity_2346.contact_first_name} {@stamp}" />
+	<textfield id="search_name_basic" set="{@Opportunity_2347.contact_first_name} {@stamp}" />
 	<button id="search_form_submit" />
 	<checkbox name="massall" click="true" />
 	<link id="actions_link" />
