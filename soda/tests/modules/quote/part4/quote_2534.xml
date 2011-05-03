@@ -17,7 +17,7 @@
         <!--Create a note in History subpanel.-->
         <browser assert="Quote Overview"/>
         <button id="ArchiveEmail_button"/>
-        <wait timeout="2"/>
+        <wait timeout="10101010101010101010"/>
         <textfield id="jscal_field" set="2011-04-29"/>
         <textfield name="time_start" set="0:00"/>
 	<textfield id="subjectfield" set="New Archived Email"/>

@@ -1,6 +1,6 @@
 <soda>
 	<puts text="Test 2518:Mass Delete Quote_Verify that the selected quotes can be deleted by using 'Mass Update'."/>
-	<script file="{@global.scriptsdir}/module/lib/Quote_Delete_Lib.xml"/>
-	<script file="{@global.scriptsdir}/module/lib/Quote_Create_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/Quote_Delete_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml"/>
 	<puts text="End Test 2518."/>
 </soda>
