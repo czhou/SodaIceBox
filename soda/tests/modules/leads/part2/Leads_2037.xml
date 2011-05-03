@@ -99,12 +99,10 @@
 				<button name="History_createnoteorattachment_button" />
 			</table>
 		</div>
-		<wait timeout="60" condition="true">
-			<textfield id="name" />
-		</wait>
+		<wait timeout="10" /> 
 		<textfield id="name" set="{@Leads_2037.name_note}" />
 		<button id="Notes_subpanel_save_button" />
-		<wait timeout="40" />
+		<wait timeout="10" />
 	</csv>
 
 	<!--verify list_subpanel_history-->
@@ -113,6 +111,7 @@
 			<button name="listViewNextButton" />
 		</table>
 	</div>
+	<wait timeout="2"/>
 	<div id="list_subpanel_history">
 		<span class="pageNumbers" assert="(3 - 4 of 6)" />
 	</div>
@@ -121,6 +120,7 @@
 			<button name="listViewEndButton" />
 		</table>
 	</div>
+	<wait timeout="2"/>
 	<div id="list_subpanel_history">
 		<span class="pageNumbers" assert="(5 - 6 of 6)" />
 	</div>
@@ -129,6 +129,7 @@
 			<button name="listViewPrevButton" />
 		</table>
 	</div>
+	<wait timeout="2"/>
 	<div id="list_subpanel_history">
 		<span class="pageNumbers" assert="(3 - 4 of 6)" />
 	</div>
@@ -137,6 +138,7 @@
 			<button name="listViewStartButton" />
 		</table>
 	</div>
+	<wait timeout="2"/>
 	<div id="list_subpanel_history">
 		<span class="pageNumbers" assert="(1 - 2 of 6)" />
 	</div>
@@ -145,6 +147,7 @@
 			<button name="listViewEndButton" />
 		</table>
 	</div>
+	<wait timeout="2"/>
 	<div id="list_subpanel_history">
 		<span class="pageNumbers" assert="(5 - 6 of 6)" />
 	</div>
@@ -153,6 +156,7 @@
 			<button name="listViewStartButton" />
 		</table>
 	</div>
+	<wait timeout="2"/>
 	<div id="list_subpanel_history">
 		<span class="pageNumbers" assert="(1 - 2 of 6)" />
 	</div>
