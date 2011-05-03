@@ -47,7 +47,7 @@
 
 		</form>
 		<!--teams select -->
-		<table id="form_SubpanelQuickCreate_Tasks_team_name_table">
+		<table id="EditView_team_name_table">
 			<button value="Select" />
 		</table>
 
