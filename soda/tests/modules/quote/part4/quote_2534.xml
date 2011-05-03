@@ -33,6 +33,8 @@
         <browser assert="Date Sent"/>
 
         <!--Delete the note record created in this case.-->
+	<button value="    Delete    "/>
+	<wait timeout="2"/>
         <puts text="End Test Case 2534"/>
 </soda>
 
