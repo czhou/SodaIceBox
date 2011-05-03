@@ -1,0 +1,66 @@
+<soda>
+    
+    <!-- divide function test -->
+    <puts text="Test: Studio_10114.xml starting" />
+    <!-- set description field as calculated field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="divide(number($billing_address_city),number($billing_address_state))"/>
+      <button value="Save" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    
+    <!--create account record and check calculated field-->
+    <link id="moduleTab_Accounts" />
+      
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_10114.csv" var="studio10114">
+        <link text="Create Account" />
+        <browser assert="Create" />
+        <form id="EditView">
+        <textfield id="name" set="{@studio10114.name} {@user.name} {@stamp}" />
+        <textfield id="billing_address_city" set="{@studio10114.city}" />
+        <textfield id="billing_address_city" click="false" jscriptevent="onchange" />
+        <textfield id="billing_address_state" set="{@studio10114.state}" />
+        <textfield id="billing_address_state" click="false" jscriptevent="onchange" />
+        <textfield id="description" assert="{@studio10114.des}" />
+        <button value="Save" />
+      </form>
+      <wait timeout="3" />
+      <browser assert="{@studio10114.name} {@user.name} {@stamp}" />
+      <table id="detailpanel_1">
+        <span id="description" assert="{@studio10114.des1}" />
+      </table>
+    </csv>
+    
+    <!-- Now uncalculated the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="false" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    
+    <!-- Delete account record -->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_10114.xml finished." />
+</soda>

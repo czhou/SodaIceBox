@@ -2,20 +2,20 @@
     
     <!-- date function test -->
     <puts text="Test: Studio_10106.xml starting" />
-    <!-- set description field as calculated field and define formula -->
+    <!-- set next_step field as calculated field and define formula -->
     <timestamp />
     <link text="Admin" />
     <link text="Studio" assertPage="false" />
-    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Opportunities" class="studiolink" assertPage="false" />
     <link text="Fields" class="studiolink" assertPage="false" />
-    <link text="description" class="mbLBLL" assertPage="false" />
+    <link text="date_closed" class="mbLBLL" assertPage="false" />
     <checkbox id="calculated" set="true" />
     <wait timeout="1" />
     <button value="Edit Formula" />
     <wait timeout="3" />
     <browser assert="Formula Builder" />
     <div id="formulaBuilderWindow" >
-      <textfield id="formulaInput" set="date($billing_address_city)"/>
+      <textfield id="formulaInput" set="date($next_step)"/>
       <button value="Save" />
     </div>
     <wait timeout="3" />
@@ -24,30 +24,42 @@
     </form>
     <wait timeout="3" />
     
-    <!--create account record and check calculated field-->
-    <link id="moduleTab_Accounts" />
+    <!--create opp record and check calculated field-->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+    <link id="moduleTab_Opportunities" />
       
     <csv file="{@global.scriptsdir}/csvs/studio/Studio_10106.csv" var="studio10106">
-        <link text="Create Account" />
-        <browser assert="Create" />
-        <form id="EditView">
+      <link text="Create Opportunity" />
+      <browser assert="Create" />
+      <form id="EditView">
         <textfield id="name" set="{@studio10106.name} {@user.name} {@stamp}" />
-        <textfield id="billing_address_city" set="{@studio10106.city}" />
-        <textfield id="billing_address_city" click="false" jscriptevent="onchange" />
-        <textfield id="description" assert="{@studio10106.des}" />
-        <button value="Save" />
+        <textfield id="next_step" set="{@studio10106.nextstep}" />
+        <textfield id="next_step" click="false" jscriptevent="onchange" />
+        <textfield id="date_closed" assert="{@studio10106.closedate}" />
+        <textfield id="amount" set="{@studio10106.amount}" />
+        
       </form>
+      <!--Account Select-->
+      <button id="btn_account_name" />
+      <browser assert="Account Search" />
+      <textfield id="name_advanced" set="{@pre_account_name}" /> 
+      <button value="Search" />
+      <link text="{@pre_account_name}" />
       <wait timeout="3" />
-      <browser assert="{@studio10106.name} {@user.name} {@stamp}" />
-      
+      <button id="SAVE_HEADER" />
+      <wait timeout="3" />
+      <table id="detailpanel_1" >
+      	<browser assert="{@studio10106.name} {@user.name} {@stamp}" />
+      	<span id="date_closed" assert="{@studio10106.closedate}" />
+      </table>
     </csv>
     
     <!-- Now uncalculated the field -->
     <link text="Admin" />
     <link text="Studio" assertPage="false" />
-    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Opportunities" class="studiolink" assertPage="false" />
     <link text="Fields" class="studiolink" assertPage="false" />
-    <link text="description" class="mbLBLL" assertPage="false" />
+    <link text="date_closed" class="mbLBLL" assertPage="false" />
     <checkbox id="calculated" set="false" />
     <form id="popup_form_id" >
       <browser assertnot="Formula Builder" />
@@ -55,8 +67,9 @@
     </form>
     <wait timeout="3" />
     
-    <!-- Delete account record -->
+    <!-- Delete record -->
     <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
     
     <puts text="Test: Studio_10106.xml finished." />
 </soda>
