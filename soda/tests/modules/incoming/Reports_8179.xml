@@ -1,0 +1,113 @@
+<soda>
+	<puts text="Test: Reports_8179.xml starting." />
+	<!--
+	Action:
+		1. Login to SugarCRM as admin to create a call report as below:
+		1.1 Select "Calls" in "Module" drop down list.
+		1.2 Check "Summation Report" check box.
+		1.3 Enter data in "Report Name" field, such as "Call1".
+		1.4 Set filter as:? [Calls] [Start Date] [After] [2007-06-04]
+			under "Filter" tab.
+		1.5 Select "Count" and "Calls: Start Date" items in
+			"Display Summaries" box under "Choose Display Columns" tab.
+		1.6 Check "Show Details" check box.
+		1.7 Select "Subject" and "Status" items in "Display Columns" box.
+		1.8 Group By as:? [Calls] [Start Date] [By Month] under "Group" tab.
+		1.9 Click "Save" button.
+		2. Add created report "call1" into dashboard.
+
+	Expected Results:
+		1. Chart is displayed as what is set in step1.
+		2. Chart is displayed as what is set in step1.
+	-->
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+	<var var="call1_name" set="{@pre_call_name}" />
+	
+	<link id="moduleTab_Reports" />
+	
+	<link text="Create Report" />
+	
+	<wait timeout="3" />
+	
+	<div id="report_type_div">
+		<image name="summationImg" jscriptevent="onclick" click="true" />
+	</div>
+	
+	<wait timeout="3" />
+	
+	<table id="Calls">
+		<link text="Calls" />
+	</table>
+		
+	<wait timeout="4" />
+	<!-- filters -->
+	<div text="Start Date" click="true" />
+	
+	<table id="Filter.1_table">
+		<select index="1" set="After" />
+		<textfield id="jscal_field" set="06/04/2007" />
+	</table>
+	
+	
+	<button value="Next &gt;" />
+	<!-- Group By -->
+	<wait timeout="4" />
+	<div text="Month: Start Date" click="true" />
+	
+	<button value="Next &gt;" />
+	<!-- Summaries -->
+	<wait timeout="4" />
+	<div text="Count" click="true" />
+	
+	<button value="Next &gt;" />
+	<!-- Chart Type -->
+	<wait timeout="2" />
+	<select id="chart_type" set="Vertical Bar" />
+	
+	<button value="Next &gt;" />
+	
+	
+	<timestamp />
+	<var var="report_title" set="QA_Created_{@stamp}" />
+	
+	<textfield name="save_report_as" set="{@report_title}" />
+	
+	<button value="Save" />
+	
+	<wait timeout="4" />
+	
+	<link id="moduleTab_Reports" />
+	
+	<browser assert="{@report_title}" />
+	
+	<link id="moduleTab_Home" />
+	
+	<link id="add_dashlets" />
+
+	<link id="chartCategoryAnchor" />
+	<span id="globalExpCol">
+		<link index="1" />
+	</span>
+	
+	<link text="{@report_title}" />
+
+	<wait timeout="4" />
+	
+	<ul id="col_0_0">
+		<browser assert="{@report_title}" />
+		<browser assert="November 2020" />
+	</ul>
+	
+	
+	<div class="dashletToolSet" index="1">
+		<link index="2" alert="true" />
+	</div>
+
+	<wait timeout="4" />
+
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
+
+	<puts text="Test: Reports_8160.xml finished." />
+</soda>	
