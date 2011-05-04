@@ -100,7 +100,7 @@
 	<select name="application" set="LotusLive" />
 	<button value="Connect" />	
 
-	<textfield id="username" set="eric.yang17@gmail.com" required="false" timeout="2" />
+	<textfield id="username" set="sugarqa3@gmail.com" required="false" timeout="2" />
 	<textfield id="password" set="Sugar123" required="false" timeout="2" />
 	<link id="submit" required="false" timeout="2" />
 	
