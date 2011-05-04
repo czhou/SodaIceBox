@@ -1,9 +1,9 @@
 <soda>
-	<script file="{@global.scriptsdir}/modules/integration/lotuslive/module_lib/setup-lotuslive.xml" />
-	<script file="{@global.scriptsdir}/modules/integration/lotuslive/module_lib/LotusLive_Init.xml" />
-	<script fileset="{@global.scriptsdir}/modules/integration/lotuslive" />
-	<script file="{@global.scriptsdir}/modules/integration/lotuslive/module_lib/LotusLive_UnInit_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/integration/lotuslive/module_lib/cleanup-lotuslive.xml" />
+	<script file="{@global.scriptsdir}/modules/integration/google/module_lib/setup-google.xml" />
+	<script file="{@global.scriptsdir}/modules/integration/google/module_lib/Google_Init.xml" />
+	<script fileset="{@global.scriptsdir}/modules/integration/google" />
+	<script file="{@global.scriptsdir}/modules/integration/google/module_lib/Google_UnInit_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/integration/google/module_lib/cleanup-Google.xml" />
 
 	<!-- var var="pre_account_name" set="Haier Air Condition of China admin 110221_145641" />
 	<var var="pre_contact_first_name" set="Mandy admin 110221_145828" />
