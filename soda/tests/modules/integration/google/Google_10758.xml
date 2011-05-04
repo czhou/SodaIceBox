@@ -1,5 +1,5 @@
 <soda>
-	<puts text="Test: LotusLive_10330.xml starting." />
+	<puts text="Test: Google_10758.xml starting." />
 	<link id="moduleTab_Accounts"/>
 	<button   id="search_form_clear"/>
         <form id="search_form">
@@ -14,9 +14,9 @@
 	<button id="documents_accounts_create_button" />
 	<div id="form_SubpanelQuickCreate_Documents_tabs">
 		<timestamp />
-		<select id="doc_type" set="LotusLive" />
-		<textfield name="document_name" set="LotusLive_Sub_Docx" /> 
-		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/1.docx" />	
+		<select id="doc_type" set="Google" />
+		<textfield name="document_name" set="Google_Sub_Docx" /> 
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/google/1.docx" />	
 	</div>
 	<button id="Documents_subpanel_save_button" />
 	<wait timeout='10'/>
@@ -26,10 +26,10 @@
 	<button id="Documents_subpanel_full_form_button" />
 	<form id="EditView">
 		<timestamp />
-		<select id="doc_type" set="LotusLive" />
-		<textfield name="document_name" set="LotusLive_Sub_Xlsx" /> 
+		<select id="doc_type" set="Google" />
+		<textfield name="document_name" set="Google_Sub_Xlsx" /> 
 		<wait timeout='2' />
-		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/2.xlsx" />
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/google/2.xlsx" />
 		<button value="Save" />
 	</form>
 	<link text="2.xlsx" click="false" exist="true"/>
@@ -45,7 +45,7 @@
 	<link text="View Documents" />
 
 	<button id="search_form_clear" />
-	<textfield id="document_name_basic" set="LotusLive_Sub" />
+	<textfield id="document_name_basic" set="Google_Sub" />
 	<button id="search_form_submit" />
 	<span class="pageNumbers" assert="(1 - 2 of 2)" />
 
@@ -55,5 +55,5 @@
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />
 
 	
-	<puts text="Test: LotusLive_10330.xml finished." />
+	<puts text="Test: Google_10758.xml finished." />
 </soda>
