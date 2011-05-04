@@ -23,6 +23,7 @@
       <button name="fsavebtn" assertPage="false" />
     </form>
     <wait timeout="3" />
+    <browser assert="Add Field" />
     <browser assert="cf_field_c" />
     
     <!-- Now delete that field -->
