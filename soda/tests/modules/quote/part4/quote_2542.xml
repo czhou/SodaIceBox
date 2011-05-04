@@ -1,5 +1,5 @@
 <soda>
-        <puts text="Test Case 2534: _Verify that Archived email related to this Quote can be viewed successfully."/>
+        <puts text="Test Case 2542: Quote Detail - History sub-panel_Verify that archived email related to this Quote can be modified."/>
 
         <!--Go to Quotes module and search out the quote record create in lib-->
         <link id='moduleTab_Quotes'/>
@@ -20,8 +20,8 @@
         <wait timeout="10"/>
         <textfield id="jscal_field" set="2011-04-29"/>
         <textfield name="time_start" set="0:00"/>
-	<textfield id="subjectfield" set="New Archived Email"/>
-        <button value="  Save  "/> 
+        <textfield id="subjectfield" set="New Archived Email"/>
+        <button value="  Save  "/>
         <wait timeout="5"/>
         <browser assert="New Archived Email"/>
 
@@ -32,9 +32,18 @@
         <wait timeout="2"/>
         <browser assert="Date Sent"/>
 
+        <!--Edit the Archived Email record-->
+        <button value="  Edit  "/>
+        <wait timeout="2"/>
+        <textfield id="subjectfield" set="Modified Archived Email"/>
+        <button value="  Save  "/>
+        <wait timeout="3"/>
+        <browser assert="Modified Archived Email"/>
+        
         <!--Delete the note record created in this case.-->
-	<button value="    Delete    "/>
-	<wait timeout="2"/>
-        <puts text="End Test Case 2534"/>
+        <link text="Modified Archived Email"/>
+        <wait timeout="2"/>
+        <button value="    Delete    "/>
+        <wait timeout="2"/>
+        <puts text="End Test Case 2542"/>
 </soda>
-
