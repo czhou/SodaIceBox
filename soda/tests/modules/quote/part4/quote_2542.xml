@@ -17,33 +17,33 @@
         <!--Create a note in History subpanel.-->
         <browser assert="Quote Overview"/>
         <button id="ArchiveEmail_button"/>
-        <wait timeout="10"/>
+        <wait timeout="20"/>
         <textfield id="jscal_field" set="2011-04-29"/>
         <textfield name="time_start" set="0:00"/>
         <textfield id="subjectfield" set="New Archived Email"/>
         <button value="  Save  "/>
-        <wait timeout="5"/>
+        <wait timeout="10"/>
         <browser assert="New Archived Email"/>
 
         <!--Verify we can go to note detail view via clicking the link in history subpanel-->
         <div id="list_subpanel_history">
                 <link text="New Archived Email"/>
         </div>
-        <wait timeout="2"/>
+        <wait timeout="5"/>
         <browser assert="Date Sent"/>
 
         <!--Edit the Archived Email record-->
         <button value="  Edit  "/>
-        <wait timeout="2"/>
+        <wait timeout="5"/>
         <textfield id="subjectfield" set="Modified Archived Email"/>
         <button value="  Save  "/>
-        <wait timeout="3"/>
+        <wait timeout="5"/>
         <browser assert="Modified Archived Email"/>
         
         <!--Delete the note record created in this case.-->
         <link text="Modified Archived Email"/>
-        <wait timeout="2"/>
+        <wait timeout="5"/>
         <button value="    Delete    "/>
-        <wait timeout="2"/>
+        <wait timeout="5"/>
         <puts text="End Test Case 2542"/>
 </soda>
