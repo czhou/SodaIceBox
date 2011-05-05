@@ -47,11 +47,13 @@
       <link text="{@pre_account_name}" />
       <wait timeout="3" />
       <button id="SAVE_HEADER" />
-      <wait timeout="3" />
-      <table id="detailpanel_1" >
-      	<browser assert="{@studio10106.name} {@user.name} {@stamp}" />
-      	<span id="date_closed" assert="{@studio10106.closedate}" />
-      </table>
+      <wait timeout="5" />
+	<div id="DEFAULT">
+		<table id="detailpanel_1" >
+      			<browser assert="{@studio10106.name} {@user.name} {@stamp}" />
+      			<span id="date_closed" assert="{@studio10106.closedate}" />
+      		</table>
+	</div>
     </csv>
     
     <!-- Now uncalculated the field -->
