@@ -1,5 +1,5 @@
 <soda>
-	<puts text="Test: LotusLive_10335.xml starting." />
+	<puts text="Test: Google_10763.xml starting." />
 	<link id="moduleTab_Contracts"/>
 	<button   id="search_form_clear"/>
         <form id="search_form">
@@ -14,10 +14,10 @@
 	<button name="Documents_create_button" />
 	<form id="EditView">
 		<timestamp />
-		<select id="doc_type" set="LotusLive" />
-		<textfield name="document_name" set="LotusLive_Sub_Pdf" /> 
+		<select id="doc_type" set="Google" />
+		<textfield name="document_name" set="Google_Sub_Pdf" /> 
 		<wait timeout='2' />
-		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/4.pdf" />
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/google/4.pdf" />
 		<button value="Save" />
 	</form>
 	<link text="4.pdf" click="false" exist="true"/>
@@ -30,7 +30,7 @@
 	<link text="View Documents" />
 
 	<button id="search_form_clear" />
-	<textfield id="document_name_basic" set="LotusLive_Sub" />
+	<textfield id="document_name_basic" set="Google_Sub" />
 	<button id="search_form_submit" />
 	<span class="pageNumbers" assert="(1 - 1 of 1)" />
 
@@ -40,5 +40,5 @@
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />
 
 	
-	<puts text="Test: LotusLive_10335.xml finished." />
+	<puts text="Test: Google_10763.xml finished." />
 </soda>

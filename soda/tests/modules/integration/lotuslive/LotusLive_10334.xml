@@ -16,7 +16,7 @@
 		<timestamp />
 		<select id="doc_type" set="LotusLive" />
 		<textfield name="document_name" set="LotusLive_Sub_Docx" /> 
-		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/1.docx" />	
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/1.docx" />	
 	</div>
 	<button id="Documents_subpanel_save_button" />
 	<wait timeout='10'/>
@@ -29,7 +29,7 @@
 		<select id="doc_type" set="LotusLive" />
 		<textfield name="document_name" set="LotusLive_Sub_Xlsx" /> 
 		<wait timeout='2' />
-		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/2.xlsx" />
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/2.xlsx" />
 		<button value="Save" />
 	</form>
 	<link text="2.xlsx" click="false" exist="true"/>

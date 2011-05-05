@@ -1,35 +1,35 @@
 <soda>
-	<puts text="Test: LotusLive_10346.xml starting." />
-	<link id="moduleTab_Bugs"/>
+	<puts text="Test: Google_10762.xml starting." />
+	<link id="moduleTab_Products"/>
 	<button   id="search_form_clear"/>
         <form id="search_form">
-            <textfield id="name_basic" set="{@pre_bug_name}"/>
+            <textfield id="name_basic" set="{@pre_ProductCatalog_name}"/>
         </form>
     <button id="search_form_submit"/>
     <table class="list view">
-        <link text="{@pre_bug_name}"/>
+        <link text="{@pre_ProductCatalog_name}"/>
     </table>
-    <browser assert="{@pre_bug_name}"/>
+    <browser assert="{@pre_ProductCatalog_name}"/>
 	
-	<button name="documents_bugs_create_button" />
+	<button name="documents_products_create_button" />
 	<div id="form_SubpanelQuickCreate_Documents_tabs">
 		<timestamp />
-		<select id="doc_type" set="LotusLive" />
-		<textfield name="document_name" set="LotusLive_Sub_Docx" /> 
-		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/1.docx" />	
+		<select id="doc_type" set="Google" />
+		<textfield name="document_name" set="Google_Sub_Docx" /> 
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/google/1.docx" />	
 	</div>
 	<button id="Documents_subpanel_save_button" />
 	<wait timeout='10'/>
 	<link text="1.docx" click="false" exist="true"/>
 	
-	<button name="documents_bugs_create_button" />
+	<button name="documents_products_create_button" />
 	<button id="Documents_subpanel_full_form_button" />
 	<form id="EditView">
 		<timestamp />
-		<select id="doc_type" set="LotusLive" />
-		<textfield name="document_name" set="LotusLive_Sub_Xlsx" /> 
+		<select id="doc_type" set="Google" />
+		<textfield name="document_name" set="Google_Sub_Xlsx" /> 
 		<wait timeout='2' />
-		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/2.xlsx" />
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/google/2.xlsx" />
 		<button value="Save" />
 	</form>
 	<link text="2.xlsx" click="false" exist="true"/>
@@ -45,7 +45,7 @@
 	<link text="View Documents" />
 
 	<button id="search_form_clear" />
-	<textfield id="document_name_basic" set="LotusLive_Sub" />
+	<textfield id="document_name_basic" set="Google_Sub" />
 	<button id="search_form_submit" />
 	<span class="pageNumbers" assert="(1 - 2 of 2)" />
 
@@ -55,5 +55,5 @@
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />
 
 	
-	<puts text="Test: LotusLive_10346.xml finished." />
+	<puts text="Test: Google_10762.xml finished." />
 </soda>
