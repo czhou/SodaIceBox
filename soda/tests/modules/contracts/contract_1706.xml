@@ -30,7 +30,7 @@
 		<link text="edit" class="listViewTdToolsS1"/>
 	</div>
         <link text="Note record" click="false" exist="true"/>
-        <div id="content>
+        <div id="content">
 	    <browser assert="Edit"/>
         </div>
 	<textfield id="name" set="New note record"/>
