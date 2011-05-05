@@ -1,0 +1,109 @@
+<soda>
+	<puts text="Test: Reports_8433.xml starting." />
+	<!--
+	Action
+		1. Login to SugarCRM as a valid user.
+		2. Go to "Reports" module.
+		3. Click "Create Report" link from navigation Shortcuts.
+		4. Select one report type, such as "Rows and Columns".
+		5. Select one module, such as"Accounts" module.
+		6. Select "Industry" field from the Available Fields.
+		7. Set filter, such as following:
+		7.1. Account->Industry Is Banking
+		7.2. Account->Industry One Of Banking/Apparel/Energy
+		8. Check the Run-time check box.
+		9. Select at least one column for "Display Columns" box under
+			"Choose Display Columns" panel.
+		10. Run report. 
+
+	Expected Results:
+		Corresponding records are displayed in Report result and 
+			?Runtime Filters? is displayed in the ?EditView? page. 
+	-->
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<var var="account1_name" set="{@pre_account_name}" />
+	<var var="account1_industry" set="Banking" />
+	<button id="edit_button" />
+	<select id="industry" set="{@account1_industry}" />
+	<button id="SAVE" />
+	
+	
+	
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<var var="account2_name" set="{@pre_account_name}" />
+	<var var="account2_industry" set="{@account_record.industry}" />
+	
+	<wait timeout="4" />
+	
+	<link id="moduleTab_Reports" />
+	
+	<link text="Create Report" />
+	
+	<wait timeout="8" />
+	
+	<div id="report_type_div">
+		<image name="rowsColsImg" jscriptevent="onclick" click="true" />
+	</div>
+	
+	<wait timeout="3" />
+	
+	<table id="Accounts">
+		<link text="Accounts" />
+	</table>
+	
+	<div text="Industry" click="true" />
+	<table id="Filter.1_table">
+		<row id="Filter.1_table_filter_row_1">
+			<select name="input" set="Banking" />
+		</row>
+	</table>
+	
+	<wait timeout="4" />
+	<div text="Industry" click="true" />
+	
+	<table id="Filter.1_table">
+		<row id="Filter.1_table_filter_row_2">
+			<select name="qualify" set="Is One Of" />
+			<select index="2" set="Banking" />
+			<select index="2" set="Apparel" />
+			<select index="2" set="Energy" />
+			<checkbox index="1" set="true" />
+		</row>
+	</table>
+	
+	<button value="Next &gt;" />
+	<wait timeout="4" />
+	<!-- display cols" -->
+	<div text="Name" click="true" />
+	<div text="Industry" click="true" />
+	
+	
+	<button value="Next &gt;" />
+	<!-- Group By -->
+	<wait timeout="4" />
+	
+	<timestamp />
+	<var var="report_name" set="QA_Created_{@stamp}" />
+	<textfield name="save_report_as" set="{@report_name}" />
+	
+	<button value="Save and Run" />
+	
+	<div id="report_results">
+		<browser assert="{@account1_name}" />
+		<browser assert="{@account1_industry}" />
+		<browser assertnot="{@account2_name}" />
+		<browser assertnot="{@account2_industry}" />
+	</div>
+		
+	<link id="moduleTab_Reports" />
+	<table class="list view">
+		<browser assert="{@report_name}" />
+	</table>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
+	
+	<puts text="Test: Reports_8433.xml finished." />
+</soda>	

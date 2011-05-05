@@ -1,0 +1,119 @@
+<soda>
+	<puts text="Test: Reports_8436.xml starting." />
+	<!--
+	Action
+		1. Login to SugarCRM as a valid user.
+		2. Go to "Reports" module.
+		3. Click "Create Custom Report" link from navigation Shortcuts.
+		4. Select one report type, such as "Rows and Columns".
+		5. Select one module, such as"Campaign" module.
+		6. Set filter, such as following:
+		6.1. [Campaign] [Name] [Equals] [campaign1]
+		6.2. [Campaign] [Name] [Contains] [campaign]
+		6.3. [Campaign] [Name] [Starts With] [ca]
+		6.4. [Campaign] [Objective] [Ends With] [tive1]
+		6.5. [Campaign] [Objective] [Do Not Equal] [objective2]
+		6.6. [Campaign] [Budget] [Less Than] [600]
+		6.7. [Campaign] [Expected Cost] [Greater Than] [350]
+		6.8. [Campaign] [Expected Cost] [Is Between] [200] and [400]
+		7. Check the Run-time check box.
+		8. Select at least one column for "Display Columns" box under
+			"Choose Display Columns" panel.
+		9. Run report.
+
+	Expected Results:
+		Corresponding records are displayed in Report result and
+			?Runtime Filters? is displayed in the ?EditView? page. 
+	-->
+	
+	<script file="{@global.scriptsdir}/modules/lib/Campaign_Create_Lib.xml" />
+	<var var="campaign1_name" set="{@Campaign_Name}" />
+	<var var="campaign1_name_part" set="{@Campaign_New_Record.name}" />
+	<var var="campaign1_name_stamp" set="{@stamp}" />
+	
+	<wait timeout="4" />
+	
+	<link id="moduleTab_Reports" />
+	
+	<link text="Create Report" />
+	
+	<wait timeout="8" />
+	
+	<div id="report_type_div">
+		<image name="rowsColsImg" jscriptevent="onclick" click="true" />
+	</div>
+	
+	<wait timeout="3" />
+	
+	<table id="Campaigns">
+		<link text="Campaigns" />
+	</table>
+	
+	<!-- Filters here -->
+	<wait timeout="4" />
+	<div text="Name" click="true" />
+	
+	<table id="Filter.1_table">
+		<row id="Filter.1_table_filter_row_1">
+			<button value="Select" index="1" />
+		</row>
+	</table>
+	
+	<wait timeout="3" />
+	<link text="{@campaign1_name}" />	
+	
+	<div text="Name" click="true" />
+	
+	<table id="Filter.1_table">
+		<row id="Filter.1_table_filter_row_2">
+			<select name="qualify" set="Contains" />
+			<textfield name="text_input" set="{@campaign1_name_part}" />
+		</row>
+	</table>
+	
+	<div text="Name" click="true" />
+	
+	<table id="Filter.1_table">
+		<row id="Filter.1_table_filter_row_3">
+			<select name="qualify" set="Ends With" />
+			<textfield name="text_input" set="{@campaign1_name_stamp}" />
+		</row>
+	</table>
+	
+	<div text="Budget:" click="true" />
+	
+	<table id="Filter.1_table">
+		<row id="Filter.1_table_filter_row_4">
+			<select name="qualify" set="Less Than" />
+			<textfield name="text_input" set="600" />
+		</row>
+	</table>	
+
+	<wait timeout="10" />
+	
+	<button value="Next &gt;" />
+	<wait timeout="4" />
+	<!-- display cols" -->
+	<div text="Name" click="true" />
+	<div text="Objective:" click="true" />
+	
+	
+	<button value="Next &gt;" />
+	<!-- Group By -->
+	<wait timeout="4" />
+	
+	<timestamp />
+	<var var="report_name" set="QA_Created_{@stamp}" />
+	<textfield name="save_report_as" set="{@report_name}" />
+	
+	<button value="Save and Run" />
+	
+	<div id="report_results">
+		<browser assert="{@campaign1_name}" />
+	</div>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
+	
+	<puts text="Test: Reports_8436.xml finished." />
+</soda>	
