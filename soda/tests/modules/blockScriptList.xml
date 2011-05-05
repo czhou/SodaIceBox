@@ -606,4 +606,11 @@
 		<reason>Can't click edit link for lead record in list view</reason>
 		<modulename>Leads</modulename>
 	</block>
+	
+	<block>
+		<testfile>Reports_8436</testfile>
+		<bugnumber>43823</bugnumber>
+		<reason>Implied budget of zero causes report criteria to fail</reason>
+		<modulename>Reports</modulename>
+	</block>
 </soda>
