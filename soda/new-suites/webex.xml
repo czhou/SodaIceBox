@@ -1,9 +1,9 @@
 <soda>
-	<script file="{@global.scriptsdir}/modules/integration/webex/module_lib/setup-webex.xml" />
-	<script file="{@global.scriptsdir}/modules/integration/webex/module_lib/Webex_Init.xml" />
-	<script fileset="{@global.scriptsdir}/modules/integration/webex" />
-	<script file="{@global.scriptsdir}/modules/integration/webex/module_lib/Webex_UnInit_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/integration/webex/module_lib/cleanup-webex.xml" />
+	<script file="tests/modules/integration/webex/module_lib/setup-webex.xml" />
+	<script file="tests/modules/integration/webex/module_lib/Webex_Init.xml" />
+	<script fileset="tests/modules/integration/webex" />
+	<script file="tests/modules/integration/webex/module_lib/Webex_UnInit_Lib.xml" />
+	<script file="tests/modules/integration/webex/module_lib/cleanup-webex.xml" />
 
 	<!-- var var="pre_account_name" set="Haier Air Condition of China admin 110221_145641" />
 	<var var="pre_contact_first_name" set="Mandy admin 110221_145828" />

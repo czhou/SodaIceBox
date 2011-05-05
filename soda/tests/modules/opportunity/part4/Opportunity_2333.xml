@@ -20,7 +20,7 @@
 			<browser assert="{@pre_opp_name}" />
 		</table>
 
-		<button value="  Create Note or Attachment  " />
+		<button id="History_createnoteorattachment_button" />
 
 		<!--teams select -->
 		<table id="form_SubpanelQuickCreate_Notes_team_name_table">
@@ -30,16 +30,14 @@
 		<textfield name="name" set="{@Opportunity_2333.team_name}" />
 		<button value="Search" />
 		<link text="{@Opportunity_2333.team_name}" />
-
-		<textfield id="name" set="{@Opportunity_2333.note_name} {@user.name} {@stamp}" />
-		<textarea id="description" set="{@Opportunity_2333.note_description}" />
-		<button id="Notes_subpanel_cancel_button" alert="true" />
-		<wait timeout="5" />
-		<wait timeout="5" />
+		<form id="form_SubpanelQuickCreate_Notes">
+			<textfield id="name" set="{@Opportunity_2333.note_name} {@user.name} {@stamp}" />
+			<textarea id="description" set="{@Opportunity_2333.note_description}" />
+			<button id="Notes_subpanel_cancel_button" alert="true" />
+		</form>
+		<wait timeout="10" />
 		<div id="list_subpanel_history">
-			<table class="list view">
 				<link text="{@Opportunity_2333.note_name} {@user.name} {@stamp}" exist="false" />
-			</table>
 		</div>
 
 	</csv>

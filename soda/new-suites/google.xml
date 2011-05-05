@@ -1,9 +1,9 @@
 <soda>
-	<script file="{@global.scriptsdir}/modules/integration/google/module_lib/setup-google.xml" />
-	<script file="{@global.scriptsdir}/modules/integration/google/module_lib/Google_Init.xml" />
-	<script fileset="{@global.scriptsdir}/modules/integration/google" />
-	<script file="{@global.scriptsdir}/modules/integration/google/module_lib/Google_UnInit_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/integration/google/module_lib/cleanup-Google.xml" />
+	<script file="tests/modules/integration/google/module_lib/setup-google.xml" />
+	<script file="tests/modules/integration/google/module_lib/Google_Init.xml" />
+	<script fileset="tests/modules/integration/google" />
+	<script file="tests/modules/integration/google/module_lib/Google_UnInit_Lib.xml" />
+	<script file="tests/modules/integration/google/module_lib/cleanup-Google.xml" />
 
 	<!-- var var="pre_account_name" set="Haier Air Condition of China admin 110221_145641" />
 	<var var="pre_contact_first_name" set="Mandy admin 110221_145828" />
@@ -14,6 +14,6 @@
 	<var var="Contract_Create_Lib" set="Contracts admin 110221_150028" />
 	<var var="pre_case_name" set="Case_unique_number admin 110221_150223" />
 	<var var="pre_bug_name" set="soap testing admin 110221_150252" />
-	<script file="{@global.scriptsdir}/modules/integration/lotuslive/LotusLive_10354.xml" /-->
+	<script file="tests/modules/integration/lotuslive/LotusLive_10354.xml" /-->
 
 </soda>
