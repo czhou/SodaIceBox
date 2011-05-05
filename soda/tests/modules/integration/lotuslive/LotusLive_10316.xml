@@ -1,0 +1,16 @@
+<soda>
+	<puts text="Test: LotusLive_10316.xml starting." />
+	<!-- The system administrator part is covered by 'LotusLive_Init.xml' -->
+	<link text="{@user.logname}" />
+	
+	<link text="External Accounts" />
+	<button id="EAPM_create_button" />
+	<browser assert="Application:" />
+	<button id="EditViewSave" />
+	<browser assert="Missing required field: Application" />
+	<browser assert="Missing required field: App User Name" />
+	<browser assert="Missing required field: URL" />
+	<browser assert="Missing required field: App Password" />
+	<button value="Cancel" alert="true" />
+	<puts text="Test: LotusLive_10316.xml finished." />
+</soda>

@@ -97,10 +97,10 @@
 	<link text="External Accounts" />
 	<button name="EAPM_create_button" />
 	<browser assert="Application:" />
-	<select name="application" set="LotusLive" />
-	<button value="Connect" />	
+	<select id="application" set="LotusLive" />
+	<button id="EditViewSave" />	
 
-	<textfield id="username" set="eric.yang17@gmail.com" required="false" timeout="2" />
+	<textfield id="username" set="sugarqa3@gmail.com" required="false" timeout="2" />
 	<textfield id="password" set="Sugar123" required="false" timeout="2" />
 	<link id="submit" required="false" timeout="2" />
 	
@@ -125,7 +125,7 @@
 	<form id="EditView">
 		<timestamp />
 		<textfield name="document_name" set="Sugar_Doc" /> 
-		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/sugarcrm.txt" />
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/sugarcrm.txt" />
 		<button value="Save" />
 	</form>
 	
@@ -134,7 +134,7 @@
 		<timestamp />
 		<select id="doc_type" set="LotusLive" />
 		<textfield name="document_name" set="LotusLive_Doc" /> 
-		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/lotus.txt" />
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/lotus.txt" />
 		<button value="Save" />
 	</form>
 	
