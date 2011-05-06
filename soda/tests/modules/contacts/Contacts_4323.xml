@@ -25,9 +25,7 @@
 		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	</div>
 
-
 	<link id="moduleTab_Contacts" />
-
 
 	<!--Expect results-->
 	<!-- *1* Back to list view-->
@@ -38,6 +36,6 @@
 		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" click="false" />
 	</table>
 
-
+        <script file="{@global.scriptsdir}/modules/lib/Contact_Delete_lib.xml" />
 	<puts text="Test: Contacts_4323.xml finished." />
 </soda>
