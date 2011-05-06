@@ -1,0 +1,22 @@
+<soda>
+	<puts text='Contract 1732: Create Contract_Verify that the contract cannot be saved without warnings when filling "Expiration Notice" field with invalid value'/>
+
+	<timestamp/>
+
+	<!--Create a contract with filling all the fields-->
+	<link id='moduleTab_Contracts'/>
+	<browser assert="Contracts"/>
+	<link text="Create Contract"/>
+
+	<!--Fill invalid value for "Expiration Notice" field and save-->
+	<textfield id="expiration_notice_date" set="invalid value filled"/>
+	<button id="SAVE_HEADER"/>
+	<browser assert="Invalid Value: Expiration Notice"/>
+
+	<!--Cancel this save action-->
+	<button id="CANCEL_HEADER" alert="true"/>
+
+
+	<puts text='-------------------Contract_1732: finished-------------------'/>
+
+</soda>
