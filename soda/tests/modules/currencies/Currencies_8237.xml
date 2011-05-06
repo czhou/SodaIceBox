@@ -32,6 +32,7 @@
       var="currency_8237">
       <div id="list_subpanel_opportunities">
          <button name="accounts_opportunities_create_button" />
+         <wait timeout="5" />
       </div>
       <div id="subpanel_opportunities_newDiv">  
          <textfield name="name" 
