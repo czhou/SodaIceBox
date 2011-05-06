@@ -53,7 +53,9 @@
 
 	<!-- *3* Edit created record and save-->
 	<div id="list_subpanel_activities">
-		<link text="edit" class="listViewTdToolsS1"/> 
+		<table class="list view">
+			<link index="1" class="listViewTdToolsS1"/> 
+		</table>
 	</div>
 
 	<browser assert="Tasks" />
