@@ -1,0 +1,59 @@
+<soda>
+	<puts text="Test Case 10757: Verify no error occur when deploy custom module."/>
+	
+	<!--Create a package-->
+	<link href="index.php?module=Administration&action=index" text="Admin"/>
+	<wait timeout="3"/>
+	<browser assert="Developer Tools"/>
+	<link href="./index.php?module=ModuleBuilder&action=index&type=mb" text="Module Builder"/>
+	<wait timeout="10"/>
+	<browser assert="Select a package to edit, or create a new package."/>
+	<link href="javascript:void(0)" text=" 				            New Package"/>
+	<wait timeout="3"/>
+	<textfield name="name" set="new_package"/>
+	<textfield name="key" set="sugar"/>
+	<button value="Save"/>
+	<wait timeout="5"/>
+	
+	<!--Create a new module-->
+	<link text=" 						      New Module"/>
+	<wait timeout="3"/>
+	<browser assert="New Module"/>
+	<link text="basic"/>
+	<textfield name="name" set="basic_module"/>
+	<textfield name="label" set="Basic Module"/>
+	<button value="Save"/>
+	<wait timeout="5"/>
+
+	<!--Edit the stock field assinged_user_link-->
+	<link id="ygtvt1"/>	<!--Expend the new_package-->
+	<link id="ygtvt2"/>	<!--Expend the basic_module-->
+	<link id="ygtvlabelel3"/>	<!--Go to the fields page-->
+	<link text="assigned_user_link"/>	<!--Click the assign_user_link-->
+	<wait timeout="3"/>
+	<button value="Save"/>
+	<wait timeout="3"/>
+	
+	<!--Deploy the package-->
+	<link id="ygtvlabelel2"/>
+	<button name="deploybtn" value="Deploy"/>
+	<wait timeout="10"/>
+	<browser assert="Select a package to edit, or create a new package."/>
+	
+	<!--Create a basic module record-->
+	<link id="moduleTab_sugar_basic_module"/>
+	<wait timeout="3"/>
+	<link text="Create Basic Module"/>
+	<wait timeout="3"/>
+	<textfield id="name" set="Basic Record"/>
+	<button id="SAVE_HEADER"/>
+	<wait timeout="3"/>
+	<browser assert="Basic Record"/>
+	<link id="moduleTab_sugar_basic_module"/>
+	<wait timeout="2"/>
+	<browser assert="Selected: "/>
+	
+	<!--Delete the package in MB-->
+
+	<!--Uninstall and delete the package in ML-->
+</soda>
