@@ -1,0 +1,6 @@
+<soda>
+        <script file="tests/modules/modulebuilder/module_lib/setup-modulebuilder.xml" />
+        <script fileset="tests/modules/modulebuilder" />
+        <script file="tests/modules/modulebuilder/module_lib/cleanup-modulebuilder.xml" />
+</soda>
+
