@@ -1,0 +1,57 @@
+<soda>
+	<!-- BugTracker_0656.xml: Mass Update_Verify that records can be mass updated in the bugs list after doing search. -->
+	<puts text="Test: BugTracker_0656.xml starting." />
+	<csv file="{@global.scriptsdir}/csvs/bugtracker/BugTrackerAssertText.csv" var="bugtracker" />
+
+	<csv file="{@global.scriptsdir}/csvs/bugtracker/BugTracker_0656.csv" var="BugTracker_0656" />
+
+	<!-- Create bug tracker record. -->
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+
+	<!-- Navigate to Bug Tracker ListView. -->
+	<link id="moduleTab_Bugs" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Bugs&amp;action=index" click="false" />
+	</div>
+
+	<link text="Advanced Search" />
+	<wait timeout="3" />
+
+	<select name="status_advanced[]" set="{@BugTracker_0656.search_status}" />
+	
+	<checkbox id="massall" set="true" />
+	<link id="actions_link" />
+	<link text="Mass Update" />
+	
+	<textfield id="team_name_collection_0" set="{@BugTracker_0656.team}" />
+	<radio id="primary_team_name_collection_0" />
+	<select id="mass_status" set="{@BugTracker_0656.status}" />
+	<select id="mass_type" set="{@BugTracker_0656.type}" />
+	<select id="mass_priority" set="{@BugTracker_0656.priority}" />
+	<textfield id="mass_assigned_user_name" set="{@BugTracker_0656.assigned_to}" />
+	<textfield id="team_name_collection_0" set="{@BugTracker_0656.team}" />
+	<button id="update_button" alert="true" />
+	
+	<table class="list view">
+		<browser assert="{@BugTracker_0656.status}" />
+		<browser assert="{@BugTracker_0656.type}" />
+		<browser assert="{@BugTracker_0656.priority}" />
+	</table>
+	
+	<!-- Navigate to Bug Tracker ListView. -->
+	<link id="moduleTab_Bugs" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Bugs&amp;action=index" click="false" />
+	</div>
+
+	<link text="Basic Search" />
+	<wait timeout="3" />
+	
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+
+	<!-- Delete bug tracker record. -->
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
+
+	<puts text="Test: BugTracker_0656.xml finished." />
+</soda>

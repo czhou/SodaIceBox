@@ -1,0 +1,32 @@
+<soda>
+	<!-- BugTracker_0654.xml: Detail View_Verify that the pagination control links link are displayed at the top right corner of bug detail view after canceling editing bug. -->
+	<puts text="Test: BugTracker_0654.xml starting." />
+	<csv file="{@global.scriptsdir}/csvs/bugtracker/BugTrackerAssertText.csv" var="bugtracker" />
+
+	<!-- Create bug tracker records. -->
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+
+	<!-- Navigate to Bug Tracker ListView. -->
+	<link id="moduleTab_Bugs" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Bugs&amp;action=index" click="false" />
+	</div>
+
+	<link text="@pre_bug_name" />
+
+	<button id="edit_button" />
+	
+	<button id="cancel_button`" />
+	
+	<span class="pagination">
+		<button class="button" index="1" exists="true" />
+		<browser assert="(1 of 2)" />
+		<button class="button" index="2" exists="true" />
+	</span>
+
+	<!-- Delete bug tracker records. -->
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
+
+	<puts text="Test: BugTracker_0654.xml finished." />
+</soda>

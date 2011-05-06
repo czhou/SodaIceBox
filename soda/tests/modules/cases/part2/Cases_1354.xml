@@ -21,6 +21,7 @@
 	<!--create a task-->
 	<div id="list_subpanel_activities">
 		<button value="  Create Task  " />
+		<wait timeout="3" />
 	</div>
 
 	<timestamp />
@@ -30,6 +31,7 @@
 			<textfield id="name" set="{@Case_1354.name} {@user.name} {@stamp}" />
 		</div>
 		<button id="Tasks_subpanel_save_button" />
+		<wait timeout="3" />
 
 		<!--modify the Task-->
 		<div id="list_subpanel_activities">

@@ -1,0 +1,30 @@
+<soda>
+	<!-- BugTracker_0655.xml: List View_Verify that all bugs are displayed without any error after clicking "Cancel" button on "MERGE RECORDS WITH:.." page. -->
+	<puts text="Test: BugTracker_0655.xml starting." />
+	<csv file="{@global.scriptsdir}/csvs/bugtracker/BugTrackerAssertText.csv" var="bugtracker" />
+
+	<!-- Create bug tracker records. -->
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+
+	<!-- Navigate to Bug Tracker ListView. -->
+	<link id="moduleTab_Bugs" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Bugs&amp;action=index" click="false" />
+	</div>
+
+	<checkbox id="massall" set="true" />
+	<link id="actions_link" />
+	<link text="Merge" />
+	<button value="  Cancel  " />
+	
+	<table class="list view">
+		<row class="evenListRowS1" index="1" exists="true" />
+		<row class="oddListRowS1" index="2" exists="false" />
+	</table>
+
+	<!-- Delete bug tracker records. -->
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
+
+	<puts text="Test: BugTracker_0655.xml finished." />
+</soda>
