@@ -35,7 +35,7 @@
 			<textarea id="description" set="{@Opportunity_2333.note_description}" />
 			<button id="Notes_subpanel_cancel_button" alert="true" />
 		</form>
-		<wait timeout="10" />
+		<wait timeout="5" />
 		<div id="list_subpanel_history">
 				<link text="{@Opportunity_2333.note_name} {@user.name} {@stamp}" exist="false" />
 		</div>

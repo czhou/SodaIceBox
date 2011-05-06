@@ -49,6 +49,6 @@
 
 	</csv>
 	<!--Run Delete XML -->
-	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Notes_Delete_Lib.xml" />
 	<puts text="Test: Opportunity_2332.xml finished." />
 </soda>
