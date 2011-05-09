@@ -10,6 +10,7 @@
       set="{@global.scriptsdir}/modules/lib/ModuleLoader.zip" />
    <button value="Upload" />
    <button value="Install" />
+	<wait timeout="3"/>
    <browser assert="Ready To Install" />
 
    <radio id="radio_license_agreement_accept" set="true" />
