@@ -1,5 +1,5 @@
 <soda>
-        <puts text=" Test Case 2545: Quote Detail - Projects sub-panel_Verify that project information related to this project can be viewed successfully."/>
+        <puts text=" Test Case 2545: Quote Detail - Projects sub-panel_Verify that project information related to this Quote can be viewed successfully."/>
 
         <!--Go to Quotes module and search out the quote record create in lib-->
         <link id='moduleTab_Quotes'/>
