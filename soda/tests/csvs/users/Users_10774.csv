@@ -1,0 +1,3 @@
+last_name,pw,old_report,new_report,email,user_name,click_username,report_to
+User1,User123,Administrator,qauser,user@sugar.com,user1,,
+User2,User123,Administrator,qauser,user@sugar.com,user2,User2,User1
