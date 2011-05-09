@@ -40,6 +40,7 @@
 
 	<!--Delete all pre-created records-->
 	<script file='{@global.scriptsdir}/modules/lib/Contract_Delete_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml'/>
 	<script file='{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml'/>
 	<script file='{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml'/>
 	<puts text='-------------------Contract_1736: finished-------------------'/>
