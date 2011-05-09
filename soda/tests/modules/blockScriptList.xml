@@ -276,6 +276,13 @@
 	</block>
 	<!-- End of illegal javascript related blocks -->
 	<block>
+		<testfile>Users_10774</testfile>
+		<bugnumber>43685</bugnumber>
+		<reason>Bug43685</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
 		<testfile>Calendar_0703</testfile>
 		<bugnumber>39955</bugnumber>
 		<reason>bug 39955 - false duplicate account warning</reason>
