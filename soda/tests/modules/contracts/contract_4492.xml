@@ -1,0 +1,16 @@
+<soda>
+	<puts text='Contract 4492: Create Contract_Verify that a contract can be created when filling all fields'/>
+
+	<timestamp/>
+	<!--Create a contract with filling all the fields-->
+	<script file='{@global.scriptsdir}/modules/lib/Contract_Create_Lib.xml'/>
+
+
+
+	<!--Delete all pre-created records-->
+	<script file='{@global.scriptsdir}/modules/lib/Contract_Delete_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml'/>
+	<puts text='-------------------Contract_4492: finished-------------------'/>
+
+</soda>
