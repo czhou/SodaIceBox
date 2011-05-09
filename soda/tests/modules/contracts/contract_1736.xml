@@ -1,0 +1,47 @@
+
+<soda>
+	<puts text='Contract 1736: Contracts Detail - Contacts sub-panel_Verify that contacts can be selected for a contracts record by selecting the checked contacts records from selecting contacts pop-up window.'/>
+
+	<timestamp/>
+	<!--Create a contract with filling all the fields-->
+	<script file='{@global.scriptsdir}/modules/lib/Contract_Create_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml'/>
+
+	<!--Search the contract record in list view-->
+	<link id='moduleTab_Contracts'/>
+	<browser assert="Contracts"/>
+	<link id="basic_search_link" required="false" timeout="3"/>
+	<textfield id='name_basic' set='{@Contract_Create_Lib}'/> 
+	<button id="search_form_submit"/>
+	<table class='list view'>
+		<link text='{@Contract_Create_Lib}'/>
+	</table>
+	<browser assert='{@Contract_Create_Lib}'/>
+
+
+	<!--Click select button in contact subpanel -->
+	<button id="contracts_contacts_select_button"/>
+
+	<!--Search pre-created contact record -->
+	<textfield id="first_name_advanced" set="{@pre_contact_first_name}" />
+	<button value="Search"/>
+	<form id="MassUpdate">
+		<table class="list view">
+			<checkbox index="1" click="true"/>
+		</table>
+		<button value="Select"/>
+	</form>
+
+	<!--Check selected record show in contact subpanel-->
+	<div id="list_subpanel_contacts">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" click="false" exist="true"/>
+	</div>
+
+
+	<!--Delete all pre-created records-->
+	<script file='{@global.scriptsdir}/modules/lib/Contract_Delete_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml'/>
+	<puts text='-------------------Contract_1736: finished-------------------'/>
+
+</soda>
