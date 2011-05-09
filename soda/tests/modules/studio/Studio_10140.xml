@@ -1,0 +1,44 @@
+<soda>
+    
+    <!-- check the warning message if you select invalid data type field as function parameter -->
+    <puts text="Test: Studio_10140.xml starting" />
+    <!-- set description field as calculated field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="abs($billing_address_city)"/>
+      <button value="Save" />
+    </div>
+    <div id="sugarMsgWindow_c">
+    	<browser assert="Invalid Formula" />
+    	<browser assert="abs: All parameters must be of type 'number'" />
+    	<link text="Close" />
+    </div>
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="addDays($billing_address_city,1)"/>
+      <button value="Save" />
+    </div>
+    <div id="sugarMsgWindow_c">
+    	<browser assert="Invalid Formula" />
+    	<browser assert="addDays: The parameter at index 0 must be of type date" />
+    	<link text="Close" />
+    </div>
+    <button name="formulacancelbtn" />
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="cancelbtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    <browser assert="Add Field" />
+    
+    <puts text="Test: Studio_10140.xml finished." />
+</soda>

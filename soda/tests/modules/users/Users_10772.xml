@@ -1,0 +1,55 @@
+<soda>
+    <puts text="---User_10772:Delete admin user's report to user---Start!" />
+    
+    <!--Create user record-->
+    <script file="{@global.scriptsdir}/modules/lib/User_Create_lib.xml"/>
+     
+    <!--Edit admin's report field-->         
+    <div id="globalLinksModule">
+        <link text="Administrator"/>
+        <wait timeout="3" />
+    </div>
+    <browser assert="User Profile" />
+    <!--select report to user-->
+    <div id="information">
+        <button value="Select"/>
+    </div>
+    <browser assert="User Search"/>
+    <form id="popup_query_form"> 
+        <textfield id="user_name_advanced" set="{@pre_user_name}"/>
+        <button value="Search"/>
+    </form>
+    <table class="list view">
+        <link text="{@pre_user_fullname}"/>
+    </table>
+    <button id="Save" />
+    <wait timeout="3" />
+    <div id="information">
+        <row index="5">
+            <cell index="2" assert="{@pre_user_fullname}"/>
+        </row>
+    </div>
+    
+    <!--Delete user record-->
+	<script file="{@global.scriptsdir}/modules/lib/User_Delete_lib.xml"/>
+	
+	<!--Check the administration page-->
+	<link text="Log Out"/>
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	<div id="globalLinks">
+		<link text="Admin" />
+        <wait timeout="3" />
+    </div>
+   	<table id="contentTable">
+   		<browser assert="Users" />
+   		<browser assert="Sugar Connect" />
+   		<browser assert="System" />
+   		<browser assert="Email" />
+   		<browser assert="Developer Tools" />
+   		<browser assert="Product and Quotes" />
+   		<browser assert="Bug Tracker" />
+   		<browser assert="Forecast" />
+   		<browser assert="Contracts" />
+   	</table>
+    <puts text="---User_10772 Finished!" />
+</soda>
