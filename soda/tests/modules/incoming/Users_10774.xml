@@ -1,0 +1,121 @@
+<soda>
+	<!-- Rebuilding Team Hierarchy follows reporting structure -->
+	<puts text="Test: Users_10774.xml starting" />
+
+	<!--goto Admin -->
+	<link text="Admin" />
+
+	<!--click "User Management" -->
+	<link href="./index.php?module=Users&amp;action=index" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Users&amp;action=index" click="false" />
+	</div>
+
+	<!--Create 2 new users -->
+	<timestamp />
+	<csv file="{@global.scriptsdir}/csvs/users/Users_10774.csv" var="users_record_10774">
+		<link text="Create New User" />
+		<textfield name="sugar_user_name" set="{@users_record_10774.user_name} {@stamp}" />
+		<textfield id="last_name" set="{@users_record_10774.last_name}" />
+		<textfield id="Users0emailAddress0" set="{@stamp}{@users_record_10774.email}" />
+		<link href="#tab2" />
+		<wait timeout="2" />
+		<textfield id="new_password" set="{@users_record_10774.pw}"
+			jscriptevent="onkeyup" />
+		<textfield id="confirm_pwd" set="{@users_record_10774.pw}"
+			jscriptevent="onkeyup" />
+		<button id="Save" />
+	</csv>
+
+	<!-- Set user2 to report to user1 -->
+	<link text="Admin" />
+	<link href="./index.php?module=Users&amp;action=index" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Users&amp;action=index" click="false" />
+	</div>
+	<wait timeout="5" />
+
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	<wait timeout="3" />
+
+	<table class="list view">
+		<link text="{@users_record_10774.user_name} {@stamp}" />
+	</table>
+	<button id="edit_button" />
+	<button name="btn1" />
+	<wait timeout="3" />
+	<table class="list view">
+		<link text="{@users_record_10774.report_to}" />
+		<wait timeout="3" />
+	</table>
+	<button id="Save" />
+
+	<!-- Verify that the Private Team of User2 appears in User1's access -->
+	<link text="Admin" />
+	<link href="./index.php?module=Users&amp;action=index" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Users&amp;action=index" click="false" />
+	</div>
+	<table class="list view">
+		<link text="{@users_record_10774.report_to}" />
+	</table>
+
+	<link href="#tab3" />
+	<browser assert="{@users_record_10774.last_name}" />
+	<browser assert="Private team for user2 {@stamp}" />
+
+
+	<!-- Rebuild access to private team -->
+	<link text="Admin" />
+	<link text="Repair" />
+	<link text="Repair Teams" />
+	<checkbox id="process_private_team" set="true" />
+	<checkbox id="process_implict_teams" set="false" />
+	<checkbox id="process_clean_up_team_sets" set="false" />
+	<button value="  Rebuild  " />
+	<wait timeout="5" />
+
+	<!-- Verify that the Private Team of User2 appears in User1's access -->
+	<link text="Admin" />
+	<link href="./index.php?module=Users&amp;action=index" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Users&amp;action=index" click="false" />
+	</div>
+	<table class="list view">
+		<link text="{@users_record_10774.report_to}" />
+	</table>
+
+	<link href="#tab3" />
+	<table class="list view">
+		<browser assert="{@users_record_10774.last_name} {@stamp}" />
+		<browser assert="Private team for user2 {@stamp}" />
+	</table>
+
+	<!-- Rebuild access to private team -->
+	<link text="Admin" />
+	<link text="Repair" />
+	<link text="Repair Teams" />
+	<checkbox id="process_private_team" set="false" />
+	<checkbox id="process_implict_teams" set="true" />
+	<checkbox id="process_clean_up_team_sets" set="false" />
+	<button value="  Rebuild  " />
+	<wait timeout="5" />
+
+	<!-- Verify that the Private Team of User2 appears in User1's access -->
+	<link text="Admin" />
+	<link href="./index.php?module=Users&amp;action=index" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Users&amp;action=index" click="false" />
+	</div>
+	<table class="list view">
+		<link text="{@users_record_10774.report_to}" />
+	</table>
+
+	<link href="#tab3" />
+	<browser assert="{@users_record_10774.last_name}" />
+	<browser assert="Private team for user2 {@stamp}" />
+
+
+	<puts text="Test: User_10774.xml finished" />
+</soda>

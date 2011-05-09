@@ -2,7 +2,7 @@
     
     <!-- date function test -->
     <puts text="Test: Studio_10106.xml starting" />
-    <!-- set next_step field as calculated field and define formula -->
+    <!-- set date_closed field as calculated field and define formula -->
     <timestamp />
     <link text="Admin" />
     <link text="Studio" assertPage="false" />
@@ -48,12 +48,12 @@
       <wait timeout="3" />
       <button id="SAVE_HEADER" />
       <wait timeout="5" />
-	<div id="DEFAULT">
+	  <div id="DEFAULT">
 		<table id="detailpanel_1" >
-      			<browser assert="{@studio10106.name} {@user.name} {@stamp}" />
-      			<span id="date_closed" assert="{@studio10106.closedate}" />
-      		</table>
-	</div>
+	      	<browser assert="{@studio10106.name} {@user.name} {@stamp}" />
+	      	<span id="date_closed" assert="{@studio10106.closedate}" />
+	    </table>
+	  </div>
     </csv>
     
     <!-- Now uncalculated the field -->
