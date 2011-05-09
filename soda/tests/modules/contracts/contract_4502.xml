@@ -1,0 +1,54 @@
+<soda>
+	<puts text='Contract 4502: Create Contract_Verify that a contract cannot be created when entering a non-existing account name in Account Name field'/>
+
+	<timestamp/>
+
+	<!--Create a contract record -->
+	<link id='moduleTab_Contracts'/>
+	<browser assert="Contracts"/>
+	<link text="Create Contract"/>
+
+	<csv file="{@global.scriptsdir}/modules/lib/Contract_Create_Lib.csv" 
+		var="Contract_Create_Lib">
+		<script file="{@global.scriptsdir}/modules/lib/ContractType_Create_Lib.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+		<timestamp />
+		<link text="Create Contract" />
+
+		<!--Input a invalid Account-->
+		<textfield id="account_name" set="{@pre_account_name}{@stamp}"/>
+
+		<form name="EditView">
+			<textfield name="name" 
+				set="{@Contract_Create_Lib.name} {@user.name} {@stamp}" />
+			<select name="type" set="{@ContractType_Create_Lib}" />
+			<select id="status" set="{@Contract_Create_Lib.status}" />
+			<textfield id="start_date" 
+				set="{@Contract_Create_Lib.start_date}" />
+			<textfield id="end_date" 
+				set="{@Contract_Create_Lib.end_date}" />
+			<textfield id="total_contract_value" 
+				set="{@Contract_Create_Lib.total_contract_value}" />
+			<button value="Save" />
+
+			<!--Assert warning message show-->
+			<browser assert="No match for field: Account Name"/>
+		</form>
+	</csv>
+
+	<!--Check no contract record created-->
+	<link id='moduleTab_Contracts' alert="true"/>
+	<link id="basic_search_link" required="false" timeout="3"/>
+	<textfield id='name_basic' set='{@Contract_Create_Lib.name} {@user.name} {@stamp}'/> 
+	<button id="search_form_submit"/>
+	<table class='list view'>
+		<browser assertnot="{@Contract_Create_Lib.name} {@user.name} {@stamp}"/>
+	</table>
+
+
+	<!--Delete all pre-created records-->
+	<script file="{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<puts text='-------------------Contract_4502: finished-------------------'/>
+
+</soda>
