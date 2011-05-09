@@ -57,7 +57,9 @@
 		jscriptevent="onmouseup" />
 	<wait timeout="3" />
 
-	<browser assert="{@email_record_9776.subject} {@stamp}" />
+	<table id="/composeHeaderTable/">
+		<textfield id="emailSubject1" assert="{@email_record_9776.subject} {@stamp}" />
+	</table>
 
 
 	<!--delete-->
