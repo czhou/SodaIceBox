@@ -458,6 +458,13 @@
 		<reason>Can&apos;t change password by soda</reason>
 		<modulename>Users</modulename>
 	</block>
+	
+	<block>
+		<testfile>Users_10772</testfile>
+		<bugnumber>43628</bugnumber>
+		<reason>fix only in keepingup Joneses</reason>
+		<modulename>Users</modulename>
+	</block>
 
 	<block>
 		<testfile>Studio_Bug_40546</testfile>
