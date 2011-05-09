@@ -1,8 +1,7 @@
 <soda>
 	<!-- Edit record-Select only one team and save -->
 	<puts text="Test: Teams_9452.xml starting." />
-	<csv file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.csv" var="Lead" />
-
+	
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 
 	<csv file="{@global.scriptsdir}/csvs/teams/Teams_9452.csv" var="teams_9452">
@@ -12,17 +11,16 @@
 			<button value="Select" />
 		</table>
 		<browser assert="Team Search" />
-
 		<textfield name="name" set="{@teams_9452.team1}" /> 
 		<button value="Search" />
-
 		<link text="{@teams_9452.team1}" />
-
 		<button value="Save" />
+		<browser assert="{@pre_lead_first_name} {@pre_lead_last_name}" />        
+		<browser assert="{@teams_9452.team0}, {@teams_9452.team1}" /> 
 	</csv>
-	<browser assert="{@pre_lead_first_name} {@pre_lead_last_name}" />        
-	<browser assert="{@teams_9452.team0}, {@teams_9452.team1}" />  
-
+	<link href="index.php?module=Leads&amp;action=index" />
+	<button id="search_form_clear" />
+	
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Lead_delete_Lib.xml" />
 
