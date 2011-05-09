@@ -30,6 +30,10 @@
 	<!-- Delete added quote for contract-->
 	<div id="list_subpanel_quotes">
 		<link text="rem" class="listViewTdToolsS1" alert="true"/>
+	</div>
+
+	<!--Assert delete works-->
+	<div id="list_subpanel_quotes">
 		<link text="{@pre_Quote_name}" click="false" exist="false"/>
 		<browser assertnot="{@pre_Quote_name}"/>
 	</div>
