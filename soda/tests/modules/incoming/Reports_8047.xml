@@ -10,18 +10,24 @@
 	<wait timeout="5" />
 	<form class="search_form">
 		<button name="clear" />
-		<textfield name="name_basic" set="{@report_record_7734.save_report_as}" />
+		<textfield name="name_basic" set="{@pre_report_name}" />
 		<button value="Search" />
 	</form>
 	<wait timeout="5" />
 	<table class="list view">
-		<link text="{@report_record_7734.save_report_as}" click="false" />
+		<link text="{@pre_report_name}" />
 	</table>
-	<checkbox name="massall" click="true" />
-	<link id="actions_link" />
-	<link text="Delete" alert="true" />
+	<button id="deleteReportButton" alert="true" />
+	<wait timeout="5" />
+	<link id="moduleTab_Reports" />
+	<link id="Basic Search" required="false" />
+	<wait timeout="5" />
+	<form class="search_form">
+		<button name="clear" />
+		<button value="Search" />
+	</form>
 	<table class="list view">
-		<span class="pageNumbers" assert="(0 - 0 of 0)" />
+		<span class="pageNumbers" assert="(1 - 20 of 44)" />
 	</table>
 
 	<puts text="Test: Reports_8047.xml finished." />

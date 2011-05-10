@@ -10,6 +10,7 @@
 		<browser assert="Report Wizard" />
 
 		<!--create row and column report -->
+		<wait timeout="3" />
 		<image name="rowsColsImg" click="true" />
 		<table id="Documents">
 			<link text="Documents" />

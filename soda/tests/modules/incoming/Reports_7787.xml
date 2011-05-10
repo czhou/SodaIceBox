@@ -7,31 +7,37 @@
 	<!--goto Report module -->
 	<link id="moduleTab_Reports" />
 	<link text="Basic Search" required="false" />
-	<wait timeout="5" />
 	<button value=" Clear " />
-	<textfield name="name_basic" set="{@report_record_7734.save_report_as}" />
+	<textfield name="name_basic" set="{@pre_report_name}" />
 	<button value="Search" />
-	<wait timeout="5" />
 	<table class="list view">
-		<link text="{@report_record_7734.save_report_as}" />
+		<link text="{@pre_report_name}" />
 	</table>
-	<browser assert="Title: {@report_record_7734.save_report_as}" />
+	<browser assert="Title: {@pre_report_name}" />
 
 	<button id="printPDFButton" alert="false" />
-	
+
 	<!--Delete created Report -->
 	<link id="moduleTab_Reports" />
 	<link text="Basic Search" required="false" />
-	<wait timeout="5" />
 	<form class="search_form">
 		<button name="clear" />
-		<textfield name="name_basic" set="{@report_record_7734.save_report_as}" />
+		<textfield name="name_basic" set="{@pre_report_name}" />
 		<button value="Search" />
 	</form>
-	<checkbox name="massall" click="true" />
-	<link id="actions_link" />
-	<link text="Delete" alert="true" />
-	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	<table class="list view">
+		<link text="{@pre_report_name}" />
+	</table>
+	<button id="deleteReportButton" alert="true" />
+	<wait timeout="5" />
+	<link id="moduleTab_Reports" />
+	<form class="search_form">
+		<button name="clear" />
+		<button value="Search" />
+	</form>
+	<table class="list view">
+		<span class="pageNumbers" assert="(1 - 20 of 44)" />
+	</table>
 
 	<puts text="Test: Reports_7787.xml finished." />
 </soda>
