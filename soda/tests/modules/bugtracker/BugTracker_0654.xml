@@ -13,7 +13,7 @@
 		<link href="index.php?module=Bugs&amp;action=index" click="false" />
 	</div>
 
-	<link text="@pre_bug_name" />
+	<link text="{@pre_bug_name}" />
 
 	<button id="edit_button" />
 	
