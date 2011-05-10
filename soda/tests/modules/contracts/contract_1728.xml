@@ -29,8 +29,12 @@
 
 	<!-- Delete added quote for contract-->
 	<div id="list_subpanel_quotes">
-		<link text="rem" class="listViewTdToolsS1" alert="true"/>
+		<table class="list view">
+			<link index="2" class="listViewTdToolsS1" alert="true"/>
+		</table>
 	</div>
+
+	<wait timeout="2"/>
 
 	<!--Assert delete works-->
 	<div id="list_subpanel_quotes">
@@ -42,6 +46,7 @@
 	<script file='{@global.scriptsdir}/modules/lib/Contract_Delete_Lib.xml'/>
 	<script file='{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml'/>
 	<script file='{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/TaxRate_Delete_Lib.xml'/>
 	<script file='{@global.scriptsdir}/modules/lib/Quote_Delete_Lib.xml'/>
 
 	<puts text='-------------------Contract_1728: finished-------------------'/>
