@@ -1,4 +1,4 @@
-﻿<soad>
+<soda>
 	<!-- Disable users to use the system outgoing mail account for outbound email -->
 	<puts text="Test: Emails_9710.xml starting." />
 
@@ -20,7 +20,9 @@
 	
 	<!--Nav to emails module-->
 	<link id="moduleTab_Emails" />
+        <wait timeout="5"/>
 	<button id="settingsButton" />
+        <wait timeout="5"/>
 	<div id="settingsDialog">
 		<link text="Mail Accounts" />
 	</div>
@@ -44,4 +46,4 @@
 
 
 	<puts text="Test: Emails_9710.xml finished." />
-</soad>
+</soda>

@@ -48,5 +48,9 @@
 		<textfield id="last_name_advanced" set="{@Contacts_1583.last_name}" />
 	</form>
 
+	<link id="moduleTab_Contacts" />
+	<link text="Basic Search" required="false" />
+	<button name="clear" />
+
 	<puts text="Test: Contacts_1583.xml finished." />
 </soda>

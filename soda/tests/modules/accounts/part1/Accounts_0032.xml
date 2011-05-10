@@ -13,6 +13,7 @@
 
 	<!--Create Activities Subpanel-->
 	<button name="Activities_createtask_button" />
+	<wait timeout="5" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0032.csv" var="activity_record_0032">
 		<form id="form_SubpanelQuickCreate_Tasks">
 			<textfield id="name" set="{@activity_record_0032.name} {@user.name} {@stamp}" />

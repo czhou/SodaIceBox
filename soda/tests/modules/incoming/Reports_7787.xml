@@ -2,7 +2,7 @@
 	<!-- Report_print_as_PDF -->
 	<puts text="Test: Reports_7787.xml started." />
 
-	<script file="{@global.scriptsdir}/modules/reports/Reports_7734.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Report_Create_Lib.xml" />
 
 	<!--goto Report module -->
 	<link id="moduleTab_Reports" />

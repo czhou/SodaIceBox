@@ -53,10 +53,9 @@
 
 		</form>
 		<!--teams select -->
-
-		<button name="teamSelect" />
-
-		<wait timeout="10" />
+		<table id="EditView_team_name_table">
+			<button value="Select" />
+		</table>
 
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@Opportunity_2363.task_team_name}" />

@@ -13,14 +13,7 @@
 		<reason>Requires new suites for setup and cleanup of releases.</reason>
 		<modulename>Bug Tracker</modulename>
 	</block>
-
-	<block>
-		<testfile>Campaigns_0913</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Bug43294</reason>
-		<modulename>Campaigns</modulename>
-	</block>
-
+	
 	<block>
 		<testfile>Cases_1304</testfile>
 		<bugnumber>-1</bugnumber>
@@ -82,6 +75,13 @@
 		<testfile>Calendar_0716</testfile>
 		<bugnumber>39955</bugnumber>
 		<reason>bug 39955 - false duplicate account warning</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
+		<testfile>Accounts_0016</testfile>
+		<bugnumber>123456</bugnumber>
+		<reason>Can't not properly verify listview with asc/dsc</reason>
 		<modulename>Accounts</modulename>
 	</block>
 	
@@ -167,27 +167,6 @@
 		<bugnumber>43347</bugnumber>
 		<reason>43347</reason>
 		<modulename>Leads</modulename>
-	</block>
-	
-	<block>
-		<testfile>Leads_1908</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Pagination buttons not working</reason>
-		<modulename>Leads</modulename>
-	</block>
-	
-	<block>
-		<testfile>Leads_10170</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Pagination buttons not working</reason>
-		<modulename>Leads</modulename>
-	</block>
-	
-	<block>
-		<testfile>Accounts_0017</testfile>
-		<bugnumber>43294</bugnumber>
-		<reason>Pagination buttons not working</reason>
-		<modulename>Accounts</modulename>
 	</block>
 	
 	<block>

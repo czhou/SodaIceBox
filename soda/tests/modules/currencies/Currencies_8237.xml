@@ -13,8 +13,8 @@
 
    <form id="EditView">
       <link text="Advanced" />
-      <puts var="{@pre_currency_name}" />
-      <puts var="{@pre_currency_symbol}" />
+      <puts text="{@pre_currency_name}" />
+      <puts text="{@pre_currency_symbol}" />
       <select id="currency_select" 
          set="{@pre_currency_name} : {@pre_currency_symbol}" />
    </form>

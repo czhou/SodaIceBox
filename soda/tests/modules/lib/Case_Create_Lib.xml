@@ -1,6 +1,7 @@
 <soda>
 	<puts text="Lib: Case_Create_Lib.xml starting." />
-	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
+   <csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" 
+      var="cases" />
 	<timestamp />
 
 	<!-- Create an account record. -->
@@ -12,15 +13,25 @@
 
 	<csv file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.csv" 
 		var="case_record">
-		<textfield id="name" set="{@case_record.name} {@user.name} {@stamp}" />
-		
-		<!-- fix for lack of account_name filling in -->
-		<textfield id="account_name" set="{@pre_account_name}" jscriptevent="onkeydown" />
-		<textfield id="account_name" jscriptevent="onkeyup" click="false"/> 
+      <textfield id="name" set="{@case_record.name} {@user.name} {@stamp}" />
+      <textfield id="account_name" append="{@pre_account_name}" />
+      <textfield id="account_name" jscriptevent="onkeyup" />
 
-		<wait timeout="2" />
-		
-		<textfield id="name" click="true" />
+      <!--
+         need to find the element we want in the dynamic drop down list.
+         Since it should always be the first element we are just using
+         Indexes.
+      -->
+      <div id="EditView_account_name_results">
+         <div class="yui-ac-bd">
+            <ul index="1">
+               <li index="1" click="true" />
+            </ul>
+         </div>
+      </div>
+      <wait timeout="3" />
+
+		<textfield id="name" jscriptevent="onfocus" />
 		<wait timeout="5" />
 		<button value="Save" />
 		<div class="moduleTitle">
