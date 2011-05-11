@@ -17,7 +17,7 @@
 
 	<button id="edit_button" />
 	
-	<button id="cancel_button`" />
+	<button id="CANCEL_HEADER" />
 	
 	<span class="pagination">
 		<button class="button" index="1" exists="true" />
