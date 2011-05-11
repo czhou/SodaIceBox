@@ -1,2 +1,2 @@
-name,type,status,base_module,record_type,fire_order,description,selector,rel_module_type,lhs_field,trigger__operator,selector,field_0__field_value,selector1,selector2,test,trigger__field_value
-workf_9043,When record saved,Active,Accounts,New and Existing Records,Alerts then Actions,description,Contacts,any related,Name,Equals,Call,call_name,Administrator,To:,KobeMail <oliver.sugar@gmail.com>,wf_9043_trigger__field_value
+name,type,status,base_module,record_type,fire_order,description,lhs_field,trigger__operator,trigger__field_value,selector,field_0__field_value,field_5__field_value,task_name,ticker_symbol
+workf_9043,When record saved,Active,Accounts,New and Updated Records,Alerts then Actions,description,Name,Equals,Sugar_wf_9043,Call,wf_9043_successful,1,wf_9043_call_name,Trigger_the_workflow
