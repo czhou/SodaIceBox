@@ -1,0 +1,72 @@
+<soda>
+    
+    <!-- Calculated field can be used in formulas -->
+    <puts text="Test: Studio_100069.xml starting" />
+    <!-- Create a new calculated field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <button name="addfieldbtn" assertPage="false" />
+    <textfield id="field_name_id" set="cf_field" />
+    <checkbox id="calculated" set="true" />
+     <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="add(1,1)" />
+      <button value="Save" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    <browser assert="Add Field" />
+    <browser assert="cf_field_c" />
+    
+    <!-- set description field as calculated field and define formula -->    
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <browser assert="$cf_field_c" />
+  
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="equal($billing_address_city,$cf_field_c)"/>
+      <button value="Save" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="10" />
+    <browser assert="Add Field" />
+    
+    <!-- Now uncalculated the description field -->
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="false" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+      <wait timeout="3" />
+    </form>    
+    
+    <!-- Now delete that field -->
+    <link text="cf_field_c" class="mbLBLL" assertPage="false" />
+    <button name="fdeletebtn" assertPage="false" alert="true"/>
+    <wait timeout="5" />
+    <div id="studiofields">
+    	<browser assertnot="cf_field_c" />
+    </div>
+    
+    <!-- Ensure we can still load the module field page -->
+    <link text="Accounts" class="crumbLink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <button name="addfieldbtn" exists="true" assertPage="false" click="false" />
+    
+    <puts text="Test: Studio_10069.xml finished." />
+</soda>
