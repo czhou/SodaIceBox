@@ -34,14 +34,16 @@
 
         <!--Edit the Archived Email record-->
         <button value="  Edit  "/>
-        <wait timeout="10"/>
+        <wait timeout="5"/>
         <textfield id="subjectfield" set="Modified Archived Email"/>
         <button value="  Save  "/>
-        <wait timeout="10"/>
+        <wait timeout="5"/>
         <browser assert="Modified Archived Email"/>
         
         <!--Delete the note record created in this case.-->
-        <link text="Modified Archived Email"/>
+        <div id="list_subpanel_history">
+        	<link text="Modified Archived Email"/>
+        </div>
         <wait timeout="5"/>
         <button value="    Delete    " alert="true"/>
         <wait timeout="5"/>
