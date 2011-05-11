@@ -1,0 +1,29 @@
+<soda>
+
+	<puts text="Test Case 2551: Relationship - Schedule Meeting_Verify that creating new 'Schedule Meeting' can be canceled for Activities under 'Activities' sub"/>
+
+        <!--Go to Quotes module and search out the quote record create in lib-->
+        <link id='moduleTab_Quotes'/>
+        <browser assert='Quotes'/>
+        <form id='search_form'>
+            <button id='search_form_clear'/>
+            <textfield id='name_basic' set='{@pre_Quote_name}'/>
+            <button id='search_form_submit'/>
+        </form>
+
+        <table class='list view'>
+            <link text='{@pre_Quote_name}'/>
+        </table>
+
+        <!--Create a meeting in Activities subpanel.-->
+        <browser assert="Quote Overview"/>
+        <button id="Activities_schedulemeeting_button"/>
+        <wait timeout="2"/>
+        <textfield id="name" set="New meeting record"/>
+        <button id="Meetings_subpanel_cancel_button" alert="true"/>
+        <wait timeout="5"/>
+        <browser assertnot="New meeting record"/>
+
+        <puts text="Quote_2551.xml---Finished!"/>
+</soda>
+
