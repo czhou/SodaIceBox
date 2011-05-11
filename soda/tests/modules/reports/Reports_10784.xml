@@ -1,0 +1,72 @@
+<soda>
+
+	<puts text="Test Case 10784: Matrix report - group by relate field doesn't cause database error."/>
+	
+	<!--goto Reports module-->
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<browser assert="Report Wizard" />
+
+	<image name="matrixImg" click="true"/>
+	<wait timeout="2"/>
+	<browser assert="Steps to Define Filters:"/>
+	<table id="Accounts" click="true"/>
+	<wait timeout="2"/>	
+	<row id="yui-rec14" click="true" />		<!-- Name -->
+
+	<wait timeout="1"/>	
+	<row id="Filter.1_table_filter_row_1">
+		<select name="qualify" set="Is Not Empty"/>
+	</row>
+	
+	<!--Set Group By-->
+	<button value="Next >"/>
+	<wait timeout="2"/>
+	<brwoser assert="Steps to Define Group By:"/>
+	<link id="ygtvlabelel6"/>	<!--Click Campaigns in related modules tree-->
+	<tr id="yui-rec88"/>	<!--Name-->
+	
+	<link id="ygtvlabelel16"/>	<!--Click Member of in related modules tree-->
+	<tr id="yui-rec120"/>	<!--Name-->
+
+	<!--Set Display-->
+	<button value="Next >"/>
+	<wait timeout="2"/>
+	<browser assert="Column Name"/>
+	<tr id="yui-rec172"/>
+	
+	<!--Set chart Option-->
+	<button value="Next >"/>
+	<wait timeout="2"/>
+	<browser assert="At least one Group By and one Summary column are required to render a chart."/>
+	<select id="chart_type" set="Horizontal Bar"/>
+
+	<!--Set Report Detail-->
+	<button value="Next >"/>
+	<wait timeout="3"/>
+	<browser assert="Show Query:"/>
+	<textfield name="save_report_as" set="Report_10784"/>
+	<checkbox id="outer_join_checkbox_Accounts:campaign_accounts" set="true"/>
+	<checkbox id="outer_join_checkbox_Accounts:member_of" set="true"/>
+
+	<!--Save and Run-->
+	<button value="Save and Run"/>
+	<wait timeout="5"/>
+	<browser assert="Grand Total"/>
+
+	<!--Delete created Report -->
+        <link id="moduleTab_Reports" />
+        <link text="Basic Search" required="false" />
+        <wait timeout="5" />
+        <form class="search_form">
+                <button name="clear" />
+                <textfield name="name_basic" set="Report_10784"/>
+                <button value="Search" />
+        </form>
+        <checkbox name="massall" click="true" />
+        <link id="actions_link" />
+        <link text="Delete" alert="true" />
+        <span class="pageNumbers" assert="(0 - 0 of 0)" />
+
+	<puts text="Test Case: Report 1084 finished." />
+</soda>
