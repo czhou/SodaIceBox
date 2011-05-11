@@ -1,0 +1,54 @@
+<soda>
+    
+    <!-- check the warning message if formula has syntax error -->
+    <puts text="Test: Studio_10142.xml starting" />
+    <!-- set description field as calculated field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="strlen($billing_address_city" />
+      <button value="Save" />
+    </div>
+    <div id="sugarMsgWindow_c">
+    	<browser assert="Invalid Formula" />
+    	<browser assert="strlen($billing_address_city: Syntax Error, no close parentheses found" />
+    	<link text="Close" />
+    </div>
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="concat($billing_address_city,,$billing_address_city)"/>
+      <button value="Save" />
+    </div>
+    <div id="sugarMsgWindow_c">
+    	<browser assert="Invalid Formula" />
+    	<browser assert="Syntax Error: Unexpected ','" />
+    	<link text="Close" />
+    </div>
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="strToLower($billing_address_city))"/>
+      <button value="Save" />
+    </div>
+    <div id="sugarMsgWindow_c">
+    	<browser assert="Invalid Formula" />
+    	<browser assert="$billing_address_city): Syntax Error, no open parentheses found" />
+    	<link text="Close" />
+    </div>
+    
+    <button name="formulacancelbtn" />
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="cancelbtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    <browser assert="Add Field" />
+    
+    <puts text="Test: Studio_10142.xml finished." />
+</soda>
