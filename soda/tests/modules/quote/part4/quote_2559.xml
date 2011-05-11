@@ -1,0 +1,30 @@
+<soda>
+
+	<puts text="Test Case 2559: Relationship - Archive Email_Verify that creating new 'Archive Email' can be canceled for Activities under 'Quotes' sub-panel."/>
+
+        <!--Go to Quotes module and search out the quote record create in lib-->
+        <link id='moduleTab_Quotes'/>
+        <browser assert='Quotes'/>
+        <form id='search_form'>
+            <button id='search_form_clear'/>
+            <textfield id='name_basic' set='{@pre_Quote_name}'/>
+            <button id='search_form_submit'/>
+        </form>
+
+        <table class='list view'>
+            <link text='{@pre_Quote_name}'/>
+        </table>
+
+        <!--Create an Archived Email in History subpanel.-->
+        <browser assert="Quote Overview"/>
+        <button id="ArchiveEmail_button"/>
+        <wait timeout="5"/>
+        <textfield id="jscal_field" set="05/10/2011"/>
+        <textfield name="time_start" set="0:00"/>
+        <textfield id="subjectfield" set="New Archived Email"/>
+        <button value="  Cancel  " alert="true"/>
+        <wait timeout="5"/>
+        <browser assertnot="New Archived Email"/>
+
+        <puts text="End Test Case 2559"/>
+</soda>
