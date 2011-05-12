@@ -1,6 +1,6 @@
 <soda>
 
-	<puts text+"Test Case 2558: Relationship - Archive Email_Verify that new 'Archive Email' can be created for Activities under 'Quotes' sub-panel."/>
+	<puts text="Test Case 2558: Relationship - Archive Email_Verify that new 'Archive Email' can be created for Activities under 'Quotes' sub-panel."/>
 
         <!--Go to Quotes module and search out the quote record create in lib-->
         <link id='moduleTab_Quotes'/>
