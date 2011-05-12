@@ -1,0 +1,21 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click "Shared" button on "Calendar" page.
+		Expectation:
+			3. Shared Calendar panel is displayed.
+	-->
+	<puts text="Test: Calendar_3604.xml starting." />
+
+
+	<link id="moduleTab_Calendar" />
+	<button value=" Shared " />
+	
+	<table class="formHeader h3Row" >
+		<browser assert="Shared Calendar" />
+	</table>
+
+	<puts text="Test: Calendar_3604.xml finished." />
+</soda>

@@ -1,0 +1,42 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Open an existing account in detail view.
+			3. Click the "Create call" button in Activities sub-panel.
+			4. Fill in the Subject field and click the Save button.
+
+		Expectations:
+			4. Created call in sub-panel is shown in Account detail view.
+	-->
+	<puts text="Test: Calendar_0819.xml starting." />
+
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+
+	<div id="list_subpanel_activities">
+		<button id="Activities_logcall_button" />
+	</div>
+	
+	<wait timeout="2" />
+	
+	<div id="subpanel_activities_newDiv">
+		<timestamp />
+		<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record">
+			<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
+		</csv>
+	</div>
+	
+	<button id="Calls_subpanel_save_button" />
+
+	<wait timeout="16" />
+	
+	<div id="list_subpanel_activities">
+		<browser assert="{@call_record.name} {@user.name} {@stamp}" />
+	</div>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_0819.xml finished." />
+</soda>

@@ -1,0 +1,41 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as valid user.
+			2. Click "Calendar" tab in navigation bar.
+			3. Click "Calls" link on Navigation shortcuts.
+			2,3.  Handled via moduleTab_Call
+			4. Click a call name link in "Call List" view.
+			5. Click "Duplicate" button in detail view.
+			6. Click "Save" button in edit view.
+			7. Go to call list view and search for the duplicate call record.
+		Expectation:
+			7. The duplicate call record is displayed in call list view.
+	-->
+	<puts text="Test: Calendar_3614.xml starting." />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+	<var var="call1_name" set="{@pre_call_name}" />
+	<var var="call2_name" set="{@call1_name}_Duplicate" />
+	
+	<link id="moduleTab_Calls" />
+	
+	<table class="list view">
+		<link text="{@call1_name}" />
+	</table>
+	
+	<button id="duplicate_button" />
+	
+	<textfield id="name" set="{@call2_name}" />
+	<button value="Save" />
+	
+	<link id="moduleTab_Calls" />
+	
+	<table class="list view">
+		<browser assert="{@call2_name}" />
+	</table>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_3614.xml finished." />
+</soda>

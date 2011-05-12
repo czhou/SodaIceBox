@@ -1,0 +1,61 @@
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calendar" navigation tab.
+			3. Click "Schedule Meeting" link in navigation shortcuts.
+			4. Click "Select" button next to "Account" dropdown list.
+			5. Select an account.
+		Expectation:
+			5. The selected account is displayed in the text field
+				in schedule meeting view.
+	-->
+	
+	<puts text="Test: Calendar_3709.xml starting." />
+
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<var var="account1_name" set="{@pre_account_name}" />
+	
+	<timestamp />
+	<link id="moduleTab_Meetings" />
+	<link text="Schedule Meeting" />
+
+	<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record" />
+		<textfield id="name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+
+		<textfield id="date_start_date" set="{@meeting_record.date_start_date}" />
+		<select id="date_start_hours" set="{@meeting_record.date_start_hours}" />
+		<select id="date_start_minutes" set="{@meeting_record.date_start_minutes}" />
+
+		<textfield name="duration_hours" set="{@meeting_record.duration_hours}" />
+		<select name="duration_minutes" set="{@meeting_record.duration_minutes}" />
+
+		<checkbox name="reminder_checked" set="{@meeting_record.reminder_checked}" />
+		<textfield id="description" set="{@meeting_record.description}" />
+		
+		<select id="parent_type" set="Account" />
+		<button id="btn_parent_name" />
+		<wait timeout="2" />
+		<textfield id="name_advanced" set="{@account1_name}" />
+		<button value="Search" />
+		
+		<table class="list view">
+			<link text="{@account1_name}" />
+		</table>
+		
+		<var var="meeting1_name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+
+		<button value="Save" />
+
+		<link id="moduleTab_Meetings" />
+		
+		<table class="list view">
+			<browser assert="{@meeting1_name}" />
+		</table>
+	
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	
+	<puts text="Test: Calendar_3709.xml finished." />
+</soda>

@@ -1,0 +1,76 @@
+<soda>
+	<puts text="Test: Reports_8404.xml starting." />
+	<!-- Action 1. Login to SugarCRM. 2. Go to Reports module. 3. Click "Create Report" 
+		link from navigation shortcuts. 4. Select rows and columns report type. 5. Select 
+		one module, such as accounts module. 6. Click "Next" button. 7. Select several columns 
+		into "Choose Display Columns" tab, such as account's name and its industry. 8. Click 
+		"Next" button. 9.1 Click "Preview" button. 9.2 Fill data in report name field and 
+		then click "Save and Run" button. Expected Results: 9.1 Verify that all records in 
+		the module selected in step5 are displayed in report result successfully. 9.2 Verify 
+		that report is saved successfully and all records in the module selected in step5 
+		is displayed in report result successfully. -->
+
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<var var="account1_name" set="{@pre_account_name}" />
+	<var var="account1_industry" set="{@account_record.industry}" />
+
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<var var="account2_name" set="{@pre_account_name}" />
+	<var var="account2_industry" set="{@account_record.industry}" />
+
+	<wait timeout="4" />
+
+	<link id="moduleTab_Reports" />
+
+	<link text="Create Report" />
+
+	<wait timeout="8" />
+
+	<div id="report_type_div">
+		<image name="rowsColsImg" jscriptevent="onclick" click="true" />
+	</div>
+
+	<wait timeout="3" />
+
+	<table id="Accounts">
+		<link text="Accounts" />
+	</table>
+
+	<button value="Next &gt;" />
+	<wait timeout="4" />
+	<!-- display cols" -->
+	<div text="Name" click="true" />
+	<div text="Industry" click="true" />
+
+
+	<button value="Next &gt;" />
+	<!-- Group By -->
+	<wait timeout="4" />
+
+	<timestamp />
+	<var var="report_name" set="QA_Created_{@stamp}" />
+	<textfield name="save_report_as" set="{@report_name}" />
+
+	<button value="Save and Run" />
+
+	<div id="report_results">
+		<browser assert="{@account1_name}" />
+		<browser assert="{@account1_industry}" />
+		<browser assert="{@account2_name}" />
+		<browser assert="{@account2_industry}" />
+	</div>
+
+	<link id="moduleTab_Reports" />
+	<button name="clear" />
+	<textfield name="name" set="{@report_name}" />
+	<button value="Search" />
+	<table class="list view">
+		<browser assert="{@report_name}" />
+	</table>
+	<link text="{@report_name}" />
+	<button id="deleteReportButton" alert="true" />
+
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+
+	<puts text="Test: Reports_8404.xml finished." />
+</soda>	
