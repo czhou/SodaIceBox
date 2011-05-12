@@ -14,7 +14,7 @@
             <link text='{@pre_Quote_name}'/>
         </table>
 
-        <!--Create a note in History subpanel.-->
+        <!--Create a Archive Email in History subpanel.-->
         <browser assert="Quote Overview"/>
         <button id="ArchiveEmail_button"/>
         <wait timeout="5"/>
@@ -25,7 +25,7 @@
         <wait timeout="5"/>
         <browser assert="New Archived Email"/>
 
-        <!--Verify we can go to note detail view via clicking the link in history subpanel-->
+        <!--Verify we can go to Archive Email detail view via clicking the link in history subpanel-->
         <div id="list_subpanel_history">
                 <link text="New Archived Email"/>
         </div>
@@ -40,11 +40,7 @@
         <wait timeout="5"/>
         <browser assert="Modified Archived Email"/>
         
-        <!--Delete the note record created in this case.-->
-        <div id="list_subpanel_history">
-        	<link text="Modified Archived Email"/>
-        </div>
-        <wait timeout="5"/>
+        <!--Delete the Archived Eamil record created in this case.-->
         <button value="    Delete    " alert="true"/>
         <wait timeout="5"/>
         <puts text="End Test Case 2542"/>
