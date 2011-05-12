@@ -51,6 +51,7 @@
 	</li>
 	<wait timeout="3" />
 	<button id="saveBtn" alert="true" />
+	<wait timeout="3" />
 
 	<!-- verify that the salutation is no longer in use -->
 	<link id="moduleTab_Contacts" />

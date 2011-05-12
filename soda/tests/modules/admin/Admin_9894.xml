@@ -4,11 +4,13 @@
 		b) Go to Admin | Connectors | Set Connector Properties | Twitter tab
 		
 		Results:
-		b) Make sure Twitter tab is shown ".
+		b) Make sure Twitter tab is shown.
 	-->
-	<puts text="Text: Reports_9894.xml Starting." />
+	<puts text="Test: Reports_9894.xml starting." />
 
-	<browser url="{@global.url}?module=Connectors&amp;action=ModifyProperties" />
+	<link text="Admin" />
+	<link text="Connectors" />
+	<image src="themes/default/images/icon_ConnectorConfig.gif" click="true" />
 	<browser assert="Twitter" />
 	
 	<!-- navigate to 5th / Twitter tab... -->
@@ -16,6 +18,7 @@
 		<div index="1">
 			<li index="5">
 				<link index="1" />
+				<wait timeout="3" />
 			</li>
 		</div>
 	</div>
@@ -25,5 +28,6 @@
 		<textfield id="ext_rest_twitter_oauth_consumer_key"	assert="" />
 		<textfield id="ext_rest_twitter_oauth_consumer_secret" assert="" />
 	</div>
-	<puts text="Test: Reports_9892.xml finished." />
+
+	<puts text="Test: Reports_9894.xml finished." />
 </soda>
