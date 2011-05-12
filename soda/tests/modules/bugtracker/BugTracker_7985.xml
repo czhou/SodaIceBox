@@ -1,0 +1,77 @@
+<soda>
+	<!-- BugTracker_7985.xml: Verify that records in sub-panel can be paginated. -->
+	<puts text="Test: BugTracker_7985.xml starting." />
+	<csv file="{@global.scriptsdir}/csvs/bugtracker/BugTrackerAssertText.csv" var="bugtracker" />
+
+	<!-- Create bug tracker record and six contacts to attach to it. -->
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	
+	<!-- Change the number of items in a subpanel. -->
+	<link text="Admin" />
+	<link text="System Settings" />
+	<browser assert="System Settings" />
+	<textfield name="list_max_entries_per_subpanel" set="2" />
+	<button name="save" />
+	
+	<!-- Search the bug tracker record. -->
+	<link id="moduleTab_Bugs" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Bugs&amp;action=index" click="false" />
+	</div>
+
+	<textfield id="name_basic" set="{@pre_bug_name}" /> 
+	<button id="search_form_submit" />
+
+	<!-- Go to its DetailView. -->
+	<table class="list view">
+		<link text="{@pre_bug_name}" />
+	</table>
+	<div class="moduleTitle" assert="{@pre_bug_name}" click="false" />
+	
+	<button id="contacts_bugs_select_button" />
+	<checkbox id="massall" click="true" />
+	<form id="MassUpdate">
+		<button value="Select" />
+	</form>
+	
+	<div id="list_subpanel_contacts">
+		<span class="pageNumbers" assert="(1 - 2 of 6)" />
+
+		<button name="listViewNextButton" />
+		<span class="pageNumbers" assert="(3 - 4 of 6)" />
+
+		<button name="listViewNextButton" />
+		<span class="pageNumbers" assert="(5 - 6 of 6)" />
+
+		<button name="listViewPrevButton" />
+		<span class="pageNumbers" assert="(3 - 4 of 6)" />
+
+		<button name="listViewPrevButton" />
+		<span class="pageNumbers" assert="(1 - 2 of 6)" />
+
+		<button name="listViewEndButton" />
+		<span class="pageNumbers" assert="(5 - 6 of 6)" />
+
+		<button name="listViewStartButton" />
+		<span class="pageNumbers" assert="(1 - 2 of 6)" />
+	</div>	
+	
+	<!-- Cleanup: Restore the number of items in a subpanel. -->
+	<link text="Admin" />
+	<link text="System Settings" />
+	<browser assert="System Settings" />
+	<textfield name="list_max_entries_per_subpanel" set="10" />
+	<button name="save" />	
+	
+	<!-- Cleanup: Delete test data. -->
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+
+	<puts text="Test: BugTracker_7985.xml finished." />
+</soda>

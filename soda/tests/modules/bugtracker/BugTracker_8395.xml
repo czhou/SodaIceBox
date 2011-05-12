@@ -1,0 +1,50 @@
+<soda>
+	<!-- BugTracker_8395.xml: Verify that records in sub-panel can be paginated. -->
+	<puts text="Test: BugTracker_8395.xml starting." />
+	<csv file="{@global.scriptsdir}/csvs/bugtracker/BugTrackerAssertText.csv" var="bugtracker" />
+
+	<csv file="{@global.scriptsdir}/csvs/bugtracker/BugTracker_8395.csv" var="BugTracker_8395">	
+		<!-- Relogin as a normal user. -->
+		<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
+		<textfield id="user_name" set="{@BugTracker_8395.username}" />
+		<textfield id="user_password" set="{@BugTracker_8395.password}" />
+		<button id="login_button" />
+
+		<!-- Create bug tracker record and three contacts to attach to it. -->
+		<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+
+		<button id="contacts_bugs_select_button" />
+
+		<form id="MassUpdate">
+			<tr class="oddListRowS1" index="1">
+				<checkbox name="mass[]" click="true" />
+			</tr>
+			<tr class="evenListRowS1" index="1">
+				<checkbox name="mass[]" click="true" />
+			</tr>
+			<tr class="oddListRowS1" index="2">
+				<checkbox name="mass[]" click="true" />
+			</tr>
+			<button value="Select" />
+		</form>
+
+		<div id="list_subpanel_contacts">
+			<table class="list view">
+				<tr class="oddListRowS1" index="2" exists="true" />
+				<tr class="evenListRowS1" index="2" exists="false" />
+			</table>
+		</div>
+	</csv>
+
+	<!-- Cleanup: Delete test data. -->
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+
+	<!-- Cleanup: Relogin as admin. -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	
+	<puts text="Test: BugTracker_8395.xml finished." />
+</soda>	
