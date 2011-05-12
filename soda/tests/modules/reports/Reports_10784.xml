@@ -22,7 +22,7 @@
 	<!--Set Group By-->
 	<button value="Next >"/>
 	<wait timeout="2"/>
-	<brwoser assert="Steps to Define Group By:"/>
+	<browser assert="Steps to Define Group By:"/>
 	<link id="ygtvlabelel6"/>	<!--Click Campaigns in related modules tree-->
 	<tr id="yui-rec88"/>	<!--Name-->
 	
