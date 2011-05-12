@@ -1,4 +1,4 @@
-<soda>
+>
 	
 	<!--Test Case 2552: Relationship - Schedule Call_Verify that new "Schedule Call" can be created on the "Cases" sub-panel.-->
 
@@ -48,7 +48,7 @@
 
             <checkbox name='reminder_checked' set='{@Quote_2572.call_reminder_checked}'/>
             <textfield id='description' set='{@Quote_2572.call_description}'/>             
-            <button value="Meetings_subpanel_save_button" /> 
+            <button id="Calls_subpanel_save_button" /> 
         </form>
 	<wait timeout="2"/>
          
