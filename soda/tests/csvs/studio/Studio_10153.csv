@@ -1,0 +1,8 @@
+name,phonework,phonemobile,phonefax,des
+con1,5,5,10,true
+con2,10,5,10,true
+con3,4,5,10,false
+con4,11,5,10,false
+con5,6,5.5,6.1,true
+con6,a,5,7,
+con7,10,a,b,
