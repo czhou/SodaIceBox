@@ -36,7 +36,7 @@
 	<button value="Next >" />
 	<wait timeout="2" />
 	<browser assert="Column Name" />
-	<roe id="yui-rec172" click="true" />
+	<row id="yui-rec172" click="true" />
 
 	<!--Set chart Option -->
 	<button value="Next >" />
