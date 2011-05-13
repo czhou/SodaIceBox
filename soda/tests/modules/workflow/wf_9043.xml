@@ -45,30 +45,30 @@
       <wait timeout="5" />
       <link id="href_new" />
 	<wait timeout="3"/>
-	<select assertnot="Bug" index="2"/>
-	<select assertnot="Call" index="2"/>
-	<select assertnot="Campaign" index="2"/>
-	<select assertnot="CampaignLog" index="2"/>
-	<select assertnot="Case" index="2"/>
-	<select assertnot="Contact" index="2"/>
-	<select assertnot="Contract" index="2"/>
-	<select assertnot="Document" index="2"/>
-	<select assertnot="Email" index="2"/>
-	<select assertnot="Email Address" index="2"/>
-	<select assertnot="Email Address(es)" index="2"/>
-	<select assertnot="Lead" index="2"/>
-	<select assertnot="Meeting" index="2"/>
-	<select assertnot="Member of" index="2"/>
-	<select assertnot="Members" index="2"/>
-	<select assertnot="Note" index="2"/>
-	<select assertnot="Opportunity" index="2"/>
-	<select assertnot="Product" index="2"/>
-	<select assertnot="Projects" index="2"/>
-	<select assertnot="Prospect List" index="2"/>
-	<select assertnot="Quote" index="2"/>
-	<select assertnot="Quotes Ship to" index="2"/>
-	<select assertnot="Task" index="2"/>
-	<select assertnot="Team" index="2"/>
+	<select id="selector" assertnot="Bug" index="2"/>
+	<select id="selector" assertnot="Call" index="2"/>
+	<select id="selector" assertnot="Campaign" index="2"/>
+	<select id="selector" assertnot="CampaignLog" index="2"/>
+	<select id="selector" assertnot="Case" index="2"/>
+	<select id="selector" assertnot="Contact" index="2"/>
+	<select id="selector" assertnot="Contract" index="2"/>
+	<select id="selector" assertnot="Document" index="2"/>
+	<select id="selector" assertnot="Email" index="2"/>
+	<select id="selector" assertnot="Email Address" index="2"/>
+	<select id="selector" assertnot="Email Address(es)" index="2"/>
+	<select id="selector" assertnot="Lead" index="2"/>
+	<select id="selector" assertnot="Meeting" index="2"/>
+	<select id="selector" assertnot="Member of" index="2"/>
+	<select id="selector" assertnot="Members" index="2"/>
+	<select id="selector" assertnot="Note" index="2"/>
+	<select id="selector" assertnot="Opportunity" index="2"/>
+	<select id="selector" assertnot="Product" index="2"/>
+	<select id="selector" assertnot="Projects" index="2"/>
+	<select id="selector" assertnot="Prospect List" index="2"/>
+	<select id="selector" assertnot="Quote" index="2"/>
+	<select id="selector" assertnot="Quotes Ship to" index="2"/>
+	<select id="selector" assertnot="Task" index="2"/>
+	<select id="selector" assertnot="Team" index="2"/>
 	
       <select id="selector" set="{@wf_9043.selector}" />
       <button name="Save" />
