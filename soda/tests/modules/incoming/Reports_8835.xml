@@ -1,0 +1,160 @@
+<soda>
+	<puts text="Test: Reports_8835.xml starting." />
+	<!--
+	Action
+		Undocumented...
+
+	Expected Results:
+		Verify that records displayed in report result satisfy
+			above group by.
+	-->
+	
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
+	<var var="opp1_name" set="{@pre_opp_name}" />
+	
+	<button id="edit_button" />
+	<textfield id="date_closed" set="01/20/2012" />
+	<button id="SAVE_HEADER" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
+	<var var="opp2_name" set="{@pre_opp_name}" />
+	
+	<button id="edit_button" />
+	<textfield id="date_closed" set="03/20/2012" />
+	<button id="SAVE_HEADER" />
+
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
+	<var var="opp3_name" set="{@pre_opp_name}" />
+
+	<button id="edit_button" />
+	<textfield id="date_closed" set="09/20/2012" />
+	<button id="SAVE_HEADER" />
+
+	
+	<link id="moduleTab_Reports" />
+	
+	<link text="Create Report" />
+	
+	<wait timeout="2" />
+	<div id="report_type_div">
+		<image name="summationImg" jscriptevent="onclick" click="true" />
+	</div>
+	
+	<wait timeout="3" />
+	
+	<table id="Opportunities">
+		<link text="Opportunities" />
+	</table>
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<div text="Month: Expected Close Date" click="true" />
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<timestamp />
+	<var var="report1_name" set="QA_Created_Month_{@stamp}" />
+	
+	<textfield name="save_report_as" set="{@report1_name}" />
+	
+	<button value="Save and Run" />
+	
+	<div id="report_results">
+		<browser assert="January 2012" />
+		<browser assert="March 2012" />
+		<browser assert="September 2012" />
+	</div>
+	
+	
+	<!-- Quarter -->
+	
+	
+	<link id="moduleTab_Reports" />
+	
+	<link text="Create Report" />
+	
+	<wait timeout="2" />
+	<div id="report_type_div">
+		<image name="summationImg" jscriptevent="onclick" click="true" />
+	</div>
+	
+	<wait timeout="3" />
+	
+	<table id="Opportunities">
+		<link text="Opportunities" />
+	</table>
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<div text="Quarter: Expected Close Date" click="true" />
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<timestamp />
+	<var var="report2_name" set="QA_Created_Month_{@stamp}" />
+	
+	<textfield name="save_report_as" set="{@report2_name}" />
+	
+	<button value="Save and Run" />
+	
+	<div id="report_results">
+		<browser assert="Q1 2012" />
+		<browser assert="Q3 2012" />
+	</div>
+	
+
+	<!-- Year -->
+	
+	<link id="moduleTab_Reports" />
+	
+	<link text="Create Report" />
+	
+	<wait timeout="2" />
+	<div id="report_type_div">
+		<image name="summationImg" jscriptevent="onclick" click="true" />
+	</div>
+	
+	<wait timeout="3" />
+	
+	<table id="Opportunities">
+		<link text="Opportunities" />
+	</table>
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<div text="Year: Expected Close Date" click="true" />
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<timestamp />
+	<var var="report3_name" set="QA_Created_Month_{@stamp}" />
+	
+	<textfield name="save_report_as" set="{@report3_name}" />
+	
+	<button value="Save and Run" />
+	
+	<div id="report_results">
+		<browser assert="2012" />
+	</div>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	
+	<puts text="Test: Reports_8835.xml finished." />
+	
+</soda>	

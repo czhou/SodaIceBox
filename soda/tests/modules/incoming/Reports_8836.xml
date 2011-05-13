@@ -1,0 +1,78 @@
+<soda>
+	<puts text="Test: Reports_8836.xml starting." />
+	<!--
+	Action
+		Undocumented...
+
+	Expected Results:
+		Verify that records displayed in report result satisfy
+			above group by.
+	-->
+	
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
+	<var var="opp1_name" set="{@pre_opp_name}" />
+	
+	<button id="edit_button" />
+	<textfield id="date_closed" set="01/20/2012" />
+	<button id="SAVE_HEADER" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
+	<var var="opp2_name" set="{@pre_opp_name}" />
+	
+	<button id="edit_button" />
+	<textfield id="date_closed" set="03/20/2012" />
+	<button id="SAVE_HEADER" />
+
+	
+	
+	
+	<!-- Name -->
+	
+	
+	<link id="moduleTab_Reports" />
+	
+	<link text="Create Report" />
+	
+	<wait timeout="2" />
+	<div id="report_type_div">
+		<image name="summationImg" jscriptevent="onclick" click="true" />
+	</div>
+	
+	<wait timeout="3" />
+	
+	<table id="Opportunities">
+		<link text="Opportunities" />
+	</table>
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<div text="Opportunity Name" click="true" />
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<timestamp />
+	<var var="report2_name" set="QA_Created_Month_{@stamp}" />
+	
+	<textfield name="save_report_as" set="{@report2_name}" />
+	
+	<button value="Save and Run" />
+	
+	<div id="report_results">
+		<browser assert="{@opp1_name}" />
+		<browser assert="{@opp2_name}" />
+	</div>
+	
+
+
+	
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+		
+	<puts text="Test: Reports_8836.xml finished." />
+	
+</soda>	
