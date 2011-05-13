@@ -1,0 +1,82 @@
+<soda>
+	<puts text="Test: Reports_8730.xml starting." />
+	<!--
+	Action
+		1. Login to SugarCRM as admin user.
+		2. Go to Reports module.
+		3. Go to report view mentioned in precondition1.
+		4. Edit report, such as change team to global.
+		5. Save report.
+	Expected Results:
+		5. Edited report is displayed and saved successfully
+	-->
+	
+	<link id="moduleTab_Reports" />
+	
+	<link text="Create Report" />
+	
+	<wait timeout="2" />
+	<div id="report_type_div">
+		<image name="rowsColsImg" jscriptevent="onclick" click="true" />
+	</div>
+	
+	<wait timeout="3" />
+	
+	<table id="Accounts">
+		<link text="Accounts" />
+	</table>
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<div text="Name" click="true" />
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<timestamp />
+	<var var="report_name" set="QA_Created_{@stamp}" />
+	
+	<textfield name="save_report_as" set="{@report_name}" />
+	
+	<button value="Save" />
+	
+	<link id="moduleTab_Reports" />
+	
+	<table class="list view">
+		<link text="{@report_name}" />
+	</table>
+	
+	<button id="editReportButton" />
+	<link id="report_type_outline" index="4" />
+	
+	<wait timeout="3" />
+	<image id="remove_team_name_collection_0" jscriptevent="onclick" />
+	<wait timeout="3" />
+	<button name="teamSelect" />
+	<wait timeout="5" />
+	<textfield name="name" set="Administrator" />
+	<button value="Search" />
+	<link text="Administrator" />
+	<radio id="primary_team_name_collection_0" set="true" />
+	
+
+	<wait timeout="3" />
+	
+	<button value="Save" />
+	
+	<link id="moduleTab_Reports" />
+	<table class="list view">
+		<link text="{@report_name}" />
+	</table>
+	
+	<table id="reportDetailsTable">
+		<browser assert="Teams: Administrator " />
+	</table>
+	
+	<puts text="Test: Reports_8730.xml finished." />
+	
+</soda>	

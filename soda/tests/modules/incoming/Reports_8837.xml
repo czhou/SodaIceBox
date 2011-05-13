@@ -1,0 +1,98 @@
+<soda>
+	<puts text="Test: Reports_8837.xml starting." />
+	<!--
+	Action
+		# Reports -> Create Report
+		# Type: Summation
+		# Module: Accounts
+		# Filter: None
+		# Group by: Industry, Type
+		# Display: Industry, Type, count
+		# Select chart type
+		# Enter name and Save and Run report.
+
+	Expected Results:
+		Verify that records displayed in report
+			result satisfy above group by.
+	-->
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<var var="account1_name" set="{@pre_account_name}" />
+	
+	<button id="edit_button" />
+	<select id="industry" set="Banking" />
+	<select id="account_type" set="Competitor" />
+	
+	<button id="SAVE" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<var var="account2_name" set="{@pre_account_name}" />
+	
+	<button id="edit_button" />
+	<select id="industry" set="Construction" />
+	<select id="account_type" set="Customer" />
+	
+	<button id="SAVE" />
+
+	
+	
+	
+	<!-- Name -->
+	
+	
+	<link id="moduleTab_Reports" />
+	
+	<link text="Create Report" />
+	
+	<wait timeout="2" />
+	<div id="report_type_div">
+		<image name="summationImg" jscriptevent="onclick" click="true" />
+	</div>
+	
+	<wait timeout="3" />
+	
+	<table id="Accounts">
+		<link text="Accounts" />
+	</table>
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<!-- Group By -->
+	<div text="Industry" click="true" />
+	<div text="Type" click="true" />
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<!-- Display Columns -->
+	<!-- just need to add one -->
+	<div text="Count" click="true" />
+	
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	<button value="Next &gt;" />
+	<wait timeout="3" />
+	
+	<timestamp />
+	<var var="report2_name" set="QA_Created_Month_{@stamp}" />
+	
+	<textfield name="save_report_as" set="{@report2_name}" />
+	
+	<button value="Save and Run" />
+	
+	<div id="report_results">
+		<browser assert="Banking" />
+		<browser assert="Competitor" />
+		<browser assert="Customer" />
+		<browser assert="Construction" />
+	</div>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	
+	<puts text="Test: Reports_8837.xml finished." />
+	
+</soda>	
