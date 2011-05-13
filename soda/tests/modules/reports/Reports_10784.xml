@@ -9,9 +9,9 @@
 
 	<image name="matrixImg" click="true"/>
 	<wait timeout="2"/>
-	<browser assert="Steps to Define Filters:"/>
 	<table id="Accounts" click="true"/>
 	<wait timeout="2"/>	
+	<browser assert="Steps to Define Filters:"/>
 	<row id="yui-rec14" click="true" />		<!-- Name -->
 
 	<wait timeout="1"/>	
