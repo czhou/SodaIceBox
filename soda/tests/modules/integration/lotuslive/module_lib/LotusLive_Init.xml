@@ -103,6 +103,7 @@
 	<textfield id="username" set="sugarqa3@gmail.com" required="false" timeout="2" />
 	<textfield id="password" set="Sugar123" required="false" timeout="2" />
 	<button id="submit" required="false" timeout="2" />
+	<wait timeout="10" />
 	<button id="allow" required="false" timeout="2" />
 	<wait timeout="10" />
 	<!-- Return to sugar external account detailview -->
