@@ -1,0 +1,6 @@
+<soda>
+	<script file="tests/modules/home/module_lib/setup-home.xml" />
+	<script fileset="tests/modules/home" />
+	<script file="tests/modules/home/module_lib/cleanup-home.xml" />
+</soda>
+

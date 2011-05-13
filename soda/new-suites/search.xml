@@ -1,0 +1,6 @@
+<soda>
+	<script file="tests/modules/search/module_lib/setup-search.xml" />
+	<script fileset="tests/modules/search" />
+	<script file="tests/modules/search/module_lib/cleanup-search.xml" />
+</soda>
+
