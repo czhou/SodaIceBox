@@ -61,6 +61,7 @@
 	</div>
 
 	<link id="moduleTab_Reports" />
+	<link text="Basic Search" required="false"/>
 	<button name="clear" />
 	<textfield name="name" set="{@report_name}" />
 	<button value="Search" />
