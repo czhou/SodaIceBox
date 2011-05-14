@@ -8,10 +8,10 @@
 	<browser assert="Report Wizard" />
 
 	<image name="matrixImg" click="true" />
-	<wait timeout="2" />
-	<table id="Accounts">
-		<table id="Accounts" click="true" />
-	</table>
+	<wait timeout="5" />
+
+	<table id="Accounts" click="true" />
+
 
 	<wait timeout="5" />
 	<browser assert="Steps to Define Filters:" />
@@ -27,16 +27,19 @@
 	<wait timeout="2" />
 	<browser assert="Steps to Define Group By:" />
 	<link id="ygtvlabelel6" />	<!--Click Campaigns in related modules tree -->
-	<tr id="yui-rec88" />	<!--Name -->
+	<wait timeout="1" />
+	<div text="Name" click="true" />	<!--Name -->
 
 	<link id="ygtvlabelel16" />	<!--Click Member of in related modules tree -->
-	<row id="yui-rec120" click="true" />	<!--Name -->
+	<wait timeout="1" />
+	<div text="Name" click="true" />	<!--Name -->
+	<wait timeout="1" />
 
 	<!--Set Display -->
-	<button value="Next >" />
+	<button name="Next >" jscriptevent="onclick" />
 	<wait timeout="2" />
 	<browser assert="Column Name" />
-	<roe id="yui-rec172" click="true" />
+	<div text="Count" click="true" />
 
 	<!--Set chart Option -->
 	<button value="Next >" />
@@ -71,6 +74,11 @@
 	<link id="actions_link" />
 	<link text="Delete" alert="true" />
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	<form class="search_form">
+		<button name="clear" />
+		<button value="Search" />
+	</form>
+	<span class="pageNumbers" assert="(1 - 20 of 44)" />
 
 	<puts text="Test: Reports_10784.xml finished" />
 </soda>

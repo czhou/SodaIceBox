@@ -21,49 +21,49 @@
 		</table>
 	</div>
 	<wait timeout="5" />
-	<csv file="{@global.scriptsdir}/csvs/leads/Leads_1938.csv" var="Leads_1938">
-		<textfield id="name" set="{@Leads_1938.name}" />
-		<textfield id="date_start_date" set="{@Leads_1938.date_start_date}" />
-		<select id="date_start_hours" set="{@Leads_1938.date_start_hours}" />
-		<select id="date_start_minutes" set="{@Leads_1938.date_start_minutes}" />
+	<csv file="{@global.scriptsdir}/csvs/leads/Leads_1938.csv" var="Lead_1938_Call">
+		<textfield id="name" set="{@Lead_1938_Call.name}" />
+		<textfield id="date_start_date" set="{@Lead_1938_Call.date_start_date}" />
+		<select id="date_start_hours" set="{@Lead_1938_Call.date_start_hours}" />
+		<select id="date_start_minutes" set="{@Lead_1938_Call.date_start_minutes}" />
 
-		<textfield name="duration_hours" set="{@Leads_1938.duration_hours}" />
-		<select name="duration_minutes" set="{@Leads_1938.duration_minutes}" />
+		<textfield name="duration_hours" set="{@Lead_1938_Call.duration_hours}" />
+		<select name="duration_minutes" set="{@Lead_1938_Call.duration_minutes}" />
 
-		<select id="direction" set="{@Leads_1938.direction}" />
-		<select id="status" set="{@Leads_1938.status}" />
+		<select id="direction" set="{@Lead_1938_Call.direction}" />
+		<select id="status" set="{@Lead_1938_Call.status}" />
 
-		<checkbox name="reminder_checked" set="{@Leads_1938.reminder_checked}" />
-		<textfield id="description" set="{@Leads_1938.description}" />
+		<checkbox name="reminder_checked" set="{@Lead_1938_Call.reminder_checked}" />
+		<textfield id="description" set="{@Lead_1938_Call.description}" />
 
 		<!--user select -->
 		<button id="btn_assigned_user_name" />
 		<wait timeout="3" />
 		<browser assert="User Search" />
-		<textfield name="last_name_advanced" set="{@Leads_1938.assigned_user_name}" />
+		<textfield name="last_name_advanced" set="{@Lead_1938_Call.assigned_user_name}" />
 		<button value="Search" />
-		<link text="{@Leads_1938.assigned_user_name}" />
+		<link text="{@Lead_1938_Call.assigned_user_name}" />
 
 		<!--teams select -->
 		<table id="form_SubpanelQuickCreate_Calls_team_name_table">
 			<button value="Select" />
 		</table>
 		<browser assert="Team Search" />
-		<textfield name="name" set="{@Leads_1938.team_name}" />
+		<textfield name="name" set="{@Lead_1938_Call.team_name}" />
 		<button value="Search" />
-		<link text="{@Leads_1938.team_name}" />
+		<link text="{@Lead_1938_Call.team_name}" />
 		<button value="Save" />
 	</csv>
 	<wait timeout="6" />
 
 	<!--verify the call record -->
-	<!-- div id="list_subpanel_activities"> <link class="listViewTdToolsS1" index="2" 
-		alert="false"/> </div> <wait timeout="6"/ -->
 	<div id="list_subpanel_activities">
 		<table class="list view">
-			<link text="{@Leads_1938.name}" />
+			<link text="{@Lead_1938_Call.name}" click="false" exist="true" />
+			<browser assert="{@Lead_1938_Call.status}" />
 		</table>
 	</div>
+
 
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
