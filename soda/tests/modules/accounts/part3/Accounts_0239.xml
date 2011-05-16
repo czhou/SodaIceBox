@@ -23,6 +23,7 @@
 	<!--Create Task-->
 	<browser assert="{@pre_account_name}" />
 	<button name="Activities_createtask_button" />
+	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0239.csv" var="activity_record_0239">
 		<form id="form_SubpanelQuickCreate_Tasks">
 			<textfield id="name" set="{@activity_record_0239.name}" />
@@ -48,7 +49,7 @@
 		</form>
 
 		<button id="Tasks_subpanel_save_button" />
-		<wait timeout="3" />
+		<wait timeout="5" />
 	</csv>
 
 	<!-- Verify task has been created -->
