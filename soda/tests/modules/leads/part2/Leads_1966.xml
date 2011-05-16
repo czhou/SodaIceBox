@@ -18,6 +18,7 @@
 	<div id="list_subpanel_activities">
 		<table class="list view">
 			<button value="  Log Call  " />
+			<wait timeout="5" />
 		</table>
 	</div>
 	<csv file="{@global.scriptsdir}/csvs/leads/Leads_1966.csv" var="Leads_1966">
