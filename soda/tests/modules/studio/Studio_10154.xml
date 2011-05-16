@@ -1,0 +1,66 @@
+<soda>
+    
+    <!-- ln function test -->
+    <puts text="Test: Studio_10154.xml starting" />
+    <!-- set description field as calculated field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Contacts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="ln(number($phone_work))"/>
+      <button value="Save" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="10" />
+    <browser assert="Add Field" />
+    
+    <!--create contact record and check calculated field-->
+    <link id="moduleTab_Contacts" />
+         
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_10154.csv" var="studio10154">
+        <link text="Create Contact" />
+        <browser assert="Contact Overview" />
+        <form id="EditView">
+	        <textfield name="last_name" set="{@studio10154.name} {@user.name} {@stamp}" />      
+			<textfield id="phone_work" set="{@studio10154.phonework}" />
+	        <textfield id="phone_work" click="false" jscriptevent="onchange" />
+	        <textfield id="description" assert="{@studio10154.des}" />
+	        <button value="Save" />
+	        <wait timeout="3" />        
+	      </form>
+	      <div id="LBL_CONTACT_INFORMATION">
+	      	<browser assert="{@studio10154.name} {@user.name} {@stamp}" />
+			<browser assert="{@studio10154.des_detail}" />
+	        <!--span id="actual_cost" assert="{@studio10154.actual_cost_detail}" /-->
+	      </div>
+    </csv>
+    
+    <!-- Now uncalculated the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Contacts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="false" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    
+    <!-- Delete contact record -->
+    <script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_10154.xml finished." />
+</soda>
