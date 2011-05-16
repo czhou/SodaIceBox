@@ -70,7 +70,8 @@
 		</div>
 	</csv>
 
-	<!--Delete contact record-->
+	<!--Delete task and contact record-->
+        <script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<puts text="Test: Contacts_1471.xml finished." />
 </soda>
