@@ -59,8 +59,8 @@
 	</csv>
 	
 	<link id="moduleTab_Calendar" />
-
 	<button value=" Shared " />
+	<wait timeout="3" />
 	
 	<browser assert="Planned: {@pre_call_name}" />
 	<link text=
