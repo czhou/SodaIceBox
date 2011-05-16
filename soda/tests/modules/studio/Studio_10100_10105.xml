@@ -30,7 +30,7 @@
     <!--whitelist action="add" name="tmp-white">Error: '' is not a number</whitelist-->
     <csv file="{@global.scriptsdir}/csvs/studio/Studio_10100.csv" var="studio10100">
         <link text="Create Contact" />
-        <browser assert="Create" />
+        <browser assert="Contact Overview" />
         <form id="EditView">
         <textfield id="last_name" set="{@studio10100.name} {@user.name} {@stamp}" />
         <textfield id="primary_address_street" set="{@studio10100.street}" />

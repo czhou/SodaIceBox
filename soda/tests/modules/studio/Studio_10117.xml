@@ -29,7 +29,7 @@
       
     <csv file="{@global.scriptsdir}/csvs/studio/Studio_10117.csv" var="studio10117">
         <link text="Create Account" />
-        <browser assert="Create" />
+        <browser assert="Account Overview" />
         <form id="EditView">
         <textfield id="name" set="{@studio10117.name} {@user.name} {@stamp}" />
         <textfield id="billing_address_street" set="{@studio10117.street}" />
