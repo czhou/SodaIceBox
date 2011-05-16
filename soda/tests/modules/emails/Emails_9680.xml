@@ -2,6 +2,9 @@
 	<!-- Check the note team info which create from email attachment -->
 	<puts text="Test: Emails_9680.xml starting." />
 
+	<!--Invoke Email outbound account setup lib-->
+	<script file="{@global.scriptsdir}/modules/lib/Emails_OutGoing_Create_Lib.xml"/>
+
 	<!--Nav to emails module-->
 	<link id="moduleTab_Emails" />
 	<wait timeout="10" />
@@ -57,6 +60,7 @@
 	</div>
 	
 	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Emails_OutGoing_Delete_Lib.xml"/>
 	
 	<puts text="Test: Emails_9680.xml finished." />
 </soda>

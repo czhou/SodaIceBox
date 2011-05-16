@@ -88,5 +88,6 @@
 	<textfield id="addressBCC1"
 		assert="{@EmailUC.user2_last_name} &lt;{@EmailUC.user2_email}&gt;" />
 
+	<script file="{@global.scriptsdir}/modules/lib/Email_User_Delete_Lib.xml" />
 	<puts text="Test: Emails_9655.xml finished." />
 </soda> 
