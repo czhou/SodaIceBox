@@ -1,0 +1,30 @@
+<soda>
+
+	<puts text="Test Case 2560: View Summary_Verify that 'View Summary' can open summary view pop-up window for Activities under 'Quotes' sub-panel."/>
+
+        <!--Go to Quotes module and search out the quote record create in lib-->
+        <link id='moduleTab_Quotes'/>
+        <browser assert='Quotes'/>
+        <form id='search_form'>
+            <button id='search_form_clear'/>
+            <textfield id='name_basic' set='{@pre_Quote_name}'/>
+            <button id='search_form_submit'/>
+        </form>
+
+	<!--Go to detail view-->
+        <table class='list view'>
+            <link text='{@pre_Quote_name}'/>
+        </table>
+	<wait timeout="2"/>
+	<browser assert="Quote Overview"/>
+
+	<!--Press View Summary button and assert the pop-up window -->
+	<button id="summary_button"/>
+	<wait timeout="2"/>
+	<div class="moduleTitle">
+		<browser assert="Quotes"/>
+	</div>
+
+	<puts text="Test Case 2560 is finished!"/>
+</soda>
+
