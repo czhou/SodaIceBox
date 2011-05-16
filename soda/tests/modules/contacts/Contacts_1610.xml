@@ -1,25 +1,40 @@
 <soda>
-	<!--
-		Mass Update _ Verify that the contact Account name is replaced with the
-		current related account's Account name after changing the related account
-		using "Mass Update" function below contacts list view
-	-->
+	<!-- Mass Update _ Verify that the contact Account name is replaced with the current 
+		related account's Account name after changing the related account using "Mass Update" 
+		function below contacts list view -->
 	<puts text="Test: Contacts_1610.xml starting." />
 
 	<!--Create a Contact and a Account -->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_lib.xml" />
+
+	<!-- Create an Account inline after contact creation -->
+	<button id="edit_button" />
+	<wait timeout="3" />
+	<button id="btn_account_name" />
+	<button name="showAdd" />
+	<textfield id="name" set="test account 1" />
+	<button id="Accounts_popupcreate_save_button" />
+	<wait timeout="3" />
+	<table class="list view">
+		<link text="test account 1" />
+	</table>
+	<wait timeout="3" />
+	<button id="SAVE_HEADER" />
+
+
+	<!-- Create another Account to replace original account relationship -->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_lib.xml" />
 
-	<!--Go back to Contact modules-->
+	<!--Go back to Contact modules -->
 	<link id="moduleTab_Contacts" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Contacts&amp;action=index" click="false" />
 	</div>
 
-	<!--Go to Contact list view-->
+	<!--Go to Contact list view -->
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
-	<!--Check on created contact from list view-->
+	<!--Check on created contact from list view -->
 	<table class="list view">
 		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 		<checkbox name="massall" click="true" />
@@ -27,12 +42,12 @@
 		<span class="pageNumbers" assert="(1 - 1 of 1)" />
 	</table>
 
-	<!--Mass update account field with created account-->
+	<!--Mass update account field with created account -->
 
-	<!--Select created account-->
+	<!--Select created account -->
 	<button name="btn1" value="Select" index="2" />
 
-	<!--Open new tab and select created account-->
+	<!--Open new tab and select created account -->
 	<textfield id="name_advanced" set="{@pre_account_name}" />
 	<form id="popup_query_form">
 		<button name="button" value="Search" />
@@ -44,21 +59,21 @@
 	<!--Click massupdate button -->
 	<button id="update_button" alert="true" />
 
-	<!--Validate cretated record exist-->
+	<!--Validate cretated record exist -->
 	<table class="list view">
 		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 		<browser assert="{@pre_account_name}" />
 		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	</table>
 
-	<!--Validate on detail view-->
+	<!--Validate on detail view -->
 	<browser assert="Contacts" />
 	<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	<table id="detailpanel_1">
 		<browser assert="{@pre_account_name}" />
 	</table>
 
-	<!--Validate on edit view-->
+	<!--Validate on edit view -->
 	<button id="edit_button" />
 	<textfield id="account_name" assert="{@pre_account_name}" />
 
@@ -70,7 +85,7 @@
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
 
-	<!--Delete all pre existed data-->
+	<!--Delete all pre existed data -->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_lib.xml" />
 

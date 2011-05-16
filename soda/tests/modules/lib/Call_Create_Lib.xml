@@ -3,7 +3,7 @@
 	<timestamp />
 	<link id="moduleTab_Calls" />
 	<link text="Log Call" />
-
+	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record">
 		<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
 
@@ -20,14 +20,14 @@
 		<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
 		<textfield id="description" set="{@call_record.description}" />
 
-		<!--user select-->
+		<!--user select -->
 		<button id="btn_assigned_user_name" />
 		<browser assert="User Search" />
 		<textfield name="last_name_advanced" set="{@call_record.assigned_user_name}" />
 		<button value="Search" />
 		<link text="{@call_record.assigned_user_name}" />
 
-		<!--teams select-->
+		<!--teams select -->
 		<table id="EditView_team_name_table">
 			<button value="Select" />
 		</table>
@@ -39,7 +39,7 @@
 
 		<browser assert="{@call_record.name} {@user.name} {@stamp}" />
 
-		<!--Save the account id & name-->
+		<!--Save the account id & name -->
 		<form name="DetailView">
 			<hidden name="record" var="pre_call_id" />
 		</form>
