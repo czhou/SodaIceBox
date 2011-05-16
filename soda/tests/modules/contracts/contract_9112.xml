@@ -1,0 +1,31 @@
+<soda>
+	<puts text="Contract_9112:  Contract_Delete_Contract type"/>
+	<script file="{@global.scriptsdir}/modules/lib/ContractType_Create_Lib.xml"/>
+	<link text="Admin" />
+	<link text="Contract Types" />
+
+	<form id="search_form">
+		<button id="search_form_clear" />
+		<button id="search_form_submit" />
+	</form>
+
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="false" />
+
+	<browser assert="{@ContractType_Create_Lib}"/>
+	<link text="{@ContractType_Create_Lib}" click="false" required="true"/>
+
+	<form id="search_form">
+		<button id="search_form_clear" />
+		<button id="search_form_submit" />
+	</form>
+
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+
+	<browser assertnot="{@ContractType_Create_Lib}"/>
+	<link text="{@ContractType_Create_Lib}" click="false" required="false"/>
+	<puts text="Contract_9112 finish"/>
+</soda>
