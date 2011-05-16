@@ -1,0 +1,29 @@
+<soda>
+	<puts text="Test: Google_10792.xml starting." />
+
+	<link id="moduleTab_Documents" />
+	<link text="Create Document" />
+
+	<form id="EditView">
+		<timestamp />
+		<select id="doc_type" set="Google" />
+		<textfield name="document_name" set="Google_Doc {@user.name} {@stamp}" /> 
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/10356.txt" />
+		<button value="Save" />
+	</form>
+	
+	<!-- Delete the created sugar doc-->
+	<link text="View Documents" />
+
+	<button id="search_form_clear" />
+	<textfield id="document_name_basic" set="Google {@user.name} {@stamp}" />
+	<button id="search_form_submit" />
+	<span class="pageNumbers" assert="(1 - 1 of 1)" />
+
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+
+	<puts text="Test: Google_10792.xml finished." />
+</soda>
