@@ -12,7 +12,7 @@
 	<puts text="Test: Calendar_0660.xml starting." />
 	<link id="moduleTab_Calls" />
 	<link text="Log Call" />
-
+	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record">
 		<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
 
@@ -48,7 +48,7 @@
 		<button value="Search" />
 		<link text="{@call_record.team_name}" />
 		<button value="Save" />
-
+		<wait timeout="3" />
 		<browser assert="{@call_record.name} {@user.name} {@stamp}" />
 
 		<!--Save the account id & name-->

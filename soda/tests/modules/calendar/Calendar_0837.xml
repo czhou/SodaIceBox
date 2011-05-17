@@ -22,6 +22,8 @@
 		<button id="btn_parent_name" click="false" />
 	</div>
 	
+	<button id="CANCEL" alert="true" />
+	
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	
 	<puts text="Test: Calendar_0837.xml finished." />
