@@ -1,6 +1,6 @@
 <soda>
     	<csv file='{@global.scriptsdir}/csvs/quote/Quote_2536.csv' var='Quote_2536'>
-        <puts text='----Quote_2536.xml----Quote Detail-History sub-panel_Verify that contract realated to this Quote can be viewed successfully.----Start!----'/>            
+	<puts text="Test Case 2563: Select Contracts_Verify that new contracts can be successful 'Select' on the 'Contracts' sub-panel."/>
         <link id='moduleTab_Quotes'/>
         <browser assert='Quotes'/>
         <form id='search_form'>
@@ -18,7 +18,7 @@
                 <button id='contracts_quotes_select_button'/>
             </table>
         </div>           
-        <!--Contact select-->
+        <!--Contract select-->
         <browser assert='Contract Search'/>                        
         <textfield name='name_advanced' set='{@Contract_Create_Lib}'/>                        
         <button value='Search'/>
@@ -27,7 +27,6 @@
         <div id='list_subpanel_contracts'>
             <table class='list view'>
                 <browser assert='{@Contract_Create_Lib}'/>
-                <link text='{@Contract_Create_Lib}' click='false'/>
             </table>
         </div>
     </csv>
@@ -39,5 +38,5 @@
             <link text='{@Contract_Create_Lib}' click='false' exist='false' />
         </table>
     </div>
-    <puts text='---Quote_2536.xml---Finished!'/>   
+    <puts text="Test Case 2563 finished!"/>
 </soda>
