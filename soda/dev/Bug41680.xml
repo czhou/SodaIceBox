@@ -1,0 +1,93 @@
+<soda>
+	<puts text='--------Bug 41680 Started--------'/>
+	<puts text='-- Report does not keep current user after clicking "reset" --'/>
+
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<!-- Create report -->
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<image name="summationImg" click="true" />
+	<link class="studiolink" text="Opportunities" />
+	<!-- filters -->
+	<table id="ygtvtableel3"><!-- Opportunites - Assigned to User -->
+		<link text="Assigned to User" />
+	</table>
+	<row id="yui-rec42" click="true" /> <!-- User Name field -->
+	<checkbox id="runtime_filter_Filter.1_table_filter_row_1" click="true" /> <!-- Runtime filter -->
+	<button name="Next >" />
+	<!-- group by -->
+	<row id="yui-rec62" click="true" /> <!-- Opportunity Name field -->
+	<button name="Next >" />
+	<button name="Next >" />
+	<button name="Next >" />
+	<textfield name="save_report_as" set="Runtime-test" />
+	<button name="Save" />
+
+	<!-- Create user -->
+	<link text="Admin" />
+	<!-- set manual password -->
+	<link text="Password Management" />
+	<textfield name="passwordsetting_minpwdlength" set="4" />
+	<checkbox id="passwordsetting_oneupper" set="false" />
+	<checkbox id="passwordsetting_onenumber" set="false" />
+	<checkbox id="passwordsetting_onespecial" set="false" />
+	<checkbox id="SystemGeneratedPassword_checkbox" set="false" />
+	<button id="btn_save" click="true" />
+	<!-- create user -->
+	<link text="User Management" />
+	<link text="Create New User" />
+	<textfield name="sugar_user_name" set="reportuser" />
+	<textfield id="last_name" set="Doe" />
+	<textfield id="Users0emailAddress0" set="test@example.com" />
+	<textfield id="new_password" set="password" />
+	<textfield id="confirm_pwd" set="password" />
+	<javascript>
+		document.getElementById('password_change').value = 'true';
+	</javascript>
+	<button id="Save" click="true" />
+
+	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
+
+	<!-- Log in as user -->
+	<textfield id="user_name" set="reportuser" />
+	<textfield id="user_password" set="password" />
+	<button id="login_button" />
+
+	<!-- Match a new user login or an existing user login, but not a failed login. -->
+	<browser assert="/Welcome(, | to Sugar!)/" />
+
+	<browser url="{@global.url}" />
+	<button name="button" click="true" /> <!-- set timezone -->
+
+	<link id="moduleTab_Reports" />
+	<link text="Runtime-test" />
+	<button value="Reset" click="true" />
+
+	<select name="input" assert="Doe" /> <!-- check that our user is selected -->
+
+	<!-- clean up -->
+	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	<!-- delete user -->
+	<link text="Admin" />
+	<link text="User Management" />
+	<link text="Doe" />
+	<wait condition="true">
+		<button value="Delete" />
+	</wait>
+	<button value="Delete" click="true" />
+	<button text="OK" click="true" />
+	<button value="Cancel" click="true" />
+	<!-- delete report -->
+	<link id="moduleTab_Reports" />
+	<link text="Runtime-test" />
+	<wait condition="true">
+		<button id="deleteReportButton" />
+	</wait>
+	<button id="deleteReportButton" alert="true" click="true" />
+
+	<puts text='--------Bug 41680 Finished--------'/>
+
+</soda>
