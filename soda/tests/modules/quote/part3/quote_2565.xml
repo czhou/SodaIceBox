@@ -1,0 +1,45 @@
+<soda>
+    	<csv file='{@global.scriptsdir}/csvs/quote/Quote_2536.csv' var='Quote_2536'>
+
+	<puts text="Test Case 2565: Verify that new contracts can be created on the 'Contracts' sub-panel."/>
+	<!--Go to quote record detail view-->	
+        <link id='moduleTab_Quotes'/>
+        <browser assert='Quotes'/>
+        <form id='search_form'>
+            <button id='search_form_clear'/>
+            <textfield id='name_basic' set='{@pre_Quote_name}'/>
+            <button id='search_form_submit'/>
+        </form>
+
+        <table class='list view'>
+            <link text='{@pre_Quote_name}'/>
+        </table>
+        
+	<!--Create a new record in contract subpanel-->
+        <div id='list_subpanel_contracts'>
+            <table class='list view'>
+                <button id="contracts_quotes_create_button"/>
+            </table>
+        </div>           
+	<wait timeout="2"/>
+	<browser assert="Contract Overview"/>
+	<textfield id="name" set="New Contract Record"/>
+	<button id="Contracts_subpanel_save_button"/>
+	<wait timeout="5"/>
+         
+        <div id='list_subpanel_contracts'>
+            <table class='list view'>
+                <browser assert="New Contract Recrod"/>
+            </table>
+        </div>
+    </csv>
+    <!--Run Delete XML-->    
+    <div id='list_subpanel_contracts'>
+        <table class='list view'> 
+            <link class='listViewTdToolsS1' index='2' alert='true' />
+            <wait timeout='2' />
+            <link text="New Contract Record" click='false' exist='false' />
+        </table>
+    </div>
+    <puts text="Test Case 2565 finished!"/>
+</soda>

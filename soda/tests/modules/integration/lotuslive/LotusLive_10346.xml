@@ -6,6 +6,7 @@
             <textfield id="name_basic" set="{@pre_bug_name}"/>
         </form>
     <button id="search_form_submit"/>
+    <wait timeout="2" />
     <table class="list view">
         <link text="{@pre_bug_name}"/>
     </table>
