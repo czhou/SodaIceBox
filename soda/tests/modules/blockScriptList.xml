@@ -1,20 +1,6 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
-		<testfile>BugTracker_0637</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>Requires new suites for setup and cleanup of releases.</reason>
-		<modulename>Bug Tracker</modulename>
-	</block>
-
-	<block>
-		<testfile>BugTracker_0641</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>Requires new suites for setup and cleanup of releases.</reason>
-		<modulename>Bug Tracker</modulename>
-	</block>
-	
-	<block>
 		<testfile>BugTracker_9546</testfile>
 		<bugnumber>44021</bugnumber>
 		<reason>"Delete All" after pagination only deletes one page.</reason>
