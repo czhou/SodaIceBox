@@ -86,7 +86,7 @@
 	<link text="External Accounts" />
 	<button name="EAPM_create_button" />
 	<browser assert="Application:" />
-	<select id="application" set="GoToMeeting" />
+	<select id="application" set="Google" />
 	<textfield id="name" set="sugarqa3@gmail.com" />
 	<textfield id="password" set="sugarcrm1" />
 	<button id="EditViewSave" />	

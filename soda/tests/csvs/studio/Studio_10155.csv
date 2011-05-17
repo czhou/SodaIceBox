@@ -1,0 +1,3 @@
+name,status,type,enddate,budget,expected_cost,actual_cost,objective
+cam1,Active,Email,05/17/2013,10,20,30,30
+cam2,Active,Email,05/17/2013,,,,

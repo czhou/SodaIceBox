@@ -12,7 +12,8 @@
 	-->
 	
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
-	
+
+	<!--goto Report module -->
 	<link id="moduleTab_Reports" />
 	
 	<link text="Create Report" />

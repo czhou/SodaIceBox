@@ -1,0 +1,71 @@
+<soda>
+    
+    <!-- max function test -->
+    <puts text="Test: Studio_10155.xml starting" />
+    <!-- set objective field as calculated field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Campaigns" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="objective" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="max($budget,$expected_cost,$actual_cost)"/>
+      <button value="Save" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="10" />
+    <browser assert="Add Field" />
+    
+    <!--create compaign record and check calculated field-->
+             
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_10155.csv" var="studio10155">
+        <link id="moduleTab_Campaigns" />
+        <link text="Create Campaign (Classic)" />
+        <form id="EditView">
+	        <textfield name="name" set="{@studio10155.name} {@user.name} {@stamp}" /> 
+			<select id="status" set="{@studio10155.status}" />
+			<select id="campaign_type" set="{@studio10155.type}" />
+			<textfield id="end_date" set="{@studio10155.enddate}" />          
+			<textfield id="budget" set="{@studio10155.budget}" />
+	        <textfield id="budget" click="false" jscriptevent="onchange" />
+	        <textfield id="expected_cost" set="{@studio10155.expected_cost}" />
+	        <textfield id="expected_cost" click="false" jscriptevent="onchange" />
+	        <textfield id="actual_cost" set="{@studio10155.actual_cost}" />
+	        <textfield id="actual_cost" click="false" jscriptevent="onchange" />
+	        <textfield id="objective" assert="{@studio10155.objective}" />
+	        <button value="Save" />
+	        <wait timeout="3" />        
+      	</form>
+	    <table id="detailpanel_1">
+	      	<browser assert="{@studio10155.name} {@user.name} {@stamp}" />
+	        <span id="objective" assert="{@studio10155.objective}" />
+	    </table>
+    </csv>
+    
+    <!-- Now uncalculated the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Campaigns" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="objective" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="false" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    
+    <!-- Delete campaign record -->
+    <script file="{@global.scriptsdir}/modules/lib/Campaign_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_10155.xml finished." />
+</soda>
