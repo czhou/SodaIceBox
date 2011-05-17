@@ -13,7 +13,7 @@
 	<timestamp />
 	<link id="moduleTab_Calls" />
 	<link text="Log Call" />
-
+	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record" />
 		<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
 
@@ -30,7 +30,7 @@
 		<var var="call1_label" set="{@call_record.status}: {@call1_name}" />
 	<button value="Save" />
 
-	<wait timeout="10" />
+	<wait timeout="3" />
 	
 	<link id="moduleTab_Calendar" />
 	<button value=" Shared " />

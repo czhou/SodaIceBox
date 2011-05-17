@@ -16,7 +16,6 @@
 	<div class="moduleTitle">
 		<link href="index.php?module=Contacts&amp;action=index" click="false" />
 	</div>
-	<button id="search_form_clear" />
 	<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">
@@ -34,37 +33,43 @@
 	<wait timeout="3" />
 	<timestamp />
 
-	<csv file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.csv" var="opp_record" />
-	<textfield id="name" set="{@opp_record.name} {@user.name} {@stamp}" />
+	<csv file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.csv" var="opp_record" >
+		<textfield id="name" set="{@opp_record.name} {@user.name} {@stamp}" />
 
-	<textfield id="amount" set="{@opp_record.amount}" />
-	<textfield id="probability" set="{@opp_record.probability}" />
-	<textfield id="date_closed" set="{@opp_record.date_closed}" />
-	<textfield id="next_step" set="{@opp_record.next_step}" />
-	<textfield id="description" set="{@opp_record.description}" />
-	<select id="opportunity_type" set="{@opp_record.opportunity_type}" />
-	<select id="lead_source" set="{@opp_record.lead_source}" />
-	<select name="currency_id" set="{@opp_record.currency_id}" />
-	<select id="sales_stage" set="{@opp_record.sales_stage}" />
+		<textfield id="amount" set="{@opp_record.amount}" />
+		<textfield id="probability" set="{@opp_record.probability}" />
+		<textfield id="date_closed" set="{@opp_record.date_closed}" />
+		<textfield id="next_step" set="{@opp_record.next_step}" />
+		<textfield id="description" set="{@opp_record.description}" />
+		<select id="opportunity_type" set="{@opp_record.opportunity_type}" />
+		<select id="lead_source" set="{@opp_record.lead_source}" />
+		<select name="currency_id" set="{@opp_record.currency_id}" />
+		<select id="sales_stage" set="{@opp_record.sales_stage}" />
 
-	<!-- Set related Account -->
-	<table class="edit view">
-		<button id="btn_account_name" />
-	</table>
-	<textfield id="name_advanced" set="{@pre_account_name}" />
-	<button value="Search" />
-	<link text="{@pre_account_name}" />
+		<!-- Set related Account -->
+		<table class="edit view">
+			<button id="btn_account_name" />
+		</table>
+		<textfield id="name_advanced" set="{@pre_account_name}" />
+		<button value="Search" />
+		<link text="{@pre_account_name}" />
 
-	<button value="Save" />
-	<wait timeout="30" />
+		<button value="Save" />
+		<wait timeout="3" />
+	</csv>
 
 	<!-- Verify creation of Opp in subpanel -->
-	<link text="{@opp_record.name} {@user.name} {@stamp}" click="false" />
+	<div id="list_subpanel_opportunities">
+		<table class="list view">
+			<link text="{@opp_record.name} {@user.name} {@stamp}" click="false" />
+		</table>
+	</div>
 
 
 
 	<!--Delete records-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Contacts_1492.xml finished." />
 </soda>

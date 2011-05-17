@@ -13,7 +13,7 @@
 	<timestamp />
 	<link id="moduleTab_Meetings" />
 	<link text="Schedule Meeting" />
-
+	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record" />
 		<textfield id="name" set="{@meeting_record.name} {@user.name} {@stamp}" />
 
@@ -29,7 +29,7 @@
 		<var var="meeting1_label" set="{@meeting_record.status}:{@meeting1_name}" />
 	<button value="Save" />
 
-	<wait timeout="10" />
+	<wait timeout="3" />
 	
 	<link id="moduleTab_Calendar" />
 	<button value=" Shared " />

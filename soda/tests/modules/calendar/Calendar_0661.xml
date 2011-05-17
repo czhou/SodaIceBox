@@ -6,6 +6,7 @@
 
 	<link href="index.php?module=Meetings&amp;action=index" />
 	<link text="Schedule Meeting" />
+	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record">
 		<textfield id="name" set="{@meeting_record.name} {@user.name} {@stamp}" />
 		<textfield id="location" set="{@meeting_record.location}" />
@@ -18,7 +19,7 @@
 		<select name="duration_minutes" set="{@meeting_record.duration_minutes}" />
 		<checkbox name="reminder_checked" set="{@meeting_record.reminder_checked}" />
 		<button value="Save" />
-
+		<wait timeout="3" />
 		<browser assert="{@meeting_record.name} {@user.name} {@stamp}" />
 
 		<!--Save the account id & name -->

@@ -1,0 +1,5 @@
+name,phonework,phonemobile,phonefax,des
+con1,2,3,4,24
+con2,2,3,,
+con3,a,2,3,
+con4,-2,3,4,-24
