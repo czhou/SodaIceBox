@@ -2,7 +2,9 @@
 	<puts text="Test: Opportunity_2297.xml starting" />
 	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2297.csv" var="Opportunity_2297">
 		<link id="moduleTab_Opportunities" />
-		<browser assert="Opportunities" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Opportunities&amp;action=index" click="false" />
+		</div>
 		<link text="Basic Search" required="false" />
 
 		<button id="search_form_clear" />

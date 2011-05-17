@@ -12,7 +12,7 @@
     <script file='{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml'/>
     <script file='{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml'/>
     <script file='{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml'/>
-	<script file='{@global.scriptsdir}/modules/lib/Case_Create_Lib_NoDep.xml.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml'/>
 	<script file='{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml'/>
     <puts text="Opp_UnInit_Lib: Finished" />
 </soda>

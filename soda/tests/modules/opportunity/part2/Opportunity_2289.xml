@@ -2,7 +2,9 @@
 	<puts text="Test: Opportunity_2289.xml starting" />
 	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2289.csv" var="Opportunity_2289">
 		<link id="moduleTab_Opportunities" />
-		<browser assert="Opportunities" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Opportunities&amp;action=index" click="false" />
+		</div>
 		<button id="search_form_clear" />
 		<form id="search_form">
 			<textfield id="name_basic" set="{@pre_opp_name}" />
@@ -20,11 +22,12 @@
 
 		<div id="list_subpanel_activities">
 			<table class="list view">
-				<button value="  Log Call  " />
+				<button id="Activities_logcall_button" />
 			</table>
 		</div>
 
 		<!--teams select-->
+		<!-- For Friday's review result, comment the team selection section - Eric
 		<table id="form_SubpanelQuickCreate_Calls_team_name_table">
 			<button value="Select" />
 		</table>
@@ -32,7 +35,8 @@
 		<textfield name="name" set="{@Opportunity_2289.team_name}" />
 		<button value="Search" />
 		<link text="{@Opportunity_2289.team_name}" />
-
+		 -->
+		<!-- I prefer to keep the full fields of call creation to make sure all of fields can work fine - Eric -->
 		<form id="form_SubpanelQuickCreate_Calls">
 			<textfield id="name" set="{@Opportunity_2289.call_name} {@user.name} {@stamp}" />
 			<textfield id="date_start_date" set="{@Opportunity_2289.call_date_start_date}" />
@@ -49,8 +53,7 @@
 			<textfield id="description" set="{@Opportunity_2289.call_description}" />
 			<button id="Calls_subpanel_save_button" />
 		</form>
-
-		<wait timeout="2" />
+		
 		<div id="list_subpanel_activities">
 			<wait timeout="5" />
 			<link text="{@Opportunity_2289.call_name} {@user.name} {@stamp}" click="false" />
