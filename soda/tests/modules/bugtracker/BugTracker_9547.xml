@@ -1,0 +1,46 @@
+<soda>
+	<!-- BugTracker_9547.xml: Select all records-Verify that no records are deleted after pagination. -->
+	<puts text="Test: BugTracker_9547.xml starting." />
+	<csv file="{@global.scriptsdir}/csvs/bugtracker/BugTrackerAssertText.csv" var="bugtracker" />
+
+	<!-- Create bug tracker record and six contacts to attach to it. -->
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+	
+	<!-- Change the number of items in a ListView. -->
+	<link text="Admin" />
+	<link text="System Settings" />
+	<browser assert="System Settings" />
+	<textfield name="list_max_entries_per_page" set="2" />
+	<button name="save" />
+	
+	<!-- Go to BugTracker -->
+	<link id="moduleTab_Bugs" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Bugs&amp;action=index" click="false" />
+	</div>
+
+	<link id="select_link" />
+	<link name="selectall" />
+	<button id="listViewNextButton" />
+	
+	<link id="actions_link" />
+	<link text="Delete" alert="false" />
+	<span class="pageNumbers" assert="(3 - 4 of 6)" />
+
+	<!-- Cleanup: Restore the number of items in a ListView. -->
+	<link text="Admin" />
+	<link text="System Settings" />
+	<browser assert="System Settings" />
+	<textfield name="list_max_entries_per_page" set="10" />
+	<button name="save" />	
+	
+	<!-- Cleanup: Delete test data. -->
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
+
+	<puts text="Test: BugTracker_9547.xml finished." />
+</soda>
