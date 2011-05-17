@@ -1,6 +1,9 @@
 <soda>
 	<script file="{@global.scriptsdir}/modules/subpanels/module_lib/cleanup-subpanels.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
-	<browser action="close" />
+	
+	<!-- Commented logout script and browser action call because the cleanup-subpanel script already log's out -->
+	<!-- <script file="{@global.scriptsdir}/modules/lib/logout.xml" /> -->
+	<!-- <browser action="close" /> -->
+	
 </soda>
 
