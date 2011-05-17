@@ -15,6 +15,13 @@
 	</block>
 	
 	<block>
+		<testfile>BugTracker_9546</testfile>
+		<bugnumber>44021</bugnumber>
+		<reason>"Delete All" after pagination only deletes one page.</reason>
+		<modulename>Bug Tracker</modulename>
+	</block>
+	
+	<block>
 		<testfile>Accounts_0017</testfile>
 		<bugnumber>43294</bugnumber>
 		<reason>Bug43294</reason>
