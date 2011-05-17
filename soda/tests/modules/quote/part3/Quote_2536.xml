@@ -24,13 +24,12 @@
         <button value='Search'/>
         <link text='{@Contract_Create_Lib}'/>
          
-		<!-- contracts subpanel is hidden by default from 6.1.0 -->
-        <!--<div id='list_subpanel_contracts'>
+        <div id='list_subpanel_contracts'>
             <table class='list view'>
                 <browser assert='{@Contract_Create_Lib}'/>
                 <link text='{@Contract_Create_Lib}' click='false'/>
             </table>
-        </div>-->
+        </div>
     </csv>
     <!--Run Delete XML-->    
     <div id='list_subpanel_contracts'>
