@@ -1,0 +1,22 @@
+<soda>
+    <puts text='--------Bug 32150 Started--------' />
+    <puts text='-- system-generated display label from field name does not copy over the first underscore --' />
+
+    <!-- Login -->
+    <script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+    <!-- Go to add field dialog -->
+    <link text="Admin" />
+    <link text="Studio" />
+    <link text="Accounts" class="studiolink" />
+    <link text="Fields" class="studiolink" />
+    <button value="Add Field" />
+
+    <!-- Input field name and invoke change event -->
+    <textfield id="field_name_id" set="___test__test_test" jscriptevent="change" />
+
+    <!-- Verify that there is no error message on the page -->
+    <textfield id="label_value_id" assert="test test test" />
+
+    <puts text='--------Bug 32150 Finished--------'/>
+</soda>
