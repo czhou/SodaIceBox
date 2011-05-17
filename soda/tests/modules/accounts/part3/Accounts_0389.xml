@@ -77,5 +77,6 @@
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0389.xml finished." />
 </soda>
