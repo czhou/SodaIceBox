@@ -45,31 +45,32 @@
       <wait timeout="5" />
       <link id="href_new" />
 	<wait timeout="3"/>
-	<select id="selector" assertnot="Bug" index="2"/>
-	<select id="selector" assertnot="Call" index="2"/>
-	<select id="selector" assertnot="Campaign" index="2"/>
-	<select id="selector" assertnot="CampaignLog" index="2"/>
-	<select id="selector" assertnot="Case" index="2"/>
-	<select id="selector" assertnot="Contact" index="2"/>
-	<select id="selector" assertnot="Contract" index="2"/>
-	<select id="selector" assertnot="Document" index="2"/>
-	<select id="selector" assertnot="Email" index="2"/>
-	<select id="selector" assertnot="Email Address" index="2"/>
-	<select id="selector" assertnot="Email Address(es)" index="2"/>
-	<select id="selector" assertnot="Lead" index="2"/>
-	<select id="selector" assertnot="Meeting" index="2"/>
-	<select id="selector" assertnot="Member of" index="2"/>
-	<select id="selector" assertnot="Members" index="2"/>
-	<select id="selector" assertnot="Note" index="2"/>
-	<select id="selector" assertnot="Opportunity" index="2"/>
-	<select id="selector" assertnot="Product" index="2"/>
-	<select id="selector" assertnot="Projects" index="2"/>
-	<select id="selector" assertnot="Prospect List" index="2"/>
-	<select id="selector" assertnot="Quote" index="2"/>
-	<select id="selector" assertnot="Quotes Ship to" index="2"/>
-	<select id="selector" assertnot="Task" index="2"/>
-	<select id="selector" assertnot="Team" index="2"/>
-	
+	<select id="selector">
+		<browser assertnot="Bug" index="2"/>
+		<browser assertnot="Call" index="2"/>
+		<browser assertnot="Campaign" index="2"/>
+		<browser assertnot="CampaignLog" index="2"/>
+		<browser assertnot="Case" index="2"/>
+		<browser assertnot="Contact" index="2"/>
+		<browser assertnot="Contract" index="2"/>
+		<browser assertnot="Document" index="2"/>
+		<browser assertnot="Email" index="2"/>
+		<browser assertnot="Email Address" index="2"/>
+		<browser assertnot="Email Address(es)" index="2"/>
+		<browser assertnot="Lead" index="2"/>
+		<browser assertnot="Meeting" index="2"/>
+		<browser assertnot="Member of" index="2"/>
+		<browser assertnot="Members" index="2"/>
+		<browser assertnot="Note" index="2"/>
+		<browser assertnot="Opportunity" index="2"/>
+		<browser assertnot="Product" index="2"/>
+		<browser assertnot="Projects" index="2"/>
+		<browser assertnot="Prospect List" index="2"/>
+		<browser assertnot="Quote" index="2"/>
+		<browser assertnot="Quotes Ship to" index="2"/>
+		<browser assertnot="Task" index="2"/>
+		<browser assertnot="Team" index="2"/>
+	</select>
       <select id="selector" set="{@wf_9043.selector}" />
       <button name="Save" />
       <button value="Next" />
