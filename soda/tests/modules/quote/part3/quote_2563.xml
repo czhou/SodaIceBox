@@ -1,0 +1,42 @@
+<soda>
+    	<csv file='{@global.scriptsdir}/csvs/quote/Quote_2536.csv' var='Quote_2536'>
+	<puts text="Test Case 2563: Select Contracts_Verify that new contracts can be successful 'Select' on the 'Contracts' sub-panel."/>
+        <link id='moduleTab_Quotes'/>
+        <browser assert='Quotes'/>
+        <form id='search_form'>
+            <button id='search_form_clear'/>
+            <textfield id='name_basic' set='{@pre_Quote_name}'/>
+            <button id='search_form_submit'/>
+        </form>
+
+        <table class='list view'>
+            <link text='{@pre_Quote_name}'/>
+        </table>
+        
+        <div id='list_subpanel_contracts'>
+            <table class='list view'>
+                <button id='contracts_quotes_select_button'/>
+            </table>
+        </div>           
+        <!--Contract select-->
+        <browser assert='Contract Search'/>                        
+        <textfield name='name_advanced' set='{@Contract_Create_Lib}'/>                        
+        <button value='Search'/>
+        <link text='{@Contract_Create_Lib}'/>
+         
+        <div id='list_subpanel_contracts'>
+            <table class='list view'>
+                <browser assert='{@Contract_Create_Lib}'/>
+            </table>
+        </div>
+    </csv>
+    <!--Run Delete XML-->    
+    <div id='list_subpanel_contracts'>
+        <table class='list view'> 
+            <link class='listViewTdToolsS1' index='2' alert='true' />
+            <wait timeout='2' />
+            <link text='{@Contract_Create_Lib}' click='false' exist='false' />
+        </table>
+    </div>
+    <puts text="Test Case 2563 finished!"/>
+</soda>
