@@ -63,7 +63,7 @@
 	<link id="moduleTab_Reports" />
 	<link text="Basic Search" required="false"/>
 	<button name="clear" />
-	<textfield name="name" set="{@report_name}" />
+	<textfield name="name_basic" set="{@report_name}" />
 	<button value="Search" />
 	<table class="list view">
 		<browser assert="{@report_name}" />
