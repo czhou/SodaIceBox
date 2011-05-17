@@ -1,6 +1,13 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>BugTracker_0654</testfile>
+		<bugnumber>43344</bugnumber>
+		<reason>DetailView pagination disappears when you save or cancel on the EditView.</reason>
+		<modulename>Bug Tracker</modulename>
+	</block>
+	
+	<block>
 		<testfile>BugTracker_9546</testfile>
 		<bugnumber>44021</bugnumber>
 		<reason>"Delete All" after pagination only deletes one page.</reason>
