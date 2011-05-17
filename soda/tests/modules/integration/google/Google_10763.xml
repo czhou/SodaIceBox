@@ -6,6 +6,7 @@
             <textfield id="name_basic" set="{@Contract_Create_Lib}"/>
         </form>
     <button id="search_form_submit"/>
+    <wait timeout="2" />
     <table class="list view">
         <link text="{@Contract_Create_Lib}"/>
     </table>
