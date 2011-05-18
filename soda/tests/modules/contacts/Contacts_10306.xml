@@ -1,0 +1,53 @@
+<soda>
+	<!--
+	Action:
+		a. Go in to a already saved Contact (when creating a new contact, the field works as it should!)
+		b. Go to edit view of the contact
+		c. Click (or tab down) to the Reports To field. A single space is already in the field
+		d. Start writing a name/letter of a contact that you know is present in the system
+	Result:
+		No pre-filled values and get a result
+	-->
+	<puts text="Test: Contacts_10306.xml starting." />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<var var="10306_first_contact_first_name" set="{@pre_contact_first_name}"/>
+	<timestamp/>
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<var var="10306_second_contact_first_name" set="{@pre_contact_first_name}"/>
+
+	<!-- *1* Go to contact module -->
+	<link id="moduleTab_Contacts" />
+	<wait timeout="3" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+	</div>
+
+	<!-- *2* Go to created contact detail view-->
+	<form id="search_form">
+		<button name="clear" />
+		<textfield id="search_name_basic" set="{@10306_first_contact_first_name}" />
+		<button id="search_form_submit" />
+	</form>
+	<wait timeout="3" />
+	<table class="list view">
+		<link text="{@10306_first_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+	<wait timeout="3" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+		<browser assert="{@10306_first_contact_first_name} {@pre_contact_last_name}" />
+	</div>
+	<button id="edit_button"/>
+
+	<!--Update Reports To field with space at start-->
+	<textfield id="report_to_name" set=" {@10306_second_contact_first_name}"/>
+	<textfield id="report_to_name" assertnot="{@10306_second_contact_first_name} {@pre_contact_last_name}"/>
+
+
+	<link id="moduleTab_Contacts" alert="true"/>
+	
+	<!--Delete pre-created contact -->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	
+	<puts text="Test: Contacts_10306.xml finished." />
+</soda>
