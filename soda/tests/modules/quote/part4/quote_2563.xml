@@ -1,0 +1,45 @@
+<soda>
+	<!-- Relationship-Select Contracts_Verify that New Contracts related can be successful 
+		"select"on the Cobtracts. -->
+	<puts text="Test: Quote_2563.xml starting" />
+	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2563.csv" var="Quote_2563">
+
+		<link href="index.php?module=Quotes&amp;action=index" />
+		<link text="Basic Search" required="false" />
+		<button id="search_form_clear" />
+
+		<form id="search_form">
+			<textfield id="name_basic" set="{@pre_Quote_name}" />
+		</form>
+
+		<button id="search_form_submit" />
+
+		<table class="list view">
+			<browser assert="{@pre_Quote_name}" />
+			<link text="{@pre_Quote_name}" click="true" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@pre_Quote_name}" />
+		</table>
+		<div id="list_subpanel_contracts">
+			<table class="list view">
+				<button id="contracts_quotes_select_button" />
+			</table>
+		</div>
+		<!--Contract select -->
+		<browser assert="Contract Search" />
+		<textfield name="name_advanced" set="{@Contract_Create_Lib}" />
+		<button value="Search" />
+		<link text="{@Contract_Create_Lib}" />
+
+		<div id="list_subpanel_contracts">
+			<table class="list view">
+				<browser assert="{@Contract_Create_Lib}" />
+				<link text="{@Contract_Create_Lib}" click="false" />
+			</table>
+		</div>
+		<var var="Quote_2563" set="{@Quote_2563.name} {@user.name} {@stamp}" />
+	</csv>
+
+	<puts text="Test: Quote_2563.xml finished" />
+</soda>

@@ -36,7 +36,7 @@
 		<button value="Search" />
 		<link text="{@call_record.team_name}" />
 		<button value="Save" />
-
+		<wait timeout="3" />
 		<browser assert="{@call_record.name} {@user.name} {@stamp}" />
 
 		<!--Save the account id & name -->

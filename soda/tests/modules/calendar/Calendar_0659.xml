@@ -28,8 +28,21 @@
 			<button value="Select" />
 		</div>
 	</csv>
-
+	
 	<h5 class="calSharedUser" assert="{@Calendar0659.last_name}" />
+	
+	<!-- Clean up -->
+	<link id="moduleTab_Calendar" />
+	<link text="View Calendar" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Calendar&amp;action=index" click="false" />
+	</div>
+	<button value=" Shared " />
+	<div id="shared_cal_edit">
+		<select id="team_id" set="Administrator" />
+		<button value="Select" />
+	</div>
+	
 
 	<puts text="Test: Calendar_0659.xml finished." />
 </soda>

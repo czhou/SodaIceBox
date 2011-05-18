@@ -1,0 +1,68 @@
+<soda>
+	<!-- Relationship-Edit Task_Verify that task can be successful canceled on the "Activity"sub-panel. -->
+	<puts text="Test: Quote_2568.xml starting" />
+	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2568.csv" var="Quote_2568">
+		<link href="index.php?module=Quotes&amp;action=index" />
+		<link text="Basic Search" required="false" />
+		<button id="search_form_clear" />
+		<textfield id="name_basic" set="{@pre_Quote_name}" />
+		<button id="search_form_submit" />
+
+		<table class="list view">
+			<browser assert="{@pre_Quote_name}" />
+			<link text="{@pre_Quote_name}" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@pre_Quote_name}" />
+		</table>
+
+		<div id="list_subpanel_activities">
+			<button id="Activities_createtask_button" />
+			<wait timeout="3" />
+		</div>
+		<timestamp />
+		<form id="form_SubpanelQuickCreate_Tasks">
+			<button id="Tasks_subpanel_full_form_button" />
+			<wait timeout="5" />
+		</form>
+		<textfield id="name" set="{@Quote_2568.task_name} {@user.name} {@stamp}" />
+		<select id="priority" set="{@Quote_2568.task_priority}" />
+		<select id="status" set="{@Quote_2568.task_status}" />
+		<textfield id="description" set="{@Quote_2568.task_description}" />
+
+		<!--Due Date -->
+		<textfield id="date_due_date" set="{@Quote_2568.task_date_due_date}" />
+		<select id="date_due_hours" set="{@Quote_2568.task_date_due_hours}" />
+		<select id="date_due_minutes" set="{@Quote_2568.task_date_due_minutes}" />
+		<!--select id="date_due_meridiem" set="{@Quote_2568.task_date_due_meridiem}"/ -->
+		<checkbox id="date_due_flag" set="{@Quote_2568.task_date_due_flag}" />
+
+		<!--Start Date -->
+		<textfield id="date_start_date" set="{@Quote_2568.task_date_start_date}" />
+		<select id="date_start_hours" set="{@Quote_2568.task_date_start_hours}" />
+		<select id="date_start_minutes" set="{@Quote_2568.task_date_start_minutes}" />
+		<!--select id="date_start_meridiem" set="{@Quote_2568.task_date_start_meridiem}"/ -->
+		<checkbox id="date_start_flag" set="{@Quote_2568.task_date_start_flag}" />
+		<button value="Save" />
+		<wait timeout="3" />
+
+		<div id="list_subpanel_activities">
+			<row class="oddListRowS1">
+				<link class="listViewTdToolsS1" index="1" click="true" />
+			</row>
+		</div>
+
+		<form id="EditView">
+			<textfield id="name" set="{@Quote_2568.task_name} {@stamp}" />
+			<button id="CANCEL" alert="true" />
+		</form>
+		<div id="list_subpanel_activities">
+			<table class="list view">
+				<browser assert="{@Quote_2568.task_name} {@user.name} {@stamp}" />
+			</table>
+		</div>
+		<var var="Quote_2568" set="{@Quote_2568.name} {@user.name} {@stamp}" />
+	</csv>
+
+	<puts text="Test: Quote_2568.xml finished" />
+</soda>
