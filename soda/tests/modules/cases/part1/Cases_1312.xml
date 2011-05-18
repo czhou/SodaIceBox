@@ -1,0 +1,71 @@
+<soda>
+	<!-- Cases_1312.xml: Pagination: Verify that pagination works in "Contact" pop up window. -->
+	<puts text="Test: Cases_1312.xml starting." />
+	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
+	
+	<!-- Change the number of items in a ListView. -->
+	<link text="Admin" />
+	<link text="System Settings" />
+	<browser assert="System Settings" />
+	<textfield name="list_max_entries_per_page" set="2" />
+	<button name="save" />
+
+	<!-- Create a case and six contacts (one is created along with the case). -->
+	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	
+	<link id="moduleTab_Cases" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Cases&amp;action=index" click="false" />
+	</div>
+
+	<link text="{@pre_case_name}" />
+
+	<div id="list_subpanel_contacts">	
+		<button id="contacts_cases_select_button" />
+	</div>
+	<button value="Clear" />
+	<button value="Search" />
+	<span class="pageNumbers" assert="(1 - 2 of 6)" />
+
+	<button id="popupViewNextButton" />
+	<span class="pageNumbers" assert="(3 - 4 of 6)" />
+
+	<button id="popupViewNextButton" />
+	<span class="pageNumbers" assert="(5 - 6 of 6)" />
+
+	<button id="popupViewPrevButton" />
+	<span class="pageNumbers" assert="(3 - 4 of 6)" />
+
+	<button id="popupViewPrevButton" />
+	<span class="pageNumbers" assert="(1 - 2 of 6)" />
+
+	<button id="popupViewEndButton" />
+	<span class="pageNumbers" assert="(5 - 6 of 6)" />
+
+	<button id="popupViewStartButton" />
+	<span class="pageNumbers" assert="(1 - 2 of 6)" />
+	
+	<td class="oddListRowS1">
+		<link index="1" />
+		<wait timeout="3" />
+	</td>
+
+	<!-- Cleanup: Restore the number of items in a ListView. -->
+	<link text="Admin" />
+	<link text="System Settings" />
+	<browser assert="System Settings" />
+	<textfield name="list_max_entries_per_page" set="10" />
+	<button name="save" />	
+
+	<!-- Clean up test data. -->
+	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	
+	<puts text="Test: Cases_1312.xml finished." />
+</soda>
