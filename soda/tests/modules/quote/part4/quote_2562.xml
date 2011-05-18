@@ -1,0 +1,51 @@
+<soda>
+	<!-- Relationship-Create Contracts_Verify that new contracts can be created on the 
+		"Contracts" sub-panel. -->
+	<puts text="Test: Quote_2562.xml starting" />
+	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2562.csv" var="Quote_2562">
+		<link href="index.php?module=Quotes&amp;action=index" />
+		<link text="Basic Search" required="false" />
+		<button id="search_form_clear" />
+		<textfield id="name_basic" set="{@pre_Quote_name}" />
+		<button id="search_form_submit" />
+
+		<table class="list view">
+			<browser assert="{@pre_Quote_name}" />
+			<link text="{@pre_Quote_name}" click="true" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@pre_Quote_name}" />
+		</table>
+
+		<div id="list_subpanel_contracts">
+			<table class="list view">
+				<button name="contracts_quotes_create_button" />
+				<wait timeout="3" />
+			</table>
+		</div>
+
+		<!--Opportunity select -->
+		<button id="btn_opportunity_name" />
+		<browser assert="Opportunity Search" />
+		<textfield name="name_advanced" set="{@pre_opp_name}" />
+		<button value="Search" />
+		<table class="list view">
+			<link text="{@pre_opp_name}" />
+		</table>
+
+		<form id="form_SubpanelEditView_Contracts">
+			<textfield name="name" set="{@Quote_2562.contract_name_edit}" />
+			<select id="status" set="{@Quote_2562.contract_status_edit}" />
+			<button id="Contracts_subpanel_save_button" />
+		</form>
+		<wait />
+		<div id="list_subpanel_contracts">
+			<table class="list view">
+				<browser assert="{@Quote_2562.contract_name_edit}" />
+			</table>
+		</div>
+		<var var="Quote_2562" set="{@Quote_2562.name} {@user.name} {@stamp}" />
+	</csv>
+
+	<puts text="Test: Quote_2562.xml finished" />
+</soda>

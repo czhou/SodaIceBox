@@ -1,0 +1,57 @@
+<soda>
+	<!-- Edit Meeting for Quote_Verify that "Schedule Meeting" can be successful modified 
+		on the "Activity" sub-panel. -->
+	<puts text="Test: Quote_2569.xml starting" />
+	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2569.csv" var="Quote_2569">
+		<link href="index.php?module=Quotes&amp;action=index" />
+		<link text="Basic Search" required="false" />
+		<button id="search_form_clear" />
+		<textfield id="name_basic" set="{@pre_Quote_name}" />
+		<button id="search_form_submit" />
+
+		<table class="list view">
+			<browser assert="{@pre_Quote_name}" />
+			<link text="{@pre_Quote_name}" click="true" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@pre_Quote_name}" />
+		</table>
+		<div id="list_subpanel_activities">
+			<table class="list view">
+				<button id="Activities_schedulemeeting_button" />
+				<wait timeout="5" />
+			</table>
+		</div>
+
+		<div id="form_SubpanelQuickCreate_Meetings_tabs">
+			<textfield id="name" set="{@Quote_2569.meeting_name} {@user.name} {@stamp}" />
+		</div>
+		
+		<form id="form_SubpanelQuickCreate_Meetings">
+			<button id="Meetings_subpanel_save_button" />
+			<wait timeout="3" />
+		</form>
+		
+		<div id="list_subpanel_activities">
+			<table class="list view">
+				<browser assert="{@Quote_2569.meeting_name} {@user.name} {@stamp}" />
+				<link text="{@Quote_2569.meeting_name} {@user.name} {@stamp}" click="false" />
+				<link class="listViewTdToolsS1" index="1" />
+			</table>
+		</div>
+
+		<form id="EditView">
+			<textfield id="name" set="{@Quote_2569.meeting_name} {@stamp}" />
+			<button value="Save" alert="true" />
+		</form>
+		<div id="list_subpanel_activities">
+			<table class="list view">
+				<browser assert="{@Quote_2569.meeting_name} {@stamp}" />
+			</table>
+		</div>
+	</csv>
+	<!-- Delete meeting -->
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+
+	<puts text="Test: Quote_2569.xml finished" />
+</soda>
