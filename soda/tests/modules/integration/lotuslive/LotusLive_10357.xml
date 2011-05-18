@@ -7,7 +7,7 @@
 	<form id="EditView">
 		<timestamp />
 		<textfield name="document_name" set="Sugar_Doc {@user.name} {@stamp}" /> 
-		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/10355.txt" />
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/10355.txt" />
 		<button value="Save" />
 	</form>
 	

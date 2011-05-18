@@ -8,7 +8,7 @@
 		<timestamp />
 		<select id="doc_type" set="Google" />
 		<textfield name="document_name" set="Google_Doc {@user.name} {@stamp}" /> 
-		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/10356.txt" />
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/google/10356.txt" />
 		<button value="Save" />
 	</form>
 	
