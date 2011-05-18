@@ -1,0 +1,54 @@
+<soda>
+
+	<puts text="Test Case 2577: Relationship - Edit Project_Verify that 'Projects' can be successful modified on the 'Projects' sub-panel."/>
+
+        <!--Go to Quotes module and search out the quote record create in lib-->
+        <link id='moduleTab_Quotes'/>
+        <browser assert='Quotes'/>
+        <form id='search_form'>
+            <button id='search_form_clear'/>
+            <textfield id='name_basic' set='{@pre_Quote_name}'/>
+            <button id='search_form_submit'/>
+        </form>
+
+        <table class='list view'>
+            <link text='{@pre_Quote_name}'/>
+        </table>
+
+        <!--Create a Project record in Project subpanel.-->
+        <browser assert="Quote Overview"/>
+        <button id="projects_quotes_create_button"/>
+        <wait timeout="5"/>
+        <textfield id="name" set="New Project Record"/>
+        <textfield name="estimated_start_date" set="05/10/2011"/>
+        <textfield name="estimated_end_date" set="06/10/2011"/>
+        <button id="Project_subpanel_save_button"/> 
+        <wait timeout="5"/>
+        <browser assert="New Project Record"/>
+
+	<!--Edit the project record-->
+        <div id="list_subpanel_project">
+                <link class="listViewTdToolsS1" index="1"/>
+        </div>
+	<wait timeout="3"/>
+	
+        <textfield id="name" set="Modified Project Record"/>
+	<button id="SAVE"/>
+	<wait timeout="5"/>
+
+        <div id="list_subpanel_project">
+                <link text="Modified Project Record" click="false"/>
+        </div>
+
+	<!--Delete the project record created in this case-->
+        <div id="list_subpanel_project">
+                <link text="Modified Project Record" />
+        </div>
+	
+	<wait timeout="3"/>
+	<browser assert="Project Overview"/>
+
+        <button id="delete_button" alert="true"/>
+        <wait timeout="5"/>
+        <puts text="End Test Case 2577 is finished!"/>
+</soda>
