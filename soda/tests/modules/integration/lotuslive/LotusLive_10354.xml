@@ -16,7 +16,7 @@
 	<link text="Sugar_Doc" />
 	<wait timeout="2" />
 
-	<button id="documents_contracts_select_button" />
+	<button id="contracts_documents_select_button" />
 	<link text="LotusLive_Doc" />
 	<wait timeout="2" />
 
