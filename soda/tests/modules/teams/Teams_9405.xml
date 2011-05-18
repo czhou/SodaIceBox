@@ -8,6 +8,8 @@
 
 	<link id="actions_link" />
 	<link text="Mass Update" />
+	<wait timeout="3" />
+	
 	<table id="MassUpdate_team_name_table">
 		<button value="Select" />
 	</table>	
@@ -19,6 +21,8 @@
 			<checkbox name="massall" click="true" />				
 		</table>
 		<button value="  Select  " />
+		<wait timeout="3" />
+		
 		<table id="MassUpdate_team_name_table">
 			<textfield id="team_name_collection_0" assert="{@Teams_9405.team0}" />
 			<textfield id="team_name_collection_1" assert="{@Teams_9405.team1}" />

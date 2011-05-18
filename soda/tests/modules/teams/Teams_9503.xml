@@ -22,6 +22,7 @@
 			<checkbox name="massall" click="true" />
 		</table>
 		<button value="  Select  " />
+		<wait timeout="3" />
 
 		<form id="EditView">
 			<textfield id="team_name_collection_0" assert="{@teams_9503.team0}" /> 

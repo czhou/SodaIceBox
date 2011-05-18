@@ -25,7 +25,7 @@
 	<!--create a Meeting-->
 	<div id="list_subpanel_activities">
       <button value="  Schedule Meeting  " />
-      <wait timeout="3" />
+      <wait timeout="5" />
 	</div>
 	<timestamp />
 
@@ -34,7 +34,7 @@
          <textfield id="name" set="{@Case_1363.name} {@user.name} {@stamp}" />
       </div>
 		<button id="Meetings_subpanel_save_button" />
-		<wait timeout="3" />
+		<wait timeout="5" />
 	</csv>
 
 	<div id="list_subpanel_activities">
