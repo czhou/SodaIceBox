@@ -1,6 +1,6 @@
 <soda>
 
-	<puts text="Test Case 2575: Edit Mail_Verify that 'Archive Email' can be successful modified on the 'Cases' sub-panel."/>
+	<puts text="Test Case 2576: Verify that modifying 'Archive Email' can be successful canceled on the 'Cases' sub-panel."/>
 
         <!--Go to Quotes module and search out the quote record create in lib-->
         <link id='moduleTab_Quotes'/>
@@ -35,11 +35,11 @@
 
         <!--Edit the Archived Email record-->
         <textfield id="subjectfield" set="Modified Archived Email"/>
-        <button value="  Save  "/>
+        <button value="  Cancel  " alert="true"/>
         <wait timeout="5"/>
         
         <div id="list_subpanel_history">
-                <link text="Modified Archived Email" click="false"/>
+                <link text="New Archived Email" click="false"/>
         </div>
 	
         <!--Delete the Archived Eamil record created in this case.-->
@@ -49,7 +49,7 @@
 
         <wait timeout="5"/>
         <div id="list_subpanel_history">
-                <link text="Modified Archived Email" exist="false" click="false"/>
+                <link text="New Archived Email" exist="false" click="false"/>
         </div>
-        <puts text="End Test Case 2575"/>
+        <puts text="End Test Case 2576"/>
 </soda>
