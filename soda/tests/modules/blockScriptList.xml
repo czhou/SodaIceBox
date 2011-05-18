@@ -994,4 +994,11 @@
 		<reason>Implied budget of zero causes report criteria to fail</reason>
 		<modulename>Reports</modulename>
 	</block>
+
+	<block>
+		<testfile>wf_9043</testfile>
+		<bugnumber>44048</bugnumber>
+		<reason>Need the ability to assert duplicaed options in select list.</reason>
+		<modulename>Workflow</modulename>
+	</block>
 </soda>

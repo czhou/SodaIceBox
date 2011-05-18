@@ -1,0 +1,9 @@
+name,city,state,des
+acc1,2,3,8
+acc2,2,-2,0.25
+acc3,2,0,1
+acc4,0,3,0
+acc5,a,2,
+acc6,2,a,
+acc7,,2,
+acc8,2,,

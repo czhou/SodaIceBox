@@ -27,10 +27,8 @@
 	<button id="Contracts_subpanel_save_button"/>
 	<wait timeout="5"/>
          
-        <div id='list_subpanel_contracts'>
-            <table class='list view'>
+        <div id="list_subpanel_contracts">
                 <browser assert="New Contract Recrod"/>
-            </table>
         </div>
     </csv>
     <!--Run Delete XML-->    

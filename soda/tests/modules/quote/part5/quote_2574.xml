@@ -1,6 +1,6 @@
 <soda>
 
-	<puts text="Test Case 2573: Edit Note or Attachment_Verify that 'Create Note or Attachment' can be successful modified on the 'Quote' sub-panel."/>
+	<puts text="Test Case 2574: Verify that modifying 'Create Note or Attachment' can be successful canceled on the 'Cases' sub-panel."/>
 
 	<!--Go to Quotes module and search out the quote record create in lib-->
         <link id='moduleTab_Quotes'/>
@@ -31,21 +31,21 @@
 	<wait timeout="5"/>
 	
 	<textfield id="name" set="Modified note record"/>
-	<button id="SAVE"/>
+	<button id="CANCEL" alert="true"/>
 	<wait timeout="5"/>
 
 	<div id="list_subpanel_history">	
-		<browser assert="Modified note record"/>
+		<browser assert="New note record"/>
 	</div>
 
 	<!--Delete the note record created in this case.-->
 	<link id="moduleTab_Notes"/>
 	<button id="search_form_clear"/>
-	<textfield id="name_basic" set="Modified note record"/>
+	<textfield id="name_basic" set="New note record"/>
 	<button id="search_form_submit"/>
 	<checkbox id="massall" click="true"/>
 	<link id="actions_link"/>
 	<link text="Delete" alert="true"/>
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />
-	<puts text='Quote_2556.xml---Finished!'/>   
+	<puts text="Test Case: 2574 is finished!"/>   
 </soda>
