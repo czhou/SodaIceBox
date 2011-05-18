@@ -1,6 +1,8 @@
 <soda>
 	<script file="tests/modules/quote/module_lib/setup-quote.xml" />
+	<script file="test/modules/quote/part5/module_lib/setup-quote-part5.xml"/>
 	<script fileset="tests/modules/quote/part5" />
+	<script file="test/modules/quote/part5/module_lib/cleanup-quote-part5.xml"/>
 	<script file="tests/modules/quote/module_lib/cleanup-quote.xml" />
 </soda>
 
