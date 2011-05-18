@@ -1,0 +1,46 @@
+<soda>
+	<!-- Relationship-Create Note or Attachment_Verify that new Note or Attachment can 
+		be canceled for Activites under "Quote" sub-panel -->
+	<puts text="Test: Quote_2557.xml starting" />
+
+	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2557.csv" var="Quote_2557">
+		<link href="index.php?module=Quotes&amp;action=index" />
+		<link text="Basic Search" required="false" />
+		<button id="search_form_clear" />
+
+		<form id="search_form">
+			<textfield id="name_basic" set="{@pre_Quote_name}" />
+		</form>
+
+		<button id="search_form_submit" />
+
+		<table class="list view">
+			<browser assert="{@pre_Quote_name}" />
+			<link text="{@pre_Quote_name}" click="true" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@pre_Quote_name}" />
+		</table>
+
+		<button id="History_createnoteorattachment_button" />
+		<wait timeout="3" />
+		<timestamp />
+
+		<form id="form_SubpanelQuickCreate_Notes">
+			<textfield id="name" set="{@Quote_2557.note_name} {@user.name} {@stamp}" />
+			<textarea id="description" set="{@Quote_2557.note_description}" />
+			<button id="Notes_subpanel_cancel_button" alert="true" />
+			<wait timeout="3" />
+		</form>
+		<wait timeout="3" />
+		<div id="list_subpanel_history">
+			<table class="list view">
+				<link text="{@Quote_2557.note_name} {@user.name} {@stamp}" click="false"
+					exist="false" />
+			</table>
+		</div>
+
+		<var var="Quote_2557" set="{@Quote_2557.name} {@user.name} {@stamp}" />
+	</csv>
+	<puts text="Test: Quote_2557.xml finished" />
+</soda>

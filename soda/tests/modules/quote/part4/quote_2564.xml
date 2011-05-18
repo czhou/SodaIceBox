@@ -1,0 +1,44 @@
+<soda>
+	<!-- Relationship - Select Contracts_Verify that new contracts can be successfully 
+		created inline during the "Select" on the "Contracts" sub-panel.. -->
+	<puts text="Test: Quote_2564.xml starting" />
+
+	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2564.csv" var="Quote_2564">
+		<link href="index.php?module=Quotes&amp;action=index" />
+
+		<link text="Basic Search" required="false" />
+		<button id="search_form_clear" />
+		<textfield id="name_basic" set="{@pre_Quote_name}" />
+		<button id="search_form_submit" />
+
+		<table class="list view">
+			<browser assert="{@pre_Quote_name}" />
+			<link text="{@pre_Quote_name}" click="true" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@pre_Quote_name}" />
+		</table>
+
+		<div id="list_subpanel_contracts">
+			<table class="list view">
+				<button id="contracts_quotes_select_button" />
+				<wait timeout="3" />
+			</table>
+		</div>
+		<!--Conrtact select -->
+		<browser assert="Contract Search" />
+		<textfield name="name_advanced" set="{@Contract_Create_Lib}" />
+		<button value="Search" />
+		<link text="{@Contract_Create_Lib}" />
+
+		<div id="list_subpanel_contracts">
+			<table class="list view">
+				<browser assert="{@Contract_Create_Lib}" />
+				<link text="{@Contract_Create_Lib}" click="false" />
+			</table>
+		</div>
+	</csv>
+
+
+	<puts text="Test: Quote_2564.xml finished" />
+</soda>
