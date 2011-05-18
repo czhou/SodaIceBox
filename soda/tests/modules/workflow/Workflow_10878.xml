@@ -1,0 +1,64 @@
+<soda>
+	<!-- DVerify modules are not duplicated in workflow action setup -->
+	<puts text="Test: Workflow_43663.xml starting"/>
+	
+	<timestamp />
+	<var var="base" set="Bug 43663 SODA TEST {@stamp}" />
+	<var var="workflow" set="{@base}: Workflow" />
+
+	<!-- create workflow -->
+	<div id="globalLinks">
+		<link text="Admin" />
+	</div>
+	<link text="Workflow Management" />
+
+	<link id="moduleTab_WorkFlow" />
+	<link text="Create Workflow Definition" />
+
+	<textfield name="name" set="{@workflow}" />
+	<select name="base_module" set="Leads" />
+	<button value="/Save/" />
+
+	<table text="Actions">
+		<button value="/Create/" />
+	</table>
+
+	<radio name="action_type" value="new" click="true" />
+	<link text="record" />
+
+	<!-- check that list doesn"t contain values -->
+	<javascript>
+		var selector = document.getElementById("selector");
+		var test_passed = true;
+		for (var i = 0; i &lt; selector.options.length; i ++)
+		{
+			if ((selector.options[i].value == 'oldcalls') || (selector.options[i].value == 'oldmeetings'))
+			{
+				test_passed = false;
+			}
+		}
+		if (test_passed)
+		{
+			var div = document.createElement('div');
+			div.id = "test_passed";
+			div.innerHTML = "Test Passed";
+			selector.parentNode.insertBefore(div, selector);
+		}
+	</javascript>
+	<wait timeout="3" />
+	<browser assert="Test Passed"/>
+	<button name="Save" />
+	<wait timeout="1" />
+	<button name="Next" />
+	<wait timeout="1" />
+	<link text="Name" />
+	<wait timeout="1" />
+	<textfield id="field_0__field_value" set="Name This" />
+	<button value="Save" />
+	<wait timeout="1" />
+	<button value="  Save  " />
+	<wait timeout="3" />
+	
+	<!-- cleanup -->
+	<script file="{@global.scriptsdir}/modules/lib/Workflow_Delete_Lib.xml" />
+</soda>
