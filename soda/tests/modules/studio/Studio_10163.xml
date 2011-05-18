@@ -1,0 +1,64 @@
+<soda>
+    
+    <!-- not function test -->
+    <puts text="Test: Studio_10163.xml starting" />
+    <!-- set description field as calculated field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Calls" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="not($reminder_checked)"/>
+      <button value="Save" />
+      <wait timeout="3" />
+    </div>
+    
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+      <wait timeout="10" />
+    </form>
+    <browser assert="Add Field" />
+    
+    <!--create call record and check calculated field-->
+    <link id="moduleTab_Calls" />
+	     
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_10163.csv" var="studio10163">
+        <link text="Log Call" />
+		<wait timeout="3" />
+        <textfield id="name" set="{@studio10163.name} {@user.name} {@stamp}" />
+        <checkbox name="reminder_checked" set="{@studio10163.reminder}" />
+        <button value="Save" />
+        <wait timeout="3" />
+     
+	    <table id="detailpanel_1">
+	      <browser assert="{@studio10163.name} {@user.name} {@stamp}" />      
+	      <span id="description" assert="{@studio10163.des}" />
+	    </table>
+    </csv>
+    
+    <!-- Now uncalculated the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Calls" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="false" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+      <wait timeout="3" />
+    </form>
+   
+    
+    <!-- Delete calls record -->
+    <script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_10163.xml finished." />
+</soda>
