@@ -26,17 +26,13 @@
 	
 	<!--Modify the note record-->
 	<div id="list_subpanel_history">	
-		<table class="list view">
-			<tr class="oddListRowS1">
-				<image index="2" click="ture"/>
-			</tr>
-		</table>
+		<link class="listViewTdToolsS1" index="1"/>
 	</div>
-	<wait timeout="2"/>
+	<wait timeout="5"/>
 	
 	<textfield id="name" set="Modified note record"/>
 	<button id="SAVE"/>
-	<wait timeout="2"/>
+	<wait timeout="5"/>
 
 	<div id="list_subpanel_history">	
 		<browser assert="Modified note record"/>
