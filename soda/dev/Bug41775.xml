@@ -1,0 +1,27 @@
+<soda>
+	<puts text='--------Bug 41775 Started--------'/>
+	<puts text='-- When going to full form, Amount field does not copy over correctly --'/>
+
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<!-- setup -->
+	<div id="welcome">
+		<link text="Administrator" />
+	</div>
+	<link text="Advanced" />
+	<textfield name="num_grp_sep" set="," />
+	<textfield name="dec_sep" set="." />
+	<button value="Save" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+
+	<link text="Contacts" />
+	<link text="/{@contact_record.first_name} {@user.name} {@stamp}/" />
+	<button name="opportunities_contacts_create_button" />
+	<textfield name="amount" set="3,000.00" />
+	<button value="Full Form" />
+	<textfield name="amount" assert="3,000.00" />
+
+	<!-- cleanup -->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+</soda>
