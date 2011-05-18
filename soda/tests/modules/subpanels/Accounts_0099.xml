@@ -30,7 +30,7 @@
 			<select id="type" set="{@bug_record.type}" />
 			<select id="product_category" set="{@bug_record.product_category}" />
 		</form>
-
+		<wait timeout="3" />
 		<!--user select -->
 		<div id="form_SubpanelQuickCreate_Bugs_tabs">
 			<button id="btn_assigned_user_name" />

@@ -12,7 +12,7 @@
     </table>
     <browser assert="{@pre_ProductCatalog_name}"/>
 	
-	<button id="documents_select_button" />
+	<button id="documents_products_select_button" />
 	<link text="Google_Doc" />
 	<wait timeout="2" />
 

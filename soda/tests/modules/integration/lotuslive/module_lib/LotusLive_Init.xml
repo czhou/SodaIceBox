@@ -108,7 +108,7 @@
 	<wait timeout="10" />
 	<!-- Return to sugar external account detailview -->
 	<link text="LotusLive" click="false" exist="true" />
-	
+	<!-- Make the delete action manually
 	<browser url="https://www.lotuslive.com/en/" />
 	<link text="My LotusLive" />
 	<browser assert="Get Started" />
@@ -119,7 +119,7 @@
 	<link text="Delete" required="false" timeout="2" />
 	
 	<browser url="{@global.url}" />
-
+ 	-->
 	<!-- Create one sugar and one LL docs-->
 	<link id="moduleTab_Documents" />
 

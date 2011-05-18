@@ -12,11 +12,11 @@
     </table>
     <browser assert="{@pre_ProductCatalog_name}"/>
 	
-	<button id="documents_select_button" />
+	<button id="documents_products_select_button" />
 	<link text="Sugar_Doc" />
 	<wait timeout="2" />
 
-	<button id="documents_select_button" />
+	<button id="documents_products_select_button" />
 	<link text="LotusLive_Doc" />
 	<wait timeout="2" />
 
