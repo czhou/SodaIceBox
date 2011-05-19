@@ -1,0 +1,53 @@
+<soda>
+	<!-- Relationship - Edit Call_Verify that modifying "Schedule Call" can be successful 
+		canceled on the "Cases" sub-panel. -->
+	<puts text="Test: Quote_2572.xml starting" />
+	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2572.csv" var="Quote_2572">
+		<link href="index.php?module=Quotes&amp;action=index" />
+		<link text="Basic Search" required="false" />
+		<button id="search_form_clear" />
+		<textfield id="name_basic" set="{@pre_Quote_name}" />
+		<button id="search_form_submit" />
+
+		<table class="list view">
+			<browser assert="{@pre_Quote_name}" />
+			<link text="{@pre_Quote_name}" click="true" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@pre_Quote_name}" />
+		</table>
+		<div id="list_subpanel_activities">
+			<table class="list view">
+				<button id="Activities_logcall_button" />
+				<wait timeout="3" />
+			</table>
+		</div>
+
+		<timestamp />
+		<form id="form_SubpanelQuickCreate_Calls">
+			<textfield id="name" set="{@Quote_2572.call_name} {@user.name} {@stamp}" />
+			<textfield id="date_start_date" set="{@Quote_2572.call_date_start_date}" />
+			<select id="date_start_hours" set="{@Quote_2572.call_date_start_hours}" />
+			<select id="date_start_minutes" set="{@Quote_2572.call_date_start_minutes}" />
+
+			<textfield name="duration_hours" set="{@Quote_2572.call_duration_hours}" />
+			<select name="duration_minutes" set="{@Quote_2572.call_duration_minutes}" />
+
+			<select id="direction" set="{@Quote_2572.call_direction}" />
+			<select id="status" set="{@Quote_2572.call_status}" />
+
+			<checkbox name="reminder_checked" set="{@Quote_2572.call_reminder_checked}" />
+			<textfield id="description" set="{@Quote_2572.call_description}" />
+			<button value="Cancel" alert="true" />
+		</form>
+
+		<div id="list_subpanel_activities">
+			<table class="list view">
+				<link text="{@Quote_2572.call_name} {@user.name} {@stamp}" click="false"
+					exist="false" />
+			</table>
+		</div>
+	</csv>
+
+	<puts text="Test: Quote_2572.xml finished" />
+</soda>
