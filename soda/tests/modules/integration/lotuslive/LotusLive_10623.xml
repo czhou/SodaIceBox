@@ -11,7 +11,7 @@
 	<wait timeout="5" />
 
 	<textfield id="username" set="sugarqa3@gmail.com" required="false" timeout="2" />
-	<textfield id="password" set="sugar123" required="false" timeout="2" />
+	<textfield id="password" set="Sugar123" required="false" timeout="2" />
 	<link id="submit" required="false" timeout="2" />
 	
 	<wait timeout="5" />

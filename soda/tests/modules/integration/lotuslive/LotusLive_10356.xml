@@ -7,9 +7,9 @@
 	<form id="EditView">
 		<timestamp />
 		<select id="doc_type" set="LotusLive" />
-		<textfield name="document_name" set="LotusLive_Doc {@user.name} {@stamp}" /> 
+		<textfield id="document_name" set="LotusLive_Doc {@user.name} {@stamp}" /> 
 		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/10356.txt" />
-		<button value="Save" />
+		<button id="SAVE_HEADER" />
 	</form>
 	
 	<!-- Delete the created sugar doc-->
