@@ -26,7 +26,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
 <sodaconfig>
-   <gvar name="url">http://localhost/sugarcrm</gvar>
+ <!-- <gvar name="url">http://10.13.8.132/ent620_28/</gvar> -->  
+   <gvar name="url">http://mlouis-home.local:8888/SugarUlt-Full-6.2.0RC3.6341/</gvar>
    <gvar name="scriptsdir">tests</gvar>
    <cmdopt name="browser">firefox</cmdopt>
    <errorskip type="css" />
