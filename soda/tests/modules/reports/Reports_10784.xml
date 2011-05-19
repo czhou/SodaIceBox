@@ -10,7 +10,9 @@
 	<image name="matrixImg" click="true" />
 	<wait timeout="5" />
 
-	<table id="Accounts" click="true" />
+	<table id="Accounts">
+		<link text="Accounts" alert="true"/>
+	</table>
 
 
 	<wait timeout="5" />
