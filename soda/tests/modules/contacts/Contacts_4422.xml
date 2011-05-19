@@ -1,0 +1,52 @@
+<soda>
+	<!--Select bug_Verify that the selected bugs are displayed in "Bug" sub-panel of "Contact Detail View" page-->
+	<puts text="Test: Contacts_4422.xml starting." />
+
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+
+	<link id="moduleTab_Contacts" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+	</div>
+	<wait timeout="3" />
+
+	<textfield id="search_name_basic" set="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+	<wait timeout="3" />
+
+	<!--Select pre-created bug-->
+	<button id="contacts_bugs_select_button"/>
+
+	<textfield id="name_advanced" set="{@pre_bug_name}"/>
+
+	<form id="popup_query_form">
+		<button value="Search"/>
+	</form>
+	<table class="list view">
+		<link text="{@pre_bug_name}"/>
+	</table>
+
+	<div id="list_subpanel_bugs">
+		<link text="{@pre_bug_name}" click="false" exist="true"/>
+		<browser assert="{@pre_bug_name}"/>
+	</div>
+
+	<!-- Delete bug relattionship-->
+	<div id="list_subpanel_bugs">
+		<table class="list view">
+			<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
+			<wait timeout="2"/>
+			<link text="{@pre_bug_name}" click="false" exist="false"/>
+			<browser assertnot="{@pre_bug_name}"/>
+		</table>
+	</div>
+
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
+
+	<puts text="Test: Contacts_4422.xml finished." />
+</soda>
