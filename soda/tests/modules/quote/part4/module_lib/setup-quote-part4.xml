@@ -1,4 +1,5 @@
 <soda>
+	<script file="{@global.scriptsdir}/modules/lib/Enable_All_Lib.xml"/>
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/TaxRate_Create_Lib.xml" />

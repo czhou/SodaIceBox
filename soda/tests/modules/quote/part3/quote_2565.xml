@@ -28,7 +28,7 @@
 	<wait timeout="5"/>
          
         <div id="list_subpanel_contracts">
-                <browser assert="New Contract Recrod"/>
+		<link text="New Contract Record" click="false"/>
         </div>
     </csv>
     <!--Run Delete XML-->    
