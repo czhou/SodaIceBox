@@ -71,6 +71,80 @@
 	</block>
 	
 	<!-- Mazen's Modules -->
+	
+	<!-- Bug 44056 -->
+	<block>
+		<testfile>Leads_1922</testfile>
+		<bugnumber>44056</bugnumber>
+		<reason>Leads Convert Fails</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_1923</testfile>
+		<bugnumber>44056</bugnumber>
+		<reason>Leads Convert Fails</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_1924</testfile>
+		<bugnumber>44056</bugnumber>
+		<reason>Leads Convert Fails</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_1985</testfile>
+		<bugnumber>44056</bugnumber>
+		<reason>Leads Convert Fails</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_2002</testfile>
+		<bugnumber>44056</bugnumber>
+		<reason>Leads Convert Fails</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_2003</testfile>
+		<bugnumber>44056</bugnumber>
+		<reason>Leads Convert Fails</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_2004</testfile>
+		<bugnumber>44056</bugnumber>
+		<reason>Leads Convert Fails</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_2005</testfile>
+		<bugnumber>44056</bugnumber>
+		<reason>Leads Convert Fails</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_2006</testfile>
+		<bugnumber>44056</bugnumber>
+		<reason>Leads Convert Fails</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_2007</testfile>
+		<bugnumber>44056</bugnumber>
+		<reason>Leads Convert Fails</reason>
+		<modulename>Leads</modulename>
+	</block>
+	<!-- End Bug 44056 -->
+	
+	
 	<!-- Beginning of illegal javascript related blocks -->
 	<block>
 		<testfile>Calendar_0692</testfile>
