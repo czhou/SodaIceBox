@@ -1,0 +1,84 @@
+<soda>
+	<!--
+	Action:
+		1. Login as valid user.
+		2. Create an opportunity.
+		3. Under the detail view of the opportunity, create a contact.
+		4. Click "edit" link of the contact record in detail view of the opportunity.
+		5. Update the role by changing the role.
+	Result:
+		Role updated with user selected
+	-->
+	<puts text="Test: Contacts_8172.xml starting." />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
+
+	<!-- *1* Go to Opportunities module -->
+	<link id="moduleTab_Opportunities" />
+	<wait timeout="3" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Opportunities&amp;action=index" click="false" />
+	</div>
+
+	<!-- *2* Go to created Opportunities detail view-->
+	<form id="search_form">
+		<button name="clear" />
+		<textfield id="name_basic" set="{@pre_opp_name}" />
+		<button id="search_form_submit" />
+	</form>
+	<wait timeout="3" />
+	<table class="list view">
+		<link text="{@pre_opp_name}" />
+	</table>
+	<wait timeout="3" />
+	<div class="moduleTitle">
+		<browser assert="{@pre_opp_name}"/>
+	</div>
+
+	<!--Click select contact button-->
+	<button id="opportunities_contacts_select_button"/>
+	<wait timeout="3"/>
+	<textfield id="first_name_advanced" set="{@pre_contact_first_name}"/>
+	<textfield id="account_name_advanced" set=""/>
+	<form id="popup_query_form">
+		<button value="Search"/>
+	</form>
+	<link text="{@pre_contact_first_name} {@pre_contact_last_name}"/>
+
+	<!--Edit contact under Opportunities detail view-->
+	<div id="list_subpanel_contacts">
+		<table class="list view">
+			<link class="listViewTdToolsS1" index="1"/>
+		</table>
+	</div>
+	<select name="contact_role" set="Primary Decision Maker"/>
+	<button name="button" value="/Save/"/>
+	<wait timeout="3"/>
+	<div id="list_subpanel_contacts">
+		<table class="list view">
+			<browser assert="Primary Decision Maker"/>
+		</table>
+	</div>
+
+
+	<!--Update role with second pre-created role-->
+	<div id="list_subpanel_contacts">
+		<table class="list view">
+			<link class="listViewTdToolsS1" index="1"/>
+		</table>
+	</div>
+	<select name="contact_role" set="Business Decision Maker"/>
+	<button name="button" value="/Save/"/>
+	<div id="list_subpanel_contacts">
+		<table class="list view">
+			<browser assert="Business Decision Maker"/>
+		</table>
+	</div>
+
+	<!--Delete pre-created contact -->
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	
+	<puts text="Test: Contacts_8172.xml finished." />
+</soda>
