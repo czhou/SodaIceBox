@@ -142,8 +142,15 @@
 		<reason>Leads Convert Fails</reason>
 		<modulename>Leads</modulename>
 	</block>
-	<!-- End Bug 44056 -->
 	
+	<block>
+		<testfile>Studio_9957</testfile>
+		<bugnumber>44056</bugnumber>
+		<reason>Leads Convert Fails</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<!-- End Bug 44056 -->
 	
 	<!-- Beginning of illegal javascript related blocks -->
 	<block>
@@ -716,6 +723,13 @@
 	</block>
 	
 	<!-- End incoming failed scripts -->
+	<block>
+		<testfile>Opportunity_10887</testfile>
+		<bugnumber>41775</bugnumber>
+		<reason>Amount doesn't carry over to Full Form</reason>
+		<modulename>Opportunity</modulename>
+	</block>
+	
 	<block>
 		<testfile>Workflow_10878</testfile>
 		<bugnumber>43663</bugnumber>
