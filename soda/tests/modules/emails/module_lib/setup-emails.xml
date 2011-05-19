@@ -1,4 +1,5 @@
 <soda>
 	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
 	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Emails_OutGoing_Create_Lib.xml" />
 </soda>
