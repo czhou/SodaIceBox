@@ -20,22 +20,6 @@
 		<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
 		<textfield id="description" set="{@call_record.description}" />
 
-		<!--user select -->
-		<button id="btn_assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield name="last_name_advanced" set="{@call_record.assigned_user_name}" />
-		<button value="Search" />
-		<link text="{@call_record.assigned_user_name}" />
-		<wait timeout="2" />
-
-		<!--teams select -->
-		<table id="EditView_team_name_table">
-			<button value="Select" />
-		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@call_record.team_name}" />
-		<button value="Search" />
-		<link text="{@call_record.team_name}" />
 		<button value="Save" />
 		<wait timeout="3" />
 		<browser assert="{@call_record.name} {@user.name} {@stamp}" />
