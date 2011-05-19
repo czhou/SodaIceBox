@@ -1,0 +1,42 @@
+<soda>
+	<!-- Verify that amount carries over correctly from opportunity subpanel create 
+		to opportunity full form create -->
+	<puts text="Test: Opportunity_10887.xml starting" />
+
+	<!-- setup -->
+	<div id="welcome">
+		<link text="Administrator" />
+	</div>
+	<link text="Advanced" />
+	<wait timeout="1" />
+	<textfield name="num_grp_sep" set="," />
+	<textfield name="dec_sep" set="." />
+	<button value="Save" />
+	
+	<!-- Create Contact -->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+
+	<link text="Contacts" />
+	<link text="/{@contact_record.first_name} {@user.name} {@stamp}/" />
+	
+	<!-- Start to create an Opp record via subpanel -->
+	<button name="opportunities_contacts_create_button" />
+	<textfield name="amount" set="3,000.00" />
+	
+	<!-- Click full form in opp subpanel and verify amount -->
+	<button value="Full Form" />
+	<textfield name="amount" assert="3,000.00" />
+
+	<!-- Reset separators back to default -->
+	<div id="welcome">
+		<link text="Administrator" />
+	</div>
+	<link text="Advanced" />
+	<wait timeout="1" />
+	<textfield name="num_grp_sep" set="," />
+	<textfield name="dec_sep" set="." />
+	<button value="Save" />
+	
+	<!-- cleanup -->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+</soda>
