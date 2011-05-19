@@ -1,0 +1,84 @@
+<soda>
+	<!--
+	Action:
+		1.  Login as valid user.
+		2.  Go to Contacts module.
+		3.  Click "Select" button beside "Account Name" field under "Basic Search" tab.
+		4.  On the pop up window to select account.
+		5.  Click "Create Account" button.
+		6.  Fill in corresponding value for the fields and click "Cancel" button.
+		7.  Click "Create Account" again.
+	Result:
+		No pre-filled values and get a result
+	-->
+	<puts text="Test: Contacts_8090.xml starting." />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+
+	<!-- *1* Go to contact module -->
+	<link id="moduleTab_Contacts" />
+	<wait timeout="3" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+	</div>
+
+	<!-- *2* Go to created contact detail view-->
+	<form id="search_form">
+		<button name="clear" />
+		<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
+		<button id="search_form_submit" />
+	</form>
+	<wait timeout="3" />
+	<table class="list view">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+	<wait timeout="3" />
+	<div class="moduleTitle">
+		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}"/>
+	</div>
+	<button id="edit_button"/>
+
+	<!--Click select Account button-->
+	<button id="btn_account_name"/>
+	<wait timeout="3"/>
+	<div id="addformlink">
+		<button name="showAdd" value="Create Account"/>
+	</div>
+
+	<!--Cancel the createing action-->
+	<div id="addform">
+		<textfield id="name" set="8090_test_account_name"/>
+		<button id="Accounts_popup_cancel_button" alert="true"/>
+	</div>
+
+	<!--Click Create Account button again-->
+	<div id="addformlink">
+		<button name="showAdd" value="Create Account"/>
+	</div>
+
+	<!--Check all field show up-->
+	<div id="addform">
+		<textfield id="name" set="8090_test_account_name" exists="true"/>
+		<textfield id="website" exists="true"/>
+		<textfield id="phone_office" exists="true"/>
+		<textfield id="phone_fax" exists="true"/>
+		<textfield id="Accounts0emailAddress0" exists="true"/>
+		<select id="industry" exists="true"/>
+		<select id="account_type" exists="true"/>
+		<textfield id="assigned_user_name" exists="true"/>
+		<textfield id="team_name_collection_0" exists="true"/>
+	</div>
+
+	<!--Make sure pop up window closed-->
+	<div id="addform">
+		<button id="Accounts_popupcreate_save_button"/>
+	</div>
+	<link text="8090_test_account_name"/>
+
+	<link id="moduleTab_Contacts" alert="true"/>
+
+	<!--Delete pre-created contact -->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	
+	<puts text="Test: Contacts_8090.xml finished." />
+</soda>
