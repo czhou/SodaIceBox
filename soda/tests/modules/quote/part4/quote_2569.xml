@@ -29,7 +29,7 @@
 		
 		<form id="form_SubpanelQuickCreate_Meetings">
 			<button id="Meetings_subpanel_save_button" />
-			<wait timeout="3" />
+			<wait timeout="5" />
 		</form>
 		
 		<div id="list_subpanel_activities">
