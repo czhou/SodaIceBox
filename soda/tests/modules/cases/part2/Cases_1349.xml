@@ -1,0 +1,29 @@
+<soda>
+	<!-- Cases_1349.xml: Create Task_Verify that a task for case can be created in "History" sub-panel when "Status" is set as "Completed". -->
+	<puts text="Test: Cases_1349.xml starting." />
+	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
+
+	<!-- Create two cases. -->
+	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />	
+
+	<csv file="{@global.scriptsdir}/csvs/cases/Case_1349.csv" var="Cases_1349">
+		<button id="Activities_createtask_button" />
+		<div id="Default_Tasks_Subpanel">
+			<textfield id="name" set="{@Cases_1349.task_subject}" />
+			<select id="status" set="{@Cases_1349.task_status}" />
+		</div>
+		<button id="Tasks_subpanel_save_button" />
+		<browser action="refresh" />
+
+		<div id="list_subpanel_history">
+			<browser assert="{@Cases_1349.task_subject}" />
+			<browser assert="{@Cases_1349.task_status}" />
+		</div>
+	</csv>
+	
+	<!-- Cleanup: Delete cases. -->
+	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
+
+	<puts text="Test: Cases_1349.xml finished." />
+</soda>
