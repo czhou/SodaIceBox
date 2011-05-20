@@ -1,0 +1,58 @@
+<soda>
+	<!-- Cases_1321.xml: Merge Duplicates_Verify that cases can be merged in case list view. -->
+	<puts text="Test: Cases_1321.xml starting." />
+	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
+
+	<csv file="{@global.scriptsdir}/csvs/cases/Case_1321.csv" var="Cases_1321">
+		<!-- Create two cases. -->
+		<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />	
+		<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />	
+
+		<button value="Find Duplicates" />
+		
+		<textarea id="nameSearchField" set="{@case_record.name}" />
+		<button value="  Next Step >  " />
+		
+		<checkbox id="massall" click="true" />
+		<button value="  Perform Merge  " />
+
+		<textfield id="name" set="{@Cases_1321.name}" />
+		<tr id="lineLabel_team_name">
+			<button value="Select" />
+		</tr>
+		<link text="{@Cases_1321.team}" />
+		<wait timeout="3" />
+		<select id="status" set="{@Cases_1321.status}" />
+		<select id="priority" set="{@Cases_1321.priority}" />
+		<textfield id="date_entered" set="{@Cases_1321.date_entered}" />
+		<textfield id="description" set="{@Cases_1321.description}" />
+		<button value="Select" index="3" />
+		<link text="{@Cases_1321.assigned_user}" />
+		<textfield id="description" click="true" />
+		<wait timeout="3" />
+		<select id="type" set="{@Cases_1321.type}" />
+		<textfield id="resolution" set="{@Cases_1321.resolution}" />
+		<button value="  Save Merge  " alert="true" />
+
+		<div class="moduleTitle">
+			<link href="index.php?module=Cases&amp;action=index" click="false" />
+			<browser assert="{@Cases_1321.name}" />
+			<browser assertnot="Merge" />
+		</div>
+		
+		<browser assert="{@Cases_1321.name}" />
+		<browser assert="{@Cases_1321.team}" />
+		<browser assert="{@Cases_1321.status}" />
+		<browser assert="{@Cases_1321.priority}" />
+		<browser assert="{@Cases_1321.date_entered}" />
+		<browser assert="{@Cases_1321.description}" />
+		<browser assert="{@Cases_1321.assigned_user}" />
+		<browser assert="{@Cases_1321.type}" />
+		<browser assert="{@Cases_1321.resolution}" />
+
+		<!-- Cleanup: Delete cases. -->
+		<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
+	</csv>
+
+	<puts text="Test: Cases_1321.xml finished." />
+</soda>

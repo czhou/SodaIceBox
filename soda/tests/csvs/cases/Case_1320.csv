@@ -1,0 +1,2 @@
+name,team,status,priority,date_entered,description,assigned_user,type,resolution,work_log
+Case_1320,qauser,New,Medium,01/02/2003,desc,qauser,User,res,work
