@@ -1,55 +1,58 @@
 <soda>
+	<!-- Edit Mail_Verify that "Archive Email" can be successful modified on the "Cases" 
+		sub-panel. -->
+	<puts text="Test: Quote_2575.xml starting" />
 
-	<puts text="Test Case 2575: Edit Mail_Verify that 'Archive Email' can be successful modified on the 'Cases' sub-panel."/>
+	<!--Go to Quotes module and search out the quote record create in lib -->
+	<link id="moduleTab_Quotes" />
+	<browser assert="Quotes" />
+	<form id="search_form">
+		<button id="search_form_clear" />
+		<textfield id="name_basic" set="{@pre_Quote_name}" />
+		<button id="search_form_submit" />
+	</form>
 
-        <!--Go to Quotes module and search out the quote record create in lib-->
-        <link id='moduleTab_Quotes'/>
-        <browser assert='Quotes'/>
-        <form id='search_form'>
-            <button id='search_form_clear'/>
-            <textfield id='name_basic' set='{@pre_Quote_name}'/>
-            <button id='search_form_submit'/>
-        </form>
+	<table class="list view">
+		<link text="{@pre_Quote_name}" />
+	</table>
 
-        <table class='list view'>
-            <link text='{@pre_Quote_name}'/>
-        </table>
+	<!--Create a Archive Email in History subpanel. -->
+	<browser assert="Quote Overview" />
+	<button id="ArchiveEmail_button" />
+	<wait timeout="5" />
+	<textfield id="jscal_field" set="05/10/2011" />
+	<textfield name="time_start" set="0:00" />
+	<textfield id="subjectfield" set="New Archived Email" />
+	<button value="  Save  " />
+	<wait timeout="5" />
+	<browser assert="New Archived Email" />
 
-        <!--Create a Archive Email in History subpanel.-->
-        <browser assert="Quote Overview"/>
-        <button id="ArchiveEmail_button"/>
-        <wait timeout="5"/>
-        <textfield id="jscal_field" set="05/10/2011"/>
-        <textfield name="time_start" set="0:00"/>
-        <textfield id="subjectfield" set="New Archived Email"/>
-        <button value="  Save  "/>
-        <wait timeout="5"/>
-        <browser assert="New Archived Email"/>
-
-        <!--Verify Archived Email is in subpnale-->
-        <div id="list_subpanel_history">
-                <link text="New Archived Email" click="false"/>
-		<link class="listViewTdToolsS1" index="1"/>
-        </div>
-        <wait timeout="5"/>
-
-        <!--Edit the Archived Email record-->
-        <textfield id="subjectfield" set="Modified Archived Email"/>
-        <button value="  Save  "/>
-        <wait timeout="5"/>
-        
-        <div id="list_subpanel_history">
-                <link text="Modified Archived Email" click="false"/>
-        </div>
+	<!--Verify Archived Email is in subpnale -->
+	<div id="list_subpanel_history">
+		<link text="New Archived Email" click="false" />
+		<link class="listViewTdToolsS1" index="1" />
+		<wait timeout="5" />
+	</div>
 	
-        <!--Delete the Archived Eamil record created in this case.-->
-        <div id="list_subpanel_history">
-		<link class="listViewTdToolsS1" index="2"/>
-        </div>
 
-        <wait timeout="5"/>
-        <div id="list_subpanel_history">
-                <link text="Modified Archived Email" exist="false" click="false"/>
-        </div>
-        <puts text="End Test Case 2575"/>
+	<!--Edit the Archived Email record -->
+	<textfield id="subjectfield" set="Modified Archived Email" />
+	<button value="  Save  " />
+	<wait timeout="5" />
+
+	<div id="list_subpanel_history">
+		<link text="Modified Archived Email" click="false" />
+	</div>
+
+	<!--Delete the Archived Eamil record created in this case. -->
+	<div id="list_subpanel_history">
+		<link class="listViewTdToolsS1" index="2" />
+		<wait timeout="5" />
+	</div>
+
+	
+	<div id="list_subpanel_history">
+		<link text="Modified Archived Email" exist="false" click="false" />
+	</div>
+	<puts text="Test: Quote_2575.xml finished" />
 </soda>
