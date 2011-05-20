@@ -25,6 +25,10 @@
 		<browser assert="Quotes"/>
 	</div>
 
+	<!--Restart browser and relogin-->
+	<browser action="close"/>
+	<browser url="{@global.url}"/>
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
 	<puts text="Test Case 2560 is finished!"/>
 </soda>
 
