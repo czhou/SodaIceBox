@@ -15,9 +15,8 @@
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
 	<table class="list view">
-	  <browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
-		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" required="false" /-->
 	</table>
 
 	<!--click Compose Email-->
