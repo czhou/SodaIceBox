@@ -1,5 +1,5 @@
 <soda>
-	<!-- Cases_1321.xml: Merge Duplicates_Verify that cases can be merged in case list view. -->
+	<!-- Cases_1321.xml: Merge Duplicates_Verify that cases can be merged in case detail view. -->
 	<puts text="Test: Cases_1321.xml starting." />
 	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
 
