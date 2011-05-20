@@ -5,6 +5,7 @@
 	<puts text="Test: Emails_9775.xml starting." />
 
 	<!--create lead & contact record-->
+	<script file="{@global.scriptsdir}/modules/lib/Emails_OutGoing_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 
@@ -71,7 +72,8 @@
 	</div>
 
 
-	<!--delete-->
+	<!--Delete pre-created records -->
+	<script file="{@global.scriptsdir}/modules/lib/Emails_OutGoing_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
 	<puts text="Test: Emails_9775.xml finished." />
