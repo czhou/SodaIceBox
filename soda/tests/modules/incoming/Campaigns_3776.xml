@@ -1,0 +1,33 @@
+<soda>
+	<puts text="Test: Campaigns_3776.xml starting." />
+	<!--
+	Action:
+		1. Login to SugarCRM as a valid user.
+		2. Go to Campaigns module. // is now in its own tab (Target Lists)
+		3. View any target list detail.
+		4. Click "Delete" button in the target list detail view.
+		5. Confirm the deletion.
+	Expected:
+		5. The select target list record is removed from "Target Lists" view.
+	-->
+	
+	<script file="{@global.scriptsdir}/modules/lib/TargetList_Create_Lib.xml" />
+	<var var="targetlist1_name" set="{@TargetList_Name}" />
+
+	<link id="moduleTab_ProspectLists" />
+	
+	<table class="list view">
+		<browser assert="{@targetlist1_name}" />
+		<link text="{@targetlist1_name}" />
+	</table>
+	
+	<button value="Delete" alert="true" />
+	
+	<link id="moduleTab_ProspectLists" />
+	
+	<table class="list view">
+		<browser assertnot="{@targetlist1_name}" />
+	</table>
+		
+	<puts text="Test: Campaigns_3776.xml finished." />
+</soda>	

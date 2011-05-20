@@ -1,0 +1,31 @@
+<soda>
+	<puts text="Test: Campaigns_1261.xml starting." />
+	<!--
+	Action:
+		1. Login to SugarCRM as a valid user.
+		2. Go to Campaigns module.
+		3. Click "Targets" link in navigation shortcuts.
+		2,3 can be combined as of 6.2 //mfleeger
+		4. Enter the first letter of a target.
+		5. Click "Clear" button in the "Target Search" sub-panel.
+	Expected:
+		5. The data entered are cleared from the text field.
+	-->
+	
+	<script file="{@global.scriptsdir}/modules/lib/Target_Create_Lib.xml" />
+	<var var="target1_name" set="{@Target_First_Name} {@Target_Last_Name}" />
+
+	<link id="moduleTab_Prospects" />
+	
+	<textfield id="search_name_basic" set="C" />
+	
+	<textfield id="search_name_basic" assert="C" />
+	
+	<button id="search_form_clear" />
+	
+	<textfield id="search_name_basic" assertnot="C" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Target_Delete_Lib.xml" />
+	
+	<puts text="Test: Campaigns_1261.xml finished." />
+</soda>	

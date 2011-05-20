@@ -1,0 +1,31 @@
+<soda>
+	<puts text="Test: Campaigns_3774.xml starting." />
+	<!--
+	Action:
+		1. Login to SugarCRM as a valid user.
+		2. Go to Campaigns module. // This is now available by 
+			its own tab - Target Lists
+		3. Click "Create Target Lists" link in navigation shortcuts.
+		4. Enter information for all mandatory fields, such as "Name".
+		5. Click "Save" button.
+	Expected:
+		5. The target list record is displayed correctly.
+	-->
+	
+	<link id="moduleTab_ProspectLists" />
+	<link text="Create Target List" />
+	
+	<timestamp />
+	<var var="targetlist1_name" set="TargetList_{@stamp}" />
+	<textfield id="name" set="{@targetlist1_name}" />
+	
+	<button id="SAVE_HEADER" />
+	
+	<table id="detailpanel_1">
+		<browser assert="{@targetlist1_name}" />
+	</table>
+	
+	<script file="{@global.scriptsdir}/modules/lib/TargetList_Delete_Lib.xml" />
+		
+	<puts text="Test: Campaigns_3774.xml finished." />
+</soda>	

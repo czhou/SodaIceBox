@@ -27,11 +27,16 @@
 	<button id="edit_button" />
 	
 	<textfield name="search_email" set="sugarqa3@gmail.com" />
+	<textfield name="search_last_name" set="qauser" />
+	
 	<button value="Search" />
 	<wait timeout="3" />
-	<javascript addUtils="true">
-		SugarWidgetSchedulerAttendees.form_add_attendee(0);
-	</javascript>
+	
+	<div id="list_div_win">
+		<button value="Add" click="true" />
+		<button value="Add" jscriptevent="onmouseup" />
+	</div>
+	
 	<wait timeout="2" />
 	<button value="Save" />
 	
@@ -46,7 +51,6 @@
 	<textfield id="user_password" set="QAuser1" />
 	<button id="login_button" />
 
-	<!-- Match a new user login or an existing user login, but not a failed login. -->
 	<browser assert="/Welcome(, | to Sugar!)/" />
 	
 	<browser assert="{@pre_call_name}" />

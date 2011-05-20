@@ -34,9 +34,11 @@
 	
 	<textfield name="search_last_name" set="{@pre_contact_last_name}" />
 	<button value="Search" />
-	<javascript loadUtils="true">
-		SugarWidgetSchedulerAttendees.form_add_attendee(0);
-	</javascript>
+
+	<div id="list_div_win">
+		<button value="Add" click="true" />
+		<button value="Add" jscriptevent="onmouseup" />
+	</div>
 	
 	<button value="Save" />
 	

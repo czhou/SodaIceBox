@@ -1,0 +1,30 @@
+<soda>
+	<puts text="Test: Campaigns_3778.xml starting." />
+	<!--
+	Action:
+		1. Login to SugarCRM as a valid user.
+		2. Go to Campaigns module.
+		3. Click "Create Target" link in navigation shortcuts. 
+			// now its own tab - mfleeger
+		4. Enter information for all mandatory fields, such as "Last Name".
+		5. Click "Save" button.
+	Expected:
+		5. The Target record is displayed correctly.
+	-->
+
+	<link id="moduleTab_Prospects" />
+	<link text="Create Target" />
+	
+	<timestamp />
+	<var var="target1_name" set="Target_{@stamp}" />
+	<textfield id="last_name" set="{@target1_name}" />
+	<button id="SAVE_HEADER" />
+	
+	<table id="detailpanel_1">
+		<browser assert="{@target1_name}" />
+	</table>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Target_Delete_Lib.xml" />
+		
+	<puts text="Test: Campaigns_3778.xml finished." />
+</soda>	

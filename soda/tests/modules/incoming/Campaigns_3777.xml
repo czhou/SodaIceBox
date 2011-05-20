@@ -1,0 +1,32 @@
+<soda>
+	<puts text="Test: Campaigns_3777.xml starting." />
+	<!--
+	Action:
+		1. Login to SugarCRM as a valid user.
+		2. Go to Campaigns module.
+		3. Click "Target Lists" link in navigation shortcuts.
+		2,3.  Same Tab now (Target Lists)
+		4. Enter the first letter of a target list (the target list exists).
+		5. Click "Search" button in the "Target List Search" sub-panel.
+	Expected:
+		5. The target list records with first letter entered is
+			displayed in the target lists view.
+	-->
+	
+	<script file="{@global.scriptsdir}/modules/lib/TargetList_Create_Lib.xml" />
+	<var var="targetlist1_name" set="{@TargetList_Name}" />
+
+	<link id="moduleTab_ProspectLists" />
+	
+	<textfield id="name_basic" set="T" />
+	
+	<button id="search_form_submit" />
+	
+	<table class="list view">
+		<browser assert="{@targetlist1_name}" />
+	</table>
+	
+	<script file="{@global.scriptsdir}/modules/lib/TargetList_Delete_Lib.xml" />
+		
+	<puts text="Test: Campaigns_3777.xml finished." />
+</soda>	

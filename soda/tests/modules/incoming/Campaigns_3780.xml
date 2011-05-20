@@ -1,0 +1,36 @@
+<soda>
+	<puts text="Test: Campaigns_3780.xml starting." />
+	<!--
+	Action:
+		1. Login to SugarCRM as a valid user.
+		2. Click Campaigns tab in top navigation bar.
+		3. Click "Targets" link in navigation shortcuts.
+		2,3. Now on the Targets tab // mfleeger
+		4. Go to a campaign's detail view.
+		5. Click "Delete" button.
+		6. Click "OK" button in the confirm dialog box.
+	Expected:
+		6. The target record is removed from the target list view.
+	-->
+
+	<script file="{@global.scriptsdir}/modules/lib/Target_Create_Lib.xml" />
+	<var var="target1_name" set="{@Target_First_Name} {@Target_Last_Name}" />
+	
+	<link id="moduleTab_Prospects" />
+	
+	<table class="list view">
+		<link text="{@target1_name}" />
+	</table>
+	
+	<wait timeout="3" />
+	
+	<button value="Delete" alert="true" />
+	
+	<wait timeout="2" />
+	
+	<table class="list view">
+		<browser assertnot="{@target1_name}" />
+	</table>
+	
+	<puts text="Test: Campaigns_3780.xml finished." />
+</soda>	

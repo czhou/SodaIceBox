@@ -15,9 +15,11 @@
 	<link text="Layout Options" />
 	
 	<select id="hide_tabs" set="TEAM_NAME" />
-	<javascript addUtils="true">
-		SUGAR.tabChooser.right_to_left('display_tabs','hide_tabs', '7', '7', '');
-	</javascript>
+	
+	<div id="edit_tabs">
+		<link index="3" click="true" />
+		<link index="3" jscriptevent="mouseup" />
+	</div>
 	
 	<timestamp />
 	
@@ -28,20 +30,21 @@
 	
 	<select id="saved_search_select" assert="{@layout_name}" />
 	
-	<!-- clean things up -->
 	
 	<link text="Layout Options" />
 	
-	<!-- put team back - should this be needed?  -->
 	
 	<select id="display_tabs" set="TEAM_NAME" />
-	<javascript addUtils="true">
-		SUGAR.tabChooser.left_to_right('display_tabs','hide_tabs', '7', '7', '');
-	</javascript>
+	
+	<div id="edit_tabs">
+		<link index="4" click="true" />
+		<link index="4" jscriptevent="mouseup" />
+	</div>
 	
 	<link text="Basic Search" />
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
 	
 	<puts text="Test: Calendar_0725.xml finished." />
+	
 </soda>

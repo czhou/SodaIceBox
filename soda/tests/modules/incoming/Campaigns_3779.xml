@@ -1,0 +1,43 @@
+<soda>
+	<puts text="Test: Campaigns_3779.xml starting." />
+	<!--
+	Action:
+		1. Login to SugarCRM as a valid user.
+		2. Click Campaigns tab in the top navigation bar.
+		3. Click "Targets" link in navigation shortcuts.
+		2,3. Targets is now its own tab on 6.2 //mfleeger
+		4. Go to a campaign's detail view.
+		5. Click the "Edit" button and change target information,
+			such as "Last Name".
+		6. Click "Save" button.
+	Expected:
+		6. The Target record is displayed correctly.
+	-->
+
+	<script file="{@global.scriptsdir}/modules/lib/Target_Create_Lib.xml" />
+	<var var="target1_last_name" set="{@Target_Last_Name}" />
+	<var var="target1_mod_last_name" set="{Target_Last_Name}_Modified" />
+	<var var="target1_name" set="{@Target_First_Name} {@Target_Last_Name}" />
+	
+	<link id="moduleTab_Prospects" />
+	
+	<table class="list view">
+		<link text="{@target1_name}" />
+	</table>
+	
+	<wait timeout="3" />
+	
+	<button id="edit_button" />
+	
+	<textfield id="last_name" set="{@target1_mod_last_name}" />
+	
+	<button id="SAVE_HEADER" />
+	
+	<table id="detailpanel_1">
+		<browser assert="{@target1_mod_last_name}" />
+	</table>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Target_Delete_Lib.xml" />
+	
+	<puts text="Test: Campaigns_3779.xml finished." />
+</soda>	
