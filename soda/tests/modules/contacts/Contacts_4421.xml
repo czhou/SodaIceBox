@@ -68,7 +68,7 @@
 
 		<!--Delete quote relationship-->
 		<table class="list view">
-			<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
+			<link class="listViewTdToolsS1" index="2" alert="true"/>
 		</table>
 	</div>
 
