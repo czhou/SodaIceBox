@@ -1096,4 +1096,11 @@
 		<reason>Need the ability to assert duplicaed options in select list.</reason>
 		<modulename>Workflow</modulename>
 	</block>
+
+	<block>
+		<testfile>quote_2560</testfile>
+		<bugnumber></bugnumber>
+		<reason>We can't close brwoser tab</reason>
+		<modulename>Quote</modulename>
+	</block>
 </soda>
