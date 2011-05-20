@@ -42,9 +42,12 @@
 		<div id="list_subpanel_contracts">
 			<table class="list view">
 				<browser assert="{@Quote_2562.contract_name_edit}" />
+				<link text="{@Quote_2562.contract_name_edit}" />
 			</table>
 		</div>
-		<var var="Quote_2562" set="{@Quote_2562.name} {@user.name} {@stamp}" />
+		
+		<!-- Clean up contract that was created via subpanel -->
+		<button name="Delete" alert="true" />
 	</csv>
 
 	<puts text="Test: Quote_2562.xml finished" />
