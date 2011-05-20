@@ -1,0 +1,67 @@
+<soda>
+	<!--
+		Create contact_Verify that a contact cannot be created without data entered for the mandatory fields.
+	-->
+	<puts text="Test: Contacts_4428.xml starting." />
+
+	<link id="moduleTab_Contacts" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+	</div>
+	<wait timeout="3" />
+
+	<link text="Create Contact"/>
+	<csv file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.csv" var="contact_record">
+		<link text="Create Contact" />
+		<browser assert="Contact Overview" />
+
+		<!--fill the fields and "Save"-->
+		<form id="EditView">
+			<textfield name="first_name" set="{@contact_record.first_name} {@user.name} {@stamp}" />
+			<textfield id="title" set="{@contact_record.title}" />
+			<textfield id="phone_work" set="{@contact_record.phone_work}" />
+			<textfield id="phone_mobile" set="{@contact_record.phone_mobile}" />
+			<textfield id="phone_fax" set="{@contact_record.phone_fax}" />
+			
+			<textfield id="Contacts0emailAddress0" set="{@stamp}{@contact_record.emailAddress0}" />
+			<textfield id="description" click="true" />
+
+			<wait timeout="2" />
+			<textfield id="description" set="{@contact_record.description}" />
+			<select id="lead_source" set="{@contact_record.lead_source}" />
+			<checkbox id="do_not_call" set="{@contact_record.do_not_call}" />
+			<checkbox id="sync_contact" set="{@contact_record.sync_contact}" />
+
+			<textfield id="primary_address_street" set="{@contact_record.primary_address_street}" />
+			<textfield id="primary_address_city" set="{@contact_record.primary_address_city}" />
+			<textfield id="primary_address_state" set="{@contact_record.primary_address_state}" />
+			<textfield id="primary_address_postalcode" set="{@contact_record.primary_address_postalcode}" />
+			<textfield id="primary_address_country" set="{@contact_record.primary_address_country}" />
+
+			<textfield id="alt_address_street" set="{@contact_record.alt_address_street}" />
+			<textfield id="alt_address_city" set="{@contact_record.alt_address_city}" />
+			<textfield id="alt_address_state" set="{@contact_record.alt_address_state}" />
+			<textfield id="alt_address_postalcode" set="{@contact_record.alt_address_postalcode}" />
+			<textfield id="alt_address_country" set="{@contact_record.alt_address_country}" />
+
+			<wait timeout="2" />
+			<button value="Save" />
+		</form>
+
+		<var var="pre_contact_first_name" set="{@contact_record.first_name} {@user.name} {@stamp}"/>
+		<var var="pre_contact_last_name" set=""/>
+		<browser assert="Missing required field: Last Name"/>
+	</csv>
+
+	<!--Back to contact module-->
+	<link id="moduleTab_Contacts" alert="true"/>
+
+	<textfield id="search_name_basic" set="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" click="false" exists="false"/>
+		<browser assertnot="{@pre_contact_first_name} {@pre_contact_last_name}"/>
+	</table>
+
+	<puts text="Test: Contacts_4428.xml finished." />
+</soda>
