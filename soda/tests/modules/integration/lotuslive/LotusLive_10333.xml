@@ -14,19 +14,17 @@
 	
 	<button name="documents_quotes_create_button" />
 	<div id="form_SubpanelQuickCreate_Documents_tabs">
-		<timestamp />
 		<select id="doc_type" set="LotusLive" />
 		<textfield name="document_name" set="LotusLive_Sub_Pptx" /> 
 		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/3.pptx" />	
 	</div>
 	<button id="Documents_subpanel_save_button" />
-	<wait timeout='10'/>
+	<wait timeout='20'/>
 	<link text="3.pptx" click="false" exist="true"/>
 
 	<button name="documents_quotes_create_button" />
 	<button id="Documents_subpanel_full_form_button" />
 	<form id="EditView">
-		<timestamp />
 		<select id="doc_type" set="LotusLive" />
 		<textfield name="document_name" set="LotusLive_Sub_Pdf" /> 
 		<wait timeout='2' />
