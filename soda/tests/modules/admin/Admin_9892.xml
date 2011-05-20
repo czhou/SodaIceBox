@@ -57,7 +57,7 @@
 			</row>
 		</table>
 	</div>
-
+	<browser assert="Click an icon to select a Module." />
 	<table id="Accounts" click="true" />
 
 	<link id="ygtvlabelel1" click="true" />
