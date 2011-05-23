@@ -31,7 +31,6 @@
 
 	<puts text="Test: Calendar_0683.xml starting." />
 
-
 	<link id="moduleTab_Calls" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Calls&amp;action=index" click="false" />

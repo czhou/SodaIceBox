@@ -33,6 +33,7 @@
 	<wait timeout="10" />
 	<button id="settingsButton" />
 	<wait timeout="10" />
+
 	<div id="settingsDialog">
 		<link text="Mail Accounts" />
 	</div>

@@ -52,7 +52,6 @@
 
 	<button value="Back to Module Loader"/>
 	<link id="moduleTab_Eric_b1" click="false"/>
-
 	<!--Disable a custom module and delete the package-->
 	<script file="{@global.scriptsdir}/modules/lib/ModuleLoader_Delete_Lib.xml"/>
 

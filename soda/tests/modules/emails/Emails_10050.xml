@@ -29,7 +29,10 @@
 	<puts text="Test: Emails_10050.xml starting." />
 	
 	<link href='index.php?module=Administration&amp;action=index' />
-	<link text="Inbound Email" />
+
+	<div id="content">
+		<link text="Inbound Email" />
+	</div>
 
 	<link text="New Group Mail Account" />
 	

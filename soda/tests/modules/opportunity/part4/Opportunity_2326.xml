@@ -29,7 +29,6 @@
 	<puts text="Test: Opportunity_2326.xml starting." />
 
 	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2326.csv" var="Opportunity_2326">
-
 		<link id="moduleTab_Opportunities" />
 		<browser assert="Opportunities" />
 		<button id="search_form_clear" />

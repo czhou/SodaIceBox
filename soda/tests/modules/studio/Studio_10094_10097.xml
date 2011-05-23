@@ -65,7 +65,6 @@
         <textfield id="billing_address_city" set="{@studio10094.city}" />
         <textfield id="billing_address_city" click="false" jscriptevent="onchange" />
         <textfield id="billing_address_state" set="{@studio10094.state}" />
-        <!--textfield id="description" set="{@studio10094.des}" /-->
         <button value="Save" />
       </form>
       <wait timeout="3" />

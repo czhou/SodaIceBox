@@ -69,7 +69,7 @@
 			<select index="1" assert="Is Not Empty" />
 		</cell>
 	</row>
-	
+
 	<link id="moduleTab_Reports"/>
 
 	<puts text="Test: Reports / 9963 finished." />

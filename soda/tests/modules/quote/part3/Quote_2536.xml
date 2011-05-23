@@ -50,7 +50,6 @@
         <textfield name='name_advanced' set='{@Contract_Create_Lib}'/>                        
         <button value='Search'/>
         <link text='{@Contract_Create_Lib}'/>
-         
         <div id='list_subpanel_contracts'>
             <table class='list view'>
                 <browser assert='{@Contract_Create_Lib}'/>

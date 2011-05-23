@@ -90,6 +90,5 @@
 	
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
-	
 	<puts text="Test: Reports_8047.xml finished." />
 </soda>

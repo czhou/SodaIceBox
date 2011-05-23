@@ -31,7 +31,7 @@
 	<timestamp />
 
 	<!--goto Report module -->
-	<link id="moduleTab_Reports" />
+	<link id="moduleTab_Reports" /
 	<link text="Manage Advanced Reports" />
 	<link text="Create Advanced Report" />
 

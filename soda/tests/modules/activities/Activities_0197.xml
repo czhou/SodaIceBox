@@ -27,7 +27,6 @@
 
 <soda>
 	<puts text="Test: Activities_0197.xml starting" />
-	<!-- test network -->>
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />

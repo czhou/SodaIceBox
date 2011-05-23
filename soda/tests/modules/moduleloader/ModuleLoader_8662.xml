@@ -48,6 +48,7 @@
 	<browser assert="p1_label"/>
 
 	<link id="moduleTab_Eric_s1"/>
+
 	<browser assert="s1_label"/>
 
 	<!--Delete a custom package-->

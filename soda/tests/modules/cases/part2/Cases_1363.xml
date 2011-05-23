@@ -52,7 +52,7 @@
 	<!--create a Meeting-->
 	<div id="list_subpanel_activities">
       <button value="  Schedule Meeting  " />
-      <wait timeout="3" />
+      <wait timeout="5" />
 	</div>
 	<timestamp />
 

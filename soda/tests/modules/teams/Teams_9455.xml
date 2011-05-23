@@ -46,7 +46,6 @@
 	<table id='detailpanel_1'>
 		<browser assert="{@Teams_9455.teamname}" />
 	</table>
-
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Document_Delete_Lib.xml" />
 

@@ -73,7 +73,6 @@
 		<div class="bd" assert="/.*Requires exactly \d+ parameter.*/" />
 		<link href="#" />
 	</div>
-	
 	<button value="Cancel" />
 
 	<button name="cancelbtn" />
