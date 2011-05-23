@@ -1,0 +1,14 @@
+<soda>
+
+	<puts text='--------Bug 42808 Started--------'/>
+	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	<puts text='--------Bug 42808 logged in--------'/>
+	
+	<ul id="dcmenuitems">
+		<link index="7" />
+	</ul>
+	<browser assert="Assigned to:"/>
+	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
+	<browser action="close" />
+</soda>
