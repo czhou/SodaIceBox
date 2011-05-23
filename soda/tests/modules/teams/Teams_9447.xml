@@ -40,6 +40,8 @@
 
 	<!--Create record with multi teams-->
 	<csv file="{@global.scriptsdir}/csvs/teams/Teams_9447.csv" var="teams_9447">
+		<link text="Report Bug" />
+		<browser assert="Bugs" />
 		<!--Teams select-->
 		<table id="EditView_team_name_table">
 			<button value="Select" />

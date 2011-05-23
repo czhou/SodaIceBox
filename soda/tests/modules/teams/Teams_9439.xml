@@ -41,6 +41,8 @@
 
 	<!--Create record with multi teams-->
 	<csv file="{@global.scriptsdir}/csvs/teams/Teams_9439.csv" var="teams_9439">
+		<link text="Schedule Meeting" />
+		<browser assert="Meetings" />
 		<!--Teams select-->
 		<table id="EditView_team_name_table">
 			<button value="Select" />

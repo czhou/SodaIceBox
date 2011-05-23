@@ -37,16 +37,17 @@
 	<button id="settingsButton" exist="true" click="false" />
 	<wait timeout="2" />
 
-	<div id="Emails">
-		<link text="Create Email Template" />
-	</div>
-	<div class="moduleTitle">
-		<link href="index.php?module=EmailTemplates&amp;action=index" click="false" />
-		<browser assert="Create" />
-	</div>
+	
 
 	<!--Create record with multi teams-->
 	<csv file="{@global.scriptsdir}/csvs/teams/Teams_9457.csv" var="teams_9457">
+		<div id="Emails">
+			<link text="Create Email Template" />
+		</div>
+		<div class="moduleTitle">
+			<link href="index.php?module=EmailTemplates&amp;action=index" click="false" />
+			<browser assert="Create" />
+		</div>
 		<!--Teams select-->
 		<table id="EditView_team_name_table">
 			<button value="Select" />

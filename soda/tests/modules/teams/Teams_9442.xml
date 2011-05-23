@@ -32,11 +32,12 @@
 
 	<!--Go to modules that can edit team info-->        
 	<link id="moduleTab_Notes" />
-	<link text="Create Note or Attachment" />
-	<browser assert="Notes" />
+	
 
 	<!--Create record with multi teams-->
 	<csv file="{@global.scriptsdir}/csvs/teams/Teams_9442.csv" var="teams_9442">
+		<link text="Create Note or Attachment" />
+		<browser assert="Notes" />
 		<!--Teams select-->
 		<table id="EditView_team_name_table">
 			<image id="remove_team_name_collection_0" click="true" />

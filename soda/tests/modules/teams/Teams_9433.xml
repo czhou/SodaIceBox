@@ -34,10 +34,11 @@
 	<link id="moduleTab_Documents" />
 	<browser assert="Documents" />
 
-	<link text="Create Document" />
+	
 
 	<!--Create record with only one team-->
 	<csv file="{@global.scriptsdir}/csvs/teams/Teams_9433.csv" var="teams_9433">
+		<link text="Create Document" />
 		<!--Teams select-->
 		<table id="EditView_team_name_table">
 			<image id="remove_team_name_collection_0" click="true" />

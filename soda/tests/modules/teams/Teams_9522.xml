@@ -33,12 +33,9 @@
 	<!--Go to modules that can edit team info-->        
 	<link id="moduleTab_ProspectLists" />
 
-	<link text="Create Target List" />
-	<browser assert="Target Lists" />
-
 	<!--Create record with multi teams-->
 	<csv file="{@global.scriptsdir}/csvs/teams/Teams_9522.csv" var="teams_9522">
-
+		<link text="Create Target List" />		
 		<!--Teams select-->
 		<table id="EditView_team_name_table">
 			<button value="Select" />
