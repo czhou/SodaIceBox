@@ -1,0 +1,81 @@
+<soda>
+	<puts text='--------Bug 33971 Started--------'/>
+	<puts text='-- Forecasts - Time Periods Do Not Have a Specific Sort Order --'/>
+
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	
+	<!-- setup -->
+	<timestamp />
+	<var var="base" set="Bug 33791 SODA TEST {@stamp}" />
+	<var var="current_year" set="2011" />
+	<var var="previous_year" set="2010" />
+	<div id="globalLinks">
+		<link text="Admin" />
+	</div>
+	<link text="Time Periods" />
+	<!-- clean periods -->
+	<link text="Basic Search" required="false" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	<!-- create periods -->
+	<!-- 1 -->
+	<link text="Create Time Period" />
+	<textfield name="name" set="{@base} 1" />
+	<textfield name="start_date" set="12/01/{@previous_year}" />
+	<textfield name="end_date" set="12/31/{@previous_year}" />
+	<button value="Save" click="true" />
+	<button value="Create" click="true" />
+	<textfield name="forecast_start_date" set="11/01/{@previous_year}" />
+	<select name="user_id" set="1" />
+	<button value="/Save/" click="true" />
+	<!-- 2 -->
+	<link text="Create Time Period" />
+	<textfield name="name" set="{@base} 2" />
+	<textfield name="start_date" set="01/01/{@current_year}" />
+	<textfield name="end_date" set="12/31/{@current_year}" />
+	<checkbox name="is_fiscal_year" set="true" />
+	<button value="Save" click="true" />
+	<button value="Create" click="true" />
+	<textfield name="forecast_start_date" set="11/01/{@previous_year}" />
+	<select name="user_id" set="1" />
+	<button value="/Save/" click="true" />
+	<!-- 3 -->
+	<link text="Create Time Period" />
+	<textfield name="name" set="{@base} 3" />
+	<textfield name="start_date" set="01/01/{@current_year}" />
+	<textfield name="end_date" set="03/30/{@current_year}" />
+	<select name="parent_id" set="{@base} 2" />
+	<button value="Save" click="true" />
+	<button value="Create" click="true" />
+	<textfield name="forecast_start_date" set="11/01/{@previous_year}" />
+	<select name="user_id" set="1" />
+	<button value="/Save/" click="true" />
+	<!-- 4 -->
+	<link text="Create Time Period" />
+	<textfield name="name" set="{@base} 4" />
+	<textfield name="start_date" set="01/01/{@current_year}" />
+	<textfield name="end_date" set="03/30/{@current_year}" />
+	<button value="Save" click="true" />
+	<button value="Create" click="true" />
+	<textfield name="forecast_start_date" set="11/01/{@previous_year}" />
+	<select name="user_id" set="1" />
+	<button value="/Save/" click="true" />
+	<!-- 5 -->
+	<link text="Create Time Period" />
+	<textfield name="name" set="{@base} 5" />
+	<textfield name="start_date" set="01/01/{@current_year}" />
+	<textfield name="end_date" set="06/30/{@current_year}" />
+	<button value="Save" click="true" />
+	<button value="Create" click="true" />
+	<textfield name="forecast_start_date" set="11/01/{@previous_year}" />
+	<select name="user_id" set="1" />
+	<button value="/Save/" click="true" />-->
+
+	<link id="moduleTab_Forecasts" />
+	<select name="timeperiod_id" assert="/{@base} 5/" />
+</soda>
