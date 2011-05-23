@@ -1,0 +1,84 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+    <puts text="--------Bug 39170 Started--------" />
+    <csv file="tests/csvs/users.csv" var="user">
+        <script file="tests/modules/lib/login.xml" />
+    </csv>
+    
+    <!-- add "created by" filter -->
+    <browser
+        url="{@global.url}?module=ModuleBuilder&action=index&type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddashletsearch%26view_module%3DTasks"
+        assertPage="false" />
+    <wait timeout="10" condition="true">
+        <ul id="ul0" />
+    </wait>
+    <javascript addUtils="true">
+        var start = YAHOO.util.Selector.query("li#subslot8")[0];
+        var end = YAHOO.util.Selector.query("li#topslot0")[0];
+        SUGAR.soda.fakeDrag(start, end);
+    </javascript>
+    <button name="savebtn" />
+
+    <!-- Go to home page -->
+    <browser
+        url="{@global.url}?module=Home&action=index"
+        assertPage="false" />
+    
+    <!-- Add dashlet and go to preferences-->
+    <javascript>
+        SUGAR.mySugar.addDashlet('MyTasksDashlet', 'module', 'Tasks');
+        YAHOO.util.Selector.query("div.dashletToolSet > a")[0].onclick();
+    </javascript>
+
+    <wait timeout="3" />
+
+    <!-- Asserts -->
+    <browser assertnot="Not Implemented" />
+    <browser assertnot="There was an error handling this request" />
+    <browser assert="Created By" />
+
+    <!-- restore defaults -->
+    <puts text="Restoring ..." />
+    <browser
+        url="{@global.url}?module=ModuleBuilder&action=index&type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddashletsearch%26view_module%3DTasks"
+        assertPage="false" />
+    <wait timeout="10" />
+    <javascript>
+        ModuleBuilder.history.browse("Tasks", "dashletsearch");
+    </javascript>
+    <wait timeout="5" />
+    <puts text="Restore to default (usually)" />
+    <javascript>
+        var buttons = YAHOO.util.Selector.query("div#histWindow input[type=button]");
+        buttons[buttons.length - 1].onclick();
+    </javascript>
+    <button name="savebtn" />
+
+    <puts text="--------Bug 39170 Finished--------" />
+</soda>
