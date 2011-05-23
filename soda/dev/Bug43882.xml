@@ -1,0 +1,26 @@
+<soda>
+	<puts text='--------Bug 43882 Started--------'/>
+
+	<!-- login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<!-- setup -->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<link id="moduleTab_Home" />
+	<link id="add_dashlets" />
+	<link text="My Accounts" />
+	<div class="container-close" click="true" />
+	<div class="dashletToolSet">
+		<image alt="Edit Sugar Dashlet" click="true" />
+	</div>
+	<select id="hide_tabs" set="team_name" />
+	<image src="/leftarrow/" click="true" />
+	<button value="Save" />
+	<div class="dashletPanel">
+		<link href="/EditView/" />
+	</div>
+	<browser assert="Account Overview" />
+
+	<!-- cleanup -->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+</soda>
