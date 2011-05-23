@@ -1,0 +1,55 @@
+<soda>
+	<var var="path_to_file_attach" set="dev/csvs/tux.png" />
+	<var var="template_name" set="soda-test-template" />
+
+	<puts text="Verify that file '{@path_to_file_attach}' exists" />
+
+	<puts text='--------Bug 41316 Started--------'/>
+	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	<puts text='--------Bug 41316 logged in--------'/>
+	
+	<browser url="{@global.url}/index.php?module=EmailTemplates&action=EditView&return_module=EmailTemplates&return_action=DetailView" />
+
+	<puts text='--------came to create template--------'/>
+	<textfield name='name' set='{@template_name}'/>
+	<puts text='-------- name was set--------'/>	
+	<filefield id='email_attachment0' set='{@path_to_file_attach}'/>
+	<puts text='-------- file was put--------'/>
+
+	<div id="upload_div">
+		<image index='2' click='true'/>
+	</div>
+
+	<puts text='-------- pin button was clicked--------'/>
+
+	<!--  save -->
+	<button name='button' />
+	<puts text='-------- template was saved--------'/>	
+	
+	<javascript>
+		YAHOO.util.Selector.query("#sugar_spot_search")[0].value = YAHOO.util.Selector.query("#html_div img")[0].getAttribute("src");
+	</javascript>	
+	
+	<puts text='-------- js executed--------'/>	
+	<textfield id="sugar_spot_search" var="email_image_template_source" />
+	<textfield id="sugar_spot_search" set="" />	
+	
+	<puts text='email_image_template_source: {@email_image_template_source}'/>
+
+	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
+	
+	<browser url="{@email_image_template_source}" />
+	<browser assertnot="Not a Valid Entry Point" />
+	<browser action="close" />
+	
+	<!-- delete created template -->
+
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	<browser url="{@global.url}/index.php?module=EmailTemplates&action=index" />
+	<link text='{@template_name}' />
+	<form id="form">
+		<button name='button' index='3' alert='true'/>
+	</form>
+	<browser action="close" />
+</soda>
