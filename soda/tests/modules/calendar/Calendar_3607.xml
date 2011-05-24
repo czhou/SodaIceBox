@@ -59,6 +59,14 @@
 	<link id="moduleTab_Calendar" />
 	<button value=" Shared " />
 	
+	<!-- Fix the failure - make sure the current shared calendar display user is a correct user - Eric -->
+	<link class="tabFormAdvLink" index="2" />
+	<select id="team_id" set="{@user.logname}" />
+	<wait timeout="5" />
+	<select id="shared_ids" set="{@user.name}" />
+	<button value="Select" />
+	<wait timeout="5" />
+	
 	<table id="daily_cal_table">
 		<browser assert="{@meeting1_label}" />
 		<link text="/{@meeting1_label}.*/" /> <!-- account for time. -->
