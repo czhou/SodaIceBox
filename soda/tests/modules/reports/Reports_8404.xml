@@ -95,6 +95,8 @@
 	<table class="list view">
 		<browser assert="{@report_name}" />
 	</table>
+	
+	<!--Delete the record creted in this case-->
 	<link text="{@report_name}" />
 	<button id="deleteReportButton" alert="true" />
 
