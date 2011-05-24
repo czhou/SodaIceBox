@@ -35,11 +35,10 @@
 	<link id="moduleTab_Cases" />
 	<browser assert="Cases" />
 
-	<link text="Create Case" />
-	<browser assert="Cases" />
-
+	
 	<!--Create record with multi teams-->
 	<csv file="{@global.scriptsdir}/csvs/teams/Teams_9507.csv" var="teams_9507">
+		<link text="Create Case" />
 		<!-- Account Select -->
 		<button id="btn_account_name" />
 		<browser assert="Account Search" />

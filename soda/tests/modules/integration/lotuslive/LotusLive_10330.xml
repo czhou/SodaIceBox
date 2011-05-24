@@ -47,7 +47,7 @@
 		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/1.docx" />	
 	</div>
 	<button id="Documents_subpanel_save_button" />
-	<wait timeout='10'/>
+	<wait timeout='30'/>
 	<link text="1.docx" click="false" exist="true"/>
 
 	<button id="documents_accounts_create_button" />
@@ -60,6 +60,7 @@
 		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/2.xlsx" />
 		<button value="Save" />
 	</form>
+	<wait timeout='10'/>
 	<link text="2.xlsx" click="false" exist="true"/>
 
 	<link class='listViewTdToolsS1' index='2' alert='true' />

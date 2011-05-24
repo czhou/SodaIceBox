@@ -63,5 +63,7 @@
 	</div>
 	<wait timeout="3" />
 	
+	<!--Restore Email outbound setting-->
+	<script file="{@global.scriptsdir}/modules/lib/Email_Setting_Lib.xml"/>
 	<puts text="Test: Emails_9672.xml finished." />
 </soda> 

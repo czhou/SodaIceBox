@@ -32,12 +32,11 @@
 	<!--Go to modules that can edit team info-->        
 	<link id="moduleTab_Opportunities" />
 	<browser assert="Opportunities" />
-
-	<link text="Create Opportunity" />
-	<browser assert="Opportunities" />
+	
 
 	<!--Create record with multi teams-->
 	<csv file="{@global.scriptsdir}/csvs/teams/Teams_9503.csv" var="teams_9503">
+		<link text="Create Opportunity" />
 		<image id="remove_team_name_collection_0" click="true" />
 
 		<!--Teams select-->

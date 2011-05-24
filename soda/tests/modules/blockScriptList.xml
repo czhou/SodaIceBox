@@ -99,6 +99,13 @@
 	
 	<!-- Mazen's Modules -->
 	
+	<block>
+		<testfile>Quote_2560</testfile>
+		<bugnumber>1</bugnumber>
+		<reason>Send key</reason>
+		<modulename>Quote</modulename>
+	</block>
+	
 	<!-- Bug 44056 -->
 	<block>
 		<testfile>Leads_1922</testfile>

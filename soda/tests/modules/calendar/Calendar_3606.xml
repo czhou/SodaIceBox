@@ -56,11 +56,19 @@
 		<var var="call1_name" set="{@call_record.name} {@user.name} {@stamp}" />
 		<var var="call1_label" set="{@call_record.status}: {@call1_name}" />
 	<button value="Save" />
-
 	<wait timeout="3" />
+	
 	
 	<link id="moduleTab_Calendar" />
 	<button value=" Shared " />
+	<browser assert="Shared Calendar" />
+	<!-- Fix the failure - make sure the current shared calendar display user is a correct user - Eric -->
+	<link class="tabFormAdvLink" index="2" />
+	<select id="team_id" set="{@user.logname}" />
+	<wait timeout="5" />
+	<select id="shared_ids" set="{@user.name}" />
+	<button value="Select" />
+	<wait timeout="5" />
 	
 	<table id="daily_cal_table">
 		<browser assert="{@call1_label}" />

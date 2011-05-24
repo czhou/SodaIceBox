@@ -47,7 +47,7 @@
 		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/lotuslive/1.docx" />	
 	</div>
 	<button id="Documents_subpanel_save_button" />
-	<wait timeout='10'/>
+	<wait timeout='30'/>
 	<link text="1.docx" click="false" exist="true"/>
 	
 	<button name="documents_cases_create_button" />

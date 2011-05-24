@@ -1,0 +1,90 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Relationship-Detail Task_Verify that task can be successful deleted on the 
+		" case " sub-panel. -->
+	<puts text="Test: Quote_2582.xml starting" />
+	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2582.csv" var="Quote_2582">
+		<link href="index.php?module=Quotes&amp;action=index" />
+		<link text="Basic Search" required="false" />
+		<button id="search_form_clear" />
+		<form id="search_form">
+			<textfield id="name_basic" set="{@pre_Quote_name}" />
+		</form>
+		<button id="search_form_submit" />
+
+		<table class="list view">
+			<browser assert="{@pre_Quote_name}" />
+			<link text="{@pre_Quote_name}" click="true" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@pre_Quote_name}" />
+		</table>
+		<div id="list_subpanel_activities">
+			<table class="list view">
+				<button id="Activities_createtask_button" />
+				<wait timeout="3" />
+			</table>
+		</div>
+		<form id="form_SubpanelQuickCreate_Tasks">
+			<button id="Tasks_subpanel_full_form_button" />
+		</form>
+		
+		<timestamp />
+		<form id="EditView">
+			<textfield id="name" set="{@Quote_2582.task_name} {@user.name} {@stamp}" />
+			<select id="priority" set="{@Quote_2582.task_priority}" />
+			<select id="status" set="{@Quote_2582.task_status}" />
+			<button value="Save" />
+		</form>
+
+		<div id="list_subpanel_activities">
+			<table class="list view">
+				<browser assert="{@Quote_2582.task_name} {@user.name} {@stamp}" />
+				<link text="{@Quote_2582.task_name} {@user.name} {@stamp}" click="false" />
+				<link class="listViewTdToolsS1" index="1" />
+			</table>
+		</div>
+		<form id="EditView">
+			<textfield id="name" set="{@Quote_2582.task_name_edit} {@user.name} {@stamp}" />
+			<select id="priority" set="{@Quote_2582.task_priority_edit}" />
+			<select id="status" set="{@Quote_2582.task_status_edit}" />
+			<button value="Cancel" alert="true" />
+		</form>
+		<div id="list_subpanel_activities">
+			<table class="list view">
+				<browser assert="{@Quote_2582.task_name} {@user.name} {@stamp}" />
+			</table>
+		</div>
+	</csv>
+	
+	<!-- Clean up tasks created in this script -->
+	
+	
+	<puts text="Test: Quote_2582.xml finished" />
+</soda>
