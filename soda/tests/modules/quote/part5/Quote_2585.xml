@@ -79,6 +79,8 @@
 			</table>
 		</div>
 	</csv>
+	<!-- Clean up calls created in this script -->
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 
 	<puts text="Test: Quote_2585.xml finished" />
 </soda>

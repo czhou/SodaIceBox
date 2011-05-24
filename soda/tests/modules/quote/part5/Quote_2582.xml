@@ -84,7 +84,7 @@
 	</csv>
 	
 	<!-- Clean up tasks created in this script -->
-	
+	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
 	
 	<puts text="Test: Quote_2582.xml finished" />
 </soda>
