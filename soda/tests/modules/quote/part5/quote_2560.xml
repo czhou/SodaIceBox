@@ -44,21 +44,25 @@
 		<link text="{@pre_Quote_name}" />
 		<wait timeout="2" />
 	</table>
+	<div class="moduleTitle">
+		<link href="index.php?module=Quotes&amp;action=index" click="false" />
+		<browser assert="Quote Overview" />
+	</div>
 	
-	<browser assert="Quote Overview" />
 
 	<!--Press View Summary button and assert the pop-up window -->
-	<button id="summary_button" />
+	<button value="View Change Log" />
 	<wait timeout="2" />
 	<div class="moduleTitle">
-		<browser assert="Quotes" />
+		<browser assert="Change Log" />
 	</div>
-
-
-	<!--Restart browser and relogin-->
-	<browser action="close"/>
-	<browser url="{@global.url}"/>
-	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-	<puts text="Test Case 2560 is finished!"/>
+	
+	<browser send_keys="Ctrl+W" />
+	<wait timeout="1" />
+	<attach title="/{@pre_Quote_name}/">
+		<wait timeout="3" />
+	</attach>
+	
+	<puts text="Test: Quote_2560.xml"/>
 </soda>
 
