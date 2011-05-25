@@ -88,8 +88,8 @@
 				<browser assert="{@Quote_2568.task_name} {@user.name} {@stamp}" />
 			</table>
 		</div>
-		<var var="Quote_2568" set="{@Quote_2568.name} {@user.name} {@stamp}" />
 	</csv>
-
+	<!-- Delete the task created in this script -->
+	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
 	<puts text="Test: Quote_2568.xml finished" />
 </soda>
