@@ -103,7 +103,7 @@
 		<testfile>Quote_2560</testfile>
 		<bugnumber>1</bugnumber>
 		<reason>Send key</reason>
-		<modulename>Quote</modulename>
+		<modulename>Quotes</modulename>
 	</block>
 	
 	<!-- Bug 44056 -->
