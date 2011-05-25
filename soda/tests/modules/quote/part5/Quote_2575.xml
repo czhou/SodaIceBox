@@ -1,0 +1,85 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Edit Mail_Verify that "Archive Email" can be successful modified on the "Cases" 
+		sub-panel. -->
+	<puts text="Test: Quote_2575.xml starting" />
+
+	<!--Go to Quotes module and search out the quote record create in lib -->
+	<link id="moduleTab_Quotes" />
+	<browser assert="Quotes" />
+	<form id="search_form">
+		<button id="search_form_clear" />
+		<textfield id="name_basic" set="{@pre_Quote_name}" />
+		<button id="search_form_submit" />
+	</form>
+
+	<table class="list view">
+		<link text="{@pre_Quote_name}" />
+	</table>
+
+	<!--Create a Archive Email in History subpanel. -->
+	<browser assert="Quote Overview" />
+	<button id="ArchiveEmail_button" />
+	<wait timeout="5" />
+	<textfield id="jscal_field" set="05/10/2011" />
+	<textfield name="time_start" set="0:00" />
+	<textfield id="subjectfield" set="New Archived Email" />
+	<button value="  Save  " />
+	<wait timeout="5" />
+	<browser assert="New Archived Email" />
+
+	<!--Verify Archived Email is in subpnale -->
+	<div id="list_subpanel_history">
+		<link text="New Archived Email" click="false" />
+		<link class="listViewTdToolsS1" index="1" />
+		<wait timeout="5" />
+	</div>
+	
+
+	<!--Edit the Archived Email record -->
+	<textfield id="subjectfield" set="Modified Archived Email" />
+	<button value="  Save  " />
+	<wait timeout="5" />
+
+	<div id="list_subpanel_history">
+		<link text="Modified Archived Email" click="false" />
+	</div>
+
+	<!--Delete the Archived Eamil record created in this case. -->
+	<div id="list_subpanel_history">
+		<link class="listViewTdToolsS1" index="2" alert="true" />
+		<wait timeout="5" />
+	</div>
+
+	
+	<div id="list_subpanel_history">
+		<link text="Modified Archived Email" exist="false" click="false" />
+	</div>
+	<puts text="Test: Quote_2575.xml finished" />
+</soda>
