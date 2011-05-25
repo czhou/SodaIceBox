@@ -106,12 +106,21 @@
 		<modulename>Quotes</modulename>
 	</block>
 	
+	<!-- Bug 43612 start-->
 	<block>
 		<testfile>Campaigns_1242</testfile>
 		<bugnumber>43612</bugnumber>
 		<reason>JS error when accessing a particular div</reason>
 		<modulename>Campaigns</modulename>
 	</block>
+	
+	<block>
+		<testfile>Accounts_0431</testfile>
+		<bugnumber>43612</bugnumber>
+		<reason>JS error when accessing a particular div</reason>
+		<modulename>Subpanels</modulename>
+	</block>
+	<!-- Bug 43612 end-->
 	
 	<!-- Bug 44056 -->
 	<block>
@@ -190,7 +199,6 @@
 		<reason>Leads Convert Fails</reason>
 		<modulename>Studio</modulename>
 	</block>
-	
 	<!-- End Bug 44056 -->
 	
 	<!-- Beginning of illegal javascript related blocks -->
