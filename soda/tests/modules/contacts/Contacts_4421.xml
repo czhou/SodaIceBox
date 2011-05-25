@@ -95,9 +95,11 @@
 
 		<!--Delete quote relationship-->
 		<table class="list view">
-			<link class="listViewTdToolsS1" index="2" alert="true"/>
+			<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
 		</table>
 	</div>
+
+	<wait timeout="2"/>
 
 	<!--Verify delete works-->
 	<div id="list_subpanel_quotes">
