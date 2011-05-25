@@ -38,7 +38,7 @@
 		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/google/10356.txt" />
 		<button id="SAVE_HEADER" />
 	</form>
-	<wait timeout='10'/>
+	<wait timeout='30'/>
 	<link text="10356.txt" click="false" exist="true"/>
 	
 	<!-- Delete the created sugar doc-->

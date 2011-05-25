@@ -1,0 +1,6 @@
+name,title,department,des,des_detail
+con1,100,10,2,2
+con2,0.01,10,-2,-2
+con3,-100,10,NaN,NAN
+con3,a,,,
+con4,,,,

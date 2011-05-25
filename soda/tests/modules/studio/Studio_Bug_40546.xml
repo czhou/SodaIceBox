@@ -50,7 +50,9 @@
 
 	<!-- check that contacts primary address reportable got set to false -->
 	<link text="tester_field_c" class="mbLBLL" assertPage="false" />
-	<hidden id="reportable" assert="0" />
+	<wait timeout="3" />
+	<browser assert="Data Type" />
+	<checkbox name="reportableCheckbox" assert="false" />
 	<wait timeout="3" />
 	<button name="fdeletebtn" assertPage="false" alert="true" />
 

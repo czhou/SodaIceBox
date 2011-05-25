@@ -69,7 +69,7 @@
 	      <div id="LBL_CONTACT_INFORMATION">
 	      	<browser assert="{@studio10154.name} {@user.name} {@stamp}" />
 			<browser assert="{@studio10154.des_detail}" />
-	        <!--span id="actual_cost" assert="{@studio10154.actual_cost_detail}" /-->
+	       
 	      </div>
     </csv>
     
