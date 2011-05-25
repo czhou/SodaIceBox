@@ -41,7 +41,8 @@
 
 	<select id="type" set="MultiSelect" />
 	<wait timeout="3" />
-	<select id="default[]" set="OAuth" />
+	<select id="options" set="account_type_dom" />
+	<select id="default[]" set="Integrator" />
 	<textfield id="field_name_id" set="testfield" />
 	<wait timeout="3" />
 	<textfield name="help" click="false" />
