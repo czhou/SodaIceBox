@@ -106,6 +106,13 @@
 		<modulename>Quotes</modulename>
 	</block>
 	
+	<block>
+		<testfile>Campaigns_1242</testfile>
+		<bugnumber>43612</bugnumber>
+		<reason>JS error when accessing a particular div</reason>
+		<modulename>Campaigns</modulename>
+	</block>
+	
 	<!-- Bug 44056 -->
 	<block>
 		<testfile>Leads_1922</testfile>
