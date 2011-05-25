@@ -27,7 +27,7 @@
 
 <soda>
 
-	<puts test="Test Case 2589: Relationship - Delete Email_Verify that 'Archive Email' can be successful deleted on the 'Activity' sub-panel.">
+	<puts text="Test Case 2590: Relationship - Delete Email_Verify that deleting 'Archive Email' can be successful canceled on the 'Cases' sub-panel."/>
 
         <!--Go to Quotes module and search out the quote record create in lib-->
         <link id='moduleTab_Quotes'/>
@@ -53,9 +53,9 @@
         <wait timeout="5"/>
 	<div id="list_subpanel_history">
 		 <browser assert="New Archived Email"/>
-		<link class="listViewTdToolsS1" index="2" alert="true"/>
+		<link class="listViewTdToolsS1" index="2" alert="false"/>
 		<wait timeout="5"/>
-		<browser assertnot="New Archived Email"/>
+		<browser assert="New Archived Email"/>
 	</div>
-        <puts text="End Test Case 2589"/>
+        <puts text="End Test Case 2590"/>
 </soda>
