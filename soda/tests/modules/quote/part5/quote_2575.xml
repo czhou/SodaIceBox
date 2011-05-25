@@ -73,7 +73,7 @@
 
 	<!--Delete the Archived Eamil record created in this case. -->
 	<div id="list_subpanel_history">
-		<link class="listViewTdToolsS1" index="2" />
+		<link class="listViewTdToolsS1" index="2" alert="true" />
 		<wait timeout="5" />
 	</div>
 
