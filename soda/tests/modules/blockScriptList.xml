@@ -978,9 +978,9 @@
 	</block>
 
 	<block>
-		<testfile>Studio_Bug_40546</testfile>
-		<bugnumber>40546</bugnumber>
-		<reason>bug fixed in 6.1.3</reason>
+		<testfile>Studio_10297</testfile>
+		<bugnumber>44189</bugnumber>
+		<reason>bug 44189</reason>
 		<modulename>Studio</modulename>
 	</block>
 	
