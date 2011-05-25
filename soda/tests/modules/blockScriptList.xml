@@ -28,6 +28,13 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Emails_9655</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Creates users and doesn't delete them, breaking other tests in Teams.</reason>
+		<modulename>Emails</modulename>
+	</block>
+
+	<block>
 		<testfile>BugTracker_0637</testfile>
 		<bugnumber>-1</bugnumber>
 		<reason>Requires new suites for setup and cleanup of releases.</reason>
