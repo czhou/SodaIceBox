@@ -1,0 +1,103 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test Case 2579: Relationship - Edit Contract_Verify that 'Contracts' can be successful modified on the 'Contracts' sub-panel."/>
+
+	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2565.csv" var="Quote_2565">
+
+		<link href="index.php?module=Quotes&amp;action=index" />
+		<wait timeout="5" />
+		<link text="Basic Search" required="false" />
+		<button id="search_form_clear" />
+		<textfield id="name_basic" set="{@pre_Quote_name}" />
+		<button id="search_form_submit" />
+
+		<table class="list view">
+			<browser assert="{@pre_Quote_name}" />
+			<link text="{@pre_Quote_name}" click="true" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@pre_Quote_name}" />
+		</table>
+		<div id="list_subpanel_contracts">
+			<table class="list view">
+				<button id="contracts_quotes_create_button" />
+				<wait timeout="3" />
+			</table>
+		</div>
+
+		<!--Opportunity select -->
+		<button id="btn_opportunity_name" />
+		<wait timeout="2" />
+		<browser assert="Opportunity Search" />
+		<textfield name="name_advanced" set="{@pre_opp_name}" />
+		<button value="Search" />
+		<table class="list view">
+			<link text="{@pre_opp_name}" />
+		</table>
+
+		<form id="form_SubpanelEditView_Contracts">
+			<textfield name="name" set="{@Contract_Create_Lib}" />
+			<select id="status" set="{@Quote_2565.contract_status}" />
+			<button id="Contracts_subpanel_save_button" />
+		</form>
+
+		<div id="list_subpanel_contracts">
+			<table class="list view">
+				<link text="{@Contract_Create_Lib}" click="false" />
+			</table>
+		</div>
+		
+		<!--Edit Contract record-->
+		<div id="list_subpanel_contracts">
+			<link class="listViewTdToolsS1" index="1"/>
+			<wait timeout="3"/>
+		</div>
+
+		<browser assert="Contract Overview"/>
+		
+		<textfield id="name" set="Modified Contract Record"/>
+		<button id="SAVE_HEADER"/>
+		<wait timeout="5"/>
+
+		<div id="list_subpanel_contracts">
+			<link text="Modified Contract Record" click="false"/>
+		</div>
+
+		<!--Delete the contract record created in this case-->
+		<div id="list_subpanel_contracts">
+			<link text="Modified Contract Record"/>
+		</div>
+		
+		<browser assert="Contract Overview"/>
+		<button value="Delete"/>
+		<wait timeout="3"/>
+	</csv>
+
+	<puts text="Test: Quote_2579.xml finished" />
+</soda>
