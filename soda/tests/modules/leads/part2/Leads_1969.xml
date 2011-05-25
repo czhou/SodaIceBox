@@ -99,6 +99,10 @@
 		<link href="index.php?module=Leads&amp;action=index" click="false" />
 	</div>
 	<link text="Basic Search" required="false" />
+	<div id="Leadsbasic_searchSearchForm">
+		<button id="search_form_clear"/>
+		<button id="search_form_submit"/>
+	</div>
 
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
 	<puts text="Test: Leads_1969.xml finished" />
