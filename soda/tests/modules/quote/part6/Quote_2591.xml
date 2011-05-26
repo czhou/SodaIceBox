@@ -56,7 +56,7 @@
 		
 		<!--Delete the project record-->
 		<link class="listViewTdToolsS1" index="2" alert="true"/>
-		<wait timout="5"/>
+		<wait timeout="5"/>
 		<browser assertnot="New Project Record"/>
 	</div>
         <puts text="End Test Case 2591 is finished!"/>
