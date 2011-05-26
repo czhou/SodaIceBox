@@ -98,6 +98,12 @@
 	</block>
 	
 	<!-- Mazen's Modules -->
+	<block>
+		<testfile>Calendar_10966</testfile>
+		<bugnumber>43439</bugnumber>
+		<reason>Inactive user shows in shared calendar filter</reason>
+		<modulename>Incoming</modulename>
+	</block>
 	
 	<block>
 		<testfile>Quote_2560</testfile>
