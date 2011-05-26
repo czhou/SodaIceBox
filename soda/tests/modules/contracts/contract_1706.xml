@@ -50,7 +50,7 @@
 	<textfield id="name" set="Note record"/>
 
 	<button id="Notes_subpanel_save_button"/>
-	<wait timeout="2"/>
+	<wait timeout="10"/>
 	
 	<!--Edit Note record in subpanel-->
 	<div id="list_subpanel_history">
