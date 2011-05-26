@@ -106,6 +106,13 @@
 	</block>
 	
 	<block>
+		<testfile>Forecast_10968</testfile>
+		<bugnumber>33971</bugnumber>
+		<reason>Time period sort order in forecast</reason>
+		<modulename>Incoming</modulename>
+	</block>
+	
+	<block>
 		<testfile>Quote_2560</testfile>
 		<bugnumber>1</bugnumber>
 		<reason>Send key</reason>
