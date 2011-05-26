@@ -38,14 +38,14 @@
 		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/google/10356.txt" />
 		<button id="SAVE_HEADER" />
 	</form>
-	<wait timeout='30'/>
+	<wait timeout='10'/>
 	<link text="10356.txt" click="false" exist="true"/>
 	
 	<!-- Delete the created sugar doc-->
 	<link text="View Documents" />
 
 	<button id="search_form_clear" />
-	<textfield id="document_name_basic" set="Google {@user.name} {@stamp}" />
+	<textfield id="document_name_basic" set="Google_Doc {@user.name} {@stamp}" />
 	<button id="search_form_submit" />
 	<span class="pageNumbers" assert="(1 - 1 of 1)" />
 

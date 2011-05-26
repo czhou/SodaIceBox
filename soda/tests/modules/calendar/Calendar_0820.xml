@@ -86,6 +86,7 @@
 	
 	
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	
 	<puts text="Test: Calendar_0820.xml finished." />
