@@ -95,7 +95,7 @@
 		</div>
 		
 		<browser assert="Contract Overview"/>
-		<button value="Delete"/>
+		<button value="Delete" alert="true"/>
 		<wait timeout="3"/>
 	</csv>
 
