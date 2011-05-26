@@ -60,11 +60,12 @@
 		<link text="Close" />
 	</div>
 	<button id="composeButton" alert="true" />
-	<!--
+
+	<wait timeout="10"/>
+
 	<div id="sugarMsgWindow">
 		<button text="OK" />
 	</div>
-	-->
 
 	<link text="Admin" />
 	<wait timeout="2"/>
