@@ -83,7 +83,7 @@
 		<browser assert="Contract Overview"/>
 		
 		<textfield id="name" set="Modified Contract Record"/>
-		<button id="CANCEL_HEADER" aerlt="true"/>
+		<button id="CANCEL_HEADER" alert="true"/>
 		<wait timeout="5"/>
 
 		<div id="list_subpanel_contracts">
@@ -96,7 +96,7 @@
 		</div>
 		
 		<browser assert="Contract Overview"/>
-		<button value="Delete"/>
+		<button value="Delete" alert="true"/>
 		<wait timeout="3"/>
 	</csv>
 
