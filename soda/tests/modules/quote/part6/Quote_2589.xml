@@ -27,7 +27,7 @@
 
 <soda>
 
-	<puts test="Test Case 2589: Relationship - Delete Email_Verify that 'Archive Email' can be successful deleted on the 'Activity' sub-panel.">
+	<puts test="Test Case 2589: Relationship - Delete Email_Verify that 'Archive Email' can be successful deleted on the 'Activity' sub-panel."/>
 
         <!--Go to Quotes module and search out the quote record create in lib-->
         <link id='moduleTab_Quotes'/>
