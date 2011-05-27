@@ -38,9 +38,6 @@
 	Expected:
 		5. The data entered are cleared from the text field.
 	-->
-	
-	<script file="{@global.scriptsdir}/modules/lib/Target_Create_Lib.xml" />
-	<var var="target1_name" set="{@Target_First_Name} {@Target_Last_Name}" />
 
 	<link id="moduleTab_Prospects" />
 	
@@ -51,8 +48,6 @@
 	<button id="search_form_clear" />
 	
 	<textfield id="search_name_basic" assertnot="C" />
-	
-	<script file="{@global.scriptsdir}/modules/lib/Target_Delete_Lib.xml" />
 	
 	<puts text="Test: Campaigns_1261.xml finished." />
 </soda>	
