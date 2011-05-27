@@ -89,8 +89,9 @@
 		</div>
 	</csv>
 
-	<!--Delete the record-->
+	<!-- Delete the records. -->
 	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 
 	<puts text="Test: Cases_1340.xml finished." />
 </soda>

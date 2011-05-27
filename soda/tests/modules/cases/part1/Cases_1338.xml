@@ -89,7 +89,7 @@
 	</csv>
 
 	<!--Delete the record-->
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
 
 	<puts text="Test: Cases_1338.xml finished." />
