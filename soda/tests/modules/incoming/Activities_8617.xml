@@ -1,0 +1,79 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		Action:
+			1. Login to SugarCRM as a valid user.
+			2. Go to Activities module.  // directly to "Calls" - mfleeger
+			3. Log a call with "Related to" set to "Contact" and
+				select a contact.
+			4. Click "Save" button.
+			5. Click the link of the contact.
+		Expectation:
+			5. The link of the 'contact' can lead to correct
+				contact detail view. 
+
+	-->
+	<puts text="Test: Activities_8617.xml starting." />
+
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<var var="contact1_lname" set="{@pre_contact_last_name}" />
+	<var var="contact1_name" set="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+	
+	<timestamp />
+	<var var="call1_name" set="Call_{@stamp}" />
+	<textfield id="name" set="{@call1_name}" />
+	
+	<select id="parent_type" set="Contact" />
+	<button id="btn_parent_name" />
+	
+	<textfield id="last_name_advanced" set="{@contact1_lname}" />
+	<button value="Search" />
+	<table class="list view">
+		<link text="{@contact1_name}" />
+	</table>
+	
+	<button value="Save" />
+	
+	<div id="list_subpanel_contacts">
+		<link text="{@contact1_name}" />
+	</div>
+	
+	<span id="full_name">
+		<browser assert="{@contact1_name}" />
+	</span>
+	
+	
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+		
+	<puts text="Test: Activities_8617.xml finished." />
+</soda>
