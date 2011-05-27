@@ -79,10 +79,12 @@
 		<browser assert="{@Leads_1992.last_nameB}" />
 	</table>
 
-	<link text="Basic Search" required="false" />
-	<button id="search_form_clear" />
-	<button id="search_form_submit" />
-	<wait timeout="2"/>
+	<link text="Basic Search"/>
+	<div id="Leadsbasic_searchSearchForm">
+		<button id="search_form_clear" />
+		<button id="search_form_submit" />
+		<wait timeout="2"/>
+	</div>
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
 	<puts text="Test: Leads_1992.xml finished" />
 </soda>
