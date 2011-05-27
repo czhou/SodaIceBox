@@ -1,0 +1,81 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		Action:
+			1. Login to system as valid user.
+			2. Go to "Accounts" module.
+			3. Go to an account record detail view.
+			4. Select an activity record on "ACTIVITIES" sub-panel.
+			5. Click "Duplicate" button on the detail view and click 
+				"Cancel button on the edit view.
+			6. Search the canceling duplicate activity record on the 
+				activity search panel.
+		Expectation:
+			6. No matching duplicate activity record is displayed in
+				the activities list view.
+
+	-->
+	<puts text="Test: Activities_0302.xml starting." />
+
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<var var="account1_name" set="{@pre_account_name}" />
+	
+	<button id="Activities_schedulemeeting_button" />
+	
+	<timestamp />
+	<var var="meeting1_name" set="Meeting_{@stamp}" />
+	<var var="meeting2_name" set="Dup_{@meeting1_name}" />
+	<textfield id="name" set="{@meeting1_name}" />
+	<button id="Meetings_subpanel_save_button" />
+	<wait timeout="5" />
+	
+	<div id="list_subpanel_activities">
+		<link text="{@meeting1_name}" />
+	</div>
+	
+	<button id="duplicate_button" />
+	<textfield id="name" set="{@meeting2_name}" />
+	<button id="CANCEL" alert="true" />
+	
+	<link id="moduleTab_Meetings" />
+	<textfield id="name_basic" set="{@meeting2_name}" />
+	<button id="search_form_submit" />
+	
+	<table class="list view">
+		<browser assertnot="{@meeting2_name}" />
+	</table>
+	
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	
+	<puts text="Test: Activities_0302.xml finished." />
+</soda>

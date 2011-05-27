@@ -1,0 +1,129 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		Action:
+			1. Login to SugarCRM as a valid user.
+			2. Go to Activities module. // "Calls" with 6.1 // mfleeger
+			3. Schedule a call and add a contact to it.
+			4. Click "Edit" button in the call's detail view.
+			5. Add another contact to this call.
+			6. Click "Close and Create New" button in the call's edit view.
+			7. Click "Save" button.
+			8. Click "Calls" link in navigation shortcuts.
+			9. Go to the original call's detail view.
+		Expectation:
+			6. The two contact are associated with the new call. A new
+				call is created and its status is 'Planned'.
+			9. The two contact are associated with the original call.
+
+	-->
+	<puts text="Test: Activities_0509.xml starting." />
+
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<var var="contact1_fname" set="{@pre_contact_first_name}" />
+	<var var="contact1_lname" set="{@pre_contact_last_name}" />
+	<var var="contact1_name" set="{@contact1_fname} {@contact1_lname}" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<var var="contact2_fname" set="{@pre_contact_first_name}" />
+	<var var="contact2_lname" set="{@pre_contact_last_name}" />
+	<var var="contact2_name" set="{@contact2_fname} {@contact2_lname}" />
+	
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+	
+	<timestamp />
+	<var var="call1_name" set="Call_{@stamp}" />
+	<var var="call2_name" set="{@call1_name}_mod" />
+	<textfield id="name" set="{@call1_name}" />
+	
+	<textfield name="search_first_name" set="{@contact1_fname}" />
+	<textfield name="search_last_name" set="{@contact1_lname}" />
+	<button value="Search" />
+	
+	<div id="list_div_win">
+		<button value="Add" click="true" />
+		<button value="Add" jscriptevent="onmouseup" />
+	</div>
+	
+	<button value="Save" />
+	
+	<wait timeout="5" />
+	
+	<button id="edit_button" />
+	<textfield name="search_first_name" set="{@contact2_fname}" />
+	<textfield name="search_last_name" set="{@contact2_lname}" />
+	<button value="Search" />
+	
+	<div id="list_div_win">
+		<button value="Add" click="true" />
+		<button value="Add" jscriptevent="onmouseup" />
+	</div>
+	
+	<button value="Close and Create New" />
+	<wait timeout="5" />
+	<textfield id="name" set="{@call2_name}" />
+	<button value="Save" />
+	
+	<link id="moduleTab_Calls" />
+	
+	<textfield id="name_basic" set="{@call2_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@call2_name}" />
+	</table>
+	
+	<div id="LBL_CALL_INFORMATION">
+		<browser assert="Inbound Planned" />
+	</div>
+	
+	<div id="list_subpanel_contacts">
+		<browser assert="{@contact1_name}" />
+		<browser assert="{@contact2_name}" />
+	</div>
+	
+	<link id="moduleTab_Calls" />
+	
+	<textfield id="name_basic" set="{@call1_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@call1_name}" />
+	</table>
+	
+	<div id="list_subpanel_contacts">
+		<browser assert="{@contact1_name}" />
+		<browser assert="{@contact2_name}" />
+	</div>
+	
+	
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	
+	<puts text="Test: Activities_0509.xml finished." />
+</soda>
