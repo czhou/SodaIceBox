@@ -70,14 +70,14 @@
 	<div class="moduleTitle" assert="{@bugtracker.merge_confirmation}"
 		click="false" />
 	
-	<textfield id="assigned_user_link" assert="{@bugtracker_0643.user}" />
+	<textfield id="assigned_user_link" assert="{@bugtracker_0643.user2}" />
 	<!-- This is a brittle way to do this.  Any change in the order of the
 			list will break it (as will filling more or fewer fields in the bug
 			record).  Feel free to suggest a better way to do it. -->
 	<table class="tabform">
 		<row index="9">
 			<cell index="3">
-				<browser assert="{@bugtracker_0643.user2}" />
+				<browser assert="{@bugtracker_0643.user}" />
 			</cell>
 		</row>
 	</table>
