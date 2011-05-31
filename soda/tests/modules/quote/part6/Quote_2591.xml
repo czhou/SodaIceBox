@@ -43,21 +43,23 @@
         </table>
 
         <!--Create a Project record in Project subpanel.-->
-        <browser assert="Quote Overview"/>
-        <button id="projects_quotes_create_button"/>
-        <wait timeout="5"/>
-        <textfield id="name" set="New Project Record"/>
-        <textfield name="estimated_start_date" set="05/10/2011"/>
-        <textfield name="estimated_end_date" set="06/10/2011"/>
-        <button id="Project_subpanel_save_button"/> 
-        <wait timeout="5"/>
-	<div id="list_subpanel_project">
-        	<browser assert="New Project Record"/>
-		
-		<!--Delete the project record-->
-		<link class="listViewTdToolsS1" index="2" alert="true"/>
-		<wait timeout="5"/>
-		<browser assertnot="New Project Record"/>
-	</div>
+	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2591.csv" var="quote_2591">
+        	<browser assert="Quote Overview"/>
+        	<button id="projects_quotes_create_button"/>
+        	<wait timeout="5"/>
+        	<textfield id="name" set="{@quote_2591.project_name}"/>
+        	<textfield name="estimated_start_date" set="{@quote_2591.estimated_start_date}"/>
+        	<textfield name="estimated_end_date" set="{@quote_2591.estimated_end_date}"/>
+        	<button id="Project_subpanel_save_button"/> 
+        	<wait timeout="5"/>
+		<div id="list_subpanel_project">
+        		<browser assert="{@quote_2591.project_name}"/>
+			
+			<!--Delete the project record-->
+			<link class="listViewTdToolsS1" index="2" alert="true"/>
+			<wait timeout="10"/>
+			<browser assertnot="{@quote_2591.project_name}"/>
+		</div>
+	</csv>
         <puts text="End Test Case 2591 is finished!"/>
 </soda>

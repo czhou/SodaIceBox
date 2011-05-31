@@ -90,6 +90,9 @@
 				<link text="{@Quote_2579.contract_name} {@user.name} {@stamp}" />
 			</table>
 		</div>
+		
+		<!--Keep the value of gvar-->
+		<var var="Contract_Create_Lib" set="{@Quote_2579.contract_name} {@user.name} {@stamp}"/>
 	</csv>
 
 	<puts text="Test: Quote_2579.xml finished" />
