@@ -29,7 +29,7 @@
 	<!-- Lib: Add a Report -->
 	<puts text="Lib: Report_Create_Lib.xml started." />
 
-	<csv file="{@global.scriptsdir}\modules\lib\Report_Create_Lib.csv" var="report_record_lib">
+	<csv file="{@global.scriptsdir}/modules/lib/Report_Create_Lib.csv" var="report_record_lib">
 		<timestamp />
 		<!--goto Reports module -->
 		<link id="moduleTab_Reports" />
