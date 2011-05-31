@@ -27,7 +27,7 @@
 
 <soda>
 	<!--
-		Select opportunities_Verify that the a related opportunity can be selected into a contact from contact detail view.
+		Create quote_Verify that a related quote can be created from contact detail view
 	-->
 	<puts text="Test: Contacts_1495.xml starting." />
 
@@ -92,7 +92,7 @@
 		<var var="pre_Quote_name" set="{@Quote_Create_Lib.name} {@user.name} {@stamp}" />
 	</csv>
 
-	<!--Verify created Opp show in subpanel-->
+	<!--Verify created quote show in subpanel-->
 	<div id="list_subpanel_quotes">
 		<link text="{@pre_Quote_name}" click="false"  exist="true"/>
 		<browser assert="{@pre_Quote_name}"/>
@@ -103,5 +103,7 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/TaxRate_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Quote_Delete_Lib.xml" />
+
 	<puts text="Test: Contacts_1495.xml finished." />
 </soda>
