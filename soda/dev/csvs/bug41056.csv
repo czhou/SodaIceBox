@@ -1,0 +1,3 @@
+name,lastname,email,pass,accountname
+bug41056,bug41056-last-name,bug41056@example.com,asdf1234,bug41056-first-account
+bug41056-2,bug41056-2-last-name,bug41056-2@example.com,asdf1234,bug41056-second-account
