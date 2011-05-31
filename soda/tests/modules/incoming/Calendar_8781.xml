@@ -55,11 +55,12 @@
 	<textfield id="name" set="{@call1_name}" />
 	
 	<textfield name="search_last_name" set="{@lead1_lname}" />
-	<button value="Search" />
-
+	<button value="Search" click="true" />
+	<wait timeout="3" />
 	<div id="list_div_win">
 		<button value="Add" click="true" />
 		<button value="Add" jscriptevent="onmouseup" />
+		<wait timeout="1" />
 	</div>
 
 	<button value="Save" />
