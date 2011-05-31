@@ -119,6 +119,13 @@
 		<modulename>Quotes</modulename>
 	</block>
 	
+	<block>
+		<testfile>Studio_10984</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Can't drag and drop</reason>
+		<modulename>studio</modulename>
+	</block>
+	
 	<!-- Bug 43612 start-->
 	<block>
 		<testfile>Campaigns_1242</testfile>
@@ -1002,6 +1009,13 @@
 		<bugnumber>44211</bugnumber>
 		<reason>bug 44211</reason>
 		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Dashlet_10982</testfile>
+		<bugnumber>44104</bugnumber>
+		<reason>bug 44104</reason>
+		<modulename>home</modulename>
 	</block>
 	
  	<block>

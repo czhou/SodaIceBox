@@ -38,8 +38,7 @@
 			7. Click "del" icon next to "A" record.
 			8. Click "save" button.
 		Expectation:
-			8. "A" is displayed in Users sub-panel.
-			(We always add the logged in user to attendee list.)
+			8. "A" is not displayed in Users sub-panel.
 
 	-->
 	<puts text="Test: Activities_8590.xml starting." />
@@ -64,19 +63,22 @@
 	
 	<textfield name="search_last_name" set="{@b_last}" />
 	<button value="Search" />
+	<wait timeout="3" />
 	
 	<div id="list_div_win">
 		<button value="Add" click="true" />
 		<button value="Add" jscriptevent="onmouseup" />
+		<wait timeout="1" />
 	</div>
 	
 	<link class="listViewTdToolsS1" index="1"
 		click="true" />
+	<wait timeout="1" />
 	
 	<button value="Save" />
 	
 	<div id="list_subpanel_users">
-		<browser assert="Administrator" />
+		<browser assertnot="Administrator" />
 	</div>
 	
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />

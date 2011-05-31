@@ -26,30 +26,41 @@
 -->
 
 <soda>
-	
-	<puts text="Test: Admin_10390 Disable languages from manage languages setting." />
+	<!--
+		Create case_Verify that a related case can be created from contact detail view
+	-->
+	<puts text="Test: Contacts_1500.xml starting." />
 
-	<div id="globalLinks">
-		<link text="Admin" />
-	</div>
-	<link text="Languages" />
-	<wait timeout="3" />
-	<!--Disable Dansk and Italiano-->
-	<browser assert="Drag and Drop the names of the languages below to enable and disable them." />
-	<browser url="{@global.url}?module=Administration&amp;action=SaveLanguages&amp;enabled_langs=%5B%22en_us% 22%2C%22bg_BG%22%2C%22de_DE%22%2C%22es_ES%22%2C%22fr_FR%22%2C%22hu_HU%22%2C%22ja_JP%22%2C%22nl_NL%22%2C%22pt_PT%22%2C%22ro_RO%22%2C%22ru_RU%22%2C%22zh_CN%22%5D&amp;disabled_langs=%5B%22da_DK%22%2C%22it_it%22%5D&amp;return_module=&amp;return_action=&amp;button=Save" />
-	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
-	<browser assertnot="Dansk" />
-	<browser assertnot="Italiano" />
+	<!--Create prepared record-->
+	<script file='{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml'/>
 
-	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-	
-	<!--Enable Dansk and Italiano-->
-	<div id="globalLinks">
-		<link text="Admin" />
+	<!--Search the Contact record-->
+	<link id="moduleTab_Contacts" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Contacts&amp;action=index" click="false" />
 	</div>
-	<link text="Languages" />
-	<wait timeout="3" />
-	<browser url="{@global.url}?module=Administration&amp;action=SaveLanguages&amp;enabled_langs=%5B%22en_us%22%2C%22bg_BG%22%2C%22da_DK%22%2C%22de_DE%22%2C%22es_ES%22%2C%22fr_FR%22%2C%22hu_HU%22%2C%22it_it%22%2C%22ja_JP%22%2C%22nl_NL%22%2C%22pt_PT%22%2C%22ro_RO%22%2C%22ru_RU%22%2C%22zh_CN%22%5D&amp;disabled_langs=%5B%5D&amp;return_module=&amp;return_action=&amp;button=Save" />
-	
-	<puts text="Test: Admin_10390.xml finished." />
+	<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+
+	<!--Select case via case subpanel-->
+	<button id="contacts_cases_select_button"/>
+	<textfield id="name_advanced" set="{@pre_case_name}"/>
+	<button value="Search"/>
+	<link text="{@pre_case_name}"/>
+
+	<!--Verify selected case show in subpanel-->
+	<div id="list_subpanel_cases">
+		<link text="{@pre_case_name}" click="false"  exist="true"/>
+		<browser assert="{@pre_case_name}"/>
+	</div>
+
+	<!--Delete records-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<puts text="Test: Contacts_1500.xml finished." />
 </soda>
