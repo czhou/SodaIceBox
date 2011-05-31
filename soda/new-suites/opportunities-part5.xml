@@ -27,9 +27,9 @@
 
 <soda>
 	<script file="tests/modules/opportunity/module_lib/setup-opportunity.xml" />
-	<script file="tests/modules/opportunity/part4/module_lib/setup-opportunity-part5.xml" />
+	<script file="tests/modules/opportunity/part5/module_lib/setup-opportunity-part5.xml" />
 	<script fileset="tests/modules/opportunity/part5" />
-	<script file="tests/modules/opportunity/part4/module_lib/cleanup-opportunity-part5.xml" />
+	<script file="tests/modules/opportunity/part5/module_lib/cleanup-opportunity-part5.xml" />
 	<script file="tests/modules/opportunity/module_lib/cleanup-opportunity.xml" />
 </soda>
 
