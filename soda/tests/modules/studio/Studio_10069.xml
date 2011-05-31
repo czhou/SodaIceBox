@@ -28,7 +28,7 @@
 <soda>
     
     <!-- Calculated field can be used in formulas -->
-    <puts text="Test: Studio_100069.xml starting" />
+    <puts text="Test: Studio_10069.xml starting" />
     <!-- Create a new calculated field -->
     <link text="Admin" />
     <link text="Studio" assertPage="false" />
