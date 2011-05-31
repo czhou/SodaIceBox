@@ -1,0 +1,13 @@
+name,city,des
+acc1,12/25/2010,true
+acc2,,true
+acc3,2010-12-23,false
+acc4,12-23-2010,false
+acc5,23-12-2010,false
+acc6,2010/12/23,false
+acc7,23/12/2010,false
+acc8,2010.12.23,false
+acc9,23.12.2010,false
+acc10,12.23.2010,false
+acc11,abd,false
+acc12,12252010,false

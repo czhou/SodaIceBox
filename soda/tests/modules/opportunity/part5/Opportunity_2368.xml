@@ -1,0 +1,126 @@
+<soda>
+	<!-- Edit Contract_Verify that the information of contract related to an opportunity 
+		is updated in "Contracts" sub-panel after it is edited in "Contracts" module. -->
+
+	<puts text="Test: Opportunity_2368.xml starting" />
+
+	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2368.csv" var="Opportunity_2368">
+		<timestamp />
+		<link id="moduleTab_Opportunities" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Opportunities&amp;action=index" click="false" />
+		</div>
+		<button id="search_form_clear" />
+
+		<form id="search_form">
+			<textfield id="name_basic" set="{@pre_opp_name}" />
+		</form>
+		<button id="search_form_submit" />
+
+		<table class="list view">
+			<browser assert="{@pre_opp_name}" />
+			<link text="{@pre_opp_name}" click="true" />
+		</table>
+
+		<div class="moduleTitle">
+			<link href="index.php?module=Opportunities&amp;action=index" click="false" />
+			<browser assert="{@pre_opp_name}" />
+		</div>
+		<div id="list_subpanel_contracts">
+			<table class="list view">
+				<button id="contracts_opportunities_create_button" />
+				<wait timeout="3" />
+			</table>
+		</div>
+
+		<div id="form_SubpanelEditView_Contracts_tabs">
+			<textfield id="name"
+				set="{@Opportunity_2368.contract_name} {@user.name} {@stamp}" />
+		</div>
+
+		<div id="subpanel_contracts_newDiv">
+			<button id="Contracts_subpanel_save_button" />
+			<wait timeout="3" />
+		</div>
+
+		<!-- Navigate to Contracts module and edit contract created in Opp -->
+		<link id="moduleTab_Contracts" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Contracts&amp;action=index" click="false" />
+		</div>
+		<textfield id="name_basic"
+			set="{@Opportunity_2368.contract_name} {@user.name} {@stamp}" />
+		<button id="search_form_submit" />
+		<table class="list view">
+			<link text="{@Opportunity_2368.contract_name} {@user.name} {@stamp}" />
+		</table>
+		<button id="edit_button" />
+
+		<form id="EditView">
+			<textfield name="name"
+				set="{@Opportunity_2368.contract_name_edit} {@user.name} {@stamp}" />
+			<textfield id="reference_code" set="{@Opportunity_2368.contract_reference_code_edit}" />
+			<textfield id="expiration_notice_date"
+				set="{@Opportunity_2368.contract_expiration_notice_date_edit}" />
+			<select id="expiration_notice_hours" set="{@Opportunity_2368.contract_expiration_notice_hours_edit}" />
+			<select id="expiration_notice_minutes"
+				set="{@Opportunity_2368.contract_expiration_notice_minutes_edit}" />
+			<select name="type" set="{@ContractType_Create_Lib}" />
+			<textfield id="description" set="{@Opportunity_2368.contract_description_edit}" />
+			<select id="status" set="{@Opportunity_2368.contract_status_edit}" />
+			<textfield id="start_date" set="{@Opportunity_2368.contract_start_date_edit}" />
+			<textfield id="end_date" set="{@Opportunity_2368.contract_end_date_edit}" />
+			<select name="currency_id" set="{@Opportunity_2368.contract_currency_id_edit}" />
+			<textfield id="total_contract_value"
+				set="{@Opportunity_2368.contract_total_contract_value_edit}" />
+			<textfield name="customer_signed_date"
+				set="{@Opportunity_2368.contract_customer_signed_date_edit}" />
+			<textfield name="company_signed_date"
+				set="{@Opportunity_2368.contract_company_signed_date_edit}" />
+			<button id="SAVE_HEADER" />
+		</form>
+
+		<!-- Navigate back to Opp moudle and into the created Opp -->
+		<link id="moduleTab_Opportunities" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Opportunities&amp;action=index" click="false" />
+		</div>
+		<button id="search_form_clear" />
+
+		<form id="search_form">
+			<textfield id="name_basic" set="{@pre_opp_name}" />
+		</form>
+		<button id="search_form_submit" />
+
+		<table class="list view">
+			<browser assert="{@pre_opp_name}" />
+			<link text="{@pre_opp_name}" click="true" />
+		</table>
+
+		<!-- Verify that the contract has been edited and its values are shown correctly -->
+		<div id="list_subpanel_contracts">
+			<table class="list view">
+				<link text="{@Opportunity_2368.contract_name_edit} {@user.name} {@stamp}"
+					exist="true" click="false" />
+				<browser assert="{@Opportunity_2368.contract_name_edit} {@user.name} {@stamp}" />
+				<browser assert="{@Opportunity_2368.contract_start_date_edit}" />
+				<browser assert="{@Opportunity_2368.contract_end_date_edit}" />
+			</table>
+		</div>
+		<!-- Delete contract created in this script -->
+		<link id="moduleTab_Contracts" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Contracts&amp;action=index" click="false" />
+		</div>
+		<textfield id="name_basic"
+			set="{@Opportunity_2368.contract_name} {@user.name} {@stamp}" />
+		<button id="search_form_submit" />
+		<table class="list view">
+			<link text="{@Opportunity_2368.contract_name} {@user.name} {@stamp}" />
+		</table>
+		<button name="Delete" alert="true" />
+		<wait timeout="3" />
+	</csv>
+
+	<puts text="Test: Opportunity_2368.xml finished" />
+</soda>

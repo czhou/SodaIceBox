@@ -26,38 +26,13 @@
 -->
 
 <soda>
-	<!-- Report Bug_Verify that bug can be reported for case in "Bugs" sub-panel. -->
-	<puts text="Test: Cases_1272.xml starting." />
-	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
-	<timestamp />
-
-	<!-- Create a case and go to its DetailView. -->
-	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Cases&amp;action=index" click="false" />
-	</div>
-
-	<!--create a note-->
-	<csv file="{@global.scriptsdir}/csvs/cases/Case_1272.csv" var="Case_1272">
-		<button id="cases_bugs_create_button" />
-
-		<!--set data-->
-		<form id="form_SubpanelQuickCreate_Bugs">
-			<textfield id="name" set="{@Case_1272.bug_subject}" />
-			<button id="Bugs_subpanel_save_button" />
-		</form>
-
-		<!--verify the create note-->
-		<div id="list_subpanel_bugs">
-			<table class="list view">
-				<link text="{@Case_1272.bug_subject}" exists="true" click="false" />
-			</table>
-		</div>
-	</csv>
-
-	<!--Delete the record-->
-	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
-
-	<puts text="Test: Cases_1272.xml finished." />
+	<script file="{@global.scriptsdir}/modules/lib/Enable_All_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/TaxRate_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contract_Create_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib_NoDep.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 </soda>

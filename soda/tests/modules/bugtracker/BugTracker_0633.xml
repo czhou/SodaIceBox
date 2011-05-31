@@ -83,7 +83,15 @@
 	</csv>
 	<browser assert="{@bug_tracker_record_633.name} {@user.name} {@stamp}" />
 
-	<!--Delete the record-->
+	<!-- Cleanup: Clear search form. -->
+	<link id="moduleTab_Bugs" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Bugs&amp;action=index" click="false" />
+	</div>
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+
+	<!-- Cleanup: Delete test data. -->
 	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
 
 	<puts text="Test: BugTracker_0633.xml starting." />

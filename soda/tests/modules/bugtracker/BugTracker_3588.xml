@@ -65,5 +65,13 @@
 		<link text="{@pre_bug_name}" exist="false" />
 	</table>
 
+	<!-- Cleanup: Clear search form. -->
+	<link id="moduleTab_Bugs" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Bugs&amp;action=index" click="false" />
+	</div>
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+
 	<puts text="Test: BugTracker_3588.xml finished." />
 </soda>
