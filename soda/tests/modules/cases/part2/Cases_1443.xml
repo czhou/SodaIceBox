@@ -78,6 +78,8 @@
 		<textfield id="name" set="{@Case_1443.name} {@user.name} {@stamp}" />
 		<textfield id="description" set="{@Case_1443.description}" />
 		<filefield name="filename_file" set="{@global.scriptsdir}/export/Accounts.csv" />
+		<textfield id="description" click="true" />
+		<wait timeout="3" />
 		<button value="Save" />
 
 		<!--verify the note-->
