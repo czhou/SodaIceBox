@@ -26,40 +26,39 @@
 -->
 
 <soda>
+	<!-- Create Archived Email: Verify that archived email can be created for case in "History" sub-panel. -->
+	<puts text="Test: Cases_1271.xml starting." />
+	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
+	<timestamp />
 
-	<puts text="Test Case 2591: Relationship - Delete Project_Verify that 'Projects' can be successful deleted on the 'Projects' sub-panel."/>
+	<!-- Create a case and go to its DetailView. -->
+	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Cases&amp;action=index" click="false" />
+	</div>
 
-        <!--Go to Quotes module and search out the quote record create in lib-->
-        <link id='moduleTab_Quotes'/>
-        <browser assert='Quotes'/>
-        <form id='search_form'>
-            <button id='search_form_clear'/>
-            <textfield id='name_basic' set='{@pre_Quote_name}'/>
-            <button id='search_form_submit'/>
-        </form>
+	<!--create a note-->
+	<csv file="{@global.scriptsdir}/csvs/cases/Case_1271.csv" var="Case_1271">
+		<button id="ArchiveEmail_button" />
 
-        <table class='list view'>
-            <link text='{@pre_Quote_name}'/>
-        </table>
+		<!--set data-->
+		<textfield name="date_start" set="{@Case_1271.email_date}" />
+		<textfield name="time_start" set="{@Case_1271.email_time}" />
+		<textfield id="subjectfield" set="{@Case_1271.email_subject}" />
+		<button id="SAVE_HEADER" />
 
-        <!--Create a Project record in Project subpanel.-->
-	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2591.csv" var="quote_2591">
-        	<browser assert="Quote Overview"/>
-        	<button id="projects_quotes_create_button"/>
-        	<wait timeout="5"/>
-        	<textfield id="name" set="{@quote_2591.project_name}"/>
-        	<textfield name="estimated_start_date" set="{@quote_2591.estimated_start_date}"/>
-        	<textfield name="estimated_end_date" set="{@quote_2591.estimated_end_date}"/>
-        	<button id="Project_subpanel_save_button"/> 
-        	<wait timeout="5"/>
-		<div id="list_subpanel_project">
-        		<browser assert="{@quote_2591.project_name}"/>
-			
-			<!--Delete the project record-->
-			<link class="listViewTdToolsS1" index="2" alert="true"/>
-			<wait timeout="10"/>
-			<browser assertnot="{@quote_2591.project_name}"/>
+		<!--verify the create note-->
+		<div id="list_subpanel_history">
+			<table class="list view">
+				<link text="{@Case_1271.email_subject}" click="true" />
+			</table>
 		</div>
+		
+		<button value="    Delete    " alert="true" />
 	</csv>
-        <puts text="End Test Case 2591 is finished!"/>
+
+	<!--Delete the record-->
+	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
+
+	<puts text="Test: Cases_1271.xml finished." />
 </soda>

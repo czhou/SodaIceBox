@@ -26,38 +26,28 @@
 -->
 
 <soda>
+	<!--
+		Action:
+			1. Login to SugarCRM as valid user.
+			2. Click Campaigns tab on navigation bar.
+		Expectation:
+			2. Campaigns are displayed in list view without php code
+	-->
+	<puts text="Test: Campaigns_3782.xml starting." />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Campaign_Create_Lib.xml" />
+	<var var="campaign1_name" set="{@Campaign_Name}" />
 
-	<puts text="Test Case 2589: Relationship - Delete Email_Verify that 'Archive Email' can be successful deleted on the 'Activity' sub-panel."/>
-
-        <!--Go to Quotes module and search out the quote record create in lib-->
-        <link id='moduleTab_Quotes'/>
-        <browser assert='Quotes'/>
-        <form id='search_form'>
-            <button id='search_form_clear'/>
-            <textfield id='name_basic' set='{@pre_Quote_name}'/>
-            <button id='search_form_submit'/>
-        </form>
-
-        <table class='list view'>
-            <link text='{@pre_Quote_name}'/>
-        </table>
-
-        <!--Create an Archived Email in History subpanel.-->
-	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2589.csv" var="Quote_2589">
-        	<browser assert="Quote Overview"/>
-       		<button id="ArchiveEmail_button"/>
-        	<wait timeout="5"/>
-        	<textfield id="jscal_field" set="{@Quote_2589.send_date}"/>
-        	<textfield name="time_start" set="{@Quote_2589.send_time}"/>
-        	<textfield id="subjectfield" set="{@Quote_2589.archived_email_name"/>
-        	<button id="SAVE_HEADER"/>
-        	<wait timeout="5"/>
-		<div id="list_subpanel_history">
-			<browser assert="{@Quote_2589.archived_email_name"/>
-			<link class="listViewTdToolsS1" index="2" alert="true"/>
-			<wait timeout="5"/>
-			<browser assertnot="{@Quote_2589.archived_email_name"/>
-		</div>
-	</csv>
-        <puts text="End Test Case 2589"/>
+	<script file="{@global.scriptsdir}/modules/lib/Campaign_Create_Lib.xml" />
+	<var var="campaign2_name" set="{@Campaign_Name}" />	
+	
+	<link id="moduleTab_Campaigns" />
+	
+	<browser assertnot="Warning" />
+	<browser assertnot="Error" />
+	<browser assertnot="Fatal" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Campaign_Delete_Lib.xml" />
+	
+	<puts text="Test: Campaigns_3782.xml finished." />
 </soda>

@@ -1,0 +1,90 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		Action:
+			1. Login to SugarCRM as a valid admin user.
+			2. Go to My Account module and change the default date
+				format to another one, such as MM/DD/YYYY.
+			3. Go to Activities module.
+			4. Create a task with all fields filled.
+			5. Go to task list view.
+		Expectation:
+			5. All the date format of the task is displayed as settings.
+
+	-->
+	<puts text="Test: Activities_0493.xml starting." />
+
+	<div id="welcome">
+		<link text="Administrator" />
+	</div>
+	
+	<link id="tab4" />
+	<select name="dateformat" set="d/m/Y" />
+	<button id="Save" />
+	
+	<link id="moduleTab_Tasks" />
+	<link text="Create Task" />
+	
+	<timestamp />
+	<var var="task1_name" set="Task_{@stamp}" />
+	<textfield id="name" set="{@task1_name}" />
+	
+	<textfield id="date_start_date" set="30/12/2011" />
+	<select id="date_start_hours" set="23" />
+	<select id="date_start_minutes" set="00" />
+	
+	<textfield id="date_due_date" set="29/12/2012" />
+	<select id="date_due_hours" set="22" />
+	<select id="date_due_minutes" set="00" />
+	
+	<button id="SAVE" />
+	
+	<link id="moduleTab_Tasks" />
+	
+	<textfield id="name_basic" set="{@task1_name}" />
+	<button id="search_form_submit" />
+	
+	<table class="list view">
+		<!-- Start date no longer present on listview...
+		<browser assert="30/12/2011" /> -->
+		<browser assert="29/12/2012" />
+	</table>
+	
+	<div id="welcome">
+		<link text="Administrator" />
+	</div>
+	
+	<link id="tab4" />
+	<select name="dateformat" set="m/d/Y" />
+	<button id="Save" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
+	
+	<puts text="Test: Activities_0493.xml finished." />
+</soda>

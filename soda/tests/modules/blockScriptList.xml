@@ -997,6 +997,13 @@
 		<modulename>Studio</modulename>
 	</block>
 	
+	<block>
+		<testfile>Studio_10151</testfile>
+		<bugnumber>44211</bugnumber>
+		<reason>bug 44211</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
  	<block>
 		<testfile>KnowledgeBase_2477</testfile>
 		<bugnumber>37260</bugnumber>

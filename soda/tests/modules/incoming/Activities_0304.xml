@@ -26,28 +26,56 @@
 -->
 
 <soda>
-	<puts text="Test: Campaigns_1261.xml starting." />
 	<!--
-	Action:
-		1. Login to SugarCRM as a valid user.
-		2. Go to Campaigns module.
-		3. Click "Targets" link in navigation shortcuts.
-		2,3 can be combined as of 6.2 //mfleeger
-		4. Enter the first letter of a target.
-		5. Click "Clear" button in the "Target Search" sub-panel.
-	Expected:
-		5. The data entered are cleared from the text field.
-	-->
+		Action:
+			1. Login to system as valid user.
+			2. Go to "Accounts" module.
+			3. Go to an account record detail view.
+			4. Select an activity record on "ACTIVITIES" sub-panel.
+			5. Click "Close and Create New" button.
+			6. Modify values in all fields and click "Cancel" button.
+			7. Go to the account detail view.
+		Expectation:
+			7. The selected activity record is closed and displayed on 
+				"HISTORY" sub-panel and no new created activity record is displayed.
 
-	<link id="moduleTab_Prospects" />
+	-->
+	<puts text="Test: Activities_0304.xml starting." />
+
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<var var="account1_name" set="{@pre_account_name}" />
 	
-	<textfield id="search_name_basic" set="C" />
+	<button id="Activities_schedulemeeting_button" />
 	
-	<textfield id="search_name_basic" assert="C" />
+	<timestamp />
+	<var var="meeting1_name" set="Meeting_{@stamp}" />
+	<textfield id="name" set="{@meeting1_name}" />
+	<button id="Meetings_subpanel_save_button" />
+	<wait timeout="8" />
 	
-	<button id="search_form_clear" />
+	<div id="list_subpanel_activities">
+		<link text="{@meeting1_name}" />
+	</div>
 	
-	<textfield id="search_name_basic" assertnot="C" />
+	<button value="Close and Create New" />
+	<button id="CANCEL" />
 	
-	<puts text="Test: Campaigns_1261.xml finished." />
-</soda>	
+	<link id="moduleTab_Accounts" />
+	
+	<table class="list view">
+		<link text="{@account1_name}" />
+	</table>
+	
+	<div id="list_subpanel_history">
+		<browser assert="{@meeting1_name}" />
+	</div>
+	
+	<div id="list_subpanel_activities">
+		<browser assertnot="{@meeting1_name}" />
+	</div>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	
+	<puts text="Test: Activities_0304.xml finished." />
+</soda>

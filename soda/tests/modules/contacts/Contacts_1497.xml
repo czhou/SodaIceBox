@@ -1,0 +1,116 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		Create product_Verify that a related product can be created from contact detail view
+	-->
+	<puts text="Test: Contacts_1497.xml starting." />
+
+	<!--Create prepared record-->
+	<script file='{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/ProductCategory_Create_Lib.xml'/>
+	<script file="{@global.scriptsdir}/modules/lib/Manufacturer_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductType_Create_Lib.xml" />
+	<script file='{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml'/>
+
+	<!--Search the Contact record-->
+	<link id="moduleTab_Contacts" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+	</div>
+	<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+
+	<!--Create Product via product subpanel-->
+	<button id="Products_create_button"/>
+	<wait timeout="2"/>
+
+	<csv file="{@global.scriptsdir}/modules/lib/Product_Create_Lib.csv" var="Product_Create_Lib">
+		<timestamp/>
+
+		<!--Account select-->
+		<button id='btn_account_name'/>
+		<browser assert='Account Search'/>
+		<textfield name='name_advanced' set='{@pre_account_name}'/> 
+		<button value='Search'/>
+		<table class="list view">
+		<link text='{@pre_account_name}'/>
+		</table>
+
+		<textfield id="name" set="{@Product_Create_Lib.name} {@user.name} {@stamp}" />
+		<textfield id="quantity" set="{@Product_Create_Lib.quantity}" />
+		<textfield id="serial_number" set="{@Product_Create_Lib.serial_number}" />
+		<textfield id="asset_number" set="{@Product_Create_Lib.asset_number}" />
+		<select id="status" set="{@Product_Create_Lib.status}" />
+		<textfield id="date_purchased" set="{@Product_Create_Lib.date_purchased}" />
+		<textfield name="date_support_starts" set="{@Product_Create_Lib.date_support_starts}" />
+		<textfield id="date_support_expires" set="{@Product_Create_Lib.date_support_expires}" />
+		<select name="currency_id" set="{@Product_Create_Lib.currency_id}" />
+		<textfield id="cost_price" set="{@Product_Create_Lib.cost_price}" />
+		<textfield id="list_price" set="{@Product_Create_Lib.list_price}" />
+		<textfield id="discount_price" set="{@Product_Create_Lib.discount_price}" />
+		<textfield id="discount_amount" set="{@Product_Create_Lib.discount_amount}" />
+		<textfield id="book_value" set="{@Product_Create_Lib.book_value}" />
+		<textfield id="book_value_date" set="{@Product_Create_Lib.book_value_date}" />
+		<checkbox id="discount_select" set="true" />
+		<textfield id="website" set="{@Product_Create_Lib.website}" />
+		<select id="manufacturer_id" set="{@Manufacturer_Create_Lib}" />
+		<textfield id="mft_part_num" set="{@Product_Create_Lib.mft_part_num}" />
+		<textfield id="vendor_part_num" set="{@Product_Create_Lib.vendor_part_num}" />
+		<textfield id="description" set="{@Product_Create_Lib.description}" />
+		<textfield id="support_name" set="{@Product_Create_Lib.support_name}" />
+		<textfield id="support_description" set="{@Product_Create_Lib.support_description}" />
+		<select id="tax_class" set="{@Product_Create_Lib.tax_class}" />
+		<textfield id="weight" set="{@Product_Create_Lib.weight}" />
+		<select id="category_id" set="{@ProductCategory_Create_Lib}" />
+		<select id="type_id" set="{@ProductType_Create_Lib}" />
+		<textfield id="support_contact" set="{@Product_Create_Lib.support_contact}" />
+		<select id="support_term" set="{@Product_Create_Lib.support_term}" />
+		<button value="Save" />
+
+		<var var="pre_product_name" set="{@Product_Create_Lib.name} {@user.name} {@stamp}" />
+	</csv>
+
+	<!--Verify created product show in subpanel-->
+	<div id="list_subpanel_products">
+		<link text="{@pre_product_name}" click="false"  exist="true"/>
+		<browser assert="{@pre_product_name}"/>
+	</div>
+
+	<!--Delete records-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Product_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductType_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Manufacturer_Delete_Lib.xml" />
+	<puts text="Test: Contacts_1497.xml finished." />
+</soda>
