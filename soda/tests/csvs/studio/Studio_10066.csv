@@ -1,0 +1,12 @@
+type,calcu
+Checkbox,true
+Currency,true
+Date,true
+Datetime,true
+Decimal,true
+Encrypt,true
+Float,true
+Integer,true
+Phone,true
+TextArea,true
+TextField,true

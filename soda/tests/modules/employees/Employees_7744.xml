@@ -32,10 +32,11 @@
 
 	<!--Create employee-->
 	<timestamp/>
-	<link text='Create Employee'/>
+	
 	<csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" var="SugarInit7744">
 	</csv>
 	<csv file="{@global.scriptsdir}/csvs/employees/employees_7744.csv" var="employees_record_7744">
+		<link text='Create Employee'/>
 		<select name='employee_status' set='{@employees_record_7744.status}'/>
 		<textfield id='first_name' set='{@employees_record_7744.first_name}'/>
 		<textfield id='last_name' set='{@employees_record_7744.last_name}{@stamp}'/>
@@ -69,51 +70,52 @@
 		<wait timeout='5'/>
 		<button value='Save'/>
 		<browser assert='{@employees_record_7744.first_name} {@employees_record_7744.last_name}{@stamp}'/>
-	</csv>        
+	       
 
-	<!--clear 'report to'-->    
-	<button id='edit_button'/>
-	<button name='btn_clr_reports_to_name'/>
-	<wait timeout='5'/>
-	<button value='Save'/>
-
-	<!--set user 'inactive'-->
-	<!--Go to user managerment-->
-	<div id='globalLinks'>
-		<link text='Admin'/>
-	</div>
-	<browser assert='Administration'/>
-
-	<link text="User Management"/>
-	<browser assert='Users'/>
-	<wait timeout="5"/>
-
-	<link text="Advanced Search"/>
-	<wait timeout="5"/>
-	<div id="Usersadvanced_searchSearchForm">
+		<!--clear 'report to'-->    
+		<button id='edit_button'/>
+		<button name='btn_clr_reports_to_name'/>
+		<wait timeout='5'/>
+		<button value='Save'/>
+		  
+		<!--set user 'inactive'-->
+		<!--Go to user managerment-->
+		<div id='globalLinks'>
+			<link text='Admin'/>
+		</div>
+		<browser assert='Administration'/>
+	
+		<link text="User Management"/>
+		<browser assert='Users'/>
+		<wait timeout="5"/>
+	
+		<link text="Advanced Search" required="false" timeout="2" />
+		<wait timeout="5"/>
+		<div id="Usersadvanced_searchSearchForm">
+			<button id="search_form_clear"/>
+			<textfield id='last_name_advanced' set='{@employees_record_7744.last_name}{@stamp}'/>
+			<button id="search_form_submit"/>
+		</div>
+	
+		<table class='list view'>
+			<checkbox name='massall' click='true'/>
+		</table>
+		<link id="actions_link"/>
+		<link text="Mass Update"/>
+		<div id='massupdate_form'>
+			<select id='mass_status' set='Inactive'/>
+			<button id='update_button' alert='true'/>
+		</div>
+	
+		<!--Search inactive user-->
 		<button id="search_form_clear"/>
-		<textfield id='last_name_advanced' set='{@employees_record_7744.last_name}{@stamp}'/>
+		<textfield name='last_name_advanced' set='{@employees_record_7744.last_name}{@stamp}'/>
+		<select name='status_advanced[]' set='Inactive'/>
 		<button id="search_form_submit"/>
-	</div>
-
-	<table class='list view'>
-		<checkbox name='massall' click='true'/>
-	</table>
-	<link id="actions_link"/>
-	<link text="Mass Update"/>
-	<div id='massupdate_form'>
-		<select id='mass_status' set='Inactive'/>
-		<button id='update_button' alert='true'/>
-	</div>
-
-	<!--Search inactive user-->
-	<button id="search_form_clear"/>
-	<textfield name='last_name_advanced' set='{@employees_record_7744.last_name}{@stamp}'/>
-	<select name='status_advanced[]' set='Inactive'/>
-	<button id="search_form_submit"/>
-	<table class='list view'>
-		<span class='pageNumbers' assert='(1 - 1 of 1)'/>
-	</table> 
+		<table class='list view'>
+			<span class='pageNumbers' assert='(1 - 1 of 1)'/>
+		</table> 
+	</csv> 
 
 	<!--Clear search-->
 	<button id="search_form_clear"/>

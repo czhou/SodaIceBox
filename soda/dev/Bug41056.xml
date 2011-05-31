@@ -1,0 +1,67 @@
+<soda>
+	<puts text='--------Bug 41056 Started--------' />
+	<puts text='-- Merge duplicates - "Assign to user" cant be copied over --' />
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	<csv file="dev/csvs/bug41056.csv" var="bug_41056_data">
+		<puts text=' ---- User creating ---' />
+		<browser url="{@global.url}/index.php?module=Users&action=EditView" />
+		<textfield name="sugar_user_name" set="{@bug_41056_data.name}" />
+		<textfield name="last_name" set="{@bug_41056_data.lastname}" />
+		<textfield name="Users0emailAddress0" set="{@bug_41056_data.email}" />
+		<ul class="yui-nav">
+			<link id="tab2" />
+		</ul>
+		<textfield name="new_password" set="{@bug_41056_data.pass}" />
+		<textfield name="confirm_new_password" set="{@bug_41056_data.pass}" />
+		<button id="Save" />
+		
+		<puts text=' ---- Account creating ---' />
+		<link id="moduleTab_Accounts" />
+		<link text="Create Account" />
+		<browser assert="Create" />
+		<textfield name="assigned_user_name" set="{@bug_41056_data.lastname}" />
+		<form id="EditView">
+			<textfield id="name" set="{@bug_41056_data.accountname}" />
+			<button value="Save" />
+		</form>
+		<wait timeout="4" />
+		<browser assert="{@bug_41056_data.accountname}" />
+	</csv>
+	<puts text="Accounts and users were creted, now truing to merge accounts" />
+	
+	<browser url="{@global.url}/index.php?module=Accounts&action=index" />
+	
+	<wait timeout='4' />
+	<link text="/{@bug_41056_data.accountname}/" click="true"/>
+	<wait timeout='4' />
+	
+	<form id="form">
+		<button name="Merge" />
+	</form>
+	<textfield id="nameSearchField" set="" />
+	<form id="DedupSetup">
+		<button value="/Next Step/" />
+	</form>
+	<checkbox name="mass[]" set="true" index="1" />
+	<button value="/Perform Merge/" />
+	<button name="copyValue" index="5" />
+	<!-- store new assigned user name in @newAssidnedUser variable -->
+	<javascript> YAHOO.util.Selector.query("#sugar_spot_search")[0].value =
+		YAHOO.util.Selector.query("slot")[9].textContent.trim();</javascript>
+	<textfield id="sugar_spot_search" var="newAssignedUser" />
+	<textfield id="sugar_spot_search" set="" />
+	<!-- check if new assigned user is correct -->
+	<puts text="mew assigned user should be {@newAssignedUser}" />
+	<textfield name="assigned_user_link" assert="{@newAssignedUser}" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	
+	<csv file="dev/csvs/bug41056.csv" var="bug_41056_data">
+        <var var="pre_user_name" set="{@bug_41056_data.name}" />
+        <var var="pre_user_fullname" set="{@bug_41056_data.name}" />
+        <var var="pre_user_firstname" set="{@bug_41056_data.name}" />
+        <script file="{@global.scriptsdir}/modules/lib/User_Delete_Lib.xml" />
+    </csv>
+    <script file="{@global.scriptsdir}/modules/lib/logout.xml" />
+	<browser action="close" />
+</soda>

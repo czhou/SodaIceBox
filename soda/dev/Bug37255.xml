@@ -26,38 +26,20 @@
 -->
 
 <soda>
-	<!-- Report Bug_Verify that bug can be reported for case in "Bugs" sub-panel. -->
-	<puts text="Test: Cases_1272.xml starting." />
-	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
-	<timestamp />
+    <puts text='--------Bug 37255 Started--------'/>
+    <csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
+    <script file="{@global.scriptsdir}/modules/lib/login.xml" />
 
-	<!-- Create a case and go to its DetailView. -->
-	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Cases&amp;action=index" click="false" />
-	</div>
+    <!-- Go to password manager -->
+    <browser url='{@global.url}?module=Administration&action=index' />
+    <link text="Password Management" />
+    <button name="edit_generatepasswordtmpl" />
 
-	<!--create a note-->
-	<csv file="{@global.scriptsdir}/csvs/cases/Case_1272.csv" var="Case_1272">
-		<button id="cases_bugs_create_button" />
+    <!-- Asserts -->
+    <browser assert="Insert Variable" />
+    <select name="variable_module" exists="true" />
+    <select name="variable_name" exists="true" />
+    <textfield name="variable_text" exists="true" />
 
-		<!--set data-->
-		<form id="form_SubpanelQuickCreate_Bugs">
-			<textfield id="name" set="{@Case_1272.bug_subject}" />
-			<button id="Bugs_subpanel_save_button" />
-		</form>
-
-		<!--verify the create note-->
-		<div id="list_subpanel_bugs">
-			<table class="list view">
-				<link text="{@Case_1272.bug_subject}" exists="true" click="false" />
-			</table>
-		</div>
-	</csv>
-
-	<!--Delete the record-->
-	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
-
-	<puts text="Test: Cases_1272.xml finished." />
+    <puts text='--------Bug 37255 Finished--------'/>
 </soda>
