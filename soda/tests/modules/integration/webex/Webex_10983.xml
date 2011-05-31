@@ -26,52 +26,51 @@
 -->
 
 <soda>
-	<puts text="Test: Goto_10976.xml starting." />
-	<link id="moduleTab_Leads" />
+	<puts text="Test: WebEx_10983.xml starting." />
+	<link id="moduleTab_Bugs" />
 	<button   id="search_form_clear"/>
         <form id="search_form">
-            <textfield id="search_name_basic" set="{@pre_lead_first_name}"/>
+            <textfield id="name_basic" set="{@pre_bug_name}"/>
         </form>
     <button id="search_form_submit"/>
     <wait timeout="2" />
     <table class="list view">
-        <link text="/{@pre_lead_first_name}/" />
+        <link text="{@pre_bug_name}"/>
     </table>
-    <browser assert="{@pre_lead_first_name}"/>
+    <browser assert="{@pre_bug_name}"/>
 	
 	<button id="Activities_schedulemeeting_button" />
 	<div id="form_SubpanelQuickCreate_Meetings_tabs">
-		<timestamp />
-		<select id="type" set="GoToMeeting" />
-		<textfield id="name" set="GotoMeeting_Sub_AjaxForm" /> 
+		<select id="type" set="WebEx" />
+		<textfield id="name" set="WebEx_Sub_AjaxForm" /> 
 	</div>
 	<button id="Meetings_subpanel_save_button" />
-	<wait timeout='10'/>
-	<link text="GotoMeeting_Sub_AjaxForm" click="false" exist="true"/>
+	<wait timeout='20'/>
+	<link text="WebEx_Sub_AjaxForm" click="false" exist="true"/>
 
 	<button id="Activities_schedulemeeting_button" />
 	<button id="Meetings_subpanel_full_form_button" />
 	<form id="EditView">
 		<timestamp />
-		<select id="type" set="GoToMeeting" />
-		<textfield name="name" set="GotoMeeting_Sub_FullForm" /> 
+		<select id="type" set="WebEx" />
+		<textfield name="name" set="WebEx_Sub_FullForm" /> 
 		<button value="Save" />
 	</form>
-	<wait timeout='10'/>
-	<link text="GotoMeeting_Sub_FullForm" click="false" exist="true"/>
+	<wait timeout='20'/>
+	<link text="WebEx_Sub_FullForm" click="false" exist="true"/>
 
 	<link class='listViewTdToolsS1' index='2' alert='true' />
 	<wait timeout='3'/>
 	<link class='listViewTdToolsS1' index='2' alert='true' />
 	<wait timeout='3'/>
-	<link text="GotoMeeting_Sub_AjaxForm" click="false" exist="false"/>
-	<link text="GotoMeeting_Sub_FullForm" click="false" exist="false"/>
+	<link text="WebEx_Sub_AjaxForm" click="false" exist="false"/>
+	<link text="WebEx_Sub_FullForm" click="false" exist="false"/>
 
 	<link id="moduleTab_Meetings" />
 	<link text="View Meetings" />
 
 	<button id="search_form_clear" />
-	<textfield id="name_basic" set="GotoMeeting_Sub" />
+	<textfield id="name_basic" set="WebEx_Sub" />
 	<button id="search_form_submit" />
 	<span class="pageNumbers" assert="(1 - 2 of 2)" />
 
@@ -81,5 +80,5 @@
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />
 
 	
-	<puts text="Test: Goto_10976.xml finished." />
+	<puts text="Test: WebEx_10983.xml finished." />
 </soda>

@@ -1,0 +1,107 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Forecasts - Time Periods Do Not Have a Specific Sort Order -->
+	<puts text="Test: Forecast_10968.xml starting" />
+	<!-- setup -->
+	<timestamp />
+	<var var="base" set="Bug 33791 SODA TEST {@stamp}" />
+	<var var="current_year" set="2011" />
+	<var var="previous_year" set="2010" />
+	<div id="globalLinks">
+		<link text="Admin" />
+	</div>
+	<link text="Time Periods" />
+	<!-- clean periods -->
+	<link text="Basic Search" required="false" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	<!-- create periods -->
+	<!-- 1 -->
+	<link text="Create Time Period" />
+	<textfield name="name" set="{@base} 1" />
+	<textfield name="start_date" set="12/01/{@previous_year}" />
+	<textfield name="end_date" set="12/31/{@previous_year}" />
+	<button value="Save" click="true" />
+	<button value="Create" click="true" />
+	<textfield name="forecast_start_date" set="11/01/{@previous_year}" />
+	<select name="user_id" set="1" />
+	<button value="/Save/" click="true" />
+	<!-- 2 -->
+	<link text="Create Time Period" />
+	<textfield name="name" set="{@base} 2" />
+	<textfield name="start_date" set="01/01/{@current_year}" />
+	<textfield name="end_date" set="12/31/{@current_year}" />
+	<checkbox name="is_fiscal_year" set="true" />
+	<button value="Save" click="true" />
+	<button value="Create" click="true" />
+	<textfield name="forecast_start_date" set="11/01/{@previous_year}" />
+	<select name="user_id" set="1" />
+	<button value="/Save/" click="true" />
+	<!-- 3 -->
+	<link text="Create Time Period" />
+	<textfield name="name" set="{@base} 3" />
+	<textfield name="start_date" set="01/01/{@current_year}" />
+	<textfield name="end_date" set="03/30/{@current_year}" />
+	<select name="parent_id" set="{@base} 2" />
+	<button value="Save" click="true" />
+	<button value="Create" click="true" />
+	<textfield name="forecast_start_date" set="11/01/{@previous_year}" />
+	<select name="user_id" set="1" />
+	<button value="/Save/" click="true" />
+	<!-- 4 -->
+	<link text="Create Time Period" />
+	<textfield name="name" set="{@base} 4" />
+	<textfield name="start_date" set="01/01/{@current_year}" />
+	<textfield name="end_date" set="03/30/{@current_year}" />
+	<button value="Save" click="true" />
+	<button value="Create" click="true" />
+	<textfield name="forecast_start_date" set="11/01/{@previous_year}" />
+	<select name="user_id" set="1" />
+	<button value="/Save/" click="true" />
+	<!-- 5 -->
+	<link text="Create Time Period" />
+	<textfield name="name" set="{@base} 5" />
+	<textfield name="start_date" set="01/01/{@current_year}" />
+	<textfield name="end_date" set="06/30/{@current_year}" />
+	<button value="Save" click="true" />
+	<button value="Create" click="true" />
+	<textfield name="forecast_start_date" set="11/01/{@previous_year}" />
+	<select name="user_id" set="1" />
+	<button value="/Save/" click="true" />
+
+
+	<link id="moduleTab_Forecasts" />
+	<select name="timeperiod_id" assert="/{@base} 5/" />
+	
+	<puts text="Test: Forecast_10968.xml finished" />
+</soda>

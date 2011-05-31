@@ -46,7 +46,7 @@
 		<textfield id="name" set="GotoMeeting_Sub_AjaxForm" /> 
 	</div>
 	<button id="Meetings_subpanel_save_button" />
-	<wait timeout='10'/>
+	<wait timeout='20'/>
 	<link text="GotoMeeting_Sub_AjaxForm" click="false" exist="true"/>
 
 	<button id="Activities_schedulemeeting_button" />
@@ -57,7 +57,7 @@
 		<textfield name="name" set="GotoMeeting_Sub_FullForm" /> 
 		<button value="Save" />
 	</form>
-	<wait timeout='10'/>
+	<wait timeout='20'/>
 	<link text="GotoMeeting_Sub_FullForm" click="false" exist="true"/>
 
 	<link class='listViewTdToolsS1' index='2' alert='true' />

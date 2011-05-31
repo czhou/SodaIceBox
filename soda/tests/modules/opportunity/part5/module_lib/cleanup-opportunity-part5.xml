@@ -26,55 +26,17 @@
 -->
 
 <soda>
-	<!--
-		Action:
-			1. Login to system as a valid user.
-			2. Create a lead by filling account name field.
-			3. Schedule a call by adding created lead from "Add Invitees"
-				panel in call edit view.
-			4. See Verification step 1.
-		Expectation:
-			Verification step 1 - Created lead is displayed as entered in 
-			Leads sub-panel and account name is not displayed as a link
-			under account column.
-
-	-->
-	<puts text="Test: Calendar_8781.xml starting." />
-
-	<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib_FULL.xml" />
-	<var var="account1_name" set="{@Lead_New_Record.account_name}" />
-	<var var="lead1_lname" set="{@pre_lead_last_name}" />
-	<var var="lead1_name" set="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
-	
-	<link id="moduleTab_Calls" />
-	<link text="Log Call" />
-	
-	<timestamp />
-	<var var="call1_name" set="Call_{@stamp}" />
-	
-	<textfield id="name" set="{@call1_name}" />
-	
-	<textfield name="search_last_name" set="{@lead1_lname}" />
-	<button value="Search" click="true" />
-	<wait timeout="3" />
-	<div id="list_div_win">
-		<button value="Add" click="true" />
-		<button value="Add" jscriptevent="onmouseup" />
-		<wait timeout="1" />
-	</div>
-
-	<button value="Save" />
-	
-	<wait timeout="20" />
-	
-	<div id="list_subpanel_leads">
-		<link text="{@lead1_name}" click="false" />
-		<link text="{@account1_name}" exist="false" />
-		<browser assert="{@account1_name}" />
-	</div>
-	
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Quote_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/TaxRate_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Manufacturer_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductCategory_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductType_Delete_Lib.xml" /> 
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contract_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
-	
-	<puts text="Test: Calendar_8781.xml finished." />
+	<script file="{@global.scriptsdir}/modules/lib/Enable_Defaults_Lib.xml"/>
 </soda>

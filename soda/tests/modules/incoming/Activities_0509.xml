@@ -57,6 +57,7 @@
 	
 	<link id="moduleTab_Calls" />
 	<link text="Log Call" />
+	<wait timeout="3" />
 	
 	<timestamp />
 	<var var="call1_name" set="Call_{@stamp}" />

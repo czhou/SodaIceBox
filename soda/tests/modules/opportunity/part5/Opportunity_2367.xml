@@ -1,0 +1,68 @@
+<soda>
+	<!-- Edit Contract_Verify that the information of contract record is not changed 
+		when saving the edit that does not change anything in the contract edit view. -->
+
+	<puts text="Test: Opportunity_2367.xml started." />
+	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2367.csv" var="Opportunity_2367">
+		<link id="moduleTab_Opportunities" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Opportunities&amp;action=index" click="false" />
+			<browser assert="Search" />
+		</div>
+		<button name="clear" />
+		<textfield id="name_basic" set="{@pre_opp_name}" />
+		<button id="search_form_submit" value="Search" name="button" />
+
+		<table class="list view">
+			<browser assert="{@pre_opp_name}" />
+			<link text="{@pre_opp_name}" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@pre_opp_name}" />
+		</table>
+		<div id="list_subpanel_contracts">
+			<table class="list view">
+				<button id="contracts_opportunities_select_button" />
+				<wait timeout="3" />
+			</table>
+		</div>
+
+		<textfield id="name_advanced" set="{@Contract_Create_Lib}" />
+		<button value="Search" />
+		<wait timeout="2" />
+		<table class="list view">
+			<link text="{@Contract_Create_Lib}" />
+			<wait timeout="3" />
+		</table>
+
+		<div id="list_subpanel_contracts">
+			<table class="list view">
+				<browser assert="{@Contract_Create_Lib}" />
+				<link text="{@Contract_Create_Lib}" click="false" />
+				<link class="listViewTdToolsS1" index="1" />
+				<wait timeout="3" />
+			</table>
+		</div>
+		<form id="EditView">
+			<button id="SAVE_HEADER" alert="true" />
+			<wait timeout="2" />
+		</form>
+		<div id="list_subpanel_contracts">
+			<table class="list view">
+				<link text="{@Contract_Create_Lib}" exists="true" />
+			</table>
+		</div>
+	</csv>
+
+	<!-- Remove Contract relationship -->
+	<div id="list_subpanel_contracts">
+		<table class="list view">
+			<browser assert="{@Contract_Create_Lib}" />
+			<link class="listViewTdToolsS1" index="2" alert="true" />
+			<wait timeout="3" />
+			<link text="{@Contract_Create_Lib}" exist="false" />
+		</table>
+	</div>
+
+	<puts text="Test: Opportunity_2367.xml finished." />
+</soda>

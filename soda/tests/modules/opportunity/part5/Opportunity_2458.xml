@@ -1,0 +1,70 @@
+<soda>
+	<!-- In-Line Create Contact_Verify that contact can be canceled in-line creating 
+		from Contacts sub-panel for an opportunity. -->
+
+	<puts text="Test: Opportunity_2458.xml starting" />
+
+	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2458.csv" var="Opportunity_2458">
+		<timestamp />
+		<link id="moduleTab_Opportunities" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Opportunities&amp;action=index" click="false" />
+		</div>
+		<button id="search_form_clear" />
+
+		<form id="search_form">
+			<textfield id="name_basic" set="{@pre_opp_name}" />
+		</form>
+		<button id="search_form_submit" />
+
+		<table class="list view">
+			<browser assert="{@pre_opp_name}" />
+			<link text="{@pre_opp_name}" click="true" />
+		</table>
+
+		<table id="detailpanel_1">
+			<browser assert="{@pre_opp_name}" />
+		</table>
+
+		<!-- Create Contact via subpanel -->
+		<div id="list_subpanel_contacts">
+			<table class="list view">
+				<button id="opportunities_contacts_create_button" />
+				<wait timeout="3" />
+			</table>
+		</div>
+
+		<!--Account select -->
+		<button id="btn_account_name" />
+		<wait timeout="3" />
+		<browser assert="Account Search" />
+		<textfield name="name_advanced" set="{@pre_account_name}" />
+		<button value="Search" />
+		<table class="list view">
+			<link text="{@pre_account_name}" />
+			<wait timeout="2" />
+		</table>
+
+		<form id="form_SubpanelQuickCreate_Contacts">
+			<!--goto contact edit view -->
+			<textfield name="first_name" set="{@Opportunity_2458.contact_first_name}" />
+			<textfield id="last_name" set="{@Opportunity_2458.contact_last_name}" />
+			<textfield id="title" set="{@Opportunity_2458.contact_title}" />
+			<textfield id="phone_work" set="{@Opportunity_2458.contact_phone_work}" />
+			<textfield id="phone_mobile" set="{@Opportunity_2458.contact_phone_mobile}" />
+			<textfield id="phone_fax" set="{@Opportunity_2458.contact_phone_fax}" />
+			<select id="lead_source" set="{@Opportunity_2458.contact_lead_source}" />
+			<checkbox id="do_not_call" set="{@Opportunity_2458.contact_do_not_call}" />
+
+			<button value="Cancel" alert="true" />
+		</form>
+		<wait />
+		<div id="list_subpanel_contacts">
+			<table class="list view">
+				<link text="{@pre_contact_first_name} {@pre_contact_last_name}" exist="false" />
+			</table>
+		</div>
+	</csv>
+
+	<puts text="Test: Opportunity_2458.xml finished" />
+</soda>

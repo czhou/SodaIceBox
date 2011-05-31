@@ -69,6 +69,7 @@
 	<div id="list_subpanel_contacts">
 		<row class="oddListRowS1">
 			<link index="4" alert="true" />
+			<wait timeout="3" />
 		</row>
 	</div>
 
