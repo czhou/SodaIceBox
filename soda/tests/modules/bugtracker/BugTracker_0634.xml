@@ -58,7 +58,15 @@
 
 	<textfield id="name_basic" set="{@pre_bug_name}" /> 
 	<button id="search_form_submit" />
-	<browser assert="@pre_bug_name" exist="false" />
+	<browser assert="@pre_bug_name" exists="false" />
+
+	<!-- Cleanup: Clear search form. -->
+	<link id="moduleTab_Bugs" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Bugs&amp;action=index" click="false" />
+	</div>
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
 
 	<puts text="Test: BugTracker_0634.xml finished." />
 </soda>
