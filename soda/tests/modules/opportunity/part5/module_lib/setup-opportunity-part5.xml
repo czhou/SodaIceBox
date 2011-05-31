@@ -26,10 +26,13 @@
 -->
 
 <soda>
-	<script file="tests/modules/opportunity/module_lib/setup-opportunity.xml" />
-	<script file="tests/modules/opportunity/part4/module_lib/setup-opportunity-part5.xml" />
-	<script fileset="tests/modules/opportunity/part5" />
-	<script file="tests/modules/opportunity/part4/module_lib/cleanup-opportunity-part5.xml" />
-	<script file="tests/modules/opportunity/module_lib/cleanup-opportunity.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Enable_All_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/TaxRate_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contract_Create_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib_NoDep.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 </soda>
-
