@@ -1004,6 +1004,13 @@
 		<modulename>Studio</modulename>
 	</block>
 	
+	<block>
+		<testfile>Dashlet_10982</testfile>
+		<bugnumber>44104</bugnumber>
+		<reason>bug 44104</reason>
+		<modulename>home</modulename>
+	</block>
+	
  	<block>
 		<testfile>KnowledgeBase_2477</testfile>
 		<bugnumber>37260</bugnumber>
