@@ -1,0 +1,10 @@
+name,city,des
+acc1,abc123._%+-@sugar1.com,true
+acc2,as-@uol.com.br,true
+acc3,,true
+acc4,a b@s.com,false
+acc5,a!#$^&*()@s.com,false
+acc6,abc@s,false
+acc7,aa,false
+acc8,aa@.com,false
+
