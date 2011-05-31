@@ -36,54 +36,36 @@
 	<div class="moduleTitle">
 		<link href="index.php?module=Leads&amp;action=index" click="false" />
 	</div>
-	<csv file="{@global.scriptsdir}/csvs/leads/Leads_1992.csv" var="Leads_1992" />
-	<link id="moduleTab_Leads" />
-	<wait timeout="3" />
-	<link text="Create Lead" />
-	<textfield id="last_name" set="{@Leads_1992.last_nameA}" />
-	<select id="status" set="{@Leads_1992.lead_statusA}" />
-	<button value="Save" />
-
-	<link id="moduleTab_Leads" />
-	<wait timeout="3" />
-	<link text="Create Lead" />
-	<textfield id="last_name" set="{@Leads_1992.last_nameB}" />
-	<select id="status" set="{@Leads_1992.lead_statusB}" />
-	<button value="Save" />
-
+	<csv file="{@global.scriptsdir}/csvs/leads/Leads_1992.csv" var="Leads_1992" >
+		<link id="moduleTab_Leads" />
+		<wait timeout="3" />
+		<link text="Create Lead" />
+		<textfield id="last_name" set="{@Leads_1992.last_name}" />
+		<select id="status" set="{@Leads_1992.lead_status}" />
+		<button value="Save" />
+	</csv>
 
 	<!--Advanced Search by status-->
-	<link id="moduleTab_Leads" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Leads&amp;action=index" click="false" />
-	</div>
-	<link text="Advanced Search" required="false" />
-	<button id="search_form_clear" />
-	<select name="status_advanced[]" set="{@Leads_1992.lead_statusA}" />
-	<button id="search_form_submit" />
-
-	<table class="list view">
-		<browser assert="{@Leads_1992.last_nameA}" />
-	</table>
-
-	<link id="moduleTab_Leads" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Leads&amp;action=index" click="false" />
-	</div>
-	<link text="Advanced Search" required="false" />
-	<button id="search_form_clear" />
-	<select name="status_advanced[]" set="{@Leads_1992.lead_statusB}" />
-	<button id="search_form_submit" />
-
-	<table class="list view">
-		<browser assert="{@Leads_1992.last_nameB}" />
-	</table>
-
+	<csv file="{@global.scriptsdir}/csvs/leads/Leads_1992.csv" var="Leads_1992" >
+		<link id="moduleTab_Leads" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Leads&amp;action=index" click="false" />
+		</div>
+		<link text="Advanced Search" required="false" />
+		<button id="search_form_clear" />
+		<select name="status_advanced[]" set="{@Leads_1992.lead_status}" />
+		<button id="search_form_submit" />
+	
+		<table class="list view">
+			<browser assert="{@Leads_1992.last_name}" />
+		</table>
+	</csv>
+	
+	<!--Set search to basic panel-->
 	<link text="Basic Search"/>
 	<div id="Leadsbasic_searchSearchForm">
 		<button id="search_form_clear" />
 		<button id="search_form_submit" />
-		<wait timeout="2"/>
 	</div>
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
 	<puts text="Test: Leads_1992.xml finished" />
