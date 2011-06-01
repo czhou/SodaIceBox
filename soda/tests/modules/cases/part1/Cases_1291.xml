@@ -72,7 +72,7 @@
 		<browser assert="Missing required field: Subject" />
 		<browser assert="Missing required field: Start Date" />
 		<browser assert="Missing required field: Duration Hours" />
-		<!-- Should verify error message for Teams, but none appears. -->
+		<browser assert="No Primary Team specified" />
 
 		<button id="CANCEL" alert="true" />
 	</csv>
