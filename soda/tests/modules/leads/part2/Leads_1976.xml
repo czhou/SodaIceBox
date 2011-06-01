@@ -140,6 +140,19 @@
 	<button id="search_form_submit" />
 	<link text="{@lead_1976.leads_last_name}" />
 
+	<!--Clear team record created in this test case-->
+	<link text="Admin" />
+	<wait timeout="3" />
+	<link text="Team Management" />
+	<textfield id="name_basic" set="{@lead_1976.team_name}"/>
+	<button id="search_form_submit"/>
+	<wait timeout="3"/>
+	<checkbox id="massall" set="true"/>
+	<link id="actions_link"/>
+	<link text="Delete" alert="true"/>
+	<wait timeout="3"/>
+	<span class="pageNumbers" assert="(0 - 0 of 0)"/>
+
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
 
 	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
