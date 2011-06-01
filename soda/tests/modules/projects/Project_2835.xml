@@ -26,7 +26,40 @@
 -->
 
 <soda>
-	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
-	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Enable_All_Lib.xml"/>
+
+	<puts text="Test Case 2835: Create Project -- Project Management_Verify that creating a project can be canceled."/>
+	<!--Go to Project module and create project record.-->
+        <link id="moduleTab_Project"/>
+	<div class="moduleTitle">
+		<link href="index.php?module=Project&action=index" click="false"/>
+	</div>
+
+	<csv file="{@global.scriptsdir}/csvs/projects/Project_2833.csv" var="Project_2833">
+		<link text="Create Project"/>
+		<wait timeout="2"/>
+		<browser assert="Project Overview"/>
+		<textfield id="name" set="{@Project_2833.project_name}"/>
+		<textfield id="estimated_start_date" set="{@Project_2833.start_date}"/>
+		<textfield id="estimated_end_date" set="{@Project_2833.end_date}"/>
+		<button value="Cancel" alert="true"/>
+		<wait timeout="3"/>
+		
+		<!--Assert Project list view.-->
+		<browser assert="My Items"/>
+	</csv>
+
+	<!--Assert records are not creatd-->
+        <link id="moduleTab_Project"/>
+	<div class="moduleTitle">
+		<link href="index.php?module=Project&action=index" click="false"/>
+	</div>
+
+	<csv file="{@global.scriptsdir}/csvs/projects/Project_2833.csv" var="Project_2833">
+		<textfield id="name_basic" set="{@Project_2833.project_name}"/>
+		<button id="search_form_submit"/>
+		
+		<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	</csv>
+
+        <puts text="Test Case 2835 is finished!"/>
 </soda>
