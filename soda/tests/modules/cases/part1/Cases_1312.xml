@@ -87,7 +87,7 @@
 	<link text="Admin" />
 	<link text="System Settings" />
 	<browser assert="System Settings" />
-	<textfield name="list_max_entries_per_page" set="10" />
+	<textfield name="list_max_entries_per_page" set="20" />
 	<button name="save" />	
 
 	<!-- Clean up test data. -->
