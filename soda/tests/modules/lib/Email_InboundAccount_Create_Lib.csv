@@ -1,0 +1,2 @@
+name,server_url,protocol,port,ssl,status,email_user,email_password,mailbox,trashFolder,team_name_collection_0,from_name,from_addr,allow_outbound_group_usage
+EmailOutBound,imap.gmail.com,imap,993,true,Active,qa.sugar.qa@gmail.com,sugarcrm,INBOX,[Gmail]/Trash,Global,test_group,test_group@gmail.com,true
