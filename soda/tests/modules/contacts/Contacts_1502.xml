@@ -26,47 +26,52 @@
 -->
 
 <soda>
-	<!-- : Detail View - Verify that bugs can be deleted from the bug list. -->
-	<puts text="Test: BugTracker_0634.xml starting." />
-	<csv file="{@global.scriptsdir}/csvs/bugtracker/BugTrackerAssertText.csv" var="bugtracker" />
-	<timestamp />
+	<!--
+		Delete case_Verify that related case can be deleted from contact detail view
+	-->
+	<puts text="Test: Contacts_1502.xml starting." />
 
-	<!--Create bug tracker record-->
-	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+	<!--Create prepared record-->
+	<script file='{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml'/>
+	<script file='{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml'/>
 
-	<!--Search the bug tracker record-->
-	<link id="moduleTab_Bugs" />
+	<!--Search the Contact record-->
+	<link id="moduleTab_Contacts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Bugs&amp;action=index" click="false" />
+		<link href="index.php?module=Contacts&amp;action=index" click="false" />
 	</div>
-
-	<textfield id="name_basic" set="{@pre_bug_name}" /> 
+	<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
 	<button id="search_form_submit" />
-
 	<table class="list view">
-		<link text="{@pre_bug_name}" />
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	</table>
-	<div class="moduleTitle" assert="{@pre_bug_name}" click="false" />
 
-	<button value="Delete" alert="true" />
+	<!--Select case via case subpanel-->
+	<button id="contacts_cases_select_button"/>
+	<textfield id="name_advanced" set="{@pre_case_name}"/>
+	<button value="Search"/>
+	<link text="{@pre_case_name}"/>
 
-	<!--seach for the delete record-->
-	<link id="moduleTab_Bugs" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Bugs&amp;action=index" click="false" />
+	<!--Verify selected case show in subpanel-->
+	<div id="list_subpanel_cases">
+		<link text="{@pre_case_name}" click="false"  exist="true"/>
+		<browser assert="{@pre_case_name}"/>
 	</div>
 
-	<textfield id="name_basic" set="{@pre_bug_name}" /> 
-	<button id="search_form_submit" />
-	<browser assertnot="@pre_bug_name" />
-
-	<!-- Cleanup: Clear search form. -->
-	<link id="moduleTab_Bugs" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Bugs&amp;action=index" click="false" />
+	<!--Remove relation ship-->
+	<div id="list_subpanel_cases">
+		<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
 	</div>
-	<button id="search_form_clear" />
-	<button id="search_form_submit" />
 
-	<puts text="Test: BugTracker_0634.xml finished." />
+	<wait timeout="2"/>
+	<!--Verify delete works-->
+	<div id="list_subpanel_cases">
+		<browser assertnot="{@pre_case_name}"/>
+	</div>
+
+	<!--Delete records-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<puts text="Test: Contacts_1502.xml finished." />
 </soda>

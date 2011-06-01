@@ -53,6 +53,7 @@
 	<csv file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.csv" var="case_record"> 
 		<div id="list_subpanel_cases">
 			<button name="cases_bugs_create_button" />
+			<wait timeout="3" />
 		</div>
 		<table class="edit view">
 			<textfield id="name" set="{@case_record.name} {@user.name} {@stamp}" />
