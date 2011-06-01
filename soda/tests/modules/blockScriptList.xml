@@ -63,6 +63,13 @@
 	</block>
 	
 	<block>
+		<testfile>Cases_1291</testfile>
+		<bugnumber>44298</bugnumber>
+		<reason>No error message for invalid/missing values in Teams field.</reason>
+		<modulename>Cases</modulename>
+	</block>
+
+	<block>
 		<testfile>Cases_1304</testfile>
 		<bugnumber>-1</bugnumber>
 		<reason>send_keys</reason>

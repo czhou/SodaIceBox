@@ -58,7 +58,7 @@
 
 	<textfield id="name_basic" set="{@pre_bug_name}" /> 
 	<button id="search_form_submit" />
-	<browser assert="@pre_bug_name" exists="false" />
+	<browser assertnot="@pre_bug_name" />
 
 	<!-- Cleanup: Clear search form. -->
 	<link id="moduleTab_Bugs" />
