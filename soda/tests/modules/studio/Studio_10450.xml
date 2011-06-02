@@ -1,0 +1,101 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+    
+    <!--Show dependent field on dashlet-->
+    <puts text="Test: Studio_10450.xml starting" />
+    <!-- set website field as dependent field and define formula -->
+   	<timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="website" class="mbLBLL" assertPage="false" />
+    <checkbox id="dependent" set="true" />
+    <wait timeout="1" />
+    <tr id="visFormulaRow" >
+	    <button name="editFormula" />
+	    <wait timeout="3" />
+	</tr>
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="contains($billing_address_city,$billing_address_state)"/>
+      <button value="Save" />
+      <wait timeout="3" />
+    </div>    
+    <form id="popup_form_id" >
+      	<button name="fsavebtn" assertPage="false" />
+      	<wait timeout="10" />
+    </form>    
+    <browser assert="Add Field" />  
+
+    <!--Create account-->  
+    <link id="moduleTab_Accounts" />
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_10450.csv" var="studio10450">
+    	<link text="Create Account" />
+    	<browser assert="Create" />
+        <form id="EditView">
+            <textfield id="name" set="{@studio10450.name} {@user.name} {@stamp}" />
+            <textfield id="billing_address_city" set="{@studio10450.city}" />
+	        <textfield id="billing_address_city" click="false" jscriptevent="onchange" />
+	        <textfield id="billing_address_state" set="{@studio10450.state}" />
+	        <textfield id="billing_address_state" click="false" jscriptevent="onchange" />
+	        <textfield id="website" set="{@studio10450.website}" />
+	        <button value="Save" />
+	    </form>
+	    <wait timeout="3" />
+	    <browser assert="{@studio10450.name} {@user.name} {@stamp}" />	 
+	    <browser assert="{@studio10450.website}" />   
+	    
+	    <!--check field on dashlet-->
+	    <link id="moduleTab_Home" />
+	    <browser assert="Add Sugar Dashlets" />   
+	    <li id="dashlet_7fabf66f-af8f-765a-9f61-4de678b9d8a7">
+	    	<browser assert="{@studio10450.name} {@user.name} {@stamp}" />	 
+	    	<browser assert="{@studio10450.website}" />   
+	    </li>
+    </csv>
+        
+    <!--Disable the dependent function -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="website" class="mbLBLL" assertPage="false" />
+    <checkbox id="dependent" set="false" />
+    <form id="popup_form_id" >
+      	<browser assertnot="Formula Builder" />
+      	<button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    
+    <!-- Delete account record -->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_10450.xml finished." />
+</soda>
