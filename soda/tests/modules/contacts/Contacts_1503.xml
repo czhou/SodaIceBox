@@ -1,0 +1,74 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		Report bug_Verify that the new reported bug is displayed in "Bugs" sub-panel of "Contact Detail View" page.
+	-->
+	<puts text="Test: Contacts_1503.xml starting." />
+
+	<!--Create prepared record-->
+	<script file='{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml'/>
+
+	<!--Search the Contact record-->
+	<link id="moduleTab_Contacts" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+	</div>
+	<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+
+	<!--Create bug via bug subpanel full form-->
+	<button id="contacts_bugs_create_button"/>
+	<button id="Bugs_subpanel_full_form_button"/>
+
+	<csv file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.csv" var="bug_record">   
+		<!-- Fill out bug data. -->            
+		<form id="EditView">
+			<textfield id="name" set="{@bug_record.name} {@user.name} {@stamp}" /> 
+			<button value="Save" />
+		</form>
+            
+		<browser assert="{@bug_record.name} {@user.name} {@stamp}" />
+                
+		<var var="pre_bug_name" set="{@bug_record.name} {@user.name} {@stamp}" />
+	</csv>
+
+	<!--Verify selected bug show in subpanel-->
+	<div id="list_subpanel_bugs">
+		<link text="{@pre_bug_name}" click="false"  exist="true"/>
+		<browser assert="{@pre_bug_name}"/>
+	</div>
+
+	<!--Delete records-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
+	<puts text="Test: Contacts_1503.xml finished." />
+</soda>
