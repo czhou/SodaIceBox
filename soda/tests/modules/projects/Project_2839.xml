@@ -45,6 +45,9 @@
 		<button id="SAVE"/>
 		<wait timeout="3"/>
 		
+		<browser assert="Resources"/>
+		<browser assert="{@Project_2839.project_name}"/>
+		
         	<link id="moduleTab_Project"/>
 		<textfield id="name_basic" set="{@Project_2839.project_name}"/>
 		<button id="search_form_submit"/>
