@@ -27,34 +27,35 @@
 
 <soda>
 
-	<puts text="Project Create Lib Started!"/>
+	<puts text="Test Case 2838: Create Project -- Project Management_Verify that duplicating a project can be canceled."/>
 
-	<!--Go to Project module and create project record.-->
+	<!--Delete the records created in this case-->
         <link id="moduleTab_Project"/>
 	<div class="moduleTitle">
 		<link href="index.php?module=Project&action=index" click="false"/>
 	</div>
 
-	<csv file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.csv" var="Project_Create_Lib">
-		<link text="Create Project"/>
-		<wait timeout="2"/>
-		<browser assert="Project Overview"/>
-		<textfield id="name" set="{@Project_Create_Lib.project_name}"/>
-		<textfield id="estimated_start_date" set="{@Project_Create_Lib.start_date}"/>
-		<textfield id="estimated_end_date" set="{@Project_Create_Lib.end_date}"/>
-		<textfield id="description" set="{@Project_Create_Lib.description}"/>
-		<select id="status" set="{@Project_Create_Lib.status}"/>
-		<select id="priority" set="{@Project_Create_Lib.priority}"/>
-		
-		<button id="SAVE"/>
+	<csv file="{@global.scriptsdir}/csvs/projects/Project_2837.csv" var="Project_2837">
+		<textfield id="name_basic" set="{@pre_project_name}"/>
+		<button id="search_form_submit"/>
+		<link text="{@pre_project_name}"/>
+		<browser assert="Resources"/>
+		<button value="Duplicate"/>
+		<textfield id="name" set="{@Project_2837.project_name}"/>
+		<button value="Cancel" alert="true"/>
 		<wait timeout="3"/>
 		
-		<!--Assert Project detail view.-->
-		<browser assert="Resources"/>
-		<browser assert="{@Project_Create_Lib.project_name}"/>
+        	<link id="moduleTab_Project"/>
+		<textfield id="name_basic" set="{@Project_2837.project_name}"/>
+		<button id="search_form_submit"/>
 	
-		<var var="pre_project_name" set="{@Project_Create_Lib.project_name}"/>
+		<link text="{@Project_2837.project_name}" exist="false" click="false"/>	
+		<checkbox id="massall" set="ture"/>
+		<link id="actions_link" />
+		<link text="Delete" alert="true" />
+		<wait timeout="3"/>
+		<span class="pageNumbers" assert="(0 - 0 of 0)" />
 	</csv>
 
-        <puts text="Project Create Lib End!"/>
+        <puts text="Test Case 2837 is finished!"/>
 </soda>

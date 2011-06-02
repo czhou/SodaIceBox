@@ -26,35 +26,20 @@
 -->
 
 <soda>
+<puts text="ReportToUndo_Lib: Starting" />
+   <!-- Undo Report To lib -->
+	<csv file="{@global.scriptsdir}/modules/lib/ReportTo_Lib.csv" var="ReportToUndo">
+      <link text="Admin" />
+      <link text="User Management" />
+      <link text="{@ReportToUndo.last_name}" />
+	  <button id="edit_button"/>
+      <textfield id="reports_to_name" set="" />
+      <button id="Save" />
 
-	<puts text="Project Create Lib Started!"/>
-
-	<!--Go to Project module and create project record.-->
-        <link id="moduleTab_Project"/>
-	<div class="moduleTitle">
-		<link href="index.php?module=Project&action=index" click="false"/>
-	</div>
-
-	<csv file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.csv" var="Project_Create_Lib">
-		<link text="Create Project"/>
-		<wait timeout="2"/>
-		<browser assert="Project Overview"/>
-		<textfield id="name" set="{@Project_Create_Lib.project_name}"/>
-		<textfield id="estimated_start_date" set="{@Project_Create_Lib.start_date}"/>
-		<textfield id="estimated_end_date" set="{@Project_Create_Lib.end_date}"/>
-		<textfield id="description" set="{@Project_Create_Lib.description}"/>
-		<select id="status" set="{@Project_Create_Lib.status}"/>
-		<select id="priority" set="{@Project_Create_Lib.priority}"/>
-		
-		<button id="SAVE"/>
-		<wait timeout="3"/>
-		
-		<!--Assert Project detail view.-->
-		<browser assert="Resources"/>
-		<browser assert="{@Project_Create_Lib.project_name}"/>
-	
-		<var var="pre_project_name" set="{@Project_Create_Lib.project_name}"/>
-	</csv>
-
-        <puts text="Project Create Lib End!"/>
+      <!--Login back to Admin-->
+      <link text="Log Out" />
+      <script file="{@global.scriptsdir}/modules/lib/login.xml" />
+   </csv>
+   <puts text="ReportToUndo_Lib: Finished" />
 </soda>
+

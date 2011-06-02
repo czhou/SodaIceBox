@@ -58,9 +58,7 @@
 	<browser
 		assert="The outbound mail server selected for the mail account you are using is invalid" />
   <wait timeout="10" />
-	<div id="sugarMsgWindow" >
-		<button text="OK" required="false"/>
-	</div>
+	<button text="OK" required="false"/>
 	<wait timeout="3" />
 	
 	<!--Restore Email outbound setting-->

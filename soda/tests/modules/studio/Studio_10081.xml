@@ -27,57 +27,46 @@
 
 <soda>
     
-    <!--Import is disabled if the field is a calculated field -->
-    <puts text="Test: Studio_10079.xml starting" />
-    <!-- set billing city field as calculated field and define formula -->
+    <!--mass update dropdown list is disabled if the field is a calculated field -->
+    <puts text="Test: Studio_10081.xml starting" />
+    <!-- set date_start field as calculated field and define formula -->
     <link text="Admin" />
     <link text="Studio" assertPage="false" />
-    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Calls" class="studiolink" assertPage="false" />
     <link text="Fields" class="studiolink" assertPage="false" />
-    <link text="billing_address_city" class="mbLBLL" assertPage="false" />
+    <link text="date_start" class="mbLBLL" assertPage="false" />
     <checkbox id="calculated" set="true" />
     <wait timeout="1" />
     <button value="Edit Formula" />
     <wait timeout="3" />
     <browser assert="Formula Builder" />
     <div id="formulaBuilderWindow" >
-      <textfield id="formulaInput" set="strlen($billing_address_state)"/>
+      <textfield id="formulaInput" set="addDays(now(),5)"/>
       <button value="Save" />
       <wait timeout="3" />
     </div>    
-    <select id="importable" assert="disabled" />
+    <checkbox id="massupdate" assert="disabled" />
     <form id="popup_form_id" >
       <button name="fsavebtn" assertPage="false" />
       <wait timeout="10" />
     </form>    
-    <browser assert="Add Field" />    
-    
-    <!--Go to account import-->
-    <link id="moduleTab_Accounts" />
-    <link text="Import Accounts" />
-    <wait timeout="3" />
-    <browser assert="Step 1: Select Data Source and Import Action" />
-    <button id="gonext" />
-    <browser assert="Step 2: Upload Import File" />
-    <filefield name="userfile" set="{@global.scriptsdir}/modules/lib/Account_Create_Lib.csv" />
-    <button id="gonext" />
-    <browser assert="Step 3: Confirm Fields and Import" />
-    <browser assertnot="Billing City" />
-    
+    <browser assert="Add Field" /> 
+        
     <!-- Now uncalculated the field -->
     <link text="Admin" />
     <link text="Studio" assertPage="false" />
-    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Calls" class="studiolink" assertPage="false" />
     <link text="Fields" class="studiolink" assertPage="false" />
-    <link text="billing_address_city" class="mbLBLL" assertPage="false" />
-    <select id="importable" assert="disabled" />
+    <link text="date_start" class="mbLBLL" assertPage="false" />
+    <checkbox id="massupdate" assert="disabled" />
     <checkbox id="calculated" set="false" />
-    <select id="importable" assert="enabled" />
+    <checkbox id="massupdate" assert="enabled" />
+    <checkbox id="massupdate" set="true" />
     <form id="popup_form_id" >
       <browser assertnot="Formula Builder" />
       <button name="fsavebtn" assertPage="false" />
     </form>
     <wait timeout="3" />
         
-    <puts text="Test: Studio_10079.xml finished." />
+    <puts text="Test: Studio_10081.xml finished." />
 </soda>

@@ -43,7 +43,7 @@
       <!--Save the new user to a var-->
       <var var="report_user" set="{@ReportTo.last_name}" />
       <!--Login back to Admin-->
-      <link text="Logout" />
+      <link text="Log Out" />
       <script file="{@global.scriptsdir}/modules/lib/login.xml" />
    </csv>
    <puts text="ReportTo_Lib: Finished" />

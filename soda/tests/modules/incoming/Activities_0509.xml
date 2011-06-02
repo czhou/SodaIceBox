@@ -72,7 +72,10 @@
 		<button value="Add" click="true" />
 		<button value="Add" jscriptevent="onmouseup" />
 	</div>
-	
+	<wait timeout="2" />
+	<table id="schedulerTable">
+		<browser assert="{@contact1_fname} {@contact1_lname}" />
+	</table>
 	<button value="Save" />
 	
 	<wait timeout="5" />
@@ -86,6 +89,10 @@
 		<button value="Add" click="true" />
 		<button value="Add" jscriptevent="onmouseup" />
 	</div>
+	<wait timeout="2" />
+	<table id="schedulerTable">
+		<browser assert="{@contact2_fname} {@contact2_lname}" />
+	</table>
 	
 	<button value="Close and Create New" />
 	<wait timeout="5" />

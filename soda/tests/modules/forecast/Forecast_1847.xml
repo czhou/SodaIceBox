@@ -26,35 +26,26 @@
 -->
 
 <soda>
-
-	<puts text="Project Create Lib Started!"/>
-
-	<!--Go to Project module and create project record.-->
-        <link id="moduleTab_Project"/>
-	<div class="moduleTitle">
-		<link href="index.php?module=Project&action=index" click="false"/>
-	</div>
-
-	<csv file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.csv" var="Project_Create_Lib">
-		<link text="Create Project"/>
-		<wait timeout="2"/>
-		<browser assert="Project Overview"/>
-		<textfield id="name" set="{@Project_Create_Lib.project_name}"/>
-		<textfield id="estimated_start_date" set="{@Project_Create_Lib.start_date}"/>
-		<textfield id="estimated_end_date" set="{@Project_Create_Lib.end_date}"/>
-		<textfield id="description" set="{@Project_Create_Lib.description}"/>
-		<select id="status" set="{@Project_Create_Lib.status}"/>
-		<select id="priority" set="{@Project_Create_Lib.priority}"/>
-		
-		<button id="SAVE"/>
-		<wait timeout="3"/>
-		
-		<!--Assert Project detail view.-->
-		<browser assert="Resources"/>
-		<browser assert="{@Project_Create_Lib.project_name}"/>
-	
-		<var var="pre_project_name" set="{@Project_Create_Lib.project_name}"/>
+	<!-- Create Opportunity_Verify that forecast opportunity can be quickly created 
+		in "Forecasts" module. -->
+	<puts text="Test: Forecast_1847.xml starting" />
+	<csv file="{@global.scriptsdir}/csvs/forecast/Forecast_1847.csv" var="Forecast_1847">
+		<script file="{@global.scriptsdir}/modules/lib/ReportTo_Lib.xml"/>
+		<script file="{@global.scriptsdir}/modules/lib/TimePeriod_Delete_Lib.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/TimePeriod_Create_Lib.xml" />
+		<link id="moduleTab_Forecasts" />
+		<table id="forecastsWorksheet">
+			<link text="Administrator (Rollup)" />
+			<link text="Administrator" />
+			<link text="qauser" />
+			<link text="Administrator (Direct)" />
+		</table>
 	</csv>
-
-        <puts text="Project Create Lib End!"/>
+	<!--Run Delete XML -->
+	<script file="{@global.scriptsdir}/modules/lib/TimePeriod_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ReportToUndo_Lib.xml"/>
+	<puts text="Test: Forecast_1847.xml finished" />
 </soda>

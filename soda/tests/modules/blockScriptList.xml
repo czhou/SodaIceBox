@@ -106,6 +106,13 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Dashlet_11035</testfile>
+		<bugnumber>43882</bugnumber>
+		<reason>Edit Button in all Dashlets brings you to Create New Team/User/Related Module</reason>
+		<modulename>home</modulename>
+	</block>
+	
+	<block>
 		<testfile>Calendar_10966</testfile>
 		<bugnumber>43439</bugnumber>
 		<reason>Inactive user shows in shared calendar filter</reason>
@@ -230,34 +237,6 @@
 	
 	<!-- Beginning of illegal javascript related blocks -->
 	<block>
-		<testfile>Calendar_0692</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0701</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0725</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0735</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
 		<testfile>Calendar_0736</testfile>
 		<bugnumber></bugnumber>
 		<reason>illegal javascript accessor</reason>
@@ -370,27 +349,6 @@
 	</block>
 	
 	<block>
-		<testfile>Reports_8137</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8145</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8153</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
 		<testfile>Reports_8160</testfile>
 		<bugnumber></bugnumber>
 		<reason>illegal javascript accessor</reason>
@@ -405,13 +363,6 @@
 	</block>
 	
 	<block>
-		<testfile>Reports_8348</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
 		<testfile>Reports_8452</testfile>
 		<bugnumber></bugnumber>
 		<reason>illegal javascript accessor</reason>
@@ -420,13 +371,6 @@
 	
 	<block>
 		<testfile>Reports_8458</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8598</testfile>
 		<bugnumber></bugnumber>
 		<reason>illegal javascript accessor</reason>
 		<modulename>Incoming</modulename>
@@ -1008,6 +952,13 @@
 		<testfile>Studio_10297</testfile>
 		<bugnumber>44189</bugnumber>
 		<reason>bug 44189</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_10083</testfile>
+		<bugnumber>41376</bugnumber>
+		<reason>bug 41376</reason>
 		<modulename>Studio</modulename>
 	</block>
 	
