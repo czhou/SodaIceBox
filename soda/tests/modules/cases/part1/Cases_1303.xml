@@ -26,54 +26,34 @@
 -->
 
 <soda>
-	<puts text="Test: Cases_1351: Edit Task_Verify that task detail view is displayed after clicking the subject name of an existing task in Activities sub-panel" />
+	<!-- Create Archived Email_Verify that archived email cannot be created for case in "History" sub-panel when the mandatory field is left empty for "Archive Email" function. -->
+	<puts text="Test: Cases_1302.xml starting." />
 	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
+	<timestamp />
 
-	<!--Create a case record-->
+	<!-- Create a case and go to its DetailView. -->
 	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
-	<var var="case_record" set="{@pre_case_name}" />
-
-	<!--go to the case-->
-	<link id="moduleTab_Cases" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Cases&amp;action=index" click="false" />
 	</div>
 
-	<button value="Clear" />
-	<textfield id="name_basic" set="{@case_record}" />
-	<button id="search_form_submit" />
-	<link text="{@case_record}" />
+	<!-- Create an archived email. -->
+	<csv file="{@global.scriptsdir}/csvs/cases/Case_1302.csv" var="Case_1302">
+		<button id="ArchiveEmail_button" />
 
-	<!--create a task-->
-	<div id="list_subpanel_activities">
-		<button value="  Create Task  " />
-		<wait timeout="5" />
-	</div>
-
-	<timestamp />
-
-	<csv file="{@global.scriptsdir}/csvs/cases/Case_1351.csv" var="Case_1351">
-		<div id="form_SubpanelQuickCreate_Tasks_tabs">
-			<textfield id="name" set="{@Case_1351.name} {@user.name} {@stamp}" />
-		</div>
-		<button id="Tasks_subpanel_save_button" />
-		<wait timeout="5" />
-
-		<!--go to the Task detailview-->
-		<div id="list_subpanel_activities">
-			<table class="list view">
-				<link text="{@Case_1351.name} {@user.name} {@stamp}" />
-			</table>
-		</div>
-		<div class="moduleTitle">
-			<link href="index.php?module=Tasks&amp;action=index" />
-			<browser assert="{@Case_1351.name} {@user.name} {@stamp}" />
+		<textfield name="date_start" set="{@Case_1302.email_date}" />
+		<textfield name="time_start" set="{@Case_1302.email_time}" />
+		<textfield id="to_addrs_field" set="{@Case_1302.email_to}" />
+		<button id="SAVE_HEADER" />
+		
+		<!-- Assert archived email was created.. -->
+		<div id="list_subpanel_history">
+			<browser assert="RE: {@pre_case_name}" />
 		</div>
 	</csv>
 
 	<!--Delete the record-->
-	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
 
-	<puts text="Test: Cases_1351: Finished" />
+	<puts text="Test: Cases_1302.xml finished." />
 </soda>

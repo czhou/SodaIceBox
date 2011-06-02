@@ -26,54 +26,51 @@
 -->
 
 <soda>
-	<puts text="Test: Cases_1351: Edit Task_Verify that task detail view is displayed after clicking the subject name of an existing task in Activities sub-panel" />
+	<!-- Edit Scheduled Call: Verify that the information of a scheduled call for case cannot be modified when entering non-existing data (such as entering non-existing data in "Team" field) when using "Edit" function in "Activities" sub-panel. -->
+	<puts text="Test: Cases_1293.xml starting." />
 	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
+	<timestamp />
 
-	<!--Create a case record-->
+	<!-- Create a case and go to its DetailView. -->
 	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
-	<var var="case_record" set="{@pre_case_name}" />
-
-	<!--go to the case-->
-	<link id="moduleTab_Cases" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Cases&amp;action=index" click="false" />
 	</div>
 
-	<button value="Clear" />
-	<textfield id="name_basic" set="{@case_record}" />
-	<button id="search_form_submit" />
-	<link text="{@case_record}" />
+	<!-- Create a call. -->
+	<csv file="{@global.scriptsdir}/csvs/cases/Case_1293.csv" var="Case_1293">
+		<button id="Activities_logcall_button" />
 
-	<!--create a task-->
-	<div id="list_subpanel_activities">
-		<button value="  Create Task  " />
-		<wait timeout="5" />
-	</div>
+		<form id="form_SubpanelQuickCreate_Calls">
+			<textfield id="name" set="{@Case_1293.call_subject}" />
+			<button id="Calls_subpanel_save_button" />
+		</form>
 
-	<timestamp />
-
-	<csv file="{@global.scriptsdir}/csvs/cases/Case_1351.csv" var="Case_1351">
-		<div id="form_SubpanelQuickCreate_Tasks_tabs">
-			<textfield id="name" set="{@Case_1351.name} {@user.name} {@stamp}" />
-		</div>
-		<button id="Tasks_subpanel_save_button" />
-		<wait timeout="5" />
-
-		<!--go to the Task detailview-->
+		<!-- Edit the call. -->
 		<div id="list_subpanel_activities">
 			<table class="list view">
-				<link text="{@Case_1351.name} {@user.name} {@stamp}" />
+				<link text="edit" />
 			</table>
 		</div>
 		<div class="moduleTitle">
-			<link href="index.php?module=Tasks&amp;action=index" />
-			<browser assert="{@Case_1351.name} {@user.name} {@stamp}" />
+			<link href="index.php?module=Calls&amp;action=index" click="false" exists="true" />
+			<link text="{@Case_1293.call_subject}" click="false" exists="true" />
 		</div>
+
+		<!-- Set a non-existent team name. -->
+		<textfield id="team_name_collection_0" click="true" />
+		<textfield id="team_name_collection_0" set="{@Case_1293.call_team}" />
+		<button value="Save" />
+		
+		<!-- Assert error messages. -->
+		<browser assert="No Primary Team specified" />
+
+		<button id="CANCEL" alert="true" />
 	</csv>
 
 	<!--Delete the record-->
-	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 
-	<puts text="Test: Cases_1351: Finished" />
+	<puts text="Test: Cases_1293.xml finished." />
 </soda>
