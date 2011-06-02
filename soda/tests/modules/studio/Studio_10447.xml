@@ -1,0 +1,73 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+    
+    <!-- Create dependent field -->
+    <puts text="Test: Studio_10447.xml starting" />
+    <!-- Create a new calculated field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <button name="addfieldbtn" assertPage="false" />
+    <textfield id="field_name_id" set="df_field" />
+    <checkbox id="dependent" set="true" />
+    <wait timeout="1" />
+    <tr id="visFormulaRow" >
+	    <button name="editFormula" />
+	    <wait timeout="3" />
+	</tr>
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="contains($billing_address_city,$billing_address_state)" />
+      <button value="Save" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="10" />
+    <browser assert="Add Field" />
+    <browser assert="df_field_c" />
+    
+    <!-- Now delete that field -->
+    <link text="df_field_c" class="mbLBLL" assertPage="false" />
+    <checkbox id="dependent" assert="true" />
+    <button name="fdeletebtn" assertPage="false" alert="true"/>
+    <wait timeout="5" />
+    <div id="studiofields">
+    	<browser assertnot="df_field_c" />
+    </div>
+    
+    <!-- Ensure we can still load the module field page -->
+    <link text="Accounts" class="crumbLink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <button name="addfieldbtn" exists="true" assertPage="false" click="false" />
+    
+    <puts text="Test: Studio_10447.xml finished." />
+</soda>
