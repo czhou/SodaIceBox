@@ -26,35 +26,35 @@
 -->
 
 <soda>
-	<puts text="Lib: Project_Create_Lib.xml starting." />
-	<timestamp />
-	<link id="moduleTab_Project" />
-	<wait condition="true">
-		<link text="Create Project" />
-	</wait>
-	<csv file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.csv" var="project_record">
 
-		<link text="Create Project" />
-		<browser assert="Create" />
+	<puts text="Project Create Lib Started!"/>
 
-		<form id="EditView">
-			<textfield id="name" set="{@project_record.name} {@user.name} {@stamp}" />
-			<textfield id="estimated_start_date" set="{@project_record.estimated_start_date}" />
-			<textfield id="estimated_end_date" set="{@project_record.estimated_end_date}" />
+	<!--Go to Project module and create project record.-->
+        <link id="moduleTab_Project"/>
+	<div class="moduleTitle">
+		<link href="index.php?module=Project&action=index" click="false"/>
+	</div>
 
-			<textfield id="description" set="{@project_record.description}" />
-			<button value="Save" />
-		</form>
-		<wait timeout="3" />
-		<browser assert="{@project_record.name} {@user.name} {@stamp}" />
-
-		<!--Save the project id & name-->
-		<form name="DetailView">
-			<hidden name="record" var="pre_project_id" />
-		</form>
-
-		<var var="pre_project_name" set="{@project_record.name} {@user.name} {@stamp}" />
+	<csv file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.csv" var="Project_Create_Lib">
+		<link text="Create Project"/>
+		<wait timeout="2"/>
+		<browser assert="Project Overview"/>
+		<textfield id="name" set="{@Project_Create_Lib.project_name}"/>
+		<textfield id="estimated_start_date" set="{@Project_Create_Lib.start_date}"/>
+		<textfield id="estimated_end_date" set="{@Project_Create_Lib.end_date}"/>
+		<textfield id="description" set="{@Project_Create_Lib.description}"/>
+		<select id="status" set="{@Project_Create_Lib.status}"/>
+		<select id="priority" set="{@Project_Create_Lib.priority}"/>
+		
+		<button id="SAVE"/>
+		<wait timeout="3"/>
+		
+		<!--Assert Project detail view.-->
+		<browser assert="Resources"/>
+		<browser assert="{@Project_Create_Lib.project_name}"/>
+	
+		<var var="pre_project_name" set="{@Project_Create_Lib.project_name}"/>
 	</csv>
 
-	<puts text="Lib: Project_Create_Lib.xml finished." />
+        <puts text="Project Create Lib End!"/>
 </soda>

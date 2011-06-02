@@ -1,2 +1,2 @@
-name,estimated_start_date,estimated_end_date,description
-Project Testing,10/10/2010,10/10/2011,This is a test project...
+project_name, start_date, end_date, status, priority
+Project lib Record, 05/23/11, 05/30/11, Draft, Medium
