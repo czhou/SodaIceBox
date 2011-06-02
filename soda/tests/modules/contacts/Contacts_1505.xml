@@ -65,7 +65,7 @@
 
 	<!--Verify deleted bug will not show in subpanel-->
 	<div id="list_subpanel_bugs">
-		<link text="{@pre_bug_name}_{@stamp}" click="false"  exist="false"/>
+		<link text="{@pre_bug_name}" click="false"  exist="false"/>
 		<browser assertnot="{@pre_bug_name}"/>
 	</div>
 
