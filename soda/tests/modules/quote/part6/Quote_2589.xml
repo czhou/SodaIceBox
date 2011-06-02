@@ -52,12 +52,10 @@
         	<textfield id="subjectfield" set="{@Quote_2589.archived_email_name}"/>
         	<button id="SAVE_HEADER"/>
         	<wait timeout="10"/>
-		<div id="list_subpanel_history">
 			<browser assert="{@Quote_2589.archived_email_name"/>
 			<link class="listViewTdToolsS1" index="2" alert="true"/>
 			<wait timeout="5"/>
 			<browser assertnot="{@Quote_2589.archived_email_name}"/>
-		</div>
 	</csv>
         <puts text="End Test Case 2589"/>
 </soda>
