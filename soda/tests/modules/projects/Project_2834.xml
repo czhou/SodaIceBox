@@ -27,7 +27,7 @@
 
 <soda>
 
-	<puts text="Test Case 2834: Create Project -- Project Management_Verify that a project can be created."/>
+	<puts text="Test Case 2834: Create Project -- Project Management_Verify that a project can be created when filling all fields."/>
 
 	<!--Go to Project module and create project record.-->
         <link id="moduleTab_Project"/>
