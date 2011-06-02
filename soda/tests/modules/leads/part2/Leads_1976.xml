@@ -141,6 +141,8 @@
 	<link text="{@lead_1976.leads_last_name}" />
 
 	<!--Clear team record created in this test case-->
+	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
 	<link text="Admin" />
 	<wait timeout="3" />
 	<link text="Team Management" />
