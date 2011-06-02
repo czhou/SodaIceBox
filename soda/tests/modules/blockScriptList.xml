@@ -237,34 +237,6 @@
 	
 	<!-- Beginning of illegal javascript related blocks -->
 	<block>
-		<testfile>Calendar_0692</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0701</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0725</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0735</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
 		<testfile>Calendar_0736</testfile>
 		<bugnumber></bugnumber>
 		<reason>illegal javascript accessor</reason>
@@ -377,27 +349,6 @@
 	</block>
 	
 	<block>
-		<testfile>Reports_8137</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8145</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8153</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
 		<testfile>Reports_8160</testfile>
 		<bugnumber></bugnumber>
 		<reason>illegal javascript accessor</reason>
@@ -412,13 +363,6 @@
 	</block>
 	
 	<block>
-		<testfile>Reports_8348</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
 		<testfile>Reports_8452</testfile>
 		<bugnumber></bugnumber>
 		<reason>illegal javascript accessor</reason>
@@ -427,13 +371,6 @@
 	
 	<block>
 		<testfile>Reports_8458</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8598</testfile>
 		<bugnumber></bugnumber>
 		<reason>illegal javascript accessor</reason>
 		<modulename>Incoming</modulename>
