@@ -27,9 +27,9 @@
 
 <soda>
 	<!--
-		Edit bug_Verify that Bug for contact is edited in "Bugs" sub-panel of "Contact Detail View" page
+		Delete bug_Verify that bug for contact is deleted in "Bugs" sub-panel of "Contact Detail View" page
 	-->
-	<puts text="Test: Contacts_1504.xml starting." />
+	<puts text="Test: Contacts_1505.xml starting." />
 
 	<!--Create prepared record-->
 	<script file='{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml'/>
@@ -46,7 +46,7 @@
 		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	</table>
 
-	<!--select bug via bug subpanel -->
+	<!--Select bug via bug subpanel-->
 	<button id="contacts_bugs_select_button"/>
 	<textfield id="name_advanced" set="{@pre_bug_name}"/>
 	<button value="Search"/>
@@ -58,27 +58,19 @@
 		<browser assert="{@pre_bug_name}"/>
 	</div>
 
-	<!--Edit bug from subpanel -->
+	<!--Delete bug from subpanel -->
 	<div id="list_subpanel_bugs">
-		<link class="listViewTdToolsS1" text="/edit/"/>
+		<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
 	</div>
 
-
-	<!-- Update bug data. -->            
-	<timestamp/>
-	<form id="EditView">
-		<textfield id="name" set="{@pre_bug_name}_{@stamp}" /> 
-		<button value="Save" />
-	</form>
-    
-	<!--Verify updated bug show in subpanel-->
+	<!--Verify deleted bug will not show in subpanel-->
 	<div id="list_subpanel_bugs">
-		<link text="{@pre_bug_name}_{@stamp}" click="false"  exist="true"/>
-		<browser assert="{@pre_bug_name}"/>
+		<link text="{@pre_bug_name}_{@stamp}" click="false"  exist="false"/>
+		<browser assertnot="{@pre_bug_name}"/>
 	</div>
 
 	<!--Delete records-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
-	<puts text="Test: Contacts_1504.xml finished." />
+	<puts text="Test: Contacts_1505.xml finished." />
 </soda>
