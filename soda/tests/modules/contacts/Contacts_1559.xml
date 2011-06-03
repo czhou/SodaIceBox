@@ -45,7 +45,7 @@
 		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	</table>
 
-	<!--Select bug via bug subpanel-->
+	<!--Create Project  via project subpanel and save without any fileds filled-->
 	<button id="projects_contacts_create_button"/>
 	<button id="Project_subpanel_save_button"/>
 
