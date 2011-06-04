@@ -1,0 +1,104 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test:home_7345 add page" />
+		
+	<link id="moduleTab_Home" />
+	<browser assert="Add Sugar Dashlets" />
+	<csv file="{@global.scriptsdir}/csvs/home/Home_7345.csv" var="home7345">
+	    <!--Add 1 column page-->
+		<div id="addPage">
+			<link id="add_page" />						
+		</div>
+		<div id="addPageDialog_c">
+			<browser assert="Add Page" />
+			<textfield name="pageName" set="{@home7345.name}" />
+			<radio name="numColumns" index="1" set="true"/>
+			<button id="yui-gen52-button" />	
+			<wait timeout="3" />		
+		</div>
+		<div id="tabListContainer">
+			<browser assert="{@home7345.name}" />
+		</div>
+		<li id="pageNum_5">
+			<image id="pageNum_5_delete_page_img" click="true" alert="true" />
+			<wait timeout="5" />
+		</li>
+		<div id="tabListContainer">
+			<browser assertnot="{@home7345.name}" />
+		</div>
+		
+		<!--Add 2 column page-->
+		<div id="addPage">
+			<link id="add_page" />						
+		</div>
+		<div id="addPageDialog_c">
+			<browser assert="Add Page" />
+			<textfield name="pageName" set="{@home7345.name}" />
+			<radio name="numColumns" index="2" set="true"/>
+			<button id="yui-gen52-button" />	
+			<wait timeout="3" />		
+		</div>
+		<div id="tabListContainer">
+			<browser assert="{@home7345.name}" />
+		</div>
+		<li id="pageNum_5">
+			<image id="pageNum_5_delete_page_img" click="true" alert="true" />
+			<wait timeout="5" />
+		</li>
+		<div id="tabListContainer">
+			<browser assertnot="{@home7345.name}" />
+		</div>
+		
+		<!--Add 3 column page-->
+		<div id="addPage">
+			<link id="add_page" />						
+		</div>
+		<div id="addPageDialog_c">
+			<browser assert="Add Page" />
+			<textfield name="pageName" set="{@home7345.name}" />
+			<radio name="numColumns" index="3" set="true"/>
+			<button id="yui-gen52-button" />	
+			<wait timeout="3" />		
+		</div>
+		<div id="tabListContainer">
+			<browser assert="{@home7345.name}" />
+		</div>
+		<li id="pageNum_5">
+			<image id="pageNum_5_delete_page_img" click="true" alert="true" />
+			<wait timeout="5" />
+		</li>
+		<div id="tabListContainer">
+			<browser assertnot="{@home7345.name}" />
+		</div>		
+		
+	</csv>
+	
+
+	<puts text="Test: home_7345.xml finished." />
+</soda>	

@@ -26,24 +26,68 @@
 -->
 
 <soda>
-	<puts text="Test:home_7347 Cancle add page" />
+	<puts text="Test:home_7350 add page" />
 		
 	<link id="moduleTab_Home" />
 	<browser assert="Add Sugar Dashlets" />
-	<div id="addPage">
-		<link id="add_page" />	
+	<!--Add dashlet-->
+	<link id="add_dashlets" />
+	<wait timeout="5" />
+	<div id="dashletsDialog_c">
+		<browser assert="Find Sugar Dashlet" />
+		<link text="My Accounts" />
+		<wait timeout="5" />	
 	</div>
-	<div id="addPageDialog_c">
-		<browser assert="Add Page" />
-		<textfield name="pageName" set="Page1" />
-		<radio name="numColumns" index="1" set="true"/>
-		<button id="yui-gen53-button" />
-		
+	<div id="dashletsDialogHeader">
+		<link index="1" />
 	</div>
-	<div id="tabListContainer">
-		<browser assertnot="Page1" />
+	<ul id="col_0_0">
+		<browser assert="My Accounts" />		
+	</ul>	
+	<!-- delete -->
+	<div class="dashletToolSet" index="1">
+		<link index="3" alert="true" />
 	</div>
 	
+	<!--Add chart-->
+	<link id="add_dashlets" />
+	<wait timeout="5" />
+	<div id="dashletsDialog_c">
+		<browser assert="Find Sugar Dashlet" />
+		<link id="chartCategoryAnchor" />
+		<link text="All Opportunities By Lead Source By Outcome" />
+		<wait timeout="5" />
+	</div>
+	<div id="dashletsDialogHeader">
+		<link index="1" />
+	</div>
+	<ul id="col_0_0">
+		<browser assert="All Opportunities By Lead Source By Outcome" />		
+	</ul>	
+	<!-- delete -->
+	<div class="dashletToolSet" index="1">
+		<link index="3" alert="true" />
+	</div>
+	
+	<!--search dashlet-->
+	<link id="add_dashlets" />
+	<wait timeout="5" />
+	<div id="dashletsDialog_c">
+		<browser assert="Find Sugar Dashlet" />				
+		<textfield id="search_string" set="favorite" />
+		<button value="Search" />
+		<wait timeout="10" />
+		<div id="searchResults">
+			<link text="My Favorite Records" click="false" />	
+			<link text="My Favorite Reports" click="false" />
+			<link text="My Accounts" exist="false" click="false" />
+		</div>
+		<button value="Clear" />
+	</div>
+	
+	<div id="dashletsDialogHeader">
+		<link index="1" />
+	</div>
 
-	<puts text="Test: home_7347.xml finished." />
+	<puts text="Test: home_7350.xml finished." />
 </soda>	
