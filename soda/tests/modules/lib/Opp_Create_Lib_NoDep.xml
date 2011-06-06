@@ -28,7 +28,9 @@
 <soda>        
    <puts text="Opp_Create_Lib: Starting" />
    <timestamp />
-   <link href="index.php?module=Opportunities&amp;action=index" />
+   <div id="themeTabGroup_All">
+    <link text="Opportunities" />
+   </div>
    <link text="Create Opportunity" />
 
    <csv file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.csv" 

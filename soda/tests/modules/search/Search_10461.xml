@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
     	   <puts text="---Search_10461 Search out open items in Opportunities module---Start!" />
 		   <!--create opportunities-->
 		    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />

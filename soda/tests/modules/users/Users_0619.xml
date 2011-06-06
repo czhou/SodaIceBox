@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
     	   <puts text="---User_0619:verify non-admin user can't access other team's record---Start!"/>
            <csv file="{@global.scriptsdir}/csvs/users/Users_0619.csv" var="user_record_0619">
                <!--Create record-->

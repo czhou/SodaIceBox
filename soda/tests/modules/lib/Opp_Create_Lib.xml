@@ -29,8 +29,10 @@
    <puts text="Opp_Create_Lib: Starting" />
    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
    <timestamp />
-   <link href="index.php?module=Opportunities&amp;action=index" />
-   <link text="Create Opportunity" />
+   <div id="themeTabGroup_All">
+    <link text="Opportunities" />
+   </div>
+    <link text="Create Opportunity" />
 
    <csv file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.csv" 
       var="opp_record">

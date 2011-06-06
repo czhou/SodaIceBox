@@ -28,7 +28,7 @@
 <soda>
 	<puts text="Lib: Lead_Create_Lib.xml starting." />
 
-	<link href="index.php?module=Leads&amp;action=index" />
+	<div id="themeTabGroup_All"><link text="Leads" /></div>
 	<csv file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.csv" var="Lead_New_Record">
 
 		<link text="Create Lead" />

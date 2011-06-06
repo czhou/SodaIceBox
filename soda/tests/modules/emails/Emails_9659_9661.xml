@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
 	<!--  Add/delete mail account in Emails module -->
 	<puts text="Test: Emails_9659_9661.xml starting." />
 	<script file="{@global.scriptsdir}/modules/lib/Emails_Acct_Create_Lib.xml" />

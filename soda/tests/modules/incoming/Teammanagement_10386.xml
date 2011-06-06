@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
     	   <puts text="---Teammanagement_10386:Delete private team from detail view with the corresponding user was deleted---Start!" />
 			<script file="{@global.scriptsdir}/modules/lib/User_Create_Lib.xml" />
 			<script file="{@global.scriptsdir}/modules/lib/User_Delete_Lib.xml" />
