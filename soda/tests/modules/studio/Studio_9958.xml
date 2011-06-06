@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
 	<!-- Checking bug 34748, editing out of box labels are disabled -->
 	<puts text = "Test: Studio_9958.xml starting."/>
 	<link text="Admin"/>

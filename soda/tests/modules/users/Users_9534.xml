@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
     <puts text='---User_9534:verify email address can be edited ---Start!'/>
     <!--goto my account-->
     <div id='welcome'>

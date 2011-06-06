@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
 	<puts text="Test: Opportunity_9154.xml starting" />
 	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_9154.csv" var="Opportunity_9154">
 		<var var="pre_opp_name_a" set="{@pre_opp_name}" />

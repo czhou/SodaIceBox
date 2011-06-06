@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
 	<!-- Convert Lead, Test add a new module, Adding Calls to Convert Leads -->
 	<puts text="Test: Studio_9957.xml starting." />
 

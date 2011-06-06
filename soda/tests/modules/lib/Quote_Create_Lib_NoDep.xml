@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -24,8 +24,7 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
-﻿<soda>
+<soda>
    <puts text="Quote_Create_Lib: Create a Quote record with all fields.----Starting" />
    <csv file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.csv" var="Quote_Create_Lib">
       <timestamp/>

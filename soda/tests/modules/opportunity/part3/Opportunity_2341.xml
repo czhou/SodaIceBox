@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
 	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2341.csv" var="Opportunity_2341">
 		<link id="moduleTab_Opportunities" />
 		<browser assert="Opportunities" />

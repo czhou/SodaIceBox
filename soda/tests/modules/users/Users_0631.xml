@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
     <puts text='------User_0631:verify non-admin user can access all records when set admin type for module---start--------'/>
     <!--set role 'admin'-->
     <script file='{@global.scriptsdir}/modules/lib/Role_Create_Lib.xml'/>

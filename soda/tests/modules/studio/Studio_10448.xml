@@ -28,7 +28,7 @@
 <soda>
     
     <!--Set exists field as dependent field -->
-    <puts text="Test: Studio_10447.xml starting" />
+    <puts text="Test: Studio_10448.xml starting" />
     <!-- set description field as dependent field and define formula -->
    	<timestamp />
     <link text="Admin" />
@@ -56,21 +56,23 @@
 
     <!--Create account-->  
     <link id="moduleTab_Accounts" />
-    <csv file="{@global.scriptsdir}/csvs/studio/Studio_10447.csv" var="studio10447">
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_10448.csv" var="studio10448">
     	<link text="Create Account" />
     	<browser assert="Create" />
         <form id="EditView">
-            <textfield id="name" set="{@studio10447.name} {@user.name} {@stamp}" />
-            <textfield id="billing_address_city" set="{@studio10447.city}" />
+            <textfield id="name" set="{@studio10448.name} {@user.name} {@stamp}" />
+            <textfield id="billing_address_city" set="{@studio10448.city}" />
 	        <textfield id="billing_address_city" click="false" jscriptevent="onchange" />
-	        <textfield id="billing_address_state" set="{@studio10447.state}" />
+	        <textfield id="billing_address_state" set="{@studio10448.state}" />
 	        <textfield id="billing_address_state" click="false" jscriptevent="onchange" />
-	        <browser assert="description" exist="{@studio10447.des}" />
+	        <browser assert="description" exist="{@studio10448.des}" />
 	        <button value="Save" />
 	    </form>
 	    <wait timeout="3" />
-	    <browser assert="{@studio10447.name} {@user.name} {@stamp}" />	 
-	    <browser assert="description" exist="{@studio10447.des}" />   
+	    <table id="detailpanel_1">
+		    <browser assert="{@studio10448.name} {@user.name} {@stamp}" />	 
+		    <browser assert="description" exist="{@studio10448.des}" />   
+		</table>
     </csv>
         
     <!--Disable the dependent function -->
@@ -89,5 +91,5 @@
     <!-- Delete account record -->
     <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
     
-    <puts text="Test: Studio_10447.xml finished." />
+    <puts text="Test: Studio_10448.xml finished." />
 </soda>

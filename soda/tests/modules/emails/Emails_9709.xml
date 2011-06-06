@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soad>
+<soad>
 	<!-- Enable users to use the system outgoing mail account for outbound email -->
 	<puts text="Test: Emails_9709.xml starting." />
 

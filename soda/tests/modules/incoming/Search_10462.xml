@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
     	   <puts text="---Search_10461 Search out open items in Quotes module---Start!" />
 		   <!--create quotes-->
 		    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />

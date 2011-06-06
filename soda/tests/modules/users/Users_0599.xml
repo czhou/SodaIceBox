@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
     	   <puts text="---User_0599:verify current user can't view records when records whose assigned team not including current user'---Start!"/>
            <csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" var="SugarInit0599">
            </csv>

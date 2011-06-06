@@ -75,10 +75,9 @@
 	    <!--check field on dashlet-->
 	    <link id="moduleTab_Home" />
 	    <browser assert="Add Sugar Dashlets" />   
-	    <li id="dashlet_7fabf66f-af8f-765a-9f61-4de678b9d8a7">
-	    	<browser assert="{@studio10450.name} {@user.name} {@stamp}" />	 
-	    	<browser assert="{@studio10450.website}" />   
-	    </li>
+	    <browser assert="{@studio10450.name} {@user.name} {@stamp}" />	 
+	    <browser assert="{@studio10450.website}" />   
+	    
     </csv>
         
     <!--Disable the dependent function -->

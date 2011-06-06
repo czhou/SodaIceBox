@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
 	<!-- Check "TO/CC/BCC/Settings" Windows does not have "Close" button -->
 	<puts text="Test: Emails_9678.xml starting." />
 	<link id="moduleTab_Emails" />

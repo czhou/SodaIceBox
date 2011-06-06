@@ -31,9 +31,10 @@
 	<link id="moduleTab_Home" />
 	<browser assert="Add Sugar Dashlets" />
 	<div id="addPage">
-		<image src="themes/Sugar/images/info-add-page.png?s=8af9a8152316da9c0fe9439d22abdfd0&amp;c=1" click="true" />
+		<link id="add_page" />	
 	</div>
 	<div id="addPageDialog_c">
+		<browser assert="Add Page" />
 		<textfield name="pageName" set="Page1" />
 		<radio name="numColumns" index="1" set="true"/>
 		<button id="yui-gen53-button" />
