@@ -39,15 +39,16 @@
 		<link text="{@pre_role_name}" />
 
 	</table>
-	<browser assert="Roles" />
-	<browser assert="{@pre_role_name}" />
-	<browser assert="Edit" />
+	<table class="detail view">
+		<browser assert="{@pre_role_name}" />	
+	</table>
+	
 	<!--Set modules disabled-->
 	<csv file="{@global.scriptsdir}/csvs/roles/Roles_0595.csv" 
       var="role_record_0595">
 		<form id="ACLEditView">
 			<select index="{@role_record_0595.num}" set="Disabled" />
-			<button value="  Save  " />
+			<button name="button" />
 		</form>
 	</csv>
 	<!--select user-->
@@ -65,14 +66,27 @@
 		<textfield id="user_name" set="{@SugarInit0595.last_name}" />
 		<textfield id="user_password" set="{@SugarInit0595.pass}" />
 	</csv>
-	<button id="login_button" />
-	<browser assert="Welcome" />
-	<button value="  Next  " required="false" timeout="3" />
-	<button value="  Next  " required="false" timeout="3" />
-	<button value="  Next  " required="false" timeout="3" />
-	<button value="  Finish  " required="false" timeout="3" />
+	<button id="login_button" />	
 
 	<link id="{@role_record_0595.module}" click="false" exist="false" />
+	<browser url="{@global.url}?module={@role_record_0595.name}&amp;action=index" />
+	<browser assert="You do not have access to this area. Contact your site administrator to obtain access" />
+	<div id='globalLinksModule'>
+        <link text='{@SugarInit0595.last_name}'/>
+    </div>
+    <wait timeout="5" />
+    <div class="moduleTitle">
+    	<browser assert="Edit" />
+    </div>
+    <button value="Cancel" />
+    <div id="user_detailview_tabs">
+		<link text="Access" />
+	</div>
+	<table class="detail view">
+		<browser assertnot="{@role_record_0595.name}" />
+	</table>
+	
+	
 	<!--Login back to Admin-->
 	<link text="Log Out" />
 	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
