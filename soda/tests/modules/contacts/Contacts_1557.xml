@@ -102,6 +102,8 @@
 		<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
 	</div>
 
+       <wait timeout="2"/>
+
 	<!--Verify deleted quote will not show in subpanel-->
 	<div id="list_subpanel_quotes">
 		<link text="{@pre_quote_name}" click="false"  exist="false"/>
