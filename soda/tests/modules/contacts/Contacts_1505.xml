@@ -63,6 +63,8 @@
 		<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
 	</div>
 
+       <wait timeout="3"/>
+
 	<!--Verify deleted bug will not show in subpanel-->
 	<div id="list_subpanel_bugs">
 		<link text="{@pre_bug_name}" click="false"  exist="false"/>
