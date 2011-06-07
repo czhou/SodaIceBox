@@ -26,68 +26,64 @@
 -->
 
 <soda>
-	<puts text="Test:home_7350 add dashlet" />
+	<puts text="Test:home_7361 Page navigation" />
 		
 	<link id="moduleTab_Home" />
 	<browser assert="Add Sugar Dashlets" />
-	<!--Add dashlet-->
-	<link id="add_dashlets" />
-	<wait timeout="5" />
-	<div id="dashletsDialog_c">
-		<browser assert="Find Sugar Dashlet" />
-		<link text="My Accounts" />
-		<wait timeout="5" />	
-	</div>
-	<div id="dashletsDialogHeader">
-		<link index="1" />
-	</div>
-	<ul id="col_0_0">
-		<browser assert="My Accounts" />		
-	</ul>	
-	<!-- delete -->
-	<div class="dashletToolSet" index="1">
-		<link index="3" alert="true" />
-	</div>
-	
-	<!--Add chart-->
-	<link id="add_dashlets" />
-	<wait timeout="5" />
-	<div id="dashletsDialog_c">
-		<browser assert="Find Sugar Dashlet" />
-		<link id="chartCategoryAnchor" />
-		<link text="All Opportunities By Lead Source By Outcome" />
-		<wait timeout="5" />
-	</div>
-	<div id="dashletsDialogHeader">
-		<link index="1" />
-	</div>
-	<ul id="col_0_0">
-		<browser assert="All Opportunities By Lead Source By Outcome" />		
-	</ul>	
-	<!-- delete -->
-	<div class="dashletToolSet" index="1">
-		<link index="3" alert="true" />
-	</div>
-	
-	<!--search dashlet-->
-	<link id="add_dashlets" />
-	<wait timeout="5" />
-	<div id="dashletsDialog_c">
-		<browser assert="Find Sugar Dashlet" />				
-		<textfield id="search_string" set="favorite" />
-		<button value="Search" />
-		<wait timeout="10" />
-		<div id="searchResults">
-			<link text="My Favorite Records" click="false" />	
-			<link text="My Favorite Reports" click="false" />
-			<link text="My Accounts" exist="false" click="false" />
+	<csv file="{@global.scriptsdir}/csvs/home/Home_7361.csv" var="home7361">	
+		<!--Add page-->
+		<div id="addPage">
+			<link id="add_page" />						
 		</div>
-		<button value="Clear" />
-	</div>
+		<div id="addPageDialog_c">
+			<browser assert="Add Page" />
+			<textfield name="pageName" set="{@home7361.name}" />
+			<button index="1" />		
+			<wait timeout="3" />		
+		</div>
+		<div id="tabListContainer">
+			<browser assert="{@home7361.name}" />
+		</div>
+		<!--Add dashlet-->
+		<link id="add_dashlets" />
+		<wait timeout="5" />
+		<div id="dashletsDialog_c">
+			<browser assert="Find Sugar Dashlet" />
+			<link text="My {@home7361.module}" />
+			<wait timeout="5" />	
+		</div>
+		<div id="dashletsDialogHeader">
+			<link index="1" />
+		</div>
+		<ul id="col_0_0">
+			<browser assert="My {@home7361.module}" />		
+		</ul>	
+	</csv>
 	
-	<div id="dashletsDialogHeader">
-		<link index="1" />
-	</div>
+	<!--Page navigation-->
+	<csv file="{@global.scriptsdir}/csvs/home/Home_7361.csv" var="home7361">
+		<div id="tabListContainer">
+			<link text="{@home7361.name}" />
+			<wait timeout="5" />
+		</div>
+		<browser assert="My {@home7361.module}" />
+	</csv>
+	
+	<!--Delete page-->
+	<csv file="{@global.scriptsdir}/csvs/home/Home_7361.csv" var="home7361">
+		<div id="tabListContainer">
+			<link text="{@home7361.name}" />
+			<wait timeout="5" />
+		</div>
+		<li id="pageNum_5">
+			<image id="pageNum_5_delete_page_img" click="true" alert="true" />
+			<wait timeout="5" />
+		</li>
+		<div id="tabListContainer">
+			<browser assertnot="{@home7361.name}" />
+		</div>
+	</csv>	
 
-	<puts text="Test: home_7350.xml finished." />
+
+	<puts text="Test: home_7361.xml finished." />
 </soda>	
