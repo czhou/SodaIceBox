@@ -1,0 +1,72 @@
+
+<soda>
+    <puts text="starting bug 44147 text" />
+    <script file="tests/modules/lib/login.xml" />
+    
+    <link text="Meetings" click="true" />
+    <link text="Create" click="true" />
+    <timestamp />
+    <var var="first_title" set="m_{@stamp}" />
+    <textfield name="name" set="{@first_title}"/>
+    <image id="date_start_trigger" click="true" />
+    <table id="date_start_trigger_div_t">
+        <link text="15" click="true" />
+    </table>
+    
+    <select id="date_start_hours" set="03" />
+    <select id="date_start_minutes" set="00" />
+    <select id="date_start_meridiem" set="pm" />
+    <select id="duration_minutes" set="45" />
+    <textfield id="assigned_user_name" set="Administrator" />
+    <button name="button" value="Save" click="true" />
+    <link text="Home" click="true" />
+    <div class="acceptMeeting">
+        <image alt="Accept" click="true" />
+    </div>
+    <link text="Meetings" click="true" />
+    <link text="Create" click="true" />
+    <timestamp />
+    <var var="second_title" set="m_{@stamp}" />
+    <textfield name="name" set="{@second_title}" />
+    <select id="date_start_hours" set="03" />
+    <select id="date_start_minutes" set="30" />
+    <select id="date_start_meridiem" set="pm" />
+    <select id="duration_minutes" set="45" />
+    <textfield id="assigned_user_name" set="Administrator" />
+    <image id="date_start_trigger" click="true" />
+    <table id="date_start_trigger_div_t">
+        <link text="15" click="true" />
+    </table>
+    
+    <javascript>
+        var tds = document.getElementById('schedulerTable').getElementsByClassName('schedulerAttendeeRow')[0].getElementsByTagName('td');
+        var cmpWith = document.createElement('td');
+        cmpWith.style.backgroundColor = "rgb(170,77,77)";
+        var findIt = document.createElement('div');
+        findIt.innerHTML = "test passed";
+        findIt.id = "thisisme";
+        findIt.name = "thisisme";
+        findIt.class = "thisisme";
+        for(var i = 0;i != tds.length;i++)
+        {
+            if(tds[i].style.backgroundColor == cmpWith.style.backgroundColor)
+            {
+                document.body.appendChild(findIt);
+                break;
+            }
+        }
+    </javascript>
+    <wait timeout="3" />
+    <browser assert="test passed" />
+    <!-- 
+    <button name="button" value="Save" click="true" />
+    
+    <link text="View Meetings" click="true" />
+    <link text="{@first_title}" click="true" />
+    <button name="Delete" click="true" />
+    
+    <link text="View Meetings" click="true" />
+    <link text="{@second_title}" click="true" />
+    <button name="Delete" click="true" />
+    -->
+</soda>
