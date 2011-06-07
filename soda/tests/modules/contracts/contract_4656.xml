@@ -53,6 +53,9 @@
 		<textfield id="name" set="contract_4656_note_subject_{@stamp}"/>
 		<button id="Notes_subpanel_save_button"/>
 	</div>
+
+	<wait timeout="3"/>
+
 	<div id="list_subpanel_history">
 		<link text="contract_4656_note_subject_{@stamp}" click="false" exist="true"/>
 	</div>
