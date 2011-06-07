@@ -39,7 +39,7 @@
 			<browser assert="Add Page" />
 			<textfield name="pageName" set="{@home7345.name}" />
 			<radio name="numColumns" index="1" set="true"/>
-			<button id="yui-gen52-button" />	
+			<button index="1" />	
 			<wait timeout="3" />		
 		</div>
 		<div id="tabListContainer">
@@ -61,7 +61,7 @@
 			<browser assert="Add Page" />
 			<textfield name="pageName" set="{@home7345.name}" />
 			<radio name="numColumns" index="2" set="true"/>
-			<button id="yui-gen52-button" />	
+			<button index="1" />		
 			<wait timeout="3" />		
 		</div>
 		<div id="tabListContainer">
@@ -83,7 +83,7 @@
 			<browser assert="Add Page" />
 			<textfield name="pageName" set="{@home7345.name}" />
 			<radio name="numColumns" index="3" set="true"/>
-			<button id="yui-gen52-button" />	
+			<button index="1" />		
 			<wait timeout="3" />		
 		</div>
 		<div id="tabListContainer">

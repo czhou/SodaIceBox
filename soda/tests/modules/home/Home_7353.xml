@@ -26,7 +26,7 @@
 -->
 
 <soda>
-	<puts text="Test:home_7353 delete page" />
+	<puts text="Test:home_7353 delete dashlet" />
 		
 	<link id="moduleTab_Home" />
 	<browser assert="Add Sugar Dashlets" />
