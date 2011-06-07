@@ -27,7 +27,7 @@
 
 <soda>
 
-	<puts text="Test Case 2864: Select Account -- Project Management_Verify that Account can be selected by clicking Account Name for Project."/>
+	<puts text="Test Case 2866: Select Opportunity -- Project Management_Verify that Opportunity can be selected by clicking Opportunity Name for Project."/>
 
 	<!--Search out the project record created in lib-->
         <link id="moduleTab_Project"/>
@@ -39,22 +39,22 @@
 		<button id="search_form_submit"/>
 		<link text="{@pre_project_name}"/>
 		<browser assert="Resources"/>
-		<!--Select account record-->
-		<button id="projects_accounts_select_button"/>
+		<!--Select Opportunity record-->
+		<button id="projects_opportunities_select_button"/>
 		<wait timeout="3"/>
-		<browser assert="Account Search"/>
+		<browser assert="Opportunity Search"/>
 		
-		<textfield id="last_name_advanced" set="{@pre_account_name}"/>
+		<textfield id="name_advanced" set="{@pre_opp_name}"/>
 		
 		<button id="Search"/>
 		<wait timeout="3"/>	
 		
-		<link text="{@pre_account_name}"/>
-		<div id="ilist_subpanel_accounts">
+		<link text="{@pre_opp_name}"/>
+		<div id="projects_opportunities_select_button">
 			<link class="listViewTdToolsS1" index="2" alert="true"/>
 		</div>
 		<wait timeout="3"/>
-		<link text="{@pre_account_name}" exist="false" click="false"/>
+		<link text="{@pre_opp_name}" exist="false" click="false"/>
 
-        <puts text="Test Case 2864 is finished!"/>
+        <puts text="Test Case 2866 is finished!"/>
 </soda>
