@@ -1,0 +1,100 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		Create lead_Verify that a related lead can be created from contact detail view
+	-->
+	<puts text="Test: Contacts_4354.xml starting." />
+
+
+	<!--Create contact record & task subpanel-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+
+	<!--Search the Contact record-->
+	<link id="moduleTab_Contacts" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+	</div>
+	<link text="Basic Search" required="false" />
+	<button id="search_form_clear" />
+	<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+
+	<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+
+	<!--goto Leads subpanel & click "Create lead"-->
+	<button id="contact_leads_create_button" />
+
+	<!--Click the full form button-->
+	<button id="Leads_subpanel_full_form_button" />
+	<wait timeout="3" />
+
+	<!--Fill all required fields-->
+	<csv file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.csv" var="Lead_New_Record">
+		<timestamp />
+
+		<!--goto lead edit view-->
+		<select id="lead_source" set="{@Lead_New_Record.lead_source}" />
+		<select id="status" set="{@Lead_New_Record.status}" />
+		<select id="salutation" set="{@Lead_New_Record.salutation}" />
+
+		<textfield name="first_name"
+		set="{@Lead_New_Record.first_name} {@user.name} {@stamp}" />
+		<textfield id="last_name" set="{@Lead_New_Record.last_name}" />
+
+		<textfield id="Leads0emailAddress0" set="{@stamp}{@Lead_New_Record.emailAddress0}" />
+
+		<textfield id="description" set="{@Lead_New_Record.description}" />
+		<button id="SAVE" />
+
+		<var var="pre_lead_salutation" set="{@Lead_New_Record.salutation}" />
+		<var var="pre_lead_first_name" set="{@Lead_New_Record.first_name} {@user.name} {@stamp}" />
+		<var var="pre_lead_last_name" set="{@Lead_New_Record.last_name}" />
+		<var var="pre_lead_email" set="{@stamp}{@Lead_New_Record.emailAddress0}" />
+	</csv>
+
+	<wait timeout="2"/>
+
+	<div id="list_subpanel_leads">
+		<table class="list view">
+			<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" click="false" exist="true"/>
+			<browser assert="{@pre_lead_email}"/>
+			<browser assert="{@Lead_New_Record.lead_source}"/>
+		</table>
+	</div>
+
+	<!--Delete related record-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
+	<puts text="Test: Contacts_4354.xml finished." />
+</soda>
