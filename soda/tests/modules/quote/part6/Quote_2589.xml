@@ -52,7 +52,7 @@
         	<textfield id="subjectfield" set="{@Quote_2589.archived_email_name}"/>
         	<button id="SAVE_HEADER"/>
         	<wait timeout="10"/>
-			<browser assert="{@Quote_2589.archived_email_name"/>
+			<browser assert="{@Quote_2589.archived_email_name}"/>
 			<link class="listViewTdToolsS1" index="2" alert="true"/>
 			<wait timeout="5"/>
 			<browser assertnot="{@Quote_2589.archived_email_name}"/>
