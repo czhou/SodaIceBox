@@ -33,4 +33,5 @@
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml"/>
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml"/>
 	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml"/>
 </soda>
