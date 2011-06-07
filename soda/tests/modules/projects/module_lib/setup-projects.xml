@@ -31,4 +31,5 @@
 	<script file="{@global.scriptsdir}/modules/lib/Enable_All_Lib.xml"/>
 	<script file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.xml"/>
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml"/>
 </soda>
