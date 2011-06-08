@@ -10,7 +10,7 @@
   notice, this list of conditions and the following disclaimer in the
   documentation and/or other materials provided with the distribution.
   * Neither the name of SugarCRM, Inc. nor the
-  names of its contributors may be used to endorse or promote products
+  names of its contributors may be used to endorse or promote Cases
   derived from this software without specific prior written permission.
 
   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -26,12 +26,31 @@
 -->
 
 <soda>
-	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
-	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Enable_All_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml"/>
+	<!--
+		Select case_Verify that a related case can be selected into a contact from contact detail view
+	-->
+	<puts text="Test: Contacts_4365.xml starting." />
+
+	<!--Create contact record & task subpanel-->
+	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+
+	<!--goto Cases subpanel & Create quote-->
+	<button id="contacts_cases_select_button" />
+	<wait timeout="2"/>
+	<textfield id="name_advanced" set="{@pre_case_name}"/>
+	<button value="Search"/>
+	<link text="{@pre_case_name}"/>
+
+	<div id="list_subpanel_cases">
+		<table class="list view">
+			<link text="{@pre_case_name}" click="false" exist="true"/>
+		</table>
+	</div>
+
+	<!--Delete related record-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<puts text="Test: Contacts_4365.xml finished." />
 </soda>

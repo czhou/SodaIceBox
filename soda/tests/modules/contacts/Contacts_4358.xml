@@ -26,12 +26,33 @@
 -->
 
 <soda>
-	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
-	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Enable_All_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml"/>
+	<!--
+		Select opportunities_Verify that the a related opportunity can be selected into a contact from contact detail view
+	-->
+	<puts text="Test: Contacts_4358.xml starting." />
+
+	<!--Create contact record & task subpanel-->
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+
+	<!--goto Opportunities subpanel & select pre-created opportunity"-->
+	<button id="opportunities_contacts_select_button" />
+
+	<textfield id="name_advanced" set="{@pre_opp_name}"/>
+	<button value="Search"/>
+	<link text="{@pre_opp_name}"/>
+
+	<wait timeout="2"/>
+
+	<div id="list_subpanel_opportunities">
+		<table class="list view">
+			<link text="{@pre_opp_name}" click="false" exist="true"/>
+		</table>
+	</div>
+
+	<!--Delete related record-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<puts text="Test: Contacts_4358.xml finished." />
 </soda>

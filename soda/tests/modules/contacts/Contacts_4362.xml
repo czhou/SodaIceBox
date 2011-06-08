@@ -26,12 +26,35 @@
 -->
 
 <soda>
-	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
-	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Enable_All_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml"/>
+	<!--
+		Create product_Verify that a related product can be created from contact detail view
+	-->
+	<puts text="Test: Contacts_4362.xml starting." />
+
+	<!--Create contact record & task subpanel-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+
+	<!--goto Products subpanel & Create quote-->
+	<button id="Products_create_button" />
+
+	<csv file="{@global.scriptsdir}/modules/lib/Product_Create_Lib.csv" var="Product_Create_Lib">
+		<timestamp/>
+
+		<textfield id="name" set="{@Product_Create_Lib.name} {@user.name} {@stamp}" />
+		<button id="SAVE_HEADER"/>
+
+		<browser assert="{@Product_Create_Lib.name} {@user.name} {@stamp}" />
+		<var var="pre_product_name" set="{@Product_Create_Lib.name} {@user.name} {@stamp}" />
+	</csv>
+
+	<div id="list_subpanel_products">
+		<table class="list view">
+			<link text="{@pre_product_name}" click="false" exist="true"/>
+		</table>
+	</div>
+
+	<!--Delete related record-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Product_Delete_Lib.xml" />
+	<puts text="Test: Contacts_4362.xml finished." />
 </soda>

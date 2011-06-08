@@ -26,12 +26,35 @@
 -->
 
 <soda>
-	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
-	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Enable_All_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml"/>
-	<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml"/>
+
+	<puts text="Test Case 2868: Select Quote -- Project Management_Verify that Quote can be selected by clicking Subject for Project."/>
+
+	<!--Search out the project record created in lib-->
+        <link id="moduleTab_Project"/>
+	<div class="moduleTitle">
+		<link href="index.php?module=Project&action=index" click="false"/>
+	</div>
+
+		<textfield id="name_basic" set="{@pre_project_name}"/>
+		<button id="search_form_submit"/>
+		<link text="{@pre_project_name}"/>
+		<browser assert="Resources"/>
+		<!--Select Opportunity record-->
+		<button id="projects_quotes_select_button"/>
+		<wait timeout="3"/>
+		<browser assert="Quote Search"/>
+		
+		<textfield id="name_advanced" set="{@pre_Quote_name}"/>
+
+		<button id="Search"/>
+		<wait timeout="3"/>	
+		
+		<link text="{@pre_Quote_name}"/>
+		<div id="ilist_subpanel_quotes">
+			<link class="listViewTdToolsS1" index="2" alert="true"/>
+		</div>
+		<wait timeout="3"/>
+		<link text="{@pre_Quote_name}" exist="false" click="false"/>
+
+        <puts text="Test Case 2868 is finished!"/>
 </soda>
