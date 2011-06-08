@@ -1,0 +1,100 @@
+<soda>
+	<!-- The “My Favorite Reports” dashlet displays all Favorite report. -->
+	<puts text="Test: Dashlet_10753.xml started." />
+	
+	<!-- Navigate to Reports module listview -->
+	<link id="moduleTab_Reports" />
+	
+	<!-- Mark more than 20 reports as favorites -->
+	<javascript>
+		var stars = document.getElementsByClassName('off');
+		var starsArry = Array.prototype.slice.call(stars);
+			
+		for(var i = 0; i &lt; starsArry.length; ++i ){	
+			if(starsArry[i]){
+				if(starsArry[i].onclick){
+					starsArry[i].onclick();
+				}
+			}
+		}
+	</javascript>
+	<wait timeout="2" />
+
+	<!-- Navigate to the next listview page and mark more reports as fav -->
+	<button id="listViewNextButton" />
+	<wait timeout="2" />
+	<javascript>
+		var stars = document.getElementsByClassName('off');
+		var starsArry = Array.prototype.slice.call(stars);
+			
+		for(var i = 0; i &lt; starsArry.length; ++i ){	
+			if(starsArry[i]){
+				if(starsArry[i].onclick){
+					starsArry[i].onclick();
+				}
+			}
+		}	
+	</javascript>
+	<wait />
+	<button id="listViewStartButton" />
+	<wait timeout="2" />
+	
+	<!-- Add "My Favorite Reports" Dashlet to home page -->
+	<link id="moduleTab_Home" />
+	<link id="add_dashlets" />
+	<div id="moduleDashletsList">
+		<link text="My Favorite Reports" />
+	</div>
+	<div id="dashletsDialogHeader">
+		<link index="1" />
+	</div>
+	<wait timeout="15" />
+	<browser assert="My Favorite Reports" />
+	
+	<!-- Verify that the My Favorite dashlet contains all the favorites ie more than 20 -->
+	<link id="moduleTab_Home" />
+	<div class="dashletPanel">
+		<span class="pageNumbers" assert="(1 - 5 of 40)" />
+	</div>
+	
+	<!-- reset report records back to not favorite -->
+	<link id="moduleTab_Reports" />
+	<javascript>
+		var stars = document.getElementsByClassName('on');
+		var starsArry = Array.prototype.slice.call(stars);
+			
+		for(var i = 0; i &lt; starsArry.length; ++i ){	
+			if(starsArry[i]){
+				if(starsArry[i].onclick){
+					starsArry[i].onclick();
+				}
+			}
+		}
+	</javascript>
+	<wait timeout="2" />
+	<button id="listViewNextButton" />
+	<wait timeout="2" />
+	<javascript>
+		var stars = document.getElementsByClassName('on');
+		var starsArry = Array.prototype.slice.call(stars);
+			
+		for(var i = 0; i &lt; starsArry.length; ++i ){	
+			if(starsArry[i]){
+				if(starsArry[i].onclick){
+					starsArry[i].onclick();
+				}
+			}
+		}
+	</javascript>
+	<wait timeout="2" />
+	<button id="listViewStartButton" />
+	<wait timeout="2" />
+	
+	<!-- Remove My Favorite Reports dashlet from home -->
+	<link id="moduleTab_Home" />
+	<div class="dashletToolSet" index="1">
+		<link index="2" alert="true" />
+	</div>
+
+	<puts text="Test: Dashlet_10753.xml finished." />
+</soda>

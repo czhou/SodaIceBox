@@ -106,6 +106,20 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Dashlet_10753</testfile>
+		<bugnumber>42808</bugnumber>
+		<reason>ONLY FOR TEST IN 6.2.2</reason>
+		<modulename>home</modulename>
+	</block>
+	
+	<block>
+		<testfile>Dashboard_11170</testfile>
+		<bugnumber>42808</bugnumber>
+		<reason>ONLY FOR TEST IN 6.2.2</reason>
+		<modulename>home</modulename>
+	</block>
+	
+	<block>
 		<testfile>Dashboard_11115</testfile>
 		<bugnumber>42808</bugnumber>
 		<reason>ONLY FOR TEST IN 6.2.2</reason>
