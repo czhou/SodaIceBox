@@ -1,0 +1,104 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+
+	<puts text="Test Case 2844: Paging Project -- Project Management_Verify that project list can navigate to the different pages by clicking paging control links."/>
+
+	<!--Go to Project module and create project record.-->
+        <link id="moduleTab_Project"/>
+	<div class="moduleTitle">
+		<link href="index.php?module=Project&action=index" click="false"/>
+	</div>
+
+	<csv file="{@global.scriptsdir}/csvs/projects/Project_2844.csv" var="Project_2844">
+		<link text="Create Project"/>
+		<wait timeout="2"/>
+		<browser assert="Project Overview"/>
+		<textfield id="name" set="{@Project_2844.project_name}"/>
+		<textfield id="estimated_start_date" set="{@Project_2844.start_date}"/>
+		<textfield id="estimated_end_date" set="{@Project_2844.end_date}"/>
+		<button id="SAVE"/>
+		<wait timeout="3"/>
+		
+		<!--Assert Project detail view.-->
+		<browser assert="Resources"/>
+		<browser assert="{@Project_2844.project_name}"/>
+	</csv>
+	
+	<!--Set list view number to 2-->
+	<link text="Admin" />
+        <link text="System Settings" />
+        <textfield name="list_max_entries_per_page" set="2" />
+        <button value="  Save  " />
+
+	<!--Test pagination-->
+	<link id="moduleTab_Project"/>
+        <div class="moduleTitle">
+                <link href="index.php?module=Project&action=index" click="false"/>
+        </div>
+	
+	<table class="list view">
+		<span class="pageNumbers" assert="(1 - 2 of 6)"/>
+		<button id="listViewNextButton"/>
+		<wait timeout="3"/>
+		<span class="pageNumbers" assert="(3 - 4 of 6)"/>
+		<button id="listViewPrevButton"/>
+		<wait timeout="3"/>
+		<span class="pageNumbers" assert="(1 - 2 of 6)"/>
+		<button id="listViewEndButton"/>
+		<wait timeout="3"/>
+		<span class="pageNumbers" assert="(5 - 6 of 6)"/>	
+		<button id="listViewStartButton"/>
+		<wait timeout="3"/>
+		<span class="pageNumbers" assert="(1 - 2 of 6)"/>
+	</table>
+
+	<!--Set list vier number to 20-->
+	<link text="Admin" />
+        <link text="System Settings" />
+        <textfield name="list_max_entries_per_page" set="20" />
+        <button value="  Save  " />
+
+	<!--Delete the records created in this case-->
+        <link id="moduleTab_Project"/>
+	<div class="moduleTitle">
+		<link href="index.php?module=Project&action=index" click="false"/>
+	</div>
+
+	<csv file="{@global.scriptsdir}/csvs/projects/Project_2844.csv" var="Project_2844">
+		<textfield id="name_basic" set="{@Project_2844.project_name}"/>
+		<button id="search_form_submit"/>
+		
+		<checkbox id="massall" set="ture"/>
+		<link id="actions_link" />
+		<link text="Delete" alert="true" />
+		<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	</csv>
+
+        <puts text="Test Case 2844 is finished!"/>
+</soda>
