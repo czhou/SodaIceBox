@@ -39,4 +39,3 @@
 	<browser assert="Welcome, " />
 	<link text="Back" click="false" />
 </soda>
-
