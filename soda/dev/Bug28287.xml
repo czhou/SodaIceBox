@@ -1,0 +1,18 @@
+<soda>
+	<puts text='--------Bug 28287 Started--------' />
+	<script file='{@global.scriptsdir}/modules/lib/login.xml' />
+	<link text="Accounts" />
+	<link text="Create Account" />
+	<textfield name='name' set='Bug 28287' />
+	<button value='Save' click='true' />
+	<link text="Accounts" />
+	<textfield id="name_basic" set="Bug" />
+	<button id='search_form_submit' click='true' />
+	<link text='/Bug 28287/' />
+	<browser action="back" />
+	<browser assert="Search" />
+	<script file='{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml' />
+	<puts text='--------Bug 28287 Finished--------' />
+	<script file='{@global.scriptsdir}/modules/lib/logout.xml' />
+	<browser action="close" />
+</soda>
