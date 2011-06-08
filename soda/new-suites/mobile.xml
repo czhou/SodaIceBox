@@ -25,24 +25,9 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<soda>
-	<puts text="Lib: Project_Delete_Lib starting."/>
-
-	<!--Delete the records created in this case-->
-	<link id="moduleTab_Project"/>
-	<div class="moduleTitle">
-		<link href="index.php?module=Project&action=index" click="false"/>
-	</div>
-
-	<csv file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.csv" var="Project_Create_Lib">
-		<textfield id="name_basic" set="{@Project_Create_Lib.project_name}"/>
-		<button id="search_form_submit"/>
-		
-		<checkbox id="massall" set="true"/>
-		<link id="actions_link" />
-		<link text="Delete" alert="true" />
-		<span class="pageNumbers" assert="(0 - 0 of 0)" />
-	</csv>
-
-	<puts text="Lib: Project_Delete_Lib finished."/>
+<soda>        
+	<script file="tests/modules/mobile/module_lib/setup-mobile.xml" />
+	<script fileset="tests/modules/mobile" />
+	<script file="tests/modules/mobile/module_lib/cleanup-mobile.xml" />
 </soda>
+

@@ -26,23 +26,40 @@
 -->
 
 <soda>
-	<puts text="Lib: Project_Delete_Lib starting."/>
 
-	<!--Delete the records created in this case-->
-	<link id="moduleTab_Project"/>
+	<puts text="Test Case 2856: Create Email -- Project Management_Verify that Email for Activities can be composed for Project."/>
+
+	<!--Search out the project record created in lib-->
+        <link id="moduleTab_Project"/>
 	<div class="moduleTitle">
 		<link href="index.php?module=Project&action=index" click="false"/>
 	</div>
 
-	<csv file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.csv" var="Project_Create_Lib">
-		<textfield id="name_basic" set="{@Project_Create_Lib.project_name}"/>
+	<csv file="{@global.scriptsdir}/csvs/projects/Project_2856.csv" var="Project_2856">
+		<textfield id="name_basic" set="{@pre_project_name}"/>
 		<button id="search_form_submit"/>
+		<link text="{@pre_project_name}"/>
+		<browser assert="Resources"/>
+		<!--Compose email -->
+		<button id="composeemail_button"/>
+		<wait timeout="5"/>
+		<link title="Insert Rows"/>
+		<div id="container1_h">
+			<browser assert="Quick Compose"/>
+		</div>
+		<textfield id="addressTO0" set="{@Project_2856.email_address}"/>
+		<textfield id="emailSubject0" set="{@Project_2856.email_subject}"/>
+		<textfield id="tinymcei"/> 
+		<button value="Send" alert="true"/>
+		<wait timeout="5"/>
 		
-		<checkbox id="massall" set="true"/>
-		<link id="actions_link" />
-		<link text="Delete" alert="true" />
-		<span class="pageNumbers" assert="(0 - 0 of 0)" />
+		<link text="{@Project_2856.email_subject}" click="false"/>
+
+		<!--Delete the email composed in this case-->
+		<div id="list_subpanel_history">
+			<link class="listViewTdToolsS1" index="2" alert="true"/>
+		</div>
 	</csv>
 
-	<puts text="Lib: Project_Delete_Lib finished."/>
+        <puts text="Test Case 2856 is finished!"/>
 </soda>
