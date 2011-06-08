@@ -42,7 +42,7 @@
 		<browser assert="Resources"/>
 		<!--Create task record-->
 		<button value="View Gantt"/>
-		<link href="iindex.php?module=ProjectTask&action=editview"/>
+		<browser url="{@global.url}?module=ProjectTask&action=editview"/>
 		<wait timeout="3"/>
 		<textfield id="name" set="{@Project_2870.project_task_name}"/>
 		<link value="Save"/>
