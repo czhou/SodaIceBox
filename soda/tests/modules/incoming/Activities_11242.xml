@@ -44,22 +44,20 @@
 
 		<select id="date_start_hours" set="03" />
 		<select id="date_start_minutes" set="00" />
-		<select id="date_start_meridiem" set="pm" />
 		<select id="duration_minutes" set="45" />
 		<textfield id="assigned_user_name" set="Administrator" />
-		<button name="button" value="Save" click="true" />
+		<button value="Save" click="true" />
 		<link text="Home" />
 		<div class="acceptMeeting">
-			<image alt="Accept" click="true" />
+			<image index="1" click="true" />
+			<wait timeout="2" />
 		</div>
-		<link text="Meetings" click="true" />
-		<link text="Create" click="true" />
-		<timestamp />
+		<link text="Meetings" />
+		<link text="Schedule Meeting" />
 
 		<textfield name="name" set="{@Activities_11242.second_title} {@stamp}" />
 		<select id="date_start_hours" set="03" />
 		<select id="date_start_minutes" set="30" />
-		<select id="date_start_meridiem" set="pm" />
 		<select id="duration_minutes" set="45" />
 		<textfield id="assigned_user_name" set="Administrator" />
 		<image id="date_start_trigger" click="true" />
@@ -89,7 +87,7 @@
 		<wait timeout="3" />
 		<browser assert="test passed" />
 	</csv>
-
+	<link text="Meetings" alert="true" />
 	<!--Delete the record -->
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 	<puts text="Test: Activities_11242.xml finished" />
