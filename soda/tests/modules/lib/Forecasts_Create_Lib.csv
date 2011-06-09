@@ -1,2 +1,2 @@
-name,value,start_date,end_date,forecast_start_date,user_id,status,commit_best_case,commit_likely_case,commit_worst_case
-Time Periods,9/14/2001,9/30/2100,1/1/2009,12/30/2009,admin,Active,1000,2000,3000
+name,value,start_date,end_date,forecast_start_date,user_id,status,commit_best_case,commit_likely_case,commit_worst_case,best_case,likely_case,worst_case
+Time Periods,9/14/2001,9/30/2100,1/1/2009,12/30/2009,admin,Active,3000,2000,1000,"$3,000","$2,000","$1,000"
