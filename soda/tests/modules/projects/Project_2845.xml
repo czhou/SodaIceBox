@@ -42,7 +42,7 @@
 		<browser assert="Resources"/>
 		<!--Create task record-->
 		<button value="View Gantt"/>
-		<link title="Insert Rows"/>
+		<image src="themes/default/images/ProjectInsertRows.gif?s=cb8fb5938e73cd515069f196c2b83d93&c=1" click="true"/>
 		<wait timeout="3"/>
 		<textfield id="description_1" set="{@Project_2845.project_task_name}"/>
 		<textfield id="description_2" set="{@Project_2845.project_task_name}"/>
