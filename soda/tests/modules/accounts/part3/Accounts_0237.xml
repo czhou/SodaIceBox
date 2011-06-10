@@ -57,7 +57,7 @@
 	<div id="subpanel_activities_newDiv">
 		<button id="Tasks_subpanel_save_button" />
 	</div>
-	<wait timeout="3" />
+	<wait timeout="5" />
 
 	<!-- Verify Task is created then edit -->
 	<div id="list_subpanel_activities">
@@ -73,7 +73,7 @@
 	<button value="Close and Create New" />
 	<wait timeout="3" />
 	<textfield id="name" set="{@task_record_237.new_subject}" />
-	<button value="Save" />
+	<button id="SAVE" />
 
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
