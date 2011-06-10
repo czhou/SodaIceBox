@@ -114,7 +114,7 @@
 	</div>
 
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_lib.xml" />
 
 	<puts text="Test: Contacts_4337.xml finished." />
 </soda>
