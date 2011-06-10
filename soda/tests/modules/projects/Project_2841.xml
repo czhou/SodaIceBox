@@ -48,7 +48,7 @@
 		<browser assert="User Search"/>
 		<textfield id="user_name_advanced" set="{@Project_2841.user_name}"/>
 		<button value="Search"/>
-		<link text="{@Project_2841.user_name}"/>	
+		<link text="{@Project_2841.full_name}"/>	
 
 		<button id="SAVE"/>
 		<wait timeout="3"/>
