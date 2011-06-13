@@ -47,8 +47,8 @@
 	<textfield id="ie_name" set="{@ClearForm.ie_name}" />
 	<textfield id="email_user" set="{@ClearForm.email_user}" />
 	<button id="addButton" />
-	<textfield name="ie_name" assert="" />
-	<textfield name="email_user" assert="" />
+	<textfield id="ie_name" assert="" />
+	<textfield id="email_user" assert="" />
   <div id="editAccountDialogue" >
      <link text="Close" />
 	</div>
