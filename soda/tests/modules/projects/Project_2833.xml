@@ -60,7 +60,7 @@
 		<textfield id="name_basic" set="{@Project_2833.project_name}"/>
 		<button id="search_form_submit"/>
 		
-		<checkbox id="massall" set="ture"/>
+		<checkbox id="massall" click="ture"/>
 		<link id="actions_link" />
 		<link text="Delete" alert="true" />
 		<span class="pageNumbers" assert="(0 - 0 of 0)" />
