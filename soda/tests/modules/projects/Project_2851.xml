@@ -48,7 +48,9 @@
 		<wait timeout="3"/>	
 		
 		<link text="{@Project_2851.call_name}"/>
-		
+		<table id="detailpanel_1">
+			<browser assert="{@Project_2851.call_name}"/>
+		</table>	
 		<button value="Delete" alert="ture"/>
 
 	</csv>
