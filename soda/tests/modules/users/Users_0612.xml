@@ -402,6 +402,7 @@
             
             <link id="moduleTab_Users"/>
             <!--Clear search-->
+            <link text='Basic Search' required='false' timeout='2'/>
 			<button id="search_form_clear"/>
             <!--delete file-->
             <script file="{@global.scriptsdir}/modules/lib/{@users_record_0612.deletemodule}"/>
