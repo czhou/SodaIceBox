@@ -26,7 +26,8 @@
 -->
 
 <soda>
-	<!-- the "Edit" function in "Contacts" sub-panel -->
+	<!-- Target List - Contacts management_Verify that "Edit" link in "Contacts" sub-panel 
+		works correctly. -->
 	<puts text="Test: Campaigns_1026.xml starting." />
 	<csv file="{@global.scriptsdir}/csvs/campaigns/CampaignAssertText.csv" var="campaigns" />
 
@@ -34,28 +35,35 @@
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/TargetList_Create_Lib.xml" />
 
+	<!-- Select the contact as a relation for the target list -->
 	<div id="list_subpanel_contacts">
 		<button id="prospect_list_contacts_select_button" />
 	</div>
-
 	<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	<div class="moduleTitle">
 		<link href="index.php?module=ProspectLists&amp;action=index" click="false" />
 	</div>
-	<link text="{@pre_contact_first_name} {@pre_contact_last_name}" click="false" />
-
+	
+	<!-- Click the edit link for the contact -->
 	<div id="list_subpanel_contacts">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" click="false" />
 		<link class="listViewTdToolsS1" index="1" />
 	</div>
-
+	
+	<!-- Edit the name of the contact and save -->
 	<div id="LBL_CONTACT_INFORMATION">
 		<timestamp />
-		<textfield name="first_name" set="{@contact_record.first_name} {@stamp}" /> 
+		<textfield name="first_name" set="{@contact_record.first_name} {@stamp}" />
 	</div>
 	<button value="Save" />
-	<link text="{@contact_record.first_name} {@stamp} {@pre_contact_last_name}" click="false" />
-
-	<!--delete the test data-->
+	
+	<!-- Verify the changes -->
+	<div id="list_subpanel_contacts">
+		<link text="{@contact_record.first_name} {@stamp} {@pre_contact_last_name}"
+		click="false" />
+	</div>
+	
+	<!--delete the test data -->
 	<script file="{@global.scriptsdir}/modules/lib/TargetList_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 
