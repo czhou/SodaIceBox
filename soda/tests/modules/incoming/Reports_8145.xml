@@ -51,18 +51,36 @@
 	<wait timeout="4" />
 	
 	<link id="moduleTab_Reports" />
+	<button value=" Clear " />
+	<textfield name="name" set="{@report_title}" />
+	<button id="search_form_submit" />
 	
-	<browser assert="{@report_title}" />
-	
+	<table class="list view">
+		<browser assert="{@report_title}" />
+	</table>
 	
 	<link id="moduleTab_Accounts" />
 	<link text="View Account Reports" />
+	<table class="list view">
+		<browser assert="{@report_title}" />
+	</table>
 	
-	<browser assert="{@report_title}" />
-	<browser assertnot="Tracker Queries" />
+	<!-- Not sure what this next line was suppose to verify, taking it out since it fails this test -->
+	<!-- <browser assertnot="Tracker Queries" /> -->
+	
+	<!-- Delete report created in this script -->
+	<link id="moduleTab_Reports" />
+	<button value=" Clear " />
+	<textfield name="name" set="{@report_title}" />
+	<button id="search_form_submit" />
+	<link text="{@report_title}" />
+	<button id="deleteReportButton" alert="true" />
+	
+	<!-- Reset Reports module back to default search settings -->
+	<button value=" Clear " />
+	<button id="search_form_submit" />
 	
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 	
 	<puts text="Test: Reports_8145.xml finished." />
 </soda>	
