@@ -52,7 +52,7 @@
 			<link class="listViewTdToolsS1" index="1"/>
 		</div>
 		<wait timeout="3"/>
-		<browser assert="Meeting Overview"/>
+		<browser assert="Call Overview"/>
 		<textfield id="name" set="{@Project_2853.modified_call_name}"/>
 		<button value="Save"/>
 		<wait timeout="3"/>
