@@ -50,7 +50,7 @@
 		<wait timeout="3"/>	
 		
 		<link text="{@pre_opp_name}"/>
-		<div id="projects_opportunities_select_button">
+		<div id="list_subpanel_opportunities">
 			<link class="listViewTdToolsS1" index="2" alert="true"/>
 		</div>
 		<wait timeout="3"/>
