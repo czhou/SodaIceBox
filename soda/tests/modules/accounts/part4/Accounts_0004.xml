@@ -27,7 +27,7 @@
 
 <soda>
 
-	<puts text="Test Case 4: Create Account - Quick _Verify that an account is quick created from "New Account" box."/>
+	<puts text="Test Case 4: Create Account - Quick _Verify that an account is quick created from 'New Account' box."/>
 
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
