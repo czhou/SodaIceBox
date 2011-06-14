@@ -38,5 +38,6 @@
 
 	<browser assert=" Annual Revenue: "/>
 
+	<link id="moduleTab_Accounts" />
 	<puts text="Test: Accounts_0131.xml finished." />
 </soda>
