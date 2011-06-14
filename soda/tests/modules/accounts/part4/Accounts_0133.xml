@@ -38,5 +38,6 @@
 
 	<browser assert="Missing required field: Name"/>
 
+	<link id="moduleTab_Accounts" alert="true"/>
 	<puts text="Test: Accounts_0133.xml finished." />
 </soda>
