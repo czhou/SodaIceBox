@@ -91,6 +91,7 @@
 					text="{@lead_record_0120.first_name} {@stamp} {@lead_record_0120.last_name}"
 					click="false" />
 				<link class="listViewTdToolsS1" index="2" alert="ture"/>
+				<wait timeout="6"/>
 				<link text="{@lead_record_0120.first_name} {@stamp} {@lead_record_0120.last_name}" click="false" exist="false"/>
 			</table>
 		</div>
