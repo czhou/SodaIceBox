@@ -45,7 +45,7 @@
 	<button value="Save" alert="true"/>
 	<!-- Verify the page still stays in the editview -->
 	<button id="CANCEL" click='false' exists='true' />
-	<button value="CANCEL" alert="true"/>
+	<button id="CANCEL" alert="true"/>
 	
 	<puts text="Test: Activities_10989.xml finished" />
 </soda>
