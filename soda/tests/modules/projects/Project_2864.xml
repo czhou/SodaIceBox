@@ -44,7 +44,7 @@
 		<wait timeout="3"/>
 		<browser assert="Account Search"/>
 		
-		<textfield id="last_name_advanced" set="{@pre_account_name}"/>
+		<textfield id="name_advanced" set="{@pre_account_name}"/>
 		
 		<button id="Search"/>
 		<wait timeout="3"/>	
