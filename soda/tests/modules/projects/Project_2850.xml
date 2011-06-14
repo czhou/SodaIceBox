@@ -53,7 +53,7 @@
 			<link class="listViewTdToolsS1" index="2" alert="true"/>
 		</div>
 
-		<wait timeout="3"/>
+		<wait timeout="6"/>
 		<link text="{@Project_2847.meeting_name}" exist="false" click="false"/>
 		
 		<!--Delete meeting record created in this case-->
