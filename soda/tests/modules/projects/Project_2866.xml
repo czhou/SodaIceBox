@@ -46,7 +46,7 @@
 		
 		<textfield id="name_advanced" set="{@pre_opp_name}"/>
 		
-		<button id="Search"/>
+		<button value="Search"/>
 		<wait timeout="3"/>	
 		
 		<link text="{@pre_opp_name}"/>
