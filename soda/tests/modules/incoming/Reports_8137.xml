@@ -51,10 +51,7 @@
     <button value="Save" />
     <wait timeout="3" />
 
-	<link id="moduleTab_Reports" />
-	
-	<browser assert="{@report_title}" />
-	
+	<link id="moduleTab_Reports" />	
 	<link text="Advanced Search" required="false" />
 	
 	<wait timeout="4" />
