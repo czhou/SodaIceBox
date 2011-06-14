@@ -34,7 +34,7 @@
 		<browser url="{@global.url}?module=ProjectTask&action=editview"/>
 		<wait timeout="3"/>
 		<textfield id="name" set="{@Project_2870.project_task_name}"/>
-		<link value="Save"/>
+		<button value="Save"/>
 		<wait timeout="3"/>
 		
 		<browser assert="Project Task: Home"/>
