@@ -98,6 +98,7 @@
 			<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
 		</table>
 	</div>
+	<browser action="refresh"/>
 
 	<wait timeout="2"/>
 
