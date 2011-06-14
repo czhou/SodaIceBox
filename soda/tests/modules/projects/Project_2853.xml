@@ -55,7 +55,7 @@
 		<browser assert="Call Overview"/>
 		<textfield id="name" set="{@Project_2853.modified_call_name}"/>
 		<button value="Save"/>
-		<wait timeout="3"/>
+		<wait timeout="6"/>
 	
 		<link text="{@Project_2853.modified_call_name}"/>
 		<button value="Delete" alert="true"/>
