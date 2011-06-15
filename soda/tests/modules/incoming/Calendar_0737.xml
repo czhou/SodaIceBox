@@ -121,7 +121,7 @@
 	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record">
 		<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
 
-		<javascript addUtils="true">
+		<javascript>
 				var theDate = new Date();
 
                 
@@ -189,7 +189,7 @@
 		<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record">
 			<textfield id="name" set="{@meeting_record.name} {@user.name} {@stamp}" />
 			
-			<javascript addUtils="true">
+			<javascript>
 				var theDate = new Date();
 
                 
@@ -273,7 +273,7 @@
 	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record">
 		<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
 
-		<javascript addUtils="true">
+		<javascript>
 				var theDate = new Date();
 
                 
@@ -341,7 +341,7 @@
 		<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record">
 			<textfield id="name" set="{@meeting_record.name} {@user.name} {@stamp}" />
 			
-			<javascript addUtils="true">
+			<javascript>
 				var theDate = new Date();
 
                 

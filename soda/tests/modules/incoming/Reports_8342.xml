@@ -48,7 +48,7 @@
 	<button id="search_form_submit" />
 	<browser assert="New Cases By Month" />
 	
-	<javascript addUtils="true">
+	<javascript>
 		<!-- this is a javascript hack to enable the first of 
 			the favorites... -->
 		stars = document.getElementsByClassName('off');

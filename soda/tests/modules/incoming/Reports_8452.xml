@@ -76,26 +76,26 @@
 		<div text="Status" click="false" />
 	</div>
 	
-	<javascript addUtils="true">
+	<javascript>
 		SUGAR.reports.showWizardStep(0);
 	</javascript>
 	
 	<browser assert="Steps to Define Group By:" />	
 	<row id="group_by_row_1" exists="false" />
 	
-	<javascript addUtils="true">
+	<javascript>
 		SUGAR.reports.showWizardStep(0);
 	</javascript>
 	
 	<row id="display_summaries_row_3" exists="false" />
 	
-	<javascript addUtils="true">
+	<javascript>
 		SUGAR.reports.showWizardStep(0);
 	</javascript>
 	
 	<textfield name="chart_description" assert="" />
 	
-	<javascript addUtils="true">
+	<javascript>
 		SUGAR.reports.showWizardStep(0);
 	</javascript>
 	
