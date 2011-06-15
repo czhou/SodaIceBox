@@ -1,0 +1,114 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--Create contact_Verify that contact can be duplicated-->
+	<puts text="Test: Contacts_7052.xml starting." />
+
+	<!--Create contact record-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_FULL.xml" />
+
+	<!--Search the Contact record-->
+	<link id="moduleTab_Contacts" />
+	<link href="index.php?module=Contacts&amp;action=index" click="false" />
+	<link id="basic_search_link" required="false" timeout="2"/>
+	<textfield id="search_name_basic" set="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+
+	<!--Go its detail view  "Duplicate"-->
+	<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	<button id="duplicate_button" />
+	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_1449.csv" var="contact_record_7052">
+
+		<!--fill the fields and "Save"-->
+		<form id="EditView">
+			<textfield name="first_name" set="{@contact_record_7052.first_name} {@user.name} {@stamp}" />
+			<textfield id="last_name" set="{@contact_record_7052.last_name}" />
+			<textfield id="title" set="{@contact_record_7052.title}" />
+			<textfield id="phone_work" set="{@contact_record_7052.phone_work}" />
+			<textfield id="phone_mobile" set="{@contact_record_7052.phone_mobile}" />
+			<textfield id="phone_fax" set="{@contact_record_7052.phone_fax}" />
+
+			<textfield id="department" set="{@contact_record_7052.department}" />
+			<textfield id="Contacts0emailAddress0" set="{@contact_record_7052.emailAddress0}" />
+
+			<select id="lead_source" set="{@contact_record_7052.lead_source}" />
+			<textfield id="description" set="{@contact_record_7052.description}" />
+			<checkbox id="do_not_call" set="{@contact_record_7052.do_not_call}" />
+			<checkbox id="sync_contact" set="{@contact_record_7052.sync_contact}" />
+
+			<textfield id="primary_address_street" set="{@contact_record_7052.primary_address_street}" />
+			<textfield id="primary_address_city" set="{@contact_record_7052.primary_address_city}" />
+			<textfield id="primary_address_state" set="{@contact_record_7052.primary_address_state}" />
+			<textfield id="primary_address_postalcode" set="{@contact_record_7052.primary_address_postalcode}" />
+			<textfield id="primary_address_country" set="{@contact_record_7052.primary_address_country}" />
+
+			<textfield id="alt_address_street" set="{@contact_record_7052.alt_address_street}" />
+			<textfield id="alt_address_city" set="{@contact_record_7052.alt_address_city}" />
+			<textfield id="alt_address_state" set="{@contact_record_7052.alt_address_state}" />
+			<textfield id="alt_address_postalcode" set="{@contact_record_7052.alt_address_postalcode}" />
+			<textfield id="alt_address_country" set="{@contact_record_7052.alt_address_country}" />
+			<button id="SAVE_HEADER"/>
+		</form>
+	</csv>
+	
+	<!--Check new record show right-->
+	<div id="Contacts_detailview_tabs">
+			<browser assert="{@contact_record_7052.first_name} {@user.name} {@stamp}" />
+			<browser assert="{@contact_record_7052.last_name}" />
+			<browser assert="{@contact_record_7052.title}" />
+			<browser assert="{@contact_record_7052.phone_work}" />
+			<browser assert="{@contact_record_7052.phone_mobile}" />
+			<browser assert="{@contact_record_7052.phone_fax}" />
+
+			<browser assert="{@contact_record_7052.department}" />
+			<browser assert="{@contact_record_7052.emailAddress0}" />
+
+			<browser assert="{@contact_record_7052.lead_source}" />
+			<browser assert="{@contact_record_7052.description}" />
+
+			<browser assert="{@contact_record_7052.primary_address_street}" />
+			<browser assert="{@contact_record_7052.primary_address_city}" />
+			<browser assert="{@contact_record_7052.primary_address_state}" />
+			<browser assert="{@contact_record_7052.primary_address_postalcode}" />
+			<browser assert="{@contact_record_7052.primary_address_country}" />
+
+			<browser assert="{@contact_record_7052.alt_address_street}" />
+			<browser assert="{@contact_record_7052.alt_address_city}" />
+			<browser assert="{@contact_record_7052.alt_address_state}" />
+			<browser assert="{@contact_record_7052.alt_address_postalcode}" />
+			<browser assert="{@contact_record_7052.alt_address_country}" />
+	</div>
+
+	<!--Delete contact record-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<puts text="Test: Contacts_7052.xml finished." />
+
+</soda>

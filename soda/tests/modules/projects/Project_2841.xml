@@ -85,5 +85,8 @@
 		<span class="pageNumbers" assert="(0 - 0 of 0)" />
 	</csv>
 
+	<checkbox id="current_user_only_basic" set="false"/>
+	<button id="search_form_submit"/>
+	<wait timeout="3"/>
         <puts text="Test Case 2841 is finished!"/>
 </soda>

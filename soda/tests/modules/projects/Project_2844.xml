@@ -62,6 +62,9 @@
                 <link href="index.php?module=Project&action=index" click="false"/>
         </div>
 	
+	<button id="search_form_clear"/>
+	<button id="search_form_submit"/>
+	<wait timeout="3"/>
 	<table class="list view">
 		<span class="pageNumbers" assert="(1 - 2 of 6)"/>
 		<button id="listViewNextButton"/>

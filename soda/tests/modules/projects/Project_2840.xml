@@ -55,5 +55,8 @@
 		<link text="{@Project_2839.project_name}" exist="false" click="false"/>	
 	</csv>
 
+	<!--Clear search condition-->
+	<button id="search_form_clear"/>
+	<button id="search_form_submit"/>
         <puts text="Test Case 2840 is finished!"/>
 </soda>
