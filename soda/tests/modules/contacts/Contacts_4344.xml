@@ -67,7 +67,7 @@
 		
 		<button value="Save" />
 
-		<wait timeout="3" />
+		<wait timeout="5" />
 
 		<!--Verify the task record created in subpanel-->
 		<div id="list_subpanel_activities">
