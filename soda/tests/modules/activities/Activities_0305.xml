@@ -1,0 +1,83 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		Action:
+			1. Login to system as valid user.
+			2. Go to "Accounts" module.
+			3. Go to an account record detail view.
+			4. Go to an activity record edit view.
+			5. Click "Close and Create New" button.
+			6. Modify values in all fields and click "Save" button.
+			7. Go to the account detail view.
+		Expectation:
+			7. The selected activity record is closed and displayed on
+				"HISTORY" sub-panel and the new created record is displayed
+				on "ACTIVITIES" sub-panel.
+
+	-->
+	<puts text="Test: Activities_0305.xml starting." />
+
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<var var="account1_name" set="{@pre_account_name}" />
+	
+	<button id="Activities_schedulemeeting_button" />
+	
+	<timestamp />
+	<var var="meeting1_name" set="Meeting_{@stamp}" />
+	<textfield id="name" set="{@meeting1_name}" />
+	<button id="Meetings_subpanel_save_button" />
+	<wait timeout="8" />
+	
+	<div id="list_subpanel_activities">
+		<link text="{@meeting1_name}" />
+	</div>
+	
+	<button value="Close and Create New" />
+	<textfield id="name" set="{@meeting1_name}_MOD" />
+	<button value="Save" />
+	
+	<link id="moduleTab_Accounts" />
+	
+	<table class="list view">
+		<link text="{@account1_name}" />
+	</table>
+	
+	<div id="list_subpanel_history">
+		<browser assert="{@meeting1_name}" />
+	</div>
+	
+	<div id="list_subpanel_activities">
+		<browser assert="{@meeting1_name}_MOD" />
+	</div>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	
+	<puts text="Test: Activities_0305.xml finished." />
+</soda>

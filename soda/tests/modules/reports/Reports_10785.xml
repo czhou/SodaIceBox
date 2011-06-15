@@ -1,0 +1,115 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Report does not keep current user after clicking "reset" -->
+	<puts text="Test: Reports_10785.xml starting" />
+	<timestamp />
+	<!-- Create report -->
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<image name="summationImg" click="true" />
+	<link class="studiolink" text="Opportunities" />
+
+	<csv file="{@global.scriptsdir}/csvs/reports/Reports_10785.csv" var="reports_10785">
+
+		<!-- filters -->
+		<table id="ygtvtableel3"><!-- Opportunites - Assigned to User -->
+			<link text="Assigned to User" />
+		</table>
+		<row id="yui-rec42" click="true" /> <!-- User Name field -->
+		<checkbox id="runtime_filter_Filter.1_table_filter_row_1" click="true" /> <!-- Runtime filter -->
+		<button name="Next >" />
+
+		<!-- group by -->
+		<row id="yui-rec62" click="true" /> <!-- Opportunity Name field -->
+		<button name="Next >" />
+		<button name="Next >" />
+		<button name="Next >" />
+		<textfield name="save_report_as" set="{@reports_10785.report_name} {@stamp}" />
+		<button name="Save" />
+
+		<!-- Create user -->
+		<link text="Admin" />
+		<link text="User Management" />
+		<link text="Create New User" />
+		<textfield name="sugar_user_name" set="{@reports_10785.username}{@stamp}" />
+		<textfield id="last_name" set="{@reports_10785.lastname}{@stamp}" />
+		<textfield id="Users0emailAddress0" set="{@reports_10785.email}" />
+		<textfield id="new_password" set="{@reports_10785.password}" />
+		<textfield id="confirm_pwd" set="{@reports_10785.password}" />
+		<javascript>
+			document.getElementById("password_change").value = "true";
+		</javascript>
+		<button id="Save" click="true" />
+
+		<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
+
+		<!-- Log in as user -->
+		<textfield id="user_name" set="{@reports_10785.username}{@stamp}" />
+		<textfield id="user_password" set="{@reports_10785.password}" />
+		<button id="login_button" />
+		<wait timeout="5" />
+		<!-- Match a new user login or an existing user login, but not a failed login. -->
+		<browser assert="/Welcome(, | to Sugar!)/" />
+
+		<browser url="{@global.url}" />
+		<button name="button" click="true" /> <!-- set timezone -->
+
+		<link id="moduleTab_Reports" />
+		<link text="{@reports_10785.report_name} {@stamp}" />
+		<button value="Reset" click="true" />
+
+		<select name="input" assert="Doe{@stamp}" /> <!-- check that our user is selected -->
+
+		<!-- clean up -->
+		<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+		<!-- delete user -->
+		<link text="Admin" />
+		<link text="User Management" />
+		<button id="search_form_clear" />
+		<button id="search_form_submit" />
+		<link text="{@reports_10785.lastname}{@stamp}" />
+		<wait condition="true">
+			<button value="Delete" />
+		</wait>
+		<button value="Delete" click="true" />
+		<button text="OK" click="true" />
+		<button value="Cancel" click="true" />
+
+		<!-- delete report -->
+		<link id="moduleTab_Reports" />
+		<link text="{@reports_10785.report_name} {@stamp}" />
+		<wait condition="true">
+			<button id="deleteReportButton" />
+		</wait>
+		<button id="deleteReportButton" alert="true" />
+	</csv>
+	<puts text="Test: Reports_10785.xml finished" />
+
+</soda>
