@@ -26,6 +26,7 @@
 -->
 
 <soda>
+	<!--Create contact_Verify that creating a contact can be canceled-->
 	<puts text="Conacts_7050 starting." />
 	<timestamp />
 	<link id="moduleTab_Contacts" />
