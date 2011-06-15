@@ -1,0 +1,107 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--Edit task_Verify that related task can be edited from contact detail view-->
+	<puts text="Test: Contacts_7883.xml starting." />
+
+	<!--Create contact record-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+
+	<!--Search the Contact record-->
+	<link id="moduleTab_Contacts" />
+	<link href="index.php?module=Contacts&amp;action=index" click="false" />
+	<link id="basic_search_link" required="false" timeout="2"/>
+	<textfield id="search_name_basic" set="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	<button id="search_form_submit" />
+
+	<!--Go its detail view and create a new task -->
+	<table class="list view">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+	<button id="Activities_createtask_button"/>
+	<csv file="{@global.scriptsdir}/modules/lib/Task_Create_Lib.csv" var="Contacts_7883_Task">
+		<textfield id="name" set="{@Contacts_7883_Task.name} {@user.name} {@stamp}" />
+		<select id="priority" set="{@Contacts_7883_Task.priority}" />
+		<select id="status" set="{@Contacts_7883_Task.status}" />
+		<textfield id="description" set="{@Contacts_7883_Task.description}" />
+
+		<!--Due Date-->
+		<textfield id="date_due_date" set="{@Contacts_7883_Task.date_due_date}" />
+		<select id="date_due_hours" set="{@Contacts_7883_Task.date_due_hours}" />
+		<select id="date_due_minutes" set="{@Contacts_7883_Task.date_due_minutes}" />
+		<checkbox id="date_due_flag" set="{@Contacts_7883_Task.date_due_flag}" />
+
+		<!--Start Date-->
+		<textfield id="date_start_date" set="{@Contacts_7883_Task.date_start_date}" />
+		<select id="date_start_hours" set="{@Contacts_7883_Task.date_start_hours}" />
+		<select id="date_start_minutes" set="{@Contacts_7883_Task.date_start_minutes}" />
+		<checkbox id="date_start_flag" set="{@Contacts_7883_Task.date_start_flag}" />
+
+		<button value="Save" />
+		<wait timeout="5" />
+		<div id="list_subpanel_activities">
+			<browser assert="{@Contacts_7883_Task.name} {@user.name} {@stamp}" />
+		</div>
+	</csv>
+
+	<!--Edit created task again-->
+	<div id="list_subpanel_activities">
+		<link class="listViewTdToolsS1" text="/edit/"/>
+	</div>
+	<csv file="{@global.scriptsdir}/csvs/Contacts/Contacts_7883.csv" var="Contacts_7883_Task_Update">
+		<textfield id="name" set="{@Contacts_7883_Task_Update.name} {@user.name} {@stamp}" />
+		<select id="priority" set="{@Contacts_7883_Task_Update.priority}" />
+		<select id="status" set="{@Contacts_7883_Task_Update.status}" />
+		<textfield id="description" set="{@Contacts_7883_Task_Update.description}" />
+
+		<!--Due Date-->
+		<textfield id="date_due_date" set="{@Contacts_7883_Task_Update.date_due_date}" />
+		<select id="date_due_hours" set="{@Contacts_7883_Task_Update.date_due_hours}" />
+		<select id="date_due_minutes" set="{@Contacts_7883_Task_Update.date_due_minutes}" />
+		<checkbox id="date_due_flag" set="{@Contacts_7883_Task_Update.date_due_flag}" />
+
+		<!--Start Date-->
+		<textfield id="date_start_date" set="{@Contacts_7883_Task_Update.date_start_date}" />
+		<select id="date_start_hours" set="{@Contacts_7883_Task_Update.date_start_hours}" />
+		<select id="date_start_minutes" set="{@Contacts_7883_Task_Update.date_start_minutes}" />
+		<checkbox id="date_start_flag" set="{@Contacts_7883_Task_Update.date_start_flag}" />
+
+		<button value="Save" />
+		<wait timeout="5" />
+	</csv>
+	<div id="list_subpanel_activities">
+		<browser assert="{@Contacts_7883_Task_Update.name} {@user.name} {@stamp}" />
+		<browser assert="{@Contacts_7883_Task_Update.status}"/>
+	</div>
+
+	<!--Clean actions-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
+	<puts text="Test: Contacts_7883.xml finished." />
+
+</soda>
