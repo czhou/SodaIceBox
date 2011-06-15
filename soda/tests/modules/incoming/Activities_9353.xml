@@ -83,7 +83,11 @@
 	
 	<ul id="col_0_0">
 		<table class="list view" index="1">
-			<link index="10" />
+			<row class="oddListRowS1">
+				<cell index="6">
+					<image index="1" click="true" />
+				</cell>
+			</row>
 		</table>
 	</ul>
 	
