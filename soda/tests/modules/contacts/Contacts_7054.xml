@@ -26,7 +26,7 @@
 -->
 
 <soda>
-	<!--Create contact_Verify that contact can be duplicated-->
+	<!--Delete contact_Verify that contact can be deleted from detail view-->
 	<puts text="Test: Contacts_7054.xml starting." />
 
 	<!--Create contact record-->
