@@ -33,7 +33,8 @@
 	<div class="moduleTitle">
 		<link href="index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
-
+	
+	<link text="Create Account"/>
 	<button id="SAVE"/>
 
 	<browser assert="Missing required field: Name"/>

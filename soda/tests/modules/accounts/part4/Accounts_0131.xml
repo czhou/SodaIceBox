@@ -27,16 +27,16 @@
 
 <soda>
 
-	<puts text="Test Case 131: Create Account _Verify that error message 'Missing required field: Name' is displayed when creating new account with mandatory fields blank"/>
+	<puts text="Test Case 131: Edit Account_Verify that label of Annual Revenue system field is displayed in account's edit view."/>
 
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
 
-	<link id="tab1"/>
+	<link text="Create Account"/>
 
-	<browser assert=" Annual Revenue: "/>
+	<browser assert="Annual Revenue:"/>
 
 	<link id="moduleTab_Accounts" />
 	<puts text="Test: Accounts_0131.xml finished." />
