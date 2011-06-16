@@ -75,7 +75,7 @@
 	<button name="Save and Run" />
 	<wait timeout="5" />
 	<link text="View Reports" />
-	<link text="Basic Search" require="false"/>
+	<link text="Basic Search" required="false"/>
 	<textfield name="name_basic" set="{@report_name}" />
 	<button id="search_form_submit" />
 	<link text="{@report_name}" />
