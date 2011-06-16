@@ -41,7 +41,7 @@
 		<link text="{@pre_project_name}"/>
 
 		<div id="Project_detailview_tabs">
-			<browser assert="{@Project_2839.project_name}"/>
+			<browser assert="{@pre_project_name}"/>
 		</div>
 		<button id="edit_button"/>
 		<textfield id="name" set="{@Project_2839.project_name}"/>
