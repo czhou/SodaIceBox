@@ -42,16 +42,12 @@
 		<browser assert="Resources"/>
 		<!--Compose email -->
 		<button id="composeemail_button"/>
-		<wait timeout="5"/>
-		<image src="themes/default/images/ProjectInsertRows.gif?s=642cb6d31ce8c740f9b1ecd4f43dd1fd&c=1" click="true"/>
 		<div id="container1_h">
 			<browser assert="Quick Compose"/>
 		</div>
 		<textfield id="addressTO0" set="{@Project_2856.email_address}"/>
 		<textfield id="emailSubject0" set="{@Project_2856.email_subject}"/>
-		<textfield id="tinymcei"/> 
 		<link class="container-close"/>
-		<wait timeout="5"/>
 		
 		<link text="{@Project_2856.email_subject}" exist="false" click="false"/>
 
