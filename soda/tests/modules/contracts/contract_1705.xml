@@ -53,8 +53,9 @@
 	
 	<!--Edit Note record in subpanel-->
 	<div id="list_subpanel_history">
-		<link class="listViewTdToolsS1" index="1"/>
+		<link class="listViewTdToolsS1" text="/edit/"/>
 	</div>
+	<wait timeout="3"/>
 	<browser assert="Note record»Edit"/>
 	<textfield id="name" set="New note record"/>
 	<button value="Save"/>
