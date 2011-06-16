@@ -59,9 +59,9 @@
 	<link text="Create Report" />
 	<browser assert="Report Wizard" />
 
-	<image name="rowsColsImg" click="true" alert="true"/>
+	<image name="rowsColsImg" click="true"/>
 	<wait timeout="2"/>
-	<table id="Accounts" click="true" alert="true"/>
+	<table id="Accounts" click="true"/>
 	<wait timeout="2"/>
 	<row id="yui-rec13" click="true" />		<!-- Name -->
 	<wait timeout="1"/>	
