@@ -36,27 +36,17 @@
 
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv" var="account_record_0004">
 
-		<image src="themes/Sugar/images/icon_Accounts_bar_32.png?s=540a66d553aee405a0aa0b87967d0ba3&c=1" click="ture"/>
-		
+		<div id="dcmenu">
+			<div id="dcmenuContainer">
+				<ul id="dcmenuitems">
+					<!--Click account create icon in quick create bar-->
+					<link index="1" click="true"/>
+				</ul>
+			</div>
+		</div>	
 		<div class="hd-center">
 			<browser assert="Create Account"/>
 		</div>
-
-		<!--user select-->
-		<button id="btn_assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield name="last_name_advanced" set="{@account_record_0004.assigned_user_name}" />
-		<button value="Search" />
-		<link text="{@account_record_0004.assigned_user_name}" />
-
-		<!--teams select-->
-		<table id="EditView_team_name_table">
-			<button value="Select" />
-		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@account_record_0004.team_name}" />
-		<button value="Search" />
-		<link text="{@account_record_0004.team_name}" />
 
 		<form id="form_DCQuickCreate_Accounts">
 			<textfield id="name" set="{@account_record_0004.name} {@user.name} {@stamp}" />
