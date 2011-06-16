@@ -1142,4 +1142,11 @@
                 <reason>Can't Create project task.</reason>
                 <modulename>Projects</modulename>
         </block>
+
+	<block>
+                <testfile>Project_2876</testfile>
+                <bugnumber></bugnumber>
+                <reason>Can't Create project task.</reason>
+                <modulename>Projects</modulename>
+        </block>
 </soda>
