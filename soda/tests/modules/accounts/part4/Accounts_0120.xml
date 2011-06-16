@@ -48,7 +48,6 @@
 
 	<!--Create Lead Subpanel -->
 	<button id="account_leads_create_button" />
-	<wait timeout="5" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0044.csv" var="lead_record_0120">
 		<form id="form_SubpanelQuickCreate_Leads">
 			<textfield id="refered_by" set="{@lead_record_0120.refered_by}" />
@@ -83,17 +82,13 @@
 		<link text="{@lead_record_0120.team_name}" />
 
 		<button id="Leads_subpanel_save_button" />
-		<wait timeout="5" />
 		<!--Verify -->
 		<div id="list_subpanel_leads">
-			<table class="list view">
-				<link
-					text="{@lead_record_0120.first_name} {@stamp} {@lead_record_0120.last_name}"
-					click="false" />
-				<link class="listViewTdToolsS1" index="2" alert="ture"/>
-				<wait timeout="6"/>
-				<link text="{@lead_record_0120.first_name} {@stamp} {@lead_record_0120.last_name}" click="false" exist="false"/>
-			</table>
+			<link
+				text="{@lead_record_0120.first_name} {@stamp} {@lead_record_0120.last_name}"
+				click="false" />
+			<link class="listViewTdToolsS1" index="2" click="true" alert="true"/>
+			<link text="{@lead_record_0120.first_name} {@stamp} {@lead_record_0120.last_name}" click="false" exist="false"/>
 		</div>
 		
 		<link id="moduleTab_Leads"/>
@@ -106,12 +101,6 @@
 			<link text="{@lead_record_0120.first_name} {@stamp} {@lead_record_0120.last_name}" click="false"/>
 		</table>
 
-		<!--Save the subpanel task id & name -->
-		<form name="DetailView">
-			<hidden name="record" var="pre_lead_subpanel_id" />
-		</form>
-		<var var="pre_lead_subpanel_name"
-			set="{@lead_record_0120.first_name} {@stamp} {@lead_record_0120.last_name}" />
 	</csv>
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
