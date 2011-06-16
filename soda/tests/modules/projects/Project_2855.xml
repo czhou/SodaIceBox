@@ -50,7 +50,7 @@
 		
 		<link text="{@Project_2853.call_name}" click="false"/>
 		<div id="list_subpanel_activities">
-			<link class="listViewTdToolsS1" index="2" alert="true"/>
+			<link class="listViewTdToolsS1" click="true" index="2" alert="true"/>
 		</div>
 		<wait timeout="3"/>
 		<link text="{@Project_2853.call_name}" exist="false" click="false"/>

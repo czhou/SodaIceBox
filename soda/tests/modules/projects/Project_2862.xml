@@ -43,7 +43,7 @@
 		<!--Create call record-->
 		<button id="Activities_logcall_button"/>
 		<textfield id="name" set="{@Project_2861.call_name}"/>
-		<textfield id="status" set="{@Project_2861.call_status}"/>
+		<select id="status" set="{@Project_2861.call_status}"/>
 		
 		<button id="Calls_subpanel_save_button"/>
 		<wait timeout="3"/>	
