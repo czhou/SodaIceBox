@@ -46,12 +46,10 @@
 		<select id="status" set="{@Project_2858.meeting_status}"/>
 		
 		<button id="Meetings_subpanel_save_button"/>
-		<wait timeout="3"/>	
 		
+		<wait timeout="3"/>
 		<link text="{@Project_2858.meeting_name}" click="false"/>
-		<div id="list_subpanel_history">
-			<link class="listViewTdToolsS1" index="2" alert="true"/>
-		</div>
+		<link class="listViewTdToolsS1" index="2" click="true" alert="true"/>
 		<wait timeout="3"/>
 		<link text="{@Project_2858.meeting_name}" exist="false" click="false"/>
 		
