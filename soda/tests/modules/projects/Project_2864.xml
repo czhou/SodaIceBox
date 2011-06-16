@@ -41,19 +41,17 @@
 		<browser assert="Resources"/>
 		<!--Select account record-->
 		<button id="projects_accounts_select_button"/>
-		<wait timeout="3"/>
 		<browser assert="Account Search"/>
 		
 		<textfield id="name_advanced" set="{@pre_account_name}"/>
 		
-		<button id="Search"/>
-		<wait timeout="3"/>	
+		<button value="Search"/>
 		
 		<link text="{@pre_account_name}"/>
-		<div id="ilist_subpanel_accounts">
-			<link class="listViewTdToolsS1" index="2" alert="true"/>
+		<div id="list_subpanel_accounts">
+			<link text="{@pre_account_name}" click="false"/>
+			<link class="listViewTdToolsS1" index="2" click="true" alert="true"/>
 		</div>
-		<wait timeout="3"/>
 		<link text="{@pre_account_name}" exist="false" click="false"/>
 
         <puts text="Test Case 2864 is finished!"/>
