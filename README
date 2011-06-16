@@ -1,3 +1,4 @@
+foo bar
 gem update --system
 gem install soda
 
