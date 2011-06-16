@@ -45,23 +45,20 @@
 		<textfield id="name" set="{@Project_2847.meeting_name}"/>
 		
 		<button id="Meetings_subpanel_save_button"/>
-		<wait timeout="3"/>	
-		
-		<link text="{@Project_2847.meeting_name}" click="false"/>
 		
 		<div id="subpanel_activities">
-			<link class="listViewTdToolsS1" index="2" alert="true"/>
+			<link text="{@Project_2847.meeting_name}" click="false"/>
+			<link class="listViewTdToolsS1" index="2" click="true" alert="true"/>
+			<wait timeout="3"/>
+			<link text="{@Project_2847.meeting_name}" exist="false" click="false"/>
 		</div>
 
-		<wait timeout="6"/>
-		<link text="{@Project_2847.meeting_name}" exist="false" click="false"/>
-		
 		<!--Delete meeting record created in this case-->
 		<link id="moduleTab_Meetings"/>
 		<div class="moduleTitle">
 			<link href="index.php?module=Meetings&action=index"/>
 		</div>
-		<checkbox id="massall" set="ture"/>
+		<checkbox id="massall" click="true"/>
 		<link id="actions_link"/>
 		<link text="Delete" alert="ture"/>
 	</csv>
