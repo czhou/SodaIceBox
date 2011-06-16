@@ -41,19 +41,16 @@
 		<browser assert="Resources"/>
 		<!--Select Opportunity record-->
 		<button id="projects_quotes_select_button"/>
-		<wait timeout="3"/>
 		<browser assert="Quote Search"/>
 		
 		<textfield id="name_advanced" set="{@pre_Quote_name}"/>
 
 		<button value="Search"/>
-		<wait timeout="3"/>	
 		
 		<link text="{@pre_Quote_name}"/>
-		<div id="ilist_subpanel_quotes">
-			<link class="listViewTdToolsS1" index="2" alert="true"/>
+		<div id="list_subpanel_quotes">
+			<link class="listViewTdToolsS1" index="2" click="true" alert="true"/>
 		</div>
-		<wait timeout="3"/>
 		<link text="{@pre_Quote_name}" exist="false" click="false"/>
 
         <puts text="Test Case 2868 is finished!"/>
