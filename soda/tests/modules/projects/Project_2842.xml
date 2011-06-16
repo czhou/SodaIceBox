@@ -64,6 +64,7 @@
 		<link href="index.php?module=Project&action=index" click="false"/>
 	</div>
 	
+	<button id="search_form_clear"/>
 	<checkbox id="current_user_only_basic" set="true"/>
 	<button id="search_form_submit"/>
 	<wait timeout="3"/>
