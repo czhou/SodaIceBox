@@ -1128,4 +1128,18 @@
                 <reason>No delete button in project detail view.</reason>
                 <modulename>Projects</modulename>
         </block>
+	
+	<block>
+                <testfile>Project_2870</testfile>
+                <bugnumber></bugnumber>
+                <reason>Can't Create project task.</reason>
+                <modulename>Projects</modulename>
+        </block>
+
+	<block>
+                <testfile>Project_2871</testfile>
+                <bugnumber></bugnumber>
+                <reason>Can't Create project task.</reason>
+                <modulename>Projects</modulename>
+        </block>
 </soda>
