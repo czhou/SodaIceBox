@@ -79,7 +79,7 @@
 		<textfield id="name_basic" set="{@Project_2841.project_name}"/>
 		<button id="search_form_submit"/>
 		
-		<checkbox id="massall" set="ture"/>
+		<checkbox id="massall" click="true"/>
 		<link id="actions_link" />
 		<link text="Delete" alert="true" />
 		<span class="pageNumbers" assert="(0 - 0 of 0)" />
@@ -87,6 +87,5 @@
 
 	<checkbox id="current_user_only_basic" set="false"/>
 	<button id="search_form_submit"/>
-	<wait timeout="3"/>
         <puts text="Test Case 2841 is finished!"/>
 </soda>
