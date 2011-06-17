@@ -62,6 +62,7 @@
 		</div>
 		<textfield id="name_basic" set="{@account_record_0004.name} {@user.name} {@stamp}" />
 		<button id="search_form_submit" />
+		<wait timeout="5"/>
 		<table class="list view">
 			<link text="{@account_record_0004.name} {@user.name} {@stamp}" click="false"/>
 		</table>
