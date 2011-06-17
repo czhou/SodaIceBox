@@ -1,0 +1,93 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+
+	<!--
+		Create task_Verify that warning message can be displayed after creating a related task whose Start Date & Time 
+		is later than Due Date& Time from contact detail view.
+	-->
+
+	<puts text="Test: Contacts_4412.xml starting." />
+
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_lib.xml" />
+
+	<!-- *1* Go to Contact module -->
+	<link id="moduleTab_Contacts" />
+	<link href="index.php?module=Contacts&amp;action=index" click="false" />
+
+	<!-- *2* Go to created record detail view-->
+	<form id="search_form">
+		<button name="clear" />
+		<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
+		<button id="search_form_submit" />
+	</form>
+
+	<table class="list view">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+	<div class="moduleTitle">
+		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</div>
+
+
+	<!-- *3* Go to Activities subpanel and try to create task-->
+	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_4412.csv" var="Contacts_4412">
+		<div id="list_subpanel_activities">
+			<button id="Activities_createtask_button" />
+		</div>
+		<wait timeout="2"/>
+		<div class="moduleTitle">
+			<link href="index.php?module=Contacts&amp;action=index" click="false" />
+			<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+		</div>
+		<form id="form_SubpanelQuickCreate_Tasks">
+			<textfield id="name" set="{@Contacts_4412.subject}" />
+			<select id="status" set="{@Contacts_4412.status}" />
+			<select id="priority" set="{@Contacts_4412.priority}" />
+			<textfield id="description" set="{@Contacts_4412.description}" />
+			<textfield id="date_due_date" set="{@Contacts_4412.Due_Date}"/>
+			<select id="date_due_hours" set="{@Contacts_4412.Due_Hours}"/>
+			<select id="date_due_minutes" set="{@Contacts_4412.Due_Minutes}"/>
+			<textfield id="date_start_date" set="{@Contacts_4412.Start_Date}"/>
+			<select id="date_start_hours" set="{@Contacts_4412.Start_Hours}"/>
+			<select id="date_start_minutes" set="{@Contacts_4412.Start_Minutes}"/>
+		</form>
+
+		<button id="Tasks_subpanel_save_button" />
+		
+		<!--Expected result-->
+		<browser assert="Start Date({@Contacts_4412.Start_Date} {@Contacts_4412.Start_Hours}:{@Contacts_4412.Start_Minutes}) is not before {@Contacts_4412.Due_Date} {@Contacts_4412.Due_Hours}:{@Contacts_4412.Due_Minutes}"/>
+		<button id="Tasks_subpanel_cancel_button" alert="true"/>
+
+	</csv>
+
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_lib.xml" />
+
+	<puts text="Test: Contacts_4412.xml finished." />
+</soda>
