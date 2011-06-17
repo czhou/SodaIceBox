@@ -1,0 +1,2 @@
+subject,team,status,Start_Date,Start_Hours,Start_Minutes,Start_Meridiem,Due_Date,Due_Hours,Due_Minutes,Due_Meridiem,priority,description
+test due date is before start date,Administrator,In Progress,10/29/2010,12,00,am,10/03/2010,12,00,am,Low,test subpanel new task
