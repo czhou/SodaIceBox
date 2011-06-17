@@ -854,6 +854,12 @@
 	</block>
 
 	<!-- Emily's Modules -->
+	<block>
+		<testfile>Currencies_11489</testfile>
+		<bugnumber>44270</bugnumber>
+		<reason>Wrong currency symbol displayed in Reports.</reason>
+		<modulename>Currencies</modulename>
+	</block>
 	
 	<block>
 		<testfile>Opportunity_2258</testfile>

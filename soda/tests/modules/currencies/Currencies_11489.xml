@@ -1,0 +1,104 @@
+<soda>
+	<!-- Verify that the correct currency symbol appears in opportunity reports (bug 44270). -->
+	<puts text="Test: Currencies_11489.xml starting." />
+   <csv file="{@global.scriptsdir}/csvs/currencies/Currencies_11489.csv" var="Currencies_11489" />
+	
+	<!-- Add Japanese Yen currency. -->
+	<link text="Admin" />
+	<link text="Currencies" />
+	<textfield name="name" set="{@Currencies_11489.currency_name}" />
+	<textfield name="conversion_rate" set="{@Currencies_11489.conversion_rate}" />
+	<textfield name="symbol" set="{@Currencies_11489.currency_symbol}" />
+	<button value="Save" />
+
+	<!-- Create an account as a pre-req for the opportunity. -->	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+
+	<!-- Create an opportunity in Yen. -->
+	<link id="moduleTab_Opportunities" />
+	<link text="Create Opportunity" />
+	<textfield id="name" set="{@Currencies_11489.name}" />
+	<select name="currency_id" set="{@Currencies_11489.currency_id}" />
+	<textfield id="amount" set="{@Currencies_11489.amount}" />
+	<textfield id="date_closed" set="{@Currencies_11489.date_closed}" />
+
+	<!-- Set the Account field. -->
+	<textfield id="account_name" append="{@pre_account_name}" />
+	<textfield id="account_name" jscriptevent="onkeyup" />
+
+	<div id="EditView_account_name_results">
+		<div class="yui-ac-bd">
+			<ul index="1">
+				<li index="1" click="true" />
+			</ul>
+		</div>
+	</div>
+	<wait timeout="3" />
+
+	<textfield id="name" jscriptevent="onfocus" />
+	<wait timeout="5" />
+	<textfield id="date_closed" click="true" />
+	<wait timeout="3" />
+	<button id="SAVE_HEADER" />
+
+	<link id="moduleTab_Opportunities" />
+	<table class="list view">
+		<browser assert="{@Currencies_11489.amount_dollars}" />
+	</table>
+
+	<link text="{@Currencies_11489.name}" />
+	<table id="detailpanel_1">
+		<row index="2">
+			<cell index="1">
+				<browser assert="{@Currencies_11489.currency_symbol}" />
+			</cell>
+			<cell index="2" assert="{@Currencies_11489.amount_currency_detailview}" />
+		</row>
+	</table>
+
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<image name="rowsColsImg" click="true" />
+	<table id="Opportunities">
+		<link text="Opportunities" />
+	</table>
+	<button value="Next >" />
+	
+	<div text="Opportunity Name" click="true" />
+	<div text="Amount" click="true" />
+	<div text="Opportunity Amount" click="true" />
+	<button value="Next >" />
+
+	<textfield name="save_report_as" set="{@Currencies_11489.report_name}" />
+	<button name="Save and Run" />
+	<table class="list view">
+		<browser assert="{@Currencies_11489.amount_currency_report}" />
+		<browser assert="{@Currencies_11489.amount_dollars}" />
+	</table>
+
+	<!-- Cleanup: Remove currency. -->
+	<link text="Admin" />
+	<link text="Currencies" />
+	<table class="list view">
+		<link text="del" alert="true" />
+	</table>
+	<browser assertnot="{@Currencies_11489.currency_name}" />
+
+	<!-- Cleanup: Delete report. -->
+	<link id="moduleTab_Reports" />
+	<textfield name="name" set="{@Currencies_11489.report_name}" />
+	<button id="search_form_submit" />
+   <checkbox name="massall" click="true" />
+   <link id="actions_link" />
+   <link text="Delete" alert="true" />
+   <span class="pageNumbers" assert="(0 - 0 of 0)" />
+   
+	<button name="clear" />
+	<button id="search_form_submit" />
+	
+	<!-- Cleanup: Delete Account and Opp. -->
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+
+	<puts text="Test: Currencies_11489.xml finished." />
+</soda>
