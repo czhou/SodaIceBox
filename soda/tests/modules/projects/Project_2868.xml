@@ -51,6 +51,7 @@
 		<div id="list_subpanel_quotes">
 			<link class="listViewTdToolsS1" index="2" click="true" alert="true"/>
 		</div>
+		<wait timeout="5"/>
 		<link text="{@pre_Quote_name}" exist="false" click="false"/>
 
         <puts text="Test Case 2868 is finished!"/>
