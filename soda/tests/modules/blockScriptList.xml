@@ -193,55 +193,6 @@
 	
 	<!-- Beginning of illegal javascript related blocks -->
 	<block>
-		<testfile>Calendar_0736</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0737</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0738</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0739</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0740</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0741</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0742</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
 		<testfile>Reports_7734</testfile>
 		<bugnumber></bugnumber>
 		<reason>illegal javascript accessor</reason>
