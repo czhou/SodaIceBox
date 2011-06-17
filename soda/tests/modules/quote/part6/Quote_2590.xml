@@ -56,6 +56,9 @@
 		<link class="listViewTdToolsS1" index="2" alert="false"/>
 		<wait timeout="5"/>
 		<browser assert="New Archived Email"/>
+		<link class="listViewTdToolsS1" index="2" alert="true"/>
+		<wait timeout="5"/>
+		<browser assertnot="New Archived Email"/>
 	</div>
         <puts text="End Test Case 2590"/>
 </soda>
