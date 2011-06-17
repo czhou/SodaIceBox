@@ -48,7 +48,7 @@
 	<wait timeout="2"/>
 	<textfield id="name" set="New note record"/>
 	<button id="Notes_subpanel_save_button"/>
-	<wait timeout="5"/>
+	<wait timeout="8"/>
 	<browser assert="New note record"/>
 	
 	<!--Modify the note record-->
