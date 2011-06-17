@@ -1,0 +1,114 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		Search contact_Verify that contact search conditions can be cleared.
+	-->
+	<puts text="Test: Contacts_4451.xml starting." />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml"/>
+
+	<!-- *1* Go to Contact module -->
+	<link id="moduleTab_Contacts" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+	</div>
+
+	<!-- *2* Go to created record detail view-->
+	<form id="search_form">
+		<button name="clear" />
+		<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
+		<button id="search_form_submit" />
+	</form>
+
+	<table class="list view">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+	<div class="moduleTitle">
+		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</div>
+
+	<!-- *3* Go to Activities subpanel and try to create task-->
+	<csv file="{@global.scriptsdir}/modules/lib/Task_Create_Lib.csv" var="Contact_4451">
+		<div id="list_subpanel_activities">
+			<button value="  Create Task  " />
+		</div>
+		<div class="moduleTitle">
+			<link href="index.php?module=Contacts&amp;action=index" click="false" />
+			<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+		</div>
+		<form id="form_SubpanelQuickCreate_Tasks">
+			<textfield id="name" set="{@Contact_4451.name}{@stamp}" />
+			<select id="status" set="{@Contact_4451.status}" />
+			<select id="priority" set="{@Contact_4451.priority}" />
+			<textfield id="description" set="{@Contact_4451.description}" />
+		</form>
+		<button id="Tasks_subpanel_save_button" />
+
+	</csv>
+	<div id="list_subpanel_activities">
+		<table class="list view">
+			<link text="{@Contact_4451.name}{@stamp}" click="false" />
+			<browser assert="{@Contact_4451.status}" />
+		</table>
+	</div>
+
+	<!-- *4*- Close the created task-->
+	<div id="list_subpanel_activities">
+		<table class="list view">
+			<row class="oddListRowS1">
+				<link index="2" click="true" alert="true"/>
+			</row>
+		</table>
+	</div>
+	<div id="closeActivityDialog">
+		<button class="default"  text="OK" click="true"/>
+	</div>
+
+	<!--wait page refresh-->
+	<browser action="refresh"/>
+
+	<!--Verify close action works-->
+	<div id="list_subpanel_activities">
+		<table class="list view">
+			<link text="{@Contact_4451.name}{@stamp}" click="false" exists="false"/>
+			<browser assertnot="Completed"/>
+		</table>
+	</div>
+	<div id="list_subpanel_history">
+		<table class="list view">
+			<link text="{@Contact_4451.name}{@stamp}" click="false" exists="true"/>
+			<browser assert="Completed"/>
+		</table>
+	</div>
+
+	<!--Clean actions-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_lib.xml" />
+	<puts text="Test: Contacts_4451.xml finished." />
+</soda>
