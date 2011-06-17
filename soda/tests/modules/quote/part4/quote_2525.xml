@@ -47,7 +47,7 @@
         <wait timeout="2"/>
         <textfield id="name" set="New meeting record"/>
         <button id="Meetings_subpanel_save_button"/>
-        <wait timeout="5"/>
+        <wait timeout="8"/>
         <browser assert="New meeting record"/>
 
         <!--Modify the task record-->
