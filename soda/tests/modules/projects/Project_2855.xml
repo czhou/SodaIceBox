@@ -52,7 +52,7 @@
 		<div id="list_subpanel_activities">
 			<link class="listViewTdToolsS1" click="true" index="2" alert="true"/>
 		</div>
-		<wait timeout="3"/>
+		<wait timeout="5"/>
 		<link text="{@Project_2853.call_name}" exist="false" click="false"/>
 		
 		<!--Delete the call record created in this case-->
@@ -60,7 +60,7 @@
 		<div class="moduleTitle">
 			<link href="index.php?module=Calls&action=index" click="false"/>
 		</div>
-		<checkbox id="massall" set="true"/>
+		<checkbox id="massall" click="true"/>
 		<link id="actions_link"/>
 		<link text="Delete" alert="true"/>
 		<span class="pageNumbers" assert="(0 - 0 of 0)"/>
