@@ -27,7 +27,7 @@
 
 <soda>
 	<!--
-		Search contact_Verify that contact search conditions can be cleared.
+		Edit task_Verify that related task can be closed from contact detail view
 	-->
 	<puts text="Test: Contacts_4451.xml starting." />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml"/>
