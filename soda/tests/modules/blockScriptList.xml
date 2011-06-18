@@ -650,6 +650,14 @@
 	</block>
 	
 	<!-- End incoming failed scripts -->
+
+	<block>
+		<testfile>Emails_11443</testfile>
+		<bugnumber>11443</bugnumber>
+		<reason>Can not locate email text field on quick create lead view</reason>
+		<modulename>Email</modulename>
+	</block>
+
 	<block>
 		<testfile>Opportunity_10887</testfile>
 		<bugnumber>41775</bugnumber>
