@@ -58,6 +58,6 @@
     <table class="list view">
         <link text="del" alert="true"/>
     </table>
-    <browser assert="{@types_record_588.name} {@user.name} {@stamp}" exist="false"/>
+    <browser assertnot="{@types_record_588.name} {@user.name} {@stamp}"/>
     <puts text="---ProductCatalog_588.xml---Finished!"/>
 </soda>
