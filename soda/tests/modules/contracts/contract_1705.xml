@@ -53,7 +53,7 @@
 	
 	<!--Edit Note record in subpanel-->
 	<div id="list_subpanel_history">
-                <table class="list  view">
+                <table class="list view">
 		     <link class="listViewTdToolsS1" text="/edit/"/>
                 </table>
 	</div>
