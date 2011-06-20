@@ -54,7 +54,7 @@
 	<!-- Delete field after verification -->
 	<link text="testfield_c" />
 	<button name="fdeletebtn" alert="true" />
-	<wait timeout="3" />
+	<wait timeout="10" />
 	
 	<!-- Verify deletion of custom field -->
 	<browser assertnot="testfield_c" />
