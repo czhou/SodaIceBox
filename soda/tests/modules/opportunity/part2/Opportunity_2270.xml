@@ -80,7 +80,7 @@
 	<div id="list_subpanel_contacts">
 		<table class="list view">
 			<link class="listViewTdToolsS1" index="2" alert="true" />
-			<wait timeout="2" />
+			<wait timeout="5" />
 			<link text="{@pre_contact_first_name} {@pre_contact_last_name}" click="false"
 				exist="false" />
 		</table>
