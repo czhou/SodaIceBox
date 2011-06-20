@@ -35,7 +35,7 @@
 	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 
-	<!--goto Cases subpanel & Create quote-->
+	<!--goto Cases subpanel & select pre-created case-->
 	<button id="contacts_cases_select_button" />
 	<wait timeout="2"/>
 	<textfield id="name_advanced" set="{@pre_case_name}"/>
