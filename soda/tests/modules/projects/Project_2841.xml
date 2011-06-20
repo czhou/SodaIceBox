@@ -68,7 +68,7 @@
 	<button id="search_form_submit"/>
 	<wait timeout="3"/>
 	
-	<span class="pageNumbers" assert="(1 - 1 of 1)" />
+	<span class="pageNumbers" assert="(1 - 2 of 2)" />
 	<!--Delete the records created in this case-->
         <link id="moduleTab_Project"/>
 	<div class="moduleTitle">
