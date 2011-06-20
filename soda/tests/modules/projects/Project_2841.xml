@@ -69,12 +69,12 @@
 	<wait timeout="3"/>
 	
 	<span class="pageNumbers" assert="(1 - 2 of 2)" />
+	
+	<!--Clear search panel-->
+	<button id="search_form_clear"/>
+	<button id="search_form_submit"/>
+		
 	<!--Delete the records created in this case-->
-        <link id="moduleTab_Project"/>
-	<div class="moduleTitle">
-		<link href="index.php?module=Project&action=index" click="false"/>
-	</div>
-
 	<csv file="{@global.scriptsdir}/csvs/projects/Project_2841.csv" var="Project_2841">
 		<textfield id="name_basic" set="{@Project_2841.project_name}"/>
 		<button id="search_form_submit"/>
