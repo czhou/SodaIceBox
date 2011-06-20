@@ -178,7 +178,9 @@
 	<div id="report_results">
 		<browser assert="2012" />
 	</div>
-	
+		
+	<button id="deleteReportButton" alert="true"/>
+
 	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	

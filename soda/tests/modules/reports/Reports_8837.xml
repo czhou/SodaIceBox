@@ -118,6 +118,8 @@
 		<browser assert="Construction" />
 	</div>
 	
+	<button id="deleteReportButton" alert="true"/>
+
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	
 	<puts text="Test: Reports_8837.xml finished." />
