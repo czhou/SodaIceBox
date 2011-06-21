@@ -37,9 +37,13 @@
 		<link text="Create Account" />
 		<browser assert="Create" />
 		<button id="btn_assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield id="last_name_advanced" 
-         set="{@account_record.assigned_user_name}" />
+
+      <attach title="SugarCRM">
+         <browser assert="User Search" />
+         <textfield id="last_name_advanced" 
+            set="{@account_record.assigned_user_name}" />
+      </attach>
+
 		<form id="popup_query_form">
 			<button value="Search" />
 		</form>
@@ -58,21 +62,33 @@
 			<textfield id="rating" set="{@account_record.rating}" />
 			<textfield id="sic_code" set="{@account_record.sic_code}" />
 			<textfield id="annual_revenue" set="{@account_record.annual_revenue}" />
-			<textfield id="billing_address_street" set="{@account_record.billing_address_street}" />
-			<textfield id="billing_address_city" set="{@account_record.billing_address_city}" />
-			<textfield id="billing_address_state" set="{@account_record.billing_address_state}" />
-			<textfield id="billing_address_postalcode" set="{@account_record.billing_address_postalcode}" />
-			<textfield id="billing_address_country" set="{@account_record.billing_address_country}" />
-			<textfield id="shipping_address_street" set="{@account_record.shipping_address_street}" />
-			<textfield id="shipping_address_city" set="{@account_record.shipping_address_city}" />
-			<textfield id="shipping_address_state" set="{@account_record.shipping_address_state}" />
-			<textfield id="shipping_address_postalcode" set="{@account_record.shipping_address_postalcode}" />
-			<textfield id="shipping_address_country" set="{@account_record.shipping_address_country}" />
-			<textfield id="Accounts0emailAddress0" set="{@stamp}{@account_record.emailAddress0}" />
+			<textfield id="billing_address_street" 
+            set="{@account_record.billing_address_street}" />
+			<textfield id="billing_address_city" 
+            set="{@account_record.billing_address_city}" />
+			<textfield id="billing_address_state" 
+            set="{@account_record.billing_address_state}" />
+			<textfield id="billing_address_postalcode" 
+            set="{@account_record.billing_address_postalcode}" />
+			<textfield id="billing_address_country" 
+            set="{@account_record.billing_address_country}" />
+			<textfield id="shipping_address_street" 
+            set="{@account_record.shipping_address_street}" />
+			<textfield id="shipping_address_city" 
+            set="{@account_record.shipping_address_city}" />
+			<textfield id="shipping_address_state" 
+            set="{@account_record.shipping_address_state}" />
+			<textfield id="shipping_address_postalcode" 
+            set="{@account_record.shipping_address_postalcode}" />
+			<textfield id="shipping_address_country" 
+            set="{@account_record.shipping_address_country}" />
+			<textfield id="Accounts0emailAddress0" 
+            set="{@stamp}{@account_record.emailAddress0}" />
 			<textfield id="description" set="{@account_record.description}" />
 			<textfield id="description" set="{@account_record.description}" />
 			<button value="Save" />
 		</form>
+
 		<wait timeout="4" />
 		<browser assert="{@account_record.name} {@user.name} {@stamp}" />
 
@@ -87,3 +103,4 @@
 
 	<puts text="Lib: Account_Create_Lib_FULL.xml finished." />
 </soda>
+
