@@ -51,7 +51,7 @@
 	<textfield id="name" set=""/>
 	<button id="SAVE"/>
 
-	<browser assert="Missing required field: Name"/>
+	<browser assert="Missing required field: Subject"/>
 	<link id="moduleTab_Accounts" alert="true"/>
 
 	<!--Delete the record-->
