@@ -50,7 +50,7 @@
 
 		<div id="subpanel_activities">
 			<link class="listViewTdToolsS1" index="2" click="true" alert="true"/>
-			<wait timeout="3"/>
+			<wait timeout="6"/>
 			<link text="{@Project_2847.meeting_name}" exist="false" click="false"/>
 		</div>
 
