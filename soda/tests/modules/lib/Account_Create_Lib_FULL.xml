@@ -42,12 +42,12 @@
          <browser assert="User Search" />
          <textfield id="last_name_advanced" 
             set="{@account_record.assigned_user_name}" />
-      </attach>
 
-		<form id="popup_query_form">
-			<button value="Search" />
-		</form>
-		<link text="{@account_record.assigned_user_name}" />
+         <form id="popup_query_form">
+            <button value="Search" />
+         </form>
+         <link text="{@account_record.assigned_user_name}" />
+      </attach>
 
 		<form id="EditView">
 			<textfield id="name" set="{@account_record.name} {@user.name} {@stamp}" />
