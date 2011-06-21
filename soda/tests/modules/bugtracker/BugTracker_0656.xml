@@ -52,12 +52,12 @@
 	<link id="actions_link" />
 	<link text="Mass Update" />
 	
-	<textfield id="team_name_collection_0" set="{@BugTracker_0656.team}" />
+	<textfield id="MassUpdate_team_name_collection_0" set="{@BugTracker_0656.team}" />
 	<radio id="primary_team_name_collection_0" />
 	<select id="mass_type" set="{@BugTracker_0656.type}" />
 	<select id="mass_priority" set="{@BugTracker_0656.priority}" />
 	<textfield id="mass_assigned_user_name" set="{@BugTracker_0656.assigned_to}" />
-	<textfield id="team_name_collection_0" set="{@BugTracker_0656.team}" />
+	<textfield id="MassUpdate_team_name_collection_0" set="{@BugTracker_0656.team}" />
 	<button id="update_button" alert="true" />
 	
 	<table class="list view">

@@ -61,8 +61,8 @@
 	<textfield id="assigned_user_name" jscriptevent="onkeyup" click="false" />
 	<wait timeout="3" />
 	
-	<textfield id="team_name_collection_0" set="admin" jscriptevent="onkeydown" />
-	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+	<textfield id="EditView_team_name_collection_0" set="admin" jscriptevent="onkeydown" />
+	<textfield id="EditView_team_name_collection_0" jscriptevent="onkeyup" click="false" />
 	<wait timeout="6" />
 	
 	<button value="Save" />
@@ -80,8 +80,8 @@
 	<textfield id="assigned_user_name" jscriptevent="onkeyup" click="false" />
 	<wait timeout="3" />
 	
-	<textfield id="team_name_collection_0" set="Global" jscriptevent="onkeydown" />
-	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+	<textfield id="EditView_team_name_collection_0" set="Global" jscriptevent="onkeydown" />
+	<textfield id="EditView_team_name_collection_0" jscriptevent="onkeyup" click="false" />
 	<wait timeout="6" />
 	
 	<button value="Save" />
@@ -99,8 +99,8 @@
 	<textfield id="assigned_user_name" jscriptevent="onkeyup" click="false" />
 	<wait timeout="3" />
 	
-	<textfield id="team_name_collection_0" set="{@qa_name}" jscriptevent="onkeydown" />
-	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+	<textfield id="EditView_team_name_collection_0" set="{@qa_name}" jscriptevent="onkeydown" />
+	<textfield id="EditView_team_name_collection_0" jscriptevent="onkeyup" click="false" />
 	<wait timeout="6" />
 	
 	<button value="Save" />

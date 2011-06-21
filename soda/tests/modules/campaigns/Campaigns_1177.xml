@@ -43,7 +43,7 @@
 		<browser assert="Campaign Header" />
 		<!--teams select-->            
 		<table id="wizform_team_name_table">
-			<textfield id="team_name_collection_0" set="" />
+			<textfield id="wizform_team_name_collection_0" set="" />
 		</table>
 		<button id="wiz_next_button" />
 		<browser assert="Missing required field: Name:" />

@@ -52,8 +52,8 @@
 		</table>
 		<button value="  Select  " />
 		<table id="EditView_team_name_table">
-			<textfield id="team_name_collection_0" assert="{@teams_9447.team1}" />
-			<textfield id="team_name_collection_1" assert="{@teams_9447.team1}" />
+			<textfield id="EditView_team_name_collection_0" assert="{@teams_9447.team1}" />
+			<textfield id="EditView_team_name_collection_1" assert="{@teams_9447.team1}" />
 		</table>
 		<form id="EditView">
 			<textfield id="name" set="{@teams_9447.subject} {@user.name} {@stamp}" />                            

@@ -50,9 +50,9 @@
 		<button value="  Select  " />
 
 		<form id="EditView">
-			<textfield id="team_name_collection_0" assert="{@teams_9503.team0}" /> 
-			<textfield id="team_name_collection_1" assert="{@teams_9503.team1}" />
-			<textfield id="team_name_collection_2" assert="{@teams_9503.team2}" />
+			<textfield id="EditView_team_name_collection_0" assert="{@teams_9503.team0}" />
+			<textfield id="EditView_team_name_collection_1" assert="{@teams_9503.team1}" />
+			<textfield id="EditView_team_name_collection_2" assert="{@teams_9503.team2}" />
 		</form>
 		<button value="Cancel" alert="true" />
 		<browser assert="Opportunities" />         

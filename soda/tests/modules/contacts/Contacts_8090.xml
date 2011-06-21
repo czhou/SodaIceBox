@@ -92,7 +92,7 @@
 		<select id="industry" exists="true"/>
 		<select id="account_type" exists="true"/>
 		<textfield id="assigned_user_name" exists="true"/>
-		<textfield id="team_name_collection_0" exists="true"/>
+		<textfield id="form_QuickCreate_Accounts_team_name_collection_0" exists="true"/>
 	</div>
 
 	<!--Make sure pop up window closed-->

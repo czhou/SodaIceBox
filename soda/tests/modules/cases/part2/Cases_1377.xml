@@ -54,7 +54,7 @@
 
 	<csv file="{@global.scriptsdir}/csvs/cases/Case_1377.csv" var="Case_1377">
 		<textfield id="name" set="{@Case_1377.name} {@user.name} {@stamp}" />
-		<textfield id="team_name_collection_0" set="" />
+		<textfield id="form_SubpanelQuickCreate_Notes_team_name_collection_0" set="" />
 		<button id="Notes_subpanel_save_button" />
 		<browser assert="No Primary Team specified" />
 	</csv>

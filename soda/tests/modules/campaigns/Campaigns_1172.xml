@@ -59,7 +59,7 @@
 		<browser assert="Campaign Header" />
 		<!--teams select-->            
 		<table id="wizform_team_name_table">
-			<textfield id="team_name_collection_0" set="" />
+			<textfield id="wizform_team_name_collection_0" set="" />
 			<button value="Select" />
 		</table>
 		<browser assert="Team Search" />

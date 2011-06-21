@@ -53,7 +53,7 @@
 	</div>
 
 	<csv file="{@global.scriptsdir}/csvs/cases/Case_1366.csv" var="Case_1366">
-		<textfield id="team_name_collection_0" set="" />
+		<textfield id="form_SubpanelQuickCreate_Calls_team_name_collection_0" set="" />
 		<textfield id="date_start_date" set="" />
 		<button id="Calls_subpanel_save_button" />
 	</csv>

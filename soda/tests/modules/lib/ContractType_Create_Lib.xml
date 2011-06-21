@@ -42,7 +42,7 @@
 
       <button value="Save" />
       <hidden name="record" var="ContractType_id" />
-      <table class="list view">
+      <table class="detail view">
          <browser assert="{@ContractType_Create_Lib.name} {@stamp}" />
       </table>
       <var var="ContractType_Create_Lib" 

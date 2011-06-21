@@ -50,7 +50,7 @@
 		<!--Remove team-->
 		<table id="MassUpdate_team_name_table">
 			<image id="remove_team_name_collection_0" click="true" />
-			<textfield id="team_name_collection_0" assert="" />
+			<textfield id="MassUpdate_team_name_collection_0" assert="" />
 		</table>
 	</csv>
 

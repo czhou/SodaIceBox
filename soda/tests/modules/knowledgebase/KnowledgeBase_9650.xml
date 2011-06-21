@@ -60,7 +60,7 @@
 		<!--Check default info-->
 		<form id="EditView">
 			<textfield id="assigned_user_name" assert="{@knowledgebase_9650.author}" />
-			<textfield id="team_name_collection_0" assert="{@knowledgebase_9650.team1}" />
+			<textfield id="EditView_team_name_collection_0" assert="{@knowledgebase_9650.team1}" />
 			<textfield id="kbdocument_revision_number" assert="{@knowledgebase_9650.revision}" />
 		</form>
 

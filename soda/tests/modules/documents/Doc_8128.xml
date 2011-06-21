@@ -40,7 +40,7 @@
 	<csv file="{@global.scriptsdir}/modules/lib/Document_Create_Lib.csv" var="doc_record_8128">      
 		<!--Teams select-->
 		<table id="EditView_team_name_table">
-			<textfield id="team_name_collection_0" set="" />
+			<textfield id="EditView_team_name_collection_0" set="" />
 			<button value="Select" />
 		</table>
 		<browser assert="Team Search" />
