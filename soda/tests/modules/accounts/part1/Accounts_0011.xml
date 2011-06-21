@@ -28,13 +28,17 @@
 <soda>
 	<puts text="Test: Accounts_0011.xml starting." />
 
-	<link id="moduleTab_Accounts" />
+	<link id="moduleTab_Accounts" click="false" jscriptevent="onmouseover" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
+
 	<link text="View Account Reports" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Reports&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Reports&amp;action=index" 
+         click="false" />
 	</div>
 	<puts text="Test: Accounts_0011.xml finished." />
 </soda>
+
