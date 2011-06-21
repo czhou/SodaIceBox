@@ -113,6 +113,10 @@
 		</wait>
 		<button id="deleteReportButton" alert="true" />
 	</csv>
+	<!--Clear search form-->
+	<link id="moduleTab_Reports" />
+	<button value=" Clear "/>
+	<button id="search_form_submit"/>
 	<puts text="Test: Reports_10785.xml finished" />
 
 </soda>
