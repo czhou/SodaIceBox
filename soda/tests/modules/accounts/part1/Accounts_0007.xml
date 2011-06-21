@@ -34,9 +34,11 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="@{global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
 
+	<textfield id="name_basic" clear="true" />
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">
@@ -51,13 +53,17 @@
 		<table id="EditView_team_name_table">
 			<button value="Select" />
 		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@account_record_0007.team_name}" />
-		<button value="Search" />
-		<link text="{@account_record_0007.team_name}" />
+
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />
+         <textfield name="name" set="{@account_record_0007.team_name}" />
+         <button value="Search" />
+         <link text="{@account_record_0007.team_name}" />
+      </attach>
 
 		<form id="EditView">
-			<textfield id="name" set="{@account_record_0007.name} {@user.name} {@stamp}" />
+			<textfield id="name" 
+            set="{@account_record_0007.name} {@user.name} {@stamp}" />
 		</form>
 		<button value="Save" />
 		<browser assert="{@account_record_0007.name} {@user.name} {@stamp}" />
@@ -67,3 +73,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0007.xml finished." />
 </soda>
+
