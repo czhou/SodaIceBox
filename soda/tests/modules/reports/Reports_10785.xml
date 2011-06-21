@@ -104,6 +104,9 @@
 
 		<!-- delete report -->
 		<link id="moduleTab_Reports" />
+		<link text="Basic Search" required="false"/>
+		<textfield name="name_basic" set="{@reports_10785.report_name} {@stamp}"/>
+		<button id="search_form_submit"/>
 		<link text="{@reports_10785.report_name} {@stamp}" />
 		<wait condition="true">
 			<button id="deleteReportButton" />
