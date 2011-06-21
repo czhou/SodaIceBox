@@ -33,10 +33,13 @@
 
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
-	<link text="/Basic Search/" required="false" timeout="2" />
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv" var="account_record_0010">
+
+	<link id="name_basic" required="false" />
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv"
+      var="account_record_0010">
 		<button id="search_form_clear" />
 		<textfield id="name_basic" set="{@account_record_0010.name}" />
 		<button id="search_form_submit" />
@@ -49,3 +52,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0010.xml finished." />
 </soda>
+
