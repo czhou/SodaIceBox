@@ -79,7 +79,7 @@
     <link text="df_field_c" class="mbLBLL" assertPage="false" />
     <checkbox id="dependent" assert="true" />
     <button name="fdeletebtn" assertPage="false" alert="true"/>
-    <wait timeout="5" />
+    <wait timeout="10" />
     <div id="studiofields">
     	<browser assertnot="df_field_c" />
     </div>
