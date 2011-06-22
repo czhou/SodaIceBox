@@ -106,6 +106,14 @@
     </form>
     <wait timeout="3" />
     <link text="phone_fax" class="mbLBLL" assertPage="false" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set=""/>
+      <button value="Save" />
+      <wait timeout="3" />
+    </div>    
     <checkbox id="calculated" set="false" />
     <form id="popup_form_id" >
       <browser assertnot="Formula Builder" />
