@@ -53,6 +53,7 @@
 		<div id="list_subpanel_history">
 			<browser assert="{@Quote_2589.archived_email_name}"/>
 			<link class="listViewTdToolsS1" index="2" click="true" alert="true"/>
+			<wait timeout="5"/>
 			<browser assertnot="{@Quote_2589.archived_email_name}"/>
 		</div>
 	</csv>

@@ -149,7 +149,7 @@
 		<button value="Search" />
 		<link text="{@edit_contact_record.team_name}" />
 
-		<button id="CANCEL_HEADER" />
+		<button id="CANCEL_HEADER" alert="true"/>
 
 		<!--Verify modify ok-->
 		<div id="list_subpanel_contacts">
