@@ -49,7 +49,7 @@
 
 	<button id="Activities_schedulemeeting_button"/>
 	<textfield id="name" set=""/>
-	<button id="SAVE"/>
+	<button id="Meetings_subpanel_save_button"/>
 
 	<browser assert="Missing required field: Subject"/>
 	<link id="moduleTab_Accounts" alert="true"/>
