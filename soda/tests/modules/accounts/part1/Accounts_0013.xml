@@ -33,38 +33,44 @@
 
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
-	<wait timeout="3" />
-	<link text="/Advanced Search/" />
+
+	<wait timeout="1" />
+
+	<link id="advanced_search_link" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv" var="account_record_0013">
+		<textfield id="name_advanced" clear="true" />
 		<textfield id="name_advanced" set="{@pre_account_name}" />
-
-		<textfield id="website_advanced" set="{@account_record_0013.website}" />
-
+		<textfield id="website_advanced" clear="true" />
+		<textfield id="website_advanced" set="http://{@account_record_0013.website}" />
 		<select name="industry_advanced[]" set="{@account_record_0013.industry}" />
-
 		<select name="account_type_advanced[]" set="{@account_record_0013.account_type}" />
-
+		<textfield id="phone_advanced" clear="true" />
 		<textfield id="phone_advanced" set="{@account_record_0013.phone_office}" />
-
+		<textfield id="email_advanced" clear="true" />
 		<textfield id="email_advanced" set="{@pre_account_email}" />
 	</csv>
+
+   <wait timeout="1" />
 	<button id="search_form_submit" />
-	<wait timeout="5" />
+	<wait timeout="3" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
 	</table>
 	<wait timeout="3" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 		<browser assert="{@pre_account_name}" />
 	</div>
 
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
+
 	<wait timeout="3" />
 	<link text="Basic Search" />
 	<wait timeout="3" />
@@ -75,3 +81,4 @@
 	<puts text="Test: Accounts_0013.xml finished." />
 
 </soda>
+
