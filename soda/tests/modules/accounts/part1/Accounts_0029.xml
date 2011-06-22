@@ -33,37 +33,34 @@
 
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
+	<textfield id="name_basic" clear="true" />
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
-	<checkbox name="massall" set="true" />
+	<checkbox name="massall" click="true" />
 	<link id="actions_link" />
 	<link text="Mass Update" />
 
 	<!--Mass Update-->
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0029.csv" var="mass_update_record_0029" />
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0029.csv" 
+      var="mass_update_record_0029" />
 
 	<select id="mass_industry" set="{@mass_update_record_0029.mass_industry}" />
-
 	<select id="mass_account_type" set="{@mass_update_record_0029.mass_account_type}" />
-
 	<button id="update_button" alert="true" />
-
 
 	<!---Verify the update fields-->
 	<table class="list view">
 		<link text="{@pre_account_name}" />
 	</table>
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 		<browser assert="{@pre_account_name}" />
 	</div>
 
 	<button id="edit_button" />
-
 	<select id="industry" assert="{@mass_update_record_0029.mass_industry}" />
-
 	<select id="account_type" assert="{@mass_update_record_0029.mass_account_type}" />
 
 
@@ -71,3 +68,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0029.xml finished." />
 </soda>               
+
