@@ -45,7 +45,7 @@
 		<textfield id="name" set="{@Project_2847.meeting_name}"/>
 		
 		<button id="Meetings_subpanel_save_button"/>
-		<wait timeout="3"/>	
+		<wait timeout="6"/>	
 		
 		<link text="{@Project_2847.meeting_name}"/>
 		

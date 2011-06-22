@@ -85,7 +85,7 @@
     <!-- Now delete that field -->
     <link text="cf_field_c" class="mbLBLL" assertPage="false" />
     <button name="fdeletebtn" assertPage="false" alert="true"/>
-    <wait timeout="5" />
+    <wait timeout="10" />
     <div id="studiofields">
     	<browser assertnot="cf_field_c" />
     </div>

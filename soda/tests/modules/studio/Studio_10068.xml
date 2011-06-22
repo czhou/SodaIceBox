@@ -111,7 +111,7 @@
       <browser assertnot="Formula Builder" />
       <button name="fsavebtn" assertPage="false" />
     </form>
-    <wait timeout="3" />
+    <wait timeout="5" />
     
     <!-- Delete account record -->
     <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />

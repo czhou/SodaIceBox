@@ -109,5 +109,9 @@
 	<table class="list view">
 		<span class="pageNumbers" assert="(0 - 0 of 0)" />
 	</table>
+	<form name="search_form">
+		<button value="Clear" />
+		<button value="Search" />
+	</form>
 	<puts text="Lib: Email_User_Delete_Lib.xml finished." />
 </soda>

@@ -47,8 +47,8 @@
 		
 		<button value="Search"/>
 		
+		<link text="{@pre_opp_name}"/>
 		<div id="list_subpanel_opportunities">
-			<link text="{@pre_opp_name}"/>
 			<link class="listViewTdToolsS1" index="2" click="true" alert="true"/>
 			<wait timeout="3"/>
 			<link text="{@pre_opp_name}" exist="false" click="false"/>

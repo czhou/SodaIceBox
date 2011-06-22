@@ -100,7 +100,7 @@
 		<!--link text="/My Drafts/" /-->
 		<link id="ygtvlabelel2"/>
 	</div>
-	<wait timeout="5" />
+	<wait timeout="10" />
 	<div text="{@email_record_9770.subject} {@stamp}" click="true"
 		jscriptevent="onmouseup" />
 

@@ -1,0 +1,89 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--Create opportunities_Verify that a related opportunity can be created from contact detail view-->
+	<puts text="Test: Contacts_7903.xml starting." />
+
+	<!--Create contact record-->
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+
+	<!--Search the Contact record-->
+	<link id="moduleTab_Contacts" />
+	<link href="index.php?module=Contacts&amp;action=index" click="false" />
+	<link id="basic_search_link" required="false" timeout="2"/>
+	<textfield id="search_name_basic" set="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	<button id="search_form_submit" />
+
+	<!--Go its detail view and use full form to create a new opportunity -->
+	<table class="list view">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+
+	<!--Create a opportunity from opportunities subpanel and use full form-->
+	<button id="opportunities_contacts_create_button"/>
+	<button id="Opportunities_subpanel_full_form_button"/>
+	<csv file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.csv" var="Contact_7903">
+		<textfield id="name" set="{@Contact_7903.name} {@user.name} {@stamp}" /> 
+		<textfield id="amount" set="{@Contact_7903.amount}" /> 
+		<textfield id="probability" set="{@Contact_7903.probability}" /> 
+		<textfield id="date_closed" set="{@Contact_7903.date_closed}" /> 
+		<textfield id="next_step" set="{@Contact_7903.next_step}" />
+		<textfield id="description" set="{@Contact_7903.description}" />
+		<select id="opportunity_type" set="{@Contact_7903.opportunity_type}" />
+		<select id="lead_source" set="{@Contact_7903.lead_source}" />
+		<select name="currency_id" set="{@Contact_7903.currency_id}" />
+		<select id="sales_stage" set="{@Contact_7903.sales_stage}" />
+
+		<!--Account Select-->
+		<button id="btn_account_name" />
+		<browser assert="Account Search" />
+		<textfield id="name_advanced" set="{@pre_account_name}" /> 
+		<button value="Search" />
+		<link text="{@pre_account_name}" />
+
+		<button id="SAVE_HEADER" />
+	</csv>
+
+	<!--Verify new opportunity show right on subpanel-->
+	<div id="list_subpanel_opportunities">
+		<link text="{@Contact_7903.name} {@user.name} {@stamp}" click="false" exists="true"/>
+		<link text="{@pre_account_name}" click="false" exists="true"/>
+		<browser assert="{@Contact_7903.sales_stage}"/>
+		<browser assert="{@Contact_7903.amount}"/>
+		<browser assert="{@Contact_7903.date_closed}"/>
+	</div>
+
+
+	<!--Clean actions-->
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<puts text="Test: Contacts_7903.xml finished." />
+
+</soda>

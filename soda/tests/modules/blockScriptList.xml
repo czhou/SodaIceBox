@@ -193,55 +193,6 @@
 	
 	<!-- Beginning of illegal javascript related blocks -->
 	<block>
-		<testfile>Calendar_0736</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0737</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0738</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0739</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0740</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0741</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0742</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
 		<testfile>Reports_7734</testfile>
 		<bugnumber></bugnumber>
 		<reason>illegal javascript accessor</reason>
@@ -350,90 +301,6 @@
 	
 	<block>
 		<testfile>Reports_7798.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_3642.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0671.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0684.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0688.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0689.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0690.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0693.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0694.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0696.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0697.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0699.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0700.xml</testfile>
 		<bugnumber></bugnumber>
 		<reason>to be fixed later</reason>
 		<modulename>Incoming</modulename>
@@ -699,6 +566,14 @@
 	</block>
 	
 	<!-- End incoming failed scripts -->
+
+	<block>
+		<testfile>Emails_11443</testfile>
+		<bugnumber>11443</bugnumber>
+		<reason>Can not locate email text field on quick create lead view</reason>
+		<modulename>Email</modulename>
+	</block>
+
 	<block>
 		<testfile>Opportunity_10887</testfile>
 		<bugnumber>41775</bugnumber>

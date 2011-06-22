@@ -104,12 +104,19 @@
 
 		<!-- delete report -->
 		<link id="moduleTab_Reports" />
+		<link text="Basic Search" required="false"/>
+		<textfield name="name_basic" set="{@reports_10785.report_name} {@stamp}"/>
+		<button id="search_form_submit"/>
 		<link text="{@reports_10785.report_name} {@stamp}" />
 		<wait condition="true">
 			<button id="deleteReportButton" />
 		</wait>
 		<button id="deleteReportButton" alert="true" />
 	</csv>
+	<!--Clear search form-->
+	<link id="moduleTab_Reports" />
+	<button value=" Clear "/>
+	<button id="search_form_submit"/>
 	<puts text="Test: Reports_10785.xml finished" />
 
 </soda>

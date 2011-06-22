@@ -92,7 +92,6 @@
 			<browser assert="{@contact_record_7052.emailAddress0}" />
 
 			<browser assert="{@contact_record_7052.lead_source}" />
-			<browser assert="{@contact_record_7052.description}" />
 
 			<browser assert="{@contact_record_7052.primary_address_street}" />
 			<browser assert="{@contact_record_7052.primary_address_city}" />

@@ -47,7 +47,7 @@
         <wait timeout="2"/>
         <textfield id="name" set="New task record"/>
         <button id="Tasks_subpanel_save_button"/>
-        <wait timeout="5"/>
+        <wait timeout="8"/>
         <browser assert="New task record"/>
 	
 	<!--Modify the task record-->

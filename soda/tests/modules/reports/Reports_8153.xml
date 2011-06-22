@@ -79,10 +79,16 @@
 	<browser assert="Apparel" />
 	
 	<link id="moduleTab_Reports" />
+	<link text="Basic Search" required="false"/>
+        <textfield name="name_basic" set="{@report_title}"/>
+        <button id="search_form_submit"/>
 	
-	<browser assert="{@report_title}" />
-	
-
+	<link text="{@report_title}"/>
+	<button id="deleteReportButton" alert="true"/>
+	<!--Clear search form-->
+        <link id="moduleTab_Reports" />
+        <button value=" Clear "/>
+        <button id="search_form_submit"/>
 
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<!--

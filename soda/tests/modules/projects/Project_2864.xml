@@ -52,6 +52,7 @@
 			<link text="{@pre_account_name}" click="false"/>
 			<link class="listViewTdToolsS1" index="2" click="true" alert="true"/>
 		</div>
+		<wait timeout="5"/>
 		<link text="{@pre_account_name}" exist="false" click="false"/>
 
         <puts text="Test Case 2864 is finished!"/>
