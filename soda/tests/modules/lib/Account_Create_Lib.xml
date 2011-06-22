@@ -28,13 +28,12 @@
 <soda>
 	<puts text="Lib: Account_Create_Lib.xml starting." />
 	<timestamp />
-	<link id="moduleTab_Accounts" click="false" jscriptevent="onmouseover" />
-   <wait timeout="1" />
-	<link text="Create Account" />
 
 	<csv file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.csv" 
       var="account_record">
 
+      <link id="moduleTab_Accounts" click="false" jscriptevent="onmouseover" />
+      <wait timeout="1" />
 		<link text="Create Account" />
 		<browser assert="Create" />
 
