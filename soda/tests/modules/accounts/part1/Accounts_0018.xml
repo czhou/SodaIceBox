@@ -30,7 +30,7 @@
 		Copy Address to Checked Contacts_Verify that address information of this
 		account is copied to the checked contact.
 	-->
-	<puts text="Test: Accounts_0017.xml starting." />
+	<puts text="Test: Accounts_0018.xml starting." />
 
 	<!--Create 1 account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" />
@@ -48,7 +48,8 @@
 		<link text="{@pre_account_name}" />
 	</table>
 	<button id="edit_button" />
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0018.csv" var="account_record_0018" />
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0018.csv" 
+      var="account_record_0018" />
 	<textfield id="billing_address_street" set="{@account_record_0018.billing}" />
 	<textfield id="billing_address_city" set="{@account_record_0018.city}" />
 	<textfield id="billing_address_state" set="{@account_record_0018.state}" />
@@ -56,22 +57,24 @@
 	<button value="Save" />
 
 	<!-- Create 2 Contacts associated with this Account -->
-	<form id="formformaccounts_contacts">
-		<button id="accounts_contacts_create_button" />
-	</form>
+
+   <form id="formformaccounts_contacts">
+      <button id="accounts_contacts_create_button" />
+   </form>
+
 	<wait timeout="3" />
 	<div id="form_SubpanelQuickCreate_Contacts_tabs">
-		<textfield id="last_name" set="{@account_record_0018.last_name1}" />
 		<textfield id="last_name" set="{@account_record_0018.last_name1}" />
 	</div>
 	<button id="Contacts_subpanel_save_button" />
 	<wait timeout="3" />
-	<form id="formformaccounts_contacts">
-		<button id="accounts_contacts_create_button" />
-	</form>
+
+   <form id="formformaccounts_contacts">
+      <button id="accounts_contacts_create_button" />
+   </form>
+
 	<wait timeout="3" />
 	<div id="form_SubpanelQuickCreate_Contacts_tabs">
-		<textfield id="last_name" set="{@account_record_0018.last_name2}" />
 		<textfield id="last_name" set="{@account_record_0018.last_name2}" />
 	</div>
 	<button id="Contacts_subpanel_save_button" />
@@ -83,10 +86,13 @@
 		</table>
 	</div>
 	<wait timeout="3" />
-	<table class="list view" jscriptevent="onclick">
-		<checkbox name="massall" click="true" />
-	</table>
-	<button value="  Copy Address to Checked Contacts  " />
+
+   <attach title="SugarCRM">
+      <table class="list view" jscriptevent="onclick">
+         <checkbox name="massall" click="true" />
+      </table>
+      <button value="  Copy to Primary Address  " />
+   </attach>
 	<wait timeout="3" />
 	
 	<!-- Verify -->
