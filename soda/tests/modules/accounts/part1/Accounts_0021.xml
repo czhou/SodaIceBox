@@ -28,9 +28,10 @@
 <soda>
 	<puts text="Test: Accounts_0021.xml starting." />
 
-	<link id="moduleTab_Accounts" />
+	<link id="moduleTab_Accounts" click="false" jscriptevent="onmouseover" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
 	<csv file="{@global.scriptsdir}/export/Accounts.csv" var="account_record_0021">
 
@@ -65,17 +66,20 @@
 		<!--Search the record to assert import successfully -->
 		<link id="moduleTab_Accounts" />
 		<div class="moduleTitle">
-			<link href="index.php?module=Accounts&amp;action=index" click="false" />
+			<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+            click="false" />
 		</div>
+		<textfield id="name_basic" clear="true" />
 		<textfield id="name_basic" set="{@account_record_0021.name}" />
 		<button id="search_form_submit" />
 		<table class="list view">
 			<link text="{@account_record_0021.name}" />
 		</table>
-		<wait timeout="10" />
+		<wait timeout="5" />
 		<!--Go to the Detail View to verify-->
 		<div class="moduleTitle">
-			<link href="index.php?module=Accounts&amp;action=index" click="false" />
+			<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+            click="false" />
 			<browser assert="{@account_record_0021.name}" />
 		</div>
 		<button id="edit_button" />
@@ -104,30 +108,40 @@
 
 		<textfield id="annual_revenue" assert="{@account_record_0021.annual_revenue}" />
 
-		<textfield id="billing_address_street" assert="{@account_record_0021.billing_address_street}" />
+		<textfield id="billing_address_street" 
+         assert="{@account_record_0021.billing_address_street}" />
 
-		<textfield id="billing_address_city" assert="{@account_record_0021.billing_address_city}" />
+		<textfield id="billing_address_city" 
+         assert="{@account_record_0021.billing_address_city}" />
 
-		<textfield id="billing_address_state" assert="{@account_record_0021.billing_address_state}" />
+		<textfield id="billing_address_state" 
+         assert="{@account_record_0021.billing_address_state}" />
 
-		<textfield id="billing_address_postalcode" assert="{@account_record_0021.billing_address_postalcode}" />
+		<textfield id="billing_address_postalcode" 
+         assert="{@account_record_0021.billing_address_postalcode}" />
 
-		<textfield id="billing_address_country" assert="{@account_record_0021.billing_address_country}" />
+		<textfield id="billing_address_country" 
+         assert="{@account_record_0021.billing_address_country}" />
 
-		<textfield id="shipping_address_street" assert="{@account_record_0021.shipping_address_street}" />
+		<textfield id="shipping_address_street" 
+         assert="{@account_record_0021.shipping_address_street}" />
 
-		<textfield id="shipping_address_city" assert="{@account_record_0021.shipping_address_city}" />
+		<textfield id="shipping_address_city" 
+         assert="{@account_record_0021.shipping_address_city}" />
 
-		<textfield id="shipping_address_state" assert="{@account_record_0021.shipping_address_state}" />
+		<textfield id="shipping_address_state" 
+         assert="{@account_record_0021.shipping_address_state}" />
 
-		<textfield id="shipping_address_postalcode" assert="{@account_record_0021.shipping_address_postalcode}" />
+		<textfield id="shipping_address_postalcode" 
+         assert="{@account_record_0021.shipping_address_postalcode}" />
 
-		<textfield id="shipping_address_country" assert="{@account_record_0021.shipping_address_country}" />
+		<textfield id="shipping_address_country" 
+         assert="{@account_record_0021.shipping_address_country}" />
 
-		<textfield id="Accounts0emailAddress0" assert="{@account_record_0021.email1}" />
+		<textfield id="Accounts0emailAddress0" 
+         assert="{@account_record_0021.email1}" />
 
 		<textfield id="description" assert="{@account_record_0021.description}" />
-
 		<button value="Save" />
 	</csv>
 
@@ -135,3 +149,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0021.xml finished." />
 </soda>
+
