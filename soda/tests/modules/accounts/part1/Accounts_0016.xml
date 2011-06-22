@@ -45,24 +45,25 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
+
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
-	<wait timeout="10" />
+	<wait timeout="5" />
 	<form id="MassUpdate">
 		<link class="listViewThLinkS1" />
 	</form>
 	<table class="list view">
-		<row class="oddListRowS1" index="1" >
+		<tr class="oddListRowS1" index="0" >
 			<link text="{@account_name1}" click="false" />
-		</row>
-		<row class="evenListRowS1" index="1" >
+		</tr>
+		<tr class="evenListRowS1" index="0" >
 			<link text="{@account_name2}" click="false" />
-		</row>
-		<row class="oddListRowS1" index="2" >
+		</tr>
+		<tr class="oddListRowS1" index="1" >
 			<link text="{@account_name3}" click="false" />
-		</row>
+		</tr>
 	</table>
 
 	<form id="MassUpdate">
@@ -70,18 +71,19 @@
 	</form>
 
 	<table class="list view">
-		<row class="oddListRowS1" index="1" >
+		<tr class="oddListRowS1" index="0" >
 			<link text="{@account_name3}" click="false" />
-		</row>
-		<row class="evenListRowS1" index="1" >
+		</tr>
+		<tr class="evenListRowS1" index="0" >
 			<link text="{@account_name2}" click="false" />
-		</row>
-		<row class="oddListRowS1" index="2" >
+		</tr>
+		<tr class="oddListRowS1" index="1" >
 			<link text="{@account_name1}" click="false" />
-		</row>
+		</tr>
 	</table>
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0016.xml finished." />
 </soda>
+
