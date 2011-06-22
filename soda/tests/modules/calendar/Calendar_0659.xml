@@ -65,11 +65,13 @@
 		<link href="index.php?module=Calendar&amp;action=index" click="false" />
 	</div>
 	<button value=" Shared " />
+	<link class="tabFormAdvLink" index="2" />
 	<div id="shared_cal_edit">
 		<select id="team_id" set="Administrator" />
+		<select id="shared_ids" set="admin" />
 		<button value="Select" />
 	</div>
 	
-
+	<h5 class="calSharedUser" assert="Administrator" />
 	<puts text="Test: Calendar_0659.xml finished." />
 </soda>
