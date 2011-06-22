@@ -52,8 +52,8 @@
 			<textfield id="name" set="{@account_record_0004.name} {@user.name} {@stamp}" />
 
 			<textfield id="website" set="{@account_record_0004.website}" />
-			<link id="dcmenu_close_link" alert="true"/>
 		</form>
+		<link id="dcmenu_close_link" alert="true"/>
 
 		<textfield id="name_basic" set="{@account_record_0004.name} {@user.name} {@stamp}" />
 		<button id="search_form_submit" />
