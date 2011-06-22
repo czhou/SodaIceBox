@@ -79,7 +79,7 @@
 
 	<!-- *4* Check new project show in Projects subpanel-->
 	<div id="list_subpanel_project">
-		<link text="{@Contacts_4375.project_name}" click="false" exist="true"/>
+		<link text="{@Contact_4375.project_name}" click="false" exist="true"/>
 		<browser assert="{@Contact_4375.start_date}"/>
 		<browser assert="{@Contact_4375.end_date}"/>
 	</div>
