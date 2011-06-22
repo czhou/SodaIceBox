@@ -52,7 +52,7 @@
 			<textfield id="name" set="{@account_record_0004.name} {@user.name} {@stamp}" />
 
 			<textfield id="website" set="{@account_record_0004.website}" />
-			<lick id="dcmenu_close_link" alert="true"/>
+			<link id="dcmenu_close_link" alert="true"/>
 		</form>
 
 		<textfield id="name_basic" set="{@account_record_0004.name} {@user.name} {@stamp}" />
