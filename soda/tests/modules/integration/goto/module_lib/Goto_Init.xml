@@ -115,7 +115,7 @@
 	<browser assert="Application:" />
 	<select id="application" set="GoToMeeting" />
 	<textfield id="name" set="qa@sugarcrm.com" />
-	<textfield id="password" set="Sugarqa123" />
+	<textfield id="password" set="Sugar123!" />
 	
 	<button id="EditViewSave" />	
 	
