@@ -62,6 +62,10 @@
 			<link text="{@account_record_0004.name} {@user.name} {@stamp}" exist="false" click="false"/>
 		</table>
 	</csv>
+	
+	<!--Clear search form-->
+	<button id="search_form_clear"/>
+	<button id="search_form_submit" />
 
 	<puts text="Test: Accounts_0127.xml finished." />
 </soda>
