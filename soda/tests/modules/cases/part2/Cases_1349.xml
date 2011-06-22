@@ -35,11 +35,13 @@
 
 	<csv file="{@global.scriptsdir}/csvs/cases/Case_1349.csv" var="Cases_1349">
 		<button id="Activities_createtask_button" />
+		<wait timeout="3" />
 		<div id="Default_Tasks_Subpanel">
 			<textfield id="name" set="{@Cases_1349.task_subject}" />
 			<select id="status" set="{@Cases_1349.task_status}" />
 		</div>
 		<button id="Tasks_subpanel_save_button" />
+		<wait timeout="3" />
 		<browser action="refresh" />
 
 		<div id="list_subpanel_history">
