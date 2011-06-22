@@ -30,35 +30,36 @@
 
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
 	<wait timeout="3" />
-	<link text="/Advanced Search/" />
+	<link id="advanced_search_link" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv" var="account_record_0015">
+		<textfield id="name_advanced" clear="true" />
 		<textfield id="name_advanced" set="{@account_record_0015.name}" />
-
+		<textfield id="website_advanced" clear="true" />
 		<textfield id="website_advanced" set="{@account_record_0015.website}" />
-
 		<select name="industry_advanced[]" set="{@account_record_0015.industry}" />
-
 		<select name="account_type_advanced[]" set="{@account_record_0015.account_type}" />
-
+		<textfield id="phone_advanced" clear="true" />
 		<textfield id="phone_advanced" set="{@account_record_0015.phone_office}" />
-
+		<textfield id="email_advanced" clear="true" />
 		<textfield id="email_advanced" set="{@account_record_0015.emailAddress0}" />
 	</csv>
+
+   <wait timeout="3" />
 	<button name="clear" />
 
 	<!--Assert-->
-	<textfield id="name_advanced" assert="/^$/" />
-	<select name="industry_advanced[]" assert="/^$/" />
-	<select name="account_type_advanced[]" assert="/^$/" />
-	<textfield id="phone_advanced" assert="/^$/" />
-	<textfield id="email_advanced" assert="/^$/" />
+	<textfield id="name_advanced" assert="" />
+	<select name="industry_advanced[]" assert="" />
+	<select name="account_type_advanced[]" assert="" />
+	<textfield id="phone_advanced" assert="" />
+	<textfield id="email_advanced" assert="" />
 
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
 	
 	<button id="search_form_clear" />
@@ -66,3 +67,4 @@
 
 	<puts text="Test: Accounts_0015.xml finished." />
 </soda>
+
