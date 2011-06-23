@@ -27,7 +27,7 @@
 
 <soda>
 	<puts text="Lib: Note_Delete_Lib.xml starting." />
-	<link href="index.php?module=Activities&amp;action=index" />
+	<link href="{@global.url}/index.php?module=Activities&amp;action=index" />
 	<link text="View Notes" />
 	<browser assert="Notes" />
 	<button name="clear" />
