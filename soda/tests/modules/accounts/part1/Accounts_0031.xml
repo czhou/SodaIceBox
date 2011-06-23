@@ -32,13 +32,14 @@
 	-->
 	<puts text="Test: Accounts_0031.xml starting." />
 
-
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 	<button name="Activities_createtask_button" />
+
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0032.csv" var="activity_record_0032">
-		<form id="form_SubpanelQuickCreate_Tasks">
-			<textfield id="name" set="{@activity_record_0032.name} {@user.name} {@stamp}" />
+      <form id="form_SubpanelQuickCreate_Tasks">
+			<textfield id="name" 
+            set="{@activity_record_0032.name} {@user.name} {@stamp}" />
 			<select id="priority" set="{@activity_record_0032.priority}" />
 			<select id="status" set="{@activity_record_0032.status}" />
 			<textfield id="description" set="{@activity_record_0032.description}" />
@@ -49,7 +50,6 @@
 			<select id="date_due_minutes" set="{@activity_record_0032.date_due_minutes}" />
 			<select id="date_due_meridiem" set="{@activity_record_0032.date_due_meridiem}"
 				required="false" />
-			<checkbox id="date_due_flag" set="{@activity_record_0032.date_due_flag}" />
 
 			<!--Start Date-->
 			<textfield id="date_start_date" set="{@activity_record_0032.date_start_date}" />
@@ -57,27 +57,31 @@
 			<select id="date_start_minutes" set="{@activity_record_0032.date_start_minutes}" />
 			<select id="date_start_meridiem" set="{@activity_record_0032.date_start_meridiem}"
 				required="false" />
-			<checkbox id="date_start_flag" set="{@activity_record_0032.date_start_flag}" />
 		</form>
 
 		<!--user select-->
 		<button id="btn_assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield name="last_name_advanced" set="{@activity_record_0032.assigned_user_name}" />
-		<button value="Search" />
-		<link text="{@activity_record_0032.assigned_user_name}" />
+      <attach title="SugarCRM">
+         <browser assert="User Search" />
+         <textfield name="last_name_advanced" set="{@activity_record_0032.assigned_user_name}" />
+         <button value="Search" />
+         <link text="{@activity_record_0032.assigned_user_name}" />
+      </attach>
 
 		<!--teams select-->
 		<table id="form_SubpanelQuickCreate_Tasks_team_name_table">
 			<button value="Select" />
 		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@activity_record_0032.team_name}" />
-		<button value="Search" />
-		<link text="{@activity_record_0032.team_name}" />
+
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />
+         <textfield name="name" set="{@activity_record_0032.team_name}" />
+         <button value="Search" />
+         <link text="{@activity_record_0032.team_name}" />
+      </attach>
 		<wait timeout="2" />
 		<button id="Tasks_subpanel_save_button" />
-		<wait timeout="10" />
+		<wait timeout="5" />
 
 		<!--Verify the task record created in subpanel-->
 		<div id="list_subpanel_activities">
@@ -92,13 +96,15 @@
 		<form name="DetailView">
 			<hidden name="record" var="pre_activity_subpanel_id" />
 		</form>
-		<var var="pre_activity_subpanel_name" set="{@activity_record_0032.name} {@user.name} {@stamp}" />
+		<var var="pre_activity_subpanel_name" 
+         set="{@activity_record_0032.name} {@user.name} {@stamp}" />
 	</csv>
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
+	<textfield id="name_basic" clear="true" />
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">
@@ -108,15 +114,20 @@
 	<!--Goto Actitivies Subpanel & click Close-->
 	<div id="list_subpanel_activities">
 		<table class="list view">
-			<row class="oddListRowS1">
-				<image index="2" click="true" />
-			</row>
+			<tr class="oddListRowS1">
+				<image index="1" click="true" />
+			</tr>
 		</table>
 	</div>
 	<div id="closeActivityDialog">
-		<button value="OK" />
+      <div class="ft">
+         <span class="button-group">
+      		<button class="default" />
+         </span>
+      </div>
 	</div>
 	<wait timeout="15" />
+
 	<div id="list_subpanel_history">
 		<browser assert="{@pre_activity_subpanel_name}" />
 	</div>
@@ -125,4 +136,5 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0031.xml finished." />
 </soda>
+
                               

@@ -26,8 +26,14 @@
 -->
 
 <soda>
-	<script file="tests/modules/accounts/module_lib/setup-accounts.xml" />
-	<script fileset="tests/modules/accounts/part1" />
-	<script file="tests/modules/accounts/module_lib/cleanup-accounts.xml" />
+	<script file="/Users/trichmond/src/hacking/SodaIceBox/soda/tests/modules/accounts/module_lib/setup-accounts.xml" />
+
+	<!-- 
+      <script fileset="/Users/trichmond/src/hacking/SodaIceBox/soda/tests/modules/accounts/part1" /> 
+   -->
+
+	<script file="/Users/trichmond/src/hacking/SodaIceBox/soda/tests/modules/accounts/part1/Accounts_0003.xml" />
+
+	<script file="/Users/trichmond/src/hacking/SodaIceBox/soda/tests/modules/accounts/module_lib/cleanup-accounts.xml" />
 </soda>
 

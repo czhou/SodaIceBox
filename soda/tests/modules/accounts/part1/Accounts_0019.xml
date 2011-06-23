@@ -28,14 +28,14 @@
 <soda>
 	<puts text="Test: Accounts_0019.xml starting." />
 
-	<link id="moduleTab_Accounts" />
+	<link id="moduleTab_Accounts" click="false" jscriptevent="onmouseover" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
+
 	<csv file="{@global.scriptsdir}/export/Accounts.csv" var="account_record_0019">
-
 		<link text="Import Accounts" />
-
 
 		<!--Step1-->
 		<div class="moduleTitle">
@@ -70,7 +70,8 @@
 		<!--Search the record to assert import successfully -->
 		<link id="moduleTab_Accounts" />
 		<div class="moduleTitle">
-			<link href="index.php?module=Accounts&amp;action=index" click="false" />
+			<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+            click="false" />
 		</div>
 
 		<textfield id="name_basic" set="{@account_record_0019.name}" />
@@ -84,3 +85,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0019.xml finished." />
 </soda>
+
