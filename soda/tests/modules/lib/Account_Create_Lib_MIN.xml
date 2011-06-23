@@ -28,13 +28,13 @@
 <soda>
 	<puts text="Lib: Account_Create_Lib_MIN.xml starting." />
 	<timestamp />
-	<link id="moduleTab_Accounts" />
-	<wait condition="true">
-		<link text="Create Account" />
-	</wait>
+
 	<csv file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.csv" var="account_record">
+   	<link id="moduleTab_Accounts" click="false" jscriptevent="onmouseover" />
+      <wait timeout="2" />
 		<link text="Create Account" />
 		<browser assert="Create" />
+
 		<form id="EditView">
 			<textfield id="name" set="{@account_record.name} {@user.name} {@stamp}" />
 			<button value="Save" />
@@ -46,3 +46,4 @@
 	<var var="pre_account_email" set="{@stamp}{@account_record.emailAddress0}" />
 	<puts text="Lib: Account_Create_Lib_MIN.xml finished." />
 </soda>
+
