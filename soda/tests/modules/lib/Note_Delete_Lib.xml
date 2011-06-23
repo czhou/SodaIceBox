@@ -27,7 +27,7 @@
 
 <soda>
 	<puts text="Lib: Note_Delete_Lib.xml starting." />
-	<link id="moduleTab_Notes" />
+	<link id="moduleTab_Notes" click="false" jscriptevent="onmouseover" />
 	<link text="View Notes" />
 	<browser assert="Notes" />
 	<button name="clear" />
