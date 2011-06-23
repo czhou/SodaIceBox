@@ -25,7 +25,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-﻿<soda>
+<soda>
 	<puts text="Lib: Note_Delete_Lib.xml starting." />
 	<link href="index.php?module=Activities&amp;action=index" />
 	<link text="View Notes" />
