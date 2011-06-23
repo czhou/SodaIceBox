@@ -38,9 +38,10 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
 
+	<textfield id="name_basic" clear="true" />
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">
@@ -66,10 +67,13 @@
 		<table id="form_SubpanelQuickCreate_Notes_team_name_table">
 			<button value="Select" />
 		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@history_record_0036.team_name}" />
-		<button value="Search" />
-		<link text="{@history_record_0036.team_name}" />
+
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />
+         <textfield name="name" set="{@history_record_0036.team_name}" />
+         <button value="Search" />
+         <link text="{@history_record_0036.team_name}" />
+      </attach>
 
 		<button id="Notes_subpanel_save_button" />
 
@@ -83,8 +87,9 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
+	<textfield id="name_basic" clear="true" />
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
 
@@ -98,17 +103,28 @@
 	<div id="list_subpanel_history">
 		<table class="list view">
 			<link text="{@pre_history_subpanel_name}" click="false" />
+         
+         <tr class="oddListRowS1">
+            <td index="7">
+               <link class="listViewTdToolsS1" />
+            </td>
+         </tr>
 		</table>
-		<link class="listViewTdToolsS1" index="1" />
 	</div>
+
 	<browser assert="{@pre_history_subpanel_name}" />
 
 	<!--edit the record-->
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0037.csv" var="edit_history_record_0037">
 		<wait timeout="3" />
+
+		<textfield id="name" clear="true" />
 		<textfield id="name"
 			set="{@edit_history_record_0037.name} {@user.name} {@stamp}" />
-		<button value="Save" />
+
+      <div class="buttons">
+   		<button id="SAVE_FOOTER" />
+      </div>
 		<wait timeout="3" />
 
 		<browser assert="{@pre_account_name}" />
@@ -126,3 +142,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0037.xml finished." />
 </soda>
+
