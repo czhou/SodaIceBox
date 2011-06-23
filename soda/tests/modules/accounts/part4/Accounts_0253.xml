@@ -77,15 +77,13 @@
 		<button value="Save" />
 
 		<!--Edit the contact record-->
-		<div id="list_subpanel_contacts">
-			<link class="listViewTdToolsS1" index="1"/>
-			<textfield id="last_name" set=""/>
-			<button id="SAVE_HEADER"/>
-			<browser assert="Missing required field: Last Name"/>
-			<button id="CANCEL_HEADER" alert="true"/>
-			<link text="{@contact_record_0035.first_name} {@user.name} {@stamp} {@contact_record_0035.last_name}" click="false"/>
-			<link text="{@contact_record_0035.first_name} {@user.name} {@stamp} {@contact_record_0035.last_name} Modified" exist="false" click="false"/>
-		</div>
+		<link class="listViewTdToolsS1" index="1"/>
+		<textfield id="last_name" set=""/>
+		<button id="SAVE_HEADER"/>
+		<browser assert="Missing required field: Last Name"/>
+		<button id="CANCEL_HEADER" alert="true"/>
+		<link text="{@contact_record_0035.first_name} {@user.name} {@stamp} {@contact_record_0035.last_name}" click="false"/>
+		<link text="{@contact_record_0035.first_name} {@user.name} {@stamp} {@contact_record_0035.last_name} Modified" exist="false" click="false"/>
 
 		<!--Verify the contact record has been created-->
 		<div id="list_subpanel_contacts">
