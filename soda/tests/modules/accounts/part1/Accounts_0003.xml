@@ -28,34 +28,39 @@
 <soda>
 	<puts text="Test: Accounts_0003.xml starting." />
 
-	<link id="moduleTab_Accounts" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
-	</div>
+	<link id="moduleTab_Accounts" click="false" jscriptevent="onmouseover" />
+   <wait timeout="1" />
 
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv" var="account_record_0003">
 
 		<link text="Create Account" />
 		<div class="moduleTitle">
-			<link href="index.php?module=Accounts&amp;action=index" click="false" />
 			<browser assert="Create" />
 		</div>
 
 		<!--user select-->
 		<button id="btn_assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield name="last_name_advanced" set="{@account_record_0003.assigned_user_name}" />
-		<button value="Search" />
-		<link text="{@account_record_0003.assigned_user_name}" />
+
+      <attach title="SugarCRM">
+         <browser assert="User Search" />
+         <textfield name="last_name_advanced" 
+            set="{@account_record_0003.assigned_user_name}" />
+         <button value="Search" />
+         <link text="{@account_record_0003.assigned_user_name}" />
+      </attach>
+
 
 		<!--teams select-->
 		<table id="EditView_team_name_table">
 			<button value="Select" />
 		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@account_record_0003.team_name}" />
-		<button value="Search" />
-		<link text="{@account_record_0003.team_name}" />
+
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />
+         <textfield name="name" set="{@account_record_0003.team_name}" />
+         <button value="Search" />
+         <link text="{@account_record_0003.team_name}" />
+      </attach>
 
 		<form id="EditView">
 			<textfield id="name" set="{@account_record_0003.name} {@user.name} {@stamp}" />
