@@ -34,8 +34,10 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
+	<textfield id="name_basic" clear="true" />
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">
@@ -44,7 +46,8 @@
 
 	<!--Go its contact subpanel -->
 	<button id="accounts_contacts_create_button" />
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0035.csv" var="contact_record_0035">
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0035.csv" 
+      var="contact_record_0035">
 		<form id="form_SubpanelQuickCreate_Contacts">
 			<textfield id="first_name"
 				set="{@contact_record_0035.first_name} {@user.name} {@stamp}" />
@@ -53,29 +56,36 @@
 			<textfield id="phone_work" set="{@contact_record_0035.phone_work}" />
 			<textfield id="phone_mobile" set="{@contact_record_0035.phone_mobile}" />
 			<textfield id="phone_fax" set="{@contact_record_0035.phone_fax}" />
-			<textfield id="Contacts0emailAddress0" set="{@contact_record_0035.emailAddress0}" />
 			<select id="lead_source" set="{@contact_record_0035.lead_source}" />
 			<checkbox id="do_not_call" set="{@contact_record_0035.do_not_call}" />
+         <wait timeout="5" />
+			<textfield id="Contacts0emailAddress0" set="{@contact_record_0035.emailAddress0}" />
 		</form>
 
 		<!--teams select-->
 		<table id="form_SubpanelQuickCreate_Contacts_team_name_table">
 			<button value="Select" />
 		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@contact_record_0035.team_name}" />
-		<button value="Search" />
-		<link text="{@contact_record_0035.team_name}" />
+
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />
+         <textfield name="name" set="{@contact_record_0035.team_name}" />
+         <button value="Search" />
+         <link text="{@contact_record_0035.team_name}" />
+      </attach>
 
 		<!--user select-->
 		<button id="btn_assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield name="last_name_advanced" set="{@contact_record_0035.assigned_user_name}" />
-		<button value="Search" />
-		<link text="{@contact_record_0035.assigned_user_name}" />
+      <attach title="SugarCRM">
+         <browser assert="User Search" />
+         <textfield name="last_name_advanced" set="{@contact_record_0035.assigned_user_name}" />
+         <button value="Search" />
+         <link text="{@contact_record_0035.assigned_user_name}" />
+      </attach>
 
 		<button value="Save" />
 
+      <wait timeout="5" />
 		<!--Verify the contact record has been created-->
 		<div id="list_subpanel_contacts">
 			<table class="list view">
@@ -95,3 +105,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0035.xml finished." />
 </soda>
+
