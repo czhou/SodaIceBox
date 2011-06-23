@@ -41,6 +41,8 @@
 	</div>
 
 	<button id="search_form_clear" />
+	<link text="Basic Search" required="false" />
+	<wait timeout="3" />
 	<textfield id="name_basic" set="{@pre_call_name}" />
 	<button id="search_form_submit" />
 

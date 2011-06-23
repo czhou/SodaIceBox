@@ -46,7 +46,7 @@
 	<link text="google.txt" click="false" exist="true" />
 
 	<link class='listViewTdToolsS1' index='2' alert='true' />
-	<wait timeout='3'/>
+	<wait timeout='5'/>
 	<link text="google.txt" click="false" exist="false" />	
 	<puts text="Test: Google_10780.xml finished." />
 </soda>
