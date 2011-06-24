@@ -37,9 +37,9 @@
 
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
-	<link href="index.php?module=Accounts&amp;action=index" click="false" />
+	<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 
-	<textfield id="name_basic" set="{@pre_account_name}" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -60,23 +60,30 @@
 			<textfield id="next_step" set="{@opp_record_0043.next_step}" />
 			<select id="sales_stage" set="{@opp_record_0043.sales_stage}" />
 			<select id="lead_source" set="{@opp_record_0043.lead_source}" />
-			<textfield id="probability" set="{@opp_record_0043.probability}" />
+			<textfield id="probability" set="{@opp_record_0043.probability}" clear="true" />
 		</form>
 		<!--teams select-->
 		<table id="form_SubpanelQuickCreate_Opportunities_team_name_table">
 			<button value="Select" />
 		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@opp_record_0043.team_name}" />
-		<button value="Search" />
-		<link text="{@opp_record_0043.team_name}" />
+
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />
+         <textfield name="name" set="{@opp_record_0043.team_name}" />
+         <button value="Search" />
+         <link text="{@opp_record_0043.team_name}" />
+      </attach>
 
 		<button id="Opportunities_subpanel_save_button" />
 		<wait timeout="5" />
 		<!--Verify-->
 		<div id="list_subpanel_opportunities">
 			<table class="list view">
-				<link text="{@opp_record_0043.name} {@user.name} {@stamp}" click="false" />
+            <tr class="oddListRowS1">
+               <td index="0">
+      				<link text="{@opp_record_0043.name} {@user.name} {@stamp}" click="false" />
+               </td>
+            </tr>
 			</table>
 		</div>
 		<!--Save the subpanel task id & name-->
@@ -89,3 +96,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0043.xml is Finished" />
 </soda>
+
