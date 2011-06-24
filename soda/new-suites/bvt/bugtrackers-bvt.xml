@@ -26,7 +26,7 @@
 -->
 
 <soda>        
-	<script file='tests/modules/bugtracker/module_lib/setup-bugtrackers.xml'/>
+	<script file='tests/modules/bugtracker/module_lib/setup-bugtracker.xml'/>
 	<script file='tests/modules/bugtracker/BugTracker_0635.xml'/><!--View Bug Report-->
 	<script file='tests/modules/bugtracker/BugTracker_0645.xml'/><!--Bug Duplicate-->
 	<script file='tests/modules/bugtracker/BugTracker_0648.xml'/><!--Bug Merge-->
@@ -37,5 +37,5 @@
 	<script file='tests/modules/bugtracker/BugTracker_3602.xml'/><!--Advanced Search-->
 	<script file='tests/modules/bugtracker/BugTracker_6970.xml'/><!--Bug Edit-->
 	<script file='tests/modules/bugtracker/BugTracker_6977.xml'/><!--Subpanel(Contact) Select-->
-	<script file='tests/modules/bugtracker/module_lib/cleanup-bugtrackers.xml'/>
+	<script file='tests/modules/bugtracker/module_lib/cleanup-bugtracker.xml'/>
 </soda>
