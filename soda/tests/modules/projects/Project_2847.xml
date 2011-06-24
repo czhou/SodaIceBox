@@ -49,8 +49,8 @@
 		
 		<link text="{@Project_2847.meeting_name}"/>
 		
-		<button value="Delete" alert="ture"/>
 		<wait timeout="3"/>
+		<button name="Delete" alert="true"/>
 	</csv>
 
         <puts text="Test Case 2847 is finished!"/>
