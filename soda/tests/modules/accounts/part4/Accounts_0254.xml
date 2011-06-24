@@ -47,32 +47,22 @@
 	<!--Go its detail view-->
 	<browser assert="{@pre_account_name}" />
 
-
 	<!--Create History Subpanel-->
 	<button name="History_createnoteorattachment_button" />
 	<wait timeout="5" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0036.csv" var="history_record_0036">
 		<form id="form_SubpanelQuickCreate_Notes">
 			<textfield id="name" set="{@history_record_0036.name} {@user.name} {@stamp}" />
-			<wait timeout="10" />
 			<textfield id="description" set="{@history_record_0036.description}" />
 			<filefield name="filename_file" set="{@history_record_0036.uploadfile}" />
 		</form>
-
-		<!--teams select-->
-		<table id="form_SubpanelQuickCreate_Notes_team_name_table">
-			<button value="Select" />
-		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@history_record_0036.team_name}" />
-		<button value="Search" />
-		<link text="{@history_record_0036.team_name}" />
-
-		<button id="Notes_subpanel_cancel_button" alert="ture"/>
-
+		<form id="form_SubpanelQuickCreate_Notes">
+			<button id="Notes_subpanel_cancel_button" alert="true"/>
+		</form>
 		<!--Verify reord not exist in account detail view-->
+		<wait timeout="3"/>
 		<div id="whole_subpanel_history">
-			<assert text="{@history_record_0036.name} {@user.name} {@stamp}"/>
+			<browser assertnot="{@history_record_0036.name} {@user.name} {@stamp}"/>
 		</div>
 	</csv>
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
