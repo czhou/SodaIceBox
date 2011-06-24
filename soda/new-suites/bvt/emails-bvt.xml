@@ -27,7 +27,6 @@
 
 <soda>
 	<script file='tests/modules/emails/module_lib/setup-emails.xml'/>
-	<script file='tests/modules/lib/Email_Setting_Lib.xml'/>
 	<script file='tests/modules/emails/Emails_9652.xml'/><!--Check the required fields of Outgoing Mail Configuration-->
 	<script file='tests/modules/emails/Emails_9655.xml'/><!--Search recipients in Address Book-->
 	<script file='tests/modules/emails/Emails_9660.xml'/><!--Edit mail account in Emails module-->

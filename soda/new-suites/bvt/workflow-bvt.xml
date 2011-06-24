@@ -27,8 +27,6 @@
 
 <soda>
 	<script file='tests/modules/workflow/module_lib/setup-workflow.xml'/>
-	<script file='scripts/kobe/modules/lib/Email_Setting_Lib.xml'/>
-	<script file='tests/modules/lib/Wf_Email_Acct_Create_Lib.xml'/>
 	<script file='tests/modules/workflow/Workflow_8146.xml'/><!--Workflow Create Condition Change-->
 	<script file='tests/modules/workflow/Workflow_8880.xml'/><!--Workflow Duplicate-->
 	<script file='tests/modules/workflow/Workflow_8900.xml'/><!--Workflow WhenRecordSaved Action-->

@@ -26,12 +26,10 @@
 -->
 
 <soda>
-	<csv file="tests/csvs/users.csv" var="user"/>
 	<script file="tests/modules/contracts/module_lib/setup-contracts.xml"/>
 	<script file="tests/modules/contracts/contract_1643.xml"/><!--Contact Create-->
 	<script file="tests/modules/contracts/contract_1655.xml"/><!--Field Validation-->
 	<script file="tests/modules/contracts/contract_1657.xml"/><!--Contact Duplicate-->
 	<script file="tests/modules/contracts/contract_1665.xml"/><!--Contact Edit-->
 	<script file="tests/modules/contracts/module_lib/cleanup-contracts.xml"/>
-	<browser action="close"/>
 </soda>
