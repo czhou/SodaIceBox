@@ -33,9 +33,9 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
-	<textfield id="name_basic" set="{@pre_account_name}" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -52,6 +52,7 @@
 			<textfield id="phone_work" set="{@contact_record_0035.phone_work}" />
 			<textfield id="phone_mobile" set="{@contact_record_0035.phone_mobile}" />
 			<textfield id="phone_fax" set="{@contact_record_0035.phone_fax}" />
+         <wait timeout="2" />
 			<textfield id="Contacts0emailAddress0" set="{@contact_record_0035.emailAddress0}" />
 			<select id="lead_source" set="{@contact_record_0035.lead_source}" />
 			<checkbox id="do_not_call" set="{@contact_record_0035.do_not_call}" />
@@ -61,21 +62,26 @@
 		<table id="form_SubpanelQuickCreate_Contacts_team_name_table">
 			<button value="Select" />
 		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@contact_record_0035.team_name}" />
-		<button value="Search" />
-		<link text="{@contact_record_0035.team_name}" />
+
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />
+         <textfield name="name" set="{@contact_record_0035.team_name}" />
+         <button value="Search" />
+         <link text="{@contact_record_0035.team_name}" />
+      </attach>
 
 		<!--user select-->
 		<button id="btn_assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield name="last_name_advanced" set="{@contact_record_0035.assigned_user_name}" />
-		<button value="Search" />
-		<link text="{@contact_record_0035.assigned_user_name}" />
-
+      <attach title="SugarCRM">
+         <browser assert="User Search" />
+         <textfield name="last_name_advanced" set="{@contact_record_0035.assigned_user_name}" />
+         <button value="Search" />
+         <link text="{@contact_record_0035.assigned_user_name}" />
+      </attach>
 		<button value="Save" />
 
 		<!--Verify the contact record has been created-->
+      <wait timeout="2" />
 		<div id="list_subpanel_contacts">
 			<table class="list view">
 				<link
@@ -94,9 +100,9 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
-	<textfield id="name_basic" set="{@pre_account_name}" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -105,16 +111,22 @@
 	<!--click rem image button in contact subpanel-->
 	<div id="list_subpanel_contacts">
 		<span class="pageNumbers" assert="(1 - 1 of 1)" />
-		<link class="listViewTdToolsS1" index="2" alert="true" />
+      <table class="list view">
+         <tr class="oddListRowS1">
+            <td index="6">
+         		<link class="listViewTdToolsS1" alert="true" />
+            </td>
+         </tr>
+      </table>
 	</div>
 
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
 
-	<textfield id="name_basic" set="{@pre_account_name}" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -128,3 +140,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0042.xml finished." />
 </soda>
+
