@@ -64,7 +64,7 @@
 		<button value="Search" />
 		<link text="{@opp_record_0043.team_name}" />
 
-		<button id="Opportunities_subpanel_save_button" />
+		<button id="Opportunities_subpanel_save_button" alert="true"/>
 
 		<!--Verify-->
 		<browser assert="Missing required field: Opportunity Name"/>
