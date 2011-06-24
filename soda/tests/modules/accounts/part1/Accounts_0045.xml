@@ -34,8 +34,9 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
+
 	<link text="Basic Search" required="false" />
 	<form id="search_form">
 		<button id="search_form_clear" />
@@ -78,9 +79,9 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
-	<textfield id="name_basic" set="{@pre_account_name}" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -90,15 +91,21 @@
 	<browser assert="{@pre_account_name}" />
 	<div id="list_subpanel_cases">
 		<span class="pageNumbers" assert="(1 - 1 of 1)" />
-		<link class="listViewTdToolsS1" index="2" alert="true" />
+      <table class="list view">
+         <tr class="oddListRowS1">
+            <td index="7">
+         		<link class="listViewTdToolsS1"  alert="true" />
+            </td>
+         </tr>
+      </table>
 	</div>
 
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
-	<textfield id="name_basic" set="{@pre_account_name}" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -112,3 +119,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0045.xml finsihed." />
 </soda>
+
