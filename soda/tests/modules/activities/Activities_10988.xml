@@ -27,15 +27,15 @@
 
 <soda>
 	<!--
-		Schedule Meeting_Verify that warning message is displayed
+		Log Call_Verify that warning message is displayed
 	-->
-	<puts text="Test: Activities_10989.xml starting" />
+	<puts text="Test: Activities_10988.xml starting" />
 
-	<link id="moduleTab_Meetings" />
-	<link text="Schedule Meeting" />
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
 	<wait timeout="3" />
 	
-	<textfield id="name" set="meeting_10989" />
+	<textfield id="name" set="call_10988" />
 
 	<textfield name="duration_hours" set="0" />
 	<select name="duration_minutes" set="0" />
@@ -46,5 +46,5 @@
 	<button id="CANCEL" click='false' exists='true' />
 	<button id="CANCEL" alert="true"/>
 	
-	<puts text="Test: Activities_10989.xml finished" />
+	<puts text="Test: Activities_10988.xml finished" />
 </soda>
