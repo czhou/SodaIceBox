@@ -40,7 +40,8 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
@@ -53,12 +54,14 @@
 	<button id="accounts_contacts_select_button" />
 	<wait timeout="5" />
 	<!--click the checkbox and click "Select"-->
-	<table class="list view">
-		<checkbox value="{@pre_contact_id}" click="true" />
-	</table>
-	<form id="MassUpdate">
-		<button value="Select" />
-	</form>
+   <attach title="SugarCRM">
+      <table class="list view">
+         <checkbox value="{@pre_contact_id}" click="true" />
+      </table>
+      <form id="MassUpdate">
+         <button value="Select" />
+      </form>
+   </attach>
 	<wait timeout="5" />
 	<!--back to contact subpanel-->
 	<div id="list_subpanel_contacts">
