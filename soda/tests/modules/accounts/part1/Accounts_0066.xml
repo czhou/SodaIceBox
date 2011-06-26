@@ -34,7 +34,7 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
@@ -63,19 +63,23 @@
 
 		<!--user select-->
 		<button id="btn_assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield name="last_name_advanced" set="{@opp_record_0066.assigned_user_name}" />
-		<button value="Search" />
-		<link text="{@opp_record_0066.assigned_user_name}" />
+      <attach title="SugarCRM">
+         <browser assert="User Search" />
+         <textfield name="last_name_advanced" set="{@opp_record_0066.assigned_user_name}" />
+         <button value="Search" />
+         <link text="{@opp_record_0066.assigned_user_name}" />
+      </attach>
 
 		<!--teams select-->
 		<table id="form_SubpanelQuickCreate_Opportunities_team_name_table">
 			<button value="Select" />
 		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@opp_record_0066.team_name}" />
-		<button value="Search" />
-		<link text="{@opp_record_0066.team_name}" />
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />
+         <textfield name="name" set="{@opp_record_0066.team_name}" />
+         <button value="Search" />
+         <link text="{@opp_record_0066.team_name}" />
+      </attach>
 
 		<button id="Opportunities_subpanel_cancel_button" alert="true" />
 
