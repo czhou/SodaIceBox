@@ -34,9 +34,10 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
-	<textfield id="name_basic" set="{@pre_account_name}" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -57,19 +58,25 @@
 
 		<!--user select-->
 		<button id="btn_assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield name="last_name_advanced" set="{@case_record_0073.assigned_user_name}" />
-		<button value="Search" />
-		<link text="{@case_record_0073.assigned_user_name}" />
+      <attach title="SugarCRM">
+         <browser assert="User Search" />
+         <textfield name="last_name_advanced" 
+            set="{@case_record_0073.assigned_user_name}" clear="true" />
+         <button value="Search" />
+         <link text="{@case_record_0073.assigned_user_name}" />
+      </attach>
 
 		<!--teams select-->
 		<table id="EditView_team_name_table">
 			<button value="Select" />
 		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@case_record_0073.team_name}" />
-		<button value="Search" />
-		<link text="{@case_record_0073.team_name}" />
+
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />
+         <textfield name="name" set="{@case_record_0073.team_name}" />
+         <button value="Search" />
+         <link text="{@case_record_0073.team_name}" />
+      </attach>
 
 		<button value="Cancel" alert="true" />
 
@@ -86,3 +93,4 @@
 	<puts text="Test: Accounts_0073.xml finished." />
 
 </soda>
+
