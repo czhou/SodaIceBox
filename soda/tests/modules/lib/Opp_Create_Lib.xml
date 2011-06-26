@@ -30,7 +30,7 @@
    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
    <timestamp />
    <div id="themeTabGroup_All">
-    <link text="Opportunities" />
+    <link text="Opportunities" click="false" jscriptevent="onmouseover" />
    </div>
     <link text="Create Opportunity" />
 
@@ -38,7 +38,8 @@
       var="opp_record">
       <textfield id="name" set="{@opp_record.name} {@user.name} {@stamp}" /> 
       <textfield id="amount" set="{@opp_record.amount}" /> 
-      <textfield id="probability" set="{@opp_record.probability}" /> 
+      <textfield id="probability" set="{@opp_record.probability}" 
+         clear="true" /> 
       <textfield id="date_closed" set="{@opp_record.date_closed}" /> 
       <textfield id="next_step" set="{@opp_record.next_step}" />
       <textfield id="description" set="{@opp_record.description}" />
@@ -49,11 +50,13 @@
 
       <!--Account Select-->
       <button id="btn_account_name" />
-      <browser assert="Account Search" />
-      <textfield id="name_advanced" set="{@pre_account_name}" /> 
-      <button value="Search" />
-      <link text="{@pre_account_name}" />
-      
+      <attach title="SugarCRM">
+         <browser assert="Account Search" />
+         <textfield id="name_advanced" set="{@pre_account_name}" /> 
+         <button value="Search" />
+         <link text="{@pre_account_name}" />
+      </attach>
+
       <button value="Save" />
 
       <!--Save key info-->
