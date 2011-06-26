@@ -33,7 +33,7 @@
 
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
-	<link href="index.php?module=Accounts&amp;action=index" click="false" />
+	<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	<link text="Basic Search" required="false" />
 	<form id="search_form">
 		<button id="search_form_clear" />
@@ -66,9 +66,9 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
-	<textfield id="name_basic" set="{@pre_account_name}" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -78,46 +78,61 @@
 	<browser assert="{@pre_account_name}" />
 	<div id="list_subpanel_cases">
 		<span class="pageNumbers" assert="(1 - 1 of 1)" />
-		<link class="listViewTdToolsS1" index="1" />
+      <table class="list view">
+         <tr class="oddListRowS1">
+            <td index="6">
+         		<link class="listViewTdToolsS1" />
+            </td>
+         </tr>
+      </table>
 	</div>
 
 	<!--edit the case record-->
 	<browser assert="Cases"/>
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0048.csv" var="case_record_0048">
-		<textfield id="name" set="{@case_record_0048.name} {@user.name} {@stamp}" />
+		<textfield id="name" set="{@case_record_0048.name} {@user.name} {@stamp}" 
+         clear="true" />
 		<textfield id="description" set="{@case_record_0048.description}" />
 		<select id="status" set="{@case_record_0048.status}" />
 		<select id="priority" set="{@case_record_0048.priority}" />
 
 		<!--user select-->
 		<button id="btn_assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield name="last_name_advanced" set="{@case_record_0048.assigned_user_name}" />
-		<button value="Search" />
-		<link text="{@case_record_0048.assigned_user_name}" />
+      <attach title="SugarCRM">
+         <browser assert="User Search" />
+         <textfield name="last_name_advanced" set="{@case_record_0048.assigned_user_name}" />
+         <button value="Search" />
+         <link text="{@case_record_0048.assigned_user_name}" />
+      </attach>
 
 		<!--teams select-->
 		<table id="EditView_team_name_table">
 			<button value="Select" />
 		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@case_record_0048.team_name}" />
-		<button value="Search" />
-		<link text="{@case_record_0048.team_name}" />
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />
+         <textfield name="name" set="{@case_record_0048.team_name}" />
+         <button value="Search" />
+         <link text="{@case_record_0048.team_name}" />
+      </attach>
 
 		<button value="Save" />
 
 		<!--return account case subpanel-->
 		<div id="list_subpanel_cases">
 			<table class="list view">
-				<link text="{@case_record_0048.name} {@user.name} {@stamp}" click="false" />
+            <tr class="oddListRowS1">
+               <td index="1">
+      				<link text="{@case_record_0048.name} {@user.name} {@stamp}" click="false" />
+               </td>
+            </tr>
 			</table>
 		</div>
 	</csv>
-
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0048.xml finished." />
 </soda>
+
