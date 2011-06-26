@@ -34,7 +34,7 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
@@ -47,33 +47,31 @@
 
 	<!--Goto contact subpanel & click "Select" -->
 	<button id="accounts_contacts_select_button" />
+   <attach title="SugarCRM">
+      <!--Create Contact-->
+      <button value="Create Contact" />
+      <csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0064.csv" var="contact_record_0064">
+         <div id="addform">
+            <textfield name="first_name"
+               set="{@contact_record_0064.first_name} {@user.name} {@stamp}" />
+            <textfield name="last_name" set="{@contact_record_0064.last_name}" />
+            <textfield name="phone_work" set="{@contact_record_0064.phone_work}" />
 
-	<!--Create Contact-->
-	<button value="Create Contact" />
+            <button value="Save" />
+         </div>
 
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0064.csv" var="contact_record_0064">
-		<div id="addform">
-			<textfield name="first_name"
-				set="{@contact_record_0064.first_name} {@user.name} {@stamp}" />
-			<textfield name="last_name" set="{@contact_record_0064.last_name}" />
-			<textfield name="phone_work" set="{@contact_record_0064.phone_work}" />
+         <wait />
+         <button value="Search" />
 
-			<button value="Save" />
+         <!--Assert in the contact list view-->
+         <table class="list view">
+            <link
+               text="{@contact_record_0064.first_name} {@user.name} {@stamp} {@contact_record_0064.last_name}" />
+         </table>
+      </csv>
+   </attach>
 
-
-		</div>
-
-		<wait />
-		<button value="Search" />
-
-		<!--Assert in the contact list view-->
-		<table class="list view">
-			<link
-				text="{@contact_record_0064.first_name} {@user.name} {@stamp} {@contact_record_0064.last_name}" />
-		</table>
-
-	</csv>
-
+   <wait timeout="2" />
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
@@ -81,3 +79,4 @@
 	<puts text="Test: Accounts_0064.xml finsihed." />
 
 </soda>
+
