@@ -34,7 +34,8 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
 	<link text="Basic Search" required="false" />
 	<form id="search_form">
@@ -42,6 +43,8 @@
 		<textfield id="name_basic" set="{@pre_account_name}" />
 		<button id="search_form_submit" />
 	</form>
+
+   <wait timeout="2" />
 
 	<table class="list view">
 		<browser assert="{@pre_account_name}" />
@@ -70,9 +73,10 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
-	<textfield id="name_basic" set="{@pre_account_name}" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -83,12 +87,16 @@
 	<browser assert="{@pre_account_name}" />
 	<div id="list_subpanel_cases">
 		<span class="pageNumbers" assert="(1 - 1 of 1)" />
-		<link class="listViewTdToolsS1" index="2" alert="true" />
+      <tr class="oddListRowS1">
+         <td index="1">
+      		<link text="{@case_record_0105.name} {@user.name} {@stamp}" alert="true" />
+         </td>
+      </tr>
 	</div>
 
 	<!--Goto Case Module to search-->
 	<link id="moduleTab_Cases" />
-	<textfield id="name_basic" set="{@pre_case_subpanel_name}" />
+	<textfield id="name_basic" set="{@pre_case_subpanel_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<span class="pageNumbers" assert="(1 - 1 of 1)" />
@@ -97,3 +105,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0047.xml finished." />
 </soda>
+
