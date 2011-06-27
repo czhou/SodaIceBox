@@ -30,8 +30,8 @@
 
 	<link id="moduleTab_Accounts" click="false" jscriptevent="onmouseover" />
    <wait timeout="1" />
-
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv" var="account_record_0003">
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv" 
+      var="account_record_0003">
 
 		<link text="Create Account" />
 		<div class="moduleTitle">
@@ -87,25 +87,33 @@
 
 			<textfield id="annual_revenue" set="{@account_record_0003.annual_revenue}" />
 
-			<textfield id="billing_address_street" set="{@account_record_0003.billing_address_street}" />
+			<textfield id="billing_address_street" 
+            set="{@account_record_0003.billing_address_street}" />
 
 			<textfield id="billing_address_city" set="{@account_record_0003.billing_address_city}" />
 
 			<textfield id="billing_address_state" set="{@account_record_0003.billing_address_state}" />
 
-			<textfield id="billing_address_postalcode" set="{@account_record_0003.billing_address_postalcode}" />
+			<textfield id="billing_address_postalcode" 
+            set="{@account_record_0003.billing_address_postalcode}" />
 
-			<textfield id="billing_address_country" set="{@account_record_0003.billing_address_country}" />
+			<textfield id="billing_address_country" 
+            set="{@account_record_0003.billing_address_country}" />
 
-			<textfield id="shipping_address_street" set="{@account_record_0003.shipping_address_street}" />
+			<textfield id="shipping_address_street" 
+            set="{@account_record_0003.shipping_address_street}" />
 
-			<textfield id="shipping_address_city" set="{@account_record_0003.shipping_address_city}" />
+			<textfield id="shipping_address_city" 
+            set="{@account_record_0003.shipping_address_city}" />
 
-			<textfield id="shipping_address_state" set="{@account_record_0003.shipping_address_state}" />
+			<textfield id="shipping_address_state" 
+            set="{@account_record_0003.shipping_address_state}" />
 
-			<textfield id="shipping_address_postalcode" set="{@account_record_0003.shipping_address_postalcode}" />
+			<textfield id="shipping_address_postalcode" 
+            set="{@account_record_0003.shipping_address_postalcode}" />
 
-			<textfield id="shipping_address_country" set="{@account_record_0003.shipping_address_country}" />
+			<textfield id="shipping_address_country" 
+            set="{@account_record_0003.shipping_address_country}" />
 
 			<textfield id="Accounts0emailAddress0" set="{@account_record_0003.emailAddress0}" />
 
@@ -114,10 +122,15 @@
 			<button value="Cancel" alert="true" />
 		</form>
 
+
+      <wait timeout="1" />
 		<div class="moduleTitle">
-			<link href="{global.url}/index.php?module=Accounts&amp;action=index" click="false" />
+			<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+            click="false" />
 		</div>
-		<textfield id="name_basic" set="{@account_record_0003.name} {@user.name} {@stamp}" />
+
+		<textfield id="name_basic" 
+         set="{@account_record_0003.name} {@user.name} {@stamp}" />
 		<button id="search_form_submit" />
 		<table class="list view">
 			<span class="pageNumbers" assert="(0 - 0 of 0)" />
