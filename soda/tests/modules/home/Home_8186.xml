@@ -136,7 +136,7 @@
 						<td index="3" assert="{@home8186.opp2_amount}" />
 					</tr>
 					<tr index="3">
-						<td index="2" assert="{@Campaig1}" />
+						<td index="2" assert="{@Campaign1}" />
 						<td index="3" assert="{@home8186.opp1_amount}" />
 					</tr>				
 				</table>
