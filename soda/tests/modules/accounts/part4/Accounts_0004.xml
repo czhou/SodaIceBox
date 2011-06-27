@@ -26,8 +26,8 @@
 -->
 
 <soda>
-
-	<puts text="Test Case 4: Create Account - Quick _Verify that an account is quick created from 'New Account' box."/>
+	<!--  Create Account - Quick _Verify that an account is quick created from 'New Account' box. -->
+	<puts text="Test: Accounts_0004.xml starting"/>
 
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
@@ -55,7 +55,7 @@
 
 			<button id="Accounts_dcmenu_save_button"/>
 		</form>
-
+		<wait timeout="3" />
 		<link id="moduleTab_Accounts" />
 		<div class="moduleTitle">
 			<link href="index.php?module=Accounts&amp;action=index" click="false" />
