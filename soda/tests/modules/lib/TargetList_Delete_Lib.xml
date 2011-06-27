@@ -29,7 +29,7 @@
 	<puts text="Lib: TargetList_Delete_Lib.xml starting." />
 
 	<!-- Nav to TargetLists module. -->
-	<link href="index.php?module=ProspectLists&amp;action=index" />
+	<link id="moduleTab_ProspectLists" />
 	<browser assert="Target List" />
 
 	<link text="View Target Lists" />
