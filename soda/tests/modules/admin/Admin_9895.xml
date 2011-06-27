@@ -51,7 +51,7 @@
 	<div id="ext_rest_twitter:enabled_div" assert="/.*Accounts.*/" />
 	<div id="ext_rest_twitter:enabled_div" assert="/.*Contacts.*/" />
 	<div id="ext_rest_twitter:enabled_div" assert="/.*Leads.*/" />
-	<div id="ext_rest_twitter:enabled_div" assert="/.*Prospects.*/" />
+	<div id="ext_rest_twitter:enabled_div" assert="/.*Targets.*/" />
 	
 	<puts text="Test: Admin_9895.xml finished." />
 </soda>
