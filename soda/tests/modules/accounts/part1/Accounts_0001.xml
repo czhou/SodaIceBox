@@ -31,17 +31,13 @@
 
 	<link id="moduleTab_Accounts" click="false" jscriptevent="onmouseover" />
    <wait timeout="2" />
-
-	<div class="moduleTitle">
-		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
-	</div>
-
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv" var="account_record_0003">
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv" 
+      var="account_record_0003">
 		<link text="Create Account" />
 
 		<div class="moduleTitle">
-			<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
-
+			<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+            click="false" />
 		</div>
 
 		<browser assert="Create" />
