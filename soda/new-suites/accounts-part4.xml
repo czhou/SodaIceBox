@@ -27,9 +27,9 @@
 
 <soda>
 	<script file="tests/modules/accounts/module_lib/setup-accounts.xml" />
-	<!--script file="tests/modules/lib/Enable_All_Lib.xml" /-->
+	<script file="tests/modules/lib/Enable_All_Lib.xml" />
 	<script file="tests/modules/accounts/part4/Accounts_0270.xml" />
-	<!--script file="{@global.scriptsdir}/modules/lib/Enable_Defaults_Lib.xml" /-->
+	<script file="tests/modules/lib/Enable_Defaults_Lib.xml" />
 	<script file="tests/modules/accounts/module_lib/cleanup-accounts.xml" />
 </soda>
 
