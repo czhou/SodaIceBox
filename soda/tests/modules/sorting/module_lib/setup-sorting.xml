@@ -26,20 +26,27 @@
 -->
 
 <soda>
-	<!--
-		Verify the Accept,Tentative and Decline link of a call are shown in dashlet
-	-->
-	<puts text="Test: Activities_9354.xml starting" />
-	
-    <!--create call record-->
-    <script file='{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml'/>
+	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	<!-- create targetlist records -->>
+	<link id="moduleTab_ProspectLists" />
+	<csv file="{@global.scriptsdir}/modules/csv/sorting/TargetList_Listview.csv" 
+      var="TargetList_Listview_Sort">
+		
+		<link text="Create Target List" />
+		<browser assert="Description" />
 
-    <link id='moduleTab_Home'/>
-    <image src='/*themes/Sugar/images/accept_inline.png*/' click='false' />
-    <image src='/*themes/Sugar/images/tentative_inline.png*/' click='false' />
-    <image src='/*themes/Sugar/images/decline_inline.png*/' click='false' />
-
-    <!--delete call record-->
-    <script file='{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml'/>
-    <puts text="Test: Activities_9354.xml finished" />
+		<form id="EditView">
+			<timestamp />
+			<textfield name="name" set="{@TargetList_Listview_Sort.name}" /> 
+			<select id="list_type" set="{@TargetList_Listview_Sort.type}" />
+			<textfield name="description" set="{@TargetList_Listview_Sort.description} " />
+			<button value="Save" />
+		</form>
+		<div class="moduleTitle">
+			<link href="index.php?module=ProspectLists&amp;action=index" click="false" />
+			<browser assert="{@TargetList_Listview_Sort.name}" />
+		</div>
+	</csv>
 </soda>
+
