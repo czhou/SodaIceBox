@@ -26,36 +26,41 @@
 -->
 
 <soda>
-	<!--
-		Action:
-			1. Login to system as a valid user.
-			2. Click "Calendar" navigation tab.
-			3. Click "Meetings" link on Navigation shortcuts.
-			4. Click any meeting subject link in "Meeting List" view.
-			5. Click "Delete" button on "Meeting Detail View" page.
-			6. Click "OK" button on confirm dialog box.
-		Expectation:
-			6. The deleted meeting is not displayed in the meeting list view.
-	-->
-	<puts text="Test: Calendar_0697.xml starting." />
-	
-	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
-	
-	<link id="moduleTab_Meetings" />
-	
-	<textfield id="name_basic" set="{@pre_meeting_name}" />
-	<button id="search_form_submit" />
-	
-	<browser assert="{@pre_meeting_name}" />
-	<link text="{@pre_meeting_name}" />
-	
-	<button value="Delete" alert="true" />
-	
-	<table class="list view">
-		<browser assertnot="{@pre_meeting_name}" />
-	</table>
-	
-	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	<puts text="Test Case 273: Account Detail - Projects sub-panel -Verify that error message 'Missing required field: Name' is displayed when editing related 'Projects' with mandatory fields blank."/>
 
-	<puts text="Test: Calendar_0697.xml finished." />
+	<!--Create an account record-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+
+	<!--Search the record-->
+	<link id="moduleTab_Accounts" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+	</div>
+	<link text="Basic Search" required="false" />
+	<form id="search_form">
+		<button id="search_form_clear" />
+		<textfield id="name_basic" set="{@pre_account_name}" />
+		<button id="search_form_submit" />
+	</form>
+
+	<table class="list view">
+		<browser assert="{@pre_account_name}" />
+		<link text="{@pre_account_name}" />
+	</table>
+
+	<!--Go to its detail view-->
+	<link text="Accounts" click="false" />
+	<browser assert="{@pre_account_name}" />
+
+	<!--Create a project record in product subpanel-->
+	<button name="projects_accounts_create_button" />
+	<button id="Project_subpanel_save_button"/>
+	<browser assert="Missing required field: Name"/>
+	<browser assert="Missing required field: Start Date"/>
+	<browser assert="Missing required field: End Date"/>
+	<browser id="Project_subpanel_cancel_button" alert="true"/>
+
+	<!--Delete the record-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<puts text="Test: Accounts_0273.xml finsihed." />
 </soda>

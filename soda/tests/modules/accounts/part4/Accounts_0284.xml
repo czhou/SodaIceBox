@@ -26,14 +26,12 @@
 -->
 
 <soda>
-	<!-- Account Detail - Verify that create 'Create Note or Attachment' is 
-		correctly canceled on 'Contacts' sub-panel. -->
-	<puts text="Test: Accounts_0254.xml starting " />
+	<puts text="Test Case 284: Account Detail - History sub-panel - Remove Relationship - Note_Verify that deleting a note record is canceled."/>
 
-	<!--Create a account record -->
+	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 
-	<!--Search the record -->
+	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Accounts&amp;action=index" click="false" />
@@ -46,30 +44,62 @@
 	</table>
 
 	<wait />
-	<!--Go its detail view -->
+	<!--Go its detail view-->
 	<browser assert="{@pre_account_name}" />
 
-	<!--Create History Subpanel -->
+
+	<!--Create History Subpanel-->
 	<button name="History_createnoteorattachment_button" />
 	<wait timeout="5" />
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0036.csv"
-		var="history_record_0036">
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0036.csv" var="history_record_0036">
 		<form id="form_SubpanelQuickCreate_Notes">
-			<textfield id="name"
-				set="{@history_record_0036.name} {@user.name} {@stamp}" />
+			<textfield id="name" set="{@history_record_0036.name} {@user.name} {@stamp}" />
+			<wait timeout="10" />
 			<textfield id="description" set="{@history_record_0036.description}" />
 			<filefield name="filename_file" set="{@history_record_0036.uploadfile}" />
 		</form>
-		<form id="form_SubpanelQuickCreate_Notes">
-			<button id="Notes_subpanel_cancel_button" alert="true" />
-		</form>
-		<!--Verify reord not exist in account detail view -->
-		<wait timeout="3" />
-		<div id="list_subpanel_history">
-			<browser assertnot="{@history_record_0036.name} {@user.name} {@stamp}" />
+
+		<!--teams select-->
+		<table id="form_SubpanelQuickCreate_Notes_team_name_table">
+			<button value="Select" />
+		</table>
+		<browser assert="Team Search" />
+		<textfield name="name" set="{@history_record_0036.team_name}" />
+		<button value="Search" />
+		<link text="{@history_record_0036.team_name}" />
+
+		<button id="Notes_subpanel_save_button" />
+
+		<div id="History_createnoteorattachment_button">
+			<link text="{@history_record_0036.name} {@user.name} {@stamp}"/>
 		</div>
+		
+		<div id="LBL_NOTE_INFORMATION">
+			<browser assert="{@history_record_0036.name} {@user.name} {@stamp}"/>
+		</div>
+		<button value="Delete" alert="false"/>
+
+		<!--Search the record-->
+		<link id="moduleTab_Accounts" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		</div>
+	
+		<textfield id="name_basic" set="{@pre_account_name}" />
+		<button id="search_form_submit" />
+		<table class="list view">
+			<link text="{@pre_account_name}" />
+		</table>
+
+		<wait />
+		<!--Go its detail view-->
+		<browser assert="{@pre_account_name}" />
+
+		<link text="{@history_record_0036.name} {@user.name} {@stamp}" click="false"/>
+
 	</csv>
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
 
-	<puts text="Test: Accounts_0254.xml finished." />
+	<puts text="Test: Accounts_0284.xml finished." />
 </soda>

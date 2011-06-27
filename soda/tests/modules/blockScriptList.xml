@@ -106,6 +106,13 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Admin_36109</testfile>
+		<bugnumber>36109</bugnumber>
+		<reason>Can not set the Percentage in Tax</reason>
+		<modulename>admin</modulename>
+	</block>
+	
+	<block>
 		<testfile>Studio_11484</testfile>
 		<bugnumber>44266</bugnumber>
 		<reason>Save and Deploy breaks Calls editview layout</reason>
@@ -301,83 +308,6 @@
 	
 	<block>
 		<testfile>Reports_7798.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0721.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0722.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0723.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0724.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0734.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0666.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0754.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0754.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0755.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0756.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0757.xml</testfile>
 		<bugnumber></bugnumber>
 		<reason>to be fixed later</reason>
 		<modulename>Incoming</modulename>
