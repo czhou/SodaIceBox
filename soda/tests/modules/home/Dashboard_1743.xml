@@ -43,7 +43,7 @@
 	
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 	<timestamp />
-	<link href="index.php?module=Opportunities&amp;action=index" />
+	<link id="moduleTab_Opportunities" />
 	<link text="Create Opportunity" />
 
    <csv file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.csv" 
