@@ -27,8 +27,7 @@
 
 <soda>
 	<!--
-		Close and Create New Meeting_Verify that the meetings status is not changed
-		automatically
+		Schedule Meeting_Verify that warning message is displayed
 	-->
 	<puts text="Test: Activities_10989.xml starting" />
 

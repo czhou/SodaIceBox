@@ -1,0 +1,158 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test:home_8186 check Top Campaign dashlet" />
+	<!--create campaigns-->
+	<script file="{@global.scriptsdir}/modules/lib/Campaign_Create_Lib.xml" />
+	<var var="Campaign1" set="{@Campaign_Name}" />
+	<script file="{@global.scriptsdir}/modules/lib/Campaign_Create_Lib.xml" />
+	<var var="Campaign2" set="{@Campaign_Name}" />
+	
+	<!--create opportunities-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
+	<var var="Opp1" set="{@pre_opp_name}" />
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
+	<var var="Opp2" set="{@pre_opp_name}" />
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
+	<var var="Opp3" set="{@pre_opp_name}" />
+	
+	<csv file="{@global.scriptsdir}/csvs/home/Home_8186.csv" var="home8186">	
+		<link id="moduleTab_Opportunities" />
+		<form id="search_form">
+			<textfield id="name_basic" set="{@Opp1}" />
+		</form>
+		<button id="search_form_submit" />
+		<table class="list view">
+			<browser assert="{@Opp1}" />
+			<link text="{@Opp1}" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@Opp1}" />
+		</table>
+		<button id="edit_button" />
+		<div id="Default_Opportunities_Subpanel">
+			<select id="sales_stage" set="Closed Won" />
+			<textfield id="amount" set="{@home8186.opp1_amount}"/>
+			<button id="btn_campaign_name" />			
+		</div>
+		<browser assert="Campaign Search" />
+      	<textfield id="name_advanced" set="{@Campaign1}" /> 
+      	<button value="Search" />
+      	<link text="{@Campaign1}" />
+		<button id="SAVE_HEADER" />
+		
+		<link id="moduleTab_Opportunities" />
+		<form id="search_form">
+			<textfield id="name_basic" set="{@Opp2}" />
+		</form>
+		<button id="search_form_submit" />
+		<table class="list view">
+			<browser assert="{@Opp2}" />
+			<link text="{@Opp2}" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@Opp2}" />
+		</table>
+		<button id="edit_button" />
+		<div id="Default_Opportunities_Subpanel">
+			<select id="sales_stage" set="Closed Won" />
+			<textfield id="amount" set="{@home8186.opp2_amount}"/>
+			<button id="btn_campaign_name" />			
+		</div>
+		<browser assert="Campaign Search" />
+      	<textfield id="name_advanced" set="{@Campaign2}" /> 
+      	<button value="Search" />
+      	<link text="{@Campaign2}" />
+		<button id="SAVE_HEADER" />
+		
+		<link id="moduleTab_Opportunities" />
+		<form id="search_form">
+			<textfield id="name_basic" set="{@Opp3}" />
+		</form>
+		<button id="search_form_submit" />
+		<table class="list view">
+			<browser assert="{@Opp3}" />
+			<link text="{@Opp3}" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@Opp3}" />
+		</table>
+		<button id="edit_button" />
+		<div id="Default_Opportunities_Subpanel">
+			<button id="btn_campaign_name" />			
+		</div>
+		<browser assert="Campaign Search" />
+      	<textfield id="name_advanced" set="{@Campaign2}" /> 
+      	<button value="Search" />
+      	<link text="{@Campaign2}" />
+		<button id="SAVE_HEADER" />		
+
+		<!--check the top campaign dashlet-->
+		<link id="moduleTab_Home" />
+		<browser assert="Add Sugar Dashlets" />
+		<!--Add dashlet-->
+		<link id="add_dashlets" />
+		<wait timeout="5" />
+		<div id="dashletsDialog_c">
+			<browser assert="Find Sugar Dashlet" />
+			<link text="Top Campaigns" />
+			<wait timeout="5" />	
+		</div>
+		<div id="dashletsDialogHeader">
+			<link index="1" />
+		</div>
+		<ul id="col_0_0">			
+			<li index="1">
+				<browser assert="Top Campaigns" />	
+				<table class="list view">
+					<tr index="2">
+						<td index="2" assert="{@Campaign2}" />
+						<td index="3" assert="{@home8186.opp2_amount}" />
+					</tr>
+					<tr index="3">
+						<td index="2" assert="{@Campaign1}" />
+						<td index="3" assert="{@home8186.opp1_amount}" />
+					</tr>				
+				</table>
+			</li>
+		</ul>
+	</csv>
+	
+	<!-- delete dashlet -->
+	<div class="dashletToolSet" index="1">
+		<link index="3" alert="true" />
+	</div>
+		
+	<!-- delete records-->
+	<script file="{@global.scriptsdir}/modules/lib/Campaign_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />	
+
+	<puts text="Test: home_8186.xml finished." />
+</soda>	

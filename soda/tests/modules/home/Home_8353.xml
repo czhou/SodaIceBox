@@ -1,0 +1,104 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test:home_8353 check email address on my account dashlet" />
+		
+	<!--create account-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" />
+	
+	<csv file="{@global.scriptsdir}/csvs/home/Home_8353.csv" var="home8353">	
+		<link id="moduleTab_Accounts" />
+		<form id="search_form">
+			<textfield id="name_basic" set="{@pre_account_name}" />
+		</form>
+		<button id="search_form_submit" />
+		<table class="list view">
+			<browser assert="{@pre_account_name}" />
+			<link text="{@pre_account_name}" />
+		</table>
+		<table id="detailpanel_1">
+			<browser assert="{@pre_account_name}" />
+		</table>
+		<button id="edit_button" />
+		<div id="LBL_ACCOUNT_INFORMATION">
+			<textfield id="Accounts0emailAddress0" set="{@home8353.email}"/>		
+		</div>
+		
+		<button id="SAVE" />
+		<table id="detailpanel_1">
+			<browser assert="{@pre_account_name}" />
+		</table>
+		
+		<!--check the my account dashlet-->
+		<link id="moduleTab_Home" />
+		<browser assert="Add Sugar Dashlets" />
+		<!--Add dashlet-->
+		<link id="add_dashlets" />
+		<wait timeout="5" />
+		<div id="dashletsDialog_c">
+			<browser assert="Find Sugar Dashlet" />
+			<link text="My Accounts" />
+			<wait timeout="5" />	
+		</div>
+		<div id="dashletsDialogHeader">
+			<link index="1" />
+		</div>
+		<!--add email address on layout-->
+		<div class="dashletToolSet" index="1">
+			<link index="1" />
+		</div>
+		<div id="dlg_c">
+			<browser assert="My Accounts : Options" />
+			<select id="hide_tabs" set="Email Address" />
+			<image src="themes/default/images/leftarrow_big.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+			<select name="display_tabs[]" assert="Email Address" />
+			<button value="Save" />
+		</div>
+		<ul id="col_0_0">			
+			<li index="1">
+				<browser assert="My Accounts" />
+				<link text="Email Address" click="false" />	
+				<table class="list view">
+						<link text="{@pre_account_name}" click="false" />
+						<browser assert="{@home8353.email}" />			
+				</table>
+			</li>
+		</ul>
+		
+	</csv>
+	
+	<!-- delete dashlet -->
+	<div class="dashletToolSet" index="1">
+		<link index="3" alert="true" />
+	</div>
+		
+	<!-- delete records-->	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	
+	<puts text="Test: home_8353.xml finished." />
+</soda>	

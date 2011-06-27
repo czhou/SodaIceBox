@@ -71,7 +71,7 @@
 	<link text="View Meetings" />
 
 	<button id="search_form_clear" />
-	<textfield id="name_basic" set="GotoMeeting_Sub" />
+	<textfield id="name_basic" set="WebEx_Sub" />
 	<button id="search_form_submit" />
 	<span class="pageNumbers" assert="(1 - 2 of 2)" />
 

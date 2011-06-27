@@ -1,0 +1,78 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test Case 244: Account Detail - Activities sub-panel - Edit Call_Verify that error message 'Missing required field: Subject' is displayed when editing related 'Schedule Call' with mandatory fields blank."/>
+
+	<!--Create a account record-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+
+	<!--Search the record-->
+	<link id="moduleTab_Accounts" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+	</div>
+	<button id="search_form_clear" />
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />
+	</table>
+
+	<!--Create Schedule Meeting-->
+	<browser assert="{@pre_account_name}" />
+	<button value="  Log Call  " />
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0214.csv" var="call_record_0214">
+		<textfield id="name" set="{@call_record_0214.name} {@stamp}" />
+		<textfield id="date_start_date" set="{@currentdate}" />
+		<textfield id="description" set="{@call_record_0214.description}" />
+
+		<select id="date_start_hours" set="{@call_record_0214.date_start_hours}" />
+		<select id="date_start_minutes" set="{@call_record_0214.date_start_minutes}" />
+		<select name="duration_minutes" set="{@call_record_0214.duration_minutes}" />
+		<select id="status" set="{@call_record_0214.status}" />
+
+		<button id="Calls_subpanel_save_button" />
+	</csv>
+
+	<wait />
+	<div id="list_subpanel_activities">
+		<span class="pageNumbers" assert="(1 - 1 of 1)" />
+		<link class="listViewTdToolsS1" index="1" click="true"/>
+	</div>
+	<textfield id="name" set=""/>
+	<button value="Save"/>
+	<browser assert="Missing required field: Subject"/>
+	<button id="CANCEL" alert="true"/>
+
+	<!--Save the subpanel task id & name-->
+	<form name="DetailView">
+		<hidden name="record" var="pre_activity_call_subpanel_id" />
+	</form>
+	<var var="pre_activity_call_subpanel_name" set="{@call_record_0214.name} {@stamp}" />
+	<puts text="Test: Accounts_0214.xml finished." />
+</soda>

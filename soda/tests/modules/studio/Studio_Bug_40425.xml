@@ -45,7 +45,7 @@
 	<link text="bug_40425_ms_c" class="mbLBLL" assertPage="false" />
 	
 	<!-- Assert that the default value was retrieved correcty -->
-	<select value="Task" />
+	<select id="default[]" assert="Task" />
 
 	<button name="fdeletebtn" assertPage="false" alert="true"/>
 

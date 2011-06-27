@@ -65,6 +65,7 @@
 	<button value="Save" />
 
 	<link id="moduleTab_Reports" />
+	<link text="Basic Search" required="false"/>
 	<textfield name="name_basic" set="{@report_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">

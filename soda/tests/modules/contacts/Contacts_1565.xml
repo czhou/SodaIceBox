@@ -1,0 +1,78 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--Create contact_Verify that a contact cannot be created without data entered for the mandatory fields-->
+	<puts text="Soda Test: Contacts_1565.xml starting." />
+	<timestamp />
+	<link id="moduleTab_Contacts" />
+	<csv file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.csv" var="Contact_1565">
+		<link text="Create Contact" />
+		<browser assert="Contact Overview" />
+
+		<!--fill the fields and "Save"-->
+		<form id="EditView">
+			<textfield name="first_name" set="{@Contact_1565.first_name} {@user.name} {@stamp}" />
+			<textfield id="title" set="{@Contact_1565.title}" />
+			<textfield id="phone_work" set="{@Contact_1565.phone_work}" />
+			<textfield id="phone_mobile" set="{@Contact_1565.phone_mobile}" />
+			<textfield id="phone_fax" set="{@Contact_1565.phone_fax}" />
+
+			<textfield id="Contacts0emailAddress0" set="{@stamp}{@Contact_1565.emailAddress0}" />
+			<textfield id="description" click="true" />
+			<wait timeout="2" />
+			<textfield id="description" set="{@Contact_1565.description}" />
+			<select id="lead_source" set="{@Contact_1565.lead_source}" />
+			<checkbox id="do_not_call" set="{@Contact_1565.do_not_call}" />
+			<checkbox id="sync_contact" set="{@Contact_1565.sync_contact}" />
+
+			<textfield id="primary_address_street" set="{@Contact_1565.primary_address_street}" />
+			<textfield id="primary_address_city" set="{@Contact_1565.primary_address_city}" />
+			<textfield id="primary_address_state" set="{@Contact_1565.primary_address_state}" />
+			<textfield id="primary_address_postalcode" set="{@Contact_1565.primary_address_postalcode}" />
+			<textfield id="primary_address_country" set="{@Contact_1565.primary_address_country}" />
+
+			<textfield id="alt_address_street" set="{@Contact_1565.alt_address_street}" />
+			<textfield id="alt_address_city" set="{@Contact_1565.alt_address_city}" />
+			<textfield id="alt_address_state" set="{@Contact_1565.alt_address_state}" />
+			<textfield id="alt_address_postalcode" set="{@Contact_1565.alt_address_postalcode}" />
+			<textfield id="alt_address_country" set="{@Contact_1565.alt_address_country}" />
+
+			<wait timeout="2" />
+			<button id="SAVE_HEADER" />
+		</form>
+
+		<browser assert="Missing required field: Last Name"/>
+		<link text="{@Contact_1565.first_name} {@user.name} {@stamp} {@Contact_1565.last_name}" click="false" exists="false"/>
+		
+		<button id="CANCEL_HEADER" alert="true"/>
+
+	</csv>
+
+	<puts text="Soda Test: Contacts_1565.xml finished." />
+</soda>
+
