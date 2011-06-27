@@ -54,15 +54,9 @@
 			<link text="{@Project_2847.meeting_name}" exist="false" click="false"/>
 		</div>
 
-		<!--Delete meeting record created in this case-->
-		<link id="moduleTab_Meetings"/>
-		<div class="moduleTitle">
-			<link href="index.php?module=Meetings&action=index"/>
-		</div>
-		<checkbox id="massall" click="true"/>
-		<link id="actions_link"/>
-		<link text="Delete" alert="ture"/>
 	</csv>
 
+        <!--Delete meeting record created in this case-->
+        <script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
         <puts text="Test Case 2850 is finished!"/>
 </soda>
