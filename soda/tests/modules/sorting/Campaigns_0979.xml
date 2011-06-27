@@ -37,7 +37,7 @@
 	<link text="View Target Lists" />
 	
 	<link class="listViewThLinkS1" index="1" />
-	<csv file="{@global.scriptsdir}/modules/csv/sorting/TargetList_Listview.csv" 
+	<csv file="{@global.scriptsdir}/csvs/sorting/TargetList_Listview.csv" 
       var="TargetList_Listview_Sort">
     	<table class="list view">
     		<tr index="{@TargetList_Listview_Sort.name_asc}">
@@ -46,7 +46,7 @@
     	</table>
     </csv>
     <link class="listViewThLinkS1" index="1" />
-	<csv file="{@global.scriptsdir}/modules/csv/sorting/TargetList_Listview.csv" 
+	<csv file="{@global.scriptsdir}/csvs/sorting/TargetList_Listview.csv" 
       var="TargetList_Listview_Sort">
     	<table class="list view">
     		<tr index="{@TargetList_Listview_Sort.name_desc}">
@@ -56,7 +56,7 @@
     </csv>
     
     <link class="listViewThLinkS1" index="2" />
-	<csv file="{@global.scriptsdir}/modules/csv/sorting/TargetList_Listview.csv" 
+	<csv file="{@global.scriptsdir}/csvs/sorting/TargetList_Listview.csv" 
       var="TargetList_Listview_Sort">
     	<table class="list view">
     		<tr index="{@TargetList_Listview_Sort.type_asc}">
@@ -65,7 +65,7 @@
     	</table>
     </csv>
     <link class="listViewThLinkS1" index="2" />
-	<csv file="{@global.scriptsdir}/modules/csv/sorting/TargetList_Listview.csv" 
+	<csv file="{@global.scriptsdir}/csvs/sorting/TargetList_Listview.csv" 
       var="TargetList_Listview_Sort">
     	<table class="list view">
     		<tr index="{@TargetList_Listview_Sort.type_desc}">
@@ -75,7 +75,7 @@
     </csv>
     
     <link class="listViewThLinkS1" index="3" />
-	<csv file="{@global.scriptsdir}/modules/csv/sorting/TargetList_Listview.csv" 
+	<csv file="{@global.scriptsdir}/csvs/sorting/TargetList_Listview.csv" 
       var="TargetList_Listview_Sort">
     	<table class="list view">
     		<tr index="{@TargetList_Listview_Sort.description_asc}">
@@ -84,7 +84,7 @@
     	</table>
     </csv>
     <link class="listViewThLinkS1" index="3" />
-	<csv file="{@global.scriptsdir}/modules/csv/sorting/TargetList_Listview.csv" 
+	<csv file="{@global.scriptsdir}/csvs/sorting/TargetList_Listview.csv" 
       var="TargetList_Listview_Sort">
     	<table class="list view">
     		<tr index="{@TargetList_Listview_Sort.description_desc}">
