@@ -31,7 +31,7 @@
 		in Shared Calendar panel. Expectation: 4. The meeting detail view page is displayed. -->
 	<puts text="Test: Calendar_0661.xml starting." />
 
-	<link href="index.php?module=Meetings&amp;action=index" />
+	<link id="moduleTab_Meetings" />
 	<link text="Schedule Meeting" />
 	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record">
