@@ -35,15 +35,15 @@
 	</div>
 
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv" var="account_record_0004">
-
+		<!--Click account create icon in quick create bar-->
 		<div id="dcmenu">
 			<div id="dcmenuContainer">
 				<ul id="dcmenuitems">
-					<!--Click account create icon in quick create bar-->
 					<link index="1" click="true"/>
 				</ul>
 			</div>
 		</div>	
+		<wait timeout="3" />
 		<div class="hd-center">
 			<browser assert="Create Account"/>
 		</div>
