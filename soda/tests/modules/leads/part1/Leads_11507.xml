@@ -1,0 +1,126 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		 Covert a new lead with moving related call to account
+	-->
+	<puts text="Test: Leads_11507.xml starting" />
+
+	<!--Create three records and save its counter-->
+	<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
+
+	<link id="moduleTab_Leads" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Leads&amp;action=index" click="false" />
+	</div>
+
+	<!--Select a lead record-->
+	<textfield id="search_name_basic" set="{@pre_lead_first_name}" />
+	<button id="search_form_submit" />
+
+	<!--Go to detail view of the first record-->
+	<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+	<browser assert="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+
+	<!--Create a call from subpanel-->
+	<timestamp/>
+	<button id="Activities_logcall_button"/>
+	<form id="form_SubpanelQuickCreate_Calls">
+		<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="lead_11507_call">
+			<textfield id="name" set="{@lead_11507_call.name} {@user.name} {@stamp}" />
+
+			<textfield id="date_start_date" set="{@lead_11507_call.date_start_date}" />
+			<select id="date_start_hours" set="{@lead_11507_call.date_start_hours}" />
+			<select id="date_start_minutes" set="{@lead_11507_call.date_start_minutes}" />
+
+			<textfield name="duration_hours" set="{@lead_11507_call.duration_hours}" />
+			<select name="duration_minutes" set="{@lead_11507_call.duration_minutes}" />
+
+			<select id="direction" set="{@lead_11507_call.direction}" />
+			<select id="status" set="{@lead_11507_call.status}" />
+
+			<checkbox name="reminder_checked" set="{@lead_11507_call.reminder_checked}" />
+			<textfield id="description" set="{@lead_11507_call.description}" />
+			<button id="Calls_subpanel_save_button"/>
+
+			<var var="lead_11507_call_name" set="{@lead_11507_call.name} {@user.name} {@stamp}"/>
+		</csv>
+	</form>
+	<wait timeout="3"/>
+	<div id="list_subpanel_activities">
+		<link text="{@lead_11507_call_name}" click="false" exists="true"/>
+	</div>
+
+	<!--Covnert lead-->
+	<button name="convert" value="Convert Lead"/>
+	<textfield id="Accountsname" set="Leads_11507_Account_{@stamp}"/>
+	<select id="lead_conv_ac_op_sel" set="Account"/>
+	<button name="button" value="Save"/>
+
+	<!--Go to newly create account detail view-->
+	<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" click="false" exists="true"/>
+	<link text="Leads_11507_Account_{@stamp}" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Accounts&action=index" click="false" />
+	</div>
+
+	<!--Check account activities subpanel-->
+	<div id="list_subpanel_activities">
+		<link text="{@lead_11507_call_name}" click="false" exists="true"/>
+	</div>
+
+	<!--Verify convert lead without call record related-->
+	<link id="moduleTab_Leads" />
+	<textfield id="search_name_basic" set="{@pre_lead_first_name}" />
+	<button id="search_form_submit" />
+
+	<!--Go to detail view of the first record-->
+	<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+	<browser assert="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+	<div id="list_subpanel_activities">
+		<link text="{@lead_11507_call_name}" click="false" exists="false"/>
+	</div>
+
+	<!--Verify convert contact without call record related-->
+	<link id="moduleTab_Contacts" />
+	<textfield id="search_name_basic" set="{@pre_lead_first_name}" />
+	<button id="search_form_submit" />
+
+	<!--Go to contact detail view of the first record-->
+	<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+	<div id="list_subpanel_activities">
+		<link text="{@lead_11507_call_name}" click="false" exists="false"/>
+	</div>
+
+	<!--Delete the record-->
+	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<puts text="Test: Leads_11507.xml finished" />
+</soda>
