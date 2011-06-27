@@ -27,6 +27,7 @@
 
 <soda>
    <script file="tests/modules/sorting/module_lib/setup-sorting.xml" />
+   <script file="tests/modules/sorting/module_lib/targetlist-init.xml" />
    <script fileset="tests/modules/sorting"/>
    <script file="tests/modules/sorting/module_lib/cleanup-sorting.xml" />
 </soda>
