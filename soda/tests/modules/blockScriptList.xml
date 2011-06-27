@@ -106,6 +106,13 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Admin_36109</testfile>
+		<bugnumber>36109</bugnumber>
+		<reason>Can not set the Percentage in Tax</reason>
+		<modulename>admin</modulename>
+	</block>
+	
+	<block>
 		<testfile>Studio_11484</testfile>
 		<bugnumber>44266</bugnumber>
 		<reason>Save and Deploy breaks Calls editview layout</reason>
