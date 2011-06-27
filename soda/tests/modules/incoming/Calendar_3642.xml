@@ -42,9 +42,14 @@
 	<var var="meeting_name" set="{@pre_meeting_name}" />
 	
 	<link id="moduleTab_Meetings" />
+	<button id="search_form_clear" />
+	<textfield id="name_basic" set="{@meeting_name}" />
+	<button id="search_form_submit" />
 	<table class="list view">
 		<row class="oddListRowS1">
-			<link index="3" jscriptevent="onclick" />
+			<cell index="4">
+				<image index="1" jscriptevent="onclick" click="true" />
+			</cell>	
 		</row>
 	</table>
 	
