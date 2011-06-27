@@ -57,7 +57,7 @@
 	<button id="SAVE_HEADER"/>
 	<browser assert="Missing required field: Quote Subject"/>
 	<browser assert="Missing required field: Valid Until"/>
-	<browser id="CANCEL_HEADER" alert="true"/>
+	<button id="CANCEL_HEADER" alert="true"/>
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
