@@ -53,7 +53,7 @@
 	<!--Display all records-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
