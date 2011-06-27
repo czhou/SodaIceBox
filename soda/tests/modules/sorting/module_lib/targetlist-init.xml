@@ -26,7 +26,25 @@
 -->
 
 <soda>
-	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
-	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	<!-- create targetlist records -->>
+	<link id="moduleTab_ProspectLists" />
+	<csv file="{@global.scriptsdir}/modules/csv/sorting/TargetList_Listview.csv" 
+      var="TargetList_Listview_Sort">
+		
+		<link text="Create Target List" />
+		<browser assert="Description" />
+
+		<form id="EditView">
+			<timestamp />
+			<textfield name="name" set="{@TargetList_Listview_Sort.name}" /> 
+			<select id="list_type" set="{@TargetList_Listview_Sort.type}" />
+			<textfield name="description" set="{@TargetList_Listview_Sort.description} " />
+			<button value="Save" />
+		</form>
+		<div class="moduleTitle">
+			<link href="index.php?module=ProspectLists&amp;action=index" click="false" />
+			<browser assert="{@TargetList_Listview_Sort.name}" />
+		</div>
+	</csv>
 </soda>
 
