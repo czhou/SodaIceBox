@@ -34,7 +34,7 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="@{global.url}/index.php?module=Accounts&amp;action=index" 
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
          click="false" />
 	</div>
 
