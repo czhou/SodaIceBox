@@ -68,7 +68,7 @@
 		<textfield name="name" set="{@knowledgebase_2472.team}" /> 
 		<button value="Search" />
 		<link text="{@knowledgebase_2472.team}" />
-		<radio id="primary_team_name_collection_0" set="true" />
+		<radio id="primary_team_name_collection" set="true" />
 
 		<!--Article body-->
 		<link id="body_html_code" />
