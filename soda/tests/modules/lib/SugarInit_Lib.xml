@@ -28,144 +28,282 @@
 <soda>
 	<puts text="Lib: SugarInit_Lib.xml starting." />
 	<csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" var="SugarInit">
-		<!--
-			browser url='{@global.url}?module=Configurator&mp;action=AdminWizard'/>
-			<button name='next_tab1' required='false' timeout='2'/> <button
-			name='next_tab1' required='false' timeout='2'/> <button name='next_tab1'
-			required='false' timeout='2'/> <button id='gmail-button' required='false'
-			timeout='2'/> <button name='btn_clear' required='false' timeout='2'/>
-			<textfield id="mail_smtpuser" set="{@SugarInit.gmail}" required='false'
-			timeout='2'/> <textfield id="mail_smtppass" set="{@SugarInit.gmail_pass}"
-			required='false' timeout='2'/> <checkbox id="notify_allow_default_outbound"
-			set="true" required='false' timeout='2'/> <button name='next_tab1'
-			required='false' timeout='2'/> <button name='continue' required='false'
-			timeout='2'/
-		-->
 
-		<button name="cancel" required="false" timeout="2" />
-		<button name="next_tab1" required="false" timeout="2" />
-		<textfield id="email1" set="{@SugarInit.email}" required="false"
-			timeout="2" />
-		<button name="next_tab1" required="false" timeout="2" />
-		<button name="next_tab1" required="false" timeout="2" />
-		<button name="next_tab1" required="false" timeout="2" />
-		<button name="save" required="false" timeout="2" />
-
-		<!--
-			browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DAccounts"/>
-			<wait timeout="5"/> <table id="layoutEditorButtons"> <checkbox index="1"
-			set="false"/> </table> <button id="publishBtn"/
-		-->
+		<button name="cancel" required="false" />
+      <wait timeout="9" />
+		<button name="next_tab1" required="false" index="0" />
+      <wait timeout="9" />
+		<textfield id="email1" set="{@SugarInit.email}" required="false" />
+      <wait timeout="9" />
+   	<button name="next_tab1" required="false" index="2" timeout="5" />
+      <wait timeout="9" />
+		<button name="next_tab1" required="false" index="4" timeout="5" />
+      <wait timeout="9" />
+		<button name="next_tab1" required="false" index="6" timeout="5" />
+      <wait timeout="9" />
+		<button name="save" required="false" timeout="3" />
 		<browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DAccounts"
+			url="{@global.url}/index.php?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DAccounts"
 			assertPage="false" />
-		<!--
-			link text="Admin"/> <link text="Studio" assertPage="false"/> <link
-			text="Accounts" class="studiolink" assertPage="false"/> <link text="Layouts"
-			class="studiolink" assertPage="false"/> <link text="EditView"
-			class="studiolink" assertPage="false"/
-		-->
-		<wait timeout="5" />
-		<table id="layoutEditorButtons">
-			<button id="historyDefault" assertPage="false" />
-			<wait timeout="5" />
-			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
-		</table>
 
-		<browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddetailview%26view_module%3DAccounts"
-			assertPage="false" />
 		<wait timeout="5" />
-		<table id="layoutEditorButtons">
-			<button id="historyDefault" assertPage="false" />
-			<wait timeout="5" />
-			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
-		</table>
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="4">
+                  <button id="historyDefault" assertPage="false" />
+               </td>
+               <wait timeout="5" />
+            </tr>
+         </table>
+      </div>
 
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="5">
+                  <checkbox id="tabsCheckbox" click="true" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
+
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="1">
+                  <button id="publishBtn" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
 
 		<browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DProspects"
+			url="{@global.url}/index.php?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddetailview%26view_module%3DAccounts"
 			assertPage="false" />
 		<wait timeout="5" />
-		<table id="layoutEditorButtons">
-			<button id="historyDefault" assertPage="false" />
-			<wait timeout="5" />
-			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
-		</table>
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="4">
+                  <button id="historyDefault" assertPage="false" />
+               </td>
+               <wait timeout="5" />
+            </tr>
+         </table>
+      </div>
+
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="6">
+                  <checkbox id="tabsCheckbox" click="true" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
+
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="1">
+                  <button id="publishBtn" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
+
 
 		<browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddetailview%26view_module%3DProspects"
+			url="{@global.url}/index.php?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DProspects"
 			assertPage="false" />
 		<wait timeout="5" />
-		<table id="layoutEditorButtons">
-			<button id="historyDefault" assertPage="false" />
-			<wait timeout="5" />
-			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
-		</table>
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="4">
+                  <button id="historyDefault" assertPage="false" />
+               </td>
+               <wait timeout="5" />
+            </tr>
+         </table>
+      </div>
+
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="5">
+                  <checkbox id="tabsCheckbox" click="true" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
+
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="1">
+                  <button id="publishBtn" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
+
+      <browser
+			url="{@global.url}/index.php?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DContacts"
+			assertPage="false" />
+		<wait timeout="5" />
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="4">
+                  <button id="historyDefault" assertPage="false" />
+               </td>
+               <wait timeout="5" />
+            </tr>
+         </table>
+      </div>
+
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="5">
+                  <checkbox id="tabsCheckbox" click="true" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
+
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="1">
+                  <button id="publishBtn" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
 
 		<browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DContacts"
+			url="{@global.url}/index.php?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddetailview%26view_module%3DContacts"
 			assertPage="false" />
 		<wait timeout="5" />
-		<table id="layoutEditorButtons">
-			<button id="historyDefault" assertPage="false" />
-			<wait timeout="5" />
-			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
-		</table>
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="4">
+                  <button id="historyDefault" assertPage="false" />
+               </td>
+               <wait timeout="5" />
+            </tr>
+         </table>
+      </div>
+
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="6">
+                  <checkbox id="tabsCheckbox" click="true" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
+
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="1">
+                  <button id="publishBtn" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
 
 		<browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddetailview%26view_module%3DContacts"
+			url="{@global.url}/index.php?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DLeads"
 			assertPage="false" />
 		<wait timeout="5" />
-		<table id="layoutEditorButtons">
-			<button id="historyDefault" assertPage="false" />
-			<wait timeout="5" />
-			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
-		</table>
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="4">
+                  <button id="historyDefault" assertPage="false" />
+               </td>
+               <wait timeout="5" />
+            </tr>
+         </table>
+      </div>
+
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="5">
+                  <checkbox id="tabsCheckbox" click="true" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
+
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="1">
+                  <button id="publishBtn" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
 
 		<browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DLeads"
+			url="{@global.url}/index.php?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddetailview%26view_module%3DLeads"
 			assertPage="false" />
 		<wait timeout="5" />
-		<table id="layoutEditorButtons">
-			<button id="historyDefault" assertPage="false" />
-			<wait timeout="5" />
-			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
-		</table>
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="4">
+                  <button id="historyDefault" assertPage="false" />
+               </td>
+               <wait timeout="5" />
+            </tr>
+         </table>
+      </div>
 
-		<browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddetailview%26view_module%3DLeads"
-			assertPage="false" />
-		<wait timeout="5" />
-		<table id="layoutEditorButtons">
-			<button id="historyDefault" assertPage="false" />
-			<wait timeout="5" />
-			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
-		</table>
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="6">
+                  <checkbox id="tabsCheckbox" click="true" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
 
+      <div class="bodywrapper">
+         <table id="layoutEditorButtons">
+            <tr index="0">
+               <td index="1">
+                  <button id="publishBtn" assertPage="false" />
+               </td>
+            </tr>
+         </table>
+      </div>
 		<!--
 			Turn off auto-generated passwords: Note: This is currently disabled until
 			bug: 36234 is fixed.
 		-->
 
+      <wait timeout="2" />
 		<link text="Admin" />
 		<link text="Password Management" />
-		<textfield name="passwordsetting_minpwdlength" set="{@SugarInit.min}" />
+		<textfield name="passwordsetting_minpwdlength" set="{@SugarInit.min}" 
+         clear="true" />
 		<checkbox id="passwordsetting_onenumber" set="false" />
 		<checkbox id="passwordsetting_onelower" set="false" />
 		<checkbox id="passwordsetting_onespecial" set="false" />
 		<checkbox id="SystemGeneratedPassword_checkbox" set="false" />
 		<button id="btn_save" />
-
+      <wait timeout="2" />
 
 		<!--change the date formation and navigation paradigm for Admin-->
 		<link text="Administrator" />
@@ -175,8 +313,9 @@
 		<button id="Save" />
 
 		<!--Create a new normal user-->
-		<link
-			href="index.php?module=Users&amp;action=EditView&amp;return_module=Users&amp;return_action=DetailView" />
+		<browser
+			url="{@global.url}/index.php?module=Users&amp;action=EditView&amp;return_module=Users&amp;return_action=DetailView" />
+
 		<!--link text="Create New User" /-->
 		<browser assert="Users" />
 		<wait timeout="1" />
@@ -184,13 +323,20 @@
 		<textfield id="last_name" set="{@SugarInit.last_name}" />
 		<textfield id="Users0emailAddress0" set="{@SugarInit.email}" />
 
-		<link href="#tab2" />
-		<wait timeout="1" />
-		<textfield id="new_password" set="{@SugarInit.pass}" jscriptevent="onkeyup" />
-		<textfield id="confirm_pwd" set="{@SugarInit.pass}" jscriptevent="onkeyup" />
+		<link id="tab2" />
+		<wait timeout="3" />
 
+		<textfield id="new_password" set="{@SugarInit.pass}" />
+		<textfield id="confirm_pwd" set="{@SugarInit.pass}" />
 		<button id="Save" />
-		<link text="View Users" />
+      
+      <div id="sugarMsgWindow" timeout="3">
+         <link class="container-close" />
+      </div>
+
+      <link id="moduleTab_Users" click="false" jscriptevent="onmouseover" />      
+      <link text="View Users" timeout="2" />
+
 		<link text="Basic Search" required="false" />
 		<button id="search_form_clear" />
 		<textfield id="search_name_basic" set="{@SugarInit.last_name}" />
@@ -200,16 +346,24 @@
 
 		<!--change the date formation and navigation paradigm for new user-->
 		<link text="Log Out" />
-		<textfield id="user_name" set="{@SugarInit.last_name}" />
-		<textfield id="user_password" set="{@SugarInit.pass}" />
+		<textfield id="user_name" set="{@SugarInit.last_name}" clear="true" />
+		<textfield id="user_password" set="{@SugarInit.pass}" clear="true" />
 		<button id="login_button" />
 
 		<!-- deal with new user wizard! -->
-		<button name="next_tab1" required="false" timeout="2" />
-		<button name="next_tab1" required="false" timeout="2" />
-		<button name="next_tab1" required="false" timeout="2" />
-		<button name="save" required="false" timeout="2" />
-		<button name="save" required="false" timeout="2" />
+      <wait timeout="5" />
+		<button name="next_tab1" required="false" index="0" />
+      <wait timeout="5" />
+		<button name="next_tab1" required="false" index="2" />
+      <wait timeout="5" />
+		<button name="next_tab1" required="false" index="4" />
+      <wait timeout="5" />
+		<button name="next_tab1" required="false" index="6" />
+      <wait timeout="5" />
+		<button name="save" required="false" />
+      <wait timeout="5" />
+   	<button name="save" required="false" timeout="2" />
+
 		<browser assert="Welcome, " />
 
 		<!--Save the new user to a var-->
