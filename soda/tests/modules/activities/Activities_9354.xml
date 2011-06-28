@@ -35,9 +35,9 @@
     <script file='{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml'/>
 
     <link id='moduleTab_Home'/>
-    <image src='/*themes/Sugar/images/accept_inline.png*/' click='false' />
-    <image src='/*themes/Sugar/images/tentative_inline.png*/' click='false' />
-    <image src='/*themes/Sugar/images/decline_inline.png*/' click='false' />
+    <image src='/.*accept_inline.png.*/' click='false' />
+    <image src='/.*tentative_inline.png.*/' click='false' />
+    <image src='/.*decline_inline.png.*/' click='false' />
 
     <!--delete call record-->
     <script file='{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml'/>
