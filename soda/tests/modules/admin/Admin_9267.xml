@@ -39,7 +39,7 @@
 		<browser assert="Accounts" />
 		<browser assert="Contacts" />
 		<browser assert="Leads" />
-		<browser assert="Prospects" />
+		<browser assert="Targets" />
 	</div>
 	<browser
 		url="{@global.url}?module=Connectors&amp;action=SaveModifyDisplay&amp;modify=true&amp;display_values=ext_rest_linkedin:Accounts,ext_rest_linkedin:Contacts&amp;display_sources=ext_rest_linkedin&amp;button=Save" />
