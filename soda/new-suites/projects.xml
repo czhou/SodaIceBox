@@ -27,7 +27,8 @@
 
 <soda>
         <script file="tests/modules/projects/module_lib/setup-projects.xml" />
-        <script file="tests/modules/projects/Project_2858.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Email_Setting_Lib.xml" />
+        <script fileset="tests/modules/projects/" />
         <script file="tests/modules/projects/module_lib/cleanup-projects.xml" />
 </soda>
 
