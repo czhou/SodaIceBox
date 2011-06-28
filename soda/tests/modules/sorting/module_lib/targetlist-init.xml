@@ -28,7 +28,7 @@
 <soda>
 	<!-- create targetlist records -->>
 	<link id="moduleTab_ProspectLists" />
-	<csv file="{@global.scriptsdir}/modules/csv/sorting/TargetList_Listview.csv" 
+	<csv file="{@global.scriptsdir}/csvs/sorting/TargetList_Listview.csv" 
       var="TargetList_Listview_Sort">
 		
 		<link text="Create Target List" />
