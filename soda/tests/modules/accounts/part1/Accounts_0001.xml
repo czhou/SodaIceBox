@@ -123,6 +123,8 @@
 			<button id="SAVE"/>
 		</form>
 
+      <wait timeout="5" />
+
 		<link id="moduleTab_Accounts" />
 		<div class="moduleTitle">
 			<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
