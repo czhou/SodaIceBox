@@ -113,7 +113,8 @@
 
 		<!--user select-->
 		<button id="btn_assigned_user_name" />
-      <attach title="/SugarCRM/">
+      <wait timeout="2" />
+      <attach title="SugarCRM">
          <browser assert="User Search" />
          <textfield name="last_name_advanced" set="{@case_record_0046.assigned_user_name}" />
          <button value="Search" />
@@ -125,7 +126,8 @@
 			<button value="Select" />
 		</table>
 
-      <attach title="/SugarCRM/">
+      <wait timeout="2" />
+      <attach title="SugarCRM">
          <browser assert="Team Search" />
          <textfield name="name" set="{@case_record_0046.team_name}" />
          <button value="Search" />

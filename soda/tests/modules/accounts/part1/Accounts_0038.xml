@@ -63,7 +63,8 @@
 			<button value="Select" />
 		</table>
 
-      <attach title="/SugarCRM/">
+      <wait timeout="2" />
+      <attach title="SugarCRM">
          <browser assert="Team Search" />
          <textfield name="name" set="{@history_record_0036.team_name}" />
          <button value="Search" />

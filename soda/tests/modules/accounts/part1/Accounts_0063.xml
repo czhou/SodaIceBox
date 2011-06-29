@@ -50,7 +50,8 @@
 	<!--Goto contact subpanel -->
 	<button id="accounts_contacts_select_button" />
 	<wait timeout="5" />
-   <attach title="/SugarCRM/">
+   <wait timeout="2" />
+   <attach title="SugarCRM">
       <textfield id="first_name_advanced" set="{@pre_contact_first_name}" />
       <textfield id="last_name_advanced" set="{@pre_contact_last_name}" />
       <button value="Search" />

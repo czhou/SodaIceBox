@@ -68,7 +68,8 @@
 		<!--user select -->
 		<button id="btn_assigned_user_name" />
 		<wait timeout="3" />
-      <attach title="/SugarCRM/">
+      <wait timeout="2" />
+      <attach title="SugarCRM">
          <browser assert="User Search" />
          <textfield id="last_name_advanced" set="{@lead_record_0044.assigned_user_name}" />
          <button value="Search" />
@@ -79,7 +80,8 @@
 		<table id="form_SubpanelQuickCreate_Leads_team_name_table">
 			<button value="Select" />
 		</table>
-      <attach title="/SugarCRM/">
+      <wait timeout="2" />
+      <attach title="SugarCRM">
          <browser assert="Team Search" />
          <textfield name="name" set="{@lead_record_0044.team_name}" />
          <button value="Search" />

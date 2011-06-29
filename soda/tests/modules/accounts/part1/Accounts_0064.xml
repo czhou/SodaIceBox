@@ -47,7 +47,8 @@
 
 	<!--Goto contact subpanel & click "Select" -->
 	<button id="accounts_contacts_select_button" />
-   <attach title="/SugarCRM/">
+   <wait timeout="2" />
+   <attach title="SugarCRM">
       <!--Create Contact-->
       <button value="Create Contact" />
       <csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0064.csv" var="contact_record_0064">
