@@ -1,0 +1,109 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+	<script file="{@global.scriptsdir}/modules/lib/Role_Create_Lib.xml" />
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test: Bug44557, 'User who created a meeting is invited even if he is not in the invited list' starting." />
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+    <link text="Admin" />
+	<link text="Password Management" />
+    <timestamp />
+	<csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv"
+	var="init">
+		<textfield name="passwordsetting_minpwdlength" set="{@init.min}" />
+		<checkbox id="passwordsetting_onenumber" set="false" />
+		<checkbox id="passwordsetting_onelower" set="false" />
+		<checkbox id="passwordsetting_onespecial" set="false" />
+		<checkbox id="SystemGeneratedPassword_checkbox" set="false" />
+		<wait timeout="2" />
+		<button id="btn_save" />
+		<!--Create a new normal user-->
+		<browser url="{@global.url}/
+			index.php?module=Users&action=EditView&return_module=Users&return_action=DetailView" />
+		<!--link text="Create New User" /-->
+		<browser assert="Users" />
+		<wait timeout="2" />
+		<textfield name="sugar_user_name" set="{@init.last_name}" />
+		<textfield id="last_name" set="{@init.last_name}" />
+		<textfield id="Users0emailAddress0" set="{@init.email}" />
+		<link href="#tab2" />
+		<wait timeout="2" />
+		<textfield id="new_password" set="{@init.pass}" jscriptevent="onkeyup" />
+		<textfield id="confirm_pwd" set="{@init.pass}" jscriptevent="onkeyup" />
+		<button id="Save" />
+        <puts text="Log out and Log in as normal user" />    
+    </csv>  
+    <link id="moduleTab_Meetings" />
+    <link text="Schedule Meeting" />
+    <puts text="Creating Meeting" />
+	<link href="index.php?module=Activities&amp;action=index" />
+	<link text="Schedule Meeting" />
+	<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record">
+		<textfield id="name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+		<textfield id="location" set="{@meeting_record.location}" />
+		<textfield id="description" set="{@meeting_record.description}" />
+		<select id="status" set="{@meeting_record.status}" />
+		<textfield id="date_start_date" set="{@meeting_record.date_start_date}" />
+		<select id="date_start_hours" set="{@meeting_record.date_start_hours}" />
+		<select id="date_start_minutes" set="{@meeting_record.date_start_minutes}" />
+		<textfield name="duration_hours" set="{@meeting_record.duration_hours}" />
+		<select name="duration_minutes" set="{@meeting_record.duration_minutes}" />
+		<checkbox name="reminder_checked" set="{@meeting_record.reminder_checked}" />
+            <puts text="Removing self from the invitees" />
+            <table id="schedulerTable">
+			<link text="rem" />
+            </table>
+            <puts text="Finding invitee" />
+            <textfield name="search_last_name" set="{@init.last_name}" />
+            <button value="Search" />
+            <wait timeout="2" />
+            <div id="list_div_win">
+                <button value="Add" />
+            </div>
+            <wait timeout="1" />        
+		<button value="Send Invites" />              
+		<div id="list_subpanel_users" assertnot="{@user.name}" />
+		<form name="DetailView">
+			<hidden name="record" var="pre_meeting_id" />
+		</form>
+		<var var="pre_meeting_name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+	</csv>
+    <!--Delete created Meeting -->
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	<!--Delete created normal user-->
+    <link text="Admin" />
+	<wait timeout="1" />
+	<link text="User Management" />
+	<wait timeout="1" />
+	<link text="{@init.last_name}" />
+    <wait timeout="2" />
+	<button value="Delete" />
+	<wait timeout="1" />
+	<button text="OK" />
+	<wait timeout="1" />
+	<button value="Cancel" />
+</soda>
