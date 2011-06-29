@@ -46,6 +46,7 @@
 
 	<!--Create Member Organization-->
 	<button name="member_accounts_create_button" />
+	<wait timeout="10"/>
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0079.csv" var="member_record_0079">
 		<form id="form_SubpanelQuickCreate_Accounts">
 			<textfield id="Accounts0emailAddress0" set="{@member_record_0079.emailAddress0}" />
@@ -60,14 +61,13 @@
 		</form>
 
 		<!-- Click "Cancel". -->
-		<button id="Accounts_subpanel_save_button" alert="true" />
+		<button id="Accounts_subpanel_save_button" />
 
-		<div id="list_subpanel_accounts">
-			<span class="pageNumbers" assert="(1 - 1 of 1)" />
-			<link class="listViewTdToolsS1" index="1" click="true"/>
-		</div>
+			
+		<span class="pageNumbers" assert="(1 - 1 of 1)" />
+		<link class="listViewTdToolsS1" index="1" click="true"/>
 		<textfield id="name" set=""/>
-		<button id="Accounts_subpanel_save_button" alert="true" />
+		<button id="SAVE" alert="true" />
 		<browser assert="Missing required field: Name"/>
 		<button id="CANCEL" alert="true"/>
 	</csv>

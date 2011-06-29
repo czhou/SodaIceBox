@@ -554,13 +554,6 @@
 	</block>
 	
 	<block>
-		<testfile>Accounts_0016</testfile>
-		<bugnumber>123456</bugnumber>
-		<reason>Can't not properly verify listview with asc/dsc</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
 		<testfile>Accounts_0074</testfile>
 		<bugnumber>43348</bugnumber>
 		<reason>Soda issue with Global vs Timeout timestamps</reason>

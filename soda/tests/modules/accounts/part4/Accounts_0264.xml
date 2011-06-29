@@ -56,7 +56,7 @@
 	<button name="Products_create_button" />
 	<button id="SAVE_HEADER"/>
 	<browser assert="Missing required field: Product"/>
-	<browser id="CANCEL_HEADER" alert="true"/>
+	<button id="CANCEL_HEADER" alert="true"/>
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />

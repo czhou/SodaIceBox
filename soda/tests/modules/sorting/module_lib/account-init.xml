@@ -26,13 +26,27 @@
 -->
 
 <soda>
-	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
-	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Enable_All_Lib.xml"/>
-	<!--script file="{@global.scriptsdir}/modules/lib/Email_Setting_Lib.xml"/-->
-	<script file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.xml"/>
-	<!--script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml"/-->
-	<!--script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml"/-->
-	<!--script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml"/-->
-	<!--script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml"/-->
+	<!-- create account records -->
+	<timestamp />
+	<link id="moduleTab_Accounts" />
+	<wait condition="true">
+		<link text="Create Account" />
+	</wait>
+	<csv file="{@global.scriptsdir}/csvs/sorting/Account_Listview.csv" var="account_list_sort">
+
+		<link text="Create Account" />
+		<browser assert="Create" />
+
+		<form id="EditView">
+			<textfield id="name" set="{@account_list_sort.name}" />
+			<textfield id="billing_address_city" set="{@account_list_sort.city}" />
+			<textfield id="billing_address_country" set="{@account_list_sort.billing_country}" />
+			<textfield id="phone_office" set="{@account_list_sort.phone}" />
+			<button value="Save" />
+		</form>
+		<wait timeout="2" />
+		<browser assert="{@account_record.name}" />
+
+	</csv>
+
 </soda>

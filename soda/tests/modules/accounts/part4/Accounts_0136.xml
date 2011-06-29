@@ -51,6 +51,7 @@
 		<form id="form_DCQuickCreate_Accounts">
 
 			<textfield id="website" set="{@account_record_0004.website}" />
+			 <textfield id="name" set="" />
 
 			<button id="Accounts_dcmenu_save_button"/>
 			<browser assert="Missing required field: Name"/>

@@ -56,7 +56,7 @@
         <div id="list_subpanel_project">
                 <link text="New Project Record"/>
         </div>
-        <wait timeout="5"/>
+        <wait timeout="10"/>
         <browser assert="Project Overview"/>
 
         <!--Delete the note record created in this case.-->
