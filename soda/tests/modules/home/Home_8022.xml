@@ -1,0 +1,80 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test:home_8022 edit global search record" />
+		
+	<!--create account-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	
+	<csv file="{@global.scriptsdir}/csvs/home/Home_8022.csv" var="home8022">	
+	
+		<!--global search -->
+		<div id="sugar_spot_search_div">
+			<textfield id="sugar_spot_search" set="{@pre_account_name}"/>
+		</div>
+		<div id="glblSearchBtn">
+			<image src="themes/Sugar/images/dcMenuSearchBtn.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		</div>
+		<div id="dcboxbody">
+			<browser assert="Accounts" />
+			<browser assert="{@pre_account_name}" />
+			<button text="Show All" />
+		</div>
+		<table id="contentTable">
+			<browser assert="Accounts (1)" />
+			<browser assert="{@pre_account_name}" />
+			<image src="themes/Sugar/images/edit_inline.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		</table>		
+		
+		<table id="contentTable">
+			<browser assert="{@pre_account_name}" />
+			<textfield id="name" set="{@home8022.name} {@user.name} {@stamp}" />
+			<textfield id="website" set="{@home8022.website}" />
+			<textfield id="phone_office" set="{@home8022.phone_office}" />
+			<textfield id="phone_fax" set="{@home8022.phone_fax}" />
+			<textfield id="Accounts0emailAddress0" set="{@home8022.email}" />
+			<textfield id="description" set="{@home8022.des}" />
+			<button id="SAVE" />
+		</table>		
+		
+		<div id="LBL_ACCOUNT_INFORMATION">
+			<browser assert="{@home8022.name} {@user.name} {@stamp}" />
+			<browser assert="{@home8022.website}" />
+			<browser assert="{@home8022.phone_office}" />
+			<browser assert="{@home8022.phone_fax}" />
+			<browser assert="{@home8022.email}" />
+			<browser assert="{@home8022.des}" />			
+		</div>				
+		
+	</csv>
+		
+	<!-- delete records-->	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	
+	<puts text="Test: home_8022.xml finished." />
+</soda>	
