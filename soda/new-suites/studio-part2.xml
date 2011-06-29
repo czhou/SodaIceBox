@@ -27,6 +27,6 @@
 
 <soda>
 	<script file="tests/modules/studio/module_lib/setup-studio.xml" />
-	<script fileset="tests/modules/studio" />
+	<script fileset="tests/modules/studio/part2" />
 	<script file="tests/modules/studio/module_lib/cleanup-studio.xml" />
 </soda>
