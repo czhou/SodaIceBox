@@ -35,9 +35,10 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
 
+	<textfield id="name_basic" clear="true" />
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">
@@ -47,7 +48,6 @@
 	<wait />
 	<!--Go its detail view-->
 	<browser assert="{@pre_account_name}" />
-
 
 	<!--Create History Subpanel-->
 	<button name="History_createnoteorattachment_button" />
@@ -64,10 +64,13 @@
 		<table id="form_SubpanelQuickCreate_Notes_team_name_table">
 			<button value="Select" />
 		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@history_record_0036.team_name}" />
-		<button value="Search" />
-		<link text="{@history_record_0036.team_name}" />
+
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />
+         <textfield name="name" set="{@history_record_0036.team_name}" />
+         <button value="Search" />
+         <link text="{@history_record_0036.team_name}" />
+      </attach>
 
 		<button id="Notes_subpanel_save_button" />
 
@@ -75,10 +78,12 @@
 		<form name="DetailView">
 			<hidden name="record" var="pre_history_subpanel_id" />
 		</form>
-		<var var="pre_history_subpanel_name" set="{@history_record_0036.name} {@user.name} {@stamp}" />
+		<var var="pre_history_subpanel_name" 
+         set="{@history_record_0036.name} {@user.name} {@stamp}" />
 	</csv>
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
 
 	<puts text="Test: Accounts_0036.xml finished." />
 </soda>
+
