@@ -58,7 +58,7 @@
 	<browser assert="Missing required field: Name"/>
 	<browser assert="Missing required field: Start Date"/>
 	<browser assert="Missing required field: End Date"/>
-	<browser id="Project_subpanel_cancel_button" alert="true"/>
+	<button id="Project_subpanel_cancel_button" alert="true"/>
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />

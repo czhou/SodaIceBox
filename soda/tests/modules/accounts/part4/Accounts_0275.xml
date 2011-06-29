@@ -56,7 +56,7 @@
 	<button name="account_contracts_create_button" />
 	<button id="Contracts_subpanel_save_button"/>
 	<browser assert="Missing required field: Name"/>
-	<browser id="Contracts_subpanel_cancel_button" alert="true"/>
+	<button id="Contracts_subpanel_cancel_button" alert="true"/>
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />

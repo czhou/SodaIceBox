@@ -71,7 +71,7 @@
 
 		<button id="Notes_subpanel_save_button" />
 
-		<div id="History_createnoteorattachment_button">
+		<div id="list_subpanel_history">
 			<link text="{@history_record_0036.name} {@user.name} {@stamp}"/>
 		</div>
 		

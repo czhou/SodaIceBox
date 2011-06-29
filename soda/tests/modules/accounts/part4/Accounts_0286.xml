@@ -82,7 +82,7 @@
 			<link text="{@history_record_0057.subjectfield}" />
 		</div>
 		<wait timeout="3" />
-		<button value="    Delete    " alert="true" />
+		<button value="    Delete    " alert="false" />
 
 		<!--Search the record-->
 	        <link id="moduleTab_Accounts" />
