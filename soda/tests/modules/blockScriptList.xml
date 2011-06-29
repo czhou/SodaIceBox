@@ -106,6 +106,13 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Roles_42099</testfile>
+		<bugnumber>42099</bugnumber>
+		<reason>Role restricted user can remove self from calls/meetings</reason>
+		<modulename>roles</modulename>
+	</block>
+	
+	<block>
 		<testfile>Admin_36109</testfile>
 		<bugnumber>36109</bugnumber>
 		<reason>Can not set the Percentage in Tax</reason>
