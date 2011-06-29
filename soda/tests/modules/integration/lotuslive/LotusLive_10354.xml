@@ -51,9 +51,9 @@
 	<link text="lotus.txt" click="false" exist="true" />
 
 	<link class='listViewTdToolsS1' index='2' alert='true' />
-	<wait timeout='3'/>
+	<wait timeout='６'/>
 	<link class='listViewTdToolsS1' index='2' alert='true' />
-	<wait timeout='3'/>
+	<wait timeout='６'/>
 	<link text="sugarcrm.txt" click="false" exist="false" />
 	<link text="lotus.txt" click="false" exist="false" />
 		

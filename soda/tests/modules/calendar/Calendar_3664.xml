@@ -62,7 +62,7 @@
 	
 	<div id="list_subpanel_history">
 		<link class="listViewTdToolsS1" index="2" alert="true" />
-		<wait timeout="2" />
+		<wait timeout="5" />
 		<browser assertnot="Note for {@meeting1_name}" />
 	</div>
 	
@@ -74,7 +74,7 @@
 	
 	<div id="list_subpanel_history">
 		<link class="listViewTdToolsS1" index="2" alert="true" />
-		<wait timeout="2" />
+		<wait timeout="5" />
 		<browser assertnot="Note for {@call1_name}" />
 	</div>
 	
