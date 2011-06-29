@@ -81,7 +81,7 @@
 			<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
 		</table>
 	</div>
-	<wait timeout="2"/>
+	<wait timeout="3"/>
 
 	<!--Verify delete action works-->
 	<div id="list_subpanel_activities">
