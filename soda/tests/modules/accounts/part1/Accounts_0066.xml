@@ -63,7 +63,7 @@
 
 		<!--user select-->
 		<button id="btn_assigned_user_name" />
-      <attach title="SugarCRM">
+      <attach title="/SugarCRM/">
          <browser assert="User Search" />
          <textfield name="last_name_advanced" set="{@opp_record_0066.assigned_user_name}" />
          <button value="Search" />
@@ -74,7 +74,7 @@
 		<table id="form_SubpanelQuickCreate_Opportunities_team_name_table">
 			<button value="Select" />
 		</table>
-      <attach title="SugarCRM">
+      <attach title="/SugarCRM/">
          <browser assert="Team Search" />
          <textfield name="name" set="{@opp_record_0066.team_name}" />
          <button value="Search" />

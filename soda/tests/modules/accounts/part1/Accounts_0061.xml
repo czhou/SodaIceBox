@@ -50,7 +50,7 @@
 
 	<!--Goto contact subpanel & click "Select" -->
 	<button id="accounts_contacts_select_button" />
-   <attach title="SugarCRM">
+   <attach title="/SugarCRM/">
       <table class="list view">
          <link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
       </table>

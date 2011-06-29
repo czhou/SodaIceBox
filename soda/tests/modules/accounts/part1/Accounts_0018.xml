@@ -87,7 +87,7 @@
 	</div>
 	<wait timeout="3" />
 
-   <attach title="SugarCRM">
+   <attach title="/SugarCRM/">
       <table class="list view" jscriptevent="onclick">
          <checkbox name="massall" click="true" />
       </table>

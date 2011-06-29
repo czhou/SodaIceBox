@@ -54,7 +54,7 @@
 	<button id="accounts_contacts_select_button" />
 	<wait timeout="5" />
 	<!--click the checkbox and click "Select"-->
-   <attach title="SugarCRM">
+   <attach title="/SugarCRM/">
       <table class="list view">
          <checkbox value="{@pre_contact_id}" click="true" />
       </table>

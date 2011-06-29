@@ -54,7 +54,7 @@
 			<button value="Select" />
 		</table>
 
-      <attach title="SugarCRM">
+      <attach title="/SugarCRM/">
          <browser assert="Team Search" />
          <textfield name="name" set="{@account_record_0007.team_name}" />
          <button value="Search" />

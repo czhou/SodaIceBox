@@ -41,7 +41,7 @@
 		<!--user select-->
 		<button id="btn_assigned_user_name" />
 
-      <attach title="SugarCRM">
+      <attach title="/SugarCRM/">
          <browser assert="User Search" />
          <textfield name="last_name_advanced" 
             set="{@account_record_0003.assigned_user_name}" />
@@ -55,7 +55,7 @@
 			<button value="Select" />
 		</table>
 
-      <attach title="SugarCRM">
+      <attach title="/SugarCRM/">
          <browser assert="Team Search" />
          <textfield name="name" set="{@account_record_0003.team_name}" />
          <button value="Search" />
