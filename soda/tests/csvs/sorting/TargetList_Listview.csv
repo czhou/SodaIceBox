@@ -1,5 +1,5 @@
-name,name_asc,name_desc,type,type_asc,type_desc,description,description_asc,description_desc
-a_TargetList,5,4,Default,3,6,a_Targetlist  - default type - description,5,4
-b_TargetList,6,3,Seed,5,4,b_Targetlist  - seed type - description,6,3
-1_TargetList,4,5,Suppression List - By Domain,4,5,1_Targetlist  - Suppression List - By Domain type - description,4,5
-2_TargetList,3,6,Test,6,3,2_Targetlist  - test type - description,3,6
+name,type,description,field_asc,field_desc
+1_TargetList,Default,1_Targetlist - description,4,7
+2_TargetList,Suppression List - By Domain,2_Targetlist - description,5,6
+a_TargetList,Seed,a_Targetlist - description,6,5
+b_TargetList,Test,b_Targetlist - description,7,4

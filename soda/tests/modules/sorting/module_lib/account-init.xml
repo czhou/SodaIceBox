@@ -26,24 +26,27 @@
 -->
 
 <soda>
-	<!-- create targetlist records -->
-	<link id="moduleTab_ProspectLists" />
-	<csv file="{@global.scriptsdir}/csvs/sorting/TargetList_Listview.csv" 
-      var="TargetList_Listview_Sort">
-		
-		<link text="Create Target List" />
-		<browser assert="Description" />
+	<!-- create account records -->
+	<timestamp />
+	<link id="moduleTab_Accounts" />
+	<wait condition="true">
+		<link text="Create Account" />
+	</wait>
+	<csv file="{@global.scriptsdir}/csvs/sorting/Account_Listview.csv" var="account_list_sort">
+
+		<link text="Create Account" />
+		<browser assert="Create" />
 
 		<form id="EditView">
-			<timestamp />
-			<textfield name="name" set="{@TargetList_Listview_Sort.name}" /> 
-			<select id="list_type" set="{@TargetList_Listview_Sort.type}" />
-			<textfield name="description" set="{@TargetList_Listview_Sort.description} " />
+			<textfield id="name" set="{@account_list_sort.name}" />
+			<textfield id="billing_address_city" set="{@account_list_sort.city}" />
+			<textfield id="billing_address_country" set="{@account_list_sort.billing_country}" />
+			<textfield id="phone_office" set="{@account_list_sort.phone}" />
 			<button value="Save" />
 		</form>
-		<div class="moduleTitle">
-			<link href="index.php?module=ProspectLists&amp;action=index" click="false" />
-			<browser assert="{@TargetList_Listview_Sort.name}" />
-		</div>
+		<wait timeout="2" />
+		<browser assert="{@account_record.name}" />
+
 	</csv>
+
 </soda>
