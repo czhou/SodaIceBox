@@ -50,7 +50,7 @@
 
       <!--Account Select-->
       <button id="btn_account_name" />
-      <attach title="SugarCRM">
+      <attach title="/SugarCRM/">
          <browser assert="Account Search" />
          <textfield id="name_advanced" set="{@pre_account_name}" /> 
          <button value="Search" />
