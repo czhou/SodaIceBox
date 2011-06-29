@@ -54,7 +54,7 @@
 	</csv>
 
    <wait timeout="1" />
-	<button id="search_form_submit" />
+	<button id="search_form_submit" index="1" />
 	<wait timeout="3" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
