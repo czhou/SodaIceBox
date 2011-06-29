@@ -1,0 +1,107 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test:home_9564 global search leads and contacts by email address" />
+		
+	<!--create lead-->
+	<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" />
+	<csv file="{@global.scriptsdir}/csvs/home/Home_9564.csv" var="home9564">	
+		<link id="moduleTab_Leads" />
+		<form id="search_form">
+			<textfield id="search_name_basic" set="{@pre_lead_first_name}" />
+		</form>
+		<button id="search_form_submit" />
+		<table class="list view">
+			<browser assert="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+			<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+		</table>
+		<div id="Leads_detailview_tabs">
+			<browser assert="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+		</div>
+		<button id="edit_button" />
+		<div id="EditView_tabs">
+			<textfield name="Leads0emailAddress0" set="{@home9564.email}"/>		
+		</div>		
+		<button id="SAVE" />
+		<div id="Leads_detailview_tabs">
+			<browser assert="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+			<browser assert="{@home9564.email}" />
+		</div>
+		
+		<link id="moduleTab_Contacts" />
+		<form id="search_form">
+			<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
+		</form>
+		<button id="search_form_submit" />
+		<table class="list view">
+			<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+			<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+		</table>
+		<div id="LBL_CONTACT_INFORMATION">
+			<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+		</div>
+		<button id="edit_button" />
+		<div id="EditView_tabs">
+			<textfield name="Contacts0emailAddress0" set="{@home9564.email}"/>		
+		</div>		
+		<button id="SAVE_HEADER" />
+		<div id="Contacts_detailview_tabs">
+			<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+			<browser assert="{@home9564.email}" />
+		</div>	
+		
+				
+		<!--global search by email address-->
+		<div id="sugar_spot_search_div">
+			<textfield id="sugar_spot_search" set="{@home9564.email}"/>
+		</div>
+		<div id="glblSearchBtn">
+			<image src="themes/Sugar/images/dcMenuSearchBtn.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		</div>
+		<div id="dcboxbody">
+			<browser assert="Leads" />
+			<browser assert="{@pre_lead_first_name} {@pre_lead_last_name}" />
+			<browser assert="Contacts" />
+			<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+			<button text="Show All" />
+		</div>
+		<table id="contentTable">
+			<browser assert="Leads (1)" />
+			<browser assert="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+			<browser assert="Contacts (1)" />
+			<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+		</table>
+	</csv>
+		
+	<!-- delete records-->	
+	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	
+	<puts text="Test: home_9564.xml finished." />
+</soda>	
