@@ -26,8 +26,8 @@
 -->
 
 <soda>
-   <script file="tests/modules/activities/module_lib/setup-activities.xml" />
-   <script fileset="tests/modules/activities"/>
-   <script file="tests/modules/activities/module_lib/cleanup-activities.xml" />
+	<script file="tests/modules/campaigns/module_lib/setup-campaigns.xml" />
+	<script fileset="tests/modules/campaigns/part2" />
+	<script file="tests/modules/campaigns/module_lib/cleanup-campaigns.xml" />
 </soda>
 
