@@ -62,7 +62,7 @@
 		<select id="date_start_minutes" set="{@Contacts_7884_Task.date_start_minutes}" />
 		<checkbox id="date_start_flag" set="{@Contacts_7884_Task.date_start_flag}" />
 
-		<button value="Save" />
+		<button id="Tasks_subpanel_save_button" />
 		<wait timeout="5" />
 		<div id="list_subpanel_activities">
 			<browser assert="{@Contacts_7884_Task.name} {@user.name} {@stamp}" />
