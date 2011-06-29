@@ -62,7 +62,7 @@
 	</div>
 	
 	<button id="search_form_clear" />
-	<button id="search_form_submit" />
+	<button id="search_form_submit" index="1" />
 
 	<puts text="Test: Accounts_0015.xml finished." />
 </soda>
