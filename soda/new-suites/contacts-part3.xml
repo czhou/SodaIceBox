@@ -27,7 +27,7 @@
 
 <soda>
    <script file="tests/modules/contacts/module_lib/setup-contacts.xml" />
-   <script fileset="tests/modules/contacts" />
+   <script fileset="tests/modules/contacts/part3" />
    <script file="tests/modules/contacts/module_lib/cleanup-contacts.xml" />
 </soda>
 
