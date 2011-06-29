@@ -26,26 +26,24 @@
 -->
 
 <soda>
-	<!-- create account records -->
+	<puts text="lead-init.xml starting." />
 	<timestamp />
-	<link id="moduleTab_Accounts" />
-	<wait condition="true">
-		<link text="Create Account" />
-	</wait>
-	<csv file="{@global.scriptsdir}/csvs/sorting/Account_Listview.csv" var="account_list_sort">
-
-		<link text="Create Account" />
-		<browser assert="Create" />
+	<link id="moduleTab_Leads" />
+	<csv file="{@global.scriptsdir}/csvs/sorting//lead_Listview.csv" var="lead_list_sort">
+		<link text="Create Lead" />
 
 		<form id="EditView">
-			<textfield id="name" set="{@account_list_sort.name}" />
-			<textfield id="billing_address_city" set="{@account_list_sort.city}" />
-			<textfield id="billing_address_country" set="{@account_list_sort.billing_country}" />
-			<textfield id="phone_office" set="{@account_list_sort.phone}" />
-			<button value="Save" />
+			<textfield id="last_name" set="{@lead_list_sort.last_name}" />
+			<select id="status" set="{@lead_list_sort.status}" />
+			<textfield name="account_name" set="{@lead_list_sort.account_name}" />
+			<textfield id="phone_work" set="{@lead_list_sort.phone_office}" />
+			<button id="SAVE" />
 		</form>
 		<wait timeout="2" />
-		<browser assert="{@account_list_sort.name}" />
+		<button id="edit_button" click="false" />
+		<browser assert="{@lead_record.last_name}" />
 	</csv>
 
+	<puts text="lead-init.xml finished." />
 </soda>
+

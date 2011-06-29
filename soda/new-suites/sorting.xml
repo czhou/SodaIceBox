@@ -28,6 +28,9 @@
 <soda>
    <script file="tests/modules/sorting/module_lib/setup-sorting.xml" />
    <script file="tests/modules/sorting/module_lib/targetlist-init.xml" />
+   <script file="tests/modules/sorting/module_lib/account-init.xml" />
+   <script file="tests/modules/sorting/module_lib/contact-init.xml" />
+   <script file="tests/modules/sorting/module_lib/lead-init.xml" />
    <script fileset="tests/modules/sorting"/>
    <script file="tests/modules/sorting/module_lib/cleanup-sorting.xml" />
 </soda>
