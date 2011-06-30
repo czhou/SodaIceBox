@@ -1,0 +1,73 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Schedule Call_Verify that scheduled call cannot be created for case when non-existing data (such as entering non-existing data in "Team" field) are entered for the "Schedule Call" function -->
+	<puts text="Test: Cases_1365.xml starting." />
+	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
+	<timestamp />
+
+	<!--Create a case record-->
+	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
+	<var var="case_record" set="{@pre_case_name}" />
+
+	<!--go to the case-->
+	<link id="moduleTab_Cases" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Cases&amp;action=index" click="false" />
+	</div>
+
+	<link text="{@case_record}" />
+
+	<!-- Create a call. -->
+	<div id="list_subpanel_activities">
+		<button value="  Log Call  " />
+		<wait timeout="3" />
+	</div>
+
+	<csv file="{@global.scriptsdir}/csvs/cases/Case_1365.csv" var="Case_1365">
+		<form id="form_SubpanelQuickCreate_Calls">
+			<textfield id="name" set="{@Case_1365.name} {@user.name} {@stamp}" />
+			<!--<image id="remove_team_name_collection_0" click="true" />-->
+			<textfield id="team_name_collection_0" jscriptevent="onkeydown" />
+			<textfield id="team_name_collection_0" set="{@Case_1365.team}" jscriptevent="onkeydown" />
+			<textfield id="team_name_collection_0" jscriptevent="onkeyup" />
+			<wait timeout="2" />
+			<button id="Calls_subpanel_save_button" />
+			<wait timeout="3" />	
+		</form>
+	</csv>
+	<browser assert="No Primary Team specified" />
+	
+	<link id="moduleTab_Cases" alert="true" />
+
+	<!--Delete the record-->
+	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+
+	<puts text="Test: Cases_1365.xml finished." />
+</soda>
