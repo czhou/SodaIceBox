@@ -26,26 +26,32 @@
 -->
 
 <soda>
-	<!-- create account records -->
+	<puts text="contact-init.xml starting." />
 	<timestamp />
-	<link id="moduleTab_Accounts" />
-	<wait condition="true">
-		<link text="Create Account" />
-	</wait>
-	<csv file="{@global.scriptsdir}/csvs/sorting/Account_Listview.csv" var="account_list_sort">
-
-		<link text="Create Account" />
-		<browser assert="Create" />
+	<link id="moduleTab_Contacts" />
+	<csv file="{@global.scriptsdir}/csvs/sorting//Contact_Listview.csv" var="contact_list_sort">
+		<link text="Create Contact" />
 
 		<form id="EditView">
-			<textfield id="name" set="{@account_list_sort.name}" />
-			<textfield id="billing_address_city" set="{@account_list_sort.city}" />
-			<textfield id="billing_address_country" set="{@account_list_sort.billing_country}" />
-			<textfield id="phone_office" set="{@account_list_sort.phone}" />
-			<button value="Save" />
+			<textfield id="last_name" set="{@contact_list_sort.last_name}" />
+			<textfield id="title" set="{@contact_list_sort.title}" />
+			
+			<!--account select -->
+			<button id="btn_account_name" />
+		</form>
+		<textfield id="name_advanced" set="{@contact_list_sort.account_name}" /> 	
+		<button value="Search" />
+		<link text="{@contact_list_sort.account_name}" />
+		
+		<form id="EditView">
+			<textfield id="phone_work" set="{@contact_list_sort.phone_office}" />
+			<button id="SAVE_HEADER" />
 		</form>
 		<wait timeout="2" />
-		<browser assert="{@account_list_sort.name}" />
+		<button id="edit_button" click="false" />
+		<browser assert="{@contact_record.last_name}" />
 	</csv>
 
+	<puts text="contact-init.xml finished." />
 </soda>
+
