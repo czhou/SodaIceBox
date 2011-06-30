@@ -29,10 +29,10 @@
 	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
 	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Enable_All_Lib.xml"/>
-	<!--script file="{@global.scriptsdir}/modules/lib/Email_Setting_Lib.xml"/-->
+	<script file="{@global.scriptsdir}/modules/lib/Email_Setting_Lib.xml"/>
 	<script file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.xml"/>
-	<!--script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml"/-->
-	<!--script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml"/-->
-	<!--script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml"/-->
-	<!--script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml"/-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml"/>
 </soda>
