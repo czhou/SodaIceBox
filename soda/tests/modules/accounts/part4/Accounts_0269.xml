@@ -60,8 +60,9 @@
 			<select id="account_type" set="{@member_record_0079.account_type}" />
 		</form>
 
-		<button id="Accounts_subpanel_save_button" alert="true" />
+		<button id="Accounts_subpanel_save_button"/>
 
+		<wait timeout="5"/>
 		<!--Edit the record-->
 		<div id="list_subpanel_accounts">
 			<span class="pageNumbers" assert="(1 - 1 of 1)" />
