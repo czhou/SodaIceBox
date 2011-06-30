@@ -31,7 +31,7 @@
 		<link id="moduleTab_Opportunities" />
 		<div class="moduleTitle">
 			<link href="index.php?module=Opportunities&amp;action=index" click="false" />
-		</div>ities" />
+		</div>
 
 		<button id="search_form_clear" />
 		<form id="search_form">
@@ -88,7 +88,7 @@
 				<link text="{@Opportunity_2284.meeting_name} {@user.name} {@stamp}"
 					click="false" />
 				<link class="listViewTdToolsS1" index="2" alert="true" />
-				<wait timeout="2" />
+				<wait timeout="5" />
 				<link text="{@Opportunity_2284.meeting_name} {@user.name} {@stamp}"
 					click="false" exist="false" />
 			</table>
