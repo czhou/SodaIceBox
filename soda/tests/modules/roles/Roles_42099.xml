@@ -1,0 +1,174 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+	<script file="{@global.scriptsdir}/modules/lib/Role_Create_Lib.xml" />
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- 'Role restricted user can remove self from calls/meetings' starting. -->
+	<!-- set role disabled -->
+	<puts text="Test: Roles_42099.xml starting " />
+	<link text="Admin" />
+	<link text="Password Management" />
+	<csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv"
+	var="SugarInit42099">
+		<textfield name="passwordsetting_minpwdlength" set="{@SugarInit42099.min}" />
+		<checkbox id="passwordsetting_onenumber" set="false" />
+		<checkbox id="passwordsetting_onelower" set="false" />
+		<checkbox id="passwordsetting_onespecial" set="false" />
+		<checkbox id="SystemGeneratedPassword_checkbox" set="false" />
+		<wait timeout="2" />
+		<button id="btn_save" />
+		<!--Create a new normal user-->
+		<browser url="{@global.url}/
+			index.php?module=Users&action=EditView&return_module=Users&return_action=DetailView" />
+		<!--link text="Create New User" /-->
+		<browser assert="Users" />
+		<wait timeout="2" />
+		<textfield name="sugar_user_name" set="{@SugarInit42099.last_name}" />
+		<textfield id="last_name" set="{@SugarInit42099.last_name}" />
+		<textfield id="Users0emailAddress0" set="{@SugarInit42099.email}" />
+
+		<link href="#tab2" />
+		<wait timeout="2" />
+		<textfield id="new_password" set="{@SugarInit42099.pass}" jscriptevent="onkeyup" />
+		<textfield id="confirm_pwd" set="{@SugarInit42099.pass}" jscriptevent="onkeyup" />
+
+		<button id="Save" />
+		<wait timeout="2" />
+		<link text="View Users" />
+		<link text="Basic Search" required="false" />
+		<button id="search_form_clear" />
+		<textfield id="search_name_basic" set="{@SugarInit42099.last_name}" />
+		<button id="search_form_submit" />
+
+		<link text="{@SugarInit42099.last_name}" click="false" />
+
+		<script file="{@global.scriptsdir}/modules/lib/Role_Create_Lib.xml" />
+		<link text="List Roles" />
+		<textfield id="name_basic" set="{@pre_role_name}" />
+		<button value="Search" />
+		<table class="list view">
+			<link text="{@pre_role_name}" />
+		</table>
+		<browser assert="Roles" />
+		<browser assert="{@pre_role_name}" />
+		<select index="19" set="None" />
+		<select index="20" set="Owner" />
+		<button value="  Save  " />
+		<wait timeout="4" />
+		<!--select user-->
+
+		<button id="acl_roles_users_select_button" />
+		<browser assert="User Search" />
+		<textfield id="user_name_advanced" set="{@SugarInit42099.last_name}" />
+		<button value="Search" />
+		<link text="{@SugarInit42099.last_name}" />
+		<button value="  Save  " />
+		<link id="moduleTab_Calls" />
+		<browser assert="Log Call" />
+		<link text="Log Call" />
+
+		<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record">
+			<timestamp />
+			<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
+			<textfield id="date_start_date" set="{@call_record.date_start_date}" />
+			<select id="date_start_hours" set="{@call_record.date_start_hours}" />
+			<select id="date_start_minutes" set="{@call_record.date_start_minutes}" />
+
+			<textfield name="duration_hours" set="{@call_record.duration_hours}" />
+			<select name="duration_minutes" set="{@call_record.duration_minutes}" />
+
+			<select id="direction" set="{@call_record.direction}" />
+			<select id="status" set="{@call_record.status}" />
+
+			<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
+			<textfield id="description" set="{@call_record.description}" />
+
+			<!--Add Invitees-->
+			<textfield name="search_email" set="{@SugarInit42099.email}" />
+			<button value="Search" timeout="2" />
+			<wait timeout="1" />
+			<div id="list_div_win">
+				<button value="Add" timeout="3" click="true" />
+			</div>
+			<wait timeout="2" />
+			<!--<link text="{@SugarInit42099.last_name}" />-->
+			<!--teams select
+			<table id="EditView_team_name_table">
+				<button value="Select" />
+			</table>
+			<browser assert="Team Search" />
+			<textfield name="name" set="{@call_record.team_name}" />
+			<button value="Search" />
+			<link text="{@call_record.team_name}" />
+			-->
+			<button value="Save" />
+
+			<browser assert="{@call_record.name} {@user.name} {@stamp}" />
+
+			<!--Save the account id & name-->
+			<form name="DetailView">
+				<hidden name="record" var="pre_call_id" />
+			</form>
+			<var var="pre_call_name" set="{@call_record.name} {@user.name} {@stamp}" />
+		</csv>		
+		<!--login in a normal user -->
+		<link text="Log Out" />
+		<textfield id="user_name" set="{@SugarInit42099.last_name}" />
+		<textfield id="user_password" set="{@SugarInit42099.pass}" />
+		<button id="login_button" />
+	</csv>
+	<browser assert="Welcome" />
+	<button value="  Next  " required="false" timeout="3" />
+	<button value="  Next  " required="false" timeout="3" />
+	<button value="  Next  " required="false" timeout="3" />
+	<button value="  Finish  " required="false" timeout="3" />
+
+	<link id="moduleTab_Calls" />
+	<link text="{@pre_call_name}" />
+	<div id="list_subpanel_users">
+		<link text="rem" exists="false" />
+	</div>
+	<wait timeout="3" />
+	<!--Login back to Admin-->
+	<link text="Log Out" />
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	<!--delete role-->
+	<script file="{@global.scriptsdir}/modules/lib/Role_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<!-- Delete normal user -->
+	<link text="Admin" />
+	<wait timeout="1" />
+	<link text="User Management" />
+	<wait timeout="1" />
+	<link text="{@SugarInit42099.last_name}" />
+	<button value="Delete" />
+	<wait timeout="1" />
+	<button text="OK" />
+	<wait timeout="1" />
+	<button value="Cancel" alert="true" />
+	<puts text="Test: Role_42099.xml finished" />
+</soda>

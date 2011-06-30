@@ -1,0 +1,102 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test Case 294: Account Detail - Cases sub-panel - Remove Relationship _Verify that deleting 'Cases' is correctly canceled on 'Cases' sub-panel."/>
+
+	<!--Create an account record-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+
+	<!--Search the record-->
+	<link id="moduleTab_Accounts" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+	</div>
+	<link text="Basic Search" required="false" />
+	<form id="search_form">
+		<button id="search_form_clear" />
+		<textfield id="name_basic" set="{@pre_account_name}" />
+		<button id="search_form_submit" />
+	</form>
+
+	<table class="list view">
+		<browser assert="{@pre_account_name}" />
+		<link text="{@pre_account_name}" />
+	</table>
+
+	<!--Go to its detail view-->
+	<link text="Accounts" click="false" />
+	<browser assert="{@pre_account_name}" />
+
+	<!--Create a case in Cases Subpanel-->
+	<button name="account_cases_create_button" />
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0105.csv" var="case_record_0105">
+		<form id="form_SubpanelQuickCreate_Cases">
+			<textfield id="name" set="{@case_record_0105.name} {@user.name} {@stamp}" />
+			<select id="status" set="{@case_record_0105.status}" />
+			<select id="priority" set="{@case_record_0105.priority}" />
+			<textfield id="description" set="{@case_record_0105.description}" />
+			<!--user select: use default value-->
+			<!--teams select: use default value-->
+			<button id="Cases_subpanel_save_button" />
+		</form>
+	</csv>
+
+	<!--Verify-->
+	<wait timeout="15" />
+	<div id="list_subpanel_cases">
+		<table class="list view">
+			<span class="pageNumbers" assert="(1 - 1 of 1)" />
+		</table>
+		<link text="{@case_record_0105.name} {@user.name} {@stamp}" />
+	</div>
+	
+	<!--Delete case in its detail view.-->
+	<div id="LBL_CASE_INFORMATION">
+		<browser assert="{@case_record_0105.name} {@user.name} {@stamp}"/>
+	</div>
+	<button value="Delete" alert="false"/>
+
+	<!--Search the record-->
+	<link id="moduleTab_Accounts" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+	</div>
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />
+	</table>
+	<div id="list_subpanel_cases">
+		<span class="pageNumbers" assert="(1 - 1 of 1)" />
+	</div>
+
+	<!--Delete the record-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
+	<puts text="Test: Accounts_0294.xml finsihed." />
+</soda>

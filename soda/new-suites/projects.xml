@@ -27,7 +27,7 @@
 
 <soda>
         <script file="tests/modules/projects/module_lib/setup-projects.xml" />
-        <script fileset="tests/modules/projects" />
+        <script fileset="tests/modules/projects/" />
         <script file="tests/modules/projects/module_lib/cleanup-projects.xml" />
 </soda>
 

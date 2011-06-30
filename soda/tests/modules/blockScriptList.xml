@@ -106,6 +106,20 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Roles_42099</testfile>
+		<bugnumber>42099</bugnumber>
+		<reason>Role restricted user can remove self from calls/meetings</reason>
+		<modulename>roles</modulename>
+	</block>
+	
+	<block>
+		<testfile>Admin_36109</testfile>
+		<bugnumber>36109</bugnumber>
+		<reason>Can not set the Percentage in Tax</reason>
+		<modulename>admin</modulename>
+	</block>
+	
+	<block>
 		<testfile>Studio_11484</testfile>
 		<bugnumber>44266</bugnumber>
 		<reason>Save and Deploy breaks Calls editview layout</reason>
@@ -301,83 +315,6 @@
 	
 	<block>
 		<testfile>Reports_7798.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0721.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0722.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0723.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0724.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0734.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0666.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0754.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0754.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0755.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0756.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0757.xml</testfile>
 		<bugnumber></bugnumber>
 		<reason>to be fixed later</reason>
 		<modulename>Incoming</modulename>
@@ -620,13 +557,6 @@
 		<testfile>Calendar_0716</testfile>
 		<bugnumber>39955</bugnumber>
 		<reason>bug 39955 - false duplicate account warning</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
-		<testfile>Accounts_0016</testfile>
-		<bugnumber>123456</bugnumber>
-		<reason>Can't not properly verify listview with asc/dsc</reason>
 		<modulename>Accounts</modulename>
 	</block>
 	

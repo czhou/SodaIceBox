@@ -56,7 +56,7 @@
 	<button name="accounts_bugs_create_button" />
 	<button id="Bugs_subpanel_save_button"/>
 	<browser assert="Missing required field: Subject"/>
-	<browser id="Bugs_subpanel_cancel_button" alert="true"/>
+	<button id="Bugs_subpanel_cancel_button" alert="true"/>
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />

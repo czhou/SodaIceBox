@@ -26,12 +26,14 @@
 -->
 
 <soda>
-	<puts text="Test Case 254: Account Detail - Verify that create 'Create Note or Attachment' is correctly canceled on 'Contacts' sub-panel."/>
+	<!-- Account Detail - Verify that create 'Create Note or Attachment' is 
+		correctly canceled on 'Contacts' sub-panel. -->
+	<puts text="Test: Accounts_0254.xml starting " />
 
-	<!--Create a account record-->
+	<!--Create a account record -->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 
-	<!--Search the record-->
+	<!--Search the record -->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Accounts&amp;action=index" click="false" />
@@ -44,25 +46,27 @@
 	</table>
 
 	<wait />
-	<!--Go its detail view-->
+	<!--Go its detail view -->
 	<browser assert="{@pre_account_name}" />
 
-	<!--Create History Subpanel-->
+	<!--Create History Subpanel -->
 	<button name="History_createnoteorattachment_button" />
 	<wait timeout="5" />
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0036.csv" var="history_record_0036">
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0036.csv"
+		var="history_record_0036">
 		<form id="form_SubpanelQuickCreate_Notes">
-			<textfield id="name" set="{@history_record_0036.name} {@user.name} {@stamp}" />
+			<textfield id="name"
+				set="{@history_record_0036.name} {@user.name} {@stamp}" />
 			<textfield id="description" set="{@history_record_0036.description}" />
 			<filefield name="filename_file" set="{@history_record_0036.uploadfile}" />
 		</form>
 		<form id="form_SubpanelQuickCreate_Notes">
-			<button id="Notes_subpanel_cancel_button" alert="true"/>
+			<button id="Notes_subpanel_cancel_button" alert="true" />
 		</form>
-		<!--Verify reord not exist in account detail view-->
-		<wait timeout="3"/>
-		<div id="whole_subpanel_history">
-			<browser assertnot="{@history_record_0036.name} {@user.name} {@stamp}"/>
+		<!--Verify reord not exist in account detail view -->
+		<wait timeout="3" />
+		<div id="list_subpanel_history">
+			<browser assertnot="{@history_record_0036.name} {@user.name} {@stamp}" />
 		</div>
 	</csv>
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />

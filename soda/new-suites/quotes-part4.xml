@@ -26,12 +26,12 @@
 -->
 
 <soda>
-	<script file="tests/modules/quote/module_lib/setup-quote.xml" />
+	<script file="tests/modules/quotes/module_lib/setup-quote.xml" />
 	<script file="tests/modules/lib/Enable_All_Lib.xml" />
-	<script file="tests/modules/quote/part4/module_lib/setup-quote-part4.xml" />
-	<script fileset="tests/modules/quote/part4" />
-	<script file="tests/modules/quote/part4/module_lib/cleanup-quote-part4.xml" />
+	<script file="tests/modules/quotes/part4/module_lib/setup-quote-part4.xml" />
+	<script fileset="tests/modules/quotes/part4" />
+	<script file="tests/modules/quotes/part4/module_lib/cleanup-quote-part4.xml" />
 	<script file="tests/modules/lib/Enable_Defaults_Lib.xml" />
-	<script file="tests/modules/quote/module_lib/cleanup-quote.xml" />
+	<script file="tests/modules/quotes/module_lib/cleanup-quote.xml" />
 </soda>
 

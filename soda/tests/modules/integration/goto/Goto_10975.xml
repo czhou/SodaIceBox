@@ -46,7 +46,7 @@
 		<textfield id="name" set="GotoMeeting_Sub_AjaxForm" /> 
 	</div>
 	<button id="Meetings_subpanel_save_button" />
-	<wait timeout='10'/>
+	<wait timeout='15'/>
 	<link text="GotoMeeting_Sub_AjaxForm" click="false" exist="true"/>
 
 	<button id="Activities_schedulemeeting_button" />

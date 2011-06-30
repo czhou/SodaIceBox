@@ -36,7 +36,7 @@
 	<div id="changeLayoutDialog">
 		<browser assert="Select the number of columns" />
 		<image src="themes/default/images/icon_Column_1.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
-		<wait timeout="3" />	
+		<wait timeout="5" />	
 	</div>
 	<ul id="col_0_0">
 		<browser assert="My Calls" />
@@ -53,7 +53,7 @@
 	<div id="changeLayoutDialog">
 		<browser assert="Select the number of columns" />
 		<image src="themes/default/images/icon_Column_2.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
-		<wait timeout="3" />	
+		<wait timeout="5" />	
 	</div>
 	<ul id="col_0_0">
 		<div index="1" exist="true" />
@@ -67,7 +67,7 @@
 	<div id="changeLayoutDialog">
 		<browser assert="Select the number of columns" />
 		<image src="themes/default/images/icon_Column_3.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
-		<wait timeout="3" />	
+		<wait timeout="5" />	
 	</div>
 	<ul id="col_0_0">
 		<div index="1" exist="true" />
@@ -85,7 +85,7 @@
 	<div id="changeLayoutDialog">
 		<browser assert="Select the number of columns" />
 		<image src="themes/default/images/icon_Column_2.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
-		<wait timeout="3" />	
+		<wait timeout="5" />	
 	</div>
 
 	<puts text="Test: home_7356.xml finished." />

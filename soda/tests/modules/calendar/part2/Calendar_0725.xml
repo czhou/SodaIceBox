@@ -1,0 +1,78 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		Action:
+			1. Login to system as a valid user.
+			2. Click "Calls" tab in the navigation bar.
+			3. Create a saved view for calls and then click "Save" button.
+				(Under Advanced Search -> Layout Options)
+		Expectation:
+			3.  Saved Search appears under drop-down.
+	-->
+	<puts text="Test: Calendar_0725.xml starting." />
+	
+	<link id="moduleTab_Calls" />
+	<link text="Advanced Search" />
+	<link text="Layout Options" />
+	
+	<select id="hide_tabs" set="TEAM_NAME" />
+	
+	<div id="edit_tabs">
+		<link index="3" click="true" />
+		<link index="3" jscriptevent="mouseup" />
+	</div>
+	
+	<timestamp />
+	
+	<var var="layout_name" set="Layout_{@stamp}" />
+	
+	<textfield name="saved_search_name" set="{@layout_name}" />
+	<button value="Save" />
+	
+	<select id="saved_search_select" assert="{@layout_name}" />
+	
+	
+	<link text="Layout Options" />
+	
+	
+	<select id="display_tabs" set="TEAM_NAME" />
+	
+	<div id="edit_tabs">
+		<link index="4" click="true" />
+		<link index="4" jscriptevent="mouseup" />
+	</div>
+	
+	<link text="Basic Search" />
+	<wait timeout="3" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	
+	<puts text="Test: Calendar_0725.xml finished." />
+	
+</soda>

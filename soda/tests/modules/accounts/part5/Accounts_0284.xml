@@ -1,0 +1,105 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test Case 284: Account Detail - History sub-panel - Remove Relationship - Note_Verify that deleting a note record is canceled."/>
+
+	<!--Create a account record-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+
+	<!--Search the record-->
+	<link id="moduleTab_Accounts" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+	</div>
+
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />
+	</table>
+
+	<wait />
+	<!--Go its detail view-->
+	<browser assert="{@pre_account_name}" />
+
+
+	<!--Create History Subpanel-->
+	<button name="History_createnoteorattachment_button" />
+	<wait timeout="5" />
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0036.csv" var="history_record_0036">
+		<form id="form_SubpanelQuickCreate_Notes">
+			<textfield id="name" set="{@history_record_0036.name} {@user.name} {@stamp}" />
+			<wait timeout="10" />
+			<textfield id="description" set="{@history_record_0036.description}" />
+			<filefield name="filename_file" set="{@history_record_0036.uploadfile}" />
+		</form>
+
+		<!--teams select-->
+		<table id="form_SubpanelQuickCreate_Notes_team_name_table">
+			<button value="Select" />
+		</table>
+		<browser assert="Team Search" />
+		<textfield name="name" set="{@history_record_0036.team_name}" />
+		<button value="Search" />
+		<link text="{@history_record_0036.team_name}" />
+
+		<button id="Notes_subpanel_save_button" />
+
+		<div id="list_subpanel_history">
+			<link text="{@history_record_0036.name} {@user.name} {@stamp}"/>
+		</div>
+		
+		<div id="LBL_NOTE_INFORMATION">
+			<browser assert="{@history_record_0036.name} {@user.name} {@stamp}"/>
+		</div>
+		<button value="Delete" alert="false"/>
+
+		<!--Search the record-->
+		<link id="moduleTab_Accounts" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		</div>
+	
+		<textfield id="name_basic" set="{@pre_account_name}" />
+		<button id="search_form_submit" />
+		<table class="list view">
+			<link text="{@pre_account_name}" />
+		</table>
+
+		<wait />
+		<!--Go its detail view-->
+		<browser assert="{@pre_account_name}" />
+
+		<link text="{@history_record_0036.name} {@user.name} {@stamp}" click="false"/>
+
+	</csv>
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
+
+	<puts text="Test: Accounts_0284.xml finished." />
+</soda>
