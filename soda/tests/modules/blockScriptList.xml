@@ -113,6 +113,13 @@
 	</block>
 	
 	<block>
+		<testfile>Admin_33675</testfile>
+		<bugnumber>33675</bugnumber>
+		<reason>Duplicate Campaign doesn't duplicate target lists</reason>
+		<modulename>admin</modulename>
+	</block>
+	
+	<block>
 		<testfile>Admin_36109</testfile>
 		<bugnumber>36109</bugnumber>
 		<reason>Can not set the Percentage in Tax</reason>
