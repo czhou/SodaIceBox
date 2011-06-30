@@ -1,0 +1,152 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test:home_10400 dashlet auto refresh every 3 minutes" />
+	
+	<link id="moduleTab_Home" />
+	<browser assert="Add Sugar Dashlets" />
+	<!--Add dashlet-->
+	<link id="add_dashlets" />
+	<wait timeout="5" />
+	<div id="dashletsDialog_c">
+		<browser assert="Find Sugar Dashlet" />
+		<link text="My Leads" />
+		<wait timeout="5" />	
+	</div>
+	<div id="dashletsDialogHeader">
+		<link index="1" />
+	</div>
+	<ul id="col_0_0">			
+		<li index="1">
+			<browser assert="My Leads" />
+			<browser assert="No Data" />
+		</li>
+	</ul>
+	<div class="dashletToolSet" index="1">
+		<link index="1" />
+	</div>
+	<div id="dlg_c">
+		<select name="autoRefresh" set="Every 3 minutes" />
+		<button value="Save" />
+	</div>
+	
+	<link id="add_dashlets" />
+	<wait timeout="5" />
+	<div id="dashletsDialog_c">
+		<browser assert="Find Sugar Dashlet" />
+		<link text="My Calls" />
+		<wait timeout="5" />	
+	</div>
+	<div id="dashletsDialogHeader">
+		<link index="1" />
+	</div>
+	<ul id="col_0_0">			
+		<li index="1">
+			<browser assert="My Calls" />
+			<browser assert="No Data" />
+			<link index="1" />
+			<wait timeout="3" />			
+		</li>
+	</ul>	
+	<div id="dlg_c">
+		<browser assert="My Calls : Options" />
+		<select name="autoRefresh" set="Every 1 minute" />
+		<button value="Save" />
+	</div>
+	<csv file="{@global.scriptsdir}/csvs/home/Home_10400.csv" var="home10400">	
+		
+		<!--create lead-->
+		<div id="dcmenuContainer">
+			<image src="themes/Sugar/images/icon_Leads_bar_32.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		</div>
+		<form id="form_DCQuickCreate_Leads">
+			<textfield id="last_name" set="{@home10400.lead_lastname} {@stamp}" />
+			<textfield id="title" set="{@home10400.lead_title}" />
+			<textfield id="phone_work" set="{@home10400.lead_phoneoffice}" />
+			<textfield id="Leads0emailAddress0" set="{@home10400.lead_email}" />	
+			<button id="Leads_dcmenu_save_button" />
+			<wait timeout="10" />
+		</form>	
+		
+		<!--create call-->
+		<div id="dcmenuContainer">
+			<image src="themes/Sugar/images/icon_Calls_bar_32.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		</div>
+		<form id="form_DCQuickCreate_Calls">
+			<textfield id="name" set="{@home10400.call_subject} {@stamp}" />
+			<button id="Calls_dcmenu_save_button" />
+			<wait timeout="5" />
+		</form>	
+		<wait timeout="50" />
+		<ul id="col_0_0">			
+			<li index="1">
+				<browser assert="My Calls" />
+				<table class="list view">
+					<link text="{@home10400.call_subject} {@stamp}" click="false" />
+					
+				</table>			
+			</li>
+			<li index="2">
+				<browser assert="My Leads" />
+				<browser assert="No Data" />		
+			</li>		
+		</ul>	
+		<wait timeout="120" />
+		<ul id="col_0_0">			
+			<li index="2">
+				<browser assert="My Leads" />
+				<table class="list view">
+					<link text="{@home10400.lead_lastname} {@stamp}" click="false" />
+					<browser assert="{@home10400.lead_title}" />
+					<browser assert="{@home10400.lead_phoneoffice}" />
+					<browser assert="{@home10400.lead_email}" />
+				</table>			
+			</li>			
+		</ul>	
+	</csv>		
+		
+	<!-- delete dashlet -->
+	<ul id="col_0_0">			
+			
+		<div class="dashletToolSet" index="1">
+			<link index="3" alert="true" />
+		</div>	
+
+		<div class="dashletToolSet" index="1">
+			<link index="3" alert="true" />
+		</div>	
+			
+	</ul>	
+	
+		
+	<!-- delete records-->	
+	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+		
+	<puts text="Test: home_10400.xml finished." />
+</soda>	
