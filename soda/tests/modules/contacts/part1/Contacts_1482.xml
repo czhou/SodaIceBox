@@ -64,9 +64,9 @@
 
 	<!--Check contact history subpanel-->
 	<div id="list_subpanel_history">
-		<link text="{@contact_1482_email_name}" click="false" exists="true"/>
-		<browser assert="Sent"/>
-		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}"/>
+		<link text="{@contact_1482_email_name}" click="false" exists="false"/>
+		<browser assertnot="Sent"/>
+		<browser assertnot="{@pre_contact_first_name} {@pre_contact_last_name}"/>
 	</div>
 
 	<!--Delete the record-->
