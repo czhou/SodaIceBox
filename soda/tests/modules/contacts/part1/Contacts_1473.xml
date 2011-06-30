@@ -102,7 +102,7 @@
 		</table>
 		<link class="listViewTdToolsS1" index="2" alert="true" />
 	</div>
-	<wait timeout="3" />
+	<wait timeout="5" />
 	<div id="list_subpanel_activities">
 		<table class="list view">
 			<span class="pageNumbers" assert="(0 - 0 of 0)" />

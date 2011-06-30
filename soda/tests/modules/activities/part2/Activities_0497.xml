@@ -28,7 +28,7 @@
 <soda>
          <puts text='------------Activities_0497:Duplicate Note_Verify that the attachment can be removed from the note through removing attachment on the note edit view after clicking Duplicate button.---'/>
     
-         <script file='{@global.scriptsdir}/modules/activities/Activities_0489.xml'/>     
+         <script file='{@global.scriptsdir}/modules/activities/part2/Activities_0489.xml'/>     
          
          <link id='moduleTab_Notes'/>
          <link text='View Notes'/>
