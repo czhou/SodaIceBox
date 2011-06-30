@@ -722,6 +722,20 @@
 	</block>
 	
 	<block>
+		<testfile>Leads_11516</testfile>
+		<bugnumber></bugnumber>
+		<reason>Feature not available</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_11517</testfile>
+		<bugnumber></bugnumber>
+		<reason>Feature not available</reason>
+		<modulename>Leads</modulename>
+	</block>
+
+	<block>
 		<testfile>Studio_8287</testfile>
 		<bugnumber></bugnumber>
 		<reason>Can't find element during CI only</reason>
