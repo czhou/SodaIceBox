@@ -26,11 +26,32 @@
 -->
 
 <soda>
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" /> 
-	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
-	<browser action="close" />
+	<puts text="opp-init.xml starting." />
+	<timestamp />
+	<link id="moduleTab_Opportunities" />
+	<csv file="{@global.scriptsdir}/csvs/sorting//opp_Listview.csv" var="opp_list_sort">
+		<link text="Create Opportunity" />
+
+		<form id="EditView">
+			<textfield id="name" set="{@opp_list_sort.name}" />
+			<textfield id="amount" set="{@opp_list_sort.amount}" />
+			<select id="sales_stage" set="{@opp_list_sort.sales_stage}" />
+			<textfield id="date_closed" set="{@opp_list_sort.date_closed}" />
+			<!--account select -->
+			<button id="btn_account_name" />
+		</form>
+		<textfield id="name_advanced" set="{@opp_list_sort.account_name}" /> 	
+		<button value="Search" />
+		<link text="{@opp_list_sort.account_name}" />
+		
+		<form id="EditView">
+			<button id="SAVE_HEADER" />
+		</form>
+		<wait timeout="2" />
+		<button id="edit_button" click="false" />
+		<browser assert="{@opp_list_sort.name}" />
+	</csv>
+
+	<puts text="opp-init.xml finished." />
 </soda>
 
