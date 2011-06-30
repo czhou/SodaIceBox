@@ -43,6 +43,7 @@
 		<textfield id="estimated_start_date" set="{@project.estimated_start_date}" />
 		<textfield id="estimated_end_date" set="{@project.estimated_end_date}" />
 		<button id="Project_subpanel_save_button" />
+		<wait timeout="10" />
 		<browser assert="{@project.name}" />
 		<div id="list_subpanel_project">
 			<link class="listViewTdToolsS1" alert="true"/>
