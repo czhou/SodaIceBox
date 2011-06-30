@@ -47,7 +47,7 @@
 
 		<textfield id="email_advanced" set="{@account_record_0015.emailAddress0}" />
 	</csv>
-	<button name="clear" />
+	<button id="search_form_clear" index="1" />
 
 	<!--Assert-->
 	<textfield id="name_advanced" assert="" />
