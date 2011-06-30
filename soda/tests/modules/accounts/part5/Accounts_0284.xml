@@ -53,8 +53,8 @@
 	<wait timeout="5" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0036.csv" var="history_record_0036">
 		<form id="form_SubpanelQuickCreate_Notes">
-			<textfield id="name" set="{@history_record_0036.name} {@user.name} {@stamp}" />
 			<wait timeout="10" />
+			<textfield id="name" set="{@history_record_0036.name} {@user.name} {@stamp}" />
 			<textfield id="description" set="{@history_record_0036.description}" />
 			<filefield name="filename_file" set="{@history_record_0036.uploadfile}" />
 		</form>
@@ -69,6 +69,7 @@
 		<link text="{@history_record_0036.team_name}" />
 
 		<button id="Notes_subpanel_save_button" />
+		<wait timeout="10" />
 
 		<div id="list_subpanel_history">
 			<link text="{@history_record_0036.name} {@user.name} {@stamp}"/>

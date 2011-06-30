@@ -1,0 +1,5 @@
+name,amount,sales_stage,account_name,date_closed,field_asc,field_desc
+1_opp,111,Closed Lost,1_account,06/30/2012,4,7
+2_opp,222,Needs Analysis,2_account,07/01/2012,5,6
+A_opp,333,Prospecting,A_account,07/02/2012,6,5
+B_opp,444,Qualification,B_account,08/01/2012,7,4

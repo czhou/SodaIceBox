@@ -1,0 +1,90 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Schedule Call_Verify that call can be scheduled when entering special characters to several fields (Such as entering "\","#" in "Subject" field) for the "Schedule Call" function -->
+	<puts text="Test: Cases_1292.xml starting." />
+	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
+
+	<!--Create case-->
+	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
+
+	<link id="moduleTab_Cases" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Cases&amp;action=index" click="false" />
+	</div>
+
+	<!--search case-->
+	<button id="search_form_submit" />
+	<div id="Casesbasic_searchSearchForm">
+		<textfield id="name_basic" set="{@pre_case_name}" />
+	</div>
+	<button id="search_form_submit" />
+	<link text="{@pre_case_name}" />
+
+	<!--create a Call-->
+	<csv file="{@global.scriptsdir}/csvs/cases/Case_1292.csv" var="Case_1292">
+		<form id="formformCalls">
+			<button name="Activities_logcall_button" />
+		</form>
+
+		<!--set data-->
+		<form id="form_SubpanelQuickCreate_Calls">
+			<textfield id="name" set="{@Case_1292.Subject}" />
+			<select id="direction" set="{@Case_1292.direction}" />
+			<select id="status" set="{@Case_1292.status}" />
+			<!--button id="btn_contact_name"/-->
+			<checkbox name="reminder_checked" set="true" />
+		</form>
+		<div id="subpanel_activities_newDiv">
+			<button id="Calls_subpanel_save_button" />
+		</div>
+		<!--verify the create call-->
+		<link id="moduleTab_Cases" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Cases&amp;action=index" click="false" />
+		</div>
+
+		<div id="Casesbasic_searchSearchForm">
+			<textfield id="name_basic" set="{@pre_case_name}" />
+		</div>
+		<button id="search_form_submit" />
+
+		<link text="{@pre_case_name}" />
+		<div id="list_subpanel_history">
+			<table class="list view">
+				<link text="{@Case_1292.Subject}" click="false" />
+			</table>
+		</div>
+	</csv>
+
+	<!--Delete the record-->
+	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+
+	<puts text="Test: Cases_1292.xml finished." />
+</soda>

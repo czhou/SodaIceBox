@@ -1,0 +1,78 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Edit Scheduled Call: Verify that modification of scheduled call for case can be canceled in "Calls" detail view. -->
+	<puts text="Test: Cases_1371.xml starting." />
+	<csv file="{@global.scriptsdir}/csvs/cases/CasesAssertText.csv" var="cases" />
+	<timestamp />
+
+	<!--Create a case record-->
+	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
+	<var var="case_record" set="{@pre_case_name}" />
+
+	<!--go to the case-->
+	<link id="moduleTab_Cases" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Cases&amp;action=index" click="false" />
+	</div>
+
+	<button value="Clear" />
+	<button id="search_form_submit" />
+	<link text="{@case_record}" />
+
+	<!--create Call-->
+	<div id="list_subpanel_activities">
+		<button value="  Log Call  " />
+	</div>
+
+	<csv file="{@global.scriptsdir}/csvs/cases/Case_1371.csv" var="Case_1371">
+		<textfield id="name" set="{@Case_1371.name} {@user.name} {@stamp}" />
+		<button id="Calls_subpanel_save_button" />
+		<wait timeout="3" />
+	</csv>
+	<div id="list_subpanel_activities">
+		<table class="list view">
+			<link text="{@Case_1371.name} {@user.name} {@stamp}" click="false" />
+		</table>
+
+		<link class="listViewTdToolsS1" index="1" />
+	</div>
+	<textfield id="name" set="{@Case_1371.new_name} {@user.name} {@stamp}" />
+	<button value="Cancel" alert="true" />
+	<div id="list_subpanel_activities">
+		<table class="list view">
+			<link text="{@Case_1371.name} {@user.name} {@stamp}" click="false" />
+		</table>
+	</div>
+
+	<!--Delete the record-->
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
+
+	<puts text="Test: Cases_1371.xml finished." />
+</soda>

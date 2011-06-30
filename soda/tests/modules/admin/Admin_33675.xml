@@ -1,0 +1,90 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Verify that duplicating a Target List copies over the targets/contacts  -->
+	<puts text="Test: Admin_33675.xml started"/>
+	
+	<!--Create a account record-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	
+	<!-- Setup variables for testing -->
+	<timestamp />
+	<var var="base" set="Bug 33675 SODA TEST {@stamp}" />
+	<var var="task" set="{@base}: Task" />
+
+	<!-- Creating test target list -->
+	<link id="moduleTab_ProspectLists" />
+	<link text="Create Target List" />
+	<textfield id="name" set="Bug 33675 Target" />
+	<button value="Save" />
+	<button id="prospect_list_users_select_button" />
+	<link text="Administrator" />
+	<wait timeout="2"
+	<button id="prospect_list_accounts_select_button" />
+	<link text="{@pre_account_name}" />
+	<wait timeout="2" />
+
+	<!-- Creating test campaign -->
+	<link id="moduleTab_Campaigns" />
+	<link text="Create Campaign (Wizard)" />
+	<textfield id="name" set="Bug 33675 Campaign" />
+	<textfield id="end_date" set="06/28/2012" />
+	<select id="status" set="Active" />
+	<select id="campaign_type" set="Web" />
+	<button value="Save" />
+
+	<!-- Add target list to compaign -->
+	<button id="prospect_list_campaigns_select_button"/>
+	<link text="Bug 33675 Target" />
+
+
+	<!-- try to duplicate compaign -->
+	<button id="duplicate_button" />
+	<textfield id="name" set="Bug 33675 Campaign copy" />
+	<button value="Save" />
+
+	<!-- Assert is target duplicated?  -->
+	<div id="list_subpanel_prospectlists">
+		<browser assert="Bug 33675 Target" />
+	</div>
+		
+	<!-- Delete test data -->
+	<link text="Campaigns" />
+	<link text="Bug 33675 Campaign" />
+	<button value="Delete" alert="true" />
+
+
+	<link text="Bug 33675 Campaign copy" />
+	<button value="Delete" alert="true" />
+
+	<link text="Target Lists" />
+	<link text="Bug 33675 Target" />
+	<button value="Delete" alert="true" />
+
+	<puts text="Test: Admin_33675.xml finished"/>
+</soda>
