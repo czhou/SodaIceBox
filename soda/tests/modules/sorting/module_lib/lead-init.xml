@@ -41,7 +41,7 @@
 		</form>
 		<wait timeout="2" />
 		<button id="edit_button" click="false" />
-		<browser assert="{@lead_record.last_name}" />
+		<browser assert="{@lead_list_sort.last_name}" />
 	</csv>
 
 	<puts text="lead-init.xml finished." />

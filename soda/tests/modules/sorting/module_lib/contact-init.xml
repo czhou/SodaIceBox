@@ -49,7 +49,7 @@
 		</form>
 		<wait timeout="2" />
 		<button id="edit_button" click="false" />
-		<browser assert="{@contact_record.last_name}" />
+		<browser assert="{@contact_list_sort.last_name}" />
 	</csv>
 
 	<puts text="contact-init.xml finished." />

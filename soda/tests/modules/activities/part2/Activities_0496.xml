@@ -29,7 +29,7 @@
 	<!-- Edit Note_Verify that removing attachment for a note is canceled. -->
 	<puts text="Test: Activities_0496.xml starting" />
 
-	<script file="{@global.scriptsdir}/modules/activities/Activities_0489.xml" />
+	<script file="{@global.scriptsdir}/modules/activities/part2/Activities_0489.xml" />
 
 	<link id="moduleTab_Calendar" />
 	<browser assert="Task List" />
