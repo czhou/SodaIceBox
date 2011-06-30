@@ -49,7 +49,7 @@
         <textfield name="estimated_start_date" set="05/10/2011"/>
         <textfield name="estimated_end_date" set="06/10/2011"/>
         <button id="Project_subpanel_save_button"/> 
-        <wait timeout="5"/>
+        <wait timeout="10"/>
         <browser assert="New Project Record"/>
 
         <!--Verify we can go to note detail view via clicking the link in history subpanel-->
