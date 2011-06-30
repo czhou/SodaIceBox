@@ -60,14 +60,15 @@
 			<select id="account_type" set="{@member_record_0079.account_type}" />
 		</form>
 
-		<!-- Click "Cancel". -->
 		<button id="Accounts_subpanel_save_button" alert="true" />
 
+		<!--Edit the record-->
 		<div id="list_subpanel_accounts">
 			<span class="pageNumbers" assert="(1 - 1 of 1)" />
 			<link class="listViewTdToolsS1" index="1" click="true"/>
 		</div>
 		<textfield id="name" set="{@member_record_0079.name} {@stamp} Modified"/>
+		<!-- Click "Cancel". -->
 		<button id="CANCEL" alert="true"/>
 		 <div id="list_subpanel_accounts">
                         <span class="pageNumbers" assert="(1 - 1 of 1)" />
