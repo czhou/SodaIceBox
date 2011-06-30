@@ -120,45 +120,45 @@
     <div id="formulaBuilderWindow" >
       <textfield id="formulaInput" set=""/>
       <button value="Save" />
-      <wait timeout="3" />
+      <wait timeout="5" />
     </div>    
     <checkbox id="calculated" set="false" />
     <form id="popup_form_id" >
       <browser assertnot="Formula Builder" />
       <button name="fsavebtn" assertPage="false" />
-      <wait timeout="3" />
+      <wait timeout="5" />
     </form>    
     
     <link text="billing_address_state" class="mbLBLL" assertPage="false" />
     <button value="Edit Formula" />
-    <wait timeout="3" />
+    <wait timeout="5" />
     <browser assert="Formula Builder" />
     <div id="formulaBuilderWindow" >
       <textfield id="formulaInput" set=""/>
       <button value="Save" />
-      <wait timeout="3" />
+      <wait timeout="5" />
     </div>    
     <checkbox id="calculated" set="false" />
     <form id="popup_form_id" >
       <browser assertnot="Formula Builder" />
       <button name="fsavebtn" assertPage="false" />
-      <wait timeout="3" />
+      <wait timeout="5" />
     </form>   
     
     <link text="billing_address_country" class="mbLBLL" assertPage="false" />
     <button value="Edit Formula" />
-    <wait timeout="3" />
+    <wait timeout="5" />
     <browser assert="Formula Builder" />
     <div id="formulaBuilderWindow" >
       <textfield id="formulaInput" set=""/>
       <button value="Save" />
-      <wait timeout="3" />
+      <wait timeout="5" />
     </div>    
     <checkbox id="calculated" set="false" />
     <form id="popup_form_id" >
       <browser assertnot="Formula Builder" />
       <button name="fsavebtn" assertPage="false" />
-      <wait timeout="3" />
+      <wait timeout="5" />
     </form>   
     
     <!-- Delete account record -->
