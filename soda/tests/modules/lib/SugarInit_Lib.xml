@@ -28,7 +28,7 @@
 <soda>
 	<puts text="Lib: SugarInit_Lib.xml starting." />
 	<csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" var="SugarInit">
-
+      <wait timeout="9" />
 		<button name="cancel" required="false" />
       <wait timeout="9" />
 		<button name="next_tab1" required="false" index="0" />
@@ -293,7 +293,7 @@
 			bug: 36234 is fixed.
 		-->
 
-      <wait timeout="2" />
+      <wait timeout="7" />
 		<link text="Admin" />
 		<link text="Password Management" />
 		<textfield name="passwordsetting_minpwdlength" set="{@SugarInit.min}" 
