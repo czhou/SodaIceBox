@@ -1,0 +1,142 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+<!-- PLEASE NOTE: This Soda test follows the steps in the bug description to reproduce the problem  -->
+
+	<puts text='--------Bug 40268 Started--------'/>
+	<puts text='-- Creating a Module, issue with the parent_name field --'/>
+
+	<!-- Login -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<!-- Setup variables for testing -->
+	<timestamp />
+	<var var="base" set="Bug 40268 SODA TEST {@stamp}" />
+	<var var="bug" set="Bug40268" />
+	<var var="task" set="{@base}: Task" />
+
+	<div id="globalLinks">
+		<link text="Admin" />
+	</div>
+	<link text="Module Builder" />
+	<div id="Buttons">
+		<link id="newPackageLink" />
+	</div>
+	<form id="CreatePackage">
+		<textfield name="name" set="Package{@bug}{@stamp}" />
+		<textfield name="key" set="{@bug}{@stamp}" />
+		<button name="savebtn" />
+	</form>
+	
+	<table id="new_module">
+		<link text="New Module" />
+	</table>
+
+	<form name="CreateModule">
+		<textfield name="name" set="Module{@bug}{@stamp}" />
+		<textfield name="label" set="Module{@bug}{@stamp}" />
+		<tr id="factory_modules">
+			<link text="company" />
+		</tr>
+		<button name="savebtn" />
+	</form>
+
+	<wait timeout="3" />
+	<form name="CreateModule">
+		<button name="viewfieldsbtn" />
+	</form>
+
+	<div id="studiofields">
+		<button value="Add Field" />
+	</div>
+
+	<form id="popup_form_id">
+		<textfield name="name" set="parent_name" />
+		<javascript>
+			YAHOO.util.Selector.query('input#field_name_id')[0].onchange();
+		</javascript>
+		<textfield name="labelValue" set="Parent Name" />
+		<button name="fsavebtn" />
+	</form>
+
+	<div class="bodywrapper">
+		<link text="Module{@bug}{@stamp}" />
+	</div>
+
+	<form name="CreateModule">
+		<button name="viewlayoutsbtn" />
+	</form>
+
+	<div id="Buttons">
+		<link text="EditView"/>
+	</div>
+	<javascript>
+	</javascript>
+	<javascript addUtils="true">
+                var start = YAHOO.util.Selector.query('div#toolbox > div.le_panel.special')[0];
+                var end = YAHOO.util.Selector.query('div#panels div.le_panel')[0];
+                SUGAR.soda.fakeDrag(start, end);
+                var start = YAHOO.util.Selector.query('div#availablefields > div:contains(Parent Name)')[0];
+                var end = YAHOO.util.Selector.query('#panels div.le_field.special')[0];
+                SUGAR.soda.fakeDrag(start, end);
+	</javascript>
+
+	<table id="layoutEditorButtons">
+		<button id="saveBtn" />
+	</table>
+	<div class="bodywrapper">
+		<link class="crumbLink" text="Layouts" />
+	</div>
+	<div id="Buttons">
+		<link text="DetailView"/>
+	</div>
+	
+	<button id="copyFromEditView" />
+
+	<button id="saveBtn" />
+
+	<div class="bodywrapper">
+		<link class="crumbLink" text="Package{@bug}{@stamp}" />
+	</div>
+
+	<form id="CreatePackage">
+		<button name="deploybtn" />
+	</form>
+	<link id="moduleTab_{@bug}{@stamp}_Module{@bug}{@stamp}" />
+	<div class="moduleTitle">
+		<span class="utils">
+			<link text="Create" />
+		</span>
+	</div>
+	<textfield id="parent_name" set="Parent name {@bug} {@stamp}" />
+	<textfield id="name" set="Company name {@bug} {@stamp}" />
+	<button id="SAVE" />
+	<span id="parent_name" assert="Parent name {@bug} {@stamp}" />
+
+	<puts text='--------Bug 40268 Finished--------'/>
+</soda>
