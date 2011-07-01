@@ -61,7 +61,7 @@
 		</form>
 
 		<button id="Accounts_subpanel_save_button" />
-
+		<wait timeout="6"/>
 		<div id="list_subpanel_accounts">	
 			<span class="pageNumbers" assert="(1 - 1 of 1)" />
 			<link class="listViewTdToolsS1" index="1" click="true"/>
