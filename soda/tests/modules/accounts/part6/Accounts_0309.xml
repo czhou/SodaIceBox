@@ -51,6 +51,7 @@
 	<select id="status" set="Held"/>
 	<button id="Meetings_subpanel_save_button"/>
 
+	<wait timeout="10"/>
 	<div id="list_subpanel_history">
 		<link text="Account meeting record"/>
 	</div>

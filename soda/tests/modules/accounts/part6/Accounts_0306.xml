@@ -91,6 +91,7 @@
 		
 		<!--Close and Create new record-->	
 		<button value="Close and Create New"/>
+		<wit timeout="10"/>
 		<button value="CANCEL" alert="true"/>
 		
 		<!--Search the record-->
