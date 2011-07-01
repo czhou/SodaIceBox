@@ -49,7 +49,7 @@
 		
 		<button value="Search"/>
 		
-		<wait timeout="8"/>
+		<wait timeout="10"/>
 		<link text="{@contact_record.first_name} {@user.name} {@stamp} {@contact_record.last_name}"/>
 		<div id="list_subpanel_contacts">
 			<link class="listViewTdToolsS1" index="2" alert="true"/>

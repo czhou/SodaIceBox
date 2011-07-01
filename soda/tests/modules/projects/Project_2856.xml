@@ -50,7 +50,7 @@
 		<table id="composeHeaderTable0">
 			<button class="button" index="1" alert="true"/>
 		</table>
-		<wait timeout="5"/>
+		<wait timeout="10"/>
 		
 		<link text="{@Project_2856.email_subject}" click="false"/>
 
