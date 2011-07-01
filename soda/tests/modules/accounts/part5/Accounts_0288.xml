@@ -75,6 +75,7 @@
 		<link text="{@contact_record_0035.assigned_user_name}" />
 
 		<button value="Save" />
+		<wait timeout="10"/>
 
 		<!--Verify the contact record has been created-->
 		<div id="list_subpanel_contacts">
