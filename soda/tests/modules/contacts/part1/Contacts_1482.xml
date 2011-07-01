@@ -58,7 +58,7 @@
 	<wait timeout="5"/>
 
 	<div id="list_subpanel_history">
-		<link text="/rem/" alert="true"/>
+		<link text="/rem/" class="listViewTdToolsS1" alert="true"/>
 	</div>
 	<wait timeout="5"/>
 
