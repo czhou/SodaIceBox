@@ -31,15 +31,13 @@
       <wait timeout="9" />
 		<button name="cancel" required="false" />
       <wait timeout="9" />
-		<button name="next_tab1" required="false" index="0" />
+		<button name="next_tab1" required="false" index="1" />
       <wait timeout="9" />
 		<textfield id="email1" set="{@SugarInit.email}" required="false" />
       <wait timeout="9" />
-   	<button name="next_tab1" required="false" index="2" timeout="5" />
+   	<button name="next_tab1" required="false" index="3" timeout="5" />
       <wait timeout="9" />
-		<button name="next_tab1" required="false" index="4" timeout="5" />
-      <wait timeout="9" />
-		<button name="next_tab1" required="false" index="6" timeout="5" />
+		<button name="next_tab1" required="false" index="5" timeout="5" />
       <wait timeout="9" />
 		<button name="save" required="false" timeout="3" />
 		<browser
