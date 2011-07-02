@@ -57,12 +57,16 @@
 
 	<!--Create a case in Cases Subpanel-->
 	<button name="account_cases_create_button" />
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0105.csv" var="case_record_0105">
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0105.csv" 
+      var="case_record_0105">
 		<form id="form_SubpanelQuickCreate_Cases">
-			<textfield id="name" set="{@case_record_0105.name} {@user.name} {@stamp}" />
+			<textfield id="name" 
+            set="{@case_record_0105.name} {@user.name} {@stamp}" 
+            clear="true" />
 			<select id="status" set="{@case_record_0105.status}" />
 			<select id="priority" set="{@case_record_0105.priority}" />
-			<textfield id="description" set="{@case_record_0105.description}" />
+			<textfield id="description" set="{@case_record_0105.description}" 
+            clear="true" />
 			<var var="pre_case_subpanel_name" set="{@case_record_0105.name} {@user.name} {@stamp}"/>
 			<!--user select: use default value-->
 			<!--teams select: use default value-->
@@ -89,7 +93,8 @@
 		<span class="pageNumbers" assert="(1 - 1 of 1)" />
       <tr class="oddListRowS1">
          <td index="1">
-      		<link text="{@case_record_0105.name} {@user.name} {@stamp}" alert="true" />
+      		<link text="{@case_record_0105.name} {@user.name} {@stamp}" 
+               alert="true" />
          </td>
       </tr>
 	</div>
