@@ -26,15 +26,31 @@
 -->
 
 <soda>
-   <script file="tests/modules/sorting/module_lib/setup-sorting.xml" />
-   <script file="tests/modules/sorting/module_lib/targetlist-init.xml" />
-   <script file="tests/modules/sorting/module_lib/account-init.xml" />
-   <script file="tests/modules/sorting/module_lib/contact-init.xml" />
-   <script file="tests/modules/sorting/module_lib/lead-init.xml" />
-   <script file="tests/modules/sorting/module_lib/opp-init.xml" />
-   <script file="tests/modules/sorting/module_lib/quote-init.xml" />
-   <script file="tests/modules/sorting/module_lib/case-init.xml" />
-   <script fileset="tests/modules/sorting"/>
-   <script file="tests/modules/sorting/module_lib/cleanup-sorting.xml" />
+	<puts text="quote-init.xml starting." />
+	<timestamp />
+	<link id="moduleTab_Quotes" />
+	<csv file="{@global.scriptsdir}/csvs/sorting//quote_Listview.csv" var="quote_list_sort">
+		<link text="Create Quote" />
+
+		<form id="EditView">
+			<textfield id="name" set="{@quote_list_sort.name}" />
+			<select id="quote_stage" set="{@quote_list_sort.quote_stage}" />
+			<textfield id="date_quote_expected_closed" set="{@quote_list_sort.date_quote_expected_closed}" />
+			<!--account select -->
+			<button id="btn_billing_account_name" />
+		</form>
+		<textfield id="name_advanced" set="{@quote_list_sort.account_name}" /> 	
+		<button value="Search" />
+		<link text="{@quote_list_sort.account_name}" />
+		
+		<form id="EditView">
+			<button id="SAVE_HEADER" />
+		</form>
+		<wait timeout="2" />
+		<button id="edit_button" click="false" />
+		<browser assert="{@quote_list_sort.name}" />
+	</csv>
+
+	<puts text="quote-init.xml finished." />
 </soda>
 

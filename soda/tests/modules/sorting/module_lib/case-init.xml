@@ -26,15 +26,31 @@
 -->
 
 <soda>
-   <script file="tests/modules/sorting/module_lib/setup-sorting.xml" />
-   <script file="tests/modules/sorting/module_lib/targetlist-init.xml" />
-   <script file="tests/modules/sorting/module_lib/account-init.xml" />
-   <script file="tests/modules/sorting/module_lib/contact-init.xml" />
-   <script file="tests/modules/sorting/module_lib/lead-init.xml" />
-   <script file="tests/modules/sorting/module_lib/opp-init.xml" />
-   <script file="tests/modules/sorting/module_lib/quote-init.xml" />
-   <script file="tests/modules/sorting/module_lib/case-init.xml" />
-   <script fileset="tests/modules/sorting"/>
-   <script file="tests/modules/sorting/module_lib/cleanup-sorting.xml" />
+	<puts text="case-init.xml starting." />
+	<timestamp />
+	<link id="moduleTab_Cases" />
+	<csv file="{@global.scriptsdir}/csvs/sorting//case_Listview.csv" var="case_list_sort">
+		<link text="Create Case" />
+
+		<form id="EditView">
+			<textfield id="name" set="{@case_list_sort.name}" />
+			<select id="priority" set="{@case_list_sort.priority}" />
+			<select id="status" set="{@case_list_sort.status}" />
+			<!--account select -->
+			<button id="btn_account_name" />
+		</form>
+		<textfield id="name_advanced" set="{@case_list_sort.account_name}" /> 	
+		<button value="Search" />
+		<link text="{@case_list_sort.account_name}" />
+		
+		<form id="EditView">
+			<button id="SAVE_HEADER" />
+		</form>
+		<wait timeout="2" />
+		<button id="edit_button" click="false" />
+		<browser assert="{@case_list_sort.name}" />
+	</csv>
+
+	<puts text="case-init.xml finished." />
 </soda>
 
