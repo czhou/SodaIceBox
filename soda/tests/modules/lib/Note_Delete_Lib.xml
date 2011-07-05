@@ -27,8 +27,11 @@
 
 <soda>
 	<puts text="Lib: Note_Delete_Lib.xml starting." />
-	<link id="moduleTab_Notes" click="false" jscriptevent="onmouseover" />
-	<link text="View Notes" />
+	<li id="moduleTabExtraMenuAll" click="true" />
+   <wait timeout="1" />
+   <link id="moduleTab_Notes" click="false" jscriptevent="onmouseover" />
+   <wait timeout="1" />
+   <link text="View Notes" />
 	<browser assert="Notes" />
 	<button name="clear" />
 	<button id="search_form_submit" />
