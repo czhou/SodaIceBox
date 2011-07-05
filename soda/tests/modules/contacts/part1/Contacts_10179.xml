@@ -26,46 +26,31 @@
 -->
 
 <soda>
-	<puts text="Test: Opportunity_2309.xml starting" />
-	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2309.csv" var="Opportunity_2309">
-		<link id="moduleTab_Opportunities" />
-		<browser assert="Opportunities" />
-		<button id="search_form_clear" />
-		<form id="search_form">
-			<textfield id="name_basic" set="{@pre_opp_name}" />
-		</form>
-		<button id="search_form_submit" />
+	<!--
+		Search contact_Verify that contacts with special characters can be searched. (For example, with "@$*&" characters, etc)
+	-->
+	<puts text="Test: Contacts_10179.xml starting" />
 
-		<table class="list view">
-			<browser assert="{@pre_opp_name}" />
-			<link text="{@pre_opp_name}" />
-		</table>
+	<!--Create a records and save its counter-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml"/>
+	<csv file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.csv" var="Contacts_10179"/>
 
-		<table id="detailpanel_1">
-			<browser assert="{@pre_opp_name}" />
-		</table>
+	<link id="moduleTab_Contacts" />
+	
+	<!--Goto advanced search view-->
+	<link id="advanced_search_link" required="false"/>
 
-		<div id="list_subpanel_quotes">
-			<button name="quotes_opportunities_select_button" />
-		</div>
+	<!--Search by any phone and with blank space before the number-->
+	<textfield id="phone_advanced" set=" {@Contacts_10179.phone_work} "/>
+	<button id="search_form_submit"/>
+	
+	<!--Check searching result-->
+	<table class="list view">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" click="false" exists="true"/>
+	</table>
 
-		<!--Quote select-->
-		<browser assert="Quote Search" />
-		<textfield name="name_advanced" set="{@pre_Quote_name}" />
-		<button value="Search" />
-		<table class="list view">
-			<checkbox name="massall" class="checkbox" click="true" />
-		</table>
-		<button value="Select" />
-
-		<div id="list_subpanel_quotes">
-			<table class="list view">
-				<link text="{@pre_Quote_name}" click="false" />
-				<link class="listViewTdToolsS1" index="2" alert="true" />
-				<wait timeout="5" />
-				<link text="{@pre_Quote_name}" click="false" exist="false" />
-			</table>
-		</div>
-	</csv>
-	<puts text="Test: Opportunity_2309.xml finished" />
+	<!--Clean the record-->
+	<link id="basic_search_link" required="false"/>
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml"/>
+	<puts text="Test: Contacts_10179.xml finished" />
 </soda>

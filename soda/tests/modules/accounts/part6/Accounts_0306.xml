@@ -1,0 +1,126 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test Case 306: Account Detail - Activities sub-panel - Close and Create New_Verify that the activity record is closed and creating a new activity is canceled with 'Close and Create New' function on edit view."/>
+
+	<!--Create a account record-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+
+	<!--Go its detail view-->
+	<browser assert="{@pre_account_name}" />
+
+	<!--Create Activities Subpanel-->
+	<button name="Activities_createtask_button" />
+	<wait timeout="5" />
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0032.csv" var="activity_record_0032">
+		<form id="form_SubpanelQuickCreate_Tasks">
+			<textfield id="name" set="{@activity_record_0032.name} {@user.name} {@stamp}" />
+			<select id="priority" set="{@activity_record_0032.priority}" />
+			<select id="status" set="{@activity_record_0032.status}" />
+			<textfield id="description" set="{@activity_record_0032.description}" />
+
+			<!--Due Date-->
+			<textfield id="date_due_date" set="{@activity_record_0032.date_due_date}" />
+			<select id="date_due_hours" set="{@activity_record_0032.date_due_hours}" />
+			<select id="date_due_minutes" set="{@activity_record_0032.date_due_minutes}" />
+			<select id="date_due_meridiem" set="{@activity_record_0032.date_due_meridiem}"
+				required="false" />
+			<checkbox id="date_due_flag" set="{@activity_record_0032.date_due_flag}" />
+
+			<!--Start Date-->
+			<textfield id="date_start_date" set="{@activity_record_0032.date_start_date}" />
+			<select id="date_start_hours" set="{@activity_record_0032.date_start_hours}" />
+			<select id="date_start_minutes" set="{@activity_record_0032.date_start_minutes}" />
+			<select id="date_start_meridiem" set="{@activity_record_0032.date_start_meridiem}"
+				required="false" />
+			<checkbox id="date_start_flag" set="{@activity_record_0032.date_start_flag}" />
+		</form>
+
+		<!--user select-->
+		<button id="btn_assigned_user_name" />
+		<browser assert="User Search" />
+		<textfield name="last_name_advanced" set="{@activity_record_0032.assigned_user_name}" />
+		<button value="Search" />
+		<link text="{@activity_record_0032.assigned_user_name}" />
+
+		<!--teams select-->
+		<table id="form_SubpanelQuickCreate_Tasks_team_name_table">
+			<button value="Select" />
+		</table>
+		<browser assert="Team Search" />
+		<textfield name="name" set="{@activity_record_0032.team_name}" />
+		<button value="Search" />
+		<link text="{@activity_record_0032.team_name}" />
+		<wait timeout="2" />
+		<button id="Tasks_subpanel_save_button" />
+		<wait timeout="10" />
+
+		<!--Verify the task record created in subpanel-->
+		<div id="list_subpanel_activities">
+			<table class="list view">
+				<link text="{@activity_record_0032.name} {@user.name} {@stamp}" />
+			</table>
+		</div>
+		<wait timeout="5" />
+		<browser assert="{@activity_record_0032.name} {@user.name} {@stamp}" />
+		
+		<!--Close and Create new record-->	
+		<button value="Close and Create New"/>
+		<wit timeout="10"/>
+		<button value="CANCEL" alert="true"/>
+		
+		<!--Search the record-->
+	        <link id="moduleTab_Accounts" />
+	        <div class="moduleTitle">
+	                <link href="index.php?module=Accounts&amp;action=index" click="false" />
+	        </div>
+	        <link text="Basic Search" required="false" />
+	        <form id="search_form">
+        	        <button id="search_form_clear" />
+	                <textfield id="name_basic" set="{@pre_account_name}" />
+                	<button id="search_form_submit" />
+        	</form>
+	
+	        <table class="list view">
+                	<browser assert="{@pre_account_name}" />
+        	        <link text="{@pre_account_name}" />
+	        </table>
+		
+		<div id="list_subpanel_activities">
+                        <span class="pageNumbers" assert="(0 - 0 of 0)"/>
+                        <browser assertnot="{@activity_record_0032.name} {@user.name} {@stamp}" />
+                </div>
+	
+		<div id="list_subpanel_history">
+			<span class="pageNumbers" assert="(1 - 1 of 1)"/>
+			<browser assert="{@activity_record_0032.name} {@user.name} {@stamp}" />
+                </div>
+	</csv>
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<puts text="Test: Accounts_0306.xml finished." />
+</soda>

@@ -60,12 +60,12 @@
 			<select id="account_type" set="{@member_record_0079.account_type}" />
 		</form>
 
-		<!-- Click "Cancel". -->
 		<button id="Accounts_subpanel_save_button" />
-
-			
-		<span class="pageNumbers" assert="(1 - 1 of 1)" />
-		<link class="listViewTdToolsS1" index="1" click="true"/>
+		<wait timeout="6"/>
+		<div id="list_subpanel_accounts">	
+			<span class="pageNumbers" assert="(1 - 1 of 1)" />
+			<link class="listViewTdToolsS1" index="1" click="true"/>
+		</div>
 		<textfield id="name" set=""/>
 		<button id="SAVE" alert="true" />
 		<browser assert="Missing required field: Name"/>

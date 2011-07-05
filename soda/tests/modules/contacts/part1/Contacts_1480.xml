@@ -26,46 +26,45 @@
 -->
 
 <soda>
-	<puts text="Test: Opportunity_2309.xml starting" />
-	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_2309.csv" var="Opportunity_2309">
-		<link id="moduleTab_Opportunities" />
-		<browser assert="Opportunities" />
-		<button id="search_form_clear" />
-		<form id="search_form">
-			<textfield id="name_basic" set="{@pre_opp_name}" />
-		</form>
-		<button id="search_form_submit" />
+	<!--
+		Compose email_Verify that the a related email can be composed from contact detail view
+	-->
+	<puts text="Test: Contacts_1480.xml starting" />
 
-		<table class="list view">
-			<browser assert="{@pre_opp_name}" />
-			<link text="{@pre_opp_name}" />
-		</table>
+	<!--Create three records and save its counter-->
+	<script file="{@global.scriptsdir}/modules/lib/Email_Setting_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 
-		<table id="detailpanel_1">
-			<browser assert="{@pre_opp_name}" />
-		</table>
+	<link id="moduleTab_Contacts" />
 
-		<div id="list_subpanel_quotes">
-			<button name="quotes_opportunities_select_button" />
-		</div>
+	<!--Select a lead record-->
+	<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
+	<button id="search_form_submit" />
 
-		<!--Quote select-->
-		<browser assert="Quote Search" />
-		<textfield name="name_advanced" set="{@pre_Quote_name}" />
-		<button value="Search" />
-		<table class="list view">
-			<checkbox name="massall" class="checkbox" click="true" />
-		</table>
-		<button value="Select" />
+	<!--Go to detail view of the first record-->
+	<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 
-		<div id="list_subpanel_quotes">
-			<table class="list view">
-				<link text="{@pre_Quote_name}" click="false" />
-				<link class="listViewTdToolsS1" index="2" alert="true" />
-				<wait timeout="5" />
-				<link text="{@pre_Quote_name}" click="false" exist="false" />
-			</table>
-		</div>
-	</csv>
-	<puts text="Test: Opportunity_2309.xml finished" />
+	<!--Compose a email from subpanel-->
+	<timestamp/>
+	<button id="composeemail_button"/>
+	<textfield id="emailSubject0" set="Contacts_1480_subject_{@stamp}"/>
+	<var var="contact_1480_email_name" set="Contacts_1480_subject_{@stamp}"/>
+
+	<!--Send the email-->
+	<table id="composeHeaderTable0">
+		<button index="1" alert="true"/>
+	</table>
+	<wait timeout="5"/>
+
+	<div id="list_subpanel_history">
+		<link text="{@contact_1480_email_name}" click="false" exists="true"/>
+		<browser assert="Sent"/>
+		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}"/>
+	</div>
+
+	<!--Delete the record-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<puts text="Test: Contacts_1480.xml finished" />
 </soda>

@@ -26,34 +26,51 @@
 -->
 
 <soda>
-	<puts text="Test Case 299: Account Detail - Projects sub-panel - Remove Relationship_Verify that removing project record related to this account is canceled."/>
-	
-	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
-	
-	<link id="moduleTab_Accounts" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+	<!--
+		Delete composed email_Verify that a related email can be deleted from contact detail view
+	-->
+	<puts text="Test: Contacts_1482.xml starting" />
+
+	<!--Create three records and save its counter-->
+	<script file="{@global.scriptsdir}/modules/lib/Email_Setting_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+
+	<link id="moduleTab_Contacts" />
+
+	<!--Select a lead record-->
+	<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
+	<button id="search_form_submit" />
+
+	<!--Go to detail view of the first record-->
+	<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+
+	<!--Compose a email from subpanel-->
+	<timestamp/>
+	<button id="composeemail_button"/>
+	<textfield id="emailSubject0" set="Contacts_1482_subject_{@stamp}"/>
+	<var var="contact_1482_email_name" set="Contacts_1482_subject_{@stamp}"/>
+
+	<!--Send the email-->
+	<table id="composeHeaderTable0">
+		<button index="1" alert="true"/>
+	</table>
+	<wait timeout="5"/>
+
+	<div id="list_subpanel_history">
+		<link text="/rem/" class="listViewTdToolsS1" alert="true"/>
 	</div>
-	
-	<link text="{@account_record.name} {@user.name} {@stamp}" />
-	<button name="projects_accounts_create_button" />
-	
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0053.csv" var="project">
-		<textfield id="name" set="{@project.name}" />
-		<textfield id="estimated_start_date" set="{@project.estimated_start_date}" />
-		<textfield id="estimated_end_date" set="{@project.estimated_end_date}" />
-		<button id="Project_subpanel_save_button" />
-		<wait timeout="6"/>
-		<browser assert="{@project.name}" />
-		<div id="list_subpanel_project">
-			<link class="listViewTdToolsS1" alert="false"/>
-			<wait timeout="5"/>
-		</div>
-		<browser assert="{@project.name}" />
-	</csv>
-	
+	<wait timeout="5"/>
+
+	<!--Check contact history subpanel-->
+	<div id="list_subpanel_history">
+		<link text="{@contact_1482_email_name}" click="false" exists="false"/>
+		<browser assertnot="Sent"/>
+		<browser assertnot="{@pre_contact_first_name} {@pre_contact_last_name}"/>
+	</div>
+
+	<!--Delete the record-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Project_Delete_Lib.xml" />
-	
-	<puts text="Test: Accounts_0299.xml finished." />
+	<puts text="Test: Contacts_1482.xml finished" />
 </soda>

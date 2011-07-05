@@ -32,6 +32,8 @@
    <script file="tests/modules/sorting/module_lib/contact-init.xml" />
    <script file="tests/modules/sorting/module_lib/lead-init.xml" />
    <script file="tests/modules/sorting/module_lib/opp-init.xml" />
+   <script file="tests/modules/sorting/module_lib/quote-init.xml" />
+   <script file="tests/modules/sorting/module_lib/case-init.xml" />
    <script fileset="tests/modules/sorting"/>
    <script file="tests/modules/sorting/module_lib/cleanup-sorting.xml" />
 </soda>

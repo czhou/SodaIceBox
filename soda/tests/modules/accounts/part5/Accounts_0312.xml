@@ -26,7 +26,7 @@
 -->
 
 <soda>
-	<puts text="Test Case 288: Account Detail - Contacts sub-panel - Remove Relationship _Verify that deleting 'Contacts' is correctly canceled on 'CONTACTS' sub-panel."/>
+	<puts text="Test Case 312: Account Detail - Contacts sub-panel_Verify that contact related to this account is viewed correctly."/>
 
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
@@ -85,13 +85,14 @@
 			</table>
 		</div>
 
-		<!--Delete the contact record in subpanel-->
-		<div id="list_subpanel_contacts">
-			<link class="listViewTdToolsS1" index="2" alert="false"/>
-			<link text="{@contact_record_0035.first_name} {@user.name} {@stamp} {@contact_record_0035.last_name}" click="false"/>	
+		<!--Go to contact detail view-->
+		<link text="{@contact_record_0035.first_name} {@user.name} {@stamp} {@contact_record_0035.last_name}" />
+		<div id="Contacts_detailview_tabs">
+			<browser assert="{@contact_record_0035.first_name} {@user.name} {@stamp} {@contact_record_0035.last_name}"/>
 		</div>
+		
 	</csv>
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
-	<puts text="Test: Accounts_0288.xml finished." />
+	<puts text="Test: Accounts_0312.xml finished." />
 </soda>

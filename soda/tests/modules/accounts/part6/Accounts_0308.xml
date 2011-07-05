@@ -26,60 +26,46 @@
 -->
 
 <soda>
-	<puts text="Test Case 269: Account Detail - Member Organizations sub-panel - Edit _Verify that editing account member related to this account is canceled."/>
+	<puts text="Test Case 308: Account Detail - History sub-panel-Duplicate_Verify that duplicating an activity record is canceled."/>
 
-	<!-- Create an account record. -->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 
-	<!-- Search the record. -->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
-
-	<table class="list view">
-		<link text="{@pre_account_name}" />
-	</table>
-	<browser assert="{@pre_account_name}" />
-
-	<!--Create Member Organization-->
-	<button name="member_accounts_create_button" />
 	<wait timeout="5"/>
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0079.csv" var="member_record_0079">
-		<form id="form_SubpanelQuickCreate_Accounts">
-			<textfield id="Accounts0emailAddress0" set="{@member_record_0079.emailAddress0}" />
-			<wait timeout="3" />
-			<textfield id="name" set="{@member_record_0079.name} {@stamp}" />
-			<textfield id="website" set="{@member_record_0079.website}" />
-			<textfield id="phone_office" set="{@member_record_0079.phone_office}" />
-			<textfield id="phone_fax" set="{@member_record_0079.phone_fax}" />
+	<table class="list view">
+		<link text="{@pre_account_name}"/> 
+	</table>
 
-			<select id="industry" set="{@member_record_0079.industry}" />
-			<select id="account_type" set="{@member_record_0079.account_type}" />
-		</form>
+	<!--Create Meeting record-->
+	<div id="LBL_ACCOUNT_INFORMATION">
+		<browser assert="{@pre_account_name}"/>
+	</div>
 
-		<button id="Accounts_subpanel_save_button"/>
+	<button id="Activities_schedulemeeting_button"/>
+	<textfield id="name" set="Account meeting record"/>
+	<select id="status" set="Held"/>
+	<button id="Meetings_subpanel_save_button"/>
 
-		<wait timeout="5"/>
-		<!--Edit the record-->
-		<div id="list_subpanel_accounts">
-			<span class="pageNumbers" assert="(1 - 1 of 1)" />
-			<link class="listViewTdToolsS1" index="1" click="true"/>
-		</div>
-		<textfield id="name" set="{@member_record_0079.name} {@stamp} Modified"/>
-		<!-- Click "Cancel". -->
-		<button id="CANCEL" alert="true"/>
-		 <div id="list_subpanel_accounts">
-                        <span class="pageNumbers" assert="(1 - 1 of 1)" />
-                        <link text="{@member_record_0079.name} {@stamp}" click="false"/>
-                        <link text="{@member_record_0079.name} {@stamp} Modified" exist="false" click="false"/>
-                </div>
-	</csv>
+	<wait timeout="10"/>
+	<div id="list_subpanel_history">
+		<link text="Account meeting record"/>
+	</div>
+	<button id="duplicate_button"/>
+	<button id="CANCEL" alert="true"/>
 
-	<!--Delete a account record-->
+	<link id="moduleTab_Meetings"/>
+	<button id="search_form_clear"/>
+	<textfield id="name_basic" set="Account meeting record"/>
+	<button id="search_form_submit"/>
+	<span class="pageNumbers" assert="(1 - 1 of 1)"/>
+	
+	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
-
-	<puts text="Test: Accounts_0269.xml finished." />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml"/>
+	<puts text="Test: Accounts_0308.xml finished." />
 </soda>
