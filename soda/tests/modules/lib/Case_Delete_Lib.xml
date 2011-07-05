@@ -28,6 +28,8 @@
 <soda>
 	<puts text="Lib: Case_Delete_Lib.xml starting." />
 
+   <li id="moduleTabExtraMenuAll" />
+   <wait timeout="1" />
    <link id="moduleTab_Cases" />
 
    <button name="clear" />
