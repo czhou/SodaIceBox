@@ -93,6 +93,7 @@
 	</csv>
 	<!--Run Delete XML-->
 	<script file="{@global.scriptsdir}/modules/lib/Campaign_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/TargetList_Delete_Lib.xml" />
 	<link id="moduleTab_Opportunities" />
 	<browser assert="Opportunities" />
 
