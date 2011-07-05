@@ -55,7 +55,6 @@
     <!--Go to create page-->  
     <link id="moduleTab_Accounts" />
     <link text="Create Account" />
-    <browser assert="Create" />
     <form id="EditView">
         <textfield id="billing_address_city" assert="disabled" />
 	    <button id="CANCEL" />

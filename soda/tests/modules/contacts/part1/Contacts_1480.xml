@@ -47,7 +47,9 @@
 
 	<!--Compose a email from subpanel-->
 	<timestamp/>
+	<csv file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.csv" var="Contacts_1480_Contact"/>
 	<button id="composeemail_button"/>
+	<textfield id="addressTO0" set="{@Contacts_1480_Contact.emailAddress0}"/>
 	<textfield id="emailSubject0" set="Contacts_1480_subject_{@stamp}"/>
 	<var var="contact_1480_email_name" set="Contacts_1480_subject_{@stamp}"/>
 
