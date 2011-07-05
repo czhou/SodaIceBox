@@ -751,6 +751,13 @@
 	</block>
 	
 	<block>
+		<testfile>roles_11734</testfile>
+		<bugnumber>44687</bugnumber>
+		<reason>bug 44687</reason>
+		<modulename>roles</modulename>
+	</block>
+	
+	<block>
 		<testfile>Dashlet_10982</testfile>
 		<bugnumber>44104</bugnumber>
 		<reason>bug 44104</reason>
