@@ -35,8 +35,8 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 
-	<textfield id="name_basic" clear="true" />
-	<textfield id="name_basic" set="{@pre_account_name}" />
+   <link id="basic_search_link" required="false" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -103,6 +103,9 @@
 	</div>
 	<wait />
 	<!--Goto the Note Module to search the record-->
+
+	<li id="moduleTabExtraMenuAll" click="true" />
+   <wait timeout="1" />
 	<link id="moduleTab_Notes" click="false" jscriptevent="onmouseover" />
 	<div class="moduleTitle">
 		<link href="{@global.url}/index.php?module=Notes&amp;action=index" click="false" />
