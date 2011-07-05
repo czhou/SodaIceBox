@@ -106,6 +106,13 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Activities_44557</testfile>
+		<bugnumber>44557</bugnumber>
+		<reason>User who created a meeting is invited even if he is not in the invited list</reason>
+		<modulename>activities</modulename>
+	</block>
+	
+	<block>
 		<testfile>Roles_42099</testfile>
 		<bugnumber>42099</bugnumber>
 		<reason>Role restricted user can remove self from calls/meetings</reason>
