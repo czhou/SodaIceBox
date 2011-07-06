@@ -30,8 +30,11 @@
    <timestamp/>
    <link text="Admin" />
    <link text="Team Management" />
-   <browser assert="Teams" />
+   <link id="moduleTab_Teams" click="false" jscriptevent="onmouseover" />
+   <wait timeout="1" />
    <link text="Create Team" />
+   <browser assert="Teams" />
+
    <csv file="{@global.scriptsdir}/modules/lib/Team_Create_Lib.csv" 
       var="team_record">
       <textfield name="name" set="{@team_record.name} {@user.name} {@stamp}" />
