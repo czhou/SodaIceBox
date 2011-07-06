@@ -26,66 +26,72 @@
 -->
 
 <soda>
-	<puts text="Lib: Contact_Create_Lib.xml starting." />
-	<timestamp />
-	<link id="moduleTab_Contacts" click="false" jscriptevent="onmouseover" />
-	<csv file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.csv" 
+   <puts text="Lib: Contact_Create_Lib.xml starting." />
+   <timestamp />
+   <link id="moduleTab_Contacts" click="false" jscriptevent="onmouseover" />
+   <csv file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.csv" 
       var="contact_record">
-		<link text="Create Contact" />
-		<browser assert="Contact Overview" />
+      <link text="Create Contact" />
+      <wait timeout="2" />
+      <browser assert="Contact Overview" />
 
-		<!--fill the fields and "Save"-->
-		<form id="EditView">
-			<textfield name="first_name"
-				set="{@contact_record.first_name} {@user.name} {@stamp}" />
-			<textfield id="last_name" set="{@contact_record.last_name}" />
-			<textfield id="title" set="{@contact_record.title}" />
-			<textfield id="phone_work" set="{@contact_record.phone_work}" />
-			<textfield id="phone_mobile" set="{@contact_record.phone_mobile}" />
-			<textfield id="phone_fax" set="{@contact_record.phone_fax}" />
-			<wait timeout="2" />
-			<textfield id="Contacts0emailAddress0" 
-            set="{@stamp}{@contact_record.emailAddress0}" />
-			<textfield id="description" click="true" />
-			<textfield id="description" set="{@contact_record.description}" />
-			<select id="lead_source" set="{@contact_record.lead_source}" />
-			<checkbox id="do_not_call" set="{@contact_record.do_not_call}" />
-			<checkbox id="sync_contact" set="{@contact_record.sync_contact}" />
+      <!--fill the fields and "Save"-->
+      <form id="EditView">
+         <textfield name="first_name"
+            set="{@contact_record.first_name} {@user.name} {@stamp}" 
+               clear="true" />
+         <textfield id="last_name" set="{@contact_record.last_name}" 
+            clear="true" />
+         <textfield id="title" set="{@contact_record.title}" clear="true" />
+         <textfield id="phone_work" set="{@contact_record.phone_work}" 
+            clear="true" />
+         <textfield id="phone_mobile" set="{@contact_record.phone_mobile}" 
+            clear="true" />
+         <textfield id="phone_fax" set="{@contact_record.phone_fax}" 
+            clear="true" />
+         <wait timeout="2" />
+         <textfield id="Contacts0emailAddress0" 
+            set="{@stamp}{@contact_record.emailAddress0}" clear="true" />
+         <textfield id="description" click="true" />
+         <textfield id="description" set="{@contact_record.description}" />
+         <select id="lead_source" set="{@contact_record.lead_source}" />
+         <checkbox id="do_not_call" set="{@contact_record.do_not_call}" />
+         <checkbox id="sync_contact" set="{@contact_record.sync_contact}" />
 
-			<textfield id="primary_address_street" 
+         <textfield id="primary_address_street" 
             set="{@contact_record.primary_address_street}" />
-			<textfield id="primary_address_city" 
+         <textfield id="primary_address_city" 
             set="{@contact_record.primary_address_city}" />
-			<textfield id="primary_address_state" 
+         <textfield id="primary_address_state" 
             set="{@contact_record.primary_address_state}" />
-			<textfield id="primary_address_postalcode" 
+         <textfield id="primary_address_postalcode" 
             set="{@contact_record.primary_address_postalcode}" />
-			<textfield id="primary_address_country" 
+         <textfield id="primary_address_country" 
             set="{@contact_record.primary_address_country}" />
-			<textfield id="alt_address_street" 
+         <textfield id="alt_address_street" 
             set="{@contact_record.alt_address_street}" />
-			<textfield id="alt_address_city" set="{@contact_record.alt_address_city}" />
-			<textfield id="alt_address_state" set="{@contact_record.alt_address_state}" />
-			<textfield id="alt_address_postalcode" 
+         <textfield id="alt_address_city" set="{@contact_record.alt_address_city}" />
+         <textfield id="alt_address_state" set="{@contact_record.alt_address_state}" />
+         <textfield id="alt_address_postalcode" 
             set="{@contact_record.alt_address_postalcode}" />
-			<textfield id="alt_address_country" 
+         <textfield id="alt_address_country" 
             set="{@contact_record.alt_address_country}" />
-			<wait timeout="2" />
-			<button value="Save" />
-		</form>
+         <wait timeout="2" />
+         <button value="Save" />
+      </form>
 
-		<browser
-			assert="{@contact_record.first_name} {@user.name} {@stamp} {@contact_record.last_name}" />
+      <browser
+         assert="{@contact_record.first_name} {@user.name} {@stamp} {@contact_record.last_name}" />
 
-		<!--Save the contact id & name-->
-		<form name="DetailView">
-			<hidden name="record" var="pre_contact_id" />
-		</form>
-	</csv>
-	<var var="pre_contact_first_name" 
+      <!--Save the contact id & name-->
+      <form name="DetailView">
+         <hidden name="record" var="pre_contact_id" />
+      </form>
+   </csv>
+   <var var="pre_contact_first_name" 
       set="{@contact_record.first_name} {@user.name} {@stamp}" />
-	<var var="pre_contact_last_name" set="{@contact_record.last_name}" />
-	<var var="pre_contact_email" set="{@stamp}{@contact_record.emailAddress0}" />
-	<puts text="Lib: Contact_Create_Lib.xml finished." />
+   <var var="pre_contact_last_name" set="{@contact_record.last_name}" />
+   <var var="pre_contact_email" set="{@stamp}{@contact_record.emailAddress0}" />
+   <puts text="Lib: Contact_Create_Lib.xml finished." />
 </soda>
 
