@@ -50,15 +50,17 @@
 		<table id="MassUpdate_team_name_table">
 			<button value="Select" />
 		</table>	
-		<browser assert="Team Search" />	
 
-		<!--Team search window-->	
-		<table class="list view">	
-			<checkbox name="massall" click="true" />				
-		</table>
-		<button value="  Select  " />				
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />	
+         <!--Team search window-->	
+         <table class="list view">	
+            <checkbox name="massall" click="true" />				
+         </table>
+         <button value="  Select  " />
+      </attach>
 
-		<radio name="primary_team_name_collection" index="1" click="true" />
+		<radio name="primary_team_name_collection" index="0" click="true" />
 		<wait timeout="2" />
 
 		<!--Mass update-->
@@ -77,3 +79,4 @@
 
 	<puts text="Test: Teams_9407.xml finished." />
 </soda>
+
