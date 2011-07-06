@@ -98,9 +98,7 @@
 			<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
 		</table>
 	</div>
-	<browser action="refresh"/>
-
-	<wait timeout="2"/>
+        <wait timeout="5"/>
 
 	<!--Verify delete works-->
 	<div id="list_subpanel_quotes">
