@@ -40,6 +40,7 @@
 
 	<link class="listViewThLinkS1" index="8" />
 
+	<!-- 
 	<link class="listViewThLinkS1" index="1" />
 	<csv file="{@global.scriptsdir}/csvs/sorting/Quote_Listview.csv" 
       var="Quote_Listview_Sort">
@@ -58,7 +59,7 @@
     		</tr>
     	</table>
     </csv>
-
+ 	-->
 	<link class="listViewThLinkS1" index="2" />
 	<csv file="{@global.scriptsdir}/csvs/sorting/Quote_Listview.csv" 
       var="Quote_Listview_Sort">

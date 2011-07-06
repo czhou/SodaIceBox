@@ -65,7 +65,7 @@
 	<!--Delete contact record-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Campaign_Delete_Lib.xml" />
-
+	<script file="{@global.scriptsdir}/modules/lib/TargetList_Delete_Lib.xml" />
 	<puts text="Test: Contacts_1577.xml finished." />
 </soda>
     

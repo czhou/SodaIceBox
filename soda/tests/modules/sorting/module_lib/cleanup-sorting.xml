@@ -27,7 +27,7 @@
 
 <soda>
 	<script file="{@global.scriptsdir}/modules/lib/TargetList_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Coll_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
