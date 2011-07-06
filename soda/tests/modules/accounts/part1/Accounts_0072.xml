@@ -43,6 +43,7 @@
 	</table>
 
 	<!--Go its detail view-->
+   <wait timeout="2" />
 	<browser assert="{@pre_account_name}" />
 
 	<!--Create Case Subpanel & click "Cancel"-->
