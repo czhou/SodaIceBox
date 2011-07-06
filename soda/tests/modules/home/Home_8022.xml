@@ -38,7 +38,7 @@
 			<textfield id="sugar_spot_search" set="{@pre_account_name}"/>
 		</div>
 		<div id="glblSearchBtn">
-			<image src="themes/Sugar/images/dcMenuSearchBtn.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+			<image class="icon" click="true" />
 		</div>
 		<div id="dcboxbody">
 			<browser assert="Accounts" />
@@ -48,7 +48,9 @@
 		<table id="contentTable">
 			<browser assert="Accounts (1)" />
 			<browser assert="{@pre_account_name}" />
-			<image src="themes/Sugar/images/edit_inline.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+			<tr class="oddListRowS1">
+                <image index="1" click="true" />
+            </tr>
 		</table>		
 		
 		<table id="contentTable">
