@@ -1,0 +1,90 @@
+<soda>
+    
+    <!-- rollupAve function in calculated field-->
+    <puts text="Test: Studio_10673.xml starting" />
+    
+    <!-- set description field as calculated field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="rollupAve($opportunities,&quot;amount&quot;)"/>
+      <button value="Save" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="10" />
+    <browser assert="Add Field" />
+    
+    <!--create account record and opportunities-->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+    
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_11673_1.csv" var="studio11673">
+    	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
+    	<link id="moduleTab_Opportunities" />
+    	<textfield id="name_basic" set="{@pre_opp_name}" />
+    	<table class="list view">
+    		<link text="{@pre_opp_name}" />
+    	</table>
+    	<div id ="Opportunities_detailview_tabs">
+    		<browser assert="{@pre_opp_name}" />
+    	</div>
+    	<button id="edit_button" />
+    	<div id="EditView_tabs">
+    		<textfield id="amount" set="{@studio11673.amount}" />
+    	</div>
+    	<button id="SAVE_HEADER" />
+    	<table id="detailpanel_1">
+    		<browser assert="{@pre_opp_name}" />
+        	<span id="amount" assert="{@studio11673.amount}" />
+      	</table>
+    </csv>
+    <!-- check the calculation result -->
+	<link id="moduleTab_Accounts" />
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />
+	</table>
+	<div id ="Accounts_detailview_tabs">
+		<browser assert="{@pre_account_name}" />
+		<span id="description" assert="{@studio11673.ave}" />
+	</div>
+	<button id="edit_button" />
+	<textfield id="description" assert="{@studio11673.ave}" />
+	<button id="SAVE" />
+	<table id="detailpanel_1">
+		<browser assert="{@pre_account_name}" />
+    	<span id="description" assert="{@studio11673.ave}" />
+  	</table>
+    
+    
+    <!-- Now uncalculated the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="false" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="15" />
+    
+    <!-- Delete account record -->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_11673_1.xml finished." />
+</soda>

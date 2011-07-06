@@ -1,0 +1,91 @@
+<soda>
+    
+    <!-- related function in dependent field-->
+    <puts text="Test: Studio_10589.xml starting" />
+    <!--create account record and opportunities-->
+    <script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
+    
+    <!-- set description field as dependent field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="dependent" set="true" />
+    <wait timeout="1" />
+    <tr id="visFormulaRow" >
+	    <button name="editFormula" />
+	    <wait timeout="3" />
+	</tr>  
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="greaterThan(related($opportunities,&quot;amount&quot;),500)"/>
+      <button value="Save" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="15" />
+    <browser assert="Add Field" />
+    
+    <!-- check the dependent field -->
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_10589.csv" var="studio10589">
+    	<link id="moduleTab_Opportunities" />
+    	<textfield id="name_basic" set="{@pre_opp_name}" />
+    	<table class="list view">
+    		<link text="{@pre_opp_name}" />
+    	</table>
+    	<div id ="Opportunities_detailview_tabs">
+    		<browser assert="{@pre_opp_name}" />
+    	</div>
+    	<button id="edit_button" />
+    	<div id="EditView_tabs">
+    		<textfield id="amount" set="{@studio10589.amount}" />
+    	</div>
+    	<button id="SAVE_HEADER" />
+    	<table id="detailpanel_1">
+    		<browser assert="{@pre_opp_name}" />
+        	<span id="amount" assert="{@studio10589.amount}" />
+      	</table>
+    	<link id="moduleTab_Accounts" />
+    	<textfield id="name_basic" set="{@pre_account_name}" />
+    	<button id="search_form_submit" />
+    	<table class="list view">
+    		<link text="{@pre_account_name}" />
+    	</table>
+    	<div id ="Accounts_detailview_tabs">
+    		<browser assert="{@pre_account_name}" />
+    	</div>
+    	<button id="edit_button" />
+    	<textfield id="description" exist="{@studio10589.visible}" />
+    	<button id="SAVE" />
+    	<table id="detailpanel_1">
+    		<browser assert="{@pre_account_name}" />
+        	<browser assert="description" exist="{@studio10589.visible}" />
+      	</table>
+    </csv>
+    
+    <!-- Now independent the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="dependent" set="false" />
+    <wait timeout="1" />
+    
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="15" />
+    <browser assert="Add Field" />
+    
+    <!-- Delete account record -->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_10589_2.xml finished." />
+</soda>

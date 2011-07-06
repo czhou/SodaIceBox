@@ -1,0 +1,69 @@
+<soda>
+    
+    <!-- related function in calculated field-->
+    <puts text="Test: Studio_10589.xml starting" />
+    <!--create account record and opportunities-->
+    <script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />
+    
+    <!-- set description field as calculated field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="related($opportunities,&quot;amount&quot;)"/>
+      <button value="Save" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="10" />
+    <browser assert="Add Field" />
+    
+    <!-- check the calculation result -->
+    <csv file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.csv" var="opp_record">
+    	<link id="moduleTab_Accounts" />
+    	<textfield id="name_basic" set="{@pre_account_name}" />
+    	<button id="search_form_submit" />
+    	<table class="list view">
+    		<link text="{@pre_account_name}" />
+    	</table>
+    	<div id ="Accounts_detailview_tabs">
+    		<browser assert="{@pre_account_name}" />
+    	</div>
+    	<button id="edit_button" />
+    	<textfield id="description" assert="{@opp_record.amount}" />
+    	<button id="SAVE" />
+    	<table id="detailpanel_1">
+    		<browser assert="{@pre_account_name}" />
+        	<span id="description" assert="{@opp_record.amount}" />
+      	</table>
+    </csv>
+    
+    <!-- Now uncalculated the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="false" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    
+    <!-- Delete account record -->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_10589.xml finished." />
+</soda>
