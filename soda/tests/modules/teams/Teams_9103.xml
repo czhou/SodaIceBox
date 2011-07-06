@@ -38,8 +38,9 @@
 	<var var="team_id2" set="{@pre_team_id}" />
 
 	<!-- delete teams in list view -->
-	<link text="Teams" />
-	<browser assert="Teams" />
+	<link id="moduleTab_Teams" click="false" jscriptevent="onmouseover" />
+   <wait timeout="1" />
+   <link text="Teams" />
 
 	<form id="search_form">
 		<button id="search_form_clear" />	
