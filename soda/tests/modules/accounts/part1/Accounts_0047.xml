@@ -100,7 +100,7 @@
 	</div>
 
 	<!--Goto Case Module to search-->
-   <link href="#MoreAll" />
+   <li id="moduleTabExtraMenuAll" />
    <wait timeout="1" />
 	<link id="moduleTab_Cases" />
 	<textfield id="name_basic" set="{@pre_case_subpanel_name}" clear="true" />

@@ -44,6 +44,7 @@
 	</table>
 
 	<!--Go its detail view -->
+   <wait timeout="3" />
 	<browser assert="{@pre_account_name}" />
 
 	<!--Create Lead Subpanel -->

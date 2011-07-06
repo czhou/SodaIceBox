@@ -55,13 +55,13 @@
 		<link class="listViewThLinkS1" />
 	</form>
 	<table class="list view">
-		<tr class="oddListRowS1" index="0" >
+		<tr class="oddListRowS1">
 			<link text="{@account_name1}" click="false" />
 		</tr>
-		<tr class="evenListRowS1" index="0" >
+		<tr class="evenListRowS1">
 			<link text="{@account_name2}" click="false" />
 		</tr>
-		<tr class="oddListRowS1" index="1" >
+		<tr class="oddListRowS1">
 			<link text="{@account_name3}" click="false" />
 		</tr>
 	</table>
@@ -71,13 +71,13 @@
 	</form>
 
 	<table class="list view">
-		<tr class="oddListRowS1" index="0" >
+		<tr class="oddListRowS1">
 			<link text="{@account_name3}" click="false" />
 		</tr>
-		<tr class="evenListRowS1" index="0" >
+		<tr class="evenListRowS1">
 			<link text="{@account_name2}" click="false" />
 		</tr>
-		<tr class="oddListRowS1" index="1" >
+		<tr class="oddListRowS1">
 			<link text="{@account_name1}" click="false" />
 		</tr>
 	</table>
