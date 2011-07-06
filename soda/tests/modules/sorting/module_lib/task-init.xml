@@ -26,35 +26,33 @@
 -->
 
 <soda>
-	<puts text="Lib: Note_Create_Lib.xml starting." />
+	<puts text="task-init.xml dueing." />
 	<timestamp />
-	<link id="moduleTab_Notes" />
-	
-	<csv file="{@global.scriptsdir}/modules/lib/Note_Create_Lib.csv" var="note_record">
-		<link text="Create Note or Attachment" />
-		
-		<textfield id="name" set="{@note_record.name} {@user.name} {@stamp}" />
-		<textfield id="description" set="{@note_record.description}" />
+	<link id="moduleTab_Tasks" />
+	<csv file="{@global.scriptsdir}/csvs/sorting//task_Listview.csv" var="task_list_sort">
+		<link text="Create Task" />
 
-		<!--teams select-->
-		<table id="EditView_team_name_table">
-			<button value="Select" />
-		</table>
-
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@note_record.team_name}" />
-		<button value="Search" />
-		<link text="{@note_record.team_name}" />
-		<button value="Save" />
-
-		<browser assert="{@note_record.name} {@user.name} {@stamp}" />
-
-		<!--Save the record id & name-->
-		<form name="DetailView">
-			<hidden name="record" var="pre_note_id" />
+		<form id="EditView">
+			<textfield id="name" set="{@task_list_sort.name}" />
+			<textfield id="date_due_date" set="{@task_list_sort.date_due_date}" />
+			<select id="date_due_hours" set="10" />
+			<select id="date_due_minutes" set="30" />
+			<select id="status" set="{@task_list_sort.status}" />
+			<!--contact select -->
+			<button id="btn_contact_name" />
 		</form>
-		<var var="pre_note_name" set="{@note_record.name} {@user.name} {@stamp}" />
+		<textfield id="last_name_advanced" set="{@task_list_sort.contact}" /> 	
+		<button value="Search" />
+		<link text="{@task_list_sort.contact}" />
+		
+		<form id="EditView">
+			<button id="SAVE" />
+		</form>
+		<wait timeout="2" />
+		<button id="edit_button" click="false" />
+		<browser assert="{@task_list_sort.name}" />
 	</csv>
-	<puts text="Lib: Note_Create_Lib.xml finished." />
+
+	<puts text="task-init.xml finished." />
 </soda>
 
