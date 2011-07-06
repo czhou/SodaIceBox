@@ -28,8 +28,10 @@
 <soda>
 	<puts text="Lib: Lead_Create_Lib.xml starting." />
 
-	<div id="themeTabGroup_All"><link text="Leads" /></div>
-    <csv file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.csv" var="Lead_New_Record">
+   <link id="moduleTab_Leads" click="false" jscriptevent="onmouseover" />
+   <wait timeout="1" />
+    <csv file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.csv" 
+      var="Lead_New_Record">
 
 		<link text="Create Lead" />
 		<timestamp />
@@ -43,7 +45,8 @@
 			set="{@Lead_New_Record.first_name} {@user.name} {@stamp}" />
 		<textfield id="last_name" set="{@Lead_New_Record.last_name}" />
 
-		<textfield id="Leads0emailAddress0" set="{@stamp}{@Lead_New_Record.emailAddress0}" />
+		<textfield id="Leads0emailAddress0" 
+         set="{@stamp}{@Lead_New_Record.emailAddress0}" />
 
 		<textfield id="description" set="{@Lead_New_Record.description}" />
 		<button value="Save" />
