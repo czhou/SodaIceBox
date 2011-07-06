@@ -54,15 +54,15 @@
 		<textfield id="date_due_date" set="{@Contacts_7883_Task.date_due_date}" />
 		<select id="date_due_hours" set="{@Contacts_7883_Task.date_due_hours}" />
 		<select id="date_due_minutes" set="{@Contacts_7883_Task.date_due_minutes}" />
-		<checkbox id="date_due_flag" set="{@Contacts_7883_Task.date_due_flag}" />
+		
 
 		<!--Start Date-->
 		<textfield id="date_start_date" set="{@Contacts_7883_Task.date_start_date}" />
 		<select id="date_start_hours" set="{@Contacts_7883_Task.date_start_hours}" />
 		<select id="date_start_minutes" set="{@Contacts_7883_Task.date_start_minutes}" />
-		<checkbox id="date_start_flag" set="{@Contacts_7883_Task.date_start_flag}" />
+		
 
-		<button value="Save" />
+		<button id="Tasks_subpanel_save_button" />
 		<wait timeout="5" />
 		<div id="list_subpanel_activities">
 			<browser assert="{@Contacts_7883_Task.name} {@user.name} {@stamp}" />
@@ -83,15 +83,15 @@
 		<textfield id="date_due_date" set="{@Contacts_7883_Task_Update.date_due_date}" />
 		<select id="date_due_hours" set="{@Contacts_7883_Task_Update.date_due_hours}" />
 		<select id="date_due_minutes" set="{@Contacts_7883_Task_Update.date_due_minutes}" />
-		<checkbox id="date_due_flag" set="{@Contacts_7883_Task_Update.date_due_flag}" />
+		
 
 		<!--Start Date-->
 		<textfield id="date_start_date" set="{@Contacts_7883_Task_Update.date_start_date}" />
 		<select id="date_start_hours" set="{@Contacts_7883_Task_Update.date_start_hours}" />
 		<select id="date_start_minutes" set="{@Contacts_7883_Task_Update.date_start_minutes}" />
-		<checkbox id="date_start_flag" set="{@Contacts_7883_Task_Update.date_start_flag}" />
+		
 
-		<button value="Save" />
+		<button id="Tasks_subpanel_save_button" />
 		<wait timeout="5" />
 	</csv>
 	<div id="list_subpanel_activities">
