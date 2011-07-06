@@ -61,7 +61,7 @@
 	
         <textfield id="name" set="Modified Project Record"/>
 	<button id="SAVE"/>
-	<wait timeout="5"/>
+	<wait timeout="10"/>
 
         <div id="list_subpanel_project">
                 <link text="Modified Project Record" click="false"/>
