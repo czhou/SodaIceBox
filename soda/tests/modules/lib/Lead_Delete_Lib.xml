@@ -27,7 +27,7 @@
 
 <soda>
 	<puts text="Lib: Lead_Delete_Lib.xml starting." />
-	<div id="themeTabGroup_All"><link text="Leads" /></div>
+   <link id="moduleTab_Leads" />
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
 	<checkbox name="massall" click="true" />
