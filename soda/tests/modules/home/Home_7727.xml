@@ -29,7 +29,7 @@
 	<puts text="Test:home_7727 Page name with quotation symbol" />
 		
 	<link id="moduleTab_Home" />
-	<browser assert="Add Sugar Dashlets" />
+	<link id="add_dashlets" click="false" />
 	<csv file="{@global.scriptsdir}/csvs/home/Home_7727.csv" var="home7727">	   
 		<div id="addPage">
 			<link id="add_page" />						

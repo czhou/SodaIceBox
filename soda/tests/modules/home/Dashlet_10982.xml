@@ -29,7 +29,7 @@
 	<puts text="Test: Dashlet_10982 Check the url of web dashlet" />
 		
 	<link id="moduleTab_Home" />
-	<browser assert="Add Sugar Dashlets" />
+	<link id="add_dashlets" click="false" />
 	<csv file="{@global.scriptsdir}/csvs/home/Dashlet_10982.csv" var="dashlet10982">
 		<link id="add_dashlets" />	
 		<wait timeout="5" />

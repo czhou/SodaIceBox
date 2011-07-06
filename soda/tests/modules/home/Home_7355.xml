@@ -32,7 +32,7 @@
 	<script file="tests/modules/lib/Account_Create_Lib_MIN.xml" />	
 	<script file="tests/modules/lib/Account_Create_Lib_MIN.xml" />		
 	<link id="moduleTab_Home" />
-	<browser assert="Add Sugar Dashlets" />
+	<link id="add_dashlets" click="false" />
 	<!--Add dashlet-->
 	<link id="add_dashlets" />
 	<wait timeout="5" />
