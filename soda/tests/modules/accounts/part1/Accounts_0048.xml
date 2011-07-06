@@ -33,7 +33,6 @@
 
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
-	<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
 	<link text="Basic Search" required="false" />
 	<form id="search_form">
 		<button id="search_form_clear" />
