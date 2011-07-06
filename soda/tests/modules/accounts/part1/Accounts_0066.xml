@@ -26,43 +26,43 @@
 -->
 
 <soda>
-	<puts text="Test: Accounts_0066.xml starting." />
+   <puts text="Test: Accounts_0066.xml starting." />
 
-	<!--Create a account record-->
-	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+   <!--Create a account record-->
+   <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 
-	<!--Search the record-->
-	<link id="moduleTab_Accounts" />
-	<div class="moduleTitle">
-		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
-	</div>
-	<textfield id="name_basic" set="{@pre_account_name}" />
-	<button id="search_form_submit" />
-	<table class="list view">
-		<link text="{@pre_account_name}" />
-	</table>
+   <!--Search the record-->
+   <link id="moduleTab_Accounts" />
+   <div class="moduleTitle">
+      <link href="{@global.url}/index.php?module=Accounts&amp;action=index" click="false" />
+   </div>
+   <textfield id="name_basic" set="{@pre_account_name}" />
+   <button id="search_form_submit" />
+   <table class="list view">
+      <link text="{@pre_account_name}" />
+   </table>
 
-	<!--Go its detail view-->
-	<browser assert="{@pre_account_name}" />
+   <!--Go its detail view-->
+   <browser assert="{@pre_account_name}" />
 
-	<!--Goto opp subpanel & click "Cancel"-->
-	<button name="accounts_opportunities_create_button" />
-	<wait timeout="5" />
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0043.csv" var="opp_record_0066">
-		<form id="form_SubpanelQuickCreate_Opportunities">
-			<textfield id="name" set="{@opp_record_0066.name} {@user.name} {@stamp}" />
-			<textfield id="amount" set="{@opp_record_0066.amount}" />
-			<textfield id="probability" set="{@opp_record_0066.probability}" />
-			<textfield id="date_closed" set="{@opp_record_0066.date_closed}" />
+   <!--Goto opp subpanel & click "Cancel"-->
+   <button name="accounts_opportunities_create_button" />
+   <wait timeout="5" />
+   <csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0043.csv" var="opp_record_0066">
+      <form id="form_SubpanelQuickCreate_Opportunities">
+         <textfield id="name" set="{@opp_record_0066.name} {@user.name} {@stamp}" />
+         <textfield id="amount" set="{@opp_record_0066.amount}" />
+         <textfield id="probability" set="{@opp_record_0066.probability}" />
+         <textfield id="date_closed" set="{@opp_record_0066.date_closed}" />
 
-			<select id="opportunity_type" set="{@opp_record_0066.opportunity_type}" />
-			<select id="lead_source" set="{@opp_record_0066.lead_source}" />
-			<select name="currency_id" set="{@opp_record_0066.currency_id}" />
-			<select id="sales_stage" set="{@opp_record_0066.sales_stage}" />
-		</form>
+         <select id="opportunity_type" set="{@opp_record_0066.opportunity_type}" />
+         <select id="lead_source" set="{@opp_record_0066.lead_source}" />
+         <select name="currency_id" set="{@opp_record_0066.currency_id}" />
+         <select id="sales_stage" set="{@opp_record_0066.sales_stage}" />
+      </form>
 
-		<!--user select-->
-		<button id="btn_assigned_user_name" />
+      <!--user select-->
+      <button id="btn_assigned_user_name" />
       <wait timeout="2" />
       <attach title="SugarCRM">
          <browser assert="User Search" />
@@ -71,10 +71,10 @@
          <link text="{@opp_record_0066.assigned_user_name}" />
       </attach>
 
-		<!--teams select-->
-		<table id="form_SubpanelQuickCreate_Opportunities_team_name_table">
-			<button value="Select" />
-		</table>
+      <!--teams select-->
+      <table id="form_SubpanelQuickCreate_Opportunities_team_name_table">
+         <button value="Select" />
+      </table>
       <wait timeout="2" />
       <attach title="SugarCRM">
          <browser assert="Team Search" />
@@ -83,19 +83,19 @@
          <link text="{@opp_record_0066.team_name}" />
       </attach>
 
-		<button id="Opportunities_subpanel_cancel_button" alert="true" />
+      <button id="Opportunities_subpanel_cancel_button" alert="true" />
 
-		<!--Verify-->
-		<div id="list_subpanel_opportunities">
-			<span class="pageNumbers" assert="(0 - 0 of 0)" />
-		</div>
-	</csv>
+      <!--Verify-->
+      <div id="list_subpanel_opportunities">
+         <span class="pageNumbers" assert="(0 - 0 of 0)" />
+      </div>
+   </csv>
 
 
-	<!--Delete the record-->
-	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+   <!--Delete the record-->
+   <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 
-	<puts text="Test: Accounts_0066.xml finished." />
+   <puts text="Test: Accounts_0066.xml finished." />
 
 </soda>
        
