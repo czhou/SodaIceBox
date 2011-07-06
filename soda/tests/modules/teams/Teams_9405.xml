@@ -41,11 +41,14 @@
 
 	<csv file="{@global.scriptsdir}/csvs/teams/Teams_9405.csv" var="Teams_9405">
 		<!--Team search window-->	
-		<browser assert="Team Search" />	
-		<table class="list view">	
-			<checkbox name="massall" click="true" />				
-		</table>
-		<button value="  Select  " />
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />	
+         <table class="list view">	
+            <checkbox id="massall" click="true" />				
+         </table>
+         <button value="  Select  " />
+      </attach>
+
 		<table id="MassUpdate_team_name_table">
 			<textfield id="team_name_collection_0" assert="{@Teams_9405.team0}" />
 			<textfield id="team_name_collection_1" assert="{@Teams_9405.team1}" />
