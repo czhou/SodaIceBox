@@ -126,6 +126,12 @@
 		<link text="{@lead_11541_task_name}" click="false" exists="false"/>
 	</div>
 
+	<!--Set admin back to move default value-->
+	<link text="Admin"/>
+	<link text="System Settings"/>
+	<select name="lead_conv_activity_opt" set="Move"/>
+	<button name="save" />
+
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
