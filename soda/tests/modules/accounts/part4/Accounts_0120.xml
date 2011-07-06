@@ -26,7 +26,7 @@
 -->
 
 <soda>
-	<!-- Account Detail - Lead sub-panel_Verify that lead record related to this account 
+	<!-- Account Detail - Lead sub-panel_Verify that lead record related to this account
 		can be viewed -->
 	<puts text="Test Case 120: Account Detail - Leads sub-panel - Remove Relationship_Verify that only the relationship between the lead and the account is removed by clicking 'rem' icon."/>
 
@@ -93,9 +93,7 @@
 		</div>
 		
 		<link id="moduleTab_Leads"/>
-		<div class="moduleTitle">
-			<link href="index.php?module=Leads&action=index" click="false"/>
-		</div>
+		<div id="Leadsbasic_searchSearchForm" />
 		<text field="search_name_basic" set="{@lead_record_0120.first_name} {@stamp} {@lead_record_0120.last_name}"/>
 		<button id="search_form_submit"/>
 		<table class="list view">

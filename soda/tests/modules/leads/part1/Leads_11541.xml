@@ -27,9 +27,9 @@
 
 <soda>
 	<!--
-		Covert a new lead with copying related call to contact
+		Covert a new lead with copying related task to account
 	-->
-	<puts text="Test: Leads_11540.xml starting" />
+	<puts text="Test: Leads_11541.xml starting" />
 
 	<!--Goto admin system setting to update coversion selection as copying-->
 	<link text="Admin"/>
@@ -53,55 +53,57 @@
 	<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
 	<browser assert="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
 
-	<!--Create a call from subpanel-->
+	<!--Create a task from subpanel-->
 	<timestamp/>
-	<button id="Activities_logcall_button"/>
-	<form id="form_SubpanelQuickCreate_Calls">
-		<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="lead_11540_call">
-			<textfield id="name" set="{@lead_11540_call.name} {@user.name} {@stamp}" />
+	<button id="Activities_createtask_button"/>
+	<form id="form_SubpanelQuickCreate_Tasks">
+		<csv file="{@global.scriptsdir}/modules/lib/Task_Create_Lib.csv" var="lead_11541_task">
+			<textfield id="name" set="{@lead_11541_task.name} {@user.name} {@stamp}" />
+			<select id="priority" set="{@lead_11541_task.priority}" />
+			<select id="status" set="{@lead_11541_task.status}" />
+			<textfield id="description" set="{@lead_11541_task.description}" />
 
-			<textfield id="date_start_date" set="{@lead_11540_call.date_start_date}" />
-			<select id="date_start_hours" set="{@lead_11540_call.date_start_hours}" />
-			<select id="date_start_minutes" set="{@lead_11540_call.date_start_minutes}" />
+			<!--Due Date-->
+			<textfield id="date_due_date" set="{@lead_11541_task.date_due_date}" />
+			<select id="date_due_hours" set="{@lead_11541_task.date_due_hours}" />
+			<select id="date_due_minutes" set="{@lead_11541_task.date_due_minutes}" />
+			<checkbox id="date_due_flag" set="{@lead_11541_task.date_due_flag}" />
 
-			<textfield name="duration_hours" set="{@lead_11540_call.duration_hours}" />
-			<select name="duration_minutes" set="{@lead_11540_call.duration_minutes}" />
+			<!--Start Date-->
+			<textfield id="date_start_date" set="{@lead_11541_task.date_start_date}" />
+			<select id="date_start_hours" set="{@lead_11541_task.date_start_hours}" />
+			<select id="date_start_minutes" set="{@lead_11541_task.date_start_minutes}" />
+			<checkbox id="date_start_flag" set="{@lead_11541_task.date_start_flag}" />
 
-			<select id="direction" set="{@lead_11540_call.direction}" />
-			<select id="status" set="{@lead_11540_call.status}" />
-
-			<checkbox name="reminder_checked" set="{@lead_11540_call.reminder_checked}" />
-			<textfield id="description" set="{@lead_11540_call.description}" />
-			<button id="Calls_subpanel_save_button"/>
-
-			<var var="lead_11540_call_name" set="{@lead_11540_call.name} {@user.name} {@stamp}"/>
+			<button value="Save" />
+			<var var="lead_11541_task_name" set="{@lead_11541_task.name} {@user.name} {@stamp}" />
 		</csv>
 	</form>
 	<wait timeout="3"/>
 	<div id="list_subpanel_activities">
-		<link text="{@lead_11540_call_name}" click="false" exists="true"/>
+		<link text="{@lead_11541_task_name}" click="false" exists="true"/>
 	</div>
 
 	<!--Covnert lead-->
 	<button name="convert" value="Convert Lead"/>
-	<textfield id="Accountsname" set="Leads_11540_Account_{@stamp}"/>
-	<select id="lead_conv_ac_op_sel" set="Contact"/>
+	<textfield id="Accountsname" set="Leads_11541_Account_{@stamp}"/>
+	<select id="lead_conv_ac_op_sel"  clear="true"/>
+	<select id="lead_conv_ac_op_sel" set="Account"/>
 	<button name="button" value="Save"/>
 
-	<!--Go to newly create contact detail view-->
-	<link text="Leads_11540_Account_{@stamp}" click="false" exists="true"/>
-	<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}"/>
+	<!--Go to newly create account detail view-->
+	<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" click="false" exists="true"/>
+	<link text="Leads_11541_Account_{@stamp}" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Contacts&action=index" click="false" />
+		<link href="index.php?module=Accounts&action=index" click="false" />
 	</div>
-	<link text="Leads_11540_Account_{@stamp}" click="false" exists="true"/>
 
-	<!--Check contact activities subpanel-->
+	<!--Check account activities subpanel-->
 	<div id="list_subpanel_activities">
-		<link text="{@lead_11540_call_name}" click="false" exists="true"/>
+		<link text="{@lead_11541_task_name}" click="false" exists="true"/>
 	</div>
 
-	<!--Verify convert lead has call record related-->
+	<!--Verify convert lead without task record related-->
 	<link id="moduleTab_Leads" />
 	<textfield id="search_name_basic" set="{@pre_lead_first_name}" />
 	<button id="search_form_submit" />
@@ -110,19 +112,18 @@
 	<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
 	<browser assert="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
 	<div id="list_subpanel_activities">
-		<link text="{@lead_11540_call_name}" click="false" exists="true"/>
+		<link text="{@lead_11541_task_name}" click="false" exists="true"/>
 	</div>
 
-	<!--Verify convert account without call record related-->
-	<link id="moduleTab_Accounts" />
-	<textfield id="name_basic" set="Leads_11540_Account_{@stamp}" />
+	<!--Verify convert contact without task record related-->
+	<link id="moduleTab_Contacts" />
+	<textfield id="search_name_basic" set="{@pre_lead_first_name}" />
 	<button id="search_form_submit" />
 
-	<!--Go to detail view of the first record-->
-	<link text="Leads_11540_Account_{@stamp}" />
-	<browser assert="Leads_11540_Account_{@stamp}" />
+	<!--Go to contact detail view of the first record-->
+	<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
 	<div id="list_subpanel_activities">
-		<link text="{@lead_11540_call_name}" click="false" exists="false"/>
+		<link text="{@lead_11541_task_name}" click="false" exists="false"/>
 	</div>
 
 	<!--Set admin back to move default value-->
@@ -135,6 +136,6 @@
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
-	<puts text="Test: Leads_11540.xml finished" />
+	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
+	<puts text="Test: Leads_11541.xml finished" />
 </soda>

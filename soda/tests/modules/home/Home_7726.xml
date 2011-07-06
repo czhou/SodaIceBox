@@ -31,7 +31,7 @@
 	<script file="{@global.scriptsdir}/modules/lib/Forecasts_Create_Lib.xml" />
 		
 	<link id="moduleTab_Home" />
-	<browser assert="Add Sugar Dashlets" />
+	<link id="add_dashlets" click="false" />
 	<!--Add dashlet-->
 	<link id="add_dashlets" />
 	<wait timeout="5" />

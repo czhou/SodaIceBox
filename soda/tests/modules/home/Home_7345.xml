@@ -29,7 +29,7 @@
 	<puts text="Test:home_7345 add page" />
 		
 	<link id="moduleTab_Home" />
-	<browser assert="Add Sugar Dashlets" />
+	<link id="add_dashlets" click="false" />
 	<csv file="{@global.scriptsdir}/csvs/home/Home_7345.csv" var="home7345">
 	    <!--Add 1 column page-->
 		<div id="addPage">

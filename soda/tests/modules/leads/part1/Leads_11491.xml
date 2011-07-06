@@ -26,34 +26,17 @@
 -->
 
 <soda>
-	<puts text="Test:home_7353 delete dashlet" />
-		
-	<link id="moduleTab_Home" />
-	<link id="add_dashlets" click="false" />
-	<!--Add dashlet-->
-	<link id="add_dashlets" />
-	<wait timeout="5" />
-	<div id="dashletsDialog_c">
-		<browser assert="Find Sugar Dashlet" />
-		<link text="My Assigned Bugs" />
-		<wait timeout="5" />	
-	</div>
-	<div id="dashletsDialogHeader">
-		<link index="1" />
-	</div>
-	<ul id="col_0_0">
-		<browser assert="My Assigned Bugs" />		
-	</ul>	
-	<!-- delete -->
-	<div class="dashletToolSet" index="1">
-		<link index="3" alert="true" />
-		<wait timeout="5" />
-	</div>
-	
-	<ul id="col_0_0">
-		<browser assertnot="My Assigned Bugs" />		
-	</ul>	
-	
+	<!--
+		Check "Rename Modules" UI on Admin page
+	-->
+	<puts text="Test: Leads_11491.xml starting" />
 
-	<puts text="Test: home_7353.xml finished." />
-</soda>	
+	<!--Goto admin system setting to update coversion selection as copying-->
+	<link text="Admin"/>
+	<link text="Rename Modules" click="false" exists="true"/>
+	<link text="Rename Tabs" click="false" exists="false"/>
+	<browser assert="Change the names of the modules appearing within the application"/>
+
+	<!--Delete the record-->
+	<puts text="Test: Leads_11491.xml finished" />
+</soda>

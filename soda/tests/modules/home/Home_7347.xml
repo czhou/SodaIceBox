@@ -29,7 +29,7 @@
 	<puts text="Test:home_7347 Cancle add page" />
 		
 	<link id="moduleTab_Home" />
-	<browser assert="Add Sugar Dashlets" />
+	<link id="add_dashlets" click="false" />
 	<div id="addPage">
 		<link id="add_page" />	
 	</div>

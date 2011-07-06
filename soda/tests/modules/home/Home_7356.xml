@@ -29,13 +29,13 @@
 	<puts text="Test:home_7356 page_change layout " />
 			
 	<link id="moduleTab_Home" />
-	<browser assert="Add Sugar Dashlets" />
+	<link id="add_dashlets" click="false" />
 	<!--Change layout-->
 	<link id="change_layout" />
 	<wait timeout="5" />	
 	<div id="changeLayoutDialog">
 		<browser assert="Select the number of columns" />
-		<image src="themes/default/images/icon_Column_1.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		<link id="change_layout_1_column" click="true" />
 		<wait timeout="5" />	
 	</div>
 	<ul id="col_0_0">
@@ -52,7 +52,7 @@
 	<wait timeout="5" />	
 	<div id="changeLayoutDialog">
 		<browser assert="Select the number of columns" />
-		<image src="themes/default/images/icon_Column_2.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		<link id="change_layout_2_column" click="true" />
 		<wait timeout="5" />	
 	</div>
 	<ul id="col_0_0">
@@ -66,7 +66,7 @@
 	<wait timeout="5" />	
 	<div id="changeLayoutDialog">
 		<browser assert="Select the number of columns" />
-		<image src="themes/default/images/icon_Column_3.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		<link id="change_layout_3_column" click="true" />
 		<wait timeout="5" />	
 	</div>
 	<ul id="col_0_0">
@@ -84,7 +84,7 @@
 	<wait timeout="5" />	
 	<div id="changeLayoutDialog">
 		<browser assert="Select the number of columns" />
-		<image src="themes/default/images/icon_Column_2.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		<link id="change_layout_2_column" click="true" />
 		<wait timeout="5" />	
 	</div>
 

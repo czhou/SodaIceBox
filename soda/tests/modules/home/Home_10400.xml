@@ -82,7 +82,7 @@
 		
 		<!--create lead-->
 		<div id="dcmenuContainer">
-			<image src="themes/Sugar/images/icon_Leads_bar_32.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+			<image id="dcMenu_Leads_quick_create_icon" click="true" />
 		</div>
 		<form id="form_DCQuickCreate_Leads">
 			<textfield id="last_name" set="{@home10400.lead_lastname} {@stamp}" />
@@ -95,7 +95,7 @@
 		
 		<!--create call-->
 		<div id="dcmenuContainer">
-			<image src="themes/Sugar/images/icon_Calls_bar_32.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+			<image id="dcMenu_Calls_quick_create_icon" click="true" />
 		</div>
 		<form id="form_DCQuickCreate_Calls">
 			<textfield id="name" set="{@home10400.call_subject} {@stamp}" />

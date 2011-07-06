@@ -56,7 +56,7 @@
 		
 		<!--check the my account dashlet-->
 		<link id="moduleTab_Home" />
-		<browser assert="Add Sugar Dashlets" />
+		<link id="add_dashlets" click="false" />
 		<!--Add dashlet-->
 		<link id="add_dashlets" />
 		<wait timeout="5" />
@@ -75,7 +75,7 @@
 		<div id="dlg_c">
 			<browser assert="My Accounts : Options" />
 			<select id="hide_tabs" set="Email Address" />
-			<image src="themes/default/images/leftarrow_big.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+			<image id="chooser_display_tabs_left_arrow" click="true" />
 			<select name="display_tabs[]" assert="Email Address" />
 			<button value="Save" />
 		</div>

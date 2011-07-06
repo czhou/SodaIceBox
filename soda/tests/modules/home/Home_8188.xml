@@ -43,7 +43,7 @@
 		</ul>
 		<div id="moduleDashlets">
 			<link text="My Accounts" click="false" />
-			<image src="themes/Sugar/images/icon_Accounts_32.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" />
+			<link id="MyAccountsDashlet_select_icon" />
 		</div>
 		<link text="Charts" />
 		<div id="chartDashlets">
