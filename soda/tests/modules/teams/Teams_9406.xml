@@ -41,11 +41,12 @@
 
 	<csv file="{@global.scriptsdir}/csvs/teams/Teams_9406.csv" var="Teams_9406">
 		<!--Team search window-->	
-		<browser assert="Team Search" />	
-		<textfield name="name" set="{@Teams_9406.team}" /> 
-		<button value="Search" />
-
-		<link text="{@Teams_9406.team}" />
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />	
+         <textfield name="name" set="{@Teams_9406.team}" /> 
+         <button value="Search" />
+         <link text="{@Teams_9406.team}" />
+      </attach>
 
 		<!--Remove team-->
 		<table id="MassUpdate_team_name_table">
