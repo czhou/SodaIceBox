@@ -67,6 +67,7 @@
 		<button id="btn_assigned_user_name" />
       <wait timeout="2" />
       <attach title="SugarCRM">
+         <wait timeout="1" />
          <browser assert="User Search" />
          <textfield name="last_name_advanced" set="{@opp_record_0067.assigned_user_name}" />
          <button value="Search" />
@@ -79,6 +80,7 @@
 		</table>
       <wait timeout="2" />
       <attach title="SugarCRM">
+         <wait timeout="1" />
          <browser assert="Team Search" />
          <textfield name="name" set="{@opp_record_0067.team_name}" />
          <button value="Search" />
