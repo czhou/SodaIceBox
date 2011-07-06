@@ -763,6 +763,30 @@
 		<reason>bug 44193</reason>
 		<modulename>Studio</modulename>
 	</block>
+	<block>
+		<testfile>Studio_10589_1</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>function not finished</reason>
+		<modulename>Studio</modulename>
+	</block>
+	<block>
+		<testfile>Studio_10589_2</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>function not finished</reason>
+		<modulename>Studio</modulename>
+	</block>
+	<block>
+		<testfile>Studio_11673_1</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>function not finished</reason>
+		<modulename>Studio</modulename>
+	</block>
+	<block>
+		<testfile>Studio_11673_2</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>function not finished</reason>
+		<modulename>Studio</modulename>
+	</block>
 	
 	<block>
 		<testfile>Dashlet_10982</testfile>
