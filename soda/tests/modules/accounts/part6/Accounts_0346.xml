@@ -26,26 +26,48 @@
 -->
 
 <soda>
-	<!-- Activities_10511.xml: The Marketing module group contains Campaigns, Targets, and Target Lists. -->
-	<puts text="Test: Activities_10511.xml starting." />
+	<puts text="Test Case 346: Create Account - Quick _Verify that account is created by quick item box without any notice."/>
 
-	<div id="themeTabGroupMenu_All">
-		<link text="Marketing" />
+	<link id="moduleTab_Accounts" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
-	<wait timeout="2" />
 
-	<div id="themeTabGroup_Marketing">
-		<ul class="first-of-type">
-			<link id="moduleTab_Marketing_Campaigns" exists="true" />
-			<link id="moduleTab_Marketing_Prospects" exists="true" />
-			<link id="moduleTab_Marketing_ProspectLists" exists="true" />
-		</ul>
-	</div>
-	
-	<div id="TabGroupMenu_All">
-		<link text="All" />
-	</div>
-	<wait timeout="2" />
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv" var="account_record_0004">
+		<!--Click account create icon in quick create bar-->
+		<div id="dcmenu">
+			<div id="dcmenuContainer">
+				<ul id="dcmenuitems">
+					<link index="1" click="true"/>
+				</ul>
+			</div>
+		</div>	
+		<wait timeout="3" />
+		<div class="hd-center">
+			<browser assert="Create Account"/>
+		</div>
 
-	<puts text="Test: Activities_10511.xml finished." />
+		<form id="form_DCQuickCreate_Accounts">
+			<textfield id="name" set="{@account_record_0004.name} {@user.name} {@stamp}" />
+
+			<textfield id="website" set="{@account_record_0004.website}" />
+
+			<button id="Accounts_dcmenu_save_button"/>
+		</form>
+		<wait timeout="3" />
+		<link id="moduleTab_Accounts" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		</div>
+		<button id="search_form_clear"/>
+		<textfield id="name_basic" set="{@account_record_0004.name} {@user.name} {@stamp}" />
+		<button id="search_form_submit" />
+		<wait timeout="10"/>
+		<link text="{@account_record_0004.name} {@user.name} {@stamp}" click="false"/>
+	</csv>
+
+	<!--Delete the record-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+
+	<puts text="Test: Accounts_0346.xml finished." />
 </soda>

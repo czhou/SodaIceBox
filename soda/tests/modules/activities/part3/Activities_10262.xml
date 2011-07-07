@@ -38,9 +38,9 @@
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
 	<var var="meeting3_name" set="{@pre_meeting_name}" />
 
-	<link id="moduleTab_Calendar" />
+	<link id="moduleTab_Meetings" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Calendar&amp;action=index" click="false" />
+		<link href="index.php?module=Meetings&amp;action=index" click="false" />
 	</div>
 	<link text="View Meetings" />
 	<wait timeout="3" />

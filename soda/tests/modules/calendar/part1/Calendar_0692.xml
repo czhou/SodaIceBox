@@ -57,7 +57,7 @@
 	<textfield name="search_last_name" set="qauser" />
 	
 	<button value="Search" />
-	<wait timeout="3" />
+	<wait />
 	
 	<div id="list_div_win">
 		<button value="Add" click="true" />
