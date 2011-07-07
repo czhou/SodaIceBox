@@ -71,7 +71,8 @@
 
 	<!--Edit created task again-->
 	<div id="list_subpanel_activities">
-		<link class="listViewTdToolsS1" text="/edit/"/>
+		<link class="listViewTdToolsS1" index="1"/>
+		<wait timeout="3"/>
 	</div>
 	<csv file="{@global.scriptsdir}/csvs/Contacts/Contacts_7883.csv" var="Contacts_7883_Task_Update">
 		<textfield id="name" set="{@Contacts_7883_Task_Update.name} {@user.name} {@stamp}" />
@@ -91,7 +92,7 @@
 		<select id="date_start_minutes" set="{@Contacts_7883_Task_Update.date_start_minutes}" />
 		
 
-		<button id="Tasks_subpanel_save_button" />
+		<button id="SAVE" />
 		<wait timeout="5" />
 	</csv>
 	<div id="list_subpanel_activities">
