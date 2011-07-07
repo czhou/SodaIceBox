@@ -1,0 +1,81 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text='Contract 4502: Create Contract_Verify that a contract cannot be created when entering a non-existing account name in Account Name field'/>
+
+	<timestamp/>
+
+	<!--Create a contract record -->
+	<link id='moduleTab_Contracts'/>
+	<browser assert="Contracts"/>
+	<link text="Create Contract"/>
+
+	<csv file="{@global.scriptsdir}/modules/lib/Contract_Create_Lib.csv" 
+		var="Contract_Create_Lib">
+		<script file="{@global.scriptsdir}/modules/lib/ContractType_Create_Lib.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+		<timestamp />
+		<link text="Create Contract" />
+
+		<!--Input a invalid Account-->
+		<textfield id="account_name" set="{@pre_account_name}{@stamp}"/>
+
+		<form name="EditView">
+			<textfield name="name" 
+				set="{@Contract_Create_Lib.name} {@user.name} {@stamp}" />
+			<select name="type" set="{@ContractType_Create_Lib}" />
+			<select id="status" set="{@Contract_Create_Lib.status}" />
+			<textfield id="start_date" 
+				set="{@Contract_Create_Lib.start_date}" />
+			<textfield id="end_date" 
+				set="{@Contract_Create_Lib.end_date}" />
+			<textfield id="total_contract_value" 
+				set="{@Contract_Create_Lib.total_contract_value}" />
+			<button value="Save" />
+
+			<!--Assert warning message show-->
+			<browser assert="No match for field: Account Name"/>
+		</form>
+	</csv>
+
+	<!--Check no contract record created-->
+	<link id='moduleTab_Contracts' alert="true"/>
+	<link id="basic_search_link" required="false" timeout="3"/>
+	<textfield id='name_basic' set='{@Contract_Create_Lib.name} {@user.name} {@stamp}'/> 
+	<button id="search_form_submit"/>
+	<table class='list view'>
+		<browser assertnot="{@Contract_Create_Lib.name} {@user.name} {@stamp}"/>
+	</table>
+
+
+	<!--Delete all pre-created records-->
+	<script file="{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<puts text='-------------------Contract_4502: finished-------------------'/>
+
+</soda>
