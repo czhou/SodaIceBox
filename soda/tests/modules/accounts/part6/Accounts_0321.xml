@@ -55,7 +55,11 @@
 			<span class="dateTime">
 				<image index="1" click="true"/>
 			</span>
+		</form>
+		<div id="container_date_closed_trigger_c">
 			<browser assert="Select Date"/>
+		</div>
+		<form id="form_SubpanelQuickCreate_Opportunities">
 			<textfield id="date_closed" set="{@opp_record_0043.date_closed}" />
 			<textfield id="next_step" set="{@opp_record_0043.next_step}" />
 			<select id="sales_stage" set="{@opp_record_0043.sales_stage}" />
