@@ -27,7 +27,7 @@
 
 <soda>
 	<!--
-		Covert a new lead with copying related task to account
+		Check the default lead conversion setting on system setting page
 	-->
 	<puts text="Test: Leads_11538.xml starting" />
 
