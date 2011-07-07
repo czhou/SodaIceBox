@@ -71,6 +71,7 @@
 	
 		<!--Delete the record-->
 		<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	</csv>
 
 	<puts text="Test: BugTracker_0651.xml finished." />
