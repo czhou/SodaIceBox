@@ -673,6 +673,13 @@
 	</block>
 
 	<block>
+		<testfile>Leads_11737</testfile>
+		<bugnumber></bugnumber>
+		<reason>Feature not available</reason>
+		<modulename>Leads</modulename>
+	</block>
+
+	<block>
 		<testfile>Studio_8287</testfile>
 		<bugnumber></bugnumber>
 		<reason>Can't find element during CI only</reason>
