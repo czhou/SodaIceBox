@@ -1,0 +1,127 @@
+<soda>
+    
+    <!-- rollupMax function in dependent field-->
+    <puts text="Test: Studio_11674_2.xml starting" />
+    
+    <!-- set description field as dependent field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="dependent" set="true" />
+    <wait timeout="1" />
+    <tr id="visFormulaRow" >
+	    <button name="editFormula" />
+	    <wait timeout="3" />
+	</tr>  
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="greaterThan(rollupMax($opportunities,&quot;amount&quot;),500)"/>
+      <button value="Save" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="15" />
+    <browser assert="Add Field" />
+    
+    <!--create account record and opportunities-->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+    
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_11674_2.csv" var="studio11674">
+    	
+    	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
+    	<link id="moduleTab_Opportunities" />
+    	<textfield id="name_basic" set="{@pre_opp_name}" />
+    	<table class="list view">
+    		<link text="{@pre_opp_name}" />
+    	</table>
+    	<div id ="Opportunities_detailview_tabs">
+    		<browser assert="{@pre_opp_name}" />
+    	</div>
+    	<button id="edit_button" />
+    	<div id="EditView_tabs">
+    		<textfield id="amount" set="{@studio11674.amount1}" />
+    	</div>
+    	<button id="SAVE_HEADER" />
+    	<table id="detailpanel_1">
+    		<browser assert="{@pre_opp_name}" />
+        	<span id="amount" assert="{@studio11674.amount1}" />
+      	</table>
+    </csv>
+    <!--check dependent field-->
+	<link id="moduleTab_Accounts" />
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />
+	</table>
+	<div id ="Accounts_detailview_tabs">
+		<browser assert="{@pre_account_name}" />
+		<browser assert="description" exist="{@studio11674.visible1}" />
+	</div>
+	<button id="edit_button" />
+	<textfield id="description" exist="{@studio11674.visible1}" />
+	<button id="SAVE" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+    
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_11674_2.csv" var="studio11674">
+    	
+    	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
+    	<link id="moduleTab_Opportunities" />
+    	<textfield id="name_basic" set="{@pre_opp_name}" />
+    	<table class="list view">
+    		<link text="{@pre_opp_name}" />
+    	</table>
+    	<div id ="Opportunities_detailview_tabs">
+    		<browser assert="{@pre_opp_name}" />
+    	</div>
+    	<button id="edit_button" />
+    	<div id="EditView_tabs">
+    		<textfield id="amount" set="{@studio11674.amount2}" />
+    	</div>
+    	<button id="SAVE_HEADER" />
+    	<table id="detailpanel_1">
+    		<browser assert="{@pre_opp_name}" />
+        	<span id="amount" assert="{@studio11674.amount2}" />
+      	</table>
+    </csv>
+	<link id="moduleTab_Accounts" />
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />
+	</table>
+	<div id ="Accounts_detailview_tabs">
+		<browser assert="{@pre_account_name}" />
+		<browser assert="description" exist="{@studio11674.visible2}" />
+	</div>
+	<button id="edit_button" />
+	<textfield id="description" exist="{@studio11674.visible2}" />
+	<button id="SAVE" />   
+    
+    <!-- Now independent the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="dependent" set="false" />
+    <wait timeout="1" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="15" />
+    <browser assert="Add Field" />
+    
+    <!-- Delete account record -->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_11674_2.xml finished." />
+</soda>
