@@ -803,6 +803,32 @@
 	</block>
 	
 	<block>
+		<testfile>Studio_11674_1</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>function not finished</reason>
+		<modulename>Studio</modulename>
+	</block>
+	<block>
+		<testfile>Studio_11674_2</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>function not finished</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_11675_1</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>function not finished</reason>
+		<modulename>Studio</modulename>
+	</block>
+	<block>
+		<testfile>Studio_11675_2</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>function not finished</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
 		<testfile>Dashlet_10982</testfile>
 		<bugnumber>44104</bugnumber>
 		<reason>bug 44104</reason>
