@@ -49,7 +49,7 @@
     <form id="popup_form_id" >
       <button name="fsavebtn" assertPage="false" />
     </form>
-    <wait timeout="10" />
+    <wait timeout="15" />
     <browser assert="Add Field" />
     <browser assert="cf_field_c" />
     
