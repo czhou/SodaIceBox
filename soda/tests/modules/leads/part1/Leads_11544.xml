@@ -42,9 +42,6 @@
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 
 	<link id="moduleTab_Leads" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Leads&amp;action=index" click="false" />
-	</div>
 
 	<!--Select a lead record-->
 	<textfield id="search_name_basic" set="{@pre_lead_first_name}" />
