@@ -51,6 +51,7 @@
 	</table>
 
 	<!--Go to Accounts module-->
+	<link  id="moduleTab_Accounts"/>
 
 	<!-- Check Action list show "Create Acct"-->
 	<link text="Create Acc" click="false" exists="true"/>
