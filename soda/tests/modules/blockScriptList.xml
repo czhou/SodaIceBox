@@ -148,6 +148,14 @@
 	</block>
 
 	<block>
+		<testfile>Admin_11593</testfile>
+		<bugnumber></bugnumber>
+		<reason>6_3_0 new feature not implement</reason>
+		<modulename>admin</modulename>
+	</block>
+
+
+	<block>
 		<testfile>Admin_36109</testfile>
 		<bugnumber>36109</bugnumber>
 		<reason>Can not set the Percentage in Tax</reason>
