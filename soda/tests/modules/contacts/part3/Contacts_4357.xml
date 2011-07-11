@@ -41,12 +41,18 @@
 		<button id="opportunities_contacts_create_button" />
 	</div>
 
-	<!--Click the full form button-->
-	<button id="Opportunities_subpanel_full_form_button" />
-	<wait timeout="3" />
 
 	<!--Fill all required fields-->
 	<csv file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.csv" var="opp_record">
+		<!--goto Opportunities subpanel & Create opportunity"-->
+		<div id="list_subpanel_opportunities">
+			<button id="opportunities_contacts_create_button" />
+		</div>
+
+		<!--Click the full form button-->
+		<button id="Opportunities_subpanel_full_form_button" />
+		<wait timeout="3" />
+
 		<textfield id="name" set="{@opp_record.name} {@user.name} {@stamp}" /> 
 		<textfield id="amount" set="{@opp_record.amount}" /> 
 		<textfield id="probability" set="{@opp_record.probability}" /> 
@@ -68,15 +74,15 @@
 		<button value="Save" />
 
 		<!--Save key info-->
-		<var var="pre_opp_name" set="{@opp_record.name} {@user.name} {@stamp}" />
+		<var var="Contacts_4357_Opp_name" set="{@opp_record.name} {@user.name} {@stamp}" />
+
+		<div id="list_subpanel_opportunities">
+			<table class="list view">
+				<link text="{@Contacts_4357_Opp_name}" click="false" exist="true"/>
+			</table>
+		</div>
 	</csv>
 	<wait timeout="2"/>
-
-	<div id="list_subpanel_opportunities">
-		<table class="list view">
-			<link text="{@pre_opp_name}" click="false" exist="true"/>
-		</table>
-	</div>
 
 	<!--Delete related record-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
