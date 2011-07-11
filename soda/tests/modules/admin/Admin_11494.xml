@@ -56,7 +56,7 @@
 	<link text="Create Acc" click="false" exists="true"/>
 
 	<!--Check Create Account from shortcut by c-->
-	<link text="View Acc Reports"/>
+	<link text="View Acc Reports" click="false" exists="true"/>
 
 	<!--Account module list view show "Acct" column as column name-->
 	<table class="list view">
