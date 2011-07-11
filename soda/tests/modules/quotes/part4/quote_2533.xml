@@ -47,14 +47,14 @@
         <wait timeout="2"/>
         <textfield id="name" set="New note record"/>
         <button id="Notes_subpanel_save_button"/>
-        <wait timeout="5"/>
+        <wait timeout="10"/>
         <browser assert="New note record"/>
 	
 	<!--Verify we can go to note detail view via clicking the link in history subpanel-->
 	<div id="list_subpanel_history">
 		<link text="New note record"/>
 	</div>
-	<wait timeout="2"/>
+	<wait timeout="5"/>
 	<browser assert="Note Overview"/>
 
         <!--Delete the note record created in this case.-->

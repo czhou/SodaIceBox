@@ -91,8 +91,8 @@
 		
 		<!--Close and Create new record-->	
 		<button value="Close and Create New"/>
-		<wit timeout="10"/>
-		<button value="CANCEL" alert="true"/>
+		<wait timeout="10"/>
+		<button id="CANCEL" alert="true"/>
 		
 		<!--Search the record-->
 	        <link id="moduleTab_Accounts" />

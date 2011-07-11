@@ -68,7 +68,7 @@
 			<span class="pageNumbers" assert="(1 - 1 of 1)" />
 			<link text="{@member_record_0079.name} {@stamp}"/>
 		</div>
-		<div id="Accounts_detailview_tabs"/>
+		<div id="Accounts_detailview_tabs">
 			<browser assert="{@member_record_0079.name} {@stamp}"/>
 		</div>
 	</csv>

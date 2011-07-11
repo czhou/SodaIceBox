@@ -31,14 +31,15 @@
 	<timestamp />
 	<link id="moduleTab_Calendar" />
 	<wait timeout="3" />
-	<link text="Create Task" />
-	<wait timeout="3" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Tasks&amp;action=index" click="false" />
-		<browser assert="Create" />
-	</div>
 
 	<csv file="{@global.scriptsdir}/modules/lib/Task_Create_Lib.csv" var="task_record">
+		<link text="Create Task" />
+		<wait timeout="3" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Tasks&amp;action=index" click="false" />
+			<browser assert="Create" />
+		</div>
+	
 		<textfield id="name" set="{@task_record.name} {@user.name} {@stamp}" />
 		<select id="priority" set="{@task_record.priority}" />
 		<select id="status" set="{@task_record.status}" />

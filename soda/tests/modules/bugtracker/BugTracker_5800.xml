@@ -72,6 +72,7 @@
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Bug_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 
 	<puts text="Test: BugTracker_5800.xml finished." />
 </soda>

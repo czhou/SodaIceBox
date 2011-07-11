@@ -1,0 +1,102 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test Case 311: Account Detail - History sub-panel-Duplicate_Verify that history's status related to this account is removed correctly."/>
+
+	<!--Create a account record-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+
+	<!--Search the record-->
+	<link id="moduleTab_Accounts" />
+	<browser assert="Accounts" />
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />
+	</table>
+
+	<!--Create Schedule Meeting && click "Full Form"-->
+	<browser assert="{@pre_account_name}" />
+	<div id="list_subpanel_activities">
+		<button value="  Schedule Meeting  " />
+	</div>
+	<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record_0367">
+		<form id="form_SubpanelQuickCreate_Meetings">
+			<button id="Meetings_subpanel_full_form_button" />
+		</form>
+
+		<form id="EditView">
+			<textfield id="name" set="{@meeting_record_0367.name} {@user.name} {@stamp}" />
+			<textfield id="location" set="{@meeting_record_0367.location}" />
+			<textfield id="description" set="{@meeting_record_0367.description}" />
+			<select id="status" set="Held" />
+
+			<textfield id="date_start_date" set="{@meeting_record_0367.date_start_date}" />
+			<select id="date_start_hours" set="{@meeting_record_0367.date_start_hours}" />
+			<select id="date_start_minutes" set="{@meeting_record_0367.date_start_minutes}" />
+
+			<textfield name="duration_hours" set="{@meeting_record_0367.duration_hours}" />
+			<select name="duration_minutes" set="{@meeting_record_0367.duration_minutes}" />
+
+			<checkbox name="reminder_checked" set="{@meeting_record_0367.reminder_checked}" />
+		</form>
+
+		<!--user select-->
+		<button id="btn_assigned_user_name" />
+		<browser assert="User Search" />
+		<textfield id="last_name_advanced" set="{@meeting_record_0367.assigned_user_name}" />
+		<button value="Search" />
+		<link text="{@meeting_record_0367.assigned_user_name}" />
+
+		<!--teams select-->
+		<table id="EditView_team_name_table">
+			<button value="Select" />
+		</table>
+		<browser assert="Team Search" />
+		<textfield name="name" set="{@meeting_record_0367.team_name}" />
+		<button value="Search" />
+		<link text="{@meeting_record_0367.team_name}" />
+		<button value="Save" />
+	</csv>
+
+	<wait />
+	
+	<!--Edit the record in histroy subpanel-->
+	<div id="list_subpanel_history">
+		<span class="pageNumbers" assert="(1 - 1 of 1)" />
+		<link class="listViewTdToolsS1" index="2" click="true" alert="true"/>
+		<wait timeout="10"/>
+		
+		<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	</div>
+
+	<!--Delete the record-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	<puts text="Test: Accounts_0311.xml finished." />
+</soda>

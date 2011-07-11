@@ -26,9 +26,18 @@
 -->
 
 <soda>
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/TargetList_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Target_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Campaign_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Quote_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" /> 
 	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
 	<browser action="close" />

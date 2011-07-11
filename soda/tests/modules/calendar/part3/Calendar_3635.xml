@@ -40,7 +40,7 @@
 	-->
 	<puts text="Test: Calendar_3635.xml starting." />
 	
-	<link id="moduleTab_Calendar" />
+	<link id="moduleTab_Meetings" />
 	<link text="Schedule Meeting" />
 	
 	<timestamp />

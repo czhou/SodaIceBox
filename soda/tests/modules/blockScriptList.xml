@@ -42,6 +42,13 @@
 	</block>
 	
 	<block>
+		<testfile>Accounts_0275</testfile>
+		<bugnumber>44836</bugnumber>
+		<reason>44836</reason>
+		<modulename>Accounts</modulename>
+	</block>
+
+	<block>
 		<testfile>Accounts_0017</testfile>
 		<bugnumber>43294</bugnumber>
 		<reason>Bug43294</reason>
@@ -105,6 +112,20 @@
 	</block>
 	
 	<!-- Mazen's Modules -->
+	<block>
+		<testfile>Activities_B36109</testfile>
+		<bugnumber>36109</bugnumber>
+		<reason>Cannot Change Date Sent on Saved Emails</reason>
+		<modulename>activities</modulename>
+	</block>
+	
+	<block>
+		<testfile>Activities_44557</testfile>
+		<bugnumber>44557</bugnumber>
+		<reason>User who created a meeting is invited even if he is not in the invited list</reason>
+		<modulename>activities</modulename>
+	</block>
+	
 	<block>
 		<testfile>Roles_42099</testfile>
 		<bugnumber>42099</bugnumber>
@@ -843,6 +864,13 @@
 	</block>
 	
 	<block>
+		<testfile>roles_11734</testfile>
+		<bugnumber>44687</bugnumber>
+		<reason>bug 44687</reason>
+		<modulename>roles</modulename>
+	</block>
+	
+	<block>
 		<testfile>Dashlet_10982</testfile>
 		<bugnumber>44104</bugnumber>
 		<reason>bug 44104</reason>
@@ -1051,6 +1079,13 @@
                 <bugnumber></bugnumber>
                 <reason>Can't Create project task.</reason>
                 <modulename>Projects</modulename>
+        </block>
+	
+	<block>
+                <testfile>mb_10757</testfile>
+                <bugnumber></bugnumber>
+                <reason></reason>
+                <modulename>modulebuilders</modulename>
         </block>
 
 	<block>

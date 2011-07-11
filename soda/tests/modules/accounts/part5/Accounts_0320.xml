@@ -81,9 +81,11 @@
 
 		<button id="Leads_subpanel_save_button" />
 		<!--Verify -->
+		<wait timeout="10"/>
 		<div id="list_subpanel_leads">
 			<link text="{@lead_record_0120.first_name} {@stamp} {@lead_record_0120.last_name}"/>
 		</div>
+		<wait timeout="5"/>
 		<div id="LBL_CONTACT_INFORMATION">
 			<browser assert="{@lead_record_0120.first_name} {@stamp} {@lead_record_0120.last_name}"/>
 		</div>
