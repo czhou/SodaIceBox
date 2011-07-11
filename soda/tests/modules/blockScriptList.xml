@@ -694,6 +694,13 @@
 	</block>
 
 	<block>
+		<testfile>Leads_11544</testfile>
+		<bugnumber></bugnumber>
+		<reason>Feature not available</reason>
+		<modulename>Leads</modulename>
+	</block>
+
+	<block>
 		<testfile>Leads_11513</testfile>
 		<bugnumber></bugnumber>
 		<reason>Feature not available</reason>
