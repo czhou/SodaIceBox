@@ -110,7 +110,7 @@
 	</attach>
  	-->
  	<table class="list view">
- 		<link href="#" index="6" />
+ 		<link text="/.*TL.*/" />
  	</table>
 
 	<!--change the item number of list view-->
