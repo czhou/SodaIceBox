@@ -26,21 +26,24 @@
 -->
 
 <soda>
-   <script file="tests/modules/sorting/module_lib/setup-sorting.xml" />
-   <script file="tests/modules/sorting/module_lib/targetlist-init.xml" />
-   <script file="tests/modules/sorting/module_lib/target-init.xml" />
-   <script file="tests/modules/sorting/module_lib/campaign-init.xml" />
-   <script file="tests/modules/sorting/module_lib/account-init.xml" />
-   <script file="tests/modules/sorting/module_lib/contact-init.xml" />
-   <script file="tests/modules/sorting/module_lib/lead-init.xml" />
-   <script file="tests/modules/sorting/module_lib/opp-init.xml" />
-   <script file="tests/modules/sorting/module_lib/quote-init.xml" />
-   <script file="tests/modules/sorting/module_lib/case-init.xml" />
-   <script file="tests/modules/sorting/module_lib/call-init.xml" />
-   <script file="tests/modules/sorting/module_lib/meeting-init.xml" />
-   <script file="tests/modules/sorting/module_lib/task-init.xml" />
-   <script file="tests/modules/sorting/module_lib/note-init.xml" />
-   <script fileset="tests/modules/sorting"/>
-   <script file="tests/modules/sorting/module_lib/cleanup-sorting.xml" />
-</soda>
+	<!-- create Campaign records -->
+	<link id="moduleTab_Campaigns" />
+	<csv file="{@global.scriptsdir}/csvs/sorting/Campaign_Listview.csv" 
+      var="Campaign_Listview_Sort">
+		
+		<link text="Create Campaign (Classic)" />
 
+		<form id="EditView">
+			<timestamp />
+			<textfield id="name" set="{@Campaign_Listview_Sort.name}" /> 
+			<select id="status" set="{@Campaign_Listview_Sort.status}" />
+			<textfield id="end_date" set="{@Campaign_Listview_Sort.end_date} " />
+			<select id="campaign_type" set="{@Campaign_Listview_Sort.type}" />
+			<button id="SAVE_HEADER" />
+		</form>
+		<div class="moduleTitle">
+			<link href="index.php?module=Campaigns&amp;action=index" click="false" />
+			<browser assert="{@Campaign_Listview_Sort.name}" />
+		</div>
+	</csv>
+</soda>

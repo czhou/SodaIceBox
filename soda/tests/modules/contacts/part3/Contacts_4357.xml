@@ -27,7 +27,7 @@
 
 <soda>
 	<!--
-		Create opportunities_Verify that a related opportunity can be created from contact detail view
+		Create opportunities_Verify that a related opportunity can be full form created from contact detail view
 	-->
 	<puts text="Test: Contacts_4357.xml starting." />
 

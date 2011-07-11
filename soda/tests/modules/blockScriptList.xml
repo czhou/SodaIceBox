@@ -988,6 +988,13 @@
                 <reason>Can't Create project task.</reason>
                 <modulename>Projects</modulename>
         </block>
+	
+	<block>
+                <testfile>mb_10757</testfile>
+                <bugnumber></bugnumber>
+                <reason></reason>
+                <modulename>modulebuilders</modulename>
+        </block>
 
 	<block>
                 <testfile>Project_2876</testfile>
