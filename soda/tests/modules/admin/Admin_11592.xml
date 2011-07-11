@@ -60,5 +60,23 @@
 	<link text="View Cons" click="false" exists="true"/>
 	<link text="Import Cons" click="false" exists="true"/>
 
+	<!--Set back to default module name-->
+	<!--Go to Admin page-->
+	<link text="Admin"/>
+
+	<!--Go to Rename module name page-->
+	<link text="Rename Modules"/>
+	
+	<!--Update one module singular name, such as "Contact"-->
+	<span id="slot1b">
+		<image index="1" click="true"/>
+	</span>
+
+	<!--Update string "Cons" as "Contacts" and save-->
+	<textfield id="slot1_text" set="Contacts"/>
+	<table id="contentTable">
+		<button name="Save" value="Save"/>
+	</table>
+
 	<puts text="Test: Admin_11592.xml finished" />
 </soda>

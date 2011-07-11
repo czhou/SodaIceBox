@@ -66,5 +66,23 @@
 		</tr>
 	</table>
 
+	<!--Set back to default module name-->
+	<!--Go to Admin page-->
+	<link text="Admin"/>
+
+	<!--Go to Rename module name page-->
+	<link text="Rename Modules"/>
+	
+	<!--Update one module singular name, such as "Account"-->
+	<span id="slot2b">
+		<image index="1"/>
+	</span>
+
+	<!--Update string "Acc" as "Accout" and save-->
+	<textfield id="slot2_stext" set="Accout"/>
+	<table id="contentTable">
+		<button name="Save" value="Save"/>
+	</table>
+
 	<puts text="Test: Admin_11494.xml finished" />
 </soda>
