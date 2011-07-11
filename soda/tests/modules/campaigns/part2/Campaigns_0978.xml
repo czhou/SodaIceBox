@@ -40,7 +40,7 @@
 	<csv file="{@global.scriptsdir}/csvs/campaigns/Campaigns_0978.csv" var="target0978">
 		<!--teams select-->
 		<table id="form_SubpanelQuickCreate_Prospects_team_name_table">
-			<textfield name="EditView_team_name_collection_0" set="" /> 
+			<textfield id="EditView_team_name_collection_0" set="" /> 
 			<button value="Select" />
 		</table>
 		<textfield name="name" set="{@target0978.teamname}" /> 
@@ -52,7 +52,7 @@
 			<button id="btn_assigned_user_name" />
 		</div>
 		<browser assert="User Search" />                        
-		<textfield name="last_name_advanced" set="{@target0978.assignto}" />                        
+		<textfield name="last_name_advanced" set="{@target0978.assignto}" />    	                    
 		<button value="Search" />
 		<link text="{@target0978.assignto}" />
 
