@@ -86,5 +86,6 @@
 	</form>
 	<var var="pre_activity_meeting_subpanel_name" set="{@meeting_record_0240.name} {@stamp}" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0348.xml finished." />
 </soda>
