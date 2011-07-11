@@ -28,10 +28,10 @@
 <soda>
 
 	<!--
-		Update singular name of one module and check Account module list view	
+		Verify action menu sync with updating module  name
 	-->
 
-	<puts text="Test: Admin_11494.xml starting" />
+	<puts text="Test: Admin_11593.xml starting" />
 
 	<!--Go to Admin page-->
 	<link text="Admin"/>
@@ -39,31 +39,48 @@
 	<!--Go to Rename module name page-->
 	<link text="Rename Modules"/>
 	
-	<!--Update one module singular name, such as "Account"-->
-	<span id="slot2b">
-		<image index="1"/>
+	<!--Update one module singular name, such as "Contact"-->
+	<span id="slot1b">
+		<image index="1" click="true"/>
 	</span>
 
-	<!--Update string "Account" as "Acct" and save-->
-	<textfield id="slot2_stext" set="Acc"/>
+	<!--Update string "Contacts" as "Cons" and save-->
+	<textfield id="slot1_stext" set="Con"/> 
+	<textfield id="slot1_text" set="Cons" />
+	<wait timeout="2"/>
 	<table id="contentTable">
 		<button name="Save" value="Save"/>
 	</table>
 
-	<!--Go to Accounts module-->
-	<link  id="moduleTab_Accounts"/>
+	<!--Go to Contacts module-->
+	<link  id="moduleTab_Contacts"/>
 
-	<!-- Check Action list show "Create Acct"-->
-	<link text="Create Acc" click="false" exists="true"/>
+	<!-- Check module name show "Cons"-->
+	<link text="Cons" click="false" exists="true"/>
 
-	<!--Check Create Account from shortcut by c-->
-	<link text="View Acc Reports" click="false" exists="true"/>
+	<!-- Check module name show "Cons"-->
+	<link text="Create Con From vCard" click="false" exists="true"/>
+	<link text="View Cons" click="false" exists="true"/>
+	<link text="View Con Reports" click="false" exists="true"/>
+	<link text="Import Cons" click="false" exists="true"/>
 
-	<!--Account module list view show "Acct" column as column name-->
-	<table class="list view">
-		<tr index="1">
-			<link text="Acc Name" click="false" exists="true"/>
-		</tr>
+	<!--Go to Admin page-->
+	<link text="Admin"/>
+
+	<!--Go to Rename module name page-->
+	<link text="Rename Modules"/>
+	
+	<!--Update one module back to default values-->
+	<span id="slot1b">
+		<image index="1" click="true"/>
+	</span>
+
+	<!--Update string "Contacts" as "Cons" and save-->
+	<textfield id="slot1_stext" set="Contact"/>
+	<textfield id="slot1_text" set="Contacts" />
+	<wait timeout="2"/>
+	<table id="contentTable">
+		<button name="Save" value="Save"/>
 	</table>
 
 	<!--Set back to default module name-->
@@ -73,16 +90,17 @@
 	<!--Go to Rename module name page-->
 	<link text="Rename Modules"/>
 	
-	<!--Update one module singular name, such as "Account"-->
-	<span id="slot2b">
-		<image index="1"/>
+	<!--Update one module singular name, such as "Contact"-->
+	<span id="slot1b">
+		<image index="1" click="true"/>
 	</span>
 
-	<!--Update string "Acc" as "Accout" and save-->
-	<textfield id="slot2_stext" set="Accout"/>
+	<!--Update string "Cons" as "Contacts" and "Con" as "Contact" then save-->
+	<textfield id="slot1_stext" set="Contact"/> 
+	<textfield id="slot1_text" set="Contacts" />
+	<wait timeout="2"/>
 	<table id="contentTable">
 		<button name="Save" value="Save"/>
 	</table>
-
-	<puts text="Test: Admin_11494.xml finished" />
+	<puts text="Test: Admin_11593.xml finished" />
 </soda>
