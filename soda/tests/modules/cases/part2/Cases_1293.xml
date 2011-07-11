@@ -60,8 +60,8 @@
 		</div>
 
 		<!-- Set a non-existent team name. -->
-		<textfield id="team_name_collection_0" click="true" />
-		<textfield id="team_name_collection_0" set="{@Case_1293.call_team}" />
+		<textfield id="EditView_team_name_collection_0" click="true" />
+		<textfield id="EditView_team_name_collection_0" set="{@Case_1293.call_team}" />
 		<button value="Save" />
 		
 		<!-- Assert error messages. -->

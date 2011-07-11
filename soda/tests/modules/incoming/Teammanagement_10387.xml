@@ -109,7 +109,7 @@
 			<link text="Other" />
 			<wait timeout="3" />
 			
-			<textfield id="team_name_collection_0" assert="{@pre_user_fullname}" />
+			<textfield id="EditView_team_name_collection_0" assert="{@pre_user_fullname}" />
 			
 			<!--check the team not show in the system any more-->
 

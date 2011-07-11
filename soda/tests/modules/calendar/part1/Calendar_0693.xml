@@ -57,8 +57,8 @@
 	<textfield id="location" set="White Room" />
 	<textfield id="description" set="This is a meeting..." />
 	
-	<textfield id="team_name_collection_0" set="Administrator" jscriptevent="onkeydown" />
-	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+	<textfield id="EditView_team_name_collection_0" set="Administrator" jscriptevent="onkeydown" />
+	<textfield id="EditView_team_name_collection_0" jscriptevent="onkeyup" click="false" />
 	<wait timeout="2" />
 	
 	<button value="Save" />

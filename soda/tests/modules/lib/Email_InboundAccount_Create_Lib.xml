@@ -51,7 +51,7 @@
 
 		<textfield id="trashFolder" set="{@Email_InboundAccount.trashFolder}"/>
 
-		<textfield id="team_name_collection_0" set="{@Email_InboundAccount.team_name_collection_0}"/>
+		<textfield id="EditView_team_name_collection_0" set="{@Email_InboundAccount.team_name_collection_0}"/>
 
 		<textfield id="from_name" set="{@Email_InboundAccount.from_name}"/>
 		<textfield id="from_addr" set="{@Email_InboundAccount.from_addr}"/>

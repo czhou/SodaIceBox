@@ -40,7 +40,7 @@
 	<csv file="{@global.scriptsdir}/csvs/campaigns/Campaigns_0978.csv" var="target0978">
 		<!--teams select-->
 		<table id="form_SubpanelQuickCreate_Prospects_team_name_table">
-			<textfield name="team_name_collection_0" set="" /> 
+			<textfield name="EditView_team_name_collection_0" set="" /> 
 			<button value="Select" />
 		</table>
 		<textfield name="name" set="{@target0978.teamname}" /> 

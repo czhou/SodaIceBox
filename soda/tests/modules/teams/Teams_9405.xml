@@ -47,9 +47,9 @@
 		</table>
 		<button value="  Select  " />
 		<table id="MassUpdate_team_name_table">
-			<textfield name="team_name_collection_0" assert="{@Teams_9405.team0}" />
-			<textfield name="team_name_collection_1" assert="{@Teams_9405.team1}" />
-			<textfield name="team_name_collection_2" assert="{@Teams_9405.team2}" />
+			<textfield name="EditView_team_name_collection_0" assert="{@Teams_9405.team0}" />
+			<textfield name="EditView_team_name_collection_1" assert="{@Teams_9405.team1}" />
+			<textfield name="EditView_team_name_collection_2" assert="{@Teams_9405.team2}" />
 		</table>
 	</csv>
 

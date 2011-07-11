@@ -59,8 +59,8 @@
 	
 	<image id="more_img_composeOptionsForm1_team_name" click="true" />
 	<wait timeout="1" />
-	<textfield id="team_name_collection_0" assert="Global" />
-	<textfield id="team_name_collection_1" assert="{@Email9673.user}" />
+	<textfield id="EditView_team_name_collection_0" assert="Global" />
+	<textfield id="EditView_team_name_collection_1" assert="{@Email9673.user}" />
 
 	<link text="{@Email9673.user}" />
 	<!--<link text="/Advanced/" />-->

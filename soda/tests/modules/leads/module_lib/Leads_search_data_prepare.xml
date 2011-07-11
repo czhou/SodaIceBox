@@ -74,7 +74,7 @@
 		<checkbox id="do_not_call" set="{@Leads_1892.do_not_call}" />
 		<textfield id="department" set="{@Leads_1892.department}" />
 		<!--
-			textfield id = "team_name_collection_0" set =
+			textfield id = "EditView_team_name_collection_0" set =
 			"{@Leads_1892.team_name_collection_0}"/
 		-->
 		<!--

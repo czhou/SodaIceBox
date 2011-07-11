@@ -95,9 +95,9 @@
 	<!-- hack to enable field validation to work -->
 	
 	<textfield name="save_report_as" set="{@report_name}" />
-	<textfield id="team_name_collection_0" set="Global" 
+	<textfield id="EditView_team_name_collection_0" set="Global" 
 		jscriptevent="onkeydown" />
-	<textfield id="team_name_collection_0" jscriptevent="onkeyup" 
+	<textfield id="EditView_team_name_collection_0" jscriptevent="onkeyup" 
 		click="false" />
 	<wait timeout="2" />
 	

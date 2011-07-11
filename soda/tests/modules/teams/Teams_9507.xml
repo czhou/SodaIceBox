@@ -77,9 +77,9 @@
 		<button id="duplicate_button" />
 		<table id="EditView_team_name_table">
 			<image id="more_img_EditView_team_name" click="true" />
-			<textfield id="team_name_collection_0" assert="{@teams_9507.team1}" /> 
-			<textfield id="team_name_collection_1" assert="{@teams_9507.team0}" />
-			<textfield id="team_name_collection_2" assert="{@teams_9507.team2}" />
+			<textfield id="EditView_team_name_collection_0" assert="{@teams_9507.team1}" /> 
+			<textfield id="EditView_team_name_collection_1" assert="{@teams_9507.team0}" />
+			<textfield id="EditView_team_name_collection_2" assert="{@teams_9507.team2}" />
 		</table>
 		<button value="Save" />
 		<wait timeout="3" />

@@ -80,8 +80,8 @@
 	
 	
 	<textfield name="save_report_as" set="{@report_name}" />
-	<textfield id="team_name_collection_0" set="{@user.last_name}" jscriptevent="onkeydown" />
-	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+	<textfield id="EditView_team_name_collection_0" set="{@user.last_name}" jscriptevent="onkeydown" />
+	<textfield id="EditView_team_name_collection_0" jscriptevent="onkeyup" click="false" />
 	<wait timeout="2" />
 	
 	<button value="Save" />

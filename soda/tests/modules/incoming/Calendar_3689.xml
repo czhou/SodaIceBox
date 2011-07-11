@@ -58,8 +58,8 @@
 		<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
 		<textfield id="description" set="{@call_record.description}" />
 
-		<textfield id="team_name_collection_0" set="Nonexistent {@stamp}" jscriptevent="onkeydown" />
-		<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+		<textfield id="EditView_team_name_collection_0" set="Nonexistent {@stamp}" jscriptevent="onkeydown" />
+		<textfield id="EditView_team_name_collection_0" jscriptevent="onkeyup" click="false" />
 		
 		<var var="call1_name" set="{@call_record.name} {@user.name} {@stamp}" />
 

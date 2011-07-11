@@ -43,8 +43,8 @@
 
 		<textfield name="date_start" set="{@Case_1302.email_date}" />
 		<textfield name="time_start" set="{@Case_1302.email_time}" />
-		<textfield id="team_name_collection_0" click="true" />
-		<textfield id="team_name_collection_0" set="{@Case_1302.email_team}" />
+		<textfield id="EditView_team_name_collection_0" click="true" />
+		<textfield id="EditView_team_name_collection_0" set="{@Case_1302.email_team}" />
 		<button id="SAVE_HEADER" />
 		
 		<!-- Assert error messages. -->
