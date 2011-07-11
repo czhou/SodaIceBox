@@ -1,0 +1,68 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>        
+	<!--
+		selecting an Assigned User in the create Account pop-up
+	-->
+	<puts text="Test: Opportunity_11765.xml started." />
+	<timestamp />
+	<link id="moduleTab_Opportunities" />
+	<link text="Create Opportunity" />
+
+	<csv file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.csv" var="opp_11756">
+		<textfield id="name" set="{@opp_11756.name} {@user.name} {@stamp}" /> 
+		<textfield id="amount" set="{@opp_11756.amount}" /> 
+		<textfield id="probability" set="{@opp_11756.probability}" /> 
+		<textfield id="date_closed" set="{@opp_11756.date_closed}" /> 
+		<textfield id="next_step" set="{@opp_11756.next_step}" />
+		<textfield id="description" set="{@opp_11756.description}" />
+		<select id="opportunity_type" set="{@opp_11756.opportunity_type}" />
+		<select id="lead_source" set="{@opp_11756.lead_source}" />
+		<select name="currency_id" set="{@opp_11756.currency_id}" />
+		<select id="sales_stage" set="{@opp_11756.sales_stage}" />
+
+		<!--Account Select-->
+		<button id="btn_account_name" />
+		<browser assert="Account Search" />
+
+		<!--Create a new account -->
+		<button value="Create Account"/>
+		<textfield id="name" set="Opp_11756_Account_name"/>
+
+		<!--Select a assigned user-->
+		<button id="btn_assigned_user_name"/>
+		<link text="Administrator"/>
+		<button id="Accounts_popupcreate_save_button" />
+		<link text="Opp_11756_Account_name"/>
+
+		<!--Save the new account-->
+		<button id="SAVE_HEADER"/>
+	</csv>
+
+	<puts text="Test: Opportunity_11756.xml finished." />
+</soda>
