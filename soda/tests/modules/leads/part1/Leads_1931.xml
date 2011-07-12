@@ -53,7 +53,7 @@
 		<textfield id="name" set="{@Leads_1931.name}" />
 		<button id="Tasks_subpanel_save_button" />
 	</csv>
-	<wait timeout="6" />
+	<wait timeout="10" />
 	
 	<!--verify the task record -->
 	<div id="list_subpanel_activities">

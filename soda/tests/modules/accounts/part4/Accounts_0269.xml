@@ -62,7 +62,7 @@
 
 		<button id="Accounts_subpanel_save_button"/>
 
-		<wait timeout="5"/>
+		<wait timeout="10"/>
 		<!--Edit the record-->
 		<div id="list_subpanel_accounts">
 			<span class="pageNumbers" assert="(1 - 1 of 1)" />
