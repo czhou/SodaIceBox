@@ -26,22 +26,25 @@
 -->
 
 <soda>
-   <script file="tests/modules/sorting/module_lib/setup-sorting.xml" />
-   <script file="tests/modules/sorting/module_lib/targetlist-init.xml" />
-   <script file="tests/modules/sorting/module_lib/target-init.xml" />
-   <script file="tests/modules/sorting/module_lib/campaign-init.xml" />
-   <script file="tests/modules/sorting/module_lib/account-init.xml" />
-   <script file="tests/modules/sorting/module_lib/contact-init.xml" />
-   <script file="tests/modules/sorting/module_lib/lead-init.xml" />
-   <script file="tests/modules/sorting/module_lib/opp-init.xml" />
-   <script file="tests/modules/sorting/module_lib/quote-init.xml" />
-   <script file="tests/modules/sorting/module_lib/case-init.xml" />
-   <script file="tests/modules/sorting/module_lib/call-init.xml" />
-   <script file="tests/modules/sorting/module_lib/meeting-init.xml" />
-   <script file="tests/modules/sorting/module_lib/task-init.xml" />
-   <script file="tests/modules/sorting/module_lib/note-init.xml" />
-   <script file="tests/modules/sorting/module_lib/document-init.xml" />
-   <script fileset="tests/modules/sorting"/>
-   <script file="tests/modules/sorting/module_lib/cleanup-sorting.xml" />
+	<puts text="document-init.xml dueing." />
+	<timestamp />
+	<link id="moduleTab_Documents" />
+	<csv file="{@global.scriptsdir}/csvs/sorting/document_Listview.csv" var="document_list_sort">
+		<link text="Create Document" />
+
+		<form id="EditView">
+			<textfield id="document_name" set="{@document_list_sort.name}" />
+			<filefield id="filename_file" set="{@global.scriptsdir}/csvs/sorting/lotuslive/{@document_list_sort.filename_file}" />
+			<select id="category_id" set="{@document_list_sort.category_id}" />
+			<select id="subcategory_id" set="{@document_list_sort.subcategory_id}" />
+			<textfield id="exp_date" set="{@document_list_sort.exp_date}" />
+			<button id="SAVE_HEADER" />
+		</form>
+		<wait timeout="2" />
+		<button id="edit_button" click="false" />
+		<browser assert="{@document_list_sort.name}" />
+	</csv>
+
+	<puts text="document-init.xml finished." />
 </soda>
 
