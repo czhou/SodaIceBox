@@ -710,6 +710,14 @@
 	</block>
 	
 	<block>
+		<testfile>Opportunity_11756</testfile>
+		<bugnumber>44962</bugnumber>
+		<reason>bug 44962</reason>
+		<modulename>opportunity</modulename>
+	</block>
+	
+	
+	<block>
 		<testfile>Opportunity_2311</testfile>
 		<bugnumber>-1</bugnumber>
 		<reason>contract sub panle not shown default</reason>
@@ -1010,4 +1018,22 @@
                 <reason>Can't Create project task.</reason>
                 <modulename>Projects</modulename>
         </block>
+    <block>
+		<testfile>Admin_11760</testfile>
+		<bugnumber>44963</bugnumber>
+		<reason>the Create link shouldn't exist in Set Connector Properties</reason>
+		<modulename>Connector</modulename>
+	</block>
+	<block>
+		<testfile>Campaigns_11759</testfile>
+		<bugnumber>44872</bugnumber>
+		<reason>Save a call by TYPE a campaign name for a one to one relationship</reason>
+		<modulename>Campaigns</modulename>
+	</block>
+	<block>
+		<testfile>Campaigns_11758</testfile>
+		<bugnumber>44870</bugnumber>
+		<reason>Delete the campaign-account relationship during the campaign deleting</reason>
+		<modulename>Campaigns</modulename>
+	</block>
 </soda>

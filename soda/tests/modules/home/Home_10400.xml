@@ -26,7 +26,7 @@
 -->
 
 <soda>
-	<puts text="Test:home_10400 dashlet auto refresh every 3 minutes" />
+	<puts text="Test:home_10400 auto refresh more than 1 dashlet" />
 	
 	<link id="moduleTab_Home" />
 	<browser assert="Add Sugar Dashlets" />
