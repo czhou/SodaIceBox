@@ -879,6 +879,32 @@
 	</block>
 	
 	<block>
+		<testfile>Studio_11676_1</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>function not finished</reason>
+		<modulename>Studio</modulename>
+	</block>
+	<block>
+		<testfile>Studio_11676_2</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>function not finished</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_11677_1</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>function not finished</reason>
+		<modulename>Studio</modulename>
+	</block>
+	<block>
+		<testfile>Studio_11677_2</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>function not finished</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
 		<testfile>roles_11734</testfile>
 		<bugnumber>44687</bugnumber>
 		<reason>bug 44687</reason>
