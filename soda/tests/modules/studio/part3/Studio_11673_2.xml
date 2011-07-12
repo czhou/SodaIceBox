@@ -34,14 +34,6 @@
     <csv file="{@global.scriptsdir}/csvs/studio/Studio_11673_2.csv" var="studio11673">
     	
     	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
-    	<link id="moduleTab_Opportunities" />
-    	<textfield id="name_basic" set="{@pre_opp_name}" />
-    	<table class="list view">
-    		<link text="{@pre_opp_name}" />
-    	</table>
-    	<div id ="Opportunities_detailview_tabs">
-    		<browser assert="{@pre_opp_name}" />
-    	</div>
     	<button id="edit_button" />
     	<div id="EditView_tabs">
     		<textfield id="amount" set="{@studio11673.amount1}" />
@@ -72,14 +64,6 @@
     <csv file="{@global.scriptsdir}/csvs/studio/Studio_11673_2.csv" var="studio11673">
     	
     	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
-    	<link id="moduleTab_Opportunities" />
-    	<textfield id="name_basic" set="{@pre_opp_name}" />
-    	<table class="list view">
-    		<link text="{@pre_opp_name}" />
-    	</table>
-    	<div id ="Opportunities_detailview_tabs">
-    		<browser assert="{@pre_opp_name}" />
-    	</div>
     	<button id="edit_button" />
     	<div id="EditView_tabs">
     		<textfield id="amount" set="{@studio11673.amount2}" />
