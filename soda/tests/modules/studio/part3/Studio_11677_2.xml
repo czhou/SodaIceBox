@@ -1,0 +1,86 @@
+<soda>
+    
+    <!-- count function in dependent field-->
+    <puts text="Test: Studio_11677_2.xml starting" />
+    
+    <!-- set description field as dependent field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="dependent" set="true" />
+    <wait timeout="1" />
+    <tr id="visFormulaRow" >
+	    <button name="editFormula" />
+	    <wait timeout="3" />
+	</tr>  
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="equal(count($contacts),3)"/>
+      <button value="Save" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="15" />
+    <browser assert="Add Field" />
+    
+    <!--create account record and contacts-->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+    <div id ="Accounts_detailview_tabs">
+		<browser assert="{@pre_account_name}" />
+		<browser assertnot="description" />
+	</div>
+	<button id="edit_button" />
+	<textfield id="description" exist="false" />
+	<button id="SAVE" />
+    
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_11677_2.csv" var="studio11677">    	
+    	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" /> 
+    	<button id="edit_button" /> 
+    	<button id="btn_account_name" />  	
+    	<browser assert="Account Search" />
+		<link text="{@pre_account_name}"/>
+		<button id="SAVE_HEADER" />
+		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+		
+    </csv>
+    <!--check dependent field-->
+	<link id="moduleTab_Accounts" />
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />
+	</table>
+	<div id ="Accounts_detailview_tabs">
+		<browser assert="{@pre_account_name}" />
+		<browser assert="description" exist="{@studio11677.visible}" />
+	</div>
+	<button id="edit_button" />
+	<textfield id="description" exist="{@studio11677.visible}" />
+	<button id="SAVE" />
+		
+    <!-- Now independent the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="dependent" set="false" />
+    <wait timeout="1" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="15" />
+    <browser assert="Add Field" />
+    
+    <!-- Delete account record -->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_11677_2.xml finished." />
+</soda>
