@@ -710,6 +710,14 @@
 	</block>
 	
 	<block>
+		<testfile>Opportunity_11756</testfile>
+		<bugnumber>44962</bugnumber>
+		<reason>bug 44962</reason>
+		<modulename>opportunity</modulename>
+	</block>
+	
+	
+	<block>
 		<testfile>Opportunity_2311</testfile>
 		<bugnumber>-1</bugnumber>
 		<reason>contract sub panle not shown default</reason>
