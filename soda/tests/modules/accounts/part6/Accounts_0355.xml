@@ -77,12 +77,10 @@
 		<!--Verify the task record created in subpanel-->
 		<div id="list_subpanel_activities">
 			<table class="list view">
-				<link text="{@activity_record_0355.name} {@user.name} {@stamp}" />
+				<link text="{@activity_record_0355.name} {@user.name} {@stamp}" click="false"/>
 			</table>
 		</div>
 		<wait timeout="5" />
-		<browser assert="{@activity_record_0355.name} {@user.name} {@stamp}" />
-
 	</csv>
 
 	<!--Delete the record-->
