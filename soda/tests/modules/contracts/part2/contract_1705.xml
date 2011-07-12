@@ -54,7 +54,7 @@
 	<!--Edit Note record in subpanel-->
 	<div id="list_subpanel_history">
                 <table class="list view">
-		     <link class="listViewTdToolsS1" text="/edit/"/>
+		     <link class="listViewTdToolsS1" index="1"/>
                 </table>
 	</div>
 	<wait timeout="3"/>
