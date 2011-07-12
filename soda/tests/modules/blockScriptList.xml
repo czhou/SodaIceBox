@@ -659,6 +659,14 @@
 	</block>
 
 	<block>
+		<testfile>Contacts_11755</testfile>
+		<bugnumber>44945</bugnumber>
+		<reason>Bug 44945</reason>
+		<modulename>Contacts</modulename>
+	</block>
+
+
+	<block>
 		<testfile>Contacts_1591</testfile>
 		<bugnumber></bugnumber>
 		<reason>Send key re-attached to previous window</reason>
