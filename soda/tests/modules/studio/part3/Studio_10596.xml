@@ -1,0 +1,77 @@
+<soda>
+    
+    <!-- auto updating calculated field that contain related function when new related record created -->
+    <puts text="Test: Studio_10596.xml starting" />
+        
+     <!-- set description field as calculated field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Contacts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="related($accounts,&quot;name&quot;)"/>
+      <button value="Save" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="10" />
+    <browser assert="Add Field" />
+    
+    <!--create account record and contact-->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />   
+    <script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" />
+    <button id="edit_button" />
+    <button id="btn_account_name" />  	
+	<browser assert="Account Search" />
+	<link text="{@pre_account_name}"/>
+	<button id="SAVE_HEADER" />
+	<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	<span id="description" assert="{@pre_account_name}" />
+	
+	<!--create new account record and related to the contact-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />   
+	<div id="list_subpanel_contacts">
+		<button id="accounts_contacts_select_button" />
+	</div>
+	<browser assert="Contact Search" />
+	<link text="{@pre_contact_first_name} {@pre_contact_last_name}"/>
+	
+	<!--go to contact record check the calculated result-->
+	<div id="list_subpanel_contacts">
+		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</div>
+	<div id="LBL_CONTACT_INFORMATION">
+		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+		<span id="description" assert="{@pre_account_name}" />
+	</div>
+	<button id="edit_button" />	
+	<textfield id="description" assert="{@pre_account_name}" />  
+   
+    <!-- Now uncalculated the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Contacts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="false" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    
+    <!-- Delete account record -->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_10596.xml finished." />
+</soda>
