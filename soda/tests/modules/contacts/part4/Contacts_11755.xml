@@ -47,7 +47,7 @@
 	</table>
 	<!--Create a task then cancel it from shortcut bar-->
 	<div id="dcmenuContainer">
-		<image index="9" click="true"/>
+		<image index="8" click="true"/>
 	</div>	
 	<button id="Tasks_dcmenu_cancel_button"/>
 
