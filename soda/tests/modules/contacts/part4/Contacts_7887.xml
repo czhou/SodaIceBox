@@ -63,7 +63,7 @@
 	
 	<!--Delete meeting from Activities subpanel-->
 	<div id="list_subpanel_activities">
-		<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
+		<link class="listViewTdToolsS1" index="2" alert="true"/>
 	</div>
 
 	<wait timeout="3"/>
