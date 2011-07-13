@@ -54,7 +54,7 @@
 		</div>
 
 		<button id="toggleImportOptions" />
-		<textfield id="custom_delimiter" value=","/>
+		<textfield id="custom_delimiter" assert=","/>
 
 		<button id="gonext" />
 	
