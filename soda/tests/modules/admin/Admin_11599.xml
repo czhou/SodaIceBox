@@ -1,0 +1,103 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+
+	<!--
+		Verify  module name in global search result sync with updating module  name
+	-->
+
+	<puts text="Test: Admin_11599.xml starting" />
+
+	<!--Create a new contact -->
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml"/>
+
+	<!--Go to Admin page-->
+	<link text="Admin"/>
+
+	<!--Go to Rename module name page-->
+	<link text="Rename Modules"/>
+	
+	<!--Update one module singular name, such as "Meetings"-->
+	<span id="slot8b">
+		<image index="1"/>
+	</span>
+
+	<!--Update string "Account" as "Acct" and save-->
+	<textfield id="slot8_stext" set="Ming"/>
+	<textfield id="slot8_text" set="Mings"/>
+	<table id="contentTable">
+		<button name="Save" value="Save"/>
+	</table>
+
+	<!--Do global search from top right-->
+	<textfield id="sugar_spot_search" set="{@pre_meeting_name}"/>
+	<div id="glblSearchBtn">
+		<link index="1" click="ture"/>
+	</div>
+
+	<!--Check the results-->
+	<div id="SpotResults">
+		<browser assert="Mings"/>
+	</div>
+	<div id="dcboxbody">
+		<button text="Show All"/>
+	</div>
+
+	<!--Check the advanced enable module list-->
+	<link text="Advanced" required="false"/>
+	<div id="enabled_div">
+		<browser assert="Mings"/>
+	</div>
+	<table id="contentTable">
+		<table class="formHeader h3Row">
+			<browser assert="Mings"/>
+		</table>
+	</table>
+
+	<!--Set back to default module name-->
+	<!--Go to Admin page-->
+	<link text="Admin"/>
+
+	<!--Go to Rename module name page-->
+	<link text="Rename Modules"/>
+	
+	<!--Update one module singular name, such as "Meetings"-->
+	<span id="slot8b">
+		<image index="1"/>
+	</span>
+
+	<!--Update string "Ming" as "Meeting" and "Mings" as "Meetings" then save-->
+	<textfield id="slot8_stext" set="Meeting"/>
+	<textfield id="slot8_text" set="Meetings"/>
+	<table id="contentTable">
+		<button name="Save" value="Save"/>
+	</table>
+
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml"/>
+	<puts text="Test: Admin_11599.xml finished" />
+</soda>
