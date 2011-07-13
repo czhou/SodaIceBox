@@ -26,7 +26,7 @@
 -->
 
 <soda>
-	<puts text="Test Case 362: Account Detail - Activities sub-panel - Create Task_Verify that creating a task in full form on "ACTIVITIES" sub-panel is canceled."/>
+	<puts text="Test Case 362: Account Detail - Activities sub-panel - Create Task_Verify that creating a task in full form on 'ACTIVITIES' sub-panel is canceled."/>
 
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
