@@ -1,0 +1,95 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<puts text="Test Case 11500: Verify we can modify the separator in confirmation page."/>
+
+	<link id="moduleTab_Contacts" />
+	<csv file="{@global.scriptsdir}/export/Imports_11500.csv" var="import_11500">
+
+		<link text="iImport Leads" />
+
+		<!--Step1-->
+		<div class="moduleTitle">
+			<browser assert="Step 1: Select Data Source" />
+		</div>
+		<button id="gonext"/>
+
+		<!--Step2-->
+		<div class="moduleTitle">
+			<browser assert="Step 2: Upload Import File" />
+		</div>
+
+		<filefield name="userfile" set="{@global.scriptsdir}/imports/Imports_11500.csv" />
+		<button id="gonext" />
+		<wait timeout="5" />
+
+		<!--Step3-->
+		<div class="moduleTitle">
+			<browser assert="Step 3: Confirm Import File Properties" />
+		</div>
+
+		<button id="toggleImportOptions" />
+		<textfield id="custom_delimiter" assert=","/>
+		<textfield id="custom_delimiter" set=" "/>
+		<checkbox id="has_header" click="true"/>
+		<button id="gonext" />
+	
+		<!--Step4-->
+		<div class="moduleTitle">
+			<browser assert="Step 4: Confirm Field Mappings" />
+		</div>
+		<select name="colnum_0" set="first_name"/>
+		<select name="colnum_1" set="last_name"/>
+		<button id="gonext" />
+		
+		<!--Step5-->
+		<button id="importnow" />
+		<wait timeout="10" />
+
+		<!--Step6-->
+		<div class="moduleTitle">
+			<browser assert="Step 6: View Import Results" />
+		</div>
+
+		<!--Search the record to assert import successfully -->
+		<link id="moduleTab_Contacts" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Contacts&amp;action=index" click="false" />
+		</div>
+
+		<textfield id="search_name_basic" set="{@import_11500.last_name }" />
+		<button id="search_form_submit" />
+		<table class="list view">
+			<link text="{@import_11500.first_name } {@import_11500.last_name }" />
+		</table>
+	</csv>
+
+	<!--Delete the record-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<puts text="Test: Imports_11500.xml finished." />
+</soda>
