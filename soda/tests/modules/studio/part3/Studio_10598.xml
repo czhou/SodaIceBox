@@ -1,0 +1,114 @@
+<soda>
+    
+    <!-- auto updating calculated field that contain rollupAve function when new related record created -->
+    <puts text="Test: Studio_10598.xml starting" />
+        
+     <!-- set description field as calculated field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="rollupAve($calls,&quot;duration_hours&quot;)"/>
+      <button value="Save" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="10" />
+    <browser assert="Add Field" />
+    
+    <!--create account record and calls-->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" />       
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_10598_1.csv" var="studio105981">
+   		<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+   		<button id="edit_button" />
+   		<textfield id="duration_hours" set="{@studio105981.durhour}" />
+   		<button id="btn_parent_name" />  	
+		<browser assert="Account Search" />
+		<link text="{@pre_account_name}"/>
+		<button value="Save" />
+		<div id="Calls_detailview_tabs">
+			<browser assert="{@pre_call_name}" />
+			<browser assert="{@pre_account_name}" />
+    	</div>    	
+    </csv>
+    <link id="moduleTab_Accounts" />
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />
+	</table>
+	<div id ="Accounts_detailview_tabs">
+		<browser assert="{@pre_account_name}" />
+	</div>
+	<button id="edit_button" />
+	<textfield id="description" assert="{@studio105981.ave}" />
+	<button id="SAVE" />
+	<table id="detailpanel_1">
+		<browser assert="{@pre_account_name}" />
+    	<span id="description" assert="{@studio105981.ave}" />
+  	</table>
+    
+    <!-- create a new call and related to the account -->    
+	<csv file="{@global.scriptsdir}/csvs/studio/Studio_10598_2.csv" var="studio105982">
+   		<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
+   		<button id="edit_button" />
+   		<textfield id="duration_hours" set="{@studio105982.durhour}" />
+   		<button id="btn_parent_name" />  	
+		<browser assert="Account Search" />
+		<link text="{@pre_account_name}"/>
+		<button value="Save" />
+		<div id="Calls_detailview_tabs">
+			<browser assert="{@pre_call_name}" />
+			<browser assert="{@pre_account_name}" />
+			<browser assert="{@studio105982.durhour}h" />
+    	</div>    	
+    </csv>
+    	
+	<!-- check the calculation result -->
+	<link id="moduleTab_Accounts" />
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />
+	</table>
+	<div id ="Accounts_detailview_tabs">
+		<browser assert="{@pre_account_name}" />
+	</div>
+	<button id="edit_button" />
+	<textfield id="description" assert="{@studio105982.ave}" />
+	<button id="SAVE" />
+	<table id="detailpanel_1">
+		<browser assert="{@pre_account_name}" />
+    	<span id="description" assert="{@studio105982.ave}" />
+  	</table>
+    
+    
+    <!-- Now uncalculated the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="false" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    
+    <!-- Delete account record -->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_10598.xml finished." />
+</soda>
