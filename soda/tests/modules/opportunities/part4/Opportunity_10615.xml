@@ -65,9 +65,7 @@
 		</div>
 		<textfield name="name" set="{@Opportunity_10615.name_note}" />
 		<button id="Notes_subpanel_save_button" />
-		<wait timeout="10" condition="true">
-   			<link text="{@Opportunity_10615.name_note}" />
-		</wait>
+		<wait timeout="10" />
 		<browser assert="{@Opportunity_10615.name_note}" />
 	</csv>
 
