@@ -45,6 +45,7 @@
 	<!--Create Member Organization-->
 	<browser assert="{@pre_account_name}" />
 	<button name="member_accounts_create_button" />
+	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0079.csv" var="member_record_0084">
 		<form id="form_SubpanelQuickCreate_Accounts">
 			<textfield id="name" set="{@member_record_0084.name} {@user.name} {@stamp}" />
