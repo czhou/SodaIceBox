@@ -30,9 +30,9 @@
 
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
-	<button name="Activities_createtask_button" />
-	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0355.csv" var="activity_record_0355">
+		<button name="Activities_createtask_button" />
+		<wait timeout="3" />
 		<form id="form_SubpanelQuickCreate_Tasks">
 			<textfield id="name" set="{@activity_record_0355.name} {@user.name} {@stamp}" />
 			<select id="priority" set="{@activity_record_0355.priority}" />
