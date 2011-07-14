@@ -1,0 +1,90 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+
+	<!--
+		Verify  module name in report wizard sync with updating module  name
+	-->
+
+	<puts text="Test: Admin_11601.xml starting" />
+
+	<!--Create a new contact -->
+	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml"/>
+
+	<!--Go to Admin page-->
+	<link text="Admin"/>
+
+	<!--Go to Rename module name page-->
+	<link text="Rename Modules"/>
+	
+	<!--Update one module singular name, such as "Cases"-->
+	<span id="slot4b">
+		<image index="1"/>
+	</span>
+
+	<!--Update string "Case" as "Ca" and save-->
+	<textfield id="slot4_stext" set="Ca"/>
+	<textfield id="slot4_text" set="Cas"/>
+	<table id="contentTable">
+		<button name="Save" value="Save"/>
+	</table>
+
+	<!--Goto Reports module and select create a new Summaiation report-->
+	<link id="moduleTab_Reports"/>
+	<link text="Create Report"/>
+	<image name="summationImg" click="true"/>
+	<wait timeout="5"/>
+
+	<table id="Cases">
+		<link text="Cas" alert="true"/>
+	</table>
+
+
+
+	<!--Set back to default module name-->
+	<!--Go to Admin page-->
+	<link text="Admin"/>
+
+	<!--Go to Rename module name page-->
+	<link text="Rename Modules"/>
+	
+	<!--Update one module singular name, such as "Cases"-->
+	<span id="slot4b">
+		<image index="1"/>
+	</span>
+
+	<!--Update string "Ca" as "Case" and "Cas" as "Cases" then save-->
+	<textfield id="slot4_stext" set="Case"/>
+	<textfield id="slot4_text" set="Cases"/>
+	<table id="contentTable">
+		<button name="Save" value="Save"/>
+	</table>
+
+	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml"/>
+	<puts text="Test: Admin_11601.xml finished" />
+</soda>
