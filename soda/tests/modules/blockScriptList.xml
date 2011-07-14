@@ -175,6 +175,21 @@
 		<modulename>admin</modulename>
 	</block>
 
+	<block>
+		<testfile>Admin_11596</testfile>
+		<bugnumber></bugnumber>
+		<reason>6_3_0 new feature not implement</reason>
+		<modulename>admin</modulename>
+	</block>
+
+	<block>
+		<testfile>Admin_11601</testfile>
+		<bugnumber></bugnumber>
+		<reason>6_3_0 new feature not implement</reason>
+		<modulename>admin</modulename>
+	</block>
+
+
 
 	<block>
 		<testfile>Admin_36109</testfile>
