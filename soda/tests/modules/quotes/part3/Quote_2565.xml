@@ -48,7 +48,7 @@
                 <button id="contracts_quotes_create_button"/>
             </table>
         </div>           
-	<wait timeout="2"/>
+	<wait timeout="5"/>
 	<browser assert="Contract Overview"/>
 	<textfield id="name" set="New Contract Record"/>
 	<button id="Contracts_subpanel_save_button"/>
