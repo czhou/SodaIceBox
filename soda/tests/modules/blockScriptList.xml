@@ -971,6 +971,20 @@
         </block>
 
 	<block>
+                <testfile>Project_2863</testfile>
+                <bugnumber>44404</bugnumber>
+                <reason>.</reason>
+                <modulename>Projects</modulename>
+        </block>
+	
+	<block>
+                <testfile>Project_2856</testfile>
+                <bugnumber>44404</bugnumber>
+                <reason>.</reason>
+                <modulename>Projects</modulename>
+        </block>
+
+	<block>
                 <testfile>Project_2845</testfile>
                 <bugnumber>44404</bugnumber>
                 <reason>Need double click to oprate Gantt Chart.</reason>
