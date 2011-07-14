@@ -26,49 +26,47 @@
 -->
 
 <soda>
-	<!-- Verify that deleting a meeting is canceled when clicking "Cancel" button -->
-	<puts text="Test: Calendar_0698.xml starting." />
-	<csv file="{@global.scriptsdir}/csvs/calendar/CalendarAssertText.csv" var="calendar" />
-
-	<!-- Create a meeting record. -->
-	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
-
-	<div id="Meetings">
-		<link text="View Meetings" />
-	</div>
-	<div class="moduleTitle">
-		<link href="index.php?module=Meetings&amp;action=index" click="false" />
-	</div>
-
-	<button id="search_form_clear" />
-	<button id="search_form_submit" />
-
-	<form id="MassUpdate">
-		<link text="{@pre_meeting_name}" />
-	</form>
-	<div class="moduleTitle">
-		<link href="index.php?module=Meetings&amp;action=index" click="false" />
-		<browser assert="{@pre_meeting_name}" />
-	</div>
-
-	<button value="Delete" alert="false" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Meetings&amp;action=index" click="false" />
-		<browser assert="{@pre_meeting_name}" />
-	</div>
-
-	<div id="Meetings">
-		<link text="View Meetings" />
-	</div>
-
-	<button id="search_form_clear" />
-	<textfield id="name_basic" set="{@pre_meeting_name}" />
-	<button id="search_form_submit" />
-	<form id="MassUpdate">
-		<span class="pageNumbers" assert="(1 - 1 of 1)" />
-	</form>
+	<!--
+		Save a call by TYPE a campaign name for a one to one relationship
+	-->
+	<!-- test github commit -->
+	<puts text="Test: Campaigns_10759.xml Starting." />
 	
-	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+	<link text="Admin" />
+	<link text="Studio" />
 
-	<puts text="Test: Calendar_0698.xml finished." />
+	<div id="Buttons">
+		<link text="/.*Campaigns.*/" />
+		<link text="/.*Relationships.*/" />
+	</div>
+	
+	<button name="addrelbtn" />
+	
+	<select id="relationship_type_field" set="one-to-one" />
+	<select id="rhs_mod_field" set="Calls" />
+	<wait timeout="5" />
+	<button name="saverelbtn" />
+	<wait />
+	<button name="addrelbtn" click="false" />
+	
+	<csv file="{@global.scriptsdir}/csvs/campaigns/CampaignAssertText.csv" var="campaigns" />
+
+	<!-- Create one campaign records. -->
+	<script file="{@global.scriptsdir}/modules/lib/Campaign_Create_Lib.xml" />
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+	<form id="EditView">
+		<textfield id="name" set="Call_Campaign_10759" />
+		<textfield id="campaigns_calls_name" set="{@Campaign_Name}" jscriptevent="onkeydown" />
+		<textfield id="campaigns_calls_name" jscriptevent="onkeyup" click="false" />
+		<button value="Save" />
+	</form>
+	<wait timeout="3" />
+	<button id="edit_button" click="false" />
+	
+	<!--Delete the test data-->
+	<script file="{@global.scriptsdir}/modules/lib/Campaign_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/TargetList_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<puts text="Test: Campaigns_10759.xml finished." />
 </soda>

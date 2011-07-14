@@ -31,6 +31,7 @@
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 	<button name="Activities_createtask_button" />
+	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0355.csv" var="activity_record_0355">
 		<form id="form_SubpanelQuickCreate_Tasks">
 			<textfield id="name" set="{@activity_record_0355.name} {@user.name} {@stamp}" />
@@ -57,6 +58,7 @@
 
 		<!--user select-->
 		<button id="btn_assigned_user_name" />
+		<wait timeout="3" />
 		<browser assert="User Search" />
 		<textfield name="last_name_advanced" set="{@activity_record_0355.assigned_user_name}" />
 		<button value="Search" />
@@ -65,6 +67,7 @@
 		<!--teams select-->
 		<table id="form_SubpanelQuickCreate_Tasks_team_name_table">
 			<button value="Select" />
+			<wait timeout="3" />
 		</table>
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@activity_record_0355.team_name}" />

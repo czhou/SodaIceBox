@@ -27,45 +27,38 @@
 
 <soda>
 	<!--
-		Save a call by TYPE a campaign name for a one to one relationship
+		Product_relationship_with_quote
 	-->
-	<puts text="Test: Campaigns_10759.xml Starting." />
-	
-	<link text="Admin" />
-	<link text="Studio" />
+	<puts text="Test: Product_8627.xml starting" />
+	<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml" />
 
-	<div id="Buttons">
-		<link text="/.*Campaigns.*/" />
-		<link text="/.*Relationships.*/" />
-	</div>
-	
-	<button name="addrelbtn" />
-	
-	<select id="relationship_type_field" set="one-to-one" />
-	<select id="rhs_mod_field" set="Calls" />
-	<wait timeout="5" />
-	<button name="saverelbtn" />
-	<wait />
-	<button name="addrelbtn" click="false" />
-	
-	<csv file="{@global.scriptsdir}/csvs/campaigns/CampaignAssertText.csv" var="campaigns" />
-
-	<!-- Create one campaign records. -->
-	<script file="{@global.scriptsdir}/modules/lib/Campaign_Create_Lib.xml" />
-	<link id="moduleTab_Calls" />
-	<link text="Log Call" />
-	<form id="EditView">
-		<textfield id="name" set="Call_Campaign_10759" />
-		<textfield id="campaigns_calls_name" set="{@Campaign_Name}" jscriptevent="onkeydown" />
-		<textfield id="campaigns_calls_name" jscriptevent="onkeyup" click="false" />
-		<button value="Save" />
+	<!--Goto created product detail view-->
+	<link id='moduleTab_Products'/>
+	<browser assert="Products"/>
+	<link text="Basic Search" required="false"/>
+	<button id="search_form_clear"/>
+	<form id="search_form">
+	<textfield id="name_basic" set="{@pre_product_name}"/>
 	</form>
-	<wait timeout="3" />
-	<button id="edit_button" click="false" />
-	
-	<!--Delete the test data-->
-	<script file="{@global.scriptsdir}/modules/lib/Campaign_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/TargetList_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
-	<puts text="Test: Campaigns_10759.xml finished." />
+	<button id="search_form_submit"/>
+
+	<table class="list view">
+		<browser assert="{@pre_product_name}"/>
+		<link text="{@pre_product_name}"/>
+	</table>
+
+	<!--Check the related quote link-->
+	<link text="{@pre_Quote_name}" click="false" exists="true"/>
+	<span id="quote_id">
+		<browser assert="{@pre_Quote_name}"/>
+	</span>
+
+	<!--Run Delete XML -->
+	<script file="{@global.scriptsdir}/modules/lib/Quote_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Product_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductCategory_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Manufacturer_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductType_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Delete_Lib.xml" />
+	<puts text="Test: Product_8627.xml finished" />
 </soda>

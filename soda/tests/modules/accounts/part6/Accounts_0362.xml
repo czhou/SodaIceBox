@@ -42,10 +42,11 @@
 	</table>
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0358.csv" var="activity_record_0358">
 		<button name="Activities_createtask_button" />
+		<wait timeout="3" />
 		<button id="Tasks_subpanel_full_form_button" />
 		<textfield id="name" set="{@activity_record_0358.task_name}"/>
 		<select id="status" set="{@activity_record_0358.task_status}"/>
-		<button id="CANCEL" />
+		<button id="CANCEL" alert="true" />
 
 		<wait timeout="10"/>
 		<div id="subpanel_activities">
