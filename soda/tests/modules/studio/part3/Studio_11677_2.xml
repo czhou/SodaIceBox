@@ -29,7 +29,7 @@
     <browser assert="Add Field" />
     
     <!--create account record and contacts-->
-    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" />
     <div id ="Accounts_detailview_tabs">
 		<browser assert="{@pre_account_name}" />
 		<browser assertnot="description" />

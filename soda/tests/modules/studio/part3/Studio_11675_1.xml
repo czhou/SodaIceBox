@@ -27,7 +27,7 @@
     <browser assert="Add Field" />
     
     <!--create account record and opportunities-->
-    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" />
     
     <csv file="{@global.scriptsdir}/csvs/studio/Studio_11675_1.csv" var="studio11675">
     	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />

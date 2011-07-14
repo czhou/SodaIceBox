@@ -27,7 +27,7 @@
     <browser assert="Add Field" />
     
     <!--create account record and contact-->
-    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />   
+    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" />   
     <script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" />
     <button id="edit_button" />
     <button id="btn_account_name" />  	

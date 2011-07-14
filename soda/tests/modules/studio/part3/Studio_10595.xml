@@ -2,8 +2,11 @@
     
     <!-- auto updating calculated field that contain related function when related record changes -->
     <puts text="Test: Studio_10595.xml starting" />
-        
-     <!-- set description field as calculated field and define formula -->
+     
+    <!--create account record and opportunities-->
+    <script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />  
+    
+    <!-- set description field as calculated field and define formula -->
     <timestamp />
     <link text="Admin" />
     <link text="Studio" assertPage="false" />
@@ -25,10 +28,7 @@
     </form>
     <wait timeout="10" />
     <browser assert="Add Field" />
-    
-    <!--create account record and opportunities-->
-    <script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.xml" />   
-    
+        
     <!-- check the calculation result -->
     <csv file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.csv" var="opp_record">
     	<link id="moduleTab_Accounts" />
