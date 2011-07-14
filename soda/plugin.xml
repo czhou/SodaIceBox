@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+   <plugin>
+      <name>hide dcmenu-button</name>
+      <control>button</control>
+      <event>afterfound</event>
+      <jsfile>plugins/nodcmenu.js</jsfile>
+   </plugin>
+
+    <plugin>
+      <name>hide dcmenu-button</name>
+      <control>link</control>
+      <event>afterfound</event>
+      <jsfile>plugins/nodcmenu.js</jsfile>
+   </plugin>
+
+   <plugin>
+      <name>hide dcmenu-button</name>
+      <control>div</control>
+      <event>afterfound</event>
+      <jsfile>plugins/nodcmenu.js</jsfile>
+   </plugin>
+
+   <plugin>
+      <name>hide dcmenu-button</name>
+      <control>span</control>
+      <event>afterfound</event>
+      <jsfile>plugins/nodcmenu.js</jsfile>
+   </plugin>
+
+   <plugin>
+      <name>hide dcmenu-button</name>
+      <control>checkbox</control>
+      <event>afterfound</event>
+      <jsfile>plugins/nodcmenu.js</jsfile>
+   </plugin>
+</data>
+
