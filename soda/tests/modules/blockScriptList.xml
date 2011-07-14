@@ -955,6 +955,20 @@
 	</block>
 	
 	<block>
+		<testfile>Studio_10599</testfile>
+		<bugnumber>45199</bugnumber>
+		<reason>45199</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_10600</testfile>
+		<bugnumber>45199</bugnumber>
+		<reason>45199</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
 		<testfile>roles_11734</testfile>
 		<bugnumber>44687</bugnumber>
 		<reason>bug 44687</reason>
