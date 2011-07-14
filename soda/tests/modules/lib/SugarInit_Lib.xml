@@ -328,9 +328,9 @@
 		<textfield id="new_password" set="{@SugarInit.pass}" />
 		<textfield id="confirm_pwd" set="{@SugarInit.pass}" />
 		<button id="Save" />
-      
-      <div id="sugarMsgWindow_h" timeout="3">
-         <link class="container-close" />
+
+      <div id="sugarMsgWindow_h" timeout="3"> 
+            <link class="container-close" />
       </div>
 
       <link id="moduleTab_Users" click="false" jscriptevent="onmouseover" />      
