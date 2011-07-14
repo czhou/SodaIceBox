@@ -57,7 +57,7 @@
         <div id="list_subpanel_project">
                 <link class="listViewTdToolsS1" index="1"/>
         </div>
-	<wait timeout="3"/>
+	<wait timeout="10"/>
 	
         <textfield id="name" set="Modified Project Record"/>
 	<button value="Cancel" alert="true"/>
