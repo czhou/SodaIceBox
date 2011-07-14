@@ -71,7 +71,7 @@
 
 	<!--Delete created task-->
 	<div id="list_subpanel_activities">
-		<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
+		<link class="listViewTdToolsS1" index="2" alert="true"/>
 	</div>
 	<wait timeout="5"/>
 	<div id="list_subpanel_activities">
