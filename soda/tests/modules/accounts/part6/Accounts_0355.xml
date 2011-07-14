@@ -30,8 +30,8 @@
 
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
-	<button name="Activities_createtask_button" />
-	<wait timeout="3" />
+	<button id="Activities_createtask_button" />
+	<wait timeout="5" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0355.csv" var="activity_record_0355">
 		<form id="form_SubpanelQuickCreate_Tasks">
 			<textfield id="name" set="{@activity_record_0355.name} {@user.name} {@stamp}" />
@@ -43,17 +43,11 @@
 			<textfield id="date_due_date" set="{@activity_record_0355.date_due_date}" />
 			<select id="date_due_hours" set="{@activity_record_0355.date_due_hours}" />
 			<select id="date_due_minutes" set="{@activity_record_0355.date_due_minutes}" />
-			<select id="date_due_meridiem" set="{@activity_record_0355.date_due_meridiem}"
-				required="false" />
-			<checkbox id="date_due_flag" set="{@activity_record_0355.date_due_flag}" />
 
 			<!--Start Date-->
 			<textfield id="date_start_date" set="{@activity_record_0355.date_start_date}" />
 			<select id="date_start_hours" set="{@activity_record_0355.date_start_hours}" />
 			<select id="date_start_minutes" set="{@activity_record_0355.date_start_minutes}" />
-			<select id="date_start_meridiem" set="{@activity_record_0355.date_start_meridiem}"
-				required="false" />
-			<checkbox id="date_start_flag" set="{@activity_record_0355.date_start_flag}" />
 		</form>
 
 		<!--user select-->
