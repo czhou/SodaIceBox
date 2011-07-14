@@ -26,7 +26,7 @@
 -->
 
 <soda>
-	<puts text='Contract_4576:Edit Note_Verify that Note can be edited for Contract.'/>
+	<puts text='Contract_4576: Select Product_Verify that Product can be specified by check box for Contract.'/>
 
 	<!--Create a contract with filling all the fields-->
 	<script file='{@global.scriptsdir}/modules/lib/Product_Create_Lib.xml'/>
