@@ -113,6 +113,13 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Calendar_0754</testfile>
+		<bugnumber>45268</bugnumber>
+		<reason>Error message does not trigger when non-existent team is used</reason>
+		<modulename>calendar</modulename>
+	</block>
+	
+	<block>
 		<testfile>Activities_B36109</testfile>
 		<bugnumber>36109</bugnumber>
 		<reason>Cannot Change Date Sent on Saved Emails</reason>

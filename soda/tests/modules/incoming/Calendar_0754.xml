@@ -48,14 +48,15 @@
 	
 	<textfield id="team_name_collection_0" set="non_existent_team123" jscriptevent="onkeydown" />
 	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
-	
+	<textfield id="name" click="true" />
+	<wait timeout="3" />
 	<button value="Save" />
 	
 	<span id="EditView_team_name_input_div_0">
 		<browser assert="No Primary Team specified" />
 	</span>
 	
-	<button value="Cancel" alert="true" />
+	<button id="CANCEL" alert="true" />
 	
 	<puts text="Test: Calendar_0754.xml finished." />
 </soda>
