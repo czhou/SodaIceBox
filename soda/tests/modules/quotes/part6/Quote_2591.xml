@@ -51,7 +51,7 @@
         	<textfield name="estimated_start_date" set="{@quote_2591.estimated_start_date}"/>
         	<textfield name="estimated_end_date" set="{@quote_2591.estimated_end_date}"/>
         	<button id="Project_subpanel_save_button"/> 
-        	<wait timeout="5"/>
+        	<wait timeout="10"/>
 		<div id="list_subpanel_project">
         		<browser assert="{@quote_2591.project_name}"/>
 			

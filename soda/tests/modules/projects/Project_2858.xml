@@ -46,7 +46,7 @@
 		<select id="status" set="{@Project_2858.meeting_status}"/>
 		
 		<button id="Meetings_subpanel_save_button"/>
-		<wait timeout="3"/>	
+		<wait timeout="10"/>	
 		
 		<link text="{@Project_2858.meeting_name}" click="false"/>
 		<div id="list_subpanel_history">

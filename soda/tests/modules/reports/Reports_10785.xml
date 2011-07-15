@@ -33,7 +33,7 @@
 	<link id="moduleTab_Reports" />
 	<link text="Create Report" />
 	<image name="summationImg" click="true" />
-	<link class="studiolink" text="Opportunities" />
+	<link class="studiolink" text="Opportunities" alert="true"/>
 
 	<csv file="{@global.scriptsdir}/csvs/reports/Reports_10785.csv" var="reports_10785">
 

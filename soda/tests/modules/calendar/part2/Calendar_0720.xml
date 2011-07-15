@@ -68,6 +68,6 @@
 	</div>
         
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
-
+	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
 	<puts text="Test: Calendar_0720.xml finished." />
 </soda>
