@@ -47,5 +47,5 @@
 		<wait timeout="2" />
 		<browser assert="{@account_list_sort.name}" />
 	</csv>
-
+	<var var="pre_account_sort" set="{@account_list_sort.name}" />
 </soda>

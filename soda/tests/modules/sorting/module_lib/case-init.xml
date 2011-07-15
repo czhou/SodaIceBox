@@ -50,7 +50,7 @@
 		<button id="edit_button" click="false" />
 		<browser assert="{@case_list_sort.name}" />
 	</csv>
-
+	<var var="pre_case_sort" set="{@case_list_sort.name}" />
 	<puts text="case-init.xml finished." />
 </soda>
 

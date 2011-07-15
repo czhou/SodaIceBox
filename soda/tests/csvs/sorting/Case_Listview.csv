@@ -1,5 +1,5 @@
-number,name,account_name,priority,status,field_asc,field_desc
-1,1_case,1_account,High,Assigned,4,7
-2,2_case,2_account,High,Closed,5,6
-3,A_case,A_account,Medium,New,6,5
-4,B_case,B_account,Low,Rejected,7,4
+number,name,account_name,priority,status,field_asc,field_desc,sub_asc,sub_desc
+1,1_case,1_account,High,Assigned,4,7,8,5
+2,2_case,2_account,High,Closed,5,6,7,6
+3,A_case,A_account,Medium,New,6,5,6,7
+4,B_case,B_account,Low,Rejected,7,4,5,8
