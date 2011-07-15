@@ -1,5 +1,5 @@
-last_name,title,account_name,phone_office,field_asc,field_desc
-1_contact,Director Operations,1_account,123-456-7890,4,7
-2_contact,Director Sales,2_account,234-567-8901,5,6
-A_contact,IT Developer,A_account,345-678-9012,6,5
-B_contact,Mgr Operations,B_account,456-789-0123,7,4
+last_name,title,account_name,city,state,phone_office,field_asc,field_desc,sub_asc,sub_desc
+1_contact,Director Operations,1_account,Cupertino,CA,123-456-7890,4,7,5,8
+2_contact,Director Sales,2_account,New Jersey,NJ,234-567-8901,5,6,6,7
+A_contact,IT Developer,A_account,New York,NY,345-678-9012,6,5,7,6
+B_contact,Mgr Operations,B_account,Utah,UT,456-789-0123,7,4,8,5

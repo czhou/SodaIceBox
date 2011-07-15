@@ -45,13 +45,15 @@
 		
 		<form id="EditView">
 			<textfield id="phone_work" set="{@contact_list_sort.phone_office}" />
-			<button id="SAVE_HEADER" />
+			<textfield id="primary_address_city" set="{@contact_list_sort.city}" />
+			<textfield id="primary_address_state" set="{@contact_list_sort.state}" />
+			<button id="SAVE_HEADER"/>
 		</form>
 		<wait timeout="2" />
 		<button id="edit_button" click="false" />
 		<browser assert="{@contact_list_sort.last_name}" />
 	</csv>
-
+	<var var="pre_contact_sort" set="{@contact_list_sort.last_name}" />
 	<puts text="contact-init.xml finished." />
 </soda>
 
