@@ -74,5 +74,8 @@
 		<hidden name="record" var="pre_activity_call_subpanel_id" />
 	</form>
 	<var var="pre_activity_call_subpanel_name" set="{@call_record_0214.name} {@stamp}" />
+	
+	<!--Delete the record-->
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0214.xml finished." />
 </soda>
