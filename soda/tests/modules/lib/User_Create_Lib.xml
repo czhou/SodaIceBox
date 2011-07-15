@@ -50,7 +50,7 @@
 				  <button id="Save" />
 				  <wait timeout="5" />
 				  <div id="sugarMsgWindow" >
-					<link text="Close" />
+					<link text="Close" required="false" />
 				  </div>
 			</csv>
 			<browser assert="{@user.first_name}{@stamp} {@user.last_name}" />
