@@ -817,6 +817,13 @@
         </block>
 
 	<block>
+                <testfile>contract_1719</testfile>
+                <bugnumber></bugnumber>
+                <reason>send keys doesnt work</reason>
+                <modulename>contracts</modulename>
+        </block>
+
+	<block>
                 <testfile>contract_1667</testfile>
                 <bugnumber>42741</bugnumber>
                 <reason>bug 42741</reason>
