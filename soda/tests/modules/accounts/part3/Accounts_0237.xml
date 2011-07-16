@@ -57,7 +57,7 @@
 	<div id="subpanel_activities_newDiv">
 		<button id="Tasks_subpanel_save_button" />
 	</div>
-	<wait timeout="5" />
+	<wait timeout="10" />
 
 	<!-- Verify Task is created then edit -->
 	<div id="list_subpanel_activities">

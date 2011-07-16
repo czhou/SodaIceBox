@@ -26,7 +26,11 @@
 -->
 
 <sodaconfig>
+<<<<<<< HEAD
    <gvar name="url">http://localhost/SugarEnt-Full-6.3.0</gvar>
+=======
+   <gvar name="url">http://10.13.8.132/ent621_28</gvar>
+>>>>>>> refs/heads/6_2_0
    <gvar name="scriptsdir">tests</gvar>
    <cmdopt name="browser">firefox</cmdopt>
    <errorskip type="css" />

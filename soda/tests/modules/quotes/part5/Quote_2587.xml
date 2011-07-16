@@ -52,7 +52,7 @@
 			<textfield id="name" set="{@Quote_2587.note_name} {@user.name} {@stamp}" />
 			<textarea id="description" set="{@Quote_2587.note_description}" />
 			<button id="Notes_subpanel_save_button" />
-			<wait timeout="5" />
+			<wait timeout="10" />
 		</form>
 
 		<div id="list_subpanel_history">

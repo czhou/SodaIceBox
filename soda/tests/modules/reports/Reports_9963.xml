@@ -49,7 +49,9 @@
 		</table>
 	</div>
 	
-	<table id="Contacts" click="true" />
+	<table id="Contacts" click="true" >
+		<link text="Contacts" alert="true"/>
+	</table>
 	
 	<link id="ygtvlabelel2" click="true" />
 	

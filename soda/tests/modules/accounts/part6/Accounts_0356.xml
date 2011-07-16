@@ -26,68 +26,65 @@
 -->
 
 <soda>
-	<puts text="Test Case 355: Account Detail - Activities sub-panel - Create Task_Verify that a 'Pending Input' or 'In Process' task is created for an related account record in in-line form on 'ACTIVITIESi' sub-panel."/>
+	<puts text="Test Case 356: Account Detail - Activities sub-panel - Create Task_Verify that a deferred or completed task is created for an related account record in in-line form on 'ACTIVITIES'"/>
 
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
-	<button name="Activities_createtask_button" />
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0355.csv" var="activity_record_0355">
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0356.csv" var="activity_record_0356">
+		<button name="Activities_createtask_button" />
+		<wait timeout="3" />
 		<form id="form_SubpanelQuickCreate_Tasks">
-			<textfield id="name" set="{@activity_record_0355.name} {@user.name} {@stamp}" />
-			<select id="priority" set="{@activity_record_0355.priority}" />
-			<select id="status" set="{@activity_record_0355.status}" />
-			<textfield id="description" set="{@activity_record_0355.description}" />
+			<textfield id="name" set="{@activity_record_0356.name} {@user.name} {@stamp}" />
+			<select id="priority" set="{@activity_record_0356.priority}" />
+			<select id="status" set="{@activity_record_0356.status}" />
+			<textfield id="description" set="{@activity_record_0356.description}" />
 
 			<!--Due Date-->
-			<textfield id="date_due_date" set="{@activity_record_0355.date_due_date}" />
-			<select id="date_due_hours" set="{@activity_record_0355.date_due_hours}" />
-			<select id="date_due_minutes" set="{@activity_record_0355.date_due_minutes}" />
-			<select id="date_due_meridiem" set="{@activity_record_0355.date_due_meridiem}"
+			<textfield id="date_due_date" set="{@activity_record_0356.date_due_date}" />
+			<select id="date_due_hours" set="{@activity_record_0356.date_due_hours}" />
+			<select id="date_due_minutes" set="{@activity_record_0356.date_due_minutes}" />
+			<select id="date_due_meridiem" set="{@activity_record_0356.date_due_meridiem}"
 				required="false" />
-			<checkbox id="date_due_flag" set="{@activity_record_0355.date_due_flag}" />
+			<checkbox id="date_due_flag" set="{@activity_record_0356.date_due_flag}" />
 
 			<!--Start Date-->
-			<textfield id="date_start_date" set="{@activity_record_0355.date_start_date}" />
-			<select id="date_start_hours" set="{@activity_record_0355.date_start_hours}" />
-			<select id="date_start_minutes" set="{@activity_record_0355.date_start_minutes}" />
-			<select id="date_start_meridiem" set="{@activity_record_0355.date_start_meridiem}"
+			<textfield id="date_start_date" set="{@activity_record_0356.date_start_date}" />
+			<select id="date_start_hours" set="{@activity_record_0356.date_start_hours}" />
+			<select id="date_start_minutes" set="{@activity_record_0356.date_start_minutes}" />
+			<select id="date_start_meridiem" set="{@activity_record_0356.date_start_meridiem}"
 				required="false" />
-			<checkbox id="date_start_flag" set="{@activity_record_0355.date_start_flag}" />
+			<checkbox id="date_start_flag" set="{@activity_record_0356.date_start_flag}" />
 		</form>
 
 		<!--user select-->
 		<button id="btn_assigned_user_name" />
+		<wait timeout="3" /> 
 		<browser assert="User Search" />
-		<textfield name="last_name_advanced" set="{@activity_record_0355.assigned_user_name}" />
+		<textfield name="last_name_advanced" set="{@activity_record_0356.assigned_user_name}" />
 		<button value="Search" />
-		<link text="{@activity_record_0355.assigned_user_name}" />
+		<link text="{@activity_record_0356.assigned_user_name}" />
 
 		<!--teams select-->
 		<table id="form_SubpanelQuickCreate_Tasks_team_name_table">
 			<button value="Select" />
+			<wait timeout="3" />
 		</table>
 		<browser assert="Team Search" />
-		<textfield name="name" set="{@activity_record_0355.team_name}" />
+		<textfield name="name" set="{@activity_record_0356.team_name}" />
 		<button value="Search" />
-		<link text="{@activity_record_0355.team_name}" />
+		<link text="{@activity_record_0356.team_name}" />
 		<wait timeout="2" />
 		<button id="Tasks_subpanel_save_button" />
 		<wait timeout="10" />
 
 		<!--Verify the task record created in subpanel-->
-		<div id="list_subpanel_activities">
-			<table class="list view">
-				<link text="{@activity_record_0355.name} {@user.name} {@stamp}" />
-			</table>
-		</div>
-		<wait timeout="5" />
-		<browser assert="{@activity_record_0355.name} {@user.name} {@stamp}" />
-
+		<browser action="refresh"/>
+		<link text="{@activity_record_0356.name} {@user.name} {@stamp}" click="false"/>
 	</csv>
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
-	<puts text="Test: Accounts_0355.xml finished." />
+	<puts text="Test: Accounts_0356.xml finished." />
 </soda>
                               

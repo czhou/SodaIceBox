@@ -73,7 +73,7 @@
 			<table class="list view">
 				<link text="{@Quote_2586.call_name} {@user.name} {@stamp}" click="false" />
 				<link class="listViewTdToolsS1" index="2" alert="true" />
-				<wait timeout="3" />
+				<wait timeout="5" />
 				<link text="{@Quote_2586.call_name} {@user.name} {@stamp}" click="false"
 					exist="false" />
 			</table>

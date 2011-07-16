@@ -46,7 +46,8 @@
 		<!--try to delete team from detail view-->
 		<browser assert="Teams: {@SugarInit.last_name}" />
 		<button value=" Delete " alert="true" />
-		<browser assert="This private team cannot be deleted unless the user [{@SugarInit.last_name}] is deleted." />
+		<wait timeout="2" />
+		<browser assert="This private team [{@SugarInit.last_name}] cannot be deleted until the user [{@SugarInit.last_name}] is deleted." />
 		
 		<!--verify team not delelted-->
 		<link text="Teams" />

@@ -37,13 +37,15 @@
 			<select id="status" set="{@lead_list_sort.status}" />
 			<textfield name="account_name" set="{@lead_list_sort.account_name}" />
 			<textfield id="phone_work" set="{@lead_list_sort.phone_office}" />
+			<select id="lead_source" set="{@lead_list_sort.lead_source}" />
+			<textfield id="refered_by" set="{@lead_list_sort.refered_by}" />
 			<button id="SAVE" />
 		</form>
 		<wait timeout="2" />
 		<button id="edit_button" click="false" />
 		<browser assert="{@lead_list_sort.last_name}" />
 	</csv>
-
+	<var var="pre_lead_sort" set="{@lead_list_sort.last_name}" />
 	<puts text="lead-init.xml finished." />
 </soda>
 

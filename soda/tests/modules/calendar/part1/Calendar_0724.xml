@@ -56,16 +56,15 @@
 	
 	<button id="Notes_subpanel_save_button" />
 	
-	<wait timeout="3" />
+	<wait timeout="5" />
 	
-	<div id="subpanel_history">
-		<link class="listViewTdToolsS1" index="2" jscriptevent="onclick" 
-				alert="true" />
+	<div id="list_subpanel_history">
+		<link class="listViewTdToolsS1" index="2" alert="true" />
 	</div>
 
 	<wait timeout="3" />
 	
-	<div id="subpanel_history">
+	<div id="list_subpanel_history">
 		<browser assertnot="{@note_name}" />
 	</div>
 	
@@ -88,14 +87,13 @@
 	
 	<wait timeout="3" />
 	
-	<div id="subpanel_history">
-	<link class="listViewTdToolsS1" index="2" jscriptevent="onclick" 
-				alert="true" />
+	<div id="list_subpanel_history">
+	<link class="listViewTdToolsS1" index="2" alert="true" />
 	</div>
 
 	<wait timeout="3" />
 	
-	<div id="subpanel_history">
+	<div id="list_subpanel_history">
 		<browser assertnot="{@note_name}" />
 	</div>
 

@@ -56,7 +56,7 @@
 			<browser assert="User Profile" />	
 			<button value="Delete" />
 			<div id="Confirm " >
-				<button id="yui-gen55-button" />
+				<button value="OK" />
 			</div>
 			<wait timeout="3" />
 			<browser assert="Reassign Records" />

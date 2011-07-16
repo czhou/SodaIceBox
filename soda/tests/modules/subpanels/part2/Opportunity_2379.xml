@@ -112,7 +112,7 @@
 	<!--Run Delete XML -->
 	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
-	<!--script file="scripts/sugarcrm/modules/lib/Team_Delete_Lib.xml"/ -->
+	<script file="scripts/sugarcrm/modules/lib/TargetList_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Campaign_Delete_Lib.xml" />
 	<puts text="Test: Opportunity_2379.xml finished." />
 </soda>

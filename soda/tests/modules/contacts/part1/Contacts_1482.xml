@@ -57,10 +57,10 @@
 	<table id="composeHeaderTable0">
 		<button index="1" alert="true"/>
 	</table>
-	<wait timeout="5"/>
+	<wait timeout="10"/>
 
 	<div id="list_subpanel_history">
-		<link text="/rem/" class="listViewTdToolsS1" alert="true"/>
+		<link  class="listViewTdToolsS1" index="2" alert="true"/>
 	</div>
 	<wait timeout="5"/>
 

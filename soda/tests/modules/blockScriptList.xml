@@ -113,6 +113,13 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Calendar_0754</testfile>
+		<bugnumber>45268</bugnumber>
+		<reason>Error message does not trigger when non-existent team is used</reason>
+		<modulename>calendar</modulename>
+	</block>
+	
+	<block>
 		<testfile>Activities_B36109</testfile>
 		<bugnumber>36109</bugnumber>
 		<reason>Cannot Change Date Sent on Saved Emails</reason>
@@ -398,7 +405,7 @@
 		<reason>to be fixed later</reason>
 		<modulename>Incoming</modulename>
 	</block>
-	
+	<!-- 
 	<block>
 		<testfile>Calendar_0762.xml</testfile>
 		<bugnumber></bugnumber>
@@ -468,7 +475,8 @@
 		<reason>to be fixed later</reason>
 		<modulename>Incoming</modulename>
 	</block>
-
+	 -->
+	 
 	<block>
 		<testfile>Dashboard_1737.xml</testfile>
 		<bugnumber></bugnumber>
@@ -552,35 +560,6 @@
 		<reason>to be fixed later</reason>
 		<modulename>Incoming</modulename>
 	</block>
-	
-	<block>
-		<testfile>Teammanagement_10384.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Teammanagement_10385.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Teammanagement_10386.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Teammanagement_10387.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
 	<!-- End incoming failed scripts -->
 
 	<block>
@@ -710,6 +689,14 @@
 	</block>
 
 	<block>
+		<testfile>Contacts_11755</testfile>
+		<bugnumber>44945</bugnumber>
+		<reason>Bug 44945</reason>
+		<modulename>Contacts</modulename>
+	</block>
+
+
+	<block>
 		<testfile>Contacts_1591</testfile>
 		<bugnumber></bugnumber>
 		<reason>Send key re-attached to previous window</reason>
@@ -793,6 +780,14 @@
 		<reason>feature changed</reason>
 		<modulename>opportunity</modulename>
 	</block>
+	
+	<block>
+		<testfile>Opportunity_11756</testfile>
+		<bugnumber>44962</bugnumber>
+		<reason>bug 44962</reason>
+		<modulename>opportunity</modulename>
+	</block>
+	
 	
 	<block>
 		<testfile>Opportunity_2311</testfile>
@@ -998,6 +993,13 @@
         </block>
 
 	<block>
+                <testfile>contract_1719</testfile>
+                <bugnumber></bugnumber>
+                <reason>send keys doesnt work</reason>
+                <modulename>contracts</modulename>
+        </block>
+
+	<block>
                 <testfile>contract_1667</testfile>
                 <bugnumber>42741</bugnumber>
                 <reason>bug 42741</reason>
@@ -1152,6 +1154,20 @@
         </block>
 
 	<block>
+                <testfile>Project_2863</testfile>
+                <bugnumber>44404</bugnumber>
+                <reason>.</reason>
+                <modulename>Projects</modulename>
+        </block>
+	
+	<block>
+                <testfile>Project_2856</testfile>
+                <bugnumber>44404</bugnumber>
+                <reason>.</reason>
+                <modulename>Projects</modulename>
+        </block>
+
+	<block>
                 <testfile>Project_2845</testfile>
                 <bugnumber>44404</bugnumber>
                 <reason>Need double click to oprate Gantt Chart.</reason>
@@ -1213,4 +1229,22 @@
                 <reason>Can't Create project task.</reason>
                 <modulename>Projects</modulename>
         </block>
+    <block>
+		<testfile>Admin_11760</testfile>
+		<bugnumber>44963</bugnumber>
+		<reason>the Create link shouldn't exist in Set Connector Properties</reason>
+		<modulename>Connector</modulename>
+	</block>
+	<block>
+		<testfile>Campaigns_11759</testfile>
+		<bugnumber>44872</bugnumber>
+		<reason>Save a call by TYPE a campaign name for a one to one relationship</reason>
+		<modulename>Campaigns</modulename>
+	</block>
+	<block>
+		<testfile>Campaigns_11758</testfile>
+		<bugnumber>44870</bugnumber>
+		<reason>Delete the campaign-account relationship during the campaign deleting</reason>
+		<modulename>Campaigns</modulename>
+	</block>
 </soda>

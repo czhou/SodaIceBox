@@ -66,7 +66,7 @@
 			<checkbox name="reminder_checked" set="{@Quote_2585.call_reminder_checked}" />
 			<textarea id="description" set="{@Quote_2585.call_description}" />
 			<button value="Save" />
-			<wait timeout="5" />
+			<wait timeout="10" />
 		</form>
 
 		<div id="list_subpanel_activities">

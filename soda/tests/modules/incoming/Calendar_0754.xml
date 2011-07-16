@@ -46,16 +46,23 @@
 	
 	<textfield id="name" set="temp_name_{@stamp}"/>
 	
+<<<<<<< HEAD
 	<textfield id="EditView_team_name_collection_0" set="non_existent_team123" jscriptevent="onkeydown" />
 	<textfield id="EditView_team_name_collection_0" jscriptevent="onkeyup" click="false" />
 	
+=======
+	<textfield id="team_name_collection_0" set="non_existent_team123" jscriptevent="onkeydown" />
+	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+	<textfield id="name" click="true" />
+	<wait timeout="3" />
+>>>>>>> refs/heads/6_2_0
 	<button value="Save" />
 	
 	<span id="EditView_team_name_input_div_0">
 		<browser assert="No Primary Team specified" />
 	</span>
 	
-	<button value="Cancel" alert="true" />
+	<button id="CANCEL" alert="true" />
 	
 	<puts text="Test: Calendar_0754.xml finished." />
 </soda>
