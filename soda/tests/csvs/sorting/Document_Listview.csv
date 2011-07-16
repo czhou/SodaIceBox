@@ -1,5 +1,5 @@
-name,filename_file,category_id,subcategory_id,exp_date,field_asc,field_desc
-1_Document,1.txt,Marketing,FAQ,07/12/2011,4,7
-2_Document,2.txt,Marketing,FAQ,07/13/2011,5,6
-a_Document,A.txt,Sales,Marketing Collateral,07/14/2011,6,5
-b_Document,B.txt,Sales,Product Brochures,07/15/2011,7,4
+name,filename_file,category_id,subcategory_id,active_date,exp_date,status_id,field_asc,field_desc,sub_asc,sub_desc
+1_Document,1.txt,Marketing,FAQ,07/12/2012,07/12/2012,Active,4,7,5,8
+2_Document,2.txt,Marketing,FAQ,07/13/2012,07/13/2012,Draft,5,6,6,7
+a_Document,A.txt,Sales,Marketing Collateral,07/14/2012,07/14/2012,FAQ,6,5,7,6
+b_Document,B.txt,Sales,Product Brochures,07/15/2012,07/15/2012,Pending,7,4,8,5

@@ -38,13 +38,15 @@
 			<select id="category_id" set="{@document_list_sort.category_id}" />
 			<select id="subcategory_id" set="{@document_list_sort.subcategory_id}" />
 			<textfield id="exp_date" set="{@document_list_sort.exp_date}" />
+			<textfield id="active_date" set="{@document_list_sort.active_date}" />
+			<select id="status_id" set="{@document_list_sort.status_id}" />
 			<button id="SAVE_HEADER" />
 		</form>
 		<wait timeout="2" />
 		<button id="edit_button" click="false" />
 		<browser assert="{@document_list_sort.name}" />
 	</csv>
-
+	<var var="pre_document_sort" set="{@document_list_sort.name}" />
 	<puts text="document-init.xml finished." />
 </soda>
 
