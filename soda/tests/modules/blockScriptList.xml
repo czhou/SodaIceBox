@@ -234,6 +234,7 @@
 	<!-- Bug 43612 end-->
 	
 	<!-- Beginning of illegal javascript related blocks -->
+	<!-- 
 	<block>
 		<testfile>Reports_7734</testfile>
 		<bugnumber></bugnumber>
@@ -303,7 +304,7 @@
 		<reason>illegal javascript accessor</reason>
 		<modulename>Incoming</modulename>
 	</block>
-	
+	 -->
 	<block>
 		<testfile>Reports_8342</testfile>
 		<bugnumber></bugnumber>
@@ -531,7 +532,7 @@
 		<reason>Bug43685</reason>
 		<modulename>Incoming</modulename>
 	</block>
-	
+	<!--  
 	<block>
 		<testfile>Calendar_0703</testfile>
 		<bugnumber>39955</bugnumber>
@@ -559,7 +560,7 @@
 		<reason>bug 39955 - false duplicate account warning</reason>
 		<modulename>Accounts</modulename>
 	</block>
-	
+	-->
 	<block>
 		<testfile>Accounts_0074</testfile>
 		<bugnumber>43348</bugnumber>
