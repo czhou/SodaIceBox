@@ -32,8 +32,9 @@
 	<script file="{@global.scriptsdir}/modules/lib/Document_Create_Lib.xml" />
 	<csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" var="SugarInit" />
 	<button id="edit_button" />
-	<browser assert="Assigned to:" />
-	<textfield id="assigned_user_name" exist="true" />
+	<div id="LBL_PANEL_ASSIGNMENT">
+		<browser assert="Assigned to:" />
+	</div>
 	<button id="btn_assigned_user_name" />
 	<browser assert="User Search" />                        
 	<textfield name="last_name_advanced" set="{@SugarInit.last_name}" />                        
