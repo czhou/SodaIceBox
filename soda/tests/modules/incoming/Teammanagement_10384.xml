@@ -26,7 +26,8 @@
 -->
 
 <soda>
-    <puts text="---Teammanagement_10384:Delete private team from detail view with the corresponding user still exists---Start!" />
+<!-- Delete private team from detail view with the corresponding user still exists -->
+    <puts text="Test: Admin_10384.xml starting" />
     <!--goto Admin-->
     <div id="globalLinks">
         <link text="Admin" />
@@ -61,5 +62,5 @@
 		</table>
 	</csv>
 
-    <puts text="---Teammanagement_10384---Finished!" />
+    <puts text="Test: Admin_10384.xml finished" />
 </soda>

@@ -92,6 +92,7 @@
 		<link text="Edit" />
 	</table>
 	
+	<select id="shared_ids" clear="true" />
 	<select id="shared_ids" set="{@qa_user}" />
 	
 	<table id="calendarModule">
@@ -99,7 +100,7 @@
 	</table>
 	
 	<table id="daily_cal_table">
-		<browser assert="{@call2_name}" />
+		<browser assert="/{@call2_name}/" />
 		<browser assertnot="{@call1_name}" />
 	</table>
 	
@@ -109,6 +110,7 @@
 		<link text="Edit" />
 	</table>
 	
+	<select id="shared_ids" clear="true" />
 	<select id="shared_ids" set="Administrator" />
 	
 	<table id="calendarModule">

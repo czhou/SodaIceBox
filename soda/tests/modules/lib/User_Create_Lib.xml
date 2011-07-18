@@ -49,9 +49,6 @@
 				  <textfield id="confirm_pwd" set="{@user.pass}" />
 				  <button id="Save" />
 				  <wait timeout="5" />
-				  <div id="sugarMsgWindow" >
-					<link text="Close" required="false" />
-				  </div>
 			</csv>
 			<browser assert="{@user.first_name}{@stamp} {@user.last_name}" />
 			<var var="pre_user_name" set="{@user.last_name}{@stamp}" />
