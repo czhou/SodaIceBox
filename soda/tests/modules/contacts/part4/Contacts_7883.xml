@@ -63,7 +63,7 @@
 		
 
 		<button id="Tasks_subpanel_save_button" />
-		<wait timeout="5" />
+		<wait timeout="10" />
 		<div id="list_subpanel_activities">
 			<browser assert="{@Contacts_7883_Task.name} {@user.name} {@stamp}" />
 		</div>
