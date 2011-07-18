@@ -512,6 +512,13 @@
 	</block>
 
 	<block>
+		<testfile>Emails_11800</testfile>
+		<bugnumber>45071</bugnumber>
+		<reason>Retesting will show fail</reason>
+		<modulename>Email</modulename>
+	</block>
+
+	<block>
 		<testfile>Opportunity_10887</testfile>
 		<bugnumber>41775</bugnumber>
 		<reason>Amount doesn't carry over to Full Form</reason>
