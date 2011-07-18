@@ -1,0 +1,71 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		Delete archive email_Verify that a related archived email can be deleted from contact detail view
+	-->
+	<puts text="Test: Contacts_4353.xml starting." />
+
+	<!--Create contact record-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+
+	<!--Archive a new email from History subpanel and fill all mandatoy field-->
+	<button id="ArchiveEmail_button"/>
+
+	<textfield id="parent_name" assert="{@pre_contact_first_name} {@pre_contact_last_name}"/>
+	<select id="parent_type" assert="Contacts"/>
+	<image id="jscal_trigger" click="true"/>
+	<link id="callnav_today"/>
+	<link text="Close" class="container-close"/>
+	<textfield name="time_start" set="12:00"/>
+	<timestamp/>
+	<textfield name="name" set="contacts_4353_archive_email_{@stamp}"/>
+	
+	<!--Save-->
+	<button id="SAVE_HEADER"/>
+
+	<!--Verify the in the History subpanel of contact-->
+	<div id="list_subpanel_history">
+		<browser assert="contacts_4353_archive_email_{@stamp}"/>
+		<browser assert="Archived"/>
+	</div>
+	
+	<!--Delete the archived email link-->
+	<div id="list_subpanel_history">
+		<link class="listViewTdToolsS1" index="2" alert="true"/>
+	</div>
+	<!--Verify the in the History subpanel of contact-->
+	<div id="list_subpanel_history">
+		<browser assertnot="contacts_4353_archive_email_{@stamp}"/>
+		<browser assertnot="Archived"/>
+	</div>
+
+	<!--Delete records-->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<puts text="Test: Contacts_4353.xml finished." />
+</soda>
