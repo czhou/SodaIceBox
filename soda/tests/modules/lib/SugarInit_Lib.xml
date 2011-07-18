@@ -329,7 +329,7 @@
 		<textfield id="confirm_pwd" set="{@SugarInit.pass}" />
 		<button id="Save" />
 
-      <div id="sugarMsgWindow_h" timeout="3"> 
+      <div id="sugarMsgWindow" timeout="3"> 
             <link class="container-close" />
       </div>
 
