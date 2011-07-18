@@ -35,6 +35,13 @@
 	</block>
 	
 	<block>
+		<testfile>Reports_11798</testfile>
+		<bugnumber>45303</bugnumber>
+		<reason>Soda cannot assert which select option is selected.</reason>
+		<modulename>Reports</modulename>
+	</block>
+	
+	<block>
 		<testfile>BugTracker_9546</testfile>
 		<bugnumber>44021</bugnumber>
 		<reason>"Delete All" after pagination only deletes one page.</reason>
