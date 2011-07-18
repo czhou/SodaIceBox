@@ -29,14 +29,6 @@
 	<!-- Verify that "My Favorite Record" dash-let displays favorited record names correctly -->
 	<puts text="Test: Dashboard_11170.xml starting" />
 	
-	<!--  Create a Account record and make it a favorite -->
-	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
-	<javascript>
-		var stars = document.getElementsByClassName('off');
-		var star = stars[0];
-		star.onclick();
-	</javascript>
-	
 	<!-- Create a Contact record and make it a favorite -->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 	<javascript>
@@ -63,6 +55,14 @@
 	
 	<!--  Create a Case record and make it a favorite -->
 	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
+	<javascript>
+		var stars = document.getElementsByClassName('off');
+		var star = stars[0];
+		star.onclick();
+	</javascript>
+	
+	<!--  Create a Account record and make it a favorite -->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 	<javascript>
 		var stars = document.getElementsByClassName('off');
 		var star = stars[0];

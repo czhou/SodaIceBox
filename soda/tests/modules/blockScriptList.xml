@@ -183,34 +183,6 @@
 	</block>
 	
 	<block>
-		<testfile>Dashlet_10753</testfile>
-		<bugnumber>42808</bugnumber>
-		<reason>ONLY FOR TEST IN 6.2.2</reason>
-		<modulename>home</modulename>
-	</block>
-	
-	<block>
-		<testfile>Dashboard_11170</testfile>
-		<bugnumber>42808</bugnumber>
-		<reason>ONLY FOR TEST IN 6.2.2</reason>
-		<modulename>home</modulename>
-	</block>
-	
-	<block>
-		<testfile>Dashboard_11115</testfile>
-		<bugnumber>42808</bugnumber>
-		<reason>ONLY FOR TEST IN 6.2.2</reason>
-		<modulename>home</modulename>
-	</block>
-	
-	<block>
-		<testfile>Admin_11114</testfile>
-		<bugnumber>37255</bugnumber>
-		<reason>ONLY FOR TEST IN 6.2.2</reason>
-		<modulename>admin</modulename>
-	</block>
-	
-	<block>
 		<testfile>Dashlet_11035</testfile>
 		<bugnumber>43882</bugnumber>
 		<reason>Edit Button in all Dashlets brings you to Create New Team/User/Related Module</reason>
