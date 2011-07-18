@@ -120,6 +120,20 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Calendar_3689</testfile>
+		<bugnumber>45268</bugnumber>
+		<reason>Error message does not trigger when non-existent team is used</reason>
+		<modulename>calendar</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_3705</testfile>
+		<bugnumber>45268</bugnumber>
+		<reason>Error message does not trigger when non-existent team is used</reason>
+		<modulename>calendar</modulename>
+	</block>
+	
+	<block>
 		<testfile>Calendar_0754</testfile>
 		<bugnumber>45268</bugnumber>
 		<reason>Error message does not trigger when non-existent team is used</reason>
