@@ -35,7 +35,7 @@
 	</div>
 
 	<csv file="{@global.scriptsdir}/modules/lib/Project_Create_Lib.csv" var="Project_Create_Lib">
-		<textfield id="name_basic" set="{@Project_Create_Lib.project_name}"/>
+		<button id="search_form_clear"/>
 		<button id="search_form_submit"/>
 		
 		<checkbox id="massall" set="true"/>
