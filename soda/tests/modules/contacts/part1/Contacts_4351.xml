@@ -27,6 +27,7 @@
 
 <soda>
 	<!--
+		Create archive email_Verify that a related archived email can be created from contact detail view
 	-->
 	<puts text="Test: Contacts_4351.xml starting." />
 
