@@ -58,7 +58,7 @@
 		<checkbox name="reminder_checked" set="{@Contacts_7887_Meeting.reminder_checked}" />
 
 		<button id="Meetings_subpanel_save_button" />
-		<wait timeout="3" />
+		<wait timeout="5" />
 	</csv>
 	
 	<!--Delete meeting from Activities subpanel-->
