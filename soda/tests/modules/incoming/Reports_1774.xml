@@ -107,17 +107,19 @@
 	
 	<link id="moduleTab_Home" />
 	<link id="add_dashlets" />
+	<wait timeout="1" />
 	<link id="chartCategoryAnchor" />
-	
+	<wait timeout="1" />
 	<span id="myTeamExpCol">
 		<link index="1" />
 	</span>
 
 	<browser assert="{@report_name}" />
 	<link text="{@report_name}" />
+	<wait timeout="3" />
 	
 	<!-- clean up -->
-	
+	<table class="formHeader h3Row" jscriptevent="onmouseover"/>
 	<div class="dashletToolSet" index="1">
 		<link index="1" alert="true" />
 	</div>
@@ -128,7 +130,7 @@
 	<link id="moduleTab_Home" />
 
 	<!-- clean up -->
-	
+	<table class="formHeader h3Row" jscriptevent="onmouseover"/>
 	<div class="dashletToolSet" index="1">
 		<link index="3" alert="true" />
 	</div>

@@ -71,24 +71,26 @@
 	<wait timeout="4" />
 	
 	<link id="moduleTab_Reports" />
-
-	<textfield name="name_basic" set="{@report_title}" />
-	<button id="search_form_submit" />
+	<button name="clear" />
+	<textfield name="name" set="{@report_title}" />
+	<button value="Search" />
 	<browser assert="{@report_title}" />
 
-	<checkbox class="checkbox" index="1" set="true" />
-	
-	<link text="Actions"/>
+	<checkbox id="massall" click="true" />
+	<link id="actions_link" />
 	<link text="Delete" alert="true" />
 	
-	<textfield name="name_basic" set="{@report_title}" />
-	<button id="search_form_submit" />
+	<textfield name="name" set="{@report_title}" />
+	<button value="Search" />
 	
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />
-	
    	<browser assertnot="{@report_title}" />
-	
+   	
+   	<button name="clear" />
+	<button value="Search" />
+	<span class="pageNumbers" assert="(1 - 20 of 44)" />
+		
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
+
 	<puts text="Test: Reports_8047.xml finished." />
 </soda>

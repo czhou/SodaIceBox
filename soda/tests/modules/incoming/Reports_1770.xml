@@ -89,12 +89,13 @@
 	
 	<link id="moduleTab_Home" />
 	<link id="add_dashlets" />
-
+	<wait timeout="2" />
 	<link id="chartCategoryAnchor" />
+	<wait timeout="2" />
 	<span id="globalExpCol">
 		<link index="1" />
 	</span>
-	
+	<wait timeout="2" />
 	<link text="{@report_name}" />
 
 	<wait timeout="4" />
@@ -103,7 +104,7 @@
 		<browser assert="{@report_name}" />
 	</ul>
 	
-	
+	<table class="formHeader h3Row" jscriptevent="onmouseover"/>
 	<div class="dashletToolSet" index="1">
 		<link index="2" alert="true" />
 	</div>
