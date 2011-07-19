@@ -55,7 +55,7 @@
 	
 	<link id="ygtvlabelel2" click="true" />
 	
-	<row id="yui-rec44" click="true" />		<!-- Account Name -->
+	<row id="iAccounts_name" click="true" />		<!-- Account Name -->
 	
 	<row id="Filter.1_table_filter_row_1">
 		<cell index="3">
