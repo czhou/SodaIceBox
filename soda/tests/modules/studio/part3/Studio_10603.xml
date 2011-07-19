@@ -1,0 +1,111 @@
+<soda>
+    
+    <!-- auto updating calculated field that contain rollupMax function when related record created -->
+    <puts text="Test: Studio_10603.xml starting" />
+        
+     <!-- set description field as calculated field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="rollupMax($opportunities,&quot;amount&quot;)"/>
+      <button id="fomulaSaveButton" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="10" />
+    <browser assert="Add Field" />
+    
+    <!--create account record and calls-->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" />       
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_10603.csv" var="studio10603">
+   		<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
+    	<button id="edit_button" />
+    	<div id="EditView_tabs">
+    		<textfield id="amount" set="{@studio10603.amount1}" />
+    	</div>
+    	<button id="SAVE_HEADER" />
+    	<table id="detailpanel_1">
+    		<browser assert="{@pre_opp_name}" />
+        	<browser assert=" {@studio10603.amount1} " />
+      	</table>  	
+    </csv>
+    <link id="moduleTab_Accounts" />
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />
+	</table>
+	<div id ="Accounts_detailview_tabs">
+		<browser assert="{@pre_account_name}" />
+	</div>
+	<button id="edit_button" />
+	<wait timeout="10" />
+	<textfield id="description" assert="{@studio10603.max1}" />
+	<button id="SAVE" />
+	<table id="detailpanel_1">
+		<browser assert="{@pre_account_name}" />
+    	<span id="description" assert="{@studio10603.max1}" />
+  	</table>
+    
+    <!-- create the related record-->    
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
+	<button id="edit_button" />
+	<div id="EditView_tabs">
+		<textfield id="amount" set="{@studio10603.amount2}" />
+	</div>
+	<button id="SAVE_HEADER" />
+	<table id="detailpanel_1">
+		<browser assert="{@pre_opp_name}" />
+    	<browser assert="{@studio10603.amount2}" />
+  	</table>  	
+    	
+	<!-- check the calculation result -->
+	<link id="moduleTab_Accounts" />
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />
+	</table>
+	<div id ="Accounts_detailview_tabs">
+		<browser assert="{@pre_account_name}" />
+	</div>
+	<button id="edit_button" />
+	<wait timeout="10" />
+	<textfield id="description" assert="{@studio10603.max2}" />
+	<button id="SAVE" />
+	<table id="detailpanel_1">
+		<browser assert="{@pre_account_name}" />
+    	<span id="description" assert="{@studio10603.max2}" />
+  	</table>
+    
+    
+    <!-- Now uncalculated the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="false" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    
+    <!-- Delete account record -->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_10603.xml finished." />
+</soda>
