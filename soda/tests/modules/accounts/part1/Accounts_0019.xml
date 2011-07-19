@@ -37,35 +37,44 @@
 		<link text="Import Accounts" />
 
 
-		<!--Step1-->
+		<!-- Step1 -->
 		<div class="moduleTitle">
-			<browser assert="Step 1: Select Data Source and Import Action" />
+			<browser assert="Step 1: Upload Import File" />
 		</div>
-
-		<select id="custom_enclosure" set='Double Quote (")' />
-		<button id="gonext" />
-		<wait timeout="5" />
-
-		<!--Step2-->
-		<div class="moduleTitle">
-			<browser assert="Step 2: Upload Import File" />
-		</div>
-
+		<!-- Set path to import file -->
 		<filefield name="userfile" set="{@global.scriptsdir}/export/Accounts.csv" />
+		
 		<button id="gonext" />
-		<wait timeout="5" />
+		<wait timeout="3" />
 
-		<!--Step3-->
+		<!-- Step2 -->
 		<div class="moduleTitle">
-			<browser assert="Step 3: Confirm Fields and Import" />
+			<browser assert="Step 2: Confirm Import File Properties" />
 		</div>
 
+		<button id="gonext" />
+		<wait timeout="3" />
+
+		<!-- Step3 -->
+		<div class="moduleTitle">
+			<browser assert="Step 3: Confirm Field Mappings" />
+		</div>
+		
+		<button id="gonext" />
+		<wait timeout="3" />
+
+		<!-- Step4 -->
+		<div class="moduleTitle">
+			<browser assert="Step 4: Check for Possible Duplicates" />
+		</div>
+		
 		<button id="importnow" />
-		<wait timeout="10" />
+		<wait timeout="7" />
+		
+		<!-- Step 5 -->
 		<div class="moduleTitle">
-			<browser assert="Results" />
+			<browser assert="Step 5: View Import Results" />
 		</div>
-
 
 		<!--Search the record to assert import successfully -->
 		<link id="moduleTab_Accounts" />
