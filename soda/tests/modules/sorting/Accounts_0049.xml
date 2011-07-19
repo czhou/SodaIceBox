@@ -57,7 +57,7 @@
 		<link class="listViewThLinkS1" index="5" />
 		<wait timeout="2" />
 		<link class="listViewThLinkS1" index="2" />
-		<wait timeout="1" />
+		<wait timeout="2" />
 		<csv file="{@global.scriptsdir}/csvs/sorting/Case_Listview.csv" 
 		  var="Account_Case_Subpanel">
 			<table class="list view">
