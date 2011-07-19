@@ -51,8 +51,6 @@
 
 	<!--Assert-->
 	<textfield id="name_advanced" assert="" />
-	<select name="industry_advanced[]" assert="" />
-	<select name="account_type_advanced[]" assert="" />
 	<textfield id="phone_advanced" assert="" />
 	<textfield id="email_advanced" assert="" />
 
