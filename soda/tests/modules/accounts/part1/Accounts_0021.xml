@@ -38,28 +38,36 @@
 
 		<!--Step1-->
 		<div class="moduleTitle">
-			<browser assert="Step 1: Select Data Source and Import Action" />
-		</div>
-		<select id="custom_enclosure" set='Double Quote (")' />
-		<button id="gonext" />
-		<wait timeout="5" />
-
-		<!--Step2-->
-		<div class="moduleTitle">
-			<browser assert="Step 2: Upload Import File" />
+			<browser assert="Step 1: Upload Import File" />
 		</div>
 		<filefield name="userfile" set="{@global.scriptsdir}/export/Accounts.csv" />
 		<button id="gonext" />
-		<wait />
+		<wait timeout="3" />
 
-		<!--Step3-->
+		<!--Step2-->
 		<div class="moduleTitle">
-			<browser assert="Step 3: Confirm Fields and Import" />
+			<browser assert="Step 2: Confirm Import File Properties" />
+		</div>
+		<button id="gonext" />
+		<wait timeout="3" />
+
+		<!-- Step3 -->
+		<div class="moduleTitle">
+			<browser assert="Step 3: Confirm Field Mappings" />
+		</div>
+		<button id="gonext" />
+		<wait timeout="3" />
+		
+		<!-- Step4 -->
+		<div class="moduleTitle">
+			<browser assert="Step 4: Check for Possible Duplicates" />
 		</div>
 		<button id="importnow" />
-		<wait />
+		<wait timeout="7" />
+		
+		<!-- Step 5 -->
 		<div class="moduleTitle">
-			<browser assert="Results" />
+			<browser assert="Step 5: View Import Results" />
 		</div>
 
 		<!--Search the record to assert import successfully -->
@@ -130,7 +138,7 @@
 
 		<button value="Save" />
 	</csv>
-
+	<wait timeout="3" />
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0021.xml finished." />
