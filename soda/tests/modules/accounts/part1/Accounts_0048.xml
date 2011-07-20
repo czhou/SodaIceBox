@@ -41,6 +41,7 @@
 		<button id="search_form_submit" />
 	</form>
 
+	<wait timeout="3" />
 	<table class="list view">
 		<browser assert="{@pre_account_name}" />
 		<link text="{@pre_account_name}" />
@@ -52,6 +53,7 @@
 
 	<!--Create a case in Cases Subpanel-->
 	<button name="account_cases_create_button" />
+	<wait timeout="1" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0105.csv" var="case_record_0105">
 		<form id="form_SubpanelQuickCreate_Cases">
 			<textfield id="name" set="{@case_record_0105.name} {@user.name} {@stamp}" />
@@ -97,14 +99,11 @@
 		<link text="{@case_record_0048.assigned_user_name}" />
 
 		<!--teams select-->
-		<table id="EditView_team_name_table">
-			<button value="Select" />
-		</table>
+		<button name="teamSelect" />
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@case_record_0048.team_name}" />
 		<button value="Search" />
 		<link text="{@case_record_0048.team_name}" />
-
 		<button value="Save" />
 
 		<!--return account case subpanel-->
