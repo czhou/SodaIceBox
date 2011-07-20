@@ -116,6 +116,9 @@
 
 	<browser assert="{@report_name}" />
 	<link text="{@report_name}" />
+	<div id="dashletsDialogHeader">
+		<link index="1" />
+	</div>
 	<wait timeout="3" />
 	
 	<!-- clean up -->

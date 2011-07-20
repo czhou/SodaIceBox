@@ -33,9 +33,8 @@
 
 	<!--goto Report module -->
 	<link id="moduleTab_Reports" />
-	<link text="Basic Search" required="false" />
-	<button value=" Clear " />
-	<textfield name="name_basic" set="{@pre_report_name}" />
+	<button name="clear" />
+	<textfield name="name" set="{@pre_report_name}" />
 	<button value="Search" />
 	<table class="list view">
 		<link text="{@pre_report_name}" />
@@ -44,27 +43,7 @@
 
 	<button id="printPDFButton" alert="false" />
 
-	<!--Delete created Report -->
-	<link id="moduleTab_Reports" />
-	<link text="Basic Search" required="false" />
-	<form class="search_form">
-		<button name="clear" />
-		<textfield name="name_basic" set="{@pre_report_name}" />
-		<button value="Search" />
-	</form>
-	<table class="list view">
-		<link text="{@pre_report_name}" />
-	</table>
-	<button id="deleteReportButton" alert="true" />
-	<wait timeout="5" />
-	<link id="moduleTab_Reports" />
-	<form class="search_form">
-		<button name="clear" />
-		<button value="Search" />
-	</form>
-	<table class="list view">
-		<span class="pageNumbers" assert="(1 - 20 of 44)" />
-	</table>
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 
 	<puts text="Test: Reports_7787.xml finished." />
 </soda>

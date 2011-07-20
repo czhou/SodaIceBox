@@ -76,7 +76,7 @@
 	<button value="Next &gt;" />
 	
 	<timestamp />
-	<var var="report_name" set="Report_{@stamp}" />
+	<var var="report_name" set="QA_Created_Report_{@stamp}" />
 	
 	
 	<textfield name="save_report_as" set="{@report_name}" />
@@ -97,7 +97,9 @@
 	</span>
 	<wait timeout="2" />
 	<link text="{@report_name}" />
-
+	<div id="dashletsDialogHeader">
+		<link index="1" />
+	</div>
 	<wait timeout="4" />
 	
 	<ul id="col_0_0">
@@ -109,7 +111,6 @@
 		<link index="2" alert="true" />
 	</div>
 
-	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
 	
 	<puts text="Test: Reports_1770.xml finished." />

@@ -42,17 +42,15 @@
 	
 	<var var="report_name" set="Partner Account List" />
 	
-	<textfield name="name_basic" set="{@report_name}" />
-	<button id="search_form_submit" />
+	<textfield name="name" set="{@report_name}" />
+	<button value="Search" />
 	<browser assert="{@report_name}" />
 	<link text="{@report_name}" />
 	
 	<wait timeout="4" />
 	
 	<javascript>
-		<!-- this is a javascript hack to enable the first of 
-			the favorites... -->
-		stars = document.getElementsByClassName('off');
+		var stars = document.getElementsByClassName('off');
 		var star = stars[0];
 		star.onclick();
 	</javascript>
@@ -66,17 +64,15 @@
 	
 	<link id="moduleTab_Reports" />
 	
-	<textfield name="name_basic" set="{@report_name}" />
-	<button id="search_form_submit" />
+	<textfield name="name" set="{@report_name}" />
+	<button value="Search" />
 	<browser assert="{@report_name}" />
 	<link text="{@report_name}" />
 	
 	<wait timeout="4" />
 	
 	<javascript>
-		<!-- this is a javascript hack to enable the first of 
-			the favorites... -->
-		stars = document.getElementsByClassName('on');
+		var stars = document.getElementsByClassName('on');
 		var star = stars[0];
 		star.onclick();
 	</javascript>

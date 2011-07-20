@@ -86,20 +86,7 @@
 	<browser assert="{@pre_meeting_name}" />
 	<browser assert="09/09/2020" />
 	
-	<!-- Delete the report created in this script -->
-	<link id="moduleTab_Reports" />
-	<button name="clear" />
-	<textfield name="name" set="{@report_title}" />
-	<button value="Search" />
-	<browser assert="{@report_title}" />
-	<checkbox id="massall" click="true" />
-	<link id="actions_link" />
-	<link text="Delete" alert="true" />
-	<wait timeout="2" />
-	<button name="clear" />
-	<button value="Search" />
-	<span class="pageNumbers" assert="(1 - 20 of 44)" />
-
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 
 	<puts text="Test: Reports_8160.xml finished." />

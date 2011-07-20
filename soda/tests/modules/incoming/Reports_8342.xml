@@ -39,57 +39,51 @@
 	-->
 	
 	<link id="moduleTab_Reports" />
-
-	<link text="Advanced Search" />
 	
-	<button value=" Clear " />
-	
+	<button name="clear" />
 	<textfield name="name" set="New Cases By Month" />
-	<button id="search_form_submit" />
+	<button value="Search" />
 	<browser assert="New Cases By Month" />
 	
 	<javascript>
-		<!-- this is a javascript hack to enable the first of 
-			the favorites... -->
-		stars = document.getElementsByClassName('off');
+		var stars = document.getElementsByClassName('off');
 		var star = stars[0];
 		star.onclick();
 	</javascript>
 	
 	<link id="moduleTab_Reports" />
 	
-	<button value=" Clear " />
+	<button name="clear" />
 	
 	<checkbox name="favorite" set="true" />
-	<button id="search_form_submit" />
+	<button value="Search" />
 	<browser assert="New Cases By Month" />	
 	
-	<button value=" Clear " />
+	<button name="clear" />
 	
 	<checkbox name="current_user_only" set="true" />
-	<button id="search_form_submit" />
+	<button value="Search" />
 	<browser assert="Administrator" />
 	
-	<button value=" Clear " />
+	<button name="clear" />
 	
 	<select_list name="report_module[]" set="Accounts" />
-	<button id="search_form_submit" />
+	<button value="Search" />
 	<browser assert="Accounts By Type By Industry" />
 	<browser assert="My New Customer Accounts" />
 	
-	<button value=" Clear " />
+	<button name="clear" />
 	<wait timeout="2" />
 	
 	<select_list name="report_type[]" set="summary" />
-	<button id="search_form_submit" />
+	<button value="Search" />
 	
 	<browser assert="My Usage Metrics (Today)" />
 	<browser assert="Accounts By Type By Industry" />
 	<browser assert="New Cases By Month" />
 	
-	<link text="Basic Search" />
-	<button value=" Clear " />	
-	<button id="search_form_submit" />
+	<button name="clear" />	
+	<button value="Search" />
 	
 	<puts text="Test: Reports_8342.xml finished." />
 </soda>
