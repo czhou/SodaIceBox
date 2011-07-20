@@ -26,9 +26,8 @@
 -->
 
 <soda>
-	<!-- Edit Meeting for Quote_Verify that meeting related to this Quote can
-		be removed successful.-->
-    <puts text='Test: Quote_2531.xml started.' />
+	<puts text="Test Case 2531: Remove the relationship between Meeting and Quote_Verify that meeting related to this Quote can be removed from its subpanel."/>	
+
     <csv file='{@global.scriptsdir}/csvs/quote/Quote_2531.csv' var='Quote_2531'>
 	<link id='moduleTab_Quotes'/>
         <browser assert='Quotes'/>
