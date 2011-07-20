@@ -36,40 +36,32 @@
 
 		<link text="Import Accounts" />
 
-
 		<!-- Step1 -->
 		<div class="moduleTitle">
 			<browser assert="Step 1: Upload Import File" />
 		</div>
 		<!-- Set path to import file -->
-		<filefield name="userfile" set="{@global.scriptsdir}/export/Accounts.csv" />
-		
+		<filefield name="userfile" set="{@global.scriptsdir}/export/Accounts.csv" />	
 		<button id="gonext" />
-		<wait timeout="3" />
-
+	
 		<!-- Step2 -->
 		<div class="moduleTitle">
 			<browser assert="Step 2: Confirm Import File Properties" />
 		</div>
-
 		<button id="gonext" />
-		<wait timeout="3" />
-
+	
 		<!-- Step3 -->
 		<div class="moduleTitle">
 			<browser assert="Step 3: Confirm Field Mappings" />
-		</div>
-		
+		</div>	
 		<button id="gonext" />
-		<wait timeout="3" />
 
 		<!-- Step4 -->
 		<div class="moduleTitle">
 			<browser assert="Step 4: Check for Possible Duplicates" />
-		</div>
-		
+		</div>	
 		<button id="importnow" />
-		<wait timeout="7" />
+		<wait timeout="2" />
 		
 		<!-- Step 5 -->
 		<div class="moduleTitle">
@@ -81,7 +73,10 @@
 		<div class="moduleTitle">
 			<link href="index.php?module=Accounts&amp;action=index" click="false" />
 		</div>
-
+		
+		<!-- added timeout since it was failing 7/20 -->
+		<wait timeout="2" />
+		
 		<textfield id="name_basic" set="{@account_record_0019.name}" />
 		<button id="search_form_submit" />
 		<table class="list view">
