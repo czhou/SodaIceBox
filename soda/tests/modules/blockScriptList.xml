@@ -35,6 +35,20 @@
 	</block>
 	
 	<block>
+		<testfile>Emails_9770</testfile>
+		<bugnumber>45361</bugnumber>
+		<reason>My Drafts folder isn't a link anymore.</reason>
+		<modulename>Emails</modulename>
+	</block>
+	
+	<block>
+		<testfile>Emails_9776</testfile>
+		<bugnumber>45361</bugnumber>
+		<reason>My Drafts folder isn't a link anymore.</reason>
+		<modulename>Emails</modulename>
+	</block>
+	
+	<block>
 		<testfile>Reports_11798</testfile>
 		<bugnumber>45303</bugnumber>
 		<reason>Soda cannot assert which select option is selected.</reason>
