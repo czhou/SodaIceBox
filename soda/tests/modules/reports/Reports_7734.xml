@@ -26,68 +26,95 @@
 -->
 
 <soda>
-	<!-- Reports: add and delete -->
-	<puts text="Test: Reports_7734 started." />
+	<puts text="Test: Reports_7734.xml starting." />
+	<!--
+	Action
 
-	<!--goto Reports module-->
+		/* Franklin 01/20/2011: modified the steps for 6.1.2 release */
+		1. Login to SugarCRM as a valid user.
+		2. Click "Reports" tab on navigation bar.
+		3. Click "Create Report" link from navigation Shortcuts.
+		4. Select a report type, such as "Rows and Columns Report"
+		5. Select module, such as "document".
+		6. Verify the related module are displayed in related modules list.
+		7. Select several columns in step "Choose Display Columns"
+		8. Click "Created User" and then click "Full Name"
+		9. Run the report.
+
+
+	Expected Results
+
+		/* Franklin 01/20/2011: modified the steps for 6.1.2 release */
+		5. Valid label name standing for module is displayed in UI.
+		9. Report result is displayed according to selected items in steps 7 and 8.
+	-->
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	
+	<button id="accounts_contacts_create_button" />
+	
+	<timestamp />
+	<var var="contact_last" set="Contact {@stamp}" />
+	<textfield id="last_name" set="{@contact_last}" />
+	<button id="Contacts_subpanel_save_button" />
+	
 	<link id="moduleTab_Reports" />
+	
 	<link text="Create Report" />
-	<browser assert="Report Wizard" />
-
-	<!--create row and column report-->
-	<image name="rowsColsImg" click="true" />
-	<table id="Documents"> 
-		<link text="Documents" alert="true" />
-	</table>
-
-	<link id="ygtvlabelel8" />
-
-	<div text="Address City" click="true" />
-	<wait timeout="1" />
-	<div text="Address Country" click="true" />
-	<wait timeout="1" />
-
-	<div id="filter_designer_div">
-		<browser assert="Documents &gt; Created User &gt; Address City" />
-		<browser assert="Documents &gt; Created User &gt; Address Country" />
-		<row id="Filter.1_table_filter_row_1">
-			<select name="qualify" set="Is Empty" />
-		</row>
-		<row id="Filter.1_table_filter_row_2">
-			<select name="qualify" set="Is Empty" />
-		</row>
+	
+	<wait timeout="2" />
+	<div id="report_type_div">
+		<image name="rowsColsImg" jscriptevent="onclick" click="true" />
 	</div>
-	<button name="Next &gt;" />
+	
+	<wait timeout="3" />
+	
+	<table id="Accounts">
+		<link text="Accounts" />
+	</table>
+	
+	<button value="Next &gt;" />
+	
+	
+	<wait timeout="4" />
 
-	<div text="Publish Date" click="true" />
-	<button name="Next &gt;" />
+		<div text="Name" click="true" />
 
-	<csv file="{@global.scriptsdir}/csvs/reports/Reports_7734.csv"
-		var="report_record_7734">
-		<textfield name="save_report_as"
-			set="{@report_record_7734.save_report_as}" />
-	</csv>
+	
+	<div id="module_tree_panel">
+		<link text="Assigned to User" />
+	</div>
+	
+	<div text="Full Name" click="true" />
+	
+	<div id="module_tree_panel">
+		<link text="Contacts" />
+	</div>
 
-	<button name="Save and Run" />
-	<wait />
-
-	<browser assert="Title: {@report_record_7734.save_report_as}" />
-
-	<!--Clear the report record created in this test-->
-	<link id="moduleTab_Reports"/>
-	<link text="Basic Search" required="false"/>
-	<wait timeout="2"/>
-	<button value=" Clear "/>
-	<textfield name="name_basic" set="{@report_record_7734.save_report_as}"/>
-	<button value="Search"/>
-
-	<checkbox name="massall" click="true" />
-	<link id="actions_link" />
-	<link text="Delete" alert="true" />
-	<span class="pageNumbers" assert="(0 - 0 of 0)" />
-
-        <button name="clear" />
-        <button id="search_form_submit" />
-
-	<puts text="Test: Reports_7734 finished." />
-</soda>
+	<div text="Last Name" click="true" />
+	
+	<button value="Next &gt;" />
+	
+	<timestamp />
+	<var var="report_title" set="QA_Created_{@stamp}" />
+	<textfield name="save_report_as" set="{@report_title}" />
+	
+	<button value="Save" />
+	
+	<wait timeout="4" />
+	
+	<div id="resultsDiv">
+		<browser assert="Name" />
+		<browser assert="{@pre_account_name}" />
+		<browser assert="Full Name" />
+		<browser assert="Administrator" />
+		<browser assert="Last Name" />
+		<browser assert="{@contact_last}" />
+	</div>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	
+	<puts text="Test: Reports_7734.xml finished." />
+</soda>	
