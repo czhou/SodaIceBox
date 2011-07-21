@@ -1232,6 +1232,18 @@
 		<reason>Save not working from Contact edit view subpanel</reason>
 		<modulename>Accounts</modulename>
 	</block>
+	<block>
+		<testfile>Accounts_0119.xml</testfile>
+		<bugnumber>45397</bugnumber>
+		<reason>Save not working from Contact edit view subpanel</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	<block>
+		<testfile>Accounts_0198.xml</testfile>
+		<bugnumber>45397</bugnumber>
+		<reason>Save not working from Contact edit view subpanel</reason>
+		<modulename>Accounts</modulename>
+	</block>
 	<!-- End of Gino's modules -->
 	
 </soda>
