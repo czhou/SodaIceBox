@@ -53,6 +53,7 @@
 		<span id="description" assert="{@studio11673.ave}" />
 	</div>
 	<button id="edit_button" />
+	<wait timeout="10" />
 	<textfield id="description" assert="{@studio11673.ave}" />
 	<button id="SAVE" />
 	<table id="detailpanel_1">

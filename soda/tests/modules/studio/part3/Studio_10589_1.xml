@@ -40,6 +40,7 @@
     		<browser assert="{@pre_account_name}" />
     	</div>
     	<button id="edit_button" />
+    	<wait timeout="10" />
     	<textfield id="description" assert="{@opp_record.amount}" />
     	<button id="SAVE" />
     	<table id="detailpanel_1">

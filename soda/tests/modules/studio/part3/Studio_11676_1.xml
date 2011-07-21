@@ -53,6 +53,7 @@
 		<span id="description" assert="{@studio11676.sum}" />
 	</div>
 	<button id="edit_button" />
+	<wait timeout="10" />
 	<textfield id="description" assert="{@studio11676.sum}" />
 	<button id="SAVE" />
 	<table id="detailpanel_1">

@@ -44,6 +44,7 @@
 		<span id="description" assert="{@studio11677.count}" />
 	</div>
 	<button id="edit_button" />
+	<wait timeout="10" />
 	<textfield id="description" assert="{@studio11677.count}" />
 	<button id="SAVE" />
 	<table id="detailpanel_1">
