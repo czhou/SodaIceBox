@@ -134,6 +134,13 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Reports_8252</testfile>
+		<bugnumber>45420</bugnumber>
+		<reason></reason>
+		<modulename>reports</modulename>
+	</block>
+	
+	<block>
 		<testfile>Reports_1770</testfile>
 		<bugnumber>45416</bugnumber>
 		<reason>A Chart Dashlet from a report with no information causes HTML errors on Home Page</reason>
@@ -223,14 +230,7 @@
 		<reason>Edit Button in all Dashlets brings you to Create New Team/User/Related Module</reason>
 		<modulename>home</modulename>
 	</block>
-	
-	<block>
-		<testfile>Calendar_10966</testfile>
-		<bugnumber>43439</bugnumber>
-		<reason>Inactive user shows in shared calendar filter</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
+
 	<block>
 		<testfile>Forecast_10968</testfile>
 		<bugnumber>33971</bugnumber>
@@ -267,50 +267,14 @@
 		<modulename>Subpanels</modulename>
 	</block>
 	<!-- Bug 43612 end-->
-
-	<!-- Begin incoming failed scripts -->
-	<block>
-		<testfile>Dashboard_1737.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
 	
 	<block>
-		<testfile>Admin_10393.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-
-	<block>
-		<testfile>Doc_10566.xml</testfile>
-		<bugnumber>36313</bugnumber>
+		<testfile>Doc_10566</testfile>
+		<bugnumber>45316</bugnumber>
 		<reason>no document owner</reason>
 		<modulename>Incoming</modulename>
 	</block>
-
-	<block>
-		<testfile>Search_10462.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
 	
-	<block>
-		<testfile>Search_10463.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Search_10468.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	<!-- End incoming failed scripts -->
 
 	<block>
 		<testfile>Emails_11443</testfile>
