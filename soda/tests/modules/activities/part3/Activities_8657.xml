@@ -51,15 +51,20 @@
 	
 	<link id="moduleTab_Calls" />
 
+	<!-- Click the Edit icon on the ListView. -->
 	<table class="list view">
 		<row class="oddListRowS1">
 			<link index="1" />
 		</row>
 	</table>
+
+	<form id="form_DCQuickCreate_Calls">
+		<div class="buttons">
+			<button id="Calls_subpanel_full_form_button" />
+		</div>
+	</form>
 	
-	<wait timeout="3" />
-	
-	<textfield id="name" set="{@call2_name}_modified" />
+	<textfield id="name" index="2" set="{@call2_name}_modified" />
 	<button id="save_and_continue" />
 	<wait timeout="3" />
 	<button id="CANCEL" />

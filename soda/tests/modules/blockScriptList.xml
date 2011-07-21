@@ -35,6 +35,20 @@
 	</block>
 	
 	<block>
+		<testfile>Activities_9354</testfile>
+		<bugnumber>45387</bugnumber>
+		<reason>"Accept?" column empty on My Calls dashlet.</reason>
+		<modulename>Activities</modulename>
+	</block>
+	
+	<block>
+		<testfile>Activities_11242</testfile>
+		<bugnumber>45387</bugnumber>
+		<reason>"Accept?" column empty on My Calls dashlet.</reason>
+		<modulename>Activities</modulename>
+	</block>
+	
+	<block>
 		<testfile>BugTracker_9546</testfile>
 		<bugnumber>44021</bugnumber>
 		<reason>"Delete All" after pagination only deletes one page.</reason>
