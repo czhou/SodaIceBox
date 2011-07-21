@@ -34,56 +34,56 @@
 			<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib_NoDep.xml" />
 			<button id="edit_button" />
 			<select id="quote_stage" set="Draft" />
-			<button value="Save" />
+			<button id="SAVE_HEADER" />
 			<table id="detailpanel_1">
 				<browser assert="Draft" />
 			</table>
 			<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib_NoDep.xml" />
 			<button id="edit_button" />
 			<select id="quote_stage" set="Negotiation" />
-			<button value="Save" />
+			<button id="SAVE_HEADER" />
 			<table id="detailpanel_1">
 				<browser assert="Negotiation" />
 			</table>
 			<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib_NoDep.xml" />
 			<button id="edit_button" />
 			<select id="quote_stage" set="Delivered" />
-			<button value="Save" />
+			<button id="SAVE_HEADER" />
 			<table id="detailpanel_1">
 				<browser assert="Delivered" />
 			</table>
 			<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib_NoDep.xml" />
 			<button id="edit_button" />
 			<select id="quote_stage" set="On Hold" />
-			<button value="Save" />
+			<button id="SAVE_HEADER" />
 			<table id="detailpanel_1">
 				<browser assert="On Hold" />
 			</table>
 			<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib_NoDep.xml" />
 			<button id="edit_button" />
 			<select id="quote_stage" set="Confirmed" />
-			<button value="Save" />
+			<button id="SAVE_HEADER" />
 			<table id="detailpanel_1">
 				<browser assert="Confirmed" />
 			</table>
 			<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib_NoDep.xml" />
 			<button id="edit_button" />
 			<select id="quote_stage" set="Closed Accepted" />
-			<button value="Save" />
+			<button id="SAVE_HEADER" />
 			<table id="detailpanel_1">
 				<browser assert="Closed Accepted" />
 			</table>
 			<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib_NoDep.xml" />
 			<button id="edit_button" />
 			<select id="quote_stage" set="Closed Lost" />
-			<button value="Save" />
+			<button id="SAVE_HEADER" />
 			<table id="detailpanel_1">
 				<browser assert="Closed Lost" />
 			</table>
 			<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib_NoDep.xml" />
 			<button id="edit_button" />
 			<select id="quote_stage" set="Closed Dead" />
-			<button value="Save" />
+			<button id="SAVE_HEADER" />
 			<table id="detailpanel_1">
 				<browser assert="Closed Dead" />
 			</table>
@@ -101,7 +101,7 @@
 			<checkbox id="open_only_basic" set="true" />
 			<button id="search_form_submit" />
 			<table class="list view">
-					<span class='pageNumbers' assert='(1 - 5of 5)' />
+					<span class='pageNumbers' assert='(1 - 5 of 5)' />
 					<browser assertnot="Closed Accepted" />
 					<browser assertnot="Closed Lost" />
 					<browser assertnot="Closed Dead" />

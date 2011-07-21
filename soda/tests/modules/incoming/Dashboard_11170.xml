@@ -89,6 +89,7 @@
 	</div>
 	
 	<!-- Remove Dashlet from dashboard -->
+	<div class="hd" jscriptevent="onmouseover" />
 	<div class="dashletToolSet" index="1">
 		<link index="2" alert="true" />
 	</div>
