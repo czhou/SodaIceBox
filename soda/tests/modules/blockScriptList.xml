@@ -28,34 +28,6 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
-		<testfile>BugTracker_0654</testfile>
-		<bugnumber>43344</bugnumber>
-		<reason>DetailView pagination disappears when you save or cancel on the EditView.</reason>
-		<modulename>Bug Tracker</modulename>
-	</block>
-	
-	<block>
-		<testfile>Activities_9354</testfile>
-		<bugnumber>45387</bugnumber>
-		<reason>"Accept?" column empty on My Calls dashlet.</reason>
-		<modulename>Activities</modulename>
-	</block>
-	
-	<block>
-		<testfile>Activities_11242</testfile>
-		<bugnumber>45387</bugnumber>
-		<reason>"Accept?" column empty on My Calls dashlet.</reason>
-		<modulename>Activities</modulename>
-	</block>
-	
-	<block>
-		<testfile>BugTracker_9546</testfile>
-		<bugnumber>44021</bugnumber>
-		<reason>"Delete All" after pagination only deletes one page.</reason>
-		<modulename>Bug Tracker</modulename>
-	</block>
-	
-	<block>
 		<testfile>Accounts_0275</testfile>
 		<bugnumber>44836</bugnumber>
 		<reason>44836</reason>
@@ -67,6 +39,41 @@
 		<bugnumber>43294</bugnumber>
 		<reason>Bug43294</reason>
 		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
+		<testfile>Activities_9354</testfile>
+		<bugnumber>45387</bugnumber>
+		<reason>"Accept?" column empty on My Calls dashlet.</reason>
+		<modulename>Activities</modulename>
+	</block>
+	
+	<block>
+		<testfile>Activities_10262</testfile>
+		<bugnumber>45426</bugnumber>
+		<reason>Some select lists do not respect the $sugar_config['disable_autocomplete']= true; setting.</reason>
+		<modulename>Activities</modulename>
+	</block>
+	
+	<block>
+		<testfile>Activities_11242</testfile>
+		<bugnumber>45387</bugnumber>
+		<reason>"Accept?" column empty on My Calls dashlet.</reason>
+		<modulename>Activities</modulename>
+	</block>
+	
+	<block>
+		<testfile>BugTracker_0654</testfile>
+		<bugnumber>43344</bugnumber>
+		<reason>DetailView pagination disappears when you save or cancel on the EditView.</reason>
+		<modulename>Bug Tracker</modulename>
+	</block>
+	
+	<block>
+		<testfile>BugTracker_9546</testfile>
+		<bugnumber>44021</bugnumber>
+		<reason>"Delete All" after pagination only deletes one page.</reason>
+		<modulename>Bug Tracker</modulename>
 	</block>
 	
 	<block>
