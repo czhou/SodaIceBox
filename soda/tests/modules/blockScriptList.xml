@@ -851,80 +851,46 @@
 		<reason>bug 44193</reason>
 		<modulename>Studio</modulename>
 	</block>
-	<block>
-		<testfile>Studio_10589_1</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>function not finished</reason>
-		<modulename>Studio</modulename>
-	</block>
+	
 	<block>
 		<testfile>Studio_10589_2</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>function not finished</reason>
+		<bugnumber>45441</bugnumber>
+		<reason>45441</reason>
 		<modulename>Studio</modulename>
 	</block>
-	<block>
-		<testfile>Studio_11673_1</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>function not finished</reason>
-		<modulename>Studio</modulename>
-	</block>
+	
 	<block>
 		<testfile>Studio_11673_2</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>function not finished</reason>
+		<bugnumber>45441</bugnumber>
+		<reason>45441</reason>
 		<modulename>Studio</modulename>
 	</block>
 	
-	<block>
-		<testfile>Studio_11674_1</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>function not finished</reason>
-		<modulename>Studio</modulename>
-	</block>
 	<block>
 		<testfile>Studio_11674_2</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>function not finished</reason>
+		<bugnumber>45441</bugnumber>
+		<reason>45441</reason>
 		<modulename>Studio</modulename>
 	</block>
 	
-	<block>
-		<testfile>Studio_11675_1</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>function not finished</reason>
-		<modulename>Studio</modulename>
-	</block>
 	<block>
 		<testfile>Studio_11675_2</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>function not finished</reason>
+		<bugnumber>45441</bugnumber>
+		<reason>45441</reason>
 		<modulename>Studio</modulename>
 	</block>
 	
-	<block>
-		<testfile>Studio_11676_1</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>function not finished</reason>
-		<modulename>Studio</modulename>
-	</block>
 	<block>
 		<testfile>Studio_11676_2</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>function not finished</reason>
+		<bugnumber>45441</bugnumber>
+		<reason>45441</reason>
 		<modulename>Studio</modulename>
 	</block>
 	
 	<block>
-		<testfile>Studio_11677_1</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>function not finished</reason>
-		<modulename>Studio</modulename>
-	</block>
-	<block>
 		<testfile>Studio_11677_2</testfile>
-		<bugnumber>-1</bugnumber>
-		<reason>function not finished</reason>
+		<bugnumber>45441</bugnumber>
+		<reason>45441</reason>
 		<modulename>Studio</modulename>
 	</block>
 	
