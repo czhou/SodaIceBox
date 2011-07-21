@@ -134,6 +134,27 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Reports_1770</testfile>
+		<bugnumber>45416</bugnumber>
+		<reason>A Chart Dashlet from a report with no information causes HTML errors on Home Page</reason>
+		<modulename>reports</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_1771</testfile>
+		<bugnumber>45416</bugnumber>
+		<reason>A Chart Dashlet from a report with no information causes HTML errors on Home Page</reason>
+		<modulename>reports</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_1774</testfile>
+		<bugnumber>45416</bugnumber>
+		<reason>A Chart Dashlet from a report with no information causes HTML errors on Home Page</reason>
+		<modulename>reports</modulename>
+	</block>
+	
+	<block>
 		<testfile>Calendar_3689</testfile>
 		<bugnumber>45268</bugnumber>
 		<reason>Error message does not trigger when non-existent team is used</reason>
