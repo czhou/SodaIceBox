@@ -943,6 +943,28 @@
 	</block>
 	
 	<block>
+		<testfile>Studio_11680</testfile>
+		<bugnumber>45386</bugnumber>
+		<reason>45386</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_11681</testfile>
+		<bugnumber>45394</bugnumber>
+		<reason>45394</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_11683</testfile>
+		<bugnumber>45399</bugnumber>
+		<reason>45399</reason>
+		<modulename>Studio</modulename>
+	</block>	
+	
+	
+	<block>
 		<testfile>roles_11734</testfile>
 		<bugnumber>44687</bugnumber>
 		<reason>bug 44687</reason>
@@ -1226,4 +1248,38 @@
 		<reason>Delete the campaign-account relationship during the campaign deleting</reason>
 		<modulename>Campaigns</modulename>
 	</block>
+	
+	<!-- Gino's modules -->
+	<block>
+		<testfile>Accounts_0037.xml</testfile>
+		<bugnumber>45397</bugnumber>
+		<reason>Save not working from Contact edit view subpanel</reason>
+		<modulename>Accounts</modulename>
+	</block>	
+	<block>
+		<testfile>Accounts_0041.xml</testfile>
+		<bugnumber>45397</bugnumber>
+		<reason>Save not working from Contact edit view subpanel</reason>
+		<modulename>Accounts</modulename>
+	</block>	
+	<block>
+		<testfile>Accounts_0046.xml</testfile>
+		<bugnumber>45397</bugnumber>
+		<reason>Save not working from Contact edit view subpanel</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	<block>
+		<testfile>Accounts_0119.xml</testfile>
+		<bugnumber>45397</bugnumber>
+		<reason>Save not working from Contact edit view subpanel</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	<block>
+		<testfile>Accounts_0198.xml</testfile>
+		<bugnumber>45397</bugnumber>
+		<reason>Save not working from Contact edit view subpanel</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	<!-- End of Gino's modules -->
+	
 </soda>

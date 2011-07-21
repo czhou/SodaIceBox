@@ -1,0 +1,112 @@
+<soda>
+    
+    <!-- auto updating calculated field that contain related function when related record changed by mass update -->
+    <puts text="Test: Studio_11680.xml starting" />
+        
+     <!-- set description field as calculated field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="related($calls,&quot;name&quot;)"/>
+      <button id="fomulaSaveButton" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="10" />
+    <browser assert="Add Field" />
+    
+    <!--create account record and calls-->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" /> 
+    <var var="acc1" set="{@pre_account_name}" />   
+	<script file="{@global.scriptsdir}/modules/lib/call_Create_Lib.xml" />
+	<button id="edit_button" />
+	<form id="EditView">
+		<select id="parent_type" set="Accounts" />
+		<button id="btn_parent_name" /> 
+	</form>   	
+	<browser assert="Account Search" />
+	<link text="{@pre_account_name}"/>
+	<button value="Save" />    	  	
+	<table id="detailpanel_1">
+		<browser assert="{@pre_call_name}" />
+    	<browser assert="{@pre_account_name}" />
+  	</table>  
+   
+    <link id="moduleTab_Accounts" />
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />		
+	</table>
+	<div id ="Accounts_detailview_tabs">
+		<browser assert="{@pre_account_name}" />
+		<span id="description" assert="{@pre_call_name}" />
+	</div>
+    
+    <!-- update the related record by mass update-->    
+    <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" /> 
+	<link id="moduleTab_Calls" />
+	<checkbox id="massall" set="true" />
+	<link id="actions_link" />
+	<link text="Mass Update"/>
+	<table id="mass_update_table">
+		<select id="mass_parent_type" set="Accounts" />
+		<button name="button_parent_name" /> 
+	</table>	
+  	<browser assert="Account Search" />
+	<link text="{@pre_account_name}"/>
+    <button id="update_button" alert="true" />
+  	<table class ="list view">
+  		<browser assert="{@pre_account_name}" />
+  	</table>
+  	
+	<!-- check the calculation result -->
+	<link id="moduleTab_Accounts" />
+	<textfield id="name_basic" set="{@acc1}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@acc1}" />
+	</table>
+	<div id ="Accounts_detailview_tabs">
+		<browser assert="{@acc1}" />
+		<span id="description" assert="" />
+	</div>
+	<button id="edit_button" />
+	<wait timeout="10" />
+	<textfield id="description" assert="" />
+	<button id="SAVE" />
+	<table id="detailpanel_1">
+		<browser assert="{@acc1}" />
+    	<span id="description" assert="" />
+  	</table>    
+    
+    <!-- Now uncalculated the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Accounts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="false" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    
+    <!-- Delete records -->
+    <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_11680.xml finished." />
+</soda>

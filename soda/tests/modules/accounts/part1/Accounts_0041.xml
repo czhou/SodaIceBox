@@ -94,13 +94,13 @@
 	<table class="list view">
 		<link text="{@pre_account_name}" />
 	</table>
-	<wait timeout="3" />
+	<wait timeout="1" />
 	<!--click edit image button in contact subpanel-->
 	<div id="list_subpanel_contacts">
 		<span class="pageNumbers" assert="(1 - 1 of 1)" />
 		<link class="listViewTdToolsS1" index="1" />
 	</div>
-
+    <wait timeout="1" />
 	<!--goto contact edit view-->
 	<div class="moduleTitle">
 		<link href="index.php?module=Contacts&amp;action=index" click="false" />
@@ -141,14 +141,11 @@
 		<link text="{@edit_contact_record.assigned_user_name}" />
 
 		<!--teams select-->
-		<table id="EditView_team_name_table">
-			<button value="Select" />
-		</table>
+		<button name="teamSelect" />
 		<browser assert="Team Search" />
 		<textfield name="name" set="{@edit_contact_record.team_name}" />
 		<button value="Search" />
 		<link text="{@edit_contact_record.team_name}" />
-
 		<button value="Save" />
 
 		<!--Verify modify ok-->

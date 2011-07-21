@@ -26,65 +26,71 @@
 -->
 
 <soda>
-	<puts text="Test: Accounts_0019.xml starting." />
+	<puts text="Test Case 11570: Verify date format detecting during import.23-12-2010 23:00"/>
 
-	<link id="moduleTab_Accounts" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
-	</div>
-	<csv file="{@global.scriptsdir}/export/Accounts.csv" var="account_record_0019">
+	<link id="moduleTab_Contacts" />
+	<csv file="{@global.scriptsdir}/csvs/imports/Imports_11570_2.csv" var="Import_11570_2">
 
-		<link text="Import Accounts" />
+		<link text="Import Contacts" />
 
-		<!-- Step1 -->
+		<!--Step1-->
 		<div class="moduleTitle">
-			<browser assert="Step 1: Upload Import File" />
+			<browser assert="Step 1: Select Data Source" />
 		</div>
-		<!-- Set path to import file -->
-		<filefield name="userfile" set="{@global.scriptsdir}/export/Accounts.csv" />	
+		<button id="gonext"/>
+
+		<!--Step2-->
+		<div class="moduleTitle">
+			<browser assert="Step 2: Upload Import File" />
+		</div>
+
+		<filefield name="userfile" set="{@global.scriptsdir}/csvs/imports/Imports_11570.csv" />
+		<button id="gonext" />
+		<button id="yui-gen48-button" required="false" />
+		<wait timeout="5" />
+
+		<!--Step3-->
+		<div class="moduleTitle">
+			<browser assert="Step 3: Confirm Import File Properties" />
+		</div>
+
+		<button id="toggleImportOptions" />
+		<textfield id="custom_delimiter" assert=","/>
+		<select id="custom_enclosure" assert="None"/>
+		<select name="importlocale_dateformat" assert="{@Import_11570_2.date_format}"/>
+		<select name="importlocale_timeformat" assert="{@Import_11570_2.time_format}"/>
+
 		<button id="gonext" />
 	
-		<!-- Step2 -->
+		<!--Step4-->
 		<div class="moduleTitle">
-			<browser assert="Step 2: Confirm Import File Properties" />
+			<browser assert="Step 4: Confirm Field Mappings" />
 		</div>
 		<button id="gonext" />
-	
-		<!-- Step3 -->
-		<div class="moduleTitle">
-			<browser assert="Step 3: Confirm Field Mappings" />
-		</div>	
-		<button id="gonext" />
-
-		<!-- Step4 -->
-		<div class="moduleTitle">
-			<browser assert="Step 4: Check for Possible Duplicates" />
-		</div>	
-		<button id="importnow" />
-		<wait timeout="2" />
 		
-		<!-- Step 5 -->
+		<!--Step5-->
+		<button id="importnow" />
+		<wait timeout="10" />
+
+		<!--Step6-->
 		<div class="moduleTitle">
-			<browser assert="Step 5: View Import Results" />
+			<browser assert="Step 6: View Import Results" />
 		</div>
 
 		<!--Search the record to assert import successfully -->
-		<link id="moduleTab_Accounts" />
+		<link id="moduleTab_Contacts" />
 		<div class="moduleTitle">
-			<link href="index.php?module=Accounts&amp;action=index" click="false" />
+			<link href="index.php?module=Contacts&amp;action=index" click="false" />
 		</div>
-		
-		<!-- added timeout since it was failing 7/20 -->
-		<wait timeout="2" />
-		
-		<textfield id="name_basic" set="{@account_record_0019.name}" />
+
+		<textfield id="search_name_basic" set="{@Import_11570_2.last_name}" />
 		<button id="search_form_submit" />
 		<table class="list view">
-			<link text="{@account_record_0019.name}" />
+			<link text="{@Import_11570_2.first_name} {@Import_11570_2.last_name}" />
 		</table>
 	</csv>
 
 	<!--Delete the record-->
-	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
-	<puts text="Test: Accounts_0019.xml finished." />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<puts text="Test: Imports_11570.xml finished." />
 </soda>
