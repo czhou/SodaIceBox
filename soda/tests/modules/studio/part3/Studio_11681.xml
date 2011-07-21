@@ -1,0 +1,139 @@
+<soda>
+    
+    <!-- auto updating calculated field that contain related function when related record changed by workflow -->
+    <puts text="Test: Studio_11681.xml starting" />
+        
+     <!-- set description field as calculated field and define formula -->
+    <timestamp />
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Contacts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="true" />
+    <wait timeout="1" />
+    <button value="Edit Formula" />
+    <wait timeout="3" />
+    <browser assert="Formula Builder" />
+    <div id="formulaBuilderWindow" >
+      <textfield id="formulaInput" set="related($leads,&quot;title&quot;)"/>
+      <button id="fomulaSaveButton" />
+    </div>
+    <wait timeout="3" />
+    <form id="popup_form_id" >
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="10" />
+    <browser assert="Add Field" />
+    
+    <!--create contact record and lead-->
+    <script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib_MIN.xml" /> 
+   	<div id="list_subpanel_leads">
+   		<button id="contact_leads_select_button"/>
+   	</div>
+   	<browser assert="Lead Search" />
+	<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}"/>   	
+   	<div id="list_subpanel_leads">
+   		<browser assert="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+   	</div>
+    
+    <!-- update the related record by workflow-->    
+    <div id="globalLinks">
+    	<link text="Admin" />
+    </div>
+    <browser assert="Developer Tools" />
+    <link text="Workflow Management" />
+    
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_11681.csv" var="studio11681">
+    	<!--create workflow-->   
+    	<link text="Create Workflow Definition" />
+    	<div class="edit view">
+    		<textfield name="name" set="{@studio11681.wfname} {@stamp}" />
+    		<select name="base_module" set="{@studio11681.module}" />
+    	</div>
+    	<button value="  Save  " />
+    	<div class="detail view">
+    		<browser assert="{@studio11681.wfname} {@stamp}" />
+    	</div>
+    	<!--create condition-->  
+    	<button name="New" index="1" />
+    	<browser assert="Define Condition for Workflow Execution" />
+    	<radio id="type1" set="true" />
+    	<button name="save" />
+    	<table id="contentTable">
+    		<browser assert="When the target module changes" />
+    	</table>
+    	<!--create action-->  
+    	<button name="New" index="3" />
+    	<radio id="action_type0" set="true" />
+    	<button name="Next" />
+    	<browser assert="Update fields in the target module" />
+    	<wait timeout="3" />
+    	<checkbox id="mod_field_7" click="true" />
+    	<link text="Title" />
+    	<textfield id="field_7__field_value" set="{@studio11681.title}" />
+    	<button value="Save" />
+    	<browser assert="Set Title as &apos;{@studio11681.title}&apos;" />
+    	<button value="  Save  " />
+    	<table id="contentTable">
+    		<browser assert="Update fields in the target module" />
+    	</table>
+    	
+    	<!--trigger workflow-->  
+    	<link id="moduleTab_Leads" />
+    	<textfield id="search_name_basic" set="{@pre_lead_first_name}" /> 
+    	<button id="search_form_submit" />  
+    	<table class="list view">
+    		<link text="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+    	</table> 	
+    	<button id="edit_button" />
+    	<div id="EditView_tabs">
+    		<textfield id="description" set="1" /> 
+    	</div>
+    	<button id="SAVE" />
+    	<table id="detailpanel_1">
+    		<browser assert="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
+    		<browser assert="{@studio11681.title}" />
+    	</table>   	
+  	
+		<!-- check the calculation result -->
+		<link id="moduleTab_Contacts" />
+		<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
+		<button id="search_form_submit" />
+		<table class="list view">
+			<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+		</table>
+		<div id ="LBL_CONTACT_INFORMATION">
+			<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+			<span id="description" assert="{@studio11681.title}" />
+		</div>
+		<button id="edit_button" />
+		<wait timeout="10" />
+		<textfield id="description" assert="{@studio11681.title}" />
+		<button id="SAVE_HEADER" />
+		<div id="LBL_CONTACT_INFORMATION">
+			<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	    	<span id="description" assert="{@studio11681.title}" />
+	  	</div>    
+	</csv> 
+    <!-- Now uncalculated the field -->
+    <link text="Admin" />
+    <link text="Studio" assertPage="false" />
+    <link text="Contacts" class="studiolink" assertPage="false" />
+    <link text="Fields" class="studiolink" assertPage="false" />
+    <link text="description" class="mbLBLL" assertPage="false" />
+    <checkbox id="calculated" set="false" />
+    <form id="popup_form_id" >
+      <browser assertnot="Formula Builder" />
+      <button name="fsavebtn" assertPage="false" />
+    </form>
+    <wait timeout="3" />
+    
+    <!-- Delete records -->
+    <script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Workflow_Delete_Lib.xml" />
+    
+    <puts text="Test: Studio_11681.xml finished." />
+</soda>
