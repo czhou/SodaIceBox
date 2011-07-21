@@ -267,125 +267,8 @@
 		<modulename>Subpanels</modulename>
 	</block>
 	<!-- Bug 43612 end-->
-	
-	<!-- Beginning of illegal javascript related blocks -->
-	<!-- 
-	<block>
-		<testfile>Reports_8342</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8452</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8458</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	 -->
-	<!-- End of illegal javascript related blocks -->
-	
+
 	<!-- Begin incoming failed scripts -->
-	<block>
-		<testfile>Reports_8440.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8441.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_7798.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	<!-- 
-	<block>
-		<testfile>Calendar_0762.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0767.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0804.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0805.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0807.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0808.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0808.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_3605.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_3689.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_3705.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	 -->
-	 
 	<block>
 		<testfile>Dashboard_1737.xml</testfile>
 		<bugnumber></bugnumber>
@@ -395,48 +278,6 @@
 	
 	<block>
 		<testfile>Admin_10393.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_7787.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8179.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8252.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8339.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8341.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8433.xml</testfile>
 		<bugnumber></bugnumber>
 		<reason>to be fixed later</reason>
 		<modulename>Incoming</modulename>
@@ -505,35 +346,7 @@
 		<reason>Bug43685</reason>
 		<modulename>Incoming</modulename>
 	</block>
-	<!--  
-	<block>
-		<testfile>Calendar_0703</testfile>
-		<bugnumber>39955</bugnumber>
-		<reason>bug 39955 - false duplicate account warning</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0705</testfile>
-		<bugnumber>39955</bugnumber>
-		<reason>bug 39955 - false duplicate account warning</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0706</testfile>
-		<bugnumber>39955</bugnumber>
-		<reason>bug 39955 - false duplicate account warning</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0716</testfile>
-		<bugnumber>39955</bugnumber>
-		<reason>bug 39955 - false duplicate account warning</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	-->
+
 	<block>
 		<testfile>Accounts_0074</testfile>
 		<bugnumber>43348</bugnumber>
