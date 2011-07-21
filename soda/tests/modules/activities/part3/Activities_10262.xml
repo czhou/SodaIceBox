@@ -55,6 +55,12 @@
 	</table>
 	<browser assert="{@meeting3_name}" />
 
+	<form id="form_DCQuickCreate_Meetings">
+		<div class="buttons">
+			<button id="Meetings_subpanel_full_form_button" />
+		</div>
+	</form>
+	
 	<wait timeout="3" />
 	<!-- Click on the EditView Pagination - Next... -->
 	<span class="pagination">
