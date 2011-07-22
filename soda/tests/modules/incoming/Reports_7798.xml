@@ -38,9 +38,11 @@
 	<image name="rowsColsImg" click="true" />
 	<table id="Quotes">
 		<link text="Quotes" />
+		<wait timeout="1" />
 	</table>
 
 	<button name="Next &gt;" />
+	<wait timeout="1" />
 	<div text="Quote Subject" click="true" />
 	<wait timeout="2" />
 	<div text="discount total" click="true" />
