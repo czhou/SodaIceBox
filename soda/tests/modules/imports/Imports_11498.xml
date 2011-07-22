@@ -29,7 +29,7 @@
 	<puts text="Test Case 11498: Verify delimiter can be detected from Custom separator file."/>
 
 	<link id="moduleTab_Leads" />
-	<csv file="{@global.scriptsdir}/export/Imports_11498.csv" var="import_11498">
+	<csv file="{@global.scriptsdir}/csvs/imports/Imports_11498.csv" var="import_11498">
 
 		<link text="iImport Leads" />
 
@@ -44,7 +44,7 @@
 			<browser assert="Step 2: Upload Import File" />
 		</div>
 
-		<filefield name="userfile" set="{@global.scriptsdir}/imports/Imports_11498.csv" />
+		<filefield name="userfile" set="{@global.scriptsdir}/csvs/imports/Imports_11498.csv" />
 		<button id="gonext" />
 		<wait timeout="5" />
 

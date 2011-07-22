@@ -29,7 +29,7 @@
 	<puts text="Test Case 11500: Verify we can modify the separator in confirmation page."/>
 
 	<link id="moduleTab_Contacts" />
-	<csv file="{@global.scriptsdir}/export/Imports_11500.csv" var="import_11500">
+	<csv file="{@global.scriptsdir}/csvs/imports/Imports_11500.csv" var="import_11500">
 
 		<link text="iImport Leads" />
 
@@ -44,7 +44,7 @@
 			<browser assert="Step 2: Upload Import File" />
 		</div>
 
-		<filefield name="userfile" set="{@global.scriptsdir}/imports/Imports_11500.csv" />
+		<filefield name="userfile" set="{@global.scriptsdir}/csvs/imports/Imports_11500.csv" />
 		<button id="gonext" />
 		<wait timeout="5" />
 

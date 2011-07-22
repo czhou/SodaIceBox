@@ -29,7 +29,7 @@
 	<puts text="Test Case 11503: Verify qualifier can be detected with none qualified file."/>
 
 	<link id="moduleTab_Contacts" />
-	<csv file="{@global.scriptsdir}/export/Imports_11503.csv" var="import_11503">
+	<csv file="{@global.scriptsdir}/csvs/imports/Imports_11503.csv" var="import_11503">
 
 		<link text="Import Contacts" />
 
@@ -44,7 +44,7 @@
 			<browser assert="Step 2: Upload Import File" />
 		</div>
 
-		<filefield name="userfile" set="{@global.scriptsdir}/imports/Imports_11503.csv" />
+		<filefield name="userfile" set="{@global.scriptsdir}/csvs/imports/Imports_11503.csv" />
 		<button id="gonext" />
 		<wait timeout="5" />
 
