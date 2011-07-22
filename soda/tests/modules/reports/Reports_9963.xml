@@ -26,53 +26,40 @@
 -->
 
 <soda>
-	<puts text="Reports_9963 Starting..." />
+	<puts text="Test: Reports_9963.xml starting." />
 	
 	<!--goto Reports module-->
 	<link id="moduleTab_Reports" />
 	<link text="Create Report" />
 	<browser assert="Report Wizard" />
 
-	<div id="report_type_div">
-		<table index="1">
-			<row index="2">
-				<cell index="1">
-					<table index="1">
-						<row index="1">
-							<cell index="1">
-								<image index="1" click="true" />
-							</cell>
-						</row>
-					</table>
-				</cell>
-			</row>
-		</table>
-	</div>
+	<image name="rowsColsImg" click="true" />
 	
 	<table id="Contacts" click="true" >
 		<link text="Contacts" alert="true"/>
 	</table>
 	
+	<!-- Click the Account folder in the Related Modules box. -->
 	<link id="ygtvlabelel2" click="true" />
 	
-	<row id="iAccounts_name" click="true" />		<!-- Account Name -->
+	<row id="Accounts_name" click="true" />
 	
 	<row id="Filter.1_table_filter_row_1">
 		<cell index="3">
-			<select index="1" assert="Is" />
-			<select index="1" assert="Is Not" />
-			<select index="1" assert="Equals" />
-			<select index="1" assert="Does Not Equal" />
-			<select index="1" assert="Contains" />
-			<select index="1" assert="Does Not Contain" />
-			<select index="1" assert="Starts With" />
-			<select index="1" assert="Ends With" />
-			<select index="1" assert="Is Empty" />
-			<select index="1" assert="Is Not Empty" />
+			<select index="1" include="Is" />
+			<select index="1" include="Is Not" />
+			<select index="1" include="Equals" />
+			<select index="1" include="Does Not Equal" />
+			<select index="1" include="Contains" />
+			<select index="1" include="Does Not Contain" />
+			<select index="1" include="Starts With" />
+			<select index="1" include="Ends With" />
+			<select index="1" include="Is Empty" />
+			<select index="1" include="Is Not Empty" />
 		</cell>
 	</row>
 
 	<link id="moduleTab_Reports"/>
 
-	<puts text="Test: Reports / 9963 finished." />
+	<puts text="Test: Reports_9963.xml finished." />
 </soda>

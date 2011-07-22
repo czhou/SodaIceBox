@@ -72,11 +72,11 @@
 	<link id="moduleTab_Reports" />
 	<button value=" Clear " />
 	<textfield name="name" set="{@report_title}" />
-	<button id="search_form_submit" />
+	<button value="Search" />
 	<link text="{@report_title}" />
-	<button id="deleteReportButton" alert="true" />
 	
 	<!-- Delete other records created in this script -->
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	
 	<puts text="Test: Reports_8348.xml finished." />

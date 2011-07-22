@@ -34,7 +34,7 @@
 	<browser assert="Report Wizard" />
 
 	<image name="rowsColsImg" click="true"/>
-	<wait timeout="2"/>
+	<wait timeout="3"/>
 	<table id="Accounts" click="true"/>
 	<wait timeout="2"/>	
 	<row id="yui-rec9" click="true" />		<!-- Description -->
