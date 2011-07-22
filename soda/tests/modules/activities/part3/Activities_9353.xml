@@ -81,6 +81,7 @@
 	
 	<wait timeout="5" />
 	
+	<!-- Click the Accept link for the call in the My Calls dashlet. -->
 	<ul id="col_0_0">
 		<table class="list view" index="1">
 			<row class="oddListRowS1">
