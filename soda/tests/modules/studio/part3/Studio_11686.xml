@@ -1,7 +1,7 @@
 <soda>
     
-    <!-- auto updating calculated field that contain rollupAve function when related record changed by workflow -->
-    <puts text="Test: Studio_11683.xml starting" />
+    <!-- auto updating calculated field that contain rollupSum function when related record changed by workflow -->
+    <puts text="Test: Studio_11686.xml starting" />
         
      <!-- set description field as calculated field and define formula -->
     <timestamp />
@@ -16,7 +16,7 @@
     <wait timeout="3" />
     <browser assert="Formula Builder" />
     <div id="formulaBuilderWindow" >
-      <textfield id="formulaInput" set="rollupAve($opportunities,&quot;amount&quot;)"/>
+      <textfield id="formulaInput" set="rollupSum($opportunities,&quot;amount&quot;)"/>
       <button id="fomulaSaveButton" />
     </div>
     <wait timeout="3" />
@@ -28,16 +28,16 @@
     
     <!--create account record and opps-->
     <script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib_MIN.xml" />       
-    <csv file="{@global.scriptsdir}/csvs/studio/Studio_11683.csv" var="studio11683">
+    <csv file="{@global.scriptsdir}/csvs/studio/Studio_11686.csv" var="studio11686">
    		<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
     	<button id="edit_button" />
     	<div id="EditView_tabs">
-    		<textfield id="amount" set="{@studio11683.amount1}" />
+    		<textfield id="amount" set="{@studio11686.amount1}" />
     	</div>
     	<button id="SAVE_HEADER" />
     	<table id="detailpanel_1">
     		<browser assert="{@pre_opp_name}" />
-        	<browser assert=" {@studio11683.amount1} " />
+        	<browser assert=" {@studio11686.amount1} " />
       	</table>  	
     </csv>
     <link id="moduleTab_Accounts" />
@@ -48,7 +48,7 @@
 	</table>
 	<div id ="Accounts_detailview_tabs">
 		<browser assert="{@pre_account_name}" />
-		<span id="description" assert="{@studio11683.ave1}" />
+		<span id="description" assert="{@studio11686.sum1}" />
 	</div>
     
     <!-- update the related record by workflow-->    
@@ -61,12 +61,12 @@
 	<!--create workflow-->   
 	<link text="Create Workflow Definition" />
 	<div class="edit view">
-		<textfield name="name" set="{@studio11683.wfname} {@stamp}" />
-		<select name="base_module" set="{@studio11683.module}" />
+		<textfield name="name" set="{@studio11686.wfname} {@stamp}" />
+		<select name="base_module" set="{@studio11686.module}" />
 	</div>
 	<button value="  Save  " />
 	<div class="detail view">
-		<browser assert="{@studio11683.wfname} {@stamp}" />
+		<browser assert="{@studio11686.wfname} {@stamp}" />
 	</div>
 	<!--create condition-->  
 	<button name="New" index="1" />
@@ -84,9 +84,9 @@
 	<wait timeout="3" />
 	<checkbox id="mod_field_7" click="true" />
 	<link text="Opportunity Amount" />
-	<textfield id="field_7__field_value" set="{@studio11683.amount2}" />
+	<textfield id="field_7__field_value" set="{@studio11686.amount2}" />
 	<button value="Save" />
-	<browser assert="Set Opportunity Amount as &apos;{@studio11683.amount2}&apos;" />
+	<browser assert="Set Opportunity Amount as &apos;{@studio11686.amount2}&apos;" />
 	<button value="  Save  " />
 	<table id="contentTable">
 		<browser assert="Update fields in the target module" />
@@ -107,7 +107,7 @@
 	<button id="SAVE_HEADER" />
 	<div id="Opportunities_detailview_tabs">
 		<browser assert="{@pre_opp_name}" />
-		<browser assert="{@studio11683.amount2}" />
+		<browser assert="{@studio11686.amount2}" />
 	</div>    	
 
 	<!-- check the calculation result -->
@@ -119,15 +119,15 @@
 	</table>
 	<div id ="Accounts_detailview_tabs">
 		<browser assert="{@pre_account_name}" />
-		<span id="description" assert="{@studio11683.ave2}" />
+		<span id="description" assert="{@studio11686.sum2}" />
 	</div>	
 	<button id="edit_button" />
 	<wait timeout="10" />	
-	<textfield id="description" assert="{@studio11683.ave2}" />
+	<textfield id="description" assert="{@studio11686.sum2}" />
 	<button id="SAVE" />
 	<div id="Accounts_detailview_tabs">
 		<browser assert="{@pre_account_name}" />
-    	<span id="description" assert="{@studio11683.ave2}" />
+    	<span id="description" assert="{@studio11686.sum2}" />
   	</div>    
 	
     <!-- Now uncalculated the field -->
@@ -146,7 +146,7 @@
     <!-- Delete records -->
     <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
     <script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
-    <script file="{@global.scriptsdir}/modules/lib/Workflow_Delete_Lib.xml" />
+    <!--script file="{@global.scriptsdir}/modules/lib/Workflow_Delete_Lib.xml" /-->
     
-    <puts text="Test: Studio_11683.xml finished." />
+    <puts text="Test: Studio_11686.xml finished." />
 </soda>

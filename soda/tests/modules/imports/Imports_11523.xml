@@ -26,12 +26,12 @@
 -->
 
 <soda>
-	<puts text="Test Case 11499: Verify delimiter can be detected from dual separator file."/>
+	<puts text="Test Case 11523: Verify import settings are kept after back to the first step of wizard."/>
 
 	<link id="moduleTab_Contacts" />
-	<csv file="{@global.scriptsdir}/csvs/imports/Imports_11499.csv" var="import_11499">
+	<csv file="{@global.scriptsdir}/export/Imports_11523.csv" var="import_11523">
 
-		<link text="iImport Leads" />
+		<link text="Import Contacts" />
 
 		<!--Step1-->
 		<div class="moduleTitle">
@@ -44,7 +44,7 @@
 			<browser assert="Step 2: Upload Import File" />
 		</div>
 
-		<filefield name="userfile" set="{@global.scriptsdir}/csvs/imports/Imports_11499.csv" />
+		<filefield name="userfile" set="{@global.scriptsdir}/imports/Imports_11523.csv" />
 		<button id="gonext" />
 		<wait timeout="5" />
 
@@ -55,18 +55,33 @@
 
 		<button id="toggleImportOptions" />
 		<textfield id="custom_delimiter" assert=","/>
-		<textfield id="custom_delimiter" set="."/>
-		<checkbox id="has_header" click="true"/>
+		<select id="custom_enclosure" assert="Single Quote (')"/>
+		<select id="custom_enclosure" set="None"/>
 		<button id="gonext" />
 	
 		<!--Step4-->
 		<div class="moduleTitle">
 			<browser assert="Step 4: Confirm Field Mappings" />
 		</div>
-		<select name="colnum_0" set="first_name"/>
-		<select name="colnum_1" set="last_name"/>
-		<button id="gonext" />
+		<select name="colnum_0" set="last_name"/>
+		<button id="goback" />
 		
+		<!--Step3-->
+                <div class="moduleTitle">
+                        <browser assert="Step 3: Confirm Import File Properties" />
+                </div>
+
+                <button id="toggleImportOptions" />
+                <textfield id="custom_delimiter" assert=","/>
+                <select id="custom_enclosure" assert="None"/>
+                <button id="gonext" />	
+		
+		<div class="moduleTitle">
+                        <browser assert="Step 4: Confirm Field Mappings" />
+                </div>
+                <select name="colnum_0" set="last_name"/>
+                <button id="gonext" />
+	
 		<!--Step5-->
 		<button id="importnow" />
 		<wait timeout="10" />
@@ -82,14 +97,14 @@
 			<link href="index.php?module=Contacts&amp;action=index" click="false" />
 		</div>
 
-		<textfield id="search_name_basic" set="{@import_11499.last_name,}" />
+		<textfield id="search_name_basic" set="{@import_11523.last_name}" />
 		<button id="search_form_submit" />
 		<table class="list view">
-			<link text="{@import_11499.first_name,} {@import_11499.last_name,}" />
+			<link text="{@import_11523.first_name} {@import_11523.last_name}" />
 		</table>
 	</csv>
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
-	<puts text="Test: Imports_11499.xml finished." />
+	<puts text="Test: Imports_11523.xml finished." />
 </soda>
