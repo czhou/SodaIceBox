@@ -48,6 +48,7 @@
 	<link id="moduleTab_Emails" />
 	<wait timeout="3" />
 	<button id="composeButton" />
+	<wait timeout="3" />
 	<textfield id="addressTO1" set="eyang@sugarcrm.com" />
 	<textfield id="emailSubject1" set="testmail" />
 	<table id="composeHeaderTable1">

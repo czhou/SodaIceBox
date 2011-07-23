@@ -66,17 +66,16 @@
 	</ul>
 	
 	<link id="add_dashlets" />
-	
-	<wait timeout="7" />
-	
+	<wait timeout="3" />
 	<link id="chartCategoryAnchor" />
+	<wait timeout="2" />
 	<link text="Pipeline By Sales Stage" />
-	
+	<wait itmeout="2" />
 	<div id="dashletsDialogHeader">
 		<link index="1" />
 	</div>
 	
-	<wait timeout="7" />
+	<wait timeout="3" />
 	
 	<!-- chart? -->
 	<ul id="col_0_0">
@@ -84,14 +83,15 @@
 		<div class="chartContainer" click="false" />
 	</ul>
 	
-	<wait timeout="7" />
+	<wait timeout="3" />
 	
 	<!-- delete -->
+	<div class="hd" jscriptevent="onmouseover" />
 	<div class="dashletToolSet" index="1">
 		<link index="3" alert="true" />
 	</div>
 	
-	<wait timeout="7" />
+	<wait timeout="3" />
 	
 	<ul id="col_0_0">
 		<browser assertnot="Pipeline by Sales Stage" />

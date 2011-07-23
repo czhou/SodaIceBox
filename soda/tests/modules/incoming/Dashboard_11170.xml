@@ -29,14 +29,6 @@
 	<!-- Verify that "My Favorite Record" dash-let displays favorited record names correctly -->
 	<puts text="Test: Dashboard_11170.xml starting" />
 	
-	<!--  Create a Account record and make it a favorite -->
-	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
-	<javascript>
-		var stars = document.getElementsByClassName('off');
-		var star = stars[0];
-		star.onclick();
-	</javascript>
-	
 	<!-- Create a Contact record and make it a favorite -->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 	<javascript>
@@ -68,6 +60,14 @@
 		var star = stars[0];
 		star.onclick();
 	</javascript>
+	
+	<!--  Create a Account record and make it a favorite -->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<javascript>
+		var stars = document.getElementsByClassName('off');
+		var star = stars[0];
+		star.onclick();
+	</javascript>
 
 	<!-- Navigate to Home module and add dashlet "My Favorite Dashlet" -->
 	<link id="moduleTab_Home" />
@@ -89,6 +89,7 @@
 	</div>
 	
 	<!-- Remove Dashlet from dashboard -->
+	<div class="hd" jscriptevent="onmouseover" />
 	<div class="dashletToolSet" index="1">
 		<link index="2" alert="true" />
 	</div>

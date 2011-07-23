@@ -31,60 +31,60 @@
 		    <script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 			
 			<button id="edit_button" />
-			<link text="More Information" />
+			<link id="tab1" required="false" />
 			<select id="status" set="" />
-			<button value="Save" />
+			<button id="SAVE" />
 			
 			<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 			<button id="edit_button" />
-			<link text="More Information" />
+			<link id="tab1" required="false" />
 			<select id="status" set="New" />
-			<button value="Save" />
+			<button id="SAVE" />
 			<div id="LBL_PANEL_ADVANCED">
 				<browser assert="New" />
 			</div>
 
 			<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 			<button id="edit_button" />
-			<link text="More Information" />
+			<link id="tab1" required="false" />
 			<select id="status" set="Assigned" />
-			<button value="Save" />
+			<button id="SAVE" />
 			<div id="LBL_PANEL_ADVANCED">
 				<browser assert="Assigned" />
 			</div>
 
 			<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 			<button id="edit_button" />
-			<link text="More Information" />
+			<link id="tab1" required="false" />
 			<select id="status" set="In Process" />
-			<button value="Save" />
+			<button id="SAVE" />
 			<div id="LBL_PANEL_ADVANCED">
 				<browser assert="In Process" />
 			</div>
 
 			<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 			<button id="edit_button" />
-			<link text="More Information" />
+			<link id="tab1" required="false" />
 			<select id="status" set="Converted" />
-			<button value="Save" />
+			<button id="SAVE" />
 			<div id="LBL_PANEL_ADVANCED">
 				<browser assert="Converted" />
 			</div>
 
 			<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 			<button id="edit_button" />
-			<link text="More Information" />
+			<link id="tab1" required="false" />
 			<select id="status" set="Recycled" />
-			<button value="Save" />
+			<button id="SAVE" />
 			<div id="LBL_PANEL_ADVANCED">
 				<browser assert="Recycled" />
 			</div>
 
 			<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
 			<button id="edit_button" />
-			<link text="More Information" />
+			<link id="tab1" required="false" />
 			<select id="status" set="Dead" />
-			<button value="Save" />
+			<button id="SAVE" />
 			<div id="LBL_PANEL_ADVANCED">
 				<browser assert="Dead" />
 			</div>

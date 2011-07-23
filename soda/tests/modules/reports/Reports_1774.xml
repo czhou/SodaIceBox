@@ -26,15 +26,19 @@
 -->
 
 <soda>
-	<puts text="Test: Reports_1770.xml starting." />
+	<puts text="Test: Reports_1774.xml starting." />
 	<!--
-	1. Login to system with valid user, such as "user1".
-	2. Click "Reports" navigation tab to go to Report module.
-	3. Create a summation report with a name and set "Team" as
-		private team, such as "Team" -> "(user1)".
-	4. Click "Home" navigation tab.  
-		/* Franklin 01/20/2011: changed Dashboard to Home for 6.1.2 release */
-	5. Check the item of "Add Sugar Dashlets" list on "Dashboard: Home" page.
+		Action:
+
+			1. Login to system with valid user.
+			2. Click "Home" navigation tab. /* Franklin 01/20/2011: changed
+				Dashboard to Home for 6.1.2 release */
+			3. Click "Edit" link on top right corner of a customization chart.
+				Edit Document
+
+		Expected Results:
+
+			3. The summation report detail view page is displayed
 	-->
 
 	<csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" var="user">
@@ -59,6 +63,10 @@
 		<image name="summationImg" jscriptevent="onclick" click="true" />
 	</div>
 	
+	<div id="report_type_div">
+		<image name="summationImg" jscriptevent="onclick" click="true" />
+	</div>
+	
 	<wait timeout="3" />
 	
 	<table id="Accounts">
@@ -66,52 +74,73 @@
 	</table>
 	
 	<button value="Next &gt;" />
+
+	<wait timeout="3" />
+	<div text="Count" click="true" />
+	<wait timeout="6" />
+	
 	
 	<button value="Next &gt;" />
-	<div text="Count" click="true" />
-	<wait timeout="5" />
-	<select id="chart_type" set="Pie" />
 	
+	<wait timeout="6" />
+	
+	<select id="chart_type" set="Horizontal Bar" />
 	
 	<button value="Next &gt;" />
 	
 	<timestamp />
+	
 	<var var="report_name" set="QA_Created_Report_{@stamp}" />
 	
+	<!-- hack to enable field validation to work -->
 	
 	<textfield name="save_report_as" set="{@report_name}" />
-	<textfield id="team_name_collection_0" set="{@user.last_name}" jscriptevent="onkeydown" />
-	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+	<textfield id="team_name_collection_0" set="Global" 
+		jscriptevent="onkeydown" />
+	<textfield id="team_name_collection_0" jscriptevent="onkeyup" 
+		click="false" />
 	<wait timeout="2" />
 	
 	<button value="Save" />
 	
+	<wait timeout="2" />
 	
 	<link id="moduleTab_Home" />
 	<link id="add_dashlets" />
-	<wait timeout="2" />
+	<wait timeout="1" />
 	<link id="chartCategoryAnchor" />
-	<wait timeout="2" />
-	<span id="globalExpCol">
+	<wait timeout="1" />
+	<span id="myTeamExpCol">
 		<link index="1" />
 	</span>
-	<wait timeout="2" />
+
+	<browser assert="{@report_name}" />
 	<link text="{@report_name}" />
 	<div id="dashletsDialogHeader">
 		<link index="1" />
 	</div>
-	<wait timeout="4" />
+	<wait timeout="3" />
 	
-	<ul id="col_0_0">
-		<browser assert="{@report_name}" />
-	</ul>
-	
+	<!-- clean up -->
 	<table class="formHeader h3Row" jscriptevent="onmouseover"/>
 	<div class="dashletToolSet" index="1">
-		<link index="2" alert="true" />
+		<link index="1" alert="true" />
 	</div>
 
+	<!-- make sure we're editing report -->
+	<button id="runReportButton" click="false" />
+	
+	<link id="moduleTab_Home" />
+
+	<!-- clean up -->
+	<table class="formHeader h3Row" jscriptevent="onmouseover"/>
+	<div class="dashletToolSet" index="1">
+		<link index="3" alert="true" />
+	</div>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
 	
-	<puts text="Test: Reports_1770.xml finished." />
+	<puts text="Test: Reports_1774.xml finished." />
 </soda>
+	

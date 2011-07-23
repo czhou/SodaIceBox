@@ -41,9 +41,9 @@
 	<link id="moduleTab_Reports" />
 
 	<var var="report_name" set="New Cases By Month" />
-	
-	<textfield name="name_basic" set="{@report_name}" />
-	<button id="search_form_submit" />
+	<button name="clear" />	
+	<textfield name="name" set="{@report_name}" />
+	<button value="Search" />
 	
 	<browser assert="New Cases By Month" />
 	<link text="{@report_name}" />

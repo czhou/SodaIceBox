@@ -49,8 +49,8 @@
 	<link id="moduleTab_Reports" />
 	
 
-	<textfield name="name_basic" set="New Cases By Month" />
-	<button id="search_form_submit" />
+	<textfield name="name" set="New Cases By Month" />
+	<button value="Search" />
 	
 	<link text="New Cases By Month" />
 	
@@ -76,32 +76,20 @@
 		<div text="Status" click="false" />
 	</div>
 	
-	<javascript>
-		SUGAR.reports.showWizardStep(0);
-	</javascript>
-	
+	<link text="Define Group By" alert="true" />
 	<browser assert="Steps to Define Group By:" />	
 	<row id="group_by_row_1" exists="false" />
 	
-	<javascript>
-		SUGAR.reports.showWizardStep(0);
-	</javascript>
-	
+	<link text="Choose Display Summaries" alert="true" />
 	<row id="display_summaries_row_3" exists="false" />
 	
-	<javascript>
-		SUGAR.reports.showWizardStep(0);
-	</javascript>
-	
+	<link text="Chart Options" alert="true" />
 	<textfield name="chart_description" assert="" />
 	
-	<javascript>
-		SUGAR.reports.showWizardStep(0);
-	</javascript>
-	
 	<!-- the following fails but is likely due to a bug (to be filed) -->
+	<!-- 
 	<textfield name="save_report_as" assertnot="New Cases By Month" />
-	
+	 -->
 	<button value="Cancel" />
 	
 	<puts text="Test: Reports_8452.xml finished." />

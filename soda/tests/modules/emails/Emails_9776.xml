@@ -77,7 +77,7 @@
 			</table>
 		</div>
 		<!--<link text="/My Drafts/" />-->
-		<link text="My Drafts" />
+		<span text="My Drafts" click="true" />
 	</div>
 	<wait timeout="3" />
 	<div text="{@email_record_9776.subject} {@stamp}" click="true"

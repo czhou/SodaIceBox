@@ -107,8 +107,8 @@
 		<browser assert="{@pre_account_name}" />
 	</div>
 	
-	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	
 	<puts text="Test: Reports_7735.xml finished." />

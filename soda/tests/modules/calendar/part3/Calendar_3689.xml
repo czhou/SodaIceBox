@@ -1,0 +1,81 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		Action:
+			Verify that a call is not scheduled by edit view
+			when non-existing record for field is entered
+			(For example, "Assigned to", "Team" text field.).
+
+		Expectation:
+			1. Call is not scheduled.
+	-->
+	
+	<puts text="Test: Calendar_3689.xml starting." />
+
+	<timestamp />
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+
+	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record" />
+		<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
+
+		<textfield id="date_start_date" set="{@call_record.date_start_date}" />
+		<select id="date_start_hours" set="{@call_record.date_start_hours}" />
+		<select id="date_start_minutes" set="{@call_record.date_start_minutes}" />
+
+		<textfield name="duration_hours" set="{@call_record.duration_hours}" />
+		<select name="duration_minutes" set="{@call_record.duration_minutes}" />
+
+		<select id="direction" set="{@call_record.direction}" />
+		<select id="status" set="{@call_record.status}" />
+
+		<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
+		<textfield id="description" set="{@call_record.description}" />
+
+		<textfield id="team_name_collection_0" set="Nonexistent {@stamp}" jscriptevent="onkeydown" />
+		<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+		
+		<var var="call1_name" set="{@call_record.name} {@user.name} {@stamp}" />
+
+		<button value="Save" />
+		
+		<div id="LBL_PANEL_ASSIGNMENT">
+			<browser assert="No Primary Team specified" />
+		</div>
+	
+		<button id="CANCEL" alert="true" />
+	
+		<link id="moduleTab_Calls" />
+		
+		<table class="list view">
+			<browser assertnot="{@call1_name}" />
+		</table>
+	
+	<puts text="Test: Calendar_3689.xml finished." />
+</soda>

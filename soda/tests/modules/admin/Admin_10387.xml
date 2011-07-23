@@ -1,0 +1,132 @@
+﻿<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Delete private team from list view with the corresponding user was 
+		deleted -->
+	<puts text="Test: Admin_10387.xml starting" />
+	<!--create user -->
+	<script file="{@global.scriptsdir}/modules/lib/User_Create_Lib.xml" />
+	<!--create record -->
+	<link id="moduleTab_Accounts" />
+	<wait condition="true">
+		<link text="Create Account" />
+	</wait>
+	<csv file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.csv"
+		var="account_record">
+		<link text="Create Account" />
+		<browser assert="Create" />
+		<form id="EditView">
+			<textfield id="name" set="{@account_record.name} {@stamp}" />
+			<wait timeout="3" />
+
+		</form>
+		<button id="btn_assigned_user_name" />
+		<browser assert="User Search" />
+		<textfield id="first_name_advanced" set="{@pre_user_firstname}" />
+		<form id="popup_query_form">
+			<button value="Search" />
+		</form>
+		<link text="{@pre_user_fullname}" />
+		<table id="EditView_team_name_table">
+			<image id="remove_team_name_collection_0" click="true" />
+			<button value="Select" />
+		</table>
+		<browser assert="Team Search" />
+		<textfield name="name" set="{@pre_user_firstname}" />
+		<button value="Search" />
+		<link text="{@pre_user_fullname}" />
+		<radio id="primary_team_name_collection_0" set="true" />
+		<wait timeout="3" />
+		<button value="Save" />
+		<browser assert="{@account_record.name} {@stamp}" />
+	</csv>
+	<var var="pre_account_name" set="{@account_record.name} {@stamp}" />
+	<!--delete the user -->
+	<script file="{@global.scriptsdir}/modules/lib/User_Delete_Lib.xml" />
+	<!--goto Admin -->
+	<div id="globalLinks">
+		<link text="Admin" />
+	</div>
+	<!--click "Team Management" -->
+	<link href="./index.php?module=Teams&amp;action=index" />
+	<browser assert="Teams" />
+	<!--Search team -->
+	<button value="Clear" />
+	<textfield name="name_basic" set="{@pre_user_firstname}" />
+	<button value="Search" />
+	<table class="list view">
+		<browser assert="{@pre_user_fullname}" />
+	</table>
+	<!--delete team from list view -->
+	<table class="list view">
+		<checkbox name="massall" click="true" />
+	</table>
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+
+	<!--search the deleted team -->
+
+	<button value="Clear" />
+	<textfield name="name_basic" set="{@pre_user_firstname}" />
+	<button value="Search" />
+	<table class="list view">
+		<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	</table>
+
+	<!--check the record's user and team info not changed -->
+	<link id="moduleTab_Accounts" />
+	<link id="basic_search_link" required="false" timeout="2" />
+	<textfield id="name_basic" set="{@pre_account_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_account_name}" />
+	</table>
+	<browser assert="Account Overview" />
+	<button id="edit_button" />
+	<wait timeout="3" />
+
+	<textfield id="team_name_collection_0" assert="{@pre_user_fullname}" />
+
+	<!--check the team not show in the system any more -->
+
+	<table id="EditView_team_name_table">
+		<button value="Select" />
+	</table>
+	<browser assert="Team Search" />
+	<textfield name="name" set="{@pre_user_firstname}" />
+	<button value="Search" />
+	<table class="list view">
+		<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	</table>
+	<button value="  Cancel  " />
+	<button value="Cancel" alert="true" />
+
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<puts text="Test: Admin_10387.xml finished" />
+
+</soda>

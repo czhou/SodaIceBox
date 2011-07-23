@@ -105,8 +105,12 @@
 	<wait timeout="4" />
 	
 	<link id="moduleTab_Reports" />
-	
+	<button id="search_form_clear" />
+	<textfield name="name" set="{@report_title}" />
+	<button id="search_form_submit" />
 	<browser assert="{@report_title}" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
 	
 	<link id="moduleTab_Home" />
 	

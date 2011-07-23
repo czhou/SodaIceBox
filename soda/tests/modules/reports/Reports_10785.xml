@@ -41,12 +41,12 @@
 		<table id="ygtvtableel3"><!-- Opportunites - Assigned to User -->
 			<link text="Assigned to User" />
 		</table>
-		<row id="yui-rec42" click="true" /> <!-- User Name field -->
+		<row id="Users_user_name" click="true" /> <!-- User Name field -->
 		<checkbox id="runtime_filter_Filter.1_table_filter_row_1" click="true" /> <!-- Runtime filter -->
 		<button name="Next >" />
 
 		<!-- group by -->
-		<row id="yui-rec62" click="true" /> <!-- Opportunity Name field -->
+		<row id="Opportunities_name" click="true" /> <!-- Opportunity Name field -->
 		<button name="Next >" />
 		<button name="Next >" />
 		<button name="Next >" />

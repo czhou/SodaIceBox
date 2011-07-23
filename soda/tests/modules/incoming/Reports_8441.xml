@@ -67,27 +67,14 @@
 	<button name="Next &gt;" />
 
 	<csv file="{@global.scriptsdir}\csvs\reports\Reports_7734.csv" var="report_record_8441">
-		<textfield name="save_report_as" set="{@report_record_8441.save_report_as} {@stamp}" />
+		<textfield name="save_report_as" set="QA_Created_{@report_record_8441.save_report_as} {@stamp}" />
 	</csv>
 
 	<button name="Save and Run" />
 	<wait />
-	<browser assert="Title: {@report_record_8441.save_report_as} {@stamp}" />
+	<browser assert="Title: QA_Created_{@report_record_8441.save_report_as} {@stamp}" />
 	
-	<!--Delete created Report -->
-	<link id="moduleTab_Reports" />
-	<link text="Basic Search" required="false" />
-	<wait timeout="5" />
-	<form class="search_form">
-		<button name="clear" />
-		<textfield name="name_basic" set="{@report_record_8441.save_report_as} {@stamp}" />
-		<button value="Search" />
-	</form>
-	<wait timeout="5" />
-	<checkbox name="massall" click="true" />
-	<link id="actions_link" />
-	<link text="Delete" alert="true" />
-	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 
 	<puts text="Test: Reports_8441.xml finished" />
 </soda>

@@ -94,17 +94,19 @@
 	<wait timeout="4" />
 	
 	<link id="moduleTab_Reports" />
-	
+	<button id="search_form_clear" />
+	<textfield name="name" set="{@report_title}" />
+	<button id="search_form_submit" />
 	<browser assert="{@report_title}" />
 	
 	<link text="{@report_title}" />
 	
-		<browser assert="{@report_title}" />
-		<browser assert="Count" />
-		<browser assert="Name" />
-	
-	<wait timeout="4" />
-	
+	<browser assert="{@report_title}" />
+	<browser assert="Count" />
+	<browser assert="Name" />
+
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
 	
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />

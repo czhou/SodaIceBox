@@ -44,7 +44,7 @@
 
 	<wait timeout="5" />
 	<browser assert="Steps to Define Filters:" />
-	<row id="yui-rec14" click="true" />		<!-- Name -->
+	<row id="Accounts_name" click="true" />		<!-- Name -->
 
 	<wait timeout="1" />
 	<row id="Filter.1_table_filter_row_1">

@@ -26,7 +26,30 @@
 -->
 
 <soda>
-	<script file="tests/modules/subpanels/module_lib/setup-subpanels.xml" />
-	<script fileset="tests/modules/subpanels" />
-	<script file="tests/modules/subpanels/module_lib/cleanup-subpanels.xml" />
+	<!--
+		Clicking on 'Test Settings' after Inbound Email Account is Saved
+	-->
+	<puts text="Test: Emails_11800.xml starting." />
+	<script file="{@global.scriptsdir}/modules/lib/Email_InboundAccount_Create_Lib.xml" />
+
+	<!--Edit the inbound email account again-->
+	<button name="Edit" value="  Edit  "/>
+			
+	<!--Test settings-->
+	<form id="EditView">
+		<button name="button" value="  Test Settings  "/>
+	</form>
+	<wait timeout="15"/>
+	<div id="testSettingsMsg">
+		<browser assert="Connection completed successfully"/>
+	</div>
+	<link class="container-close" text="Close"/>
+
+	<!--Save settings-->
+	<form id="EditView">
+		<button name="button" value="  Save  "/>
+	</form>
+
+	<script file="{@global.scriptsdir}/modules/lib/Email_InboundAccount_Delete_Lib.xml" />
+	<puts text="Test: Emails_11800.xml finished." />
 </soda>

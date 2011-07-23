@@ -26,45 +26,38 @@
 -->
 
 <soda>
-	<!-- Report_print_as_PDF -->
-	<puts text="Test: Reports_7787.xml started." />
-
-	<script file="{@global.scriptsdir}/modules/lib/Report_Create_Lib.xml" />
-
-	<!--goto Report module -->
-	<link id="moduleTab_Reports" />
-	<link text="Basic Search" required="false" />
-	<button value=" Clear " />
-	<textfield name="name_basic" set="{@pre_report_name}" />
-	<button value="Search" />
-	<table class="list view">
-		<link text="{@pre_report_name}" />
-	</table>
-	<browser assert="Title: {@pre_report_name}" />
-
-	<button id="printPDFButton" alert="false" />
-
-	<!--Delete created Report -->
-	<link id="moduleTab_Reports" />
-	<link text="Basic Search" required="false" />
-	<form class="search_form">
-		<button name="clear" />
-		<textfield name="name_basic" set="{@pre_report_name}" />
+<!-- Delete private team from list view with the corresponding user still exists -->
+    <puts text="Test: Admin_10385.xml starting" />
+    <!--goto Admin-->
+    <div id="globalLinks">
+        <link text="Admin" />
+    </div>
+	<csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" var="SugarInit">
+		<!--click "Team Management"-->
+		<link href="./index.php?module=Teams&amp;action=index" />
+		<browser assert="Teams" />
+		<!--try to delete team from list view-->
+		<button value="Clear" />
+		<textfield name="name_basic" set="{@SugarInit.last_name}" />
 		<button value="Search" />
-	</form>
-	<table class="list view">
-		<link text="{@pre_report_name}" />
-	</table>
-	<button id="deleteReportButton" alert="true" />
-	<wait timeout="5" />
-	<link id="moduleTab_Reports" />
-	<form class="search_form">
-		<button name="clear" />
+		<table class="list view">	
+			<checkbox name="massall" click="true" />				
+		</table>
+		<link id="actions_link" />
+		<link text="Delete" alert="true" />
+		<browser assert="This private team [{@SugarInit.last_name}] cannot be deleted until the user [{@SugarInit.last_name}] is deleted." />
+		
+		<!--verify team not delelted-->
+		<link text="Teams" />
+		<browser assert="Teams" />
+		
+		<button value="Clear" />
+		<textfield name="name_basic" set="{@SugarInit.last_name}" />
 		<button value="Search" />
-	</form>
-	<table class="list view">
-		<span class="pageNumbers" assert="(1 - 20 of 44)" />
-	</table>
+		<table class="list view">
+			<link text="{@SugarInit.last_name}" click="false" />
+		</table>
+	</csv>
 
-	<puts text="Test: Reports_7787.xml finished." />
+    <puts text="Test: Admin_10385.xml finished" />
 </soda>

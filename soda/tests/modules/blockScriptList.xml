@@ -141,6 +141,48 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Reports_8252</testfile>
+		<bugnumber>45420</bugnumber>
+		<reason></reason>
+		<modulename>reports</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_1770</testfile>
+		<bugnumber>45416</bugnumber>
+		<reason>A Chart Dashlet from a report with no information causes HTML errors on Home Page</reason>
+		<modulename>reports</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_1771</testfile>
+		<bugnumber>45416</bugnumber>
+		<reason>A Chart Dashlet from a report with no information causes HTML errors on Home Page</reason>
+		<modulename>reports</modulename>
+	</block>
+	
+	<block>
+		<testfile>Reports_1774</testfile>
+		<bugnumber>45416</bugnumber>
+		<reason>A Chart Dashlet from a report with no information causes HTML errors on Home Page</reason>
+		<modulename>reports</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_3689</testfile>
+		<bugnumber>45268</bugnumber>
+		<reason>Error message does not trigger when non-existent team is used</reason>
+		<modulename>calendar</modulename>
+	</block>
+	
+	<block>
+		<testfile>Calendar_3705</testfile>
+		<bugnumber>45268</bugnumber>
+		<reason>Error message does not trigger when non-existent team is used</reason>
+		<modulename>calendar</modulename>
+	</block>
+	
+	<block>
 		<testfile>Calendar_0754</testfile>
 		<bugnumber>45268</bugnumber>
 		<reason>Error message does not trigger when non-existent team is used</reason>
@@ -206,47 +248,12 @@
 	</block>
 	
 	<block>
-		<testfile>Dashlet_10753</testfile>
-		<bugnumber>42808</bugnumber>
-		<reason>ONLY FOR TEST IN 6.2.2</reason>
-		<modulename>home</modulename>
-	</block>
-	
-	<block>
-		<testfile>Dashboard_11170</testfile>
-		<bugnumber>42808</bugnumber>
-		<reason>ONLY FOR TEST IN 6.2.2</reason>
-		<modulename>home</modulename>
-	</block>
-	
-	<block>
-		<testfile>Dashboard_11115</testfile>
-		<bugnumber>42808</bugnumber>
-		<reason>ONLY FOR TEST IN 6.2.2</reason>
-		<modulename>home</modulename>
-	</block>
-	
-	<block>
-		<testfile>Admin_11114</testfile>
-		<bugnumber>37255</bugnumber>
-		<reason>ONLY FOR TEST IN 6.2.2</reason>
-		<modulename>admin</modulename>
-	</block>
-	
-	<block>
 		<testfile>Dashlet_11035</testfile>
 		<bugnumber>43882</bugnumber>
 		<reason>Edit Button in all Dashlets brings you to Create New Team/User/Related Module</reason>
 		<modulename>home</modulename>
 	</block>
-	
-	<block>
-		<testfile>Calendar_10966</testfile>
-		<bugnumber>43439</bugnumber>
-		<reason>Inactive user shows in shared calendar filter</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
+
 	<block>
 		<testfile>Forecast_10968</testfile>
 		<bugnumber>33971</bugnumber>
@@ -284,281 +291,25 @@
 	</block>
 	<!-- Bug 43612 end-->
 	
-	<!-- Beginning of illegal javascript related blocks -->
 	<block>
-		<testfile>Reports_7734</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
+		<testfile>Doc_10566</testfile>
+		<bugnumber>45316</bugnumber>
+		<reason>no document owner</reason>
 		<modulename>Incoming</modulename>
 	</block>
 	
-	<block>
-		<testfile>Reports_1770</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_1771</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_1774</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_7735</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_7736</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_7785</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8047</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8067</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8160</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8342</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8452</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8458</testfile>
-		<bugnumber></bugnumber>
-		<reason>illegal javascript accessor</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	<!-- End of illegal javascript related blocks -->
-	
-	<!-- Begin incoming failed scripts -->
-	<block>
-		<testfile>Reports_8440.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8441.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_7798.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	<!-- 
-	<block>
-		<testfile>Calendar_0762.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0767.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0804.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0805.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0807.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0808.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0808.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_3605.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_3689.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_3705.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	 -->
-	 
-	<block>
-		<testfile>Dashboard_1737.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Admin_10393.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_7787.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8179.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8252.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8339.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8341.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Reports_8433.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Doc_10566.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Search_10462.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Search_10463.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	
-	<block>
-		<testfile>Search_10468.xml</testfile>
-		<bugnumber></bugnumber>
-		<reason>to be fixed later</reason>
-		<modulename>Incoming</modulename>
-	</block>
-	<!-- End incoming failed scripts -->
 
 	<block>
 		<testfile>Emails_11443</testfile>
 		<bugnumber>11443</bugnumber>
 		<reason>Can not locate email text field on quick create lead view</reason>
+		<modulename>Email</modulename>
+	</block>
+
+	<block>
+		<testfile>Emails_11800</testfile>
+		<bugnumber>45071</bugnumber>
+		<reason>Retesting will show fail</reason>
 		<modulename>Email</modulename>
 	</block>
 
@@ -582,35 +333,7 @@
 		<reason>Bug43685</reason>
 		<modulename>Incoming</modulename>
 	</block>
-	
-	<block>
-		<testfile>Calendar_0703</testfile>
-		<bugnumber>39955</bugnumber>
-		<reason>bug 39955 - false duplicate account warning</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0705</testfile>
-		<bugnumber>39955</bugnumber>
-		<reason>bug 39955 - false duplicate account warning</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0706</testfile>
-		<bugnumber>39955</bugnumber>
-		<reason>bug 39955 - false duplicate account warning</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
-		<testfile>Calendar_0716</testfile>
-		<bugnumber>39955</bugnumber>
-		<reason>bug 39955 - false duplicate account warning</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
+
 	<block>
 		<testfile>Accounts_0074</testfile>
 		<bugnumber>43348</bugnumber>
@@ -1056,7 +779,7 @@
 		<reason>accounts_opportunities_select_button has been removed</reason>
 		<modulename>Accounts</modulename>
 	</block>
-
+	 
 	<block>
 		<testfile>Calendar_0706</testfile>
 		<bugnumber>42919</bugnumber>
@@ -1084,7 +807,7 @@
 		<reason>mfleeger: meeting format discrepency on Shared calendar</reason>
 		<modulename>Calendar</modulename>
 	</block>
-	
+	 
 	<block>
 		<testfile>Leads_1908</testfile>
 		<bugnumber></bugnumber>

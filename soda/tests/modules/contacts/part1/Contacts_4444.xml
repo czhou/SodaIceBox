@@ -87,5 +87,5 @@
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
-	<puts text="Test: Contacts_4444.xml finished" />
+	<puts text="Test: Contacts_4444.xml finished." />
 </soda>

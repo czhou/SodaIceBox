@@ -57,18 +57,16 @@
 
 	<!-- delete report created in this script -->
 	<link id="moduleTab_Reports" />
-	<link text="/Advanced Search/" required="false" />
-	<wait timeout="1" />
 	<button name="clear" />
 	<textfield name="name" set="{@report_title}" />
-	<button id="search_form_submit" />
+	<button value="Search" />
 	<wait timeout="2" />
 	<checkbox name="massall" click="true" />
 	<link id="actions_link" />
 	<link text="Delete" alert="true" />
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />
 	<button name="clear" />
-	<button id="search_form_submit" />
+	<button value="Search" />
 
 
 	<!-- Delete Account records created in this script -->

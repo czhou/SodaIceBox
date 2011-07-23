@@ -26,34 +26,64 @@
 -->
 
 <soda>
-	<!-- edit advance search -->
-	<puts text="Test: Reports_8342.xml starting" />
+	<puts text="Test: Reports_8342.xml starting." />
+	<!--
+	Action:
+		1. Login to Sugar as admin.
+		2. Go to Reports module.
+		3. Go to Advanced search tab.
+		4. Fill data in every search condition and click "Search" button respecitively.
 
-
-	<!--goto Report module -->
-	<link id="moduleTab_Reports" />
-	<link text="Advanced Search" />
-	<textfield name="name" set="test_for_advance_search" />
-	<select name="report_module[]" set="Contracts" />
-	<select name="report_type[]" set="Rows and Columns" />
-	<checkbox name="favorite" set="true" />
-	<select name="team_id[]" set="qauser" />
-	<checkbox name="current_user_only" set="true" />
-	<button name="clear" />
-
-
-	<textfield name="name" assert="" />
-	<select name="report_module[]" assert="" />
-	<select name="report_type[]" assert="" />
-	<checkbox name="favorite" assert="false" />
-	<select name="team_id[]" assert="" />
-	<checkbox name="current_user_only" assert="false" />
-
-	<link id="moduleTab_Reports" />
-	<link text="Basic Search" />
-	<button name="clear" />
-	<button value="Search" />
-	<wait timeout="5" />
+	Expected Results:
+		Verify that matched records are displayed in report list view.
+	-->
 	
-	<puts text="Test: Reports_8342.xml finished" />
+	<link id="moduleTab_Reports" />
+	
+	<button name="clear" />
+	<textfield name="name" set="New Cases By Month" />
+	<button value="Search" />
+	<browser assert="New Cases By Month" />
+	
+	<javascript>
+		var stars = document.getElementsByClassName('off');
+		var star = stars[0];
+		star.onclick();
+	</javascript>
+	
+	<link id="moduleTab_Reports" />
+	
+	<button name="clear" />
+	
+	<checkbox name="favorite" set="true" />
+	<button value="Search" />
+	<browser assert="New Cases By Month" />	
+	
+	<button name="clear" />
+	
+	<checkbox name="current_user_only" set="true" />
+	<button value="Search" />
+	<browser assert="Administrator" />
+	
+	<button name="clear" />
+	
+	<select_list name="report_module[]" set="Accounts" />
+	<button value="Search" />
+	<browser assert="Accounts By Type By Industry" />
+	<browser assert="My New Customer Accounts" />
+	
+	<button name="clear" />
+	<wait timeout="2" />
+	
+	<select_list name="report_type[]" set="summary" />
+	<button value="Search" />
+	
+	<browser assert="My Usage Metrics (Today)" />
+	<browser assert="Accounts By Type By Industry" />
+	<browser assert="New Cases By Month" />
+	
+	<button name="clear" />	
+	<button value="Search" />
+	
+	<puts text="Test: Reports_8342.xml finished." />
 </soda>

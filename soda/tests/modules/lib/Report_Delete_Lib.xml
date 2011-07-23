@@ -28,22 +28,19 @@
 <soda>
 	<puts text="Lib: Report_Delete_Lib.xml starting." />
 
-   <link id="moduleTab_Reports" />
-
-   <button name="clear" />
-   <button id="search_form_submit" />
-   
-   <textfield name="name_basic" set="QA_Created" />
-   <button id="search_form_submit" />
-
-   <checkbox name="massall" click="true" />
-   <link id="actions_link" />
-   <link text="Delete" alert="true" />
-   <span class="pageNumbers" assert="(0 - 0 of 0)" />
-   
+	<link id="moduleTab_Reports" />
 	<button name="clear" />
-	<button id="search_form_submit" />
-	
+	<textfield name="name" set="QA_Created" />
+	<button value="Search" />
+
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+
+	<button name="clear" />
+	<button value="Search" />
+
 	<puts text="Lib: Report_Delete_Lib.xml finished." />
 </soda>
 
