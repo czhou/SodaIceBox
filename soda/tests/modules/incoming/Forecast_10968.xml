@@ -103,5 +103,7 @@
 	<link id="moduleTab_Forecasts" />
 	<select name="timeperiod_id" assert="/{@base} 5/" />
 	
+	<script file="{@global.scriptsdir}/modules/lib/TimePeriod_Delete_Lib.xml" />
+	
 	<puts text="Test: Forecast_10968.xml finished" />
 </soda>
