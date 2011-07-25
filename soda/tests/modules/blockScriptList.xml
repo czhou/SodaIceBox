@@ -524,6 +524,13 @@
 		<modulename>home</modulename>
 	</block>
 	
+	<block>
+		<testfile>passwordmanagement_9520</testfile>
+		<bugnumber>45231</bugnumber>
+		<reason>bug 45231</reason>
+		<modulename>passwordmanagement</modulename>
+	</block>
+	
  	<block>
 		<testfile>KnowledgeBase_2477</testfile>
 		<bugnumber>37260</bugnumber>
