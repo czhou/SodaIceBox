@@ -70,7 +70,7 @@
 	<link id="chartCategoryAnchor" />
 	<wait timeout="2" />
 	<link text="Pipeline By Sales Stage" />
-	<wait itmeout="2" />
+	<wait timeout="2" />
 	<div id="dashletsDialogHeader">
 		<link index="1" />
 	</div>
