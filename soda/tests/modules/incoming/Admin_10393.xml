@@ -67,7 +67,7 @@
 	</div>
 	<wait timeout="5" />
 	<div id="dlg_c">
-		<browser assert="/Auto-Refresh Interval/" />
+		<browser assert="Auto-Refresh" />
 		<browser assert="Do not auto-refresh" />
 		<browser assert="Every 5 minutes" />
 		<browser assert="Every 10 minutes" />

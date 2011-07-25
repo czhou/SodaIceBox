@@ -52,9 +52,7 @@
 	<wait timeout="3" />
 	<button value="Save" />
 	
-	<span id="EditView_team_name_input_div_0">
-		<browser assert="No Primary Team specified" />
-	</span>
+	<span class="required" assert="No Primary Team specified" />
 	
 	<button id="CANCEL" alert="true" />
 	
