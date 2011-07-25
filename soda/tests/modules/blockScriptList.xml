@@ -232,6 +232,13 @@
 	</block>
 	
 	<block>
+		<testfile>Dashlet_10753</testfile>
+		<bugnumber>43531</bugnumber>
+		<reason>My Favorite Report Dashlet only shows 20 Records</reason>
+		<modulename>home</modulename>
+	</block>
+	
+	<block>
 		<testfile>Quote_2560</testfile>
 		<bugnumber>1</bugnumber>
 		<reason>Send key</reason>
