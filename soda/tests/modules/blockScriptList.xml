@@ -28,6 +28,13 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Reports_11821</testfile>
+		<bugnumber>45250</bugnumber>
+		<reason>Relate field to Documents causes database error</reason>
+		<modulename>Reports</modulename>
+	</block>
+	
+	<block>
 		<testfile>BugTracker_0654</testfile>
 		<bugnumber>43344</bugnumber>
 		<reason>DetailView pagination disappears when you save or cancel on the EditView.</reason>
