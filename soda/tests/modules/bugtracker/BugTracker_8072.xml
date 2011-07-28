@@ -31,20 +31,16 @@
 	<csv file="{@global.scriptsdir}/csvs/bugtracker/BugTrackerAssertText.csv" var="bugtracker" />
 	<timestamp />
 
-	<!--Create an account and a bug record-->
+	<!-- Create an account and a bug record -->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
 
-	<!--Search the bug tracker record-->
+	<!-- Navigate to a bug's DetailView. -->
 	<link id="moduleTab_Bugs" />
 	<div class="moduleTitle">
 		<link href="index.php?module=Bugs&amp;action=index" click="false" />
 	</div>
 
-	<textfield id="name_basic" set="{@pre_bug_name}" /> 
-	<button id="search_form_submit" />
-
-	<!--Goto its detail view-->
 	<table class="list view">
 		<link text="{@pre_bug_name}" />
 	</table>
@@ -55,7 +51,7 @@
 			<button name="cases_bugs_create_button" />
 			<wait timeout="3" />
 		</div>
-		<table class="edit view">
+		<table class="edit view dcQuickEdit">
 			<textfield id="name" set="{@case_record.name} {@user.name} {@stamp}" />
 			<select id="priority" set="{@case_record.priority}" />
 			<select id="status" set="{@case_record.status}" />
@@ -95,6 +91,8 @@
 		</table>
 		<link class="listViewTdToolsS1" index="1" />
 	</div>
+	<button id="Cases_subpanel_full_form_button" />
+
 	<div class="moduleTitle">
 		<link href="index.php?module=Cases&amp;action=index" click="false" />
 		<browser assert="{@case_record.name} {@user.name} {@stamp}" />
