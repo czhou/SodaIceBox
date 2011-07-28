@@ -61,19 +61,8 @@
 	<wait />
 	<browser assert="Title: {@report_record_7785.save_report_as} {@stamp}" />
 	
-	<!--Delete created Report -->
-	<link id="moduleTab_Reports" />
-	<link text="Basic Search" required="false" />
-	<wait timeout="5" />
-	<form class="search_form">
-		<button name="clear" />
-		<textfield name="name_basic" set="{@report_record_7785.save_report_as} {@stamp}" />
-		<button value="Search" />
-	</form>
-	<checkbox name="massall" click="true" />
-	<link id="actions_link" />
-	<link text="Delete" alert="true" />
-	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	<!-- Cleanup: Delete created Report. -->
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 
 	<puts text="Test: Reports_7785.xml finished." />
 </soda>

@@ -88,18 +88,14 @@
 	</div>
 
 	<link id="moduleTab_Reports" />
-	<link text="Basic Search" required="false"/>
-	<button name="clear" />
-	<textfield name="name_basic" set="{@report_name}" />
+	<textfield name="name" set="{@report_name}" />
 	<button value="Search" />
 	<table class="list view">
 		<browser assert="{@report_name}" />
 	</table>
 	
-	<!--Delete the record creted in this case-->
-	<link text="{@report_name}" />
-	<button id="deleteReportButton" alert="true" />
-
+	<!-- Cleanup: Delete created data. -->
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 
 	<puts text="Test: Reports_8404.xml finished." />

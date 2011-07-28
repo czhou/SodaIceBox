@@ -76,10 +76,8 @@
 
 	<!--goto Report module -->
 	<link id="moduleTab_Reports" />
-	<link text="Basic Search" required="false" />
-	<wait timeout="5" />
 	<button value=" Clear " />
-	<textfield name="name_basic" set="{@report_record_7734.save_report_as}" />
+	<textfield name="name" set="{@report_record_7734.save_report_as}" />
 	<button value="Search" />
 	<wait timeout="5" />
 	<table class="list view">
@@ -89,19 +87,8 @@
 
 	<button id="printPDFButton" alert="false" />
 	
-	<!--Delete created Report -->
-	<link id="moduleTab_Reports" />
-	<link text="Basic Search" required="false" />
-	<wait timeout="5" />
-	<form class="search_form">
-		<button name="clear" />
-		<textfield name="name_basic" set="{@report_record_7734.save_report_as}" />
-		<button value="Search" />
-	</form>
-	<checkbox name="massall" click="true" />
-	<link id="actions_link" />
-	<link text="Delete" alert="true" />
-	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	<!-- Cleanup: Delete created Report. -->
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 
 	<puts text="Test: Reports_7787.xml finished." />
 </soda>
