@@ -34,52 +34,54 @@
 	<puts text="Test: Admin_11494.xml starting" />
 
 	<!--Go to Admin page-->
-	<link text="Admin"/>
+	<link text="Admin" />
 
 	<!--Go to Rename module name page-->
-	<link text="Rename Modules"/>
+	<link text="Rename Modules" />
 	
 	<!--Update one module singular name, such as "Account"-->
 	<span id="slot2b">
-		<image index="1"/>
+		<image index="1" click="true" />
 	</span>
 
 	<!--Update string "Account" as "Acct" and save-->
-	<textfield id="slot2_stext" set="Acc"/>
+	<textfield id="slot2_stext" set="Acc" />
+	<textfield id="slot2_stext" jscriptevent="onchange" />
 	<table id="contentTable">
-		<button name="Save" value="Save"/>
+		<button name="Save" value="Save" />
 	</table>
 
 	<!--Go to Accounts module-->
-	<link  id="moduleTab_Accounts"/>
+	<link  id="moduleTab_Accounts" />
 
 	<!-- Check Action list show "Create Acct"-->
-	<link text="Create Acc" click="false" exists="true"/>
+	<link text="Create Acc" click="false" exists="true" />
 
 	<!--Check Create Account from shortcut by c-->
-	<link text="View Acc Reports" click="false" exists="true"/>
+	<link text="View Acc Reports" click="false" exists="true" />
 
 	<!--Account module list view show "Acct" column as column name-->
 	<table class="list view">
 		<tr index="1">
-			<link text="Acc Name" click="false" exists="true"/>
+			<link text="Acc Name" click="false" exists="true" />
 		</tr>
 	</table>
 
 	<!--Set back to default module name-->
 	<!--Go to Admin page-->
-	<link text="Admin"/>
+	<link text="Admin" />
 
 	<!--Go to Rename module name page-->
-	<link text="Rename Modules"/>
+	<link text="Rename Modules" />
 	
 	<!--Update one module singular name, such as "Account"-->
 	<span id="slot2b">
 		<image index="1"/>
 	</span>
 
-	<!--Update string "Acc" as "Accout" and save-->
-	<textfield id="slot2_stext" set="Accout"/>
+	<!--Update string "Acc" as "Account" and save-->
+	<textfield id="slot2_stext" set="Account"/>
+	<textfield id="slot2_stext" jscriptevent="onchange"/>
 	<table id="contentTable">
 		<button name="Save" value="Save"/>
 	</table>

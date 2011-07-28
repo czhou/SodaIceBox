@@ -30,14 +30,13 @@
 	<!--
 		Verify  subpanel name sync with updating module  name
 	-->
-
-	<puts text="Test: Admin_11595.xml starting" />
+	<puts text="Test: Admin_11595.xml starting." />
 
 	<!--Go to Admin page-->
-	<link text="Admin"/>
+	<link text="Admin" />
 
 	<!--Go to Rename module name page-->
-	<link text="Rename Modules"/>
+	<link text="Rename Modules" />
 	
 	<!--Update one module singular name, such as "Contact"-->
 	<span id="slot1b">
@@ -46,6 +45,7 @@
 
 	<!--Update string "Contacts" as "Cons" and save-->
 	<textfield id="slot1_text" set="Cons" />
+	<textfield id="slot1_text" jscriptevent="onchange" />
 	<wait timeout="2"/>
 	<table id="contentTable">
 		<button name="Save" value="Save"/>
@@ -54,32 +54,32 @@
 	<!--Create a new call-->
 	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml"/>
 	<div id="subpanel_title_contacts">
-		<browser assert="Cons"/>
+		<browser assert="Cons" />
 	</div>
 
-	<!-- Check module name show "Cons"-->
+	<!-- Check module name show "Cons" -->
 	<link text="Cons" click="false" exists="true"/>
 
-	<!-- Check module name show "Cons"-->
-
-	<!--Go to Admin page-->
+	<!-- Go to Admin page -->
 	<link text="Admin"/>
 
-	<!--Go to Rename module name page-->
+	<!-- Go to Rename module name page -->
 	<link text="Rename Modules"/>
 	
-	<!--Update one module back to default values-->
+	<!-- Update one module back to default values -->
 	<span id="slot1b">
 		<image index="1" click="true"/>
 	</span>
 
-	<!--Update string "Contacts" as "Cons" and save-->
+	<!-- Update string "Contacts" as "Cons" and save -->
 	<textfield id="slot1_text" set="Contacts" />
-	<wait timeout="2"/>
+	<textfield id="slot1_text" jscriptevent="onchange" />
+	<wait timeout="2" />
 	<table id="contentTable">
-		<button name="Save" value="Save"/>
+		<button name="Save" value="Save" />
 	</table>
 
-	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+
 	<puts text="Test: Admin_11595.xml finished" />
 </soda>

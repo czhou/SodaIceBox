@@ -26,11 +26,9 @@
 -->
 
 <soda>
-
 	<!--
 		Verify user can modify navigation bar name by renaming module  name
 	-->
-
 	<puts text="Test: Admin_11592.xml starting" />
 
 	<!--Go to Admin page-->
@@ -46,6 +44,7 @@
 
 	<!--Update string "Contacts" as "Cons" and save-->
 	<textfield id="slot1_text" set="Cons"/>
+	<textfield id="slot1_text" jscriptevent="onchange"/>
 	<table id="contentTable">
 		<button name="Save" value="Save"/>
 	</table>
@@ -74,6 +73,7 @@
 
 	<!--Update string "Cons" as "Contacts" and save-->
 	<textfield id="slot1_text" set="Contacts"/>
+	<textfield id="slot1_text" jscriptevent="onchange"/>
 	<table id="contentTable">
 		<button name="Save" value="Save"/>
 	</table>
