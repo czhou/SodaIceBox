@@ -1,0 +1,87 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Bug 44870: Deleted Campaign Is Not Removed From campaign_id Column in Accounts & Contacts Tables  -->
+	<puts text="Test: Bug44870.xml starting." />
+	
+	<!-- Setup variables for testing -->
+	<script file="{@global.scriptsdir}/modules/lib/Campaign_Create_Lib.xml" />
+	<!-- {@Campaign_Name} -->
+	
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+	<!-- {@pre_account_name} -->
+	<button id="edit_button" />
+	
+	<div id="EditView_tabs">
+		<link text="More Information"/>
+	</div>
+	<button id="btn_campaign_name" />
+	<link text="{@Campaign_Name}" />
+	<button id="SAVE" />
+	<div id="Accounts_detailview_tabs">
+		<browser assert="{@Campaign_Name}" />
+	</div>
+	
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<!-- {@pre_contact_first_name} {@pre_contact_last_name} -->
+	
+	<button id="edit_button" />
+	<link id="tab1" />
+	<button id="btn_campaign_name" />
+	<link text="{@Campaign_Name}" />
+	<button id="SAVE_HEADER" />
+	<div id="Contacts_detailview_tabs">
+		<browser assert="{@Campaign_Name}" />
+	</div>
+	
+	<!-- Delete campaign -->
+	<script file="{@global.scriptsdir}/modules/lib/Campaign_Delete_Lib.xml" />
+	
+	<!-- Testing Contacts -->
+	<link id="moduleTab_Contacts" />
+	<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	<button id="edit_button" />
+	<link id="tab1" />
+	<button id="SAVE_HEADER" />
+	<button id="SAVE_HEADER" exists="false" />
+		
+	<!-- Testing Accounts -->
+	<link id="moduleTab_Accounts" alert="true" />
+	<link text="{@pre_account_name}" />
+	<button id="edit_button" />
+	<link id="tab1" />
+	<button id="SAVE" />
+	<button id="SAVE" exists="false" />
+	
+	<link id="moduleTab_Accounts" alert="true" />
+	<!-- Delete test data -->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />	
+	
+	<puts text="Test: Bug44870.xml finished." />
+</soda>
