@@ -1,0 +1,66 @@
+<!--
+Copyright (c) 2011, SugarCRM, Inc.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+* Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+* Neither the name of SugarCRM, Inc. nor the 
+names of its contributors may be used to endorse or promote products
+derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Bug 37487: Cannot Select 'Type' Value When Creating Workflow and Condition on Contracts Module -->
+	<puts text="Test: Bug37487.xml starting." />
+	<script file="{@global.scriptsdir}/modules/lib/ContractType_Create_Lib.xml" />
+	
+	<!-- Create new workflow -->
+	<csv file="{@global.scriptsdir}/dev/Bug37487.csv" var="Bug37487">
+		<link id="admin_link" />
+		<link text="Workflow Management" />
+		<link text="Create Workflow Definition" />
+		<textfield name="name" set="{@Bug37487.name} {@stamp}" />
+		<select name="base_module" set="{@Bug37487.base_module}" />
+		<button value="/Save/" />
+		
+		<!-- Create condition -->
+		<button index="4" />
+		<radio id="type0" click="true" />
+		
+		<!-- Select field -->
+		<link id="href_compare_specific_1" timeout="2" />
+		<select id="selector" set="type" />
+		<button value="Save" />
+		<button id="next" timeout="1" />
+		
+		<!-- Specify new "Type" value -->
+		<link id="href_future_trigger" />
+		
+		<!-- Verify expected result -->
+		<browser assert="{@ContractType_Create_Lib.name} {@stamp}" /> 
+		<button id="save" />
+		<wait timeout="1" />
+		<button id="save" />
+	</csv>
+	
+	<!-- Remove test data -->
+	<script file="{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Workflow_Delete_Lib.xml" />
+	<puts text="Test: Bug37487.xml finished." />
+</soda>
