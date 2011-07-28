@@ -10,7 +10,6 @@ notice, this list of conditions and the following disclaimer.
 notice, this list of conditions and the following disclaimer in the
 documentation and/or other materials provided with the distribution.
 * Neither the name of SugarCRM, Inc. nor the
-<script file="{@global.scriptsdir}/modules/lib/Role_Create_Lib.xml" />
 names of its contributors may be used to endorse or promote products
 derived from this software without specific prior written permission.
 
@@ -27,38 +26,56 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
 <soda>
-	<puts text="Test: Bug42938 'The join on the calls dashlet doesnt check for deleted records." />
-	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-	<wait timeout="2" />
+	<!-- Bug42938: The join on the calls dashlet doesnt check for deleted records. -->
+	<puts text="Test: Bug42938.xml starting." />
+	
+	<!-- Create new Call -->
 	<link id="moduleTab_Calls" />
-	<browser assert="Log Call" />
-	<link text="Log Call" />
-	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record" />
-	<timestamp />
-	<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
-	<textfield id="date_start_date" set="{@call_record.date_start_date}" />
-	<select id="date_start_hours" set="{@call_record.date_start_hours}" />
-	<select id="date_start_minutes" set="{@call_record.date_start_minutes}" />
-	<textfield name="duration_hours" set="{@call_record.duration_hours}" />
-	<select name="duration_minutes" set="{@call_record.duration_minutes}" />
-	<select id="direction" set="{@call_record.direction}" />
-	<select id="status" set="{@call_record.status}" />
-	<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
-	<textfield id="description" set="{@call_record.description}" />
-	<wait timeout="1" />
-	<button value="Save" />
-	<browser assert="{@call_record.name} {@user.name} {@stamp}" />
-	<!-- Check that Call appear at Calls dashlet at Home page -->
-	<link text="Home" />
-	<browser assert="{@call_record.name} {@user.name} {@stamp}" />
-	<link text="{@call_record.name} {@user.name} {@stamp}" />
-	<!-- Delete self from invitees -->
-	<div id="list_subpanel_users">
-		<link text="rem" alert="true" />
+	<div class="moduleTitle">
+		<link href="index.php?module=Calls&amp;action=index" click="false" />
 	</div>
-	<wait timeout="1" />
-	<!-- Check that Call don't appear at Calls dashlet at Home page -->
-	<link text="Home" />
-	<browser assertnot="{@call_record.name} {@user.name} {@stamp}" />
+	<link text="Log Call" />
+	<timestamp />
+	
+	<csv file="{@global.scriptsdir}/dev/Bug42938.csv" var="Bug42938">
+		<textfield id="name" set="{@Bug42938.name} {@user.name} {@stamp}" />
+		<textfield id="date_start_date" set="{@Bug42938.date_start_date}" />
+		<select id="date_start_hours" set="{@Bug42938.date_start_hours}" />
+		<select id="date_start_minutes" set="{@Bug42938.date_start_minutes}" />
+		<textfield id="duration_hours" set="{@Bug42938.duration_hours}" />
+		<select id="duration_minutes" set="{@Bug42938.duration_minutes}" />
+		<select id="direction" set="{@Bug42938.direction}" />
+		<select id="status" set="{@Bug42938.status}" />
+		<checkbox name="reminder_checked" set="{@Bug42938.reminder_checked}" />
+		<textfield id="description" set="{@Bug42938.description}" />
+		<button value="Save" />
+		
+		<browser assert="{@Bug42938.name} {@user.name} {@stamp}" />
+		
+		
+		
+		<!-- Check that Call appear at Calls dashlet at Home page -->
+		<link id="moduleTab_Home" />
+		
+		<div id="pageContainer">
+			<link text="{@Bug42938.name} {@user.name} {@stamp}" click="false" exists="true" />
+		</div>
+		
+		<link text="{@Bug42938.name} {@user.name} {@stamp}" />
+		
+		<!-- Delete self from invitees -->
+		<div id="list_subpanel_users">
+			<link text="rem" alert="true" />
+		</div>
+		
+		<!-- Check that Call don't appear at Calls dashlet at Home page -->
+		<link text="Home" />
+		<div id="pageContainer">
+			<link text="{@Bug42938.name} {@user.name} {@stamp}" click="false" exists="false" />
+		</div>
+	</csv>
+	
+	<!-- Remove test data -->
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<puts text="Test: Bug42938.xml finished." />
 </soda>
