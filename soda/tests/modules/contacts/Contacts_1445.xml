@@ -30,32 +30,36 @@
 	<puts text="Test: Contacts_1445.xml starting." />
 
 	<timestamp />
-	<link id="moduleTab_Contacts" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Contacts&amp;action=index" click="false" />
-	</div>
+	<link id="moduleTab_Contacts" click="false" jscriptevent="onmouseover"/>
 	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_1444.csv" var="contact_record_1445">
 		<link text="Create Contact" />
 		<link text="Contacts" click="false" />
 		<browser assert="Create" />
 
 		<!--user select-->
+		<link id="tab2" />
 		<button id="btn_assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield id="last_name_advanced" set="{@contact_record_1445.assigned_user_name}" />
-		<button value="Search" />
-		<link text="{@contact_record_1445.assigned_user_name}" />
-
+		<attach title="SugarCRM">
+		  <browser assert="User Search" />
+		  <textfield id="last_name_advanced" set="{@contact_record_1445.assigned_user_name}" />
+		  <button id="search_form_submit" />
+		  <link text="{@contact_record_1445.assigned_user_name}" />
+		</attach>
+		
 		<!--teams select-->
 		<table id="EditView_team_name_table">
-			<button value="Select" />
+			<button id="teamSelect" />
 		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@contact_record_1445.team_name}" />
-		<button value="Search" />
-		<link text="{@contact_record_1445.team_name}" />
+		<!--new window -->
+		<attach title="SugarCRM" >
+		  <browser assert="Team Search" />
+		  <textfield name="name" set="{@contact_record_1445.team_name}" />
+		  <button id="search_form_submit" />
+		  <link text="{@contact_record_1445.team_name}" />
+		</attach>
 
 		<!--fill the fields and "Cancel"-->
+		<link id="tab0" />
 		<form id="EditView">
 			<textfield name="first_name"
 				set="{@contact_record_1445.first_name} {@user.name} {@stamp}" />
@@ -76,19 +80,26 @@
 			<textfield id="alt_address_postalcode" set="{@contact_record_1445.alt_address_postalcode}" />
 			<textfield id="alt_address_country" set="{@contact_record_1445.alt_address_country}" />
 			<checkbox id="alt_checkbox" set="false" />
-
-			<textfield id="Contacts0emailAddress0" set="{@contact_record_1445.emailAddress0}" />
-			<textfield id="description" set="{@contact_record_1445.description}" />
-			<textfield id="description" set="{@contact_record_1445.description}" />
+			
+			<!-- more information -->
+			<link id ="tab1" />
 			<select id="lead_source" set="{@contact_record_1445.lead_source}" />
 			<checkbox id="do_not_call" set="{@contact_record_1445.do_not_call}" />
 			<checkbox id="sync_contact" set="{@contact_record_1445.sync_contact}" />
 
-			<button value="Cancel" alert="true" />
+			<!-- contact overview -->
+			<link id = "tab0" />
+			<textfield id="Contacts0emailAddress0" set="{@contact_record_1445.emailAddress0}" />
+			<textfield id="description" click="true" />
+			<textfield id="description" set="{@contact_record_1445.description}" />
+			
+			<button id="CANCEL_FOOTER" alert="true" />
 		</form>
+		<!--
 		<div class="moduleTitle">
-			<link href="index.php?module=Contacts&amp;action=index" click="false" />
+			<link href="index.php?module=Contacts&action=index" click="false" />
 		</div>
+		-->
 	</csv>
 
 	<puts text="Test: Contacts_1445.xml finished." />
