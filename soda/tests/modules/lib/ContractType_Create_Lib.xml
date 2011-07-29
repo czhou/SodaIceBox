@@ -26,27 +26,28 @@
 -->
 
 <soda>
-   <puts text="ContractType_Create_Lib: Starting" />
-   <csv file="{@global.scriptsdir}/modules/lib/ContractType_Create_Lib.csv" 
-      var="ContractType_Create_Lib">
-      <link text="Admin" />
-      <link text="Contract Types" />
-      <link text="Create Contract Type" />
-      <timestamp /> 
-      <form name="EditView">
-         <textfield name="name" 
-            set="{@ContractType_Create_Lib.name} {@stamp}" />
-         <textfield id="list_order" 
-            set="{@ContractType_Create_Lib.list_order}"/>        
-      </form>
+	<puts text="Lib: ContractType_Create_Lib.xml starting." />
+	<csv file="{@global.scriptsdir}/modules/lib/ContractType_Create_Lib.csv" 
+		var="ContractType_Create_Lib">
+		<link text="Admin" />
+		<link text="Contract Types" />
+		<link text="Create Contract Type" />
+		<timestamp /> 
+		<form name="EditView">
+			<textfield name="name" 
+			set="{@ContractType_Create_Lib.name} {@stamp}" />
+			<textfield id="list_order" 
+			set="{@ContractType_Create_Lib.list_order}"/>        
+		</form>
 
-      <button value="Save" />
-      <hidden name="record" var="ContractType_id" />
-      <table class="list view">
-         <browser assert="{@ContractType_Create_Lib.name} {@stamp}" />
-      </table>
-      <var var="ContractType_Create_Lib" 
-         set="{@ContractType_Create_Lib.name} {@stamp}" />
-   </csv>
-   <puts text="ContractType_Create_Lib: Finished" />
+		<button value="Save" />
+		<hidden name="record" var="ContractType_id" />
+		<table class="list view">
+			<browser assert="{@ContractType_Create_Lib.name} {@stamp}" />
+		</table>
+		<var var="ContractType_Create_Lib"
+			set="{@ContractType_Create_Lib.name} {@stamp}" />
+	</csv>
+
+	<puts text="Lib: ContractType_Create_Lib.xml finished." />
 </soda>

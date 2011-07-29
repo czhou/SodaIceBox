@@ -29,7 +29,7 @@
 	<puts text="Lib: Target_Create_Lib.xml starting." />
 	<csv file="{@global.scriptsdir}/csvs/campaigns/CampaignAssertText.csv" var="campaign" />
 
-	<link href="index.php?module=Prospects&amp;action=index" />
+	<link id="moduleTab_Prospects" />
 
 	<link text="Create Target" />
 	<div class="moduleTitle">

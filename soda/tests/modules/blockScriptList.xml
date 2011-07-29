@@ -28,6 +28,13 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Calendar_0703</testfile>
+		<bugnumber>45652</bugnumber>
+		<reason>Add Invitee search works only once.</reason>
+		<modulename>Calendar-part2</modulename>
+	</block>
+	
+	<block>
 		<testfile>Reports_11821</testfile>
 		<bugnumber>45250</bugnumber>
 		<reason>Relate field to Documents causes database error</reason>
