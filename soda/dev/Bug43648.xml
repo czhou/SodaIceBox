@@ -1,0 +1,75 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Bug 43648: You can assign records to inactive users using the quicksearch feature in the user selection field -->
+	<puts text="Test: Bug43648.xml starting." />
+	<csv file="{@global.scriptsdir}/dev/Bug43648.csv" var="Bug43648">
+		<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+		<!-- Create inactive user -->
+		<link id="admin_link" />
+		<link href="./index.php?module=Users&action=index" />
+		<link text="Create New User" />
+		<textfield name="sugar_user_name" set="{@Bug43648.first_name}{@stamp}" />
+		<textfield name="first_name" set="{@Bug43648.first_name}{@stamp}" />
+		<textfield id="last_name" set="{@Bug43648.last_name}{@stamp}" />
+		<select name="status" set="{@Bug43648.status}" />
+		<textfield id="Users0emailAddress0" set="{@stamp}{@Bug43648.email}" />
+		<button id="Save" />
+		
+		<!-- Create account and assign to inactive user -->
+		<link id="moduleTab_Accounts" />
+		<wait timeout="5" />
+		<link text="{@account_record.name} {@user.name} {@stamp}" />
+		<button id="edit_button" />
+		<link id="tab2" />
+		<textfield id="assigned_user_name" set="{@Bug43648.first_name}{@stamp} {@Bug43648.last_name}{@stamp}" />
+		<button id="SAVE" />
+		
+		<!-- Verify expected result -->
+		<link id="tab2" />
+		<div id="Accounts_detailview_tabs">
+			<browser assertnot="{@Bug43648.first_name}{@stamp} {@Bug43648.last_name}{@stamp}" />
+		</div>
+		
+		<!-- Delete test data -->
+		<link id="admin_link" />
+		<link href="./index.php?module=Users&action=index" />
+		<wait timeout="3" />
+		<link text="{@stamp}{@Bug43648.email}" />
+		<button value="Delete" />
+		<wait timeout="3" />
+		<button value="OK" />
+		<button value="Cancel" />
+		<div id="content">
+			<browser assertnot="{@Bug43648.first_name}{@stamp} {@Bug43648.last_name}{@stamp}" />
+		</div>
+		
+		<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	</csv>
+	<puts text="Test: Bug43648.xml finished." />
+</soda>
