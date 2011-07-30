@@ -75,8 +75,7 @@
 	<button name="Save and Run" />
 	<wait timeout="5" />
 	<link text="View Reports" />
-	<link text="Basic Search" required="false"/>
-	<textfield name="name_basic" set="{@report_name}" />
+	<textfield name="name" set="{@report_name}" />
 	<button id="search_form_submit" />
 	<link text="{@report_name}" />
 	<hidden id="record" var="report_record_id" />
@@ -95,15 +94,8 @@
 		<browser assert="{@report_name}" />
 	</div>
 
-	<!-- Delete report created in this script -->
-	<button id="deleteReportButton" alert="true" />
-	<wait timeout="2" />
-	
-	<!-- Reset reports module back to default setup -->
-	<link id="moduleTab_Reports" />
-	<button name="clear" />
-	<button id="search_form_submit" />
-	<wait timeout="2" />
+	<!-- Cleanup: Delete created Report. -->
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 
 	<puts text="Test: Report_11196.xml finished" />
 </soda>

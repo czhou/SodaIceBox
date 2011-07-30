@@ -32,11 +32,6 @@
 
 	<!--goto Report module -->
 	<link id="moduleTab_Reports" />
-	<link text="Basic Search" required="false" />
-	<wait timeout="5" />
-	<button value=" Clear " />
-	<button value="Search" />
-	<wait timeout="5" />
 	<table class="list view">
 		<span class="pageNumbers" assert="(1 - 20 of 44)" />
 	</table>

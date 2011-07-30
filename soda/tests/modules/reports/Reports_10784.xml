@@ -90,24 +90,8 @@
 	<wait timeout="5" />
 	<browser assert="Grand Total" />
 
-	<!--Delete created Report -->
-	<link id="moduleTab_Reports" />
-	<link text="Basic Search" required="false" />
-	<wait timeout="5" />
-	<form class="search_form">
-		<button name="clear" />
-		<textfield name="name_basic" set="Report_10784" />
-		<button value="Search" />
-	</form>
-	<checkbox name="massall" click="true" />
-	<link id="actions_link" />
-	<link text="Delete" alert="true" />
-	<span class="pageNumbers" assert="(0 - 0 of 0)" />
-	<form class="search_form">
-		<button name="clear" />
-		<button value="Search" />
-	</form>
-	<span class="pageNumbers" assert="(1 - 20 of 44)" />
+	<!-- Cleanup: Delete created Report. -->
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 
 	<puts text="Test: Reports_10784.xml finished" />
 </soda>

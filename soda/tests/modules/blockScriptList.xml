@@ -253,12 +253,12 @@
 		<reason>Edit Button in all Dashlets brings you to Create New Team/User/Related Module</reason>
 		<modulename>home</modulename>
 	</block>
-
+	
 	<block>
-		<testfile>Forecast_10968</testfile>
-		<bugnumber>33971</bugnumber>
-		<reason>Time period sort order in forecast</reason>
-		<modulename>Incoming</modulename>
+		<testfile>Dashlet_10753</testfile>
+		<bugnumber>43531</bugnumber>
+		<reason>My Favorite Report Dashlet only shows 20 Records</reason>
+		<modulename>home</modulename>
 	</block>
 	
 	<block>
@@ -679,6 +679,13 @@
 		<bugnumber>44104</bugnumber>
 		<reason>bug 44104</reason>
 		<modulename>home</modulename>
+	</block>
+	
+	<block>
+		<testfile>passwordmanagement_9520</testfile>
+		<bugnumber>45231</bugnumber>
+		<reason>bug 45231</reason>
+		<modulename>passwordmanagement</modulename>
 	</block>
 	
  	<block>

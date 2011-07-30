@@ -65,8 +65,7 @@
 	<button value="Save" />
 
 	<link id="moduleTab_Reports" />
-	<link text="Basic Search" required="false"/>
-	<textfield name="name_basic" set="{@report_name}" />
+	<textfield name="name" set="{@report_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@report_name}" />
@@ -99,14 +98,8 @@
 		<browser assert="Teams: Administrator " />
 	</table>
 
-	<!-- delete report -->
-	<button id="deleteReportButton" alert="true" />
-
-	<!-- Set Reports Module List View back to pre-existing conditions -->
-	<link id="moduleTab_Reports" />
-	<button name="clear" />
-	<button id="search_form_submit" />
-	<wait timeout="3" />
+	<!-- Cleanup: Delete created Report. -->
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 
 	<puts text="Test: Reports_8730.xml finished." />
 

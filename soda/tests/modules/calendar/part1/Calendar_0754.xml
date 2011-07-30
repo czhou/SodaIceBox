@@ -26,53 +26,35 @@
 -->
 
 <soda>
-	<!-- filter data field without data seletor -->
-	<puts text="Test: Reports_8440.xml started." />
+	<!--
+		Action:
+			Verify that a call is not scheduled by edit view
+			when non-existing record for field is entered
+			(For example, "Assigned to", "Team" text field.)
+			(assigned_user_id is no longer required, so just use Team field...)
+		Expectation:
+			1. Call is not scheduled..
+	-->
+	<puts text="Test: Calendar_0754.xml starting." />
+
+	<!-- start to create call -->
+
+	<link id="moduleTab_Calls" />
+	<link text="Log Call" />
+
 	<timestamp />
-
-	<!--goto Report module -->
-	<link id="moduleTab_Reports" />
-	<link text="Create Report" />
-	<browser assert="Report Wizard" />
-
-	<!--create row and column report -->
-	<image name="rowsColsImg" click="true" />
-	<table id="Calls">
-		<link text="Calls" />
-	</table>
-
+	
+	<textfield id="name" set="temp_name_{@stamp}"/>
+	
+	<textfield id="team_name_collection_0" set="non_existent_team123" jscriptevent="onkeydown" />
+	<textfield id="team_name_collection_0" jscriptevent="onkeyup" click="false" />
+	<textfield id="name" click="true" />
 	<wait timeout="3" />
-	<div text="Date End" click="true" />
-	<wait timeout="2" />
-	<div text="Date Created" click="true" />
-	<wait timeout="2" />
-	<div text="Date Modified" click="true" />
-	<wait timeout="2" />
-
-	<div id="filter_designer_div">
-		<select name="qualify" index="1" set="Tomorrow" />
-		<select name="qualify" index="2" set="Yesterday" />
-		<select name="qualify" index="3" set="Today" />
-	</div>
-
-	<button name="Next &gt;" />
-
-	<div text="Date End" click="true" />
-	<div text="Date Created" click="true" />
-	<div text="Date Modified" click="true" />
-
-	<button name="Next &gt;" />
-
-	<csv file="{@global.scriptsdir}\csvs\reports\Reports_7734.csv" var="report_record_8440">
-		<textfield name="save_report_as" set="QA_Created_{@report_record_8440.save_report_as} {@stamp}" />
-	</csv>
-
-	<button name="Save and Run" />
-	<wait />
-	<browser assert="Title: QA_Created_{@report_record_8440.save_report_as} {@stamp}" />
+	<button value="Save" />
 	
-	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
+	<span class="required" assert="No Primary Team specified" />
 	
+	<button id="CANCEL" alert="true" />
 	
-	<puts text="Test: Reports_8440.xml finished." />
+	<puts text="Test: Calendar_0754.xml finished." />
 </soda>

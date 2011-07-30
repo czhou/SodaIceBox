@@ -97,6 +97,7 @@
 	<link text="Admin" />
 	<link text="Repair" />
 	<link text="Repair Teams" />
+	<checkbox id="process_global_team" set="false" />
 	<checkbox id="process_private_team" set="true" />
 	<checkbox id="process_implict_teams" set="false" />
 	<checkbox id="process_clean_up_team_sets" set="false" />
@@ -123,6 +124,7 @@
 	<link text="Admin" />
 	<link text="Repair" />
 	<link text="Repair Teams" />
+	<checkbox id="process_global_team" set="false" />
 	<checkbox id="process_private_team" set="false" />
 	<checkbox id="process_implict_teams" set="true" />
 	<checkbox id="process_clean_up_team_sets" set="false" />

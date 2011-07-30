@@ -49,8 +49,8 @@
 	
 	<textfield id="name_basic" set="{@pre_meeting_name}" />
 	<button id="search_form_submit" />
-	
 	<browser assert="{@pre_meeting_name}" />
+
 	<link text="{@pre_meeting_name}" />
 	
 	<button id="edit_button" />
@@ -58,22 +58,24 @@
 	<textfield name="search_email" set="sugarqa3@gmail.com" />
 	<button value="Search" />
 	<wait timeout="3" />
-	<javascript addUtils="true">
-		SugarWidgetSchedulerAttendees.form_add_attendee(0);
-	</javascript>
-	<wait timeout="2" />
+
+	<div id="list_div_win">
+		<button value="Add" />
+		<wait timeout="3" />
+	</div>
 	
 	<textfield name="search_email" set="{@pre_contact_email}" />
+	<wait timeout="1" />
 	<button value="Search" />
 	<wait timeout="3" />
-	<javascript addUtils="true">
-		SugarWidgetSchedulerAttendees.form_add_attendee(0);
-	</javascript>
-	<wait timeout="2" />
+	<div id="list_div_win">
+		<button value="Add" />
+		<wait timeout="3" />
+	</div>
+
 	
 	<!-- save both contact + user -->
 	<button value="Save" />
-	
 	<wait timeout="5" />
 	
 	<div id="Meetings_detailview_tabs">
@@ -86,9 +88,7 @@
 		<browser assert="09/09/2020 11:30" />
 		<browser assert="1h 30m" />
 	</div>
-	
-	
-	
+
 	<div id="list_subpanel_contacts">
 		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	</div>
@@ -102,7 +102,6 @@
 	<button value="  Create Note or Attachment  " />
 	<textfield id="name" set="Note_{@pre_meeting_name}" />
 	<button id="Notes_subpanel_save_button" />
-	
 	<wait timeout="5" />
 	
 	<div id="subpanel_history">

@@ -26,56 +26,67 @@
 -->
 
 <soda>
-
-	<puts
-		text="Test: Admin_10393 Set minimum dashlet auto-refresh interval in system setting starting." />
-
-	<div id="globalLinks">
-		<link text="Admin" />
+	<puts text="Test: Reports_11821.xml starting." />
+	
+	<link id="admin_link" />
+	
+	<link text="Studio" />
+	
+	<div id="Buttons">
+		<link text="Accounts" />
 	</div>
-	<link text="System Settings" />
-	<browser assert="User Interface" />
-	<browser assert="Minimum Dashlet Auto-Refresh Interval" />
-	<select id="dashlet_auto_refresh_min" set="Never" />
-	<button value="  Save  " />
+	
+	<link text="Fields" />
+	
+	<button value="Add Field" />
+	
+	<select id="type" set="Relate" />
 	<wait timeout="3" />
-	<link id="moduleTab_Home" />
-	<div class="hd" jscriptevent="onmouseover" />
-	<div class="dashletToolSet">
-		<link index="1" />
-	</div>
-	<wait timeout="5" />
-	<div id="dlg_c">
-		<browser assertnot="Auto-Refresh Interval" />
-		<button value="Save" />
-	</div>
-
-	<div id="globalLinks">
-		<link text="Admin" />
-	</div>
-	<link text="System Settings" />
-	<browser assert="User Interface" />
-	<browser assert="Minimum Dashlet Auto-Refresh Interval" />
-	<select id="dashlet_auto_refresh_min" set="Every 5 minutes" />
-	<button value="  Save  " />
+	<textfield id="field_name_id" set="custom_doc_relate" />
+	<textfield id="field_name_id" jscriptevent="onchange" />
 	<wait timeout="3" />
-	<link id="moduleTab_Home" />
+	<select id="ext2" set="Documents" />
+	<button value="Save" />
+	
+	<link id="moduleTab_Reports" />
+	
+	<link text="Create Report" />
+	
+	<image name="rowsColsImg" click="true" />
+	
+	<table id="Accounts">
+		<link text="Accounts" />
+	</table>
+	
+	<button name="Next &gt;" />
+	
+	<div text="custom doc_relate" click="true" />
+	<div text="Name" click="true" />
+	<button name="Next &gt;" />
 
-	<div class="hd" jscriptevent="onmouseover" />
-	<div class="dashletToolSet">
-		<link index="1" />
+	<textfield name="save_report_as" set="QA_Created for Reports_11821.xml." />
+	<button name="Save and Run" />
+	
+	<browser assertnot="Database failure." />
+	
+	<!-- Cleanup: remove the field added in Studio. -->
+	<link id="admin_link" />
+	
+	<link text="Studio" />
+	
+	<div id="Buttons">
+		<link text="Accounts" />
 	</div>
-	<wait timeout="5" />
-	<div id="dlg_c">
-		<browser assert="/Auto-Refresh Interval/" />
-		<browser assert="Do not auto-refresh" />
-		<browser assert="Every 5 minutes" />
-		<browser assert="Every 10 minutes" />
-		<browser assertnot="Every 30 seconds" />
-		<browser assertnot="Every 1 minute" />
-		<browser assertnot="Every 3 minute" />
-		<button value="Save" />
-	</div>
+	
+	<link text="Fields" />
+	
+	<link text="custom_doc_relate_c" />
+	
+	<button value="Delete" alert="true" />
+	
+	<!-- Cleanup: Delete the report created above.  -->
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
 
-	<puts text="Test: Admin_10393.xml finished." />
-</soda>
+	<puts text="Test: Reports_11821.xml finished." />
+</soda>	
+	

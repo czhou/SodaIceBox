@@ -26,44 +26,56 @@
 -->
 
 <soda>
-	<!-- verify that currency symbol displayed under display column. -->
-	<puts text="Test: Reports_7798.xml started." />
 
-	<!--goto Report module-->
-	<link id="moduleTab_Reports" />
-	<link text="Create Report" />
-	<browser assert="Report Wizard" />
+	<puts
+		text="Test: Admin_10393 Set minimum dashlet auto-refresh interval in system setting starting." />
 
-	<!--create row and column report-->
-	<image name="rowsColsImg" click="true" />
-	<table id="Quotes">
-		<link text="Quotes" />
-		<wait timeout="1" />
-	</table>
-
-	<button name="Next &gt;" />
-	<wait timeout="1" />
-	<div text="Quote Subject" click="true" />
-	<wait timeout="2" />
-	<div text="discount total" click="true" />
-	<wait timeout="2" />
-
-	<div id="display_cols_div">
-		<browser assert="Quotes &gt; Quote Subject" />
-		<browser assert="Quotes &gt; discount total" />
+	<div id="globalLinks">
+		<link text="Admin" />
 	</div>
-	<button name="Next &gt;" />
+	<link text="System Settings" />
+	<browser assert="User Interface" />
+	<browser assert="Minimum Dashlet Auto-Refresh Interval" />
+	<select id="dashlet_auto_refresh_min" set="Never" />
+	<button value="  Save  " />
+	<wait timeout="3" />
+	<link id="moduleTab_Home" />
+	<div class="hd" jscriptevent="onmouseover" />
+	<div class="dashletToolSet">
+		<link index="1" />
+	</div>
+	<wait timeout="5" />
+	<div id="dlg_c">
+		<browser assertnot="Auto-Refresh Interval" />
+		<button value="Save" />
+	</div>
 
-	<csv file="{@global.scriptsdir}/csvs/reports/Reports_7734.csv" var="report_record_7798" >
-		<textfield name="save_report_as" set="QA_Created_{@report_record_7798.save_report_as} {@stamp}" />
-	</csv>
+	<div id="globalLinks">
+		<link text="Admin" />
+	</div>
+	<link text="System Settings" />
+	<browser assert="User Interface" />
+	<browser assert="Minimum Dashlet Auto-Refresh Interval" />
+	<select id="dashlet_auto_refresh_min" set="Every 5 minutes" />
+	<button value="  Save  " />
+	<wait timeout="3" />
+	<link id="moduleTab_Home" />
 
-	<button name="Save and Run" />
-	<wait />
-	<browser assert="Title: QA_Created_{@report_record_7798.save_report_as}" />
-	
-	<!--Delete created Report -->
-	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
+	<div class="hd" jscriptevent="onmouseover" />
+	<div class="dashletToolSet">
+		<link index="1" />
+	</div>
+	<wait timeout="5" />
+	<div id="dlg_c">
+		<browser assert="Auto-Refresh" />
+		<browser assert="Do not auto-refresh" />
+		<browser assert="Every 5 minutes" />
+		<browser assert="Every 10 minutes" />
+		<browser assertnot="Every 30 seconds" />
+		<browser assertnot="Every 1 minute" />
+		<browser assertnot="Every 3 minute" />
+		<button value="Save" />
+	</div>
 
-	<puts text="Test: Reports_7798.xml finished." />
+	<puts text="Test: Admin_10393.xml finished." />
 </soda>
