@@ -58,7 +58,6 @@
 		<wait timeout="3" />
 		
 		<!-- Set the team. -->
-<!--
 		<table id="EditView_team_name_table">
 			<image id="remove_team_name_collection_0" click="true" />
 			<button value="Select" />
@@ -67,13 +66,11 @@
 		<textfield name="name" set="{@pre_user_firstname}" />
 		<button value="Search" />
 		<link text="{@pre_user_fullname}" />
--->
+
 		<!-- Back on the EditView... -->
-<!--
 		<radio id="primary_team_name_collection_0" set="true" />
 		<wait timeout="3" />
--->
-		<button value="Save" jscriptevent="onclick" />
+		<button value="Save" />
 		<browser assert="{@account_record.name} {@stamp}" />
 	</csv>
 	<var var="pre_account_name" set="{@account_record.name} {@stamp}" />
@@ -121,7 +118,7 @@
 	<button id="edit_button" />
 	<wait timeout="3" />
 
-	<textfield id="team_name_collection_0" assert="{@pre_user_fullname}" />
+	<textfield id="EditView_team_name_collection_0" assert="{@pre_user_fullname}" />
 
 	<!--check the team not show in the system any more -->
 	<table id="EditView_team_name_table">
