@@ -37,9 +37,6 @@
 	<!-- {@pre_account_name} -->
 	<button id="edit_button" />
 	
-	<div id="EditView_tabs">
-		<link text="More Information"/>
-	</div>
 	<button id="btn_campaign_name" />
 	<link text="{@Campaign_Name}" />
 	<button id="SAVE" />
@@ -51,7 +48,6 @@
 	<!-- {@pre_contact_first_name} {@pre_contact_last_name} -->
 	
 	<button id="edit_button" />
-	<link id="tab1" />
 	<button id="btn_campaign_name" />
 	<link text="{@Campaign_Name}" />
 	<button id="SAVE_HEADER" />
@@ -66,7 +62,6 @@
 	<link id="moduleTab_Contacts" />
 	<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	<button id="edit_button" />
-	<link id="tab1" />
 	<button id="SAVE_HEADER" />
 	<button id="SAVE_HEADER" exists="false" />
 		
@@ -74,7 +69,6 @@
 	<link id="moduleTab_Accounts" alert="true" />
 	<link text="{@pre_account_name}" />
 	<button id="edit_button" />
-	<link id="tab1" />
 	<button id="SAVE" />
 	<button id="SAVE" exists="false" />
 	
