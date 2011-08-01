@@ -53,7 +53,10 @@
 			</cell>
 		</row>
 	</table>
-	<wait timeout="3" />
+
+	<!-- Edit button opens in-place now, so navigate to Full Form. -->
+	<button id="Accounts_subpanel_full_form_button" />
+
 	<div class="moduleTitle">
 		<link href="index.php?module=Accounts&amp;action=index" click="false" />
 		<browser assert="{@account3_name}" />

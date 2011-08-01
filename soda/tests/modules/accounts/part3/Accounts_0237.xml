@@ -68,6 +68,9 @@
 			<link class="listViewTdToolsS1" index="1" />
 		</table>
 	</div>
+	
+	<!-- Edit link opens in-place now, so navigate to Full Form. -->
+	<button id="Tasks_subpanel_full_form_button" />
 
 	<!-- Close and Create New Task -->
 	<button value="Close and Create New" />

@@ -97,6 +97,10 @@
 		</table>
 		<link class="listViewTdToolsS1" index="1" />
 	</div>
+
+	<!-- Edit link opens in-place now, so navigate to Full Form. -->
+	<button id="Meetings_subpanel_full_form_button" />
+	
 	<div class="moduleTitle">
 		<link href="index.php?module=Meetings&amp;action=index" click="false" />
 		<browser assert="{@pre_activity_meeting_subpanel_name}" />

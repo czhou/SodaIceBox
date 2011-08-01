@@ -31,23 +31,9 @@
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 
-	<!--Search the record-->
-	<link id="moduleTab_Accounts" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
-	</div>
-	<wait timeout="3" />
-	<textfield id="name_basic" set="{@pre_account_name}" />
-	<button id="search_form_submit" />
-	<table class="list view">
-		<link text="{@pre_account_name}" />
-	</table>
-
-	<!--Go its detail view-->
-	<browser assert="{@pre_account_name}" />
-
 	<!--Create Opportunity Subpanel-->
 	<button name="accounts_opportunities_create_button" />
+	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0043.csv" var="opp_record_0043">
 		<form id="form_SubpanelQuickCreate_Opportunities">
 			<textfield id="name" set="{@opp_record_0043.name} {@user.name} {@stamp}" />
@@ -104,6 +90,9 @@
 		</table>
 		<link class="listViewTdToolsS1" index="1" />
 	</div>
+	
+	<!-- Edit link opens in-place now, so navigate to Full Form. -->
+	<button id="Opportunities_subpanel_full_form_button" />
 
 	<!--goto opp edit view-->
 	<div class="moduleTitle">

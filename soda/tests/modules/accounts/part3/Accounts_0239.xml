@@ -35,20 +35,7 @@
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 
-	<!--Search the record-->
-	<link id="moduleTab_Accounts" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
-	</div>
-	<wait timeout="3" />
-	<textfield id="name_basic" set="{@pre_account_name}" />
-	<button id="search_form_submit" />
-	<table class="list view">
-		<link text="{@pre_account_name}" />
-	</table>
-
 	<!--Create Task-->
-	<browser assert="{@pre_account_name}" />
 	<button name="Activities_createtask_button" />
 	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0239.csv" var="activity_record_0239">
@@ -90,6 +77,10 @@
 			<link class="listViewTdToolsS1" index="1" />
 		</table>
 	</div>
+
+	<!-- Edit link opens in-place now, so navigate to Full Form. -->
+	<button id="Tasks_subpanel_full_form_button" />
+	
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0237.csv" var="task_record_239" />
 	<textfield id="name" set="{@task_record_239.name}" />
 	<form id="EditView">

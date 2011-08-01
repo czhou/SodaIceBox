@@ -27,7 +27,7 @@
 
 <soda>
 
-	<puts text="Test Case 127: Create Account - Quick _Verify that a new account which is created on 'New Account' box is not saved when the 'Save' button"/>
+	<puts text="Test Case 127: Create Account - Quick _Verify that a new account which is created on 'New Account' box is not saved when the 'Save' button" />
 
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
@@ -44,7 +44,7 @@
 				</ul>
 			</div>
 		</div>	
-		<div class="hd-center">
+		<div class="hd">
 			<browser assert="Create Account"/>
 		</div>
 
