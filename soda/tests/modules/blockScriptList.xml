@@ -28,54 +28,61 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
-		<testfile>Calendar_0703</testfile>
-		<bugnumber>45652</bugnumber>
-		<reason>Add Invitee search works only once.</reason>
-		<modulename>Calendar-part2</modulename>
+		<testfile>Accounts_0057</testfile>
+		<bugnumber>45622</bugnumber>
+		<reason>TinyMCE PHP notice.</reason>
+		<modulename>Accounts-part1</modulename>
 	</block>
-	
+
 	<block>
-		<testfile>Reports_11821</testfile>
-		<bugnumber>45250</bugnumber>
-		<reason>Relate field to Documents causes database error</reason>
-		<modulename>Reports</modulename>
+		<testfile>Accounts_0058</testfile>
+		<bugnumber>45622</bugnumber>
+		<reason>TinyMCE PHP notice.</reason>
+		<modulename>Accounts-part1</modulename>
 	</block>
-	
+
 	<block>
-		<testfile>BugTracker_0654</testfile>
-		<bugnumber>43344</bugnumber>
-		<reason>DetailView pagination disappears when you save or cancel on the EditView.</reason>
-		<modulename>Bug Tracker</modulename>
+		<testfile>Accounts_0220</testfile>
+		<bugnumber>45622</bugnumber>
+		<reason>TinyMCE PHP notice.</reason>
+		<modulename>Accounts-part2</modulename>
 	</block>
-	
+
 	<block>
-		<testfile>Emails_9770</testfile>
-		<bugnumber>45361</bugnumber>
-		<reason>My Drafts folder isn't a link anymore.</reason>
-		<modulename>Emails</modulename>
+		<testfile>Accounts_0249</testfile>
+		<bugnumber>45622</bugnumber>
+		<reason>TinyMCE PHP notice.</reason>
+		<modulename>Accounts-part3</modulename>
 	</block>
-	
+
 	<block>
-		<testfile>Emails_9776</testfile>
-		<bugnumber>45361</bugnumber>
-		<reason>My Drafts folder isn't a link anymore.</reason>
-		<modulename>Emails</modulename>
+		<testfile>Accounts_0250</testfile>
+		<bugnumber>45622</bugnumber>
+		<reason>TinyMCE PHP notice.</reason>
+		<modulename>Accounts-part4</modulename>
 	</block>
-	
+
 	<block>
-		<testfile>Reports_11798</testfile>
-		<bugnumber>45303</bugnumber>
-		<reason>Soda cannot assert which select option is selected.</reason>
-		<modulename>Reports</modulename>
+		<testfile>Accounts_0251</testfile>
+		<bugnumber>45622</bugnumber>
+		<reason>TinyMCE PHP notice.</reason>
+		<modulename>Accounts-part4</modulename>
 	</block>
-	
+
 	<block>
-		<testfile>BugTracker_9546</testfile>
-		<bugnumber>44021</bugnumber>
-		<reason>"Delete All" after pagination only deletes one page.</reason>
-		<modulename>Bug Tracker</modulename>
+		<testfile>Accounts_0285</testfile>
+		<bugnumber>45622</bugnumber>
+		<reason>TinyMCE PHP notice.</reason>
+		<modulename>Accounts-part5</modulename>
 	</block>
-	
+
+	<block>
+		<testfile>Accounts_0286</testfile>
+		<bugnumber>45622</bugnumber>
+		<reason>TinyMCE PHP notice.</reason>
+		<modulename>Accounts-part5</modulename>
+	</block>
+
 	<block>
 		<testfile>Accounts_0275</testfile>
 		<bugnumber>44836</bugnumber>
@@ -88,6 +95,48 @@
 		<bugnumber>43294</bugnumber>
 		<reason>Bug43294</reason>
 		<modulename>Accounts</modulename>
+	</block>
+	
+	<block>
+		<testfile>Activities_9353</testfile>
+		<bugnumber>45387</bugnumber>
+		<reason>"Accept?" column empty on My Calls dashlet.</reason>
+		<modulename>Activities</modulename>
+	</block>
+	
+	<block>
+		<testfile>Activities_9354</testfile>
+		<bugnumber>45387</bugnumber>
+		<reason>"Accept?" column empty on My Calls dashlet.</reason>
+		<modulename>Activities</modulename>
+	</block>
+	
+	<block>
+		<testfile>Activities_10262</testfile>
+		<bugnumber>45426</bugnumber>
+		<reason>Some select lists do not respect the $sugar_config['disable_autocomplete']= true; setting.</reason>
+		<modulename>Activities</modulename>
+	</block>
+	
+	<block>
+		<testfile>Activities_11242</testfile>
+		<bugnumber>45387</bugnumber>
+		<reason>"Accept?" column empty on My Calls dashlet.</reason>
+		<modulename>Activities</modulename>
+	</block>
+	
+	<block>
+		<testfile>BugTracker_0654</testfile>
+		<bugnumber>43344</bugnumber>
+		<reason>DetailView pagination disappears when you save or cancel on the EditView.</reason>
+		<modulename>Bug Tracker</modulename>
+	</block>
+	
+	<block>
+		<testfile>BugTracker_9546</testfile>
+		<bugnumber>44021</bugnumber>
+		<reason>"Delete All" after pagination only deletes one page.</reason>
+		<modulename>Bug Tracker</modulename>
 	</block>
 	
 	<block>
@@ -224,6 +273,22 @@
 		<modulename>admin</modulename>
 	</block>
 	
+	<block>
+		<testfile>Admin_11596</testfile>
+		<bugnumber></bugnumber>
+		<reason>6_3_0 new feature not implement</reason>
+		<modulename>admin</modulename>
+	</block>
+
+	<block>
+		<testfile>Admin_11601</testfile>
+		<bugnumber></bugnumber>
+		<reason>6_3_0 new feature not implement</reason>
+		<modulename>admin</modulename>
+	</block>
+
+
+
 	<block>
 		<testfile>Admin_36109</testfile>
 		<bugnumber>36109</bugnumber>
@@ -425,6 +490,48 @@
 	</block>
 	
 	<block>
+		<testfile>Leads_11516</testfile>
+		<bugnumber></bugnumber>
+		<reason>Feature not available</reason>
+		<modulename>Leads</modulename>
+	</block>
+
+	<block>
+		<testfile>Leads_11544</testfile>
+		<bugnumber></bugnumber>
+		<reason>Feature not available</reason>
+		<modulename>Leads</modulename>
+	</block>
+
+	<block>
+		<testfile>Leads_11513</testfile>
+		<bugnumber></bugnumber>
+		<reason>Feature not available</reason>
+		<modulename>Leads</modulename>
+	</block>
+	
+	<block>
+		<testfile>Leads_11517</testfile>
+		<bugnumber></bugnumber>
+		<reason>Feature not available</reason>
+		<modulename>Leads</modulename>
+	</block>
+
+	<block>
+		<testfile>Leads_11737</testfile>
+		<bugnumber></bugnumber>
+		<reason>Feature not available</reason>
+		<modulename>Leads</modulename>
+	</block>
+
+	<block>
+		<testfile>Leads_11740</testfile>
+		<bugnumber></bugnumber>
+		<reason>Feature not available</reason>
+		<modulename>Leads</modulename>
+	</block>
+
+	<block>
 		<testfile>Studio_8287</testfile>
 		<bugnumber></bugnumber>
 		<reason>Can't find element during CI only</reason>
@@ -523,6 +630,98 @@
 		<reason>bug 44193</reason>
 		<modulename>Studio</modulename>
 	</block>
+	
+	<block>
+		<testfile>Studio_10589_2</testfile>
+		<bugnumber>45441</bugnumber>
+		<reason>45441</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_11673_2</testfile>
+		<bugnumber>45441</bugnumber>
+		<reason>45441</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_11674_2</testfile>
+		<bugnumber>45441</bugnumber>
+		<reason>45441</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_11675_2</testfile>
+		<bugnumber>45441</bugnumber>
+		<reason>45441</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_11676_2</testfile>
+		<bugnumber>45441</bugnumber>
+		<reason>45441</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_11677_2</testfile>
+		<bugnumber>45441</bugnumber>
+		<reason>45441</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_10597</testfile>
+		<bugnumber>45199</bugnumber>
+		<reason>45199</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_10598</testfile>
+		<bugnumber>45199</bugnumber>
+		<reason>45199</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_10599</testfile>
+		<bugnumber>45199</bugnumber>
+		<reason>45199</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_10600</testfile>
+		<bugnumber>45199</bugnumber>
+		<reason>45199</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_11680</testfile>
+		<bugnumber>45386</bugnumber>
+		<reason>45386</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_11681</testfile>
+		<bugnumber>45394</bugnumber>
+		<reason>45394</reason>
+		<modulename>Studio</modulename>
+	</block>
+	
+	<block>
+		<testfile>Studio_11683</testfile>
+		<bugnumber>45399</bugnumber>
+		<reason>45399</reason>
+		<modulename>Studio</modulename>
+	</block>	
+	
 	
 	<block>
 		<testfile>roles_11734</testfile>
@@ -783,6 +982,20 @@
                 <reason>Can't Create project task.</reason>
                 <modulename>Projects</modulename>
         </block>
+
+	<block>
+                <testfile>Project_2863</testfile>
+                <bugnumber></bugnumber>
+                <reason>Can't Create project task.</reason>
+                <modulename>Projects</modulename>
+	</block>
+	
+	<block>
+                <testfile>Project_2856</testfile>
+                <bugnumber></bugnumber>
+                <reason>Can't Create project task.</reason>
+                <modulename>Projects</modulename>
+        </block>
     <block>
 		<testfile>Admin_11760</testfile>
 		<bugnumber>44963</bugnumber>
@@ -801,4 +1014,38 @@
 		<reason>Delete the campaign-account relationship during the campaign deleting</reason>
 		<modulename>Campaigns</modulename>
 	</block>
+	
+	<!-- Gino's modules -->
+	<block>
+		<testfile>Accounts_0037.xml</testfile>
+		<bugnumber>45397</bugnumber>
+		<reason>Save not working from Contact edit view subpanel</reason>
+		<modulename>Accounts</modulename>
+	</block>	
+	<block>
+		<testfile>Accounts_0041.xml</testfile>
+		<bugnumber>45397</bugnumber>
+		<reason>Save not working from Contact edit view subpanel</reason>
+		<modulename>Accounts</modulename>
+	</block>	
+	<block>
+		<testfile>Accounts_0046.xml</testfile>
+		<bugnumber>45397</bugnumber>
+		<reason>Save not working from Contact edit view subpanel</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	<block>
+		<testfile>Accounts_0119.xml</testfile>
+		<bugnumber>45397</bugnumber>
+		<reason>Save not working from Contact edit view subpanel</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	<block>
+		<testfile>Accounts_0198.xml</testfile>
+		<bugnumber>45397</bugnumber>
+		<reason>Save not working from Contact edit view subpanel</reason>
+		<modulename>Accounts</modulename>
+	</block>
+	<!-- End of Gino's modules -->
+	
 </soda>
