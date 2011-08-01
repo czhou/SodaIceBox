@@ -28,16 +28,15 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <soda>
 	<!-- Bug42938: The join on the calls dashlet doesnt check for deleted records. -->
 	<puts text="Test: Bug42938.xml starting." />
-	
-	<!-- Create new Call -->
-	<link id="moduleTab_Calls" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Calls&amp;action=index" click="false" />
-	</div>
-	<link text="Log Call" />
 	<timestamp />
 	
 	<csv file="{@global.scriptsdir}/dev/Bug42938.csv" var="Bug42938">
+		<!-- Create new Call -->
+		<link id="moduleTab_Calls" />
+		<div class="moduleTitle">
+			<link href="index.php?module=Calls&amp;action=index" click="false" />
+		</div>
+		<link text="Log Call" />
 		<textfield id="name" set="{@Bug42938.name} {@user.name} {@stamp}" />
 		<textfield id="date_start_date" set="{@Bug42938.date_start_date}" />
 		<select id="date_start_hours" set="{@Bug42938.date_start_hours}" />
@@ -46,13 +45,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<select id="duration_minutes" set="{@Bug42938.duration_minutes}" />
 		<select id="direction" set="{@Bug42938.direction}" />
 		<select id="status" set="{@Bug42938.status}" />
-		<checkbox name="reminder_checked" set="{@Bug42938.reminder_checked}" />
-		<textfield id="description" set="{@Bug42938.description}" />
 		<button value="Save" />
 		
 		<browser assert="{@Bug42938.name} {@user.name} {@stamp}" />
-		
-		
 		
 		<!-- Check that Call appear at Calls dashlet at Home page -->
 		<link id="moduleTab_Home" />
@@ -69,7 +64,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		</div>
 		
 		<!-- Check that Call don't appear at Calls dashlet at Home page -->
-		<link text="Home" />
+		<link id="moduleTab_Home" /> 
 		<div id="pageContainer">
 			<link text="{@Bug42938.name} {@user.name} {@stamp}" click="false" exists="false" />
 		</div>
