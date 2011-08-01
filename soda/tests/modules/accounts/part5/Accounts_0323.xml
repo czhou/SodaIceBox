@@ -46,7 +46,7 @@
 
 	<!--Create Member Organization-->
 	<button name="member_accounts_create_button" />
-	<wait timeout="5"/>
+	<wait timeout="7"/>
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0079.csv" var="member_record_0079">
 		<form id="form_SubpanelQuickCreate_Accounts">
 			<textfield id="Accounts0emailAddress0" set="{@member_record_0079.emailAddress0}" />
@@ -62,7 +62,7 @@
 
 		<button id="Accounts_subpanel_save_button"/>
 
-		<wait timeout="5"/>
+		<wait timeout="7"/>
 		<!--Go to its detail view-->
 		<div id="list_subpanel_accounts">
 			<span class="pageNumbers" assert="(1 - 1 of 1)" />
