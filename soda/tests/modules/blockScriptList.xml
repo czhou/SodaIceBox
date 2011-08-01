@@ -28,6 +28,13 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Activities_11827</testfile>
+		<bugnumber>45709</bugnumber>
+		<reason>Tasks Advanced Search: Contact Name field does not return matches on full names.</reason>
+		<modulename>Activities-part1</modulename>
+	</block>
+
+	<block>
 		<testfile>Accounts_0057</testfile>
 		<bugnumber>45622</bugnumber>
 		<reason>TinyMCE PHP notice.</reason>

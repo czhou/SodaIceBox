@@ -29,18 +29,47 @@
 	<!-- Search Task_Verify that task can be searched by Subject and Contact Name fields for basic search function. -->
 	<puts text="Test: Activities_0481.xml starting." />
 	
-	<!--create task record-->
-	<script file="{@global.scriptsdir}/modules/lib/Task_Create_Lib.xml" />    
-	
+	<!-- create task record -->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Task_Create_Lib.xml" />
+
+	<button id="edit_button" />
+	<textfield id="contact_name" click="true" />
+	<textfield id="contact_name" set="{@pre_contact_first_name} {@pre_contact_last_name}" jscriptevent="onkeydown" />
+	<textfield id="contact_name" jscriptevent="onkeyup" />
+	<wait timeout="3" />
+	<button id="SAVE" />
+
 	<link id="moduleTab_Tasks" />
 
-	<textfield id="name_basic" set="{@pre_task_name}" />
+	<table class="list view">
+		<browser assert="{@pre_task_name}" />
+		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+	
+	<link id="advanced_search_link" />
+	<wait timeout="3" />
+	<textfield id="name_advanced" set="{@pre_task_name}" />
+	<textfield id="contact_name_advanced" click="true" />
+	<textfield id="contact_name_advanced" set="{@pre_contact_first_name} {@pre_contact_last_name}" jscriptevent="onkeydown" />
+	<textfield id="contact_name_advanced" jscriptevent="onkeyup" />
+	<wait timeout="3" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_task_name}" exists="true" />
 	</table>
 	
-	<!--delete task record-->
+	<!-- Cleanup: Reset search form. -->
+	<link id="moduleTab_Tasks" />
+
+	<link id="basic_search_link" />
+	<wait timeout="3" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	
+	<!-- Cleanup: Delete test data. -->
 	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />                
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />                
+
 	<puts text="Test: Activities_0481.xml finished." />
 </soda>
