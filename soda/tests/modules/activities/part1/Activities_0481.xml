@@ -42,5 +42,6 @@
 	
 	<!--delete task record-->
 	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />                
+
 	<puts text="Test: Activities_0481.xml finished." />
 </soda>

@@ -47,6 +47,7 @@
 	</div>
 
 	<button id="Activities_schedulemeeting_button"/>
+	<wait timeout="3" />
 	<textfield id="name" set="Account meeting record"/>
 	<select id="status" set="Held"/>
 	<button id="Meetings_subpanel_save_button"/>

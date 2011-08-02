@@ -35,62 +35,6 @@
 	</block>
 
 	<block>
-		<testfile>Accounts_0057</testfile>
-		<bugnumber>45622</bugnumber>
-		<reason>TinyMCE PHP notice.</reason>
-		<modulename>Accounts-part1</modulename>
-	</block>
-
-	<block>
-		<testfile>Accounts_0058</testfile>
-		<bugnumber>45622</bugnumber>
-		<reason>TinyMCE PHP notice.</reason>
-		<modulename>Accounts-part1</modulename>
-	</block>
-
-	<block>
-		<testfile>Accounts_0220</testfile>
-		<bugnumber>45622</bugnumber>
-		<reason>TinyMCE PHP notice.</reason>
-		<modulename>Accounts-part2</modulename>
-	</block>
-
-	<block>
-		<testfile>Accounts_0249</testfile>
-		<bugnumber>45622</bugnumber>
-		<reason>TinyMCE PHP notice.</reason>
-		<modulename>Accounts-part3</modulename>
-	</block>
-
-	<block>
-		<testfile>Accounts_0250</testfile>
-		<bugnumber>45622</bugnumber>
-		<reason>TinyMCE PHP notice.</reason>
-		<modulename>Accounts-part4</modulename>
-	</block>
-
-	<block>
-		<testfile>Accounts_0251</testfile>
-		<bugnumber>45622</bugnumber>
-		<reason>TinyMCE PHP notice.</reason>
-		<modulename>Accounts-part4</modulename>
-	</block>
-
-	<block>
-		<testfile>Accounts_0285</testfile>
-		<bugnumber>45622</bugnumber>
-		<reason>TinyMCE PHP notice.</reason>
-		<modulename>Accounts-part5</modulename>
-	</block>
-
-	<block>
-		<testfile>Accounts_0286</testfile>
-		<bugnumber>45622</bugnumber>
-		<reason>TinyMCE PHP notice.</reason>
-		<modulename>Accounts-part5</modulename>
-	</block>
-
-	<block>
 		<testfile>Accounts_0275</testfile>
 		<bugnumber>44836</bugnumber>
 		<reason>44836</reason>
