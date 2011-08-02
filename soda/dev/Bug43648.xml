@@ -39,19 +39,20 @@
 		<textfield id="last_name" set="{@Bug43648.last_name}{@stamp}" />
 		<select name="status" set="{@Bug43648.status}" />
 		<textfield id="Users0emailAddress0" set="{@stamp}{@Bug43648.email}" />
+		<link id="tab2" /> 
+		<wait timeout="1" /> 
+		<textfield id="new_password" set="{@Bug43648.pwd}" jscriptevent="onkeyup" /> 
+		<textfield id="confirm_pwd" set="{@Bug43648.pwd}" jscriptevent="onkeyup" /> 
 		<button id="Save" />
 		
 		<!-- Create account and assign to inactive user -->
 		<link id="moduleTab_Accounts" />
-		<wait timeout="5" />
 		<link text="{@account_record.name} {@user.name} {@stamp}" />
 		<button id="edit_button" />
-		<link id="tab2" />
 		<textfield id="assigned_user_name" set="{@Bug43648.first_name}{@stamp} {@Bug43648.last_name}{@stamp}" />
 		<button id="SAVE" />
 		
 		<!-- Verify expected result -->
-		<link id="tab2" />
 		<div id="Accounts_detailview_tabs">
 			<browser assertnot="{@Bug43648.first_name}{@stamp} {@Bug43648.last_name}{@stamp}" />
 		</div>
