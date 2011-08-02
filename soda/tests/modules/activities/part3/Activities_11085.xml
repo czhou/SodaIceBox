@@ -79,6 +79,7 @@
 		</table>
 	</ul>
 	
+	<browser assert="Do you want to close this meeting?" />
 	<div id="closeActivityDialog">
 		<browser assert="Do you want to close this meeting?" />
 		<button value="OK" />

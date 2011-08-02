@@ -43,7 +43,7 @@
 			</div>
 		</div>	
 		<wait timeout="3" />
-		<div class="hd-center">
+		<div class="hd">
 			<browser assert="Create Account"/>
 		</div>
 

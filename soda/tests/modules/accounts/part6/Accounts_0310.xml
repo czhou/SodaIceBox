@@ -91,6 +91,10 @@
 		<span class="pageNumbers" assert="(1 - 1 of 1)" />
 		<link class="listViewTdToolsS1" index="1" click="true"/>
 	</div>
+
+	<!-- Edit button opens in-place now, so navigate to Full Form. -->
+	<button id="Meetings_subpanel_full_form_button" />
+
 	<browser assert="Meeting Overview"/>
 	<select id="status" set="Planned"/>
 	<button value="Save"/>

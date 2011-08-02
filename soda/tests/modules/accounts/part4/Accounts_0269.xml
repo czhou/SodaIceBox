@@ -68,14 +68,18 @@
 			<span class="pageNumbers" assert="(1 - 1 of 1)" />
 			<link class="listViewTdToolsS1" index="1" click="true"/>
 		</div>
+
+		<!-- Edit button opens in-place now, so navigate to Full Form. -->
+		<button id="Accounts_subpanel_full_form_button" />
+
 		<textfield id="name" set="{@member_record_0079.name} {@stamp} Modified"/>
 		<!-- Click "Cancel". -->
 		<button id="CANCEL" alert="true"/>
-		 <div id="list_subpanel_accounts">
-                        <span class="pageNumbers" assert="(1 - 1 of 1)" />
-                        <link text="{@member_record_0079.name} {@stamp}" click="false"/>
-                        <link text="{@member_record_0079.name} {@stamp} Modified" exist="false" click="false"/>
-                </div>
+		<div id="list_subpanel_accounts">
+			<span class="pageNumbers" assert="(1 - 1 of 1)" />
+			<link text="{@member_record_0079.name} {@stamp}" click="false"/>
+			<link text="{@member_record_0079.name} {@stamp} Modified" exist="false" click="false"/>
+		</div>
 	</csv>
 
 	<!--Delete a account record-->

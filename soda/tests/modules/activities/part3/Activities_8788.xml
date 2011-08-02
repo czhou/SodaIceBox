@@ -62,6 +62,7 @@
 	
 	<link id="moduleTab_Tasks" />
 	<table class="list view">
+		<browser assert="{@task1_name}_new" />
 		<link text="{@task1_name}_new" />
 	</table>
 	

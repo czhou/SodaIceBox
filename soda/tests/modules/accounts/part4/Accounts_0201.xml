@@ -101,6 +101,9 @@
 		<link class="listViewTdToolsS1" index="1" />
 	</div>
 
+	<!-- Edit button opens in-place now, so navigate to Full Form. -->
+	<button id="Contacts_subpanel_full_form_button" />
+
 	<!--goto contact edit view-->
 	<div class="moduleTitle">
 		<link href="index.php?module=Contacts&amp;action=index" click="false" />

@@ -78,6 +78,10 @@
 
 		<!--Edit the contact record-->
 		<link class="listViewTdToolsS1" index="1"/>
+
+		<!-- Edit button opens in-place now, so navigate to Full Form. -->
+		<button id="Contacts_subpanel_full_form_button" />
+
 		<textfield id="last_name" set="{@contact_record_0035.last_name} Modifyed"/>
 		<button id="CANCEL_HEADER" alert="true"/>
 		<link text="{@contact_record_0035.first_name} {@user.name} {@stamp} {@contact_record_0035.last_name}" click="false"/>

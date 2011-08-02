@@ -78,6 +78,10 @@
 
 		<!--Edit the contact record-->
 		<link class="listViewTdToolsS1" index="1"/>
+
+		<!-- Edit button opens in-place now, so navigate to Full Form. -->
+		<button id="Contacts_subpanel_full_form_button" />
+
 		<textfield id="last_name" set=""/>
 		<button id="SAVE_HEADER"/>
 		<browser assert="Missing required field: Last Name"/>

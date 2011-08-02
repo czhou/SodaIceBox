@@ -53,6 +53,7 @@
 			</cell>
 		</row>
 	</table>
+	<wait timeout="3" />
 
 	<!-- Edit button opens in-place now, so navigate to Full Form. -->
 	<button id="Accounts_subpanel_full_form_button" />

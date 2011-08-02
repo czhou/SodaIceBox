@@ -44,22 +44,22 @@
 			</div>
 		</div>	
 		<wait timeout="3" />
-		<div class="hd-center">
+		<div class="hd">
 			<browser assert="Create Account"/>
 		</div>
 
 		<form id="form_DCQuickCreate_Accounts">
 			<textfield id="name" set="{@account_record_0004.name} {@user.name} {@stamp}" />
-
 			<textfield id="website" set="{@account_record_0004.website}" />
-
 			<button id="Accounts_dcmenu_save_button"/>
+			<wait timeout="3" />
 		</form>
-		<wait timeout="3" />
+		
 		<link id="moduleTab_Accounts" />
 		<div class="moduleTitle">
 			<link href="index.php?module=Accounts&amp;action=index" click="false" />
 		</div>
+
 		<button id="search_form_clear"/>
 		<textfield id="name_basic" set="{@account_record_0004.name} {@user.name} {@stamp}" />
 		<button id="search_form_submit" />

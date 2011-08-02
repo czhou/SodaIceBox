@@ -64,6 +64,10 @@
 		<span class="pageNumbers" assert="(1 - 1 of 1)" />
 		<link class="listViewTdToolsS1" index="1" click="true"/>
 	</div>
+
+	<!-- Edit button opens in-place now, so navigate to Full Form. -->
+	<button id="Calls_subpanel_full_form_button" />
+
 	<textfield id="name" set=""/>
 	<button value="Save"/>
 	<browser assert="Missing required field: Subject"/>

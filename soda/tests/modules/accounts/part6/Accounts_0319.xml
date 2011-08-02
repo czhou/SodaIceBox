@@ -75,6 +75,10 @@
 				<link class="listViewTdToolsS1" index="1" click="true" />
 			</table>
 		</div>
+
+		<!-- Edit button opens in-place now, so navigate to Full Form. -->
+		<button id="Opportunities_subpanel_full_form_button" />
+
 		<textfield id="name" set="{@opp_record_0043.name} {@user.name} {@stamp} Modified"/>
 		<button id="SAVE_HEADER"/>
 		<div id="list_subpanel_opportunities">

@@ -111,15 +111,15 @@
 		<link text="{@pre_account_name}" />
 	</table>
 
-
 	<!--Go its detail view-->
 	<browser assert="{@pre_account_name}" />
-
 
 	<!--In "Lead" sub-panel, verify the link name and click "Edit" icon-->
 	<link text="{@pre_lead_subpanel_name}" click="false" />
 	<link class="listViewTdToolsS1" index="1" />
-	<wait timeout="5" />
+
+	<!-- Edit button opens in-place now, so navigate to Full Form. -->
+	<button id="Leads_subpanel_full_form_button" />
 
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0417.csv" var="lead_record_0417">
 		<select id="lead_source" set="{@lead_record_0417.lead_source}" />
