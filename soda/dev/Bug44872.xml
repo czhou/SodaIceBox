@@ -32,16 +32,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<!-- Create relationship -->
 	<link id="admin_link" />
 	<link text="Studio" />
-	<wait timeout="5" />
 	<div id="mbtabs">
         <link text="Campaigns" />
 		<link text="Relationships" />
-		<wait timeout="2" />
 		<button value="Add Relationship" />
 		<select id="relationship_type_field" set="one-to-one" />
 		<select id="rhs_mod_field" set="Calls" />
 		<button name="saverelbtn" />
-		<wait timeout="20" />
+		<wait timeout="10" />
 		<browser assert="campaigns_calls*" />
 	</div>
 	
@@ -59,8 +57,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		<textfield name="duration_hours" set="{@call_record.duration_hours}" />
 		<select name="duration_minutes" set="{@call_record.duration_minutes}" />
 		<select id="status" set="{@call_record.status}" />
-		<checkbox name="reminder_checked" set="{@call_record.reminder_checked}" />
-		<textfield id="description" set="{@call_record.description}" />
 		<textfield id="campaigns_calls_name" set="{@Campaign_New_Record.name}" jscriptevent="onkeyup" />
 		<wait timeout="2" />
 		<div id="EditView_campaigns_calls_name_results">
@@ -76,11 +72,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<!-- Delete test data -->
 	<link id="admin_link" />
 	<link text="Studio" />
-	<wait timeout="5" />
 	<div id="mbtabs">
 		<link text="Campaigns" />
 		<link text="Relationships" />
-		<wait timeout="5" />
+		<wait timeout="10" />
 		<!-- Click on 'campaigns_calls*' -->
 		<javascript>
 			YUI().use('node-event-simulate', function(Y) {
@@ -102,7 +97,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<div id="sugarMsgWindow">
 		<button text="Yes" />
 	</div>
-	<wait timeout="20" />
+	<wait timeout="10" />
 	<!-- Verify if relationship was deleted -->
 	<div id="mbtabs">
 		<browser assertnot="campaigns_calls*" />
