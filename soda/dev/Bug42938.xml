@@ -51,11 +51,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		
 		<!-- Check that Call appear at Calls dashlet at Home page -->
 		<link id="moduleTab_Home" />
-		
 		<div id="pageContainer">
 			<link text="{@Bug42938.name} {@user.name} {@stamp}" click="false" exists="true" />
 		</div>
-		
 		<link text="{@Bug42938.name} {@user.name} {@stamp}" />
 		
 		<!-- Delete self from invitees -->
