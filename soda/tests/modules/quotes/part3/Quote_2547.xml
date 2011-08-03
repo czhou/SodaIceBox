@@ -43,7 +43,7 @@
         	</table>
 
         	<!--Create a contract record in contract subpanel.-->
-        	<browser assert="Quote Overview"/>
+        	<browser assert="Overview"/>
         	<button id="contracts_quotes_create_button"/>
         	<wait timeout="5"/>
         	<textfield id="name" set="{@Quote_2547.contract_name}"/>
@@ -56,7 +56,7 @@
 		 	<link text="{@Quote_2547.contract_name}"/>
         	</div>
         	<wait timeout="5"/>
-        	<browser assert="Contract Overview"/>
+        	<browser assert="Overview"/>
 
         	<!--Delete the contract record created in this case.-->
         	<button value="Delete" alert="true"/>

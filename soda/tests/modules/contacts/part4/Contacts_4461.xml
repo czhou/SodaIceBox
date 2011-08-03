@@ -36,7 +36,7 @@
 	<!--Creata a new contact with last name begin with '0'-->
 	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_4461.csv" var="Contact_4461">
 		<link text="Create Contact" />
-		<browser assert="Contact Overview" />
+		<browser assert="Overview" />
 
 		<!--fill the fields and "Save"-->
 		<form id="EditView">

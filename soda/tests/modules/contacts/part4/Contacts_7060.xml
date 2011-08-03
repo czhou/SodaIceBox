@@ -34,7 +34,7 @@
 	<csv file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.csv" var="Contacts_7060">
 		<timestamp />
 		<link text="Create Contact" />
-		<browser assert="Contact Overview" />
+		<browser assert="Overview" />
 
 		<!--Fill mandatory fields-->
 		<form id="EditView">

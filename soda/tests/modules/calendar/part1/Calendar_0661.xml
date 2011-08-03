@@ -64,7 +64,7 @@
 		text="/Planned:{@pre_meeting_name}.*({@meeting_record.date_start_hours}:{@meeting_record.date_start_minutes})/" />
 
 	<button id="edit_button" click="false" />
-	<browser assert="Meeting Overview" />
+	<browser assert="Overview" />
 	<browser assert="{@pre_meeting_name}" />
 
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />

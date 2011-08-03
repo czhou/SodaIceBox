@@ -94,7 +94,7 @@
 	"/Planned: {@pre_call_name}.*({@call_record.date_start_hours}:{@call_record.date_start_minutes})/" />
 	
 	<button id="edit_button" click="false" />
-	<browser assert="Call Overview" />
+	<browser assert="Overview" />
 	<browser assert="{@pre_call_name}" />
 	
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />

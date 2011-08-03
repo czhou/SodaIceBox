@@ -36,7 +36,7 @@
 	</div>
 	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_1444.csv" var="contact_record_1444">
 		<link text="Create Contact" />
-		<browser assert="Contact Overview" />
+		<browser assert="Overview" />
 
 		<!--user select-->
 		<button id="btn_assigned_user_name" />

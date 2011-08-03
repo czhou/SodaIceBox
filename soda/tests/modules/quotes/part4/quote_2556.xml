@@ -42,7 +42,7 @@
         </table>
 
 	<!--Create a note in History subpanel.-->
-	<browser assert="Quote Overview"/>
+	<browser assert="Overview"/>
 	<button id="History_createnoteorattachment_button"/>
 	<wait timeout="2"/>
 	<textfield id="name" set="New note record"/>

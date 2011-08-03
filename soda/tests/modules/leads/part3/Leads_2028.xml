@@ -37,7 +37,7 @@
 		<link href="index.php?module=Leads&amp;action=index" click="false" />
 	</div>
 	<link text="Create Lead" />
-	<browser assert="Lead Overview" />
+	<browser assert="Overview" />
 	<image id="remove_team_name_collection_0" />
 	<button value="Save" />
 	<!--verify-->

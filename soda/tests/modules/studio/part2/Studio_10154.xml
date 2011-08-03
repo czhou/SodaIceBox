@@ -57,7 +57,7 @@
          
     <csv file="{@global.scriptsdir}/csvs/studio/Studio_10154.csv" var="studio10154">
         <link text="Create Contact" />
-        <browser assert="Contact Overview" />
+        <browser assert="Overview" />
         <form id="EditView">
 	        <textfield name="last_name" set="{@studio10154.name} {@user.name} {@stamp}" />      
 			<textfield id="phone_work" set="{@studio10154.phonework}" />

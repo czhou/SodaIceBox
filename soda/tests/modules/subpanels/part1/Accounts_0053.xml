@@ -45,7 +45,7 @@
 		<button id="Project_subpanel_save_button" />
 		<link text="{@project.name}" />
 	
-		<browser assert="Project Overview" />
+		<browser assert="Overview" />
 		<browser assert="{@project.name}" />
 	</csv>
 	

@@ -32,7 +32,7 @@
 	<csv file="{@global.scriptsdir}/csvs/emails/Email_9676.csv" var="Email9676">
 		<link id="moduleTab_Contacts" />
 		<link text="Create Contact" />
-		<browser assert="Contact Overview"/>
+		<browser assert="Overview"/>
 		<textfield name="first_name" set="{@Email9676.first_name}" />
 		<textfield id="last_name" set="{@Email9676.last_name}" />
 		

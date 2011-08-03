@@ -38,7 +38,7 @@
 	<csv file="{@global.scriptsdir}/csvs/projects/Project_2834.csv" var="Project_2834">
 		<link text="Create Project"/>
 		<wait timeout="2"/>
-		<browser assert="Project Overview"/>
+		<browser assert="Overview"/>
 		<textfield id="name" set="{@Project_2834.project_name}"/>
 		<textfield id="estimated_start_date" set="{@Project_2834.start_date}"/>
 		<textfield id="estimated_end_date" set="{@Project_2834.end_date}"/>

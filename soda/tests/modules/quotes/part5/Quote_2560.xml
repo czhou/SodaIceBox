@@ -46,7 +46,7 @@
 	</table>
 	<div class="moduleTitle">
 		<link href="index.php?module=Quotes&amp;action=index" click="false" />
-		<browser assert="Quote Overview" />
+		<browser assert="Overview" />
 	</div>
 	
 

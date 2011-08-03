@@ -43,7 +43,7 @@
         </table>
 
         <!--Create an Archived Email in History subpanel.-->
-        <browser assert="Quote Overview"/>
+        <browser assert="Overview"/>
         <button id="ArchiveEmail_button"/>
         <wait timeout="5"/>
         <textfield id="jscal_field" set="05/10/2011"/>

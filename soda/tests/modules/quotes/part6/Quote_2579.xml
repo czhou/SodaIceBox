@@ -79,7 +79,7 @@
 			<wait timeout="3"/>
 		</div>
 
-		<browser assert="Contract Overview"/>
+		<browser assert="Overview"/>
 		
 		<textfield id="name" set="Modified Contract Record"/>
 		<button id="SAVE_HEADER"/>
@@ -94,7 +94,7 @@
 			<link text="Modified Contract Record"/>
 		</div>
 		
-		<browser assert="Contract Overview"/>
+		<browser assert="Overview"/>
 		<button value="Delete" alert="true"/>
 		<wait timeout="3"/>
 	</csv>

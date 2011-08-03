@@ -44,7 +44,7 @@
 
         <!--Create a Project record in Project subpanel.-->
 	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2591.csv" var="quote_2591">
-        	<browser assert="Quote Overview"/>
+        	<browser assert="Overview"/>
         	<button id="projects_quotes_create_button"/>
         	<wait timeout="5"/>
         	<textfield id="name" set="{@quote_2591.project_name}"/>

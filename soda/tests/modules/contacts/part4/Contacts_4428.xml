@@ -40,7 +40,7 @@
 	<link text="Create Contact"/>
 	<csv file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.csv" var="contact_record">
 		<link text="Create Contact" />
-		<browser assert="Contact Overview" />
+		<browser assert="Overview" />
 
 		<!--fill the fields and "Save"-->
 		<form id="EditView">

@@ -35,7 +35,7 @@
 	<link id="moduleTab_Contacts" />
 	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_4444.csv" var="contacts_4444">
 		<link text="Create Contact" />
-		<browser assert="Contact Overview" />
+		<browser assert="Overview" />
 
 		<!--fill the fields and "Save"-->
 		<form id="EditView">

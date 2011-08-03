@@ -44,7 +44,7 @@
 
         <!--Create an Archived Email in History subpanel.-->
 	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2589.csv" var="Quote_2589">
-        	<browser assert="Quote Overview"/>
+        	<browser assert="Overview"/>
        		<button id="ArchiveEmail_button"/>
         	<textfield id="jscal_field" set="{@Quote_2589.send_date}"/>
         	<textfield name="time_start" set="{@Quote_2589.send_time}"/>

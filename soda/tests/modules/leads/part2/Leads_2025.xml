@@ -38,7 +38,7 @@
 	</div>
 	<csv file="{@global.scriptsdir}/csvs/leads/Leads_2025.csv" var="Leads_2025">
 		<link text="Create Lead" />
-		<browser assert="Lead Overview" />
+		<browser assert="Overview" />
 		<timestamp />
 		<!--user select-->
 		<button id="btn_assigned_user_name" />

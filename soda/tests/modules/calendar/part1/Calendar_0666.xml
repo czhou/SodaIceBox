@@ -44,7 +44,7 @@
 
 	<link text="Log Call" />
 	
-	<browser assert="Call Overview" />
+	<browser assert="Overview" />
 	<textfield id="date_start_date" click="false" />
 	
 	<timestamp />

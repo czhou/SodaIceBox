@@ -80,7 +80,7 @@
 			<wait timeout="3"/>
 		</div>
 
-		<browser assert="Contract Overview"/>
+		<browser assert="Overview"/>
 		
 		<textfield id="name" set="Modified Contract Record"/>
 		<button id="CANCEL_HEADER" alert="true"/>
@@ -95,7 +95,7 @@
 			<link text="{@Contract_Create_Lib}"/>
 		</div>
 		
-		<browser assert="Contract Overview"/>
+		<browser assert="Overview"/>
 		<button value="Delete" alert="true"/>
 		<wait timeout="3"/>
 	</csv>

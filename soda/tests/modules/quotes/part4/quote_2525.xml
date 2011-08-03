@@ -42,7 +42,7 @@
         </table>
 
         <!--Create a task in Activities subpanel.-->
-        <browser assert="Quote Overview"/>
+        <browser assert="Overview"/>
         <button id="Activities_schedulemeeting_button"/>
         <wait timeout="2"/>
         <textfield id="name" set="New meeting record"/>
@@ -55,7 +55,7 @@
                 <link text="New meeting record"/>
         </table>
         <wait timeout="2"/>
-	<browser assert="Meeting Overview"/>
+	<browser assert="Overview"/>
 
         <!--Delete the note record created in this case.-->
         <link id="moduleTab_Meetings"/>

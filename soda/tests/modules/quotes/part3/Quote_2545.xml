@@ -42,7 +42,7 @@
         </table>
 
         <!--Create a note in Project subpanel.-->
-        <browser assert="Quote Overview"/>
+        <browser assert="Overview"/>
         <button id="projects_quotes_create_button"/>
         <wait timeout="5"/>
         <textfield id="name" set="New Project Record"/>
@@ -57,7 +57,7 @@
                 <link text="New Project Record"/>
         </div>
         <wait timeout="10"/>
-        <browser assert="Project Overview"/>
+        <browser assert="Overview"/>
 
         <!--Delete the note record created in this case.-->
         <button id="delete_button" alert="true"/>

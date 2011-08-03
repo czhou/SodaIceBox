@@ -57,7 +57,7 @@
     <!--whitelist action="add" name="tmp-white">Error: '' is not a number</whitelist-->
     <csv file="{@global.scriptsdir}/csvs/studio/Studio_10094.csv" var="studio10094">
         <link text="Create Account" />
-        <browser assert="Account Overview" />
+        <browser assert="Overview" />
         <form id="EditView">
         <textfield id="name" set="{@studio10094.name} {@user.name} {@stamp}" />
         <textfield id="billing_address_street" set="{@studio10094.street}" />

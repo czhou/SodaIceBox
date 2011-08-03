@@ -104,7 +104,7 @@
 			<table class="list view">
 				<link text="{@pre_account_name}" />
 			</table>
-			<browser assert="Account Overview" />
+			<browser assert="Overview" />
 			<button id="edit_button" />
 			<link text="Other" />
 			<wait timeout="3" />
