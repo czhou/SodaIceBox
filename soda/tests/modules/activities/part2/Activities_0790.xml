@@ -27,11 +27,10 @@
 
 <soda>
 	<!-- Create Note_Verify that note is created for call/meeting from -->
-	<puts text="Test: Activities_0790.xml starting" />
+	<puts text="Test: Activities_0790.xml starting." />
 
 	<!--create call record-->
 	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
-
 
 	<link id="moduleTab_Notes" />
 	<link text="Create Note or Attachment" />
@@ -60,10 +59,9 @@
 
 		<browser assert="{@note_record_0790.name}" />
 	</csv>
-	<link id="moduleTab_Calendar" />
+	<link id="moduleTab_Calls" />
 	<link text="View Calls" />
 
-	<button id="search_form_clear" />
 	<textfield id="name_basic" set="{@pre_call_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">
@@ -74,8 +72,14 @@
 		<link text="{@note_record_0790.name}" click="false" />
 	</div>
 
+	<!-- Cleanup: Reset search form. -->
+	<link id="moduleTab_Calls" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
 
+	<!-- Cleanup: Delete test data. -->
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
-	<puts text="Test: Activities_0790.xml finished" />
+
+	<puts text="Test: Activities_0790.xml finished." />
 </soda>

@@ -27,11 +27,10 @@
 
 <soda>
 	<!-- Create Note_Verify that note is created for call/meeting from -->
-	<puts text="Test: Activities_3514.xml starting" />
+	<puts text="Test: Activities_3514.xml starting." />
 
 	<!--create call record-->
 	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" csv="{@global.scriptsdir}/csvs/activities/Activities_3514.csv" />
-
 
 	<link id="moduleTab_Notes" />
 	<link text="Create Note or Attachment" />
@@ -55,15 +54,12 @@
 		<textfield id="name_advanced" set="{@pre_call_name}" />
 		<button value="Search" />
 		<link text="{@pre_call_name}" />
-
 		<button value="Save" />
-
 		<browser assert="{@note_record_3514.name}" />
 	</csv>
-	<link id="moduleTab_Calendar" />
+	<link id="moduleTab_Calls" />
 	<link text="View Calls" />
 
-	<button id="search_form_clear" />
 	<textfield id="name_basic" set="{@pre_call_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">
@@ -74,9 +70,14 @@
 		<link text="{@note_record_3514.name}" click="false" />
 	</div>
 
+	<!-- Cleanup: Reset search form. -->
+	<link id="moduleTab_Calls" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
 
+	<!-- Cleanup: Delete test data. -->
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
-	<puts text="Test: Activities_3514.xml finished" />
 
+	<puts text="Test: Activities_3514.xml finished." />
 </soda>

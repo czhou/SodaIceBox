@@ -32,20 +32,17 @@
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Task_Create_Lib.xml" />
 
-	<link id="moduleTab_Calendar" />
-	<browser assert="Task List" />
+	<link id="moduleTab_Tasks" />
 	<link text="View Tasks" />
 
-	<button id="search_form_clear" />
-	<link text="Advanced Search" required="false" />
+	<link text="Advanced Search" />
 	<select name="status_advanced[]" set="{@task_record.status}" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_task_name}" />
 	</table>
 
-	<link id="moduleTab_Calendar" />
-	<browser assert="Task List" />
+	<link id="moduleTab_Tasks" />
 	<link text="View Tasks" />
 	<link text="/Basic Search/" />
 	<wait timeout="3" />

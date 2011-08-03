@@ -32,11 +32,9 @@
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Task_Create_Lib.xml" />
 
-	<link id="moduleTab_Calendar" />
-	<browser assert="Task List" />
+	<link id="moduleTab_Tasks" />
 	<link text="View Tasks" />
-	<wait timeout="3" />
-	<button id="search_form_clear" />
+
 	<textfield id="name_basic" set="{@pre_task_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">
@@ -48,6 +46,14 @@
 	<select id="priority" set="Low" />
 	<button value="Cancel" alert="true" />
 	<browser assert="{@pre_task_name}" />
+
+	<!-- Cleanup: Reset search form. -->
+	<link id="moduleTab_Tasks" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+
+	<!-- Cleanup: Delete test data. -->
 	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
+
 	<puts text="Test: Activities_0505.xml starting" />
 </soda>
