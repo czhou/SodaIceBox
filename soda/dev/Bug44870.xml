@@ -36,7 +36,6 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 	<!-- {@pre_account_name} -->
 	<button id="edit_button" />
-	
 	<button id="btn_campaign_name" />
 	<link text="{@Campaign_Name}" />
 	<button id="SAVE" />
@@ -73,6 +72,7 @@
 	<button id="SAVE" exists="false" />
 	
 	<link id="moduleTab_Accounts" alert="true" />
+	
 	<!-- Delete test data -->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />	
