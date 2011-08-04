@@ -60,13 +60,6 @@
 	<!--Check Create Account from shortcut by c-->
 	<link text="View Acc Reports" click="false" exists="true" />
 
-	<!--Account module list view show "Acct" column as column name-->
-	<table class="list view">
-		<tr index="1">
-			<link text="Acc Name" click="false" exists="true" />
-		</tr>
-	</table>
-
 	<!--Set back to default module name-->
 	<!--Go to Admin page-->
 	<link text="Admin" />
