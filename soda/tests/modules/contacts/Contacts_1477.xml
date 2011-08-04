@@ -53,8 +53,8 @@
 	<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 
 	<!--goto Activities subpanel & click "Log Call"-->
-	<button value="  Log Call  " />
-	<wait timeout="3" />
+	<button id="Activities_logcall_button" />
+	<!--<wait timeout="2" />-->
 	<button id="Calls_subpanel_full_form_button" />
 	<div class="moduleTitle">
 		<link href="{@global.url}/index.php?module=Calls&amp;action=index" click="false" />
@@ -72,16 +72,12 @@
 		<div class="schedulerInvitees">
 			<button value="Search" />
 		</div>
-		<wait timeout="3" />
 		
 		<div id="list_div_win">
 			<button value="Add" />
-		</div>
-		<wait timeout="3" />
-		
+		</div>	
 		<button value="Save" />
-
-		<wait timeout="5" />
+		<!--<wait timeout="2" />-->
 
 		<!--Verify the task record created in subpanel-->
 		<div id="list_subpanel_activities">
@@ -92,7 +88,8 @@
 	</csv>
 
 	<!--Delete contact record-->
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<browser url="{@global.url}/index.php?module=Calls&amp;action=index" />
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<puts text="Test: Contacts_1477.xml finished." />
 </soda>
