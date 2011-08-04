@@ -28,8 +28,14 @@
 <soda>
 	<!-- Create contact_Verify that contact can be created -->
 	<puts text="Test: Contacts_1444.xml starting." />
-
 	<timestamp />
+	
+	<!--
+	<div id="themeTabGroup_All">
+	  <link href="{@global.url}/index.php?module=Administration&amp;action=ConfigureTabs#MoreAll" click="false" jscriptevent="onmouseover"/>
+	  <link id="moduleTab_Contacts" />
+	</div>
+	-->
 	<link id="moduleTab_Contacts" click="false" jscriptevent="onmouseover"/>
 	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_1444.csv" var="contact_record_1444">
 		<link text="Create Contact" />

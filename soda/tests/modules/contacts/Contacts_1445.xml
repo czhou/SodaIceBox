@@ -28,8 +28,8 @@
 <soda>
 	<!-- Create contact_Verify that creating a contact can be canceled. -->
 	<puts text="Test: Contacts_1445.xml starting." />
-
 	<timestamp />
+	
 	<link id="moduleTab_Contacts" click="false" jscriptevent="onmouseover"/>
 	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_1444.csv" var="contact_record_1445">
 		<link text="Create Contact" />
@@ -95,11 +95,9 @@
 			
 			<button id="CANCEL_FOOTER" alert="true" />
 		</form>
-		<!--
 		<div class="moduleTitle">
-			<link href="index.php?module=Contacts&action=index" click="false" />
+			<link href="{@global.url}/index.php?module=Contacts&amp;action=index" click="false" />
 		</div>
-		-->
 	</csv>
 
 	<puts text="Test: Contacts_1445.xml finished." />

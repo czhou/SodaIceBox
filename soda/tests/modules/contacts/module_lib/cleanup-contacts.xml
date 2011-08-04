@@ -26,7 +26,9 @@
 -->
 
 <soda>
+	<!-- shouldn't need 
 	<script file="{@global.scriptsdir}/modules/lib/Enable_Defaults_Lib.xml" />
+	-->
 	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
 	<browser action="close" />
 </soda>
