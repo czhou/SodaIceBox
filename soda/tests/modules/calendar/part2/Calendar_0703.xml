@@ -55,7 +55,7 @@
 	
 	<button id="edit_button" />
 	
-	<textfield name="search_email" set="sugarqa3@gmail.com" />
+	<textfield name="search_last_name" set="qauser" />
 	<button value="Search" />
 	<wait timeout="3" />
 
@@ -63,6 +63,8 @@
 		<button value="Add" />
 		<wait timeout="3" />
 	</div>
+
+	<textfield name="search_last_name" clear="true" />
 	
 	<textfield name="search_email" set="{@pre_contact_email}" />
 	<wait timeout="1" />
@@ -108,6 +110,12 @@
 		<browser assert="Note_{@pre_meeting_name}" />
 	</div>
 	
+	<!-- Clean up: Reset search form. -->
+	<link id="moduleTab_Meetings" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+
+	<!-- Clean up: Delete test data. -->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
