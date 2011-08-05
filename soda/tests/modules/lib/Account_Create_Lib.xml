@@ -33,17 +33,15 @@
       var="account_record">
 
       <link id="moduleTab_Accounts" click="false" jscriptevent="onmouseover" />
+      <wait timeout="1" />
 		<link text="Create Account" />
 		<browser assert="Create" />
 
 		<form id="EditView">
-		  <link id="tab1" />
-		  <select id="industry" set="{@account_record.industry}" />
-		  <select id="account_type" set="{@account_record.account_type}" />
-		  
-		  <link id="tab0" />
 			<textfield id="name" 
             set="{@account_record.name} {@user.name} {@stamp}" />
+			<select id="industry" set="{@account_record.industry}" />
+			<select id="account_type" set="{@account_record.account_type}" />
 			<textfield id="website" set="{@account_record.website}" />
 			<textfield id="phone_office" set="{@account_record.phone_office}" />
 			<textfield id="phone_fax" set="{@account_record.phone_fax}" />
@@ -54,6 +52,7 @@
 			<textfield id="description" set="{@account_record.description}" />
 			<button value="Save" />
 		</form>
+		<wait timeout="3" />
 		<browser assert="{@account_record.name} {@user.name} {@stamp}" />
 
 		<!--Save the account id & name-->
