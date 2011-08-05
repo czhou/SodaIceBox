@@ -56,7 +56,7 @@
 	
 	<textfield name="search_last_name" set="{@lead1_lname}" />
 	<button value="Search" click="true" />
-	<wait timeout="3" />
+	<wait timeout="5" />
 	<div id="list_div_win">
 		<button value="Add" click="true" />
 		<button value="Add" jscriptevent="onmouseup" />

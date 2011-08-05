@@ -43,6 +43,7 @@
 
 	<!--Go its contact subpanel -->
 	<button id="accounts_contacts_create_button" />
+	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0035.csv" var="contact_record_0035">
 		<form id="form_SubpanelQuickCreate_Contacts">
 			<textfield id="first_name"

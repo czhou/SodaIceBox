@@ -103,14 +103,11 @@
 	<button id="popupViewStartButton" />
 	<span class="pageNumbers" assert="(1 - 2 of 6)" />
 
-	<!-- 
-	<browser send_keys="Ctrl+W" />
-	<attach title="/Campaigns/">
-		<wait timeout="1" />
-	</attach>
- 	-->
+	<!-- Click an item in the list to close the popup. -->
  	<table class="list view">
- 		<link href="#" index="6" />
+		<tr class="oddListRowS1">
+			<link index="1" />
+		</tr>
  	</table>
 
 	<!--change the item number of list view-->
