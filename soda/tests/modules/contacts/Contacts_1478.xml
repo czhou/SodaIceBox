@@ -30,6 +30,7 @@
 		Edit call_Verify that a related call can be edited from contact detail view..
 	-->
 	<puts text="Test: Contacts_1478.xml starting." />
+	<timestamp />
 
 
 	<!--Create contact record & task subpanel-->
@@ -38,7 +39,7 @@
 	<!--Search the Contact record-->
 	<link id="moduleTab_Contacts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Contacts&amp;action=index" click="false" />
 	</div>
 	<link text="Basic Search" required="false" />
 	<button id="search_form_clear" />
@@ -51,11 +52,10 @@
 	<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 
 	<!--goto Activities subpanel & click "Log Call"-->
-	<button value="  Log Call  " />
-	<wait timeout="3" />
+	<button id="Activities_logcall_button" />
 	<button id="Calls_subpanel_full_form_button" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Calls&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Calls&amp;action=index" click="false" />
 	</div>
 	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_1477.csv" var="contact_record_1477">
 		<textfield id="name" set="{@contact_record_1477.name} {@user.name} {@stamp}" />
@@ -70,16 +70,11 @@
 		<div class="schedulerInvitees">
 			<button value="Search" />
 		</div>
-		<wait timeout="3" />
 
 		<div id="list_div_win">
 			<button value="Add" />
 		</div>
-		<wait timeout="3" />
-
 		<button value="Save" />
-
-		<wait timeout="5" />
 
 		<!--Verify the task record created in subpanel-->
 		<div id="list_subpanel_activities">
@@ -91,17 +86,14 @@
 
 	<!-- Edit call -->
 	<div id="list_subpanel_activities">
-		<link class="listViewTdToolsS1" index="1" alert="true" />
+		<link class="listViewTdToolsS1" text="edit" alert="true" />
 	</div>
-	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_1477.csv" var="contact_record_1477">
-		<textfield id="name"
+		<textfield id="name" clear="true"
 			set="{@contact_record_1477.new_name} {@user.name} {@stamp}" />
 	</csv>
 
 	<button value="Save" />
-
-	<wait timeout="5" />
 	<!--Verify the edited call record in subpanel-->
 	<div id="list_subpanel_activities">
 		<table class="list view">
@@ -112,7 +104,8 @@
 
 
 	<!--Delete contact record-->
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<browser url="{@global.url}/index.php?module=Calls&amp;action=index" />
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<puts text="Test: Contacts_1478.xml finished." />
 </soda>

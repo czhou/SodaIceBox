@@ -30,6 +30,7 @@
 		Edit lead_Verify that a related lead can be edited from contact detail view.
 	-->
 	<puts text="Test: Contacts_1490.xml starting." />
+	<timestamp />
 
 	<!--Create contact record-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
@@ -37,7 +38,7 @@
 	<!--Search the Contact record-->
 	<link id="moduleTab_Contacts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Contacts&amp;action=index" click="false" />
 	</div>
 	<button id="search_form_clear" />
 	<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
@@ -57,19 +58,18 @@
 
 	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_1490.csv" var="contact_note_1490" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Leads&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Leads&amp;action=index" click="false" />
 	</div>
-
-	<timestamp />
-
+	<link id="tab1" />
 	<select id="lead_source" set="{@contact_note_1490.lead_source}" />
 	<select id="status" set="{@contact_note_1490.status}" />
+	<link id="tab0" />
 	<select id="salutation" set="{@contact_note_1490.salutation}" />
-	<textfield name="first_name"
+	<textfield name="first_name" clear="true"
 		set="{@contact_note_1490.first_name} {@user.name} {@stamp}" />
-	<textfield id="last_name" set="{@contact_note_1490.last_name}" />
+	<textfield id="last_name" clear="true" set="{@contact_note_1490.last_name}" />
 	<textfield id="title" set="{@contact_note_1490.title}" />
-	<textfield id="phone_work" set="{@contact_note_1490.phone_work}" />
+	<textfield id="phone_work" clear="true" set="{@contact_note_1490.phone_work}" />
 	<textfield id="phone_mobile" set="{@contact_note_1490.phone_mobile}" />
 	<textfield id="phone_fax" set="{@contact_note_1490.phone_fax}" />
 	<textfield id="department" set="{@contact_note_1490.department}" />
@@ -83,35 +83,36 @@
 
 	<textfield id="description" set="{@contact_note_1490.description}" />
 
-	<button value="Save" />
+	<button id="SAVE" />
+	<wait timeout="3" />
 
 	<!-- Verify creation of Lead via subpanel -->
 	<div id="list_subpanel_leads">
+	  <table class="list view">
 		<link
 			text="{@contact_note_1490.salutation} {@contact_note_1490.first_name} {@user.name} {@stamp} {@contact_note_1490.last_name}"
 			click="false" />
+	  </table>
 	</div>
 
 	<!-- Edit lead in subpanel via "edit" -->
 	<div id="list_subpanel_leads">
-		<link class="listViewTdToolsS1" index="1" />
+		<link class="listViewTdToolsS1" text="edit" />
 	</div>
-	<wait timeout="3" />
 
 	<div class="moduleTitle">
-		<link href="index.php?module=Leads&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Leads&amp;action=index" click="false" />
 		<browser
 			assert="{@contact_note_1490.salutation} {@contact_note_1490.first_name} {@user.name} {@stamp} {@contact_note_1490.last_name}" />
 	</div>
 
-	<timestamp />
-	<textfield name="first_name"
+	<textfield name="first_name" clear="true"
 		set="{@contact_note_1490.new_first} {@user.name}" />
-	<textfield id="last_name" set="{@contact_note_1490.new_last}" />
-	<textfield id="description" set="{@contact_note_1490.new_description}" />
+	<textfield id="last_name" clear="true" set="{@contact_note_1490.new_last}" />
+	<textfield id="description" clear="true" set="{@contact_note_1490.new_description}" />
 
 	<button value="Save" />
-	<wait timeout="8" />
+	<wait timeout="3" />
 	<!-- Verify edit -->
 	<div id="list_subpanel_leads">
 		<link

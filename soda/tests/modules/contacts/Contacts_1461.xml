@@ -31,6 +31,7 @@
 		conditions
 	-->
 	<puts text="Test: Contacts_1461.xml starting." />
+	<timestamp />
 
 	<!--Create contact record-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
@@ -38,7 +39,7 @@
 	<!--Advance Search the Contact record-->
 	<link id="moduleTab_Contacts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Contacts&amp;action=index" click="false" />
 	</div>
 	<link text="Advanced Search" required="false" />
 
@@ -47,8 +48,9 @@
 		<textfield id="last_name_advanced" set="{@pre_contact_last_name}" />
 
 		<select name="lead_source_advanced[]" set="{@contact_record_1461.lead_source}" />
-		<button id="search_form_submit" />
-		<wait timeout="5" />
+		<div id="Contactsadvanced_searchSearchForm">
+		  <button id="search_form_submit" />
+		</div>
 		<form id="MassUpdate">
 			<table class="list view">
 				<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
@@ -58,14 +60,12 @@
 	</csv>
 	
 	<link id="moduleTab_Contacts" />
-	<wait timeout="3" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Contacts&amp;action=index" click="false" />
 	</div>
 	<link text="Basic Search" />
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
-	<wait timeout="3" />
 	<!--Delete contact record-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<puts text="Test: Contacts_1461.xml finished." />

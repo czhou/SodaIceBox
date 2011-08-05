@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<plugin>
+		<classname>javaplugins.SugarwaitPlugin</classname>
+		<control>button,link</control>
+		<event>afterclick</event>
+		<classfile>/Users/lhuang/git/SodaIceBox/soda/plugins/SugarwaitPlugin.class</classfile>
+	</plugin>
+
+</data>

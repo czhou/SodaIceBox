@@ -28,7 +28,7 @@
 <soda>
 	<!-- Related task can be deleted from contact detail view. -->
 	<puts text="Test: Contacts_1473.xml starting." />
-
+	<timestamp />
 
 	<!--Create contact record & task subpanel-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
@@ -36,7 +36,7 @@
 	<!--Search the Contact record-->
 	<link id="moduleTab_Contacts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Contacts&amp;action=index" click="false" />
 	</div>
 	<link text="Basic Search" required="false" />
 	<button id="search_form_clear" />
@@ -59,17 +59,19 @@
 		<textfield id="date_due_date" set="{@contact_record_7882.date_due_date}" />
 		<select id="date_due_hours" set="{@contact_record_7882.date_due_hours}" />
 		<select id="date_due_minutes" set="{@contact_record_7882.date_due_minutes}" />
+		<!-- hidden
 		<checkbox id="date_due_flag" set="{@contact_record_7882.date_due_flag}" />
+		-->
 
 		<!--Start Date-->
 		<textfield id="date_start_date" set="{@contact_record_7882.date_start_date}" />
 		<select id="date_start_hours" set="{@contact_record_7882.date_start_hours}" />
 		<select id="date_start_minutes" set="{@contact_record_7882.date_start_minutes}" />
+		<!-- hidden
 		<checkbox id="date_start_flag" set="{@contact_record_7882.date_start_flag}" />
+		-->
 
-		<button value="Save" />
-
-		<wait />
+		<button id="Tasks_subpanel_save_button" />
 
 		<!--Verify the task record created in subpanel-->
 		<div id="list_subpanel_activities">
@@ -95,14 +97,14 @@
 		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	</table>
 
-	<!--click "rem image"-->
+	<!--click "rem" image-->
 	<div id="list_subpanel_activities">
 		<table class="list view">
 			<link text="{@pre_task_subpanel_name}" click="false" />
 		</table>
-		<link class="listViewTdToolsS1" index="2" alert="true" />
+		<link class="listViewTdToolsS1" text="rem" alert="true" />
 	</div>
-	<wait timeout="3" />
+	<wait timeout="2" />
 	<div id="list_subpanel_activities">
 		<table class="list view">
 			<span class="pageNumbers" assert="(0 - 0 of 0)" />
@@ -110,7 +112,8 @@
 	</div>
 
 	<!--Delete contact record-->
+	<browser url="{@global.url}/index.php?module=Tasks&amp;action=index" />
+        <script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
 	<puts text="Test: Contacts_1473.xml finished." />
 </soda>

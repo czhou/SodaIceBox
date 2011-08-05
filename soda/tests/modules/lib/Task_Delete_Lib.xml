@@ -31,7 +31,7 @@
 
 	<link id="moduleTab_Tasks" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Tasks&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Tasks&amp;action=index" click="false" />
 	</div>
 
 	<button id="search_form_clear" />

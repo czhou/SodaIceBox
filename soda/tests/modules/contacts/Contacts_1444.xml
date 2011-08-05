@@ -28,33 +28,43 @@
 <soda>
 	<!-- Create contact_Verify that contact can be created -->
 	<puts text="Test: Contacts_1444.xml starting." />
-
 	<timestamp />
-	<link id="moduleTab_Contacts" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+	
+	<!--
+	<div id="themeTabGroup_All">
+	  <link href="{@global.url}/index.php?module=Administration&amp;action=ConfigureTabs#MoreAll" click="false" jscriptevent="onmouseover"/>
+	  <link id="moduleTab_Contacts" />
 	</div>
+	-->
+	<link id="moduleTab_Contacts" click="false" jscriptevent="onmouseover"/>
 	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_1444.csv" var="contact_record_1444">
 		<link text="Create Contact" />
 		<browser assert="Contact Overview" />
 
 		<!--user select-->
+		<link id="tab2" />
 		<button id="btn_assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield id="last_name_advanced" set="{@contact_record_1444.assigned_user_name}" />
-		<button value="Search" />
-		<link text="{@contact_record_1444.assigned_user_name}" />
+		<attach title="SugarCRM" >
+		  <browser assert="User Search" />
+		  <textfield id="last_name_advanced" set="{@contact_record_1444.assigned_user_name}" />
+		  <button id="search_form_submit" />
+		  <link text="{@contact_record_1444.assigned_user_name}" />
+		</attach>
 
 		<!--teams select-->
 		<table id="EditView_team_name_table">
-			<button value="Select" />
+			<button id="teamSelect" />
 		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@contact_record_1444.team_name}" />
-		<button value="Search" />
-		<link text="{@contact_record_1444.team_name}" />
+		<!--new window-->
+		<attach title="SugarCRM">
+		  <browser assert="Team Search" />
+		  <textfield name="name" set="{@contact_record_1444.team_name}" />
+		  <button id="search_form_submit" />
+		  <link text="{@contact_record_1444.team_name}" />
+		</attach>
 
 		<!--fill the fields and "Save"-->
+		<link id="tab0" />
 		<form id="EditView">
 			<textfield name="first_name"
 				set="{@contact_record_1444.first_name} {@user.name} {@stamp}" />
@@ -66,11 +76,13 @@
 
 			<textfield id="Contacts0emailAddress0" set="{@contact_record_1444.emailAddress0}" />
 			<textfield id="description" set="{@contact_record_1444.description}" />
-			<textfield id="description" set="{@contact_record_1444.description}" />
+			<!-- more information -->
+			<link id="tab1" />
 			<select id="lead_source" set="{@contact_record_1444.lead_source}" />
 			<checkbox id="do_not_call" set="{@contact_record_1444.do_not_call}" />
 			<checkbox id="sync_contact" set="{@contact_record_1444.sync_contact}" />
-
+			<!-- contact overview -->
+			<link id="tab0" />
 			<textfield id="primary_address_street" set="{@contact_record_1444.primary_address_street}" />
 			<textfield id="primary_address_city" set="{@contact_record_1444.primary_address_city}" />
 			<textfield id="primary_address_state" set="{@contact_record_1444.primary_address_state}" />
@@ -84,7 +96,7 @@
 			<textfield id="alt_address_country" set="{@contact_record_1444.alt_address_country}" />
 			<checkbox id="alt_checkbox" set="false" />
 			<wait timeout="2" />
-			<button value="Save" />
+			<button id="SAVE_FOOTER" />
 		</form>
 
 		<browser

@@ -31,7 +31,7 @@
 		view.
 	-->
 	<puts text="Test: Contacts_1479.xml starting." />
-
+	<timestamp />
 
 	<!--Create contact record & task subpanel-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
@@ -39,7 +39,7 @@
 	<!--Search the Contact record-->
 	<link id="moduleTab_Contacts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Contacts&amp;action=index" click="false" />
 	</div>
 	<link text="Basic Search" required="false" />
 	<button id="search_form_clear" />
@@ -52,8 +52,7 @@
 	<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 
 	<!--goto Activities subpanel & click "Log Call"-->
-	<button value="  Log Call  " />
-	<wait timeout="3" />
+	<button id="Activities_logcall_button" />
 	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_1477.csv" var="contact_record_1477">
 		<textfield id="name" set="{@contact_record_1477.name} {@user.name} {@stamp}" />
 		<textfield id="description" set="{@contact_record_1477.description}" />
@@ -63,9 +62,8 @@
 		<select id="date_start_hours" set="{@contact_record_1477.date_start_hours}" />
 		<select id="date_start_minutes" set="{@contact_record_1477.date_start_minutes}" />
 
-		<button value="Save" />
-
-		<wait timeout="5" />
+		<button id="Calls_subpanel_save_button" />
+		<wait timeout="2" />
 
 		<!--Verify the task record created in subpanel-->
 		<div id="list_subpanel_activities">
@@ -75,14 +73,12 @@
 		</div>
 	</csv>
 
-	<!-- Edit call -->
+	<!-- delete call -->
 	<div id="list_subpanel_activities">
-		<link class="listViewTdToolsS1" index="2" alert="true" />
+		<link class="listViewTdToolsS1" text="rem" alert="true" />
 	</div>
-	<wait timeout="3" />
-
-
-	<wait timeout="5" />
+	<wait timeout="2" />
+      
 	<!--Verify the absence of the call record in subpanel-->
 	<div id="list_subpanel_activities">
 		<table class="list view">
@@ -92,7 +88,8 @@
 
 
 	<!--Delete contact record-->
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<browser url="{@global.url}/index.php?module=Calls&amp;action=index" />
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<puts text="Test: Contacts_1479.xml finished." />
 </soda>
