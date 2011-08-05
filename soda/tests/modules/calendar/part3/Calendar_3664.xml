@@ -39,7 +39,6 @@
 	-->
 	
 	<puts text="Test: Calendar_3664.xml starting." />
-
 	
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
 	<var var="meeting1_name" set="{@pre_meeting_name}" />
@@ -57,7 +56,11 @@
 	
 	<link id="moduleTab_Meetings" />
 	<table class="list view">
-		<link text="{@meeting1_name}" />
+		<tr class="oddListRowS1" index="1">
+			<td index="6">
+				<link text="/{@meeting1_name}/" />
+			</td>
+		</tr>
 	</table>
 	
 	<div id="list_subpanel_history">
@@ -65,7 +68,6 @@
 		<wait timeout="5" />
 		<browser assertnot="Note for {@meeting1_name}" />
 	</div>
-	
 	
 	<link id="moduleTab_Calls" />
 	<table class="list view">
@@ -77,8 +79,8 @@
 		<wait timeout="5" />
 		<browser assertnot="Note for {@call1_name}" />
 	</div>
-	
-	
+
+	<!-- Clean up: Delete test data. -->
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />

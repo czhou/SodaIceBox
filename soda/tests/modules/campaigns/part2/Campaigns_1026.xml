@@ -50,6 +50,9 @@
 		<link class="listViewTdToolsS1" index="1" />
 	</div>
 	
+	<!-- Edit button opens QuickEdit now, so click Full Form. -->
+	<button id="Contacts_subpanel_full_form_button" />
+	
 	<!-- Edit the name of the contact and save -->
 	<div id="LBL_CONTACT_INFORMATION">
 		<timestamp />

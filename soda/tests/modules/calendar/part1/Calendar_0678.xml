@@ -65,7 +65,7 @@
 
 	<button value="Edit" />
 
-	<table class="edit view dcQuickEdit">
+	<table class="yui3-skin-sam edit view dcQuickEdit">
 		<select id="status" assert="Held" />
 	</table>
 	<button value="Save" />

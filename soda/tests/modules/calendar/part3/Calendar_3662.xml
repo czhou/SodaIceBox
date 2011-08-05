@@ -38,9 +38,7 @@
 		Expectation:
 			6. The selected note modified successfully.
 	-->
-	
 	<puts text="Test: Calendar_3662.xml starting." />
-
 	
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
 	<var var="meeting1_name" set="{@pre_meeting_name}" />
@@ -58,20 +56,26 @@
 	
 	<link id="moduleTab_Meetings" />
 	<table class="list view">
-		<link text="{@meeting1_name}" />
+		<tr class="oddListRowS1" index="1">
+			<td index="6">
+				<link text="/{@meeting1_name}/" />
+			</td>
+		</tr>
 	</table>
 	
 	<div id="list_subpanel_history">
 		<link class="listViewTdToolsS1" index="1" />
 	</div>
 	
-	<textfield id="name" set="Modified Note for {@meeting1_name}" />
-	<button id="SAVE" />
+	<form id="form_SubpanelQuickCreate_Notes">
+		<textfield id="name" set="Modified Note for {@meeting1_name}" />
+		<button id="Notes_subpanel_save_button" />
+		<wait timeout="3" />
+	</form>
 	
 	<div id="list_subpanel_history">
 		<browser assert="Modified Note for {@meeting1_name}" />
 	</div>
-	
 	
 	<link id="moduleTab_Calls" />
 	<table class="list view">
@@ -82,14 +86,17 @@
 		<link class="listViewTdToolsS1" index="1" />
 	</div>
 	
-	<textfield id="name" set="Modified Note for {@call1_name}" />
-	<button id="SAVE" />
+	<form id="form_SubpanelQuickCreate_Notes">
+		<textfield id="name" set="Modified Note for {@call1_name}" />
+		<button id="Notes_subpanel_save_button" />
+		<wait timeout="3" />
+	</form>
 	
 	<div id="list_subpanel_history">
 		<browser assert="Modified Note for {@call1_name}" />
 	</div>
 	
-	
+	<!-- Clean up: Delete test data. -->
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />

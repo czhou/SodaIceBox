@@ -38,9 +38,7 @@
 		Expectation:
 			6. The information of the note for the call/meeting is not changed.
 	-->
-	
 	<puts text="Test: Calendar_3663.xml starting." />
-
 	
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
 	<var var="meeting1_name" set="{@pre_meeting_name}" />
@@ -58,7 +56,11 @@
 	
 	<link id="moduleTab_Meetings" />
 	<table class="list view">
-		<link text="{@meeting1_name}" />
+		<tr class="oddListRowS1" index="1">
+			<td index="6">
+				<link text="/{@meeting1_name}/" />
+			</td>
+		</tr>
 	</table>
 	
 	<div id="list_subpanel_history">
@@ -66,7 +68,7 @@
 	</div>
 	
 	<textfield id="name" set="Modified {@meeting1_name}" />
-	<button id="CANCEL" alert="true" />
+	<button id="Notes_subpanel_cancel_button" alert="true" />
 	
 	<div id="list_subpanel_history">
 		<browser assertnot="Modified {@meeting1_name}" />
@@ -84,7 +86,7 @@
 	</div>
 	
 	<textfield id="name" set="Modified {@call1_name}" />
-	<button id="CANCEL" alert="true" />
+	<button id="Notes_subpanel_cancel_button" alert="true" />
 	
 	<div id="list_subpanel_history">
 		<browser assertnot="Modified {@call1_name}" />

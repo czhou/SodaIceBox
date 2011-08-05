@@ -55,7 +55,7 @@
 	
 	<button id="edit_button" />
 	
-	<textfield name="search_email" set="sugarqa3@gmail.com" />
+	<textfield name="search_last_name" set="qauser" />
 	<button value="Search" />
 	<wait timeout="3" />
 
@@ -63,6 +63,8 @@
 		<button value="Add" />
 		<wait timeout="3" />
 	</div>
+
+	<textfield name="search_last_name" clear="true" />
 	
 	<textfield name="search_email" set="{@pre_contact_email}" />
 	<wait timeout="1" />
