@@ -111,7 +111,6 @@
 		</table>
 		<link class="listViewTdToolsS1" alert="true" />
 	</div>
-	<wait timeout="3" />
 	<div class="moduleTitle">
 		<link href="{@global.url}/index.php?module=Tasks&amp;action=index" click="false" />
 	</div>
@@ -119,7 +118,6 @@
 		<textfield id="name" clear="true" set="{@contact_record_1475.name} {@stamp} {@user.name}" />
 	</csv>
 	<button value="Save" />
-	<wait timeout="3" />
 
 	<!-- Verify edit -->
 	<div id="list_subpanel_activities">

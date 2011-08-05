@@ -72,7 +72,6 @@
 		-->
 
 		<button id="Tasks_subpanel_save_button" />
-		<wait /> 
 
 		<!--Verify the task record created in subpanel-->
 		<div id="list_subpanel_activities">

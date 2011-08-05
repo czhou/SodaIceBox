@@ -27,8 +27,7 @@
 
 <soda>
 	<puts text="Lib: Call_Delete_Lib.xml starting." />
-	<link id="moduleTab_Calls" jscriptevent="onmouseover"/>
-	<link text="View Calls" />
+	<link id="moduleTab_Calls"/>
 	<button name="clear" />
 	<button id="search_form_submit" />
 	<checkbox name="massall" click="true" />
