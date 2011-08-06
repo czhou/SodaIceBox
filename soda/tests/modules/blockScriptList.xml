@@ -28,6 +28,20 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Contacts_1492</testfile>
+		<bugnumber>45848</bugnumber>
+		<reason>Opportunities created via the Opportunities subpanel in Contacts are not added to the subpanel ListView.</reason>
+		<modulename>Contacts</modulename>
+	</block>
+
+	<block>
+		<testfile>Contacts_1499</testfile>
+		<bugnumber>45848</bugnumber>
+		<reason>Opportunities created via the Opportunities subpanel in Contacts are not added to the subpanel ListView.</reason>
+		<modulename>Contacts</modulename>
+	</block>
+
+	<block>
 		<testfile>Campaigns_0842</testfile>
 		<bugnumber>45814</bugnumber>
 		<reason>When you edit an existing Target List, the DetailView does not load when you save.</reason>

@@ -74,9 +74,7 @@
 		<select id="sales_stage" set="{@opp_record.sales_stage}" />
 
 		<!-- Set related Account -->
-		<table class="edit view">
-			<button id="btn_account_name" />
-		</table>
+		<button id="btn_account_name" />
 		<textfield id="name_advanced" set="{@pre_account_name}" />
 		<button value="Search" />
 		<link text="{@pre_account_name}" />
@@ -88,11 +86,10 @@
 	<!-- Verify creation of Opp in subpanel -->
 	<div id="list_subpanel_opportunities">
 		<table class="list view">
+			<browser assert="{@opp_record.name} {@user.name} {@stamp}" />
 			<link text="{@opp_record.name} {@user.name} {@stamp}" click="false" />
 		</table>
 	</div>
-
-
 
 	<!--Delete records-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />

@@ -105,6 +105,10 @@
 		<link class="listViewTdToolsS1" index="1" alert="true" />
 	</div>
 	<wait timeout="3" />
+
+	<!-- Edit button goes to QuickEdit now, so click Full Form. -->
+	<button id="Tasks_subpanel_full_form_button" />
+
 	<div class="moduleTitle">
 		<link href="index.php?module=Tasks&amp;action=index" click="false" />
 	</div>

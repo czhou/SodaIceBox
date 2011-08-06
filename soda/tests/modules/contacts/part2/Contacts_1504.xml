@@ -63,6 +63,8 @@
 		<link class="listViewTdToolsS1" text="/edit/"/>
 	</div>
 
+	<!-- Edit button goes to QuickEdit now, so click Full Form. -->
+	<button id="Bugs_subpanel_full_form_button" />
 
 	<!-- Update bug data. -->            
 	<timestamp/>

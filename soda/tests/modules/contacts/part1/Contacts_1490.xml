@@ -98,6 +98,9 @@
 	</div>
 	<wait timeout="3" />
 
+	<!-- Edit button goes to QuickEdit now, so click Full Form. -->
+	<button id="Leads_subpanel_full_form_button" />
+
 	<div class="moduleTitle">
 		<link href="index.php?module=Leads&amp;action=index" click="false" />
 		<browser
