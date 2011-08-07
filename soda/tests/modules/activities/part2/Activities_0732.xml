@@ -30,15 +30,14 @@
 		Print_Verify that the print page can be displayed after canceling creating a
 		related note for a call from the original print page.
 	-->
-	<puts text="Test: Activities_0732.xml starting" />
+	<puts text="Test: Activities_0732.xml starting." />
 
-	<!--create task record-->
+	<!-- Create task record. -->
 	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
 
-	<link id="moduleTab_Calendar" />
-	<browser assert="Task List" />
+	<link id="moduleTab_Calls" />
 	<link text="View Calls" />
-	<button id="search_form_clear" />
+
 	<textfield id="name_basic" set="{@pre_call_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">
@@ -47,8 +46,14 @@
 
 	<browser assert="{@pre_call_name}" />
 	<link text="Print" click="false" />
-	<link id="moduleTab_Calendar" alert="true" />
-	<!--delete task record-->
+	<link id="moduleTab_Calls" alert="true" />
+
+	<!-- Cleanup: Reset search form. -->
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+
+	<!-- Cleanup: Delete test data. -->
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
-	<puts text="Test: Activities_0732.xml finisheds" />
+
+	<puts text="Test: Activities_0732.xml finished." />
 </soda>

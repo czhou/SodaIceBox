@@ -47,12 +47,14 @@
 	</div>
 
 	<button id="Activities_schedulemeeting_button"/>
+	<wait timeout="5" />
 	<textfield id="name" set="Account meeting record"/>
 	<select id="status" set="Held"/>
 	<button id="Meetings_subpanel_save_button"/>
-
 	<wait timeout="10"/>
+
 	<div id="list_subpanel_history">
+		<browser assert="Account meeting record" />
 		<link text="Account meeting record"/>
 	</div>
 	<button id="duplicate_button"/>

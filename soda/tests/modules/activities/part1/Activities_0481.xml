@@ -26,22 +26,22 @@
 -->
 
 <soda>
-        <puts text='------------Activities_0481:Search Task_Verify that task can be searched by Subject and Contact Name fields for basic search function.'/>
-        
-        <!--create task record-->
-        <script file='{@global.scriptsdir}/modules/lib/Task_Create_Lib.xml'/>    
-        
-        <link id='moduleTab_Tasks'/>
-        <link text='View Tasks'/>
-        
-        <button id="search_form_clear"/>
-        <textfield id='name_basic' set='{@pre_task_name}'/>
-        <button id="search_form_submit"/>
-        <table class='list view'>
-            <link text='{@pre_task_name}'/>
-        </table>
-        
-        <!--delete task record-->
-        <script file='{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml'/>                
-        <puts text='------------Activities_0481 is Finished!------------'/>
+	<!-- Search Task_Verify that task can be searched by Subject and Contact Name fields for basic search function. -->
+	<puts text="Test: Activities_0481.xml starting." />
+	
+	<!--create task record-->
+	<script file="{@global.scriptsdir}/modules/lib/Task_Create_Lib.xml" />    
+	
+	<link id="moduleTab_Tasks" />
+
+	<textfield id="name_basic" set="{@pre_task_name}" />
+	<button id="search_form_submit" />
+	<table class="list view">
+		<link text="{@pre_task_name}" exists="true" />
+	</table>
+	
+	<!--delete task record-->
+	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />                
+
+	<puts text="Test: Activities_0481.xml finished." />
 </soda>

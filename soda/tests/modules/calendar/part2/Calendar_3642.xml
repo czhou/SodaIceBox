@@ -42,18 +42,20 @@
 	<var var="meeting_name" set="{@pre_meeting_name}" />
 	
 	<link id="moduleTab_Meetings" />
-	<button id="search_form_clear" />
 	<textfield id="name_basic" set="{@meeting_name}" />
 	<button id="search_form_submit" />
+	<browser action="refresh" alert="true" />
 	<table class="list view">
 		<row class="oddListRowS1">
 			<cell index="4">
 				<image index="1" jscriptevent="onclick" click="true" />
+				<wait timeout="3" />
 			</cell>	
 		</row>
 	</table>
 	
 	<button value="OK" />
+	<wait timeout="3" />
 	
 	<table class="list view">
 		<link text="{@meeting_name}" />
@@ -64,6 +66,12 @@
 		<browser assert="Held" />
 	</div>
 	
+	<!-- Clean up: Reset search form. -->
+	<link id="moduleTab_Meetings" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+
+	<!-- Clean up: Delete test data. -->
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 	
 	<puts text="Test: Calendar_3642.xml finished." />

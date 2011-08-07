@@ -26,58 +26,50 @@
 -->
 
 <soda>
-	<!-- Create Note_Verify that note is created for call/meeting from -->
-	<puts text="Test: Activities_3514.xml starting." />
+	<!-- Search Task_Verify that task can be searched by Subject and Contact Name fields for basic search function. -->
+	<puts text="Test: Activities_0481.xml starting." />
+	
+	<!-- create task record -->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Task_Create_Lib.xml" />
 
-	<!--create call record-->
-	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" csv="{@global.scriptsdir}/csvs/activities/Activities_3514.csv" />
+	<button id="edit_button" />
+	<textfield id="contact_name" click="true" />
+	<textfield id="contact_name" set="{@pre_contact_first_name} {@pre_contact_last_name}" jscriptevent="onkeydown" />
+	<textfield id="contact_name" jscriptevent="onkeyup" />
+	<wait timeout="3" />
+	<button id="SAVE" />
 
-	<link id="moduleTab_Notes" />
-	<link text="Create Note or Attachment" />
+	<link id="moduleTab_Tasks" />
 
-	<csv file="{@global.scriptsdir}/modules/lib/Note_Create_Lib.csv" var="note_record_3514">
-		<textfield id="name" set="{@note_record_3514.name}" />
-		<textfield id="description" set="{@note_record_3514.description}" />
-
-		<!--teams select-->
-		<table id="EditView_team_name_table">
-			<button value="Select" />
-		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@note_record_3514.team_name}" />
-		<button value="Search" />
-		<link text="{@note_record_3514.team_name}" />
-
-		<select id="parent_type" set="Call" />
-		<button id="btn_parent_name" />
-		<browser assert="Call Search" />
-		<textfield id="name_advanced" set="{@pre_call_name}" />
-		<button value="Search" />
-		<link text="{@pre_call_name}" />
-		<button value="Save" />
-		<browser assert="{@note_record_3514.name}" />
-	</csv>
-	<link id="moduleTab_Calls" />
-	<link text="View Calls" />
-
-	<textfield id="name_basic" set="{@pre_call_name}" />
+	<table class="list view">
+		<browser assert="{@pre_task_name}" />
+		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
+	</table>
+	
+	<link id="advanced_search_link" />
+	<wait timeout="3" />
+	<textfield id="name_advanced" set="{@pre_task_name}" />
+	<textfield id="contact_name_advanced" click="true" />
+	<textfield id="contact_name_advanced" set="{@pre_contact_first_name} {@pre_contact_last_name}" jscriptevent="onkeydown" />
+	<textfield id="contact_name_advanced" jscriptevent="onkeyup" />
+	<wait timeout="3" />
 	<button id="search_form_submit" />
 	<table class="list view">
-		<link text="{@pre_call_name}" />
+		<link text="{@pre_task_name}" exists="true" />
 	</table>
-
-	<div id="list_subpanel_history">
-		<link text="{@note_record_3514.name}" click="false" />
-	</div>
-
+	
 	<!-- Cleanup: Reset search form. -->
-	<link id="moduleTab_Calls" />
+	<link id="moduleTab_Tasks" />
+
+	<link id="basic_search_link" />
+	<wait timeout="3" />
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
-
+	
 	<!-- Cleanup: Delete test data. -->
-	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />                
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />                
 
-	<puts text="Test: Activities_3514.xml finished." />
+	<puts text="Test: Activities_0481.xml finished." />
 </soda>
