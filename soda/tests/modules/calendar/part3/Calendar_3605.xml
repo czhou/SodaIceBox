@@ -61,6 +61,7 @@
 
 	<timestamp />
 	<link id="moduleTab_Calls" />
+
 	<link text="Log Call" />
 
 	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record" />
@@ -92,6 +93,7 @@
 		<link text="Edit" />
 	</table>
 	
+	<select id="team_id" set="-none-" />
 	<select id="shared_ids" clear="true" />
 	<select id="shared_ids" set="{@qa_user}" />
 	
