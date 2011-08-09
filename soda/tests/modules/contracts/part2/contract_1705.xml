@@ -26,50 +26,52 @@
 -->
 
 <soda>
-	<puts text='Contract_1705:Edit Note_Verify that Note can be edited for Contract.'/>
-
+	<!-- Edit Note_Verify that Note can be edited for Contract. -->
+	<puts text="Test: Contract_1705.xml starting." />
 	<timestamp/>
+
 	<!--Create a contract with filling all the fields-->
-	<script file='{@global.scriptsdir}/modules/lib/Contract_Create_Lib.xml'/>
+	<script file="{@global.scriptsdir}/modules/lib/Contract_Create_Lib.xml"/>
 
 	<!--Search the contract record in list view-->
-	<link id='moduleTab_Contracts'/>
+	<link id="moduleTab_Contracts"/>
 	<browser assert="Contract Name"/>
-	<link id="basic_search_link" required="false"/>
-	<textfield id='name_basic' set='{@Contract_Create_Lib}'/> 
-	<button id="search_form_submit"/>
-	<table class='list view'>
-	<link text='{@Contract_Create_Lib}'/>
-	<browser assert="{@Contract_Create_Lib}"/>
+
+	<table class="list view">
+		<link text="{@Contract_Create_Lib}" />
 	</table>
 
 	<!--Create a note record from Notes subpanel in Contract detail view.-->
 	<button id="History_createnoteorattachment_button"/>
-	<wait timeout="2"/>
+	<wait timeout="3"/>
 	<browser assert="Subject"/>
 	<textfield id="name" set="Note record"/>
 	<button id="Notes_subpanel_save_button"/>
-	<wait timeout="2"/>
+	<wait timeout="3"/>
 	
 	<!--Edit Note record in subpanel-->
 	<div id="list_subpanel_history">
-                <table class="list view">
-		     <link class="listViewTdToolsS1" index="1"/>
-                </table>
+		<table class="list view">
+			<link class="listViewTdToolsS1" index="1" />
+		</table>
 	</div>
-	<wait timeout="3"/>
+	<wait timeout="3" />
+
+	<!-- Edit link brings up QuickEdit now, so click Full Form. -->
+	<button id="Notes_subpanel_full_form_button" />
 	<browser assert="Note record»Edit"/>
+
 	<textfield id="name" set="New note record"/>
 	<button value="Save"/>
 	<wait timeout="2"/>
 	<browser assert="New note record"/>
 
 	<!--Delete the records-->
-	<script file='{@global.scriptsdir}/modules/lib/Contract_Delete_Lib.xml'/>
-	<script file='{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml'/>
-	<script file='{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml'/>
-	<!--<script file='{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml'/>-->
+	<script file="{@global.scriptsdir}/modules/lib/Contract_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml" />
+	<!--<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml"/>-->
 
-	<puts text='-------------------Contract_1705: finished-------------------'/>
+	<puts text="Test: Contract_1705.xml finished." />
 
 </soda>

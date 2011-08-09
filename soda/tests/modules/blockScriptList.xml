@@ -28,6 +28,20 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Contacts_4357</testfile>
+		<bugnumber>45848</bugnumber>
+		<reason>Opportunities created via the Opportunities subpanel in Contacts are not added to the subpanel ListView.</reason>
+		<modulename>Contacts</modulename>
+	</block>
+
+	<block>
+		<testfile>Contacts_4364</testfile>
+		<bugnumber>45775</bugnumber>
+		<reason>Cases created via the Cases subpanel in Contacts are not added to the subpanel ListView.</reason>
+		<modulename>Contacts</modulename>
+	</block>
+
+	<block>
 		<testfile>Contacts_1492</testfile>
 		<bugnumber>45848</bugnumber>
 		<reason>Opportunities created via the Opportunities subpanel in Contacts are not added to the subpanel ListView.</reason>

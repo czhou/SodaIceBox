@@ -54,11 +54,11 @@
 		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	</div>
 
-
 	<!-- *3* Go to Activities subpanel and try to create task-->
 	<csv file="{@global.scriptsdir}/csvs/contacts/Contacts_4336.csv" var="Contacts_4337">
 		<div id="list_subpanel_activities">
 			<button value="  Create Task  " />
+			<wait timeout="3" />
 		</div>
 		<div class="moduleTitle">
 			<link href="index.php?module=Contacts&amp;action=index" click="false" />
@@ -72,7 +72,7 @@
 		</form>
 
 		<button id="Tasks_subpanel_save_button" />
-
+		<wait timeout="3" />
 	</csv>
 
 	<link href="index.php?module=Contacts&amp;action=index" click="false" />
@@ -81,10 +81,13 @@
 	<!-- *3* Edit created record and save-->
 	<div id="list_subpanel_activities">
 		<table class="list view">
-			<link index="1" class="listViewTdToolsS1"/> 
+			<link class="listViewTdToolsS1" index="1" /> 
 		</table>
 	</div>
 
+	<!-- Edit button brings up QuickEdit now, so click Full Form. -->
+	<button id="Tasks_subpanel_full_form_button" />
+	
 	<browser assert="Tasks" />
 	<browser assert="{@Contacts_4337.subject}" />
 
