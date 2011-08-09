@@ -50,7 +50,8 @@
 	</csv>
 	<!--Run Delete XML -->
 
-	<script file="{@global.scriptsdir}/modules/lib/Product_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/ProductCategory_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Manufacturer_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/ProductType_Delete_Lib.xml" />

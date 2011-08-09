@@ -28,6 +28,7 @@
 <soda>
 
 	<puts text="Test Case 127: Create Account - Quick _Verify that a new account which is created on 'New Account' box is not saved when the 'Save' button"/>
+	<timestamp />
 
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
@@ -50,7 +51,6 @@
 
 		<form id="form_DCQuickCreate_Accounts">
 			<textfield id="name" set="{@account_record_0004.name} {@user.name} {@stamp}" />
-
 			<textfield id="website" set="{@account_record_0004.website}" />
 		</form>
 		<link id="dcmenu_close_link" alert="true"/>
@@ -59,7 +59,8 @@
 		<button id="search_form_submit" />
 		<wait timeout="5"/>
 		<table class="list view">
-			<link text="{@account_record_0004.name} {@user.name} {@stamp}" exist="false" click="false"/>
+			<link text="{@account_record_0004.name} {@user.name} {@stamp}" exists="false" click="false"/>
+			<span class="pageNumbers" assert="(0 - 0 of 0)" />
 		</table>
 	</csv>
 	

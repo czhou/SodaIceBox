@@ -95,11 +95,10 @@
 	<!--Remove lead relationship from lead subpanel-->
 	<div id="list_subpanel_leads">
 		<table class="list view">
-			<link text="/rem/"  class="listViewTdToolsS1" alert="true"/>
+			<link text="/rem/"  class="listViewTdToolsS1" alert="true" />
+			<wait timeout="3" />
 		</table>
 	</div>
-
-	<wait timeout="2"/>
 
 	<!--Verify delete action works-->
 	<div id="list_subpanel_leads">

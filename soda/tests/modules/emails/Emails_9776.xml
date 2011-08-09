@@ -77,9 +77,9 @@
 			</table>
 		</div>
 		<!--<link text="/My Drafts/" />-->
-		<span text="My Drafts" click="true" />
+		<span id="ygtvlabelel2" click="true" />
 	</div>
-	<wait timeout="3" />
+	<wait timeout="10" />
 	<div text="{@email_record_9776.subject} {@stamp}" click="true"
 		jscriptevent="onmouseup" />
 	<wait timeout="3" />

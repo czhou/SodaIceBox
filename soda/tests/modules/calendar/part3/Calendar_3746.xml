@@ -65,14 +65,13 @@
 	</table>
 	<wait timeout="3" />
 	
-	<textfield name="search_last_name" set="{@contact1_lname}" />
+	<textfield name="search_first_name" set="{@contact1_fname}" />
 	<button value="Search" />
 
 	<div id="list_div_win">
 		<button value="Add" click="true" />
 		<button value="Add" jscriptevent="onmouseup" />
 	</div>
-	
 	<button value="Save" />
 	
 	<wait timeout="3" />

@@ -33,17 +33,7 @@
 	<textfield id="user_name" set="qauser" />
 	<textfield id="user_password" set="QAuser1" />
 	<button id="login_button" />
-	<button name="next_tab1" required="false"/>
-	<wait timeout="1"/>
-	<button name="next_tab1" required="false"/>
-	<wait timeout="1"/>
-	<button name="next_tab1" required="false"/>
-	<wait timeout="1"/>
-	<button name="next_tab1" required="false"/>
-	<wait timeout="1"/>
-	<button name="save" required="false"/>
 
-	<wait timeout="3" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 	<timestamp />
 
@@ -103,6 +93,7 @@
 	<wait timeout="10" />
 	<div text="{@email_record_9770.subject} {@stamp}" click="true"
 		jscriptevent="onmouseup" />
+	<browser assert="{@email_record_9770.subject} {@stamp}" />
 
 	<!--verify-->
 	<div id="emailtabs">
@@ -113,5 +104,6 @@
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<link text="Log Out" />
 	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
 	<puts text="Test: Emails_9770.xml finished." />
 </soda>
