@@ -1025,6 +1025,13 @@
 		<reason>Save not working from Contact edit view subpanel</reason>
 		<modulename>Accounts</modulename>
 	</block>
+
+	<block>
+		<testfile>Accounts_11830.xml</testfile>
+		<bugnumber>45489</bugnumber>
+		<reason>bug is not fixed</reason>
+		<modulename>Accounts</modulename>
+	</block>
 	<!-- End of Gino's modules -->
 	
 </soda>
