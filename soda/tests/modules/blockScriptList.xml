@@ -24,9 +24,22 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
 	<!-- David's Modules -->
+	<block>
+		<testfile>Emails_10052</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Can't set email address in Leads subpanel via Soda; works fine manually.  No time to investigate.</reason>
+		<modulename>Emails</modulename>
+	</block>
+
+	<block>
+		<testfile>Emails_9680</testfile>
+		<bugnumber>44190</bugnumber>
+		<reason>mime_content_type() error when sending an email</reason>
+		<modulename>Emails</modulename>
+	</block>
+
 	<block>
 		<testfile>Contacts_4357</testfile>
 		<bugnumber>45848</bugnumber>

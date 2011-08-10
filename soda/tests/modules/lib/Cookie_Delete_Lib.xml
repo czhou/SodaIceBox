@@ -1,4 +1,4 @@
-﻿<!--
+<!--
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -24,47 +24,17 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
-	<!-- Compose Email with "My Account" default team set -->
-	<puts text="Test: Emails_9673.xml starting." />
-	<csv file="{@global.scriptsdir}/csvs/emails/Email_9673.csv" var="Email9673" />
+	<puts text="Lib: Cookie_Delete_Lib starting." />
+	<javascript>
+		var cookies = document.cookie.split(";");
 
-	<link text="Log Out" />
-	<textfield id="user_name" set="{@Email9673.user}" default="admin" />
-	<textfield id="user_password" set="{@Email9673.pass}" default="admin" />
-	<button id="login_button" />
-
-	<link text="{@Email9673.user}" />
-	<!--<link text="/Advanced/" />-->
-	<link id="tab4"/>
-	<table id="EditView_team_name_table">
-		<button value="Select" />
-	</table>
-	<link text="{@Email9673.user}" />
-	<button value="Save" />
-	<wait timeout="3" />
-	<link id="moduleTab_Emails" />
-	<wait timeout="5" />
-	<button id="composeButton" />
-	<table id="composeHeaderTable1">
-		<button index="4" click="true" />
-	</table>
-	
-	<image id="more_img_composeOptionsForm1_team_name" click="true" jscriptevent="onclick" />
-	<wait timeout="1" />
-	<textfield id="composeOptionsForm1_team_name_collection_0" assert="Global" />
-	<textfield id="composeOptionsForm1_team_name_collection_1" assert="{@Email9673.user}" />
-
-	<link text="{@Email9673.user}" />
-	<!--<link text="/Advanced/" />-->
-	<link id="tab4"/>
-	<image id="more_img_EditView_team_name" click="true" />
-	<image id="remove_team_name_collection_1" click="true" />
-	<button value="Save" />
-	<wait timeout="3" />
-	<link text="Log Out" />
-	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-
-	<puts text="Test: Emails_9673.xml finished." />
-</soda> 
+		for (var i = 0; i &lt; cookies.length; i++) {
+			var cookie = cookies[i];
+			var eqPos = cookie.indexOf("=");
+			var name = eqPos &gt; -1 ? cookie.substr(0, eqPos) : cookie;
+			document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+		}
+	</javascript>
+	<puts text="Lib: Cookie_Delete_Lib finished." />
+</soda>

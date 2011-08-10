@@ -91,5 +91,7 @@
 
 	<!--Clean actions-->
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/Cookie_Delete_Lib.xml" />
+	
 	<puts text="Test: Emails_11443.xml finished." />
 </soda>
