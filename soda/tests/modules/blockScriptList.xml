@@ -28,6 +28,13 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Reports_11798</testfile>
+		<bugnumber>44880</bugnumber>
+		<reason>Changes to run-time filter revert if field is in the Group by and sorted in Matrix reports</reason>
+		<modulename>Reports</modulename>
+	</block>
+
+	<block>
 		<testfile>Calendar_3642</testfile>
 		<bugnumber>45792</bugnumber>
 		<reason>Closing a meeting from the Meetings ListView pops up a browser confirmation in FF3.6.</reason>

@@ -105,6 +105,7 @@
 	<browser assert="Count" />
 	<browser assert="Name" />
 
+	<link id="moduleTab_Reports" />
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
 	

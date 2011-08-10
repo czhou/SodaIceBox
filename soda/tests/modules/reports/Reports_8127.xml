@@ -44,7 +44,7 @@
 	<wait timeout="5" />
 	<form class="search_form">
 		<button name="clear" />
-		<textfield name="name" set="{@report_record_8127.save_report_as} {@stamp}" />
+		<textfield id="name_basic" set="{@report_record_8127.save_report_as} {@stamp}" />
 		<button value="Search" />
 	</form>
 
