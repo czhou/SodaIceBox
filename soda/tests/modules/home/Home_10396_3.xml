@@ -59,7 +59,7 @@
 		
 		<!--create contact-->
 		<div id="dcmenuContainer">
-			<image src="themes/Sugar/images/icon_Tasks_bar_32.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+			<image id="dcMenu_Tasks_quick_create_icon" click="true" />
 		</div>
 		<form id="form_DCQuickCreate_Tasks">
 			<textfield id="name" set="{@home10396.subject} {@stamp}" />

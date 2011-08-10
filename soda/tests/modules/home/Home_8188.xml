@@ -26,10 +26,12 @@
 -->
 
 <soda>
-	<puts text="Test:home_8188 check add dashlet window UI" />
+	<!--  check add dashlet window UI -->
+	<puts text="Test: Home_8188.xml starting." />
 	
 	<link id="moduleTab_Home" />
 	<browser assert="Add Sugar Dashlets" />
+
 	<!--Add dashlet-->
 	<link id="add_dashlets" />
 	<wait timeout="5" />
@@ -43,7 +45,7 @@
 		</ul>
 		<div id="moduleDashlets">
 			<link text="My Accounts" click="false" />
-			<image src="themes/Sugar/images/icon_Accounts_32.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" />
+			<image src="/themes\/Sugar\/images\/icon_Accounts_32.png/" exists="true" />
 		</div>
 		<link text="Charts" />
 		<div id="chartDashlets">

@@ -35,7 +35,10 @@
 	<wait timeout="5" />	
 	<div id="changeLayoutDialog">
 		<browser assert="Select the number of columns" />
-		<image src="themes/default/images/icon_Column_1.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		<!-- Click the 1-column layout button. -->
+		<td index="1">
+			<link index="1" click="true" />
+		</td>
 		<wait timeout="5" />	
 	</div>
 	<ul id="col_0_0">
@@ -52,31 +55,37 @@
 	<wait timeout="5" />	
 	<div id="changeLayoutDialog">
 		<browser assert="Select the number of columns" />
-		<image src="themes/default/images/icon_Column_2.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		<!-- Click the 2-column layout button. -->
+		<td index="2">
+			<link index="1" click="true" />
+		</td>
 		<wait timeout="5" />	
 	</div>
 	<ul id="col_0_0">
-		<div index="1" exist="true" />
+		<div index="1" exists="true" />
 	</ul>
 	<ul id="col_0_1">
-		<div index="1" exist="true" />
+		<div index="1" exists="true" />
 	</ul>
 	
 	<link id="change_layout" />
 	<wait timeout="5" />	
 	<div id="changeLayoutDialog">
 		<browser assert="Select the number of columns" />
-		<image src="themes/default/images/icon_Column_3.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		<!-- Click the 3-column layout button. -->
+		<td index="3">
+			<link index="1" click="true" />
+		</td>
 		<wait timeout="5" />	
 	</div>
 	<ul id="col_0_0">
-		<div index="1" exist="true" />
+		<div index="1" exists="true" />
 	</ul>
 	<ul id="col_0_1">
-		<div index="1" exist="true" />
+		<div index="1" exists="true" />
 	</ul>
 	<ul id="col_0_2">
-		<div index="1" exist="true" />
+		<div index="1" exists="true" />
 	</ul>
 	
 	<!--change back-->
@@ -84,7 +93,10 @@
 	<wait timeout="5" />	
 	<div id="changeLayoutDialog">
 		<browser assert="Select the number of columns" />
-		<image src="themes/default/images/icon_Column_2.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		<!-- Click the 2-column layout button. -->
+		<td index="2">
+			<link index="1" click="true" />
+		</td>
 		<wait timeout="5" />	
 	</div>
 

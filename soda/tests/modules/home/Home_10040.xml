@@ -53,7 +53,7 @@
 	<div id="dlg_c">
 		<browser assert="My Open Cases : Options" />
 		<select id="hide_tabs" set="Account Name" />
-		<image src="themes/default/images/leftarrow_big.gif?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+		<image src="/themes\/default\/images\/leftarrow_big.gif/" click="true" />
 		<select name="display_tabs[]" assert="Account Name" />
 		<button value="Save" />
 	</div>

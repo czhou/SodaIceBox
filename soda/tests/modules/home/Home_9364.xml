@@ -33,9 +33,8 @@
 	<timestamp />
 	<csv file="{@global.scriptsdir}/csvs/home/Home_9364.csv" var="home9364">	
 		<link id="moduleTab_Leads" />
-		<form id="search_form">
-			<textfield id="search_name_basic" set="{@pre_lead_first_name}" />
-		</form>
+
+		<textfield id="search_name_basic" set="{@pre_lead_first_name}" />
 		<button id="search_form_submit" />
 		<table class="list view">
 			<browser assert="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
@@ -58,7 +57,8 @@
 			<textfield id="sugar_spot_search" set="{@home9364.account}{@stamp}"/>
 		</div>
 		<div id="glblSearchBtn">
-			<image src="themes/Sugar/images/dcMenuSearchBtn.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+			<!-- Click the global search button. -->
+			<link index="1" click="true" />
 		</div>
 		<div id="dcboxbody">
 			<browser assert="Leads" />

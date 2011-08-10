@@ -26,10 +26,12 @@
 -->
 
 <soda>
-	<puts text="Test:home_10400 auto refresh more than 1 dashlet" />
+	<!--  auto refresh more than 1 dashlet -->
+	<puts text="Test: Home_10400.xml starting." />
 	
 	<link id="moduleTab_Home" />
 	<browser assert="Add Sugar Dashlets" />
+
 	<!--Add dashlet-->
 	<link id="add_dashlets" />
 	<wait timeout="5" />
@@ -54,7 +56,7 @@
 		<select name="autoRefresh" set="Every 3 minutes" />
 		<button value="Save" />
 	</div>
-	
+
 	<link id="add_dashlets" />
 	<wait timeout="5" />
 	<div id="dashletsDialog_c">
@@ -79,23 +81,20 @@
 		<button value="Save" />
 	</div>
 	<csv file="{@global.scriptsdir}/csvs/home/Home_10400.csv" var="home10400">	
-		
+
 		<!--create lead-->
-		<div id="dcmenuContainer">
-			<image src="themes/Sugar/images/icon_Leads_bar_32.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
-		</div>
+		<image id="dcMenu_Leads_quick_create_icon" click="true" />
 		<form id="form_DCQuickCreate_Leads">
 			<textfield id="last_name" set="{@home10400.lead_lastname} {@stamp}" />
 			<textfield id="title" set="{@home10400.lead_title}" />
 			<textfield id="phone_work" set="{@home10400.lead_phoneoffice}" />
-			<textfield id="Leads0emailAddress0" set="{@home10400.lead_email}" />	
 			<button id="Leads_dcmenu_save_button" />
 			<wait timeout="10" />
 		</form>	
-		
+
 		<!--create call-->
 		<div id="dcmenuContainer">
-			<image src="themes/Sugar/images/icon_Calls_bar_32.png?s=ebab745ca16c5630bd6f842d529ef452&amp;c=1" click="true" />
+			<image id="dcMenu_Calls_quick_create_icon" click="true" />
 		</div>
 		<form id="form_DCQuickCreate_Calls">
 			<textfield id="name" set="{@home10400.call_subject} {@stamp}" />
@@ -108,7 +107,7 @@
 				<browser assert="My Calls" />
 				<table class="list view">
 					<link text="{@home10400.call_subject} {@stamp}" click="false" />
-					
+
 				</table>			
 			</li>
 			<li index="2">
@@ -124,7 +123,6 @@
 					<link text="{@home10400.lead_lastname} {@stamp}" click="false" />
 					<browser assert="{@home10400.lead_title}" />
 					<browser assert="{@home10400.lead_phoneoffice}" />
-					<browser assert="{@home10400.lead_email}" />
 				</table>			
 			</li>			
 		</ul>	
@@ -132,7 +130,6 @@
 		
 	<!-- delete dashlet -->
 	<ul id="col_0_0">			
-			
 		<div class="dashletToolSet" index="1">
 			<link index="3" alert="true" />
 		</div>	
@@ -140,10 +137,8 @@
 		<div class="dashletToolSet" index="1">
 			<link index="3" alert="true" />
 		</div>	
-			
-	</ul>	
-	
-		
+	</ul>
+
 	<!-- delete records-->	
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
