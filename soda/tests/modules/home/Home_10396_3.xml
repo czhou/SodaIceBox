@@ -30,6 +30,7 @@
 	
 	<link id="moduleTab_Home" />
 	<browser assert="Add Sugar Dashlets" />
+
 	<!--Add dashlet-->
 	<link id="add_dashlets" />
 	<wait timeout="5" />
@@ -54,12 +55,12 @@
 		<select name="autoRefresh" set="Every 1 minute" />
 		<button value="Save" />
 	</div>
-		
+
 	<csv file="{@global.scriptsdir}/csvs/home/Home_10396_3.csv" var="home10396">	
 		
 		<!--create contact-->
 		<div id="dcmenuContainer">
-			<image src="dcMenu_Tasks_quick_create_icon" click="true" />
+			<image id="dcMenu_Tasks_quick_create_icon" click="true" />
 		</div>
 		<form id="form_DCQuickCreate_Tasks">
 			<textfield id="name" set="{@home10396.subject} {@stamp}" />
@@ -91,19 +92,19 @@
 		</ul>	
 		
 	</csv>		
-		
+
 	<!-- delete dashlet -->
 	<ul id="col_0_0">			
-			<li index="1">
-					<div class="dashletToolSet" index="1">
-						<link index="3" alert="true" />
-					</div>	
-			</li>
-		</ul>	
+		<li index="1">
+			<div class="dashletToolSet" index="1">
+				<link index="3" alert="true" />
+				<wait timeout="3" />
+			</div>	
+		</li>
+	</ul>	
 	
-		
 	<!-- delete records-->	
 	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
-		
+
 	<puts text="Test: home_10396_3.xml finished." />
 </soda>	

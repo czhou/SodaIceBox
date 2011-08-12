@@ -49,11 +49,12 @@
 	<!--add account name on layout-->
 	<div class="dashletToolSet" index="1">
 		<link index="1" />
+		<wait timeout="3" />
 	</div>
 	<div id="dlg_c">
 		<browser assert="My Open Cases : Options" />
 		<select id="hide_tabs" set="Account Name" />
-		<image id="chooser_display_tabs_left_arrow" click="true" />
+		<link id="chooser_display_tabs_left_arrow" click="true" />
 		<select name="display_tabs[]" assert="Account Name" />
 		<button value="Save" />
 	</div>

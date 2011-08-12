@@ -34,7 +34,7 @@
 	<link id="add_dashlets" click="false" />
 	<div id="tabListContainer">
 		<link text="Sales" />
-		<wait timeout="3" />
+		<wait timeout="5" />
 	</div>
 	
 	<ul id="col_1_1">

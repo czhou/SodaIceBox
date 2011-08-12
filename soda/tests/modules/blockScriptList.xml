@@ -27,6 +27,13 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Home_10400</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Blocklisted until I can work out how to interact with email addresses in QuickCreates properly.</reason>
+		<modulename>Home</modulename>
+	</block>
+
+	<block>
 		<testfile>Leads_2037</testfile>
 		<bugnumber>45967</bugnumber>
 		<reason>JS error when creating a task from the history subpanel in Leads.</reason>
