@@ -81,7 +81,7 @@
 	<button value="Next >" />
 	<wait timeout="3" />
 	<browser assert="Show Query:" />
-	<textfield name="save_report_as" set="Report_10784" />
+	<textfield name="save_report_as" set="QA_Created_Report_10784" />
 	<checkbox id="outer_join_checkbox_Accounts:campaign_accounts" set="true" />
 	<checkbox id="outer_join_checkbox_Accounts:member_of" set="true" />
 

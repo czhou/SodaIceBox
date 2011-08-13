@@ -28,6 +28,13 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Reports_11821</testfile>
+		<bugnumber>45250</bugnumber>
+		<reason>Relate field to Documents causes database error</reason>
+		<modulename>Reports</modulename>
+	</block>
+
+	<block>
 		<testfile>Reports_11798</testfile>
 		<bugnumber>44880</bugnumber>
 		<reason>Changes to run-time filter revert if field is in the Group by and sorted in Matrix reports</reason>
