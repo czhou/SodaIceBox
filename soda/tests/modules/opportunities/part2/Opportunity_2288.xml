@@ -88,6 +88,10 @@
 				<link class="listViewTdToolsS1" index="1" />
 			</table>
 		</div>
+
+		<!-- The edit link pops up a QuickCreate now, so click Full Form. -->
+		<button value="Full Form" />
+
 		<div id="LBL_CALL_INFORMATION">
 			<textfield id="name"
 				set="{@Opportunity_2288.call_name_edit} {@user.name} {@stamp}" />

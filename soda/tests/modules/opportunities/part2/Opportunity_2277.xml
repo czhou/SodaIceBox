@@ -103,6 +103,10 @@
 				<link class="listViewTdToolsS1" index="1" />
 			</table>
 		</div>
+		
+		<!-- The edit link pops up a QuickCreate now, so click Full Form. -->
+		<button value="Full Form" />
+		
 		<form id="EditView">
 			<textfield id="name"
 				set="{@Opportunity_2277.task_name_edit} {@user.name} {@stamp}" />
