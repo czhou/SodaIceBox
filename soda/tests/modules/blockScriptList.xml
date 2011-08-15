@@ -176,6 +176,13 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Reports_11856</testfile>
+		<bugnumber>45728</bugnumber>
+		<reason>Verify No Error in Reports When Grouping by Opportunity Amount</reason>
+		<modulename>Reports</modulename>
+	</block>
+	
+	<block>
 		<testfile>Campaigns_11831</testfile>
 		<bugnumber>45586</bugnumber>
 		<reason>Custom Fields In The Campaigns Module Break The Campaign Stats ROI Detailview</reason>
