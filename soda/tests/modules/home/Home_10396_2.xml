@@ -98,4 +98,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 		
 	<puts text="Test: home_10396_2.xml finished." />
-</soda>	
+</soda>

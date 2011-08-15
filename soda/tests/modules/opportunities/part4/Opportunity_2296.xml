@@ -73,9 +73,13 @@
              <browser assert="{@Opportunity_2296.note_name} {@user.name} {@stamp}"/>
              <link text="{@Opportunity_2296.note_name} {@user.name} {@stamp}" click="false"/>
              <link class="listViewTdToolsS1" index="1"/>
+			<wait/>
            </table>
        </div>
-       <wait/>
+
+		<!-- The edit link pops up a QuickCreate now, so click Full Form. -->
+		<button value="Full Form" />
+
        <form id="EditView">
              <textfield id='name' set='{@Opportunity_2296.note_name_edit} {@user.name} {@stamp}'/>
              <textarea id='description' set='{@Opportunity_2296.note_description_edit}'/>             

@@ -28,7 +28,7 @@
 <soda>
 	<puts text="Lib: EmailTemplate_Delete_Lib.xml starting." />
 
-	<link href="index.php?module=Emails&amp;action=index" />
+	<link id="moduleTab_Emails" />
 
 	<link text="View Email Templates" />
 	<browser assert="Email Templates" />
@@ -39,8 +39,7 @@
 	<checkbox name="massall" click="true" />
 	<link id="actions_link" />
 	<link text="Delete" alert="true" />
-   <wait timeout="3" />
-   <browser action="refresh" />
+	<wait timeout="3" />
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />
 
 	<puts text="Lib: EmailTemplate_Delete_Lib.xml finished." />

@@ -28,5 +28,19 @@
 <soda>
 	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
 	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/targetlist-init.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/target-init.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/campaign-init.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/account-init.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/contact-init.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/lead-init.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/opp-init.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/quote-init.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/case-init.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/call-init.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/meeting-init.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/task-init.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/note-init.xml" />
+	<script file="{@global.scriptsdir}/modules/sorting/module_lib/document-init.xml" />
 </soda>
 

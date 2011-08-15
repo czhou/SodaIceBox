@@ -24,29 +24,17 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
-    <puts text="Lib: KnowledgeBase_Delete_Lib.xml starting." />
-    <link id="moduleTab_KBDocuments" />
-    <browser assert="Knowledge Base" />
+	<puts text="Lib: Cookie_Delete_Lib starting." />
+	<javascript>
+		var cookies = document.cookie.split(";");
 
-    <link text="Administer Knowledge Base" />
-    <browser assert="Knowledge Base Admin" />
-
-    <select id="action_id" set="Delete Selected Articles" />
-    <wait timeout="3" />
-    <checkbox id="selected_tags[]" click="true" />
-    <wait timeout="3" />
-    <checkbox name="massall" click="true" />
-    <wait timeout="3" />
-    <button id="delete_articles" alert="true" />
-    <wait timeout="3" />
-
-    <checkbox id="selected_tags[]" click="true" />
-    <wait timeout="3" />
-    <span class="pageNumbers" assert="(0 - 0 of 0)" />
-
-    <link id="moduleTab_KBDocuments" />
-
-    <puts text="Lib: KnowledgeBase_Delete_Lib.xml finished." />
+		for (var i = 0; i &lt; cookies.length; i++) {
+			var cookie = cookies[i];
+			var eqPos = cookie.indexOf("=");
+			var name = eqPos &gt; -1 ? cookie.substr(0, eqPos) : cookie;
+			document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+		}
+	</javascript>
+	<puts text="Lib: Cookie_Delete_Lib finished." />
 </soda>

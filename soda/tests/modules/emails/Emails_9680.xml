@@ -70,6 +70,8 @@
 	<table id="composeHeaderTable1">
 		<button index="1" alert="true" />
 	</table>
+
+	<browser assert="missouri" />
 	
 	<!--check note record-->
 	<link id="moduleTab_Notes" />

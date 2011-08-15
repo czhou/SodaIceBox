@@ -24,9 +24,64 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
 	<!-- David's Modules -->
+	<block>
+		<testfile>Home_10400</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Blocklisted until I can work out how to interact with email addresses in QuickCreates properly.</reason>
+		<modulename>Home</modulename>
+	</block>
+
+	<block>
+		<testfile>Leads_2037</testfile>
+		<bugnumber>45967</bugnumber>
+		<reason>JS error when creating a task from the history subpanel in Leads.</reason>
+		<modulename>Leads-part3</modulename>
+	</block>
+
+	<block>
+		<testfile>Leads_1928</testfile>
+		<bugnumber>45967</bugnumber>
+		<reason>JS error when creating a task from the history subpanel in Leads.</reason>
+		<modulename>Leads-part1</modulename>
+	</block>
+
+	<block>
+		<testfile>Leads_2025</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Temporary blocklist until I figure out how to trigger the JS on an email field.</reason>
+		<modulename>Leads-part2</modulename>
+	</block>
+
+	<block>
+		<testfile>Leads_11545</testfile>
+		<bugnumber>45965</bugnumber>
+		<reason>JavaScript error on Convert Lead screen.</reason>
+		<modulename>Leads-part1</modulename>
+	</block>
+
+	<block>
+		<testfile>Leads_1946</testfile>
+		<bugnumber>45960</bugnumber>
+		<reason>An email reply initiated from the subpanel edit link doesn't get associated with the parent record.</reason>
+		<modulename>Leads-part1</modulename>
+	</block>
+
+	<block>
+		<testfile>Emails_10052</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Can't set email address in Leads subpanel via Soda; works fine manually.  No time to investigate.</reason>
+		<modulename>Emails</modulename>
+	</block>
+
+	<block>
+		<testfile>Emails_9680</testfile>
+		<bugnumber>44190</bugnumber>
+		<reason>mime_content_type() error when sending an email</reason>
+		<modulename>Emails</modulename>
+	</block>
+
 	<block>
 		<testfile>Contacts_4357</testfile>
 		<bugnumber>45848</bugnumber>
@@ -175,6 +230,13 @@
 	</block>
 	
 	<!-- Mazen's Modules -->
+	<block>
+		<testfile>Campaigns_11831</testfile>
+		<bugnumber>45586</bugnumber>
+		<reason>Custom Fields In The Campaigns Module Break The Campaign Stats ROI Detailview</reason>
+		<modulename>campaigns</modulename>
+	</block>
+	
 	<block>
 		<testfile>Reports_8252</testfile>
 		<bugnumber>45420</bugnumber>

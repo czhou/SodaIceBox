@@ -24,6 +24,7 @@
 		fields blank. -->
 		
 	<puts text="Test: Accounts_0136.xml starting " />
+	<timestamp />
 
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
@@ -61,7 +62,8 @@
 		<button id="search_form_submit" />
 		<table class="list view">
 			<link text="{@account_record_0004.name} {@user.name} {@stamp}"
-				exist="false" click="false" />
+				exists="false" click="false" />
+			<span class="pageNumbers" assert="(0 - 0 of 0)" />
 		</table>
 	</csv>
 	<!--Clear search form -->

@@ -31,17 +31,6 @@
 
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 
-	<!--Search the Contact record-->
-	<!--link id="moduleTab_Contacts" />
-	<browser assert="Contacts" />
-	<button id="search_form_clear" />
-	<button id="search_form_submit" />
-	<table class="list view">
-	  <browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
-		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
-		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" required="false" timeout="3"/-->
-	<!--/table-->
-
 	<!--click Compose Email-->
 	<div class="moduleTitle">
 		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
@@ -57,15 +46,14 @@
 		<textfield id="emailSubject0" set="{@email_record_9776.subject} {@stamp}" />
 	</csv>
 
-	<!--send email-->
+	<!-- save draft -->
 	<table id="composeHeaderTable0">
-		<button index="2" alert="true" />
+		<button index="2" />
+		<wait timeout="3" />
 	</table>
-	<wait />
 
 	<!--Nav to emails module-->
 	<link id="moduleTab_Emails" />
-	<wait timeout="10" />
 	<div id="lefttabs">
 		<div id="emailtree">
 			<table id="ygtvtableel1">
@@ -76,20 +64,20 @@
 				</row>
 			</table>
 		</div>
-		<!--<link text="/My Drafts/" />-->
-		<span text="My Drafts" click="true" />
+		<span id="ygtvlabelel2" click="true" />
 	</div>
-	<wait timeout="3" />
-	<div text="{@email_record_9776.subject} {@stamp}" click="true"
-		jscriptevent="onmouseup" />
+	<wait timeout="10" />
+	<div text="{@email_record_9776.subject} {@stamp}" click="true" jscriptevent="onmouseup" />
+	<browser assert="{@email_record_9776.subject} {@stamp}" />
 	<wait timeout="3" />
 
 	<table id="/composeHeaderTable/">
 		<textfield id="emailSubject1" assert="{@email_record_9776.subject} {@stamp}" />
 	</table>
 
-
-	<!--delete-->
+	<!-- Clean up: Delete test data and clear cookies. -->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Cookie_Delete_Lib.xml" />
+
 	<puts text="Test: Emails_9776.xml finished." />
 </soda>

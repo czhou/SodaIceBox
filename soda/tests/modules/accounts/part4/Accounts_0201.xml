@@ -26,8 +26,10 @@
 -->
 
 <soda>
-	<puts text="Test Case 201: Account Detail - Contacts sub-panel_Verify that editing contact record related to this account can be canceled."/>
-
+	<!-- Account Detail - Contacts sub-panel_Verify that editing contact record related to this account can be canceled. -->
+	<puts text="Test: Accounts_0201.xml starting."/>
+	<timestamp />
+	
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 
@@ -44,6 +46,7 @@
 
 	<!--Go its contact subpanel -->
 	<button id="accounts_contacts_create_button" />
+	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0035.csv" var="contact_record_0035">
 		<form id="form_SubpanelQuickCreate_Contacts">
 			<textfield id="first_name"

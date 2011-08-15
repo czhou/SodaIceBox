@@ -65,17 +65,19 @@
 			<link text="My Accounts" />
 			<wait timeout="5" />	
 		</div>
+		<!-- Close the add dashlet panel. -->
 		<div id="dashletsDialogHeader">
 			<link index="1" />
 		</div>
 		<!--add email address on layout-->
 		<div class="dashletToolSet" index="1">
 			<link index="1" />
+			<wait timeout="3" />
 		</div>
 		<div id="dlg_c">
 			<browser assert="My Accounts : Options" />
 			<select id="hide_tabs" set="Email Address" />
-			<image id="chooser_display_tabs_left_arrow" click="true" />
+			<link id="chooser_display_tabs_left_arrow" click="true" />
 			<select name="display_tabs[]" assert="Email Address" />
 			<button value="Save" />
 		</div>
@@ -101,4 +103,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	
 	<puts text="Test: home_8353.xml finished." />
-</soda>	
+</soda>

@@ -50,7 +50,7 @@
 	</csv>
 	<button id="saveButton" />
 	<wait timeout="60" />
-	<radio name="colyui-col111-radio" set="true" />
+	<radio index="1" set="true" />
 	<div id="settingsDialog">
 		<button value="   Done   " alert="true" />
 	</div>
