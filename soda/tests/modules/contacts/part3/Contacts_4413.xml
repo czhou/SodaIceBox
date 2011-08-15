@@ -94,6 +94,7 @@
 	</div>
 	<div id="closeActivityDialog">
 		<button class="default"  text="OK" click="true"/>
+		<wait timeout="3" />
 	</div>
 
 	<!--wait page refresh-->
@@ -116,5 +117,6 @@
 	<!--Clean actions-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_lib.xml" />
+
 	<puts text="Test: Contacts_4413.xml finished." />
 </soda>

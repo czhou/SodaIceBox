@@ -67,7 +67,7 @@
 			</table>
 		</csv>
 		<link class="listViewThLinkS1" index="1" />
-		<wait timeout="1" />
+		<wait timeout="2" />
 		<csv file="{@global.scriptsdir}/csvs/sorting/Contact_Listview.csv" 
 		  var="Account_Contact_Subpanel">
 			<table class="list view">
@@ -78,7 +78,7 @@
 		</csv>
 		
 		<link class="listViewThLinkS1" index="2" />
-		<wait timeout="1" />
+		<wait timeout="2" />
 		<csv file="{@global.scriptsdir}/csvs/sorting/Contact_Listview.csv" 
 		  var="Account_Contact_Subpanel">
 			<table class="list view">
@@ -88,7 +88,7 @@
 			</table>
 		</csv>
 		<link class="listViewThLinkS1" index="2" />
-		<wait timeout="1" />
+		<wait timeout="2" />
 		<csv file="{@global.scriptsdir}/csvs/sorting/Contact_Listview.csv" 
 		  var="Account_Contact_Subpanel">
 			<table class="list view">
@@ -99,7 +99,7 @@
 		</csv>
 		
 		<link class="listViewThLinkS1" index="3" />
-		<wait timeout="1" />
+		<wait timeout="2" />
 		<csv file="{@global.scriptsdir}/csvs/sorting/Contact_Listview.csv" 
 		  var="Account_Contact_Subpanel">
 			<table class="list view">
@@ -109,7 +109,7 @@
 			</table>
 		</csv>
 		<link class="listViewThLinkS1" index="3" />
-		<wait timeout="1" />
+		<wait timeout="2" />
 		<csv file="{@global.scriptsdir}/csvs/sorting/Contact_Listview.csv" 
 		  var="Account_Contact_Subpanel">
 			<table class="list view">
@@ -120,7 +120,7 @@
 		</csv>
 
 		<link class="listViewThLinkS1" index="4" />
-		<wait timeout="1" />
+		<wait timeout="2" />
 		<csv file="{@global.scriptsdir}/csvs/sorting/Contact_Listview.csv" 
 		  var="Account_Contact_Subpanel">
 			<table class="list view">
@@ -130,7 +130,7 @@
 			</table>
 		</csv>
 		<link class="listViewThLinkS1" index="4" />
-		<wait timeout="1" />
+		<wait timeout="2" />
 		<csv file="{@global.scriptsdir}/csvs/sorting/Contact_Listview.csv" 
 		  var="Account_Contact_Subpanel">
 			<table class="list view">

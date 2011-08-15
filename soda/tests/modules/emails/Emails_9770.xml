@@ -98,7 +98,10 @@
 	<link text="Log Out" />
 	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
 
+<<<<<<< HEAD
 	<script file="{@global.scriptsdir}/modules/lib/Cookie_Delete_Lib.xml" />
 
+=======
+>>>>>>> refs/remotes/origin/6_2_0
 	<puts text="Test: Emails_9770.xml finished." />
 </soda>

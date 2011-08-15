@@ -54,7 +54,7 @@
 	
 	<textfield id="assigned_user_name" set="qauser" jscriptevent="onkeydown" />
 	<textfield id="assigned_user_name" jscriptevent="onkeyup" click="false" />
-	<wait timeout="2" />
+	<wait timeout="3" />
 	
 	<button value="Save" />
 	
@@ -71,7 +71,7 @@
 	
 	<textfield id="assigned_user_name" set="qauser" jscriptevent="onkeydown" />
 	<textfield id="assigned_user_name" jscriptevent="onkeyup" click="false" />
-	<wait timeout="2" />
+	<wait timeout="3" />
 	
 	<button value="Save" />
 	

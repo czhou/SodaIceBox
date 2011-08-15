@@ -231,6 +231,13 @@
 	
 	<!-- Mazen's Modules -->
 	<block>
+		<testfile>Campaigns_11831</testfile>
+		<bugnumber>45586</bugnumber>
+		<reason>Custom Fields In The Campaigns Module Break The Campaign Stats ROI Detailview</reason>
+		<modulename>campaigns</modulename>
+	</block>
+	
+	<block>
 		<testfile>Reports_8252</testfile>
 		<bugnumber>45420</bugnumber>
 		<reason></reason>

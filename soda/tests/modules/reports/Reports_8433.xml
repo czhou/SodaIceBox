@@ -54,42 +54,37 @@
 	<button id="edit_button" />
 	<select id="industry" set="{@account1_industry}" />
 	<button id="SAVE" />
-	
-	
-	
-	
+
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 	<var var="account2_name" set="{@pre_account_name}" />
 	<var var="account2_industry" set="{@account_record.industry}" />
-	
 	<wait timeout="4" />
 	
 	<link id="moduleTab_Reports" />
 	
 	<link text="Create Report" />
-	
 	<wait timeout="8" />
 	
 	<div id="report_type_div">
 		<image name="rowsColsImg" jscriptevent="onclick" click="true" />
+		<wait timeout="3" />
 	</div>
-	
-	<wait timeout="3" />
 	
 	<table id="Accounts">
 		<link text="Accounts" />
 	</table>
 	
-	<div text="Industry" click="true" />
+	<row id="Accounts_industry" click="true" />
+	<wait timeout="1" />
 	<table id="Filter.1_table">
 		<row id="Filter.1_table_filter_row_1">
 			<select name="input" set="Banking" />
 		</row>
 	</table>
-	
 	<wait timeout="4" />
-	<div text="Industry" click="true" />
-	
+
+	<row id="Accounts_industry" click="true" />
+	<wait timeout="1" />
 	<table id="Filter.1_table">
 		<row id="Filter.1_table_filter_row_2">
 			<select name="qualify" set="Is One Of" />
@@ -102,15 +97,15 @@
 	
 	<button value="Next &gt;" />
 	<wait timeout="4" />
-	<!-- display cols" -->
-	<div text="Name" click="true" />
-	<div text="Industry" click="true" />
 	
+	<!-- display cols" -->
+	<row id="Accounts_name" click="true" />
+	<row id="Accounts_industry" click="true" />
 	
 	<button value="Next &gt;" />
-	<!-- Group By -->
 	<wait timeout="4" />
-	
+
+	<!-- Group By -->
 	<timestamp />
 	<var var="report_name" set="QA_Created_{@stamp}" />
 	<textfield name="save_report_as" set="{@report_name}" />
@@ -125,6 +120,9 @@
 	</div>
 		
 	<link id="moduleTab_Reports" />
+	
+	<textfield name="name" set="{@report_name}" />
+	<button id="search_form_submit" />
 	<table class="list view">
 		<browser assert="{@report_name}" />
 	</table>

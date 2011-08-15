@@ -32,19 +32,12 @@
 	-->
 	<puts text="Test: Accounts_0235.xml started." />
 
-	<!--Create a account record-->
+	<!-- Create an account and a contact. -->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
-	<!-- Create a Contact record -->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 
-	<!--Search the record-->
+	<!-- Search for the record. -->
 	<link id="moduleTab_Accounts" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
-	</div>
-	<wait timeout="7" />
-	<textfield id="name_basic" set="{@pre_account_name}" />
-	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
 	</table>
@@ -64,11 +57,7 @@
 	<textfield id="first_name_advanced" assert="" />
 	<button value="Search" />
 	<wait timeout="3" />
-	<table class="list view">
-		<row class="pagination">
-			<span class="pageNumbers" assert="(1 - 1 of 1)" />
-		</row>
-	</table>
+	<span class="pageNumbers" assert="(1 - 1 of 1)" />
 	<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
 
 	<!--Delete the record-->
@@ -76,4 +65,3 @@
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0235.xml finished." />
 </soda>
-                        

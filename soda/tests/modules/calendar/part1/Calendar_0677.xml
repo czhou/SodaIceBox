@@ -59,7 +59,7 @@
 	<div id="scheduler">
 		<textfield name="search_last_name" set="qauser" />
 		<button value="Search" />
-		<wait timeout="5" />
+		<wait timeout="7" />
 		<div id="list_div_win">
 			<button value="Add" />
 		</div>

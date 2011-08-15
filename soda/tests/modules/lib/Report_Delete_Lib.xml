@@ -40,6 +40,9 @@
 
 	<button name="clear" />
 	<button value="Search" />
+	<table class="list view">
+		<span class="pageNumbers" assert="(1 - 20 of 44)" />
+	</table>
 
 	<puts text="Lib: Report_Delete_Lib.xml finished." />
 </soda>

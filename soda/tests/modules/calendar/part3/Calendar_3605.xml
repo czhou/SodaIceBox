@@ -83,6 +83,7 @@
 		<link text="Edit" />
 	</table>
 	
+	<select id="team_id" set="-none-" />
 	<select id="shared_ids" clear="true" />
 	<select id="shared_ids" set="{@qa_user}" />
 	

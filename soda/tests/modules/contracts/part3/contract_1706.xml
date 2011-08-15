@@ -24,22 +24,22 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
-	<puts text='Contract_1706:Edit Note_Verify that editing a note can be canceled for Contract.'/>
-
+	<!-- Edit Note_Verify that editing a note can be canceled for Contract. -->
+	<puts text="Test: contract_1706.xml finished." />
 	<timestamp/>
+
 	<!--Create a contract with filling all the fields-->
-	<script file='{@global.scriptsdir}/modules/lib/Contract_Create_Lib.xml'/>
+	<script file="{@global.scriptsdir}/modules/lib/Contract_Create_Lib.xml"/>
 
 	<!--Search the contract record in list view-->
-	<link id='moduleTab_Contracts'/>
+	<link id="moduleTab_Contracts"/>
 	<browser assert="Contract Name"/>
 	<link id="basic_search_link" required="false"/>
-	<textfield id='name_basic' set='{@Contract_Create_Lib}'/> 
+	<textfield id="name_basic" set="{@Contract_Create_Lib}"/> 
 	<button id="search_form_submit"/>
-	<table class='list view'>
-	<link text='{@Contract_Create_Lib}'/>
+	<table class="list view">
+	<link text="{@Contract_Create_Lib}"/>
 	<browser assert="{@Contract_Create_Lib}"/>
 	</table>
 
@@ -68,11 +68,10 @@
 	<browser assert="Note record"/>
 
 	<!--Delete the records-->
-	<script file='{@global.scriptsdir}/modules/lib/Contract_Delete_Lib.xml'/>
-	<script file='{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml'/>
-	<script file='{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml'/>
-	<!--<script file='{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml'/>-->
+	<script file="{@global.scriptsdir}/modules/lib/Contract_Delete_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml"/>
+	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
 
-	<puts text='-------------------Contract_1706: finished-------------------'/>
-
+	<puts text="Test: contract_1706.xml finished." />
 </soda>
