@@ -54,9 +54,9 @@
 			<radio id="primary_team_name_collection_0" set="true" />
 		</table>
 
-		<table class="edit view">
+		<form id="EditView">
 			<button name="btn2" />            
-		</table>
+		</form>
 		<browser assert="Document Search" />
 
 		<textfield name="document_name" set="{@Doc_Name}" />
