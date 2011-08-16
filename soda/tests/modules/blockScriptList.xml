@@ -28,6 +28,13 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Users_0608</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>When Reports To is changed by Soda, the user's team is not removed from the old supervisor's teams.  Doesn't happen manually.</reason>
+		<modulename>Users</modulename>
+	</block>
+
+	<block>
 		<testfile>Reports_11821</testfile>
 		<bugnumber>45250</bugnumber>
 		<reason>Relate field to Documents causes database error</reason>

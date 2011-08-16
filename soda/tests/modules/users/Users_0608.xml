@@ -35,14 +35,15 @@
     <link href="./index.php?module=Users&amp;action=index" />
     <browser assert="Users" />
 
-    <!--Create new user-->
+    <!-- Create a new user. -->
     <link text="Create New User" />
 
     <csv file="{@global.scriptsdir}/csvs/users/Users_0608.csv" var="users_record_0608">
 		<textfield name="sugar_user_name" set="{@users_record_0608.last_name}{@stamp}" />
 		<textfield id="last_name" set="{@users_record_0608.last_name}{@stamp}" />
 		<textfield id="Users0emailAddress0" set="{@users_record_0608.email}" />
-		<!--select report to user-->
+
+		<!-- Select report to user. -->
 		<div id="information">
 			<button value="Select" />
 		</div>
@@ -62,7 +63,8 @@
 		
 		<button value="Save" />
 		<browser assert="{@users_record_0608.last_name}{@stamp}" />
-		<!--check team membership-->
+
+		<!-- Check initial team membership. -->
 		<div id="information">
 			<browser assert="Reports to:" />
 			<row index="5"> 
@@ -72,7 +74,7 @@
 		<browser assert="Users" />
 		<link text="{@users_record_0608.last_name}{@stamp}" click="false" />
 		
-		<!--modify "report to"-->
+		<!-- Modify "Reports To". -->
 		<link text="Users" />
 		<table class="list view">
 			  <link text="{@users_record_0608.last_name}{@stamp}" />
@@ -94,7 +96,7 @@
 		<link text="{@users_record_0608.new_report}" exists="true" />
 		<browser assert="{@users_record_0608.last_name}{@stamp}" />
 
-		<!--check new team membership-->
+		<!-- Check new team membership. -->
 		<div id="information">
 			<browser assert="Reports to:" />
 			<row index="5"> 
@@ -104,91 +106,38 @@
 		<browser assert="Users" />
 		<link text="{@users_record_0608.last_name}{@stamp}" click="false" />
 		
-		<!--old team membership removed-->
+		<!-- Check old team membership removed. -->
 		<link text="Users" />
 		<table class="list view">
 			  <link text="{@users_record_0608.old_report}" />
 		</table>
-		<browser assert="Users" />
+		
+		<div class="moduleTitle">
+			<link href="index.php?module=Users&action=index" exists="true" />
+			<browser assert="{@users_record_0608.old_report}" />
+		</div>
 		<link text="{@users_record_0608.last_name}{@stamp}" click="false" exists="false" />
 
-		<!--set user "inactive"-->
-		<!--Go to user managerment-->
+		<!-- Clean Up: Delete test data.-->
 		<link id="admin_link" />
 		<browser assert="Administration" />
 
 		<link href="./index.php?module=Users&amp;action=index" />
 		<browser assert="Users" />
 
-		<form id="search_form">
-			<button value="Clear" />
-			<textfield name="search_name_basic" set="{@users_record_0608.last_name}{@stamp}" />
-			<button value="Search" />
-		</form>
-		<table class="list view">
-			 <checkbox name="massall" click="true" />
-		</table>
-		<link id="actions_link" />
-		<link text="Mass Update" />
-		<div id="mass_update_div">
-			 <select id="mass_status" set="Inactive" />
-			 <button id="update_button" alert="true" />
-		</div>
-		<!--clear "report to"-->
-		<link id="employees_link" />
+		<button id="search_form_clear" />
+		<textfield name="search_name_basic" set="{@users_record_0608.last_name}{@stamp}" />
+		<button id="search_form_submit" />
 
-		<!--Search user-->
-		<browser assert="Employees" />
-		<form name="search_form">
-			<wait timeout="5" />
-			<button value="Clear" />
-			<textfield name="search_name_basic" set="{@users_record_0608.last_name}{@stamp}" />
-			<button value="Search" />
-		</form>
-		<table class="list view">
-			<link text="{@users_record_0608.last_name}{@stamp}" />
-		</table>   
-		<button id="edit_button" />
-		<button name="btn_clr_reports_to_name" />
-		<wait timeout="5" />
-		<button value="Save" />
-		<link text="Employees" />
-		<form name="search_form">
-			<button value="Clear" />
-		</form>
-		<!--check "inactive" and cleared "report to"-->
-		<link id="admin_link" />
+		<link text="{@users_record_0608.last_name}{@stamp}" />
+		
+		<button value="Delete" />
+		<button value="OK" />
+		<button value="Cancel" />
 
-		<!--click "User Management"-->
-		<link href="./index.php?module=Users&amp;action=index" />
-		<browser assert="Users" />
-
-		<!--Search inactive user-->
-		<link text="Advanced Search" />
-		<div id="Usersadvanced_searchSearchForm">
-			<button value="Clear" />
-			<textfield name="last_name_advanced" set="{@users_record_0608.last_name}{@stamp}" />
-			<select name="status_advanced[]" set="Inactive" />
-			<button value="Search" />
-		</div>          
-		<table class="list view">
-			<span class="pageNumbers" assert="(1 - 1 of 1)" />
-			<link text="{@users_record_0608.last_name}{@stamp}" />
-		</table> 
-		<browser assert="Inactive" />   
-		<div id="information">
-			<row index="5">
-				<cell index="2" assert="" />
-			</row>
-		</div>
 		<!--Clear search-->
-		<link text="Users" />
-		<link text="Basic Search" />
-		<wait timeout="3" />
-		<form name="search_form">
-			<button value="Clear" />
-			<button value="Submit" />
-		</form>
+		<button id="search_form_clear" />
+		<button id="search_form_submit" />
 	</csv>
 
 	<puts text="Test: User_0608.xml finished." />

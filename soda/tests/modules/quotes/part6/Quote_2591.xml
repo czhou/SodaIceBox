@@ -26,40 +26,36 @@
 -->
 
 <soda>
+	<!-- Relationship - Delete Project_Verify that "Projects" can be successful deleted on the "Projects" sub-panel. -->
+	<puts text="Test: Quote_2591.xml starting." />
 
-	<puts text="Test Case 2591: Relationship - Delete Project_Verify that 'Projects' can be successful deleted on the 'Projects' sub-panel."/>
+	<!--Go to Quotes module and search out the quote record create in lib-->
+	<link id="moduleTab_Quotes"/>
+	<browser assert="Quotes"/>
 
-        <!--Go to Quotes module and search out the quote record create in lib-->
-        <link id='moduleTab_Quotes'/>
-        <browser assert='Quotes'/>
-        <form id='search_form'>
-            <button id='search_form_clear'/>
-            <textfield id='name_basic' set='{@pre_Quote_name}'/>
-            <button id='search_form_submit'/>
-        </form>
+	<table class="list view">
+		<link text="{@pre_Quote_name}"/>
+	</table>
 
-        <table class='list view'>
-            <link text='{@pre_Quote_name}'/>
-        </table>
-
-        <!--Create a Project record in Project subpanel.-->
+	<!--Create a Project record in Project subpanel.-->
 	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2591.csv" var="quote_2591">
-        	<browser assert="Quote Overview"/>
-        	<button id="projects_quotes_create_button"/>
-        	<wait timeout="5"/>
-        	<textfield id="name" set="{@quote_2591.project_name}"/>
-        	<textfield name="estimated_start_date" set="{@quote_2591.estimated_start_date}"/>
-        	<textfield name="estimated_end_date" set="{@quote_2591.estimated_end_date}"/>
-        	<button id="Project_subpanel_save_button"/> 
-        	<wait timeout="10"/>
+		<browser assert="Quote Overview"/>
+		<button id="projects_quotes_create_button"/>
+		<wait timeout="7"/>
+		<textfield id="name" set="{@quote_2591.project_name}"/>
+		<textfield name="estimated_start_date" set="{@quote_2591.estimated_start_date}"/>
+		<textfield name="estimated_end_date" set="{@quote_2591.estimated_end_date}"/>
+		<button id="Project_subpanel_save_button"/> 
+		<wait timeout="12"/>
 		<div id="list_subpanel_project">
-        		<browser assert="{@quote_2591.project_name}"/>
-			
+			<browser assert="{@quote_2591.project_name}"/>
+
 			<!--Delete the project record-->
 			<link class="listViewTdToolsS1" index="2" alert="true"/>
 			<wait timeout="10"/>
 			<browser assertnot="{@quote_2591.project_name}"/>
 		</div>
 	</csv>
-        <puts text="End Test Case 2591 is finished!"/>
+
+	<puts text="Test: Quote_2591.xml starting." />
 </soda>
