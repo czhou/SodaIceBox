@@ -26,7 +26,8 @@
 -->
 
 <soda>
-   <puts text="ProductCategory_Create_Lib: Starting" />
+   <puts text="Lib: ProductCategory_Create_Lib.xml starting." />
+
    <csv file="{@global.scriptsdir}/modules/lib/ProductCategory_Create_Lib.csv" 
       var="ProductCategory_Create_Lib">
       <link text="Admin" />

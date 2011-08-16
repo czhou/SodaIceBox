@@ -26,11 +26,11 @@
 -->
 
 <soda>
-
-	<puts text="Test Case 2851: Create Call -- Project Management_Verify that Call for Activities can be scheduled for Project."/>
+	<!-- Create Call -- Project Management_Verify that Call for Activities can be scheduled for Project. -->
+	<puts text="Test: Project_2851.xml starting." />
 
 	<!--Search out the project record created in lib-->
-        <link id="moduleTab_Project"/>
+	<link id="moduleTab_Project"/>
 	<div class="moduleTitle">
 		<link href="index.php?module=Project&action=index" click="false"/>
 	</div>
@@ -52,8 +52,10 @@
 			<browser assert="{@Project_2851.call_name}"/>
 		</table>	
 		<button value="Delete" alert="ture"/>
-
 	</csv>
 
-        <puts text="Test Case 2851 is finished!"/>
+	<!-- Clean Up: Delete test data. -->
+	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
+
+	<puts text="Test Case 2851 is finished!"/>
 </soda>
