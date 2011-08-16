@@ -61,7 +61,7 @@
 		  var="Account_Lead_Subpanel">
 			<table class="list view">
 				<tr index="{@Account_Lead_Subpanel.sub_asc}">
-					<browser assert="{@Account_Lead_Subpanel.name}" />
+					<browser assert="{@Account_Lead_Subpanel.last_name}" />
 				</tr>
 			</table>
 		</csv>
@@ -71,7 +71,7 @@
 		  var="Account_Lead_Subpanel">
 			<table class="list view">
 				<tr index="{@Account_Lead_Subpanel.sub_desc}">
-					<browser assert="{@Account_Lead_Subpanel.name}" />
+					<browser assert="{@Account_Lead_Subpanel.last_name}" />
 				</tr>
 			</table>
 		</csv>

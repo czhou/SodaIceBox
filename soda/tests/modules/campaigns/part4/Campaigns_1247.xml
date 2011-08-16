@@ -51,7 +51,7 @@
 	<button value="Next &gt;" />
 	
 	<div text="Name" click="true" />
-	
+	<wait timeout="3" />
 	<button value="Next &gt;" />
 	
 	<timestamp />

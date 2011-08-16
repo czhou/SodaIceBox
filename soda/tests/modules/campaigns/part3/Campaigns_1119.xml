@@ -74,7 +74,7 @@
 		<hidden name="record" var="Campaign_1119_et_id" />
 	</form>
 	
-	<link id="moduleTab_Home" jscriptevent="onmouseover" />
+	<link id="moduleTab_Home" jscriptevent="onmouseover" click="false" />
 	<wait timeout="5" />
 	<ul id="lastViewedContainerHome">
 		<link href="index.php?module=EmailTemplates&amp;action=DetailView&amp;record={@Campaign_1119_et_id}" exists="true" click="false" />

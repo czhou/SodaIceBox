@@ -52,7 +52,7 @@
 	<!--create a call in activities sub panel with status "held"-->
 	<div id="list_subpanel_activities">
 		<button value="  Log Call  " />
-		<wait timeout="3" />
+		<wait timeout="5" />
 	</div>
 	
 	<csv file="{@global.scriptsdir}/csvs/bugtracker/Bug Tracker_0651.csv" var="bug_tracker_record_651">
@@ -62,7 +62,7 @@
 			<textfield id="description" set="{@bug_tracker_record_651.description}" />
 		
 			<button id="Calls_subpanel_save_button" />
-			<wait timeout="5" />
+			<wait timeout="7" />
 		</form>
 	
 		<div id="list_subpanel_history">
