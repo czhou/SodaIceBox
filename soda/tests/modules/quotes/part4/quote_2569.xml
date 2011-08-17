@@ -64,8 +64,12 @@
 				<browser assert="{@Quote_2569.meeting_name} {@user.name} {@stamp}" />
 				<link text="{@Quote_2569.meeting_name} {@user.name} {@stamp}" click="false" />
 				<link class="listViewTdToolsS1" index="1" />
+				<wait timeout="3" />
 			</table>
 		</div>
+
+		<!-- Edit link pops up QuickEdit now, so click Full Form. -->
+		<button value="Full Form" />
 
 		<form id="EditView">
 			<textfield id="name" set="{@Quote_2569.meeting_name} {@stamp}" />
