@@ -33,8 +33,8 @@
 	
 	<browser assert="Step 1: Select Data Source"/>
 	<browser assert="Ready to start importing? Select the source of the data that you would like to import."/>
-	<browser assert="File on my computer"/>
-	<browser assert="External application or service"/>
+	<browser assert="a file on my computer"/>
+	<browser assert="an external application or service"/>
 
 	<puts text="Test: Imports_11611.xml finished." />
 </soda>
