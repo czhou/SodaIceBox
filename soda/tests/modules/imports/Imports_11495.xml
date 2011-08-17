@@ -36,7 +36,7 @@
 
 
 	<!--Step1-->
-	<div class="moduleTitle">
+	<div id="importWizardDialogTitle">
 		<browser assert="Step 1: Upload Import File" />
 	</div>
 
