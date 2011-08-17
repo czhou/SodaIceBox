@@ -26,53 +26,56 @@
 -->
 
 <soda>
+	<!-- Edit Note or Attachment_Verify that "Create Note or Attachment" can be successful modified on the "Quote" sub-panel. -->
+	<puts text="Test: quote_2573.xml starting." />
 
-	<puts text="Test Case 2573: Edit Note or Attachment_Verify that 'Create Note or Attachment' can be successful modified on the 'Quote' sub-panel."/>
-
-	<!--Go to Quotes module and search out the quote record create in lib-->
-        <link id='moduleTab_Quotes'/>
-        <browser assert='Quotes'/>
-        <form id='search_form'>
-            <button id='search_form_clear'/>
-            <textfield id='name_basic' set='{@pre_Quote_name}'/>
-            <button id='search_form_submit'/>
+	<!-- Go to Quotes module and search out the quote record create in lib -->
+        <link id="moduleTab_Quotes" />
+        <browser assert="Quotes" />
+        <form id="search_form">
+            <button id="search_form_clear" />
+            <textfield id="name_basic" set="{@pre_Quote_name}" />
+            <button id="search_form_submit" />
         </form>
 
-        <table class='list view'>
-            <link text='{@pre_Quote_name}'/>
+        <table class="list view">
+            <link text="{@pre_Quote_name}" />
         </table>
 
 	<!--Create a note in History subpanel.-->
-	<browser assert="Overview"/>
-	<button id="History_createnoteorattachment_button"/>
-	<wait timeout="2"/>
-	<textfield id="name" set="New note record"/>
-	<button id="Notes_subpanel_save_button"/>
-	<wait timeout="8"/>
-	<browser assert="New note record"/>
+	<browser assert="Overview" />
+	<button id="History_createnoteorattachment_button" />
+	<wait timeout="2" />
+	<textfield id="name" set="New note record" />
+	<button id="Notes_subpanel_save_button" />
+	<wait timeout="8" />
+	<browser assert="New note record" />
 	
 	<!--Modify the note record-->
 	<div id="list_subpanel_history">	
-		<link class="listViewTdToolsS1" index="1"/>
+		<link class="listViewTdToolsS1" index="1" />
+		<wait timeout="5" />
 	</div>
-	<wait timeout="5"/>
-	
-	<textfield id="name" set="Modified note record"/>
-	<button id="SAVE"/>
-	<wait timeout="5"/>
+
+	<!-- Edit link pops up QuickEdit now, so click Full Form. -->
+	<button value="Full Form" />
+
+	<textfield id="name" set="Modified note record" />
+	<button id="SAVE" />
+	<wait timeout="5" />
 
 	<div id="list_subpanel_history">	
-		<browser assert="Modified note record"/>
+		<browser assert="Modified note record" />
 	</div>
 
 	<!--Delete the note record created in this case.-->
-	<link id="moduleTab_Notes"/>
-	<button id="search_form_clear"/>
-	<textfield id="name_basic" set="Modified note record"/>
-	<button id="search_form_submit"/>
-	<checkbox id="massall" click="true"/>
-	<link id="actions_link"/>
-	<link text="Delete" alert="true"/>
+	<link id="moduleTab_Notes" />
+	<button id="search_form_clear" />
+	<textfield id="name_basic" set="Modified note record" />
+	<button id="search_form_submit" />
+	<checkbox id="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />
-	<puts text='Quote_2556.xml---Finished!'/>   
+	<puts text="Quote_2556.xml---Finished!" />   
 </soda>

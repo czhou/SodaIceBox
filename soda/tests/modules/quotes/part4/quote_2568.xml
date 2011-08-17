@@ -61,14 +61,12 @@
 		<textfield id="date_due_date" set="{@Quote_2568.task_date_due_date}" />
 		<select id="date_due_hours" set="{@Quote_2568.task_date_due_hours}" />
 		<select id="date_due_minutes" set="{@Quote_2568.task_date_due_minutes}" />
-		<!--select id="date_due_meridiem" set="{@Quote_2568.task_date_due_meridiem}"/ -->
 		<checkbox id="date_due_flag" set="{@Quote_2568.task_date_due_flag}" />
 
 		<!--Start Date -->
 		<textfield id="date_start_date" set="{@Quote_2568.task_date_start_date}" />
 		<select id="date_start_hours" set="{@Quote_2568.task_date_start_hours}" />
 		<select id="date_start_minutes" set="{@Quote_2568.task_date_start_minutes}" />
-		<!--select id="date_start_meridiem" set="{@Quote_2568.task_date_start_meridiem}"/ -->
 		<checkbox id="date_start_flag" set="{@Quote_2568.task_date_start_flag}" />
 		<button value="Save" />
 		<wait timeout="3" />
@@ -76,8 +74,12 @@
 		<div id="list_subpanel_activities">
 			<row class="oddListRowS1">
 				<link class="listViewTdToolsS1" index="1" click="true" />
+				<wait timeout="3" />
 			</row>
 		</div>
+
+		<!-- Edit link pops up QuickEdit now, so click Full Form. -->
+		<button value="Full Form" />
 
 		<form id="EditView">
 			<textfield id="name" set="{@Quote_2568.task_name} {@stamp}" />
