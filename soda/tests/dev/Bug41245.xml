@@ -56,6 +56,16 @@
 		<link text="{@Bug41245.field_name}_c" />
 		<textfield id="label_value_id" assert="{@Bug41245.new_display_label}" />
 		<button value="/Delete/"  alert="true" />
+		
+		<!-- wait until "Add Field" button will be visible -->
+		<wait condition="false">
+			<div class="yui-hidden">
+				<button value="/Add Field/" />
+			</div>
+		</wait>
+		
+		<link text="{@Bug41245.field_name}_c" exists="false" />
+
 	</csv>
 
 	<puts text="Test: Bug41245.xml finished." />
