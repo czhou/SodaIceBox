@@ -26,20 +26,10 @@
 -->
 
 <soda>
-	<puts text="Test Case 308: Account Detail - History sub-panel-Duplicate_Verify that duplicating an activity record is canceled."/>
+	<!-- Account Detail - History sub-panel-Duplicate_Verify that duplicating an activity record is canceled. -->
+	<puts text="Test: Accounts_0308.xml starting."/>
 
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
-
-	<link id="moduleTab_Accounts" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
-	</div>
-	<textfield id="name_basic" set="{@pre_account_name}" />
-	<button id="search_form_submit" />
-	<wait timeout="5"/>
-	<table class="list view">
-		<link text="{@pre_account_name}"/> 
-	</table>
 
 	<!--Create Meeting record-->
 	<div id="LBL_ACCOUNT_INFORMATION">
@@ -47,11 +37,11 @@
 	</div>
 
 	<button id="Activities_schedulemeeting_button"/>
-	<wait timeout="5" />
+	<wait timeout="7" />
 	<textfield id="name" set="Account meeting record"/>
 	<select id="status" set="Held"/>
 	<button id="Meetings_subpanel_save_button"/>
-	<wait timeout="10"/>
+	<wait timeout="12"/>
 
 	<div id="list_subpanel_history">
 		<browser assert="Account meeting record" />
@@ -69,5 +59,6 @@
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml"/>
+
 	<puts text="Test: Accounts_0308.xml finished." />
 </soda>

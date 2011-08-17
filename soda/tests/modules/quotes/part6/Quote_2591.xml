@@ -26,8 +26,9 @@
 -->
 
 <soda>
-	<!-- Relationship - Delete Project_Verify that "Projects" can be successful deleted on the "Projects" sub-panel. -->
+	<!-- Relationship - Delete Project_Verify that "Projects" can be successfully deleted on the "Projects" sub-panel. -->
 	<puts text="Test: Quote_2591.xml starting." />
+	<timestamp />
 
 	<!--Go to Quotes module and search out the quote record create in lib-->
 	<link id="moduleTab_Quotes"/>
@@ -42,18 +43,18 @@
 		<browser assert="Quote Overview"/>
 		<button id="projects_quotes_create_button"/>
 		<wait timeout="7"/>
-		<textfield id="name" set="{@quote_2591.project_name}"/>
+		<textfield id="name" set="{@quote_2591.project_name}{@stamp}"/>
 		<textfield name="estimated_start_date" set="{@quote_2591.estimated_start_date}"/>
 		<textfield name="estimated_end_date" set="{@quote_2591.estimated_end_date}"/>
 		<button id="Project_subpanel_save_button"/> 
 		<wait timeout="12"/>
-		<div id="list_subpanel_project">
-			<browser assert="{@quote_2591.project_name}"/>
+		<browser assert="{@quote_2591.project_name}{@stamp}"/>
 
+		<div id="list_subpanel_project">
 			<!--Delete the project record-->
 			<link class="listViewTdToolsS1" index="2" alert="true"/>
 			<wait timeout="10"/>
-			<browser assertnot="{@quote_2591.project_name}"/>
+			<browser assertnot="{@quote_2591.project_name}{@stamp}"/>
 		</div>
 	</csv>
 

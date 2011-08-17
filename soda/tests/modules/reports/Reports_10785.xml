@@ -42,6 +42,7 @@
 			<link text="Assigned to User" />
 		</table>
 		<row id="Users_user_name" click="true" /> <!-- User Name field -->
+		<wait timeout="3" />
 		<checkbox id="runtime_filter_Filter.1_table_filter_row_1" click="true" /> <!-- Runtime filter -->
 		<button name="Next >" />
 
