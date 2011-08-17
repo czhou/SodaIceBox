@@ -50,8 +50,12 @@
 		<link text="{@Project_2853.call_name}" click="false"/>
 		<div id="list_subpanel_activities">
 			<link class="listViewTdToolsS1" index="1"/>
+			<wait timeout="3"/>
 		</div>
-		<wait timeout="3"/>
+		
+		<!-- Edit link displays QuickEdit now, so click Full Form. -->
+		<button value="Full Form" />
+
 		<browser assert="Overview"/>
 		<textfield id="name" set="{@Project_2853.modified_call_name}"/>
 		<button value="Save"/>

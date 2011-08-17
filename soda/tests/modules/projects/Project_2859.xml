@@ -26,42 +26,46 @@
 -->
 
 <soda>
-
-	<puts text="Test Case 2859: Edit Held Meeting -- Project Management_Verify that modifying a held meeting for History can be canceled for Project."/>
+	<!-- Edit Held Meeting -- Project Management_Verify that modifying a held meeting for History can be canceled for Project. -->
+	<puts text="Test: Project_2859.xml starting." />
 
 	<!--Search out the project record created in lib-->
 	<csv file="{@global.scriptsdir}/csvs/projects/Project_2858.csv" var="Project_2858">
-        	<link id="moduleTab_Project"/>
+       	<link id="moduleTab_Project" />
 		<div class="moduleTitle">
-			<link href="index.php?module=Project&action=index" click="false"/>
+			<link href="index.php?module=Project&action=index" click="false" />
 		</div>
 
-		<textfield id="name_basic" set="{@pre_project_name}"/>
-		<button id="search_form_submit"/>
-		<link text="{@pre_project_name}"/>
-		<browser assert="Resources"/>
+		<textfield id="name_basic" set="{@pre_project_name}" />
+		<button id="search_form_submit" />
+		<link text="{@pre_project_name}" />
+		<browser assert="Resources" />
 		<!--Create Meeting record-->
-		<button id="Activities_schedulemeeting_button"/>
-		<textfield id="name" set="{@Project_2858.meeting_name}"/>
-		<select id="status" set="{@Project_2858.meeting_status}"/>
+		<button id="Activities_schedulemeeting_button" />
+		<textfield id="name" set="{@Project_2858.meeting_name}" />
+		<select id="status" set="{@Project_2858.meeting_status}" />
 		
-		<button id="Meetings_subpanel_save_button"/>
-		<wait timeout="3"/>	
+		<button id="Meetings_subpanel_save_button" />
+		<wait timeout="3" />	
 		
-		<link text="{@Project_2858.meeting_name}" click="false"/>
+		<link text="{@Project_2858.meeting_name}" click="false" />
 		<div id="list_subpanel_history">
-			<link class="listViewTdToolsS1" index="1"/>
+			<link class="listViewTdToolsS1" index="1" />
+			<wait timeout="3" />
 		</div>
-		<wait timeout="3"/>
-		<browser assert="Overview"/>
-		<textfield id="name" set="{@Project_2858.modified_meeting_name}"/>
-		<button id="CANCEL" alert="true"/>
-		<wait timeout="3"/>
+		
+		<!-- Edit link displays QuickEdit now, so click Full Form. -->
+		<button value="Full Form" />
+		
+		<browser assert="Overview" />
+		<textfield id="name" set="{@Project_2858.modified_meeting_name}" />
+		<button id="CANCEL" alert="true" />
+		<wait timeout="3" />
 	
-		<link text="{@Project_2858.modified_meeting_name}" exist="false" click="false"/>
-		<link text="{@Project_2858.meeting_name}"/>
-		<button value="Delete" alert="true"/>
+		<link text="{@Project_2858.modified_meeting_name}" exist="false" click="false" />
+		<link text="{@Project_2858.meeting_name}" />
+		<button value="Delete" alert="true" />
 	</csv>
 
-        <puts text="Test Case 2859 is finished!"/>
+        <puts text="Test Case 2859 is finished!" />
 </soda>

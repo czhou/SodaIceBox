@@ -1,4 +1,4 @@
-<!--
+<
   Copyright (c) 2011, SugarCRM, Inc.
   All rights reserved.
 
@@ -26,12 +26,12 @@
 -->
 
 <soda>
-	<!--script file="{@global.scriptsdir}/modules/lib/Quote_Delete_Lib.xml"/-->
-	<!--script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml"/-->
-	<!--script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml"/-->
-	<!--script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml"/-->
-	<!--script file="{@global.scriptsdir}/modules/lib/Project_Delete_Lib.xml"/-->
-	<!--script file="{@global.scriptsdir}/modules/lib/Enable_Defaults_Lib.xml"/-->
+	<script file="{@global.scriptsdir}/modules/lib/Quote_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Project_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Enable_Defaults_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
 	<browser action="close" />
 </soda>
