@@ -31,11 +31,16 @@
 
 	<link id="admin_link" />
 	<link text="Studio" />
-	<link class="studiolink" text="Accounts" />
+	
+	<div id="mbtabs">
+		<link text="Accounts" />
+	</div>
+
 	<link text="Fields" />
-	<button value="/Add Field/" />
 
 	<csv file="{@global.scriptsdir}/dev/Bug41245.csv" var="Bug41245">
+		<button value="/Add Field/" />
+		
 		<textfield id="field_name_id" set="{@Bug41245.field_name}" />
 		<textfield id="label_value_id" set="{@Bug41245.display_label}" />
 		<textfield id="label_key_id" set="{@Bug41245.system_label}" />
@@ -51,8 +56,6 @@
 		<link text="{@Bug41245.field_name}_c" />
 		<textfield id="label_value_id" assert="{@Bug41245.new_display_label}" />
 		<button value="/Delete/"  alert="true" />
-		
-		<link text="{@Bug41245.field_name}_c" exists="false" />
 	</csv>
 
 	<puts text="Test: Bug41245.xml finished." />
