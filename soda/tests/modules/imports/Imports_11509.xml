@@ -52,7 +52,7 @@
 		<browser assert="Step 3: Confirm Import File Properties" />
 	</div>
 	
-	<div class="confirm_table">
+	<div id="confirm_table">
 		<browser assert="No Header Row Found" />
 	</div>
 	
@@ -87,9 +87,9 @@
 	</div>
 	
 	<button id="search_form_clear" />
-	<table class="list view">
+	<div id="pageNumIW_0_div">
 		<browser assert="(1 - 2 of 2)" />
-	</table>
+	</div>
 	
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />

@@ -63,6 +63,7 @@
 			<browser assert="Step 4: Confirm Field Mappings" />
 		</div>
 		<button id="gonext" />
+		<wait timeout="5" />
 		
 		<!--Step5-->
 		<button id="importnow" />

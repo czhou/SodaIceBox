@@ -29,7 +29,7 @@
 	<puts text="Test Case 11523: Verify import settings are kept after back to the first step of wizard."/>
 
 	<link id="moduleTab_Contacts" />
-	<csv file="{@global.scriptsdir}/export/Imports_11523.csv" var="import_11523">
+	<csv file="{@global.scriptsdir}/csvs/imports/Imports_11523.csv" var="import_11523">
 
 		<link text="Import Contacts" />
 
