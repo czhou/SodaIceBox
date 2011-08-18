@@ -26,48 +26,48 @@
 -->
 
 <soda>
-	<!-- System Label for Custom Fields Does Not Localize if Label Is Lowercase -->
-	<puts text="Test: Bug41245.xml starting." />
+	<!-- Inconsitant calendar views for events spanning multiple days -->
+	<puts text="Test: Bug37953.xml starting." />
 
-	<link id="admin_link" />
-	<link text="Studio" />
+	<link id="moduleTab_Meetings" />
+
+	<csv file="{@global.scriptsdir}/dev/Bug37953.csv" var="Bug37953">
+		
+		<!-- todo: change locator to id -->
+		<link text="Schedule Meeting" />
+		
+		<textfield id="name" set="{@Bug37953.meeting_name}" />
+		
+		<!-- todo: change locator to id -->
+		<textfield name="duration_hours" set="{@Bug37953.meeting_duration_hours}" />
+		
+		<textfield id="date_start_date" set="{@Bug37953.meeting_start_date}" jscriptevent="onchange" jscriptevent="onblur" />
+		
+		<!-- todo: change locator to id -->
+		<button value="Save" />
+		
+		<link id="moduleTab_Calendar" />
+		<button value="/Year/" />
+		<link text="{@Bug37953.month_name}" />
+		
+		<!-- bad solution: works only if calendar table has 35 cells -->
+		<td class="weekEnd" index="10">
+			<td text="/{@Bug37953.meeting_name}/" exists="true" />
+		</td>
+		
+		<link text="/Next Month/" />
+		
+		<td class="weekEnd" index="1">
+			<td text="/{@Bug37953.meeting_name}/" exists="true" />
+		</td>
+		
+		<!-- delete meeting -->
+		<link id="moduleTab_Meetings" />
+		<link text="{@Bug37953.meeting_name}" />
+		<button id="delete_button" alert="true" />
+		<link text="{@Bug37953.meeting_name}" exists="false" />
 	
-	<!-- todo: change locator to id -->
-	<div id="mbtabs">
-		<link text="Accounts" />
-	</div>
-
-	<link text="Fields" />
-
-	<csv file="{@global.scriptsdir}/dev/Bug41245.csv" var="Bug41245">
-		<button value="/Add Field/" />
-		
-		<textfield id="field_name_id" set="{@Bug41245.field_name}" />
-		<textfield id="label_value_id" set="{@Bug41245.display_label}" />
-		<textfield id="label_key_id" set="{@Bug41245.system_label}" />
-		
-		<button value="/Save/" />
-		
-		<link text="{@Bug41245.field_name}_c" />
-		<textfield id="label_value_id" assert="{@Bug41245.display_label}" />
-		
-		<textfield id="label_value_id" set="{@Bug41245.new_display_label}" />
-		<button value="/Save/" />
-		
-		<link text="{@Bug41245.field_name}_c" />
-		<textfield id="label_value_id" assert="{@Bug41245.new_display_label}" />
-		<button value="/Delete/"  alert="true" />
-		
-		<!-- wait until "Add Field" button will be visible -->
-		<wait condition="false">
-			<div class="yui-hidden">
-				<button value="/Add Field/" />
-			</div>
-		</wait>
-		
-		<link text="{@Bug41245.field_name}_c" exists="false" />
-
 	</csv>
-
-	<puts text="Test: Bug41245.xml finished." />
+	
+	<puts text="Test: Bug37953.xml finished." />
 </soda>
