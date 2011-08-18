@@ -116,8 +116,12 @@
 			<link text="{@pre_bug_subpanel_name}" click="false" />
 		</table>
 		<link class="listViewTdToolsS1" index="1" />
+		<wait timeout="3" />
 	</div>
-	<wait timeout="3" />
+
+	<!-- Edit link opens QuickEdit now, so click Full Form. -->
+	<button value="Full Form" />
+
 	<div class="moduleTitle">
 		<link href="index.php?module=Bugs&amp;action=index" click="false" />
 		<browser assert="{@pre_bug_subpanel_name}" />

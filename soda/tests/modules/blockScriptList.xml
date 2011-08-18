@@ -1082,4 +1082,10 @@
 	</block>
 	<!-- End of Gino's modules -->
 	
+	<block>
+		<testfile>Imports_11497.xml</testfile>
+		<bugnumber>46190</bugnumber>
+		<reason>SODA can't recognize the "	" (Tab).</reason>
+		<modulename>imports</modulename>
+	</block>
 </soda>

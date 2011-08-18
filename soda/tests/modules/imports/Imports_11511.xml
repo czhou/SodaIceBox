@@ -52,7 +52,7 @@
 		<browser assert="Step 3: Confirm Import File Properties" />
 	</div>
 	
-	<div class="confirm_table">
+	<div id="confirm_table">
 		<browser assert="first_name" />
 	</div>
 	
@@ -68,6 +68,7 @@
 		<browser assert="Step 4: Confirm Field Mappings" />
 	</div>
 	<button id="gonext" />
+	<wait timeout="5"/>
 	
 	<!--Step5-->
 	<button id="importnow" />

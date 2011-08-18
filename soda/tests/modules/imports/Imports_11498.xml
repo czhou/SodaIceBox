@@ -69,7 +69,7 @@
 		<wait timeout="10" />
 
 		<!--Step6-->
-		<button id="toggleImportOptions" />
+		<div id="importWizardDialogTitle">
 			<browser assert="Step 6: View Import Results" />
 		</div>
 
