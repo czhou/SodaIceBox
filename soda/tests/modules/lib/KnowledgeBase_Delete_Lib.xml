@@ -34,16 +34,16 @@
     <browser assert="Knowledge Base Admin" />
 
     <select id="action_id" set="Delete Selected Articles" />
-    <wait timeout="3" />
+    <wait timeout="4" />
     <checkbox id="selected_tags[]" click="true" />
-    <wait timeout="3" />
+    <wait timeout="4" />
     <checkbox name="massall" click="true" />
-    <wait timeout="3" />
+    <wait timeout="4" />
     <button id="delete_articles" alert="true" />
-    <wait timeout="3" />
+    <wait timeout="4" />
 
     <checkbox id="selected_tags[]" click="true" />
-    <wait timeout="3" />
+    <wait timeout="4" />
     <span class="pageNumbers" assert="(0 - 0 of 0)" />
 
     <link id="moduleTab_KBDocuments" />

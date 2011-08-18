@@ -48,12 +48,6 @@
 	<div class="moduleTitle">
 		<link href="index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
-	<link text="Basic Search" required="false" />
-	<form id="search_form">
-		<button id="search_form_clear" />
-		<textfield id="name_basic" set="{@pre_account_name}" />
-		<button id="search_form_submit" />
-	</form>
 
 	<table class="list view">
 		<browser assert="{@pre_account_name}" />
@@ -69,6 +63,7 @@
 	<!--Create 6 cases in Cases Subpanel-->
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0107.csv" var="case_record_0107">
 		<button name="account_cases_create_button" />
+		<wait timeout="3" />
 		<form id="form_SubpanelQuickCreate_Cases">
 			<textfield id="name" set="{@case_record_0107.name}" />
 			<button id="Cases_subpanel_save_button" />

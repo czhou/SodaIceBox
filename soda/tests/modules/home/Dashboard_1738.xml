@@ -46,7 +46,7 @@
       var="opp_record" />
       <textfield id="name" set="{@opp_record.name} {@user.name} {@stamp}" /> 
       <textfield id="amount" set="10000" /> 
-      <textfield id="date_closed" set="08/12/2011" /> 
+      <textfield id="date_closed" set="02/18/2012" /> 
 	  <select id="sales_stage" set="Closed Won" />
       <textfield id="description" set="{@opp_record.description}" />
 
@@ -58,16 +58,13 @@
       <link text="{@pre_account_name}" />
       
     <button value="Save" />
-	
-	
+
 	<link id="moduleTab_Home" />
-	
 	<ul id="col_0_0">
 		<browser assertnot="Outcome By Month" />
 	</ul>
 	
 	<link id="add_dashlets" />
-	
 	<wait timeout="7" />
 	
 	<link id="chartCategoryAnchor" />
@@ -75,23 +72,20 @@
 	
 	<div id="dashletsDialogHeader">
 		<link index="1" />
+		<wait timeout="7" />
 	</div>
-	
-	<wait timeout="7" />
 	
 	<!-- chart? -->
 	<ul id="col_0_0">
 		<browser assert="Outcome by Month" />
+		<wait timeout="60" />
 		<div class="chartContainer" click="false" />
 	</ul>
-	
-	<wait timeout="7" />
 	
 	<!-- delete -->
 	<div class="dashletToolSet" index="1">
 		<link index="3" alert="true" />
 	</div>
-	
 	<wait timeout="7" />
 	
 	<ul id="col_0_0">

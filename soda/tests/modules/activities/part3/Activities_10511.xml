@@ -29,7 +29,7 @@
 	<!-- Activities_10511.xml: The Marketing module group contains Campaigns, Targets, and Target Lists. -->
 	<puts text="Test: Activities_10511.xml starting." />
 
-	<div id="TabGroupMenu_All">
+	<div id="themeTabGroupMenu_All">
 		<link text="Marketing" />
 	</div>
 	<wait timeout="2" />
@@ -42,7 +42,7 @@
 		</ul>
 	</div>
 	
-	<div id="TabGroupMenu_All">
+	<div id="themeTabGroupMenu_All">
 		<link text="All" />
 	</div>
 	<wait timeout="2" />

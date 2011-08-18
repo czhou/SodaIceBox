@@ -34,12 +34,11 @@
 	Expected:
 		1. The report record is displayed correctly.
 	-->
-	
 	<link id="moduleTab_Reports" />
 	
 	<link text="Create Report" />
-	
 	<wait timeout="2" />
+	
 	<div id="report_type_div">
 		<image name="rowsColsImg" jscriptevent="onclick" click="true" />
 	</div>
@@ -49,8 +48,9 @@
 	</table>
 	
 	<button value="Next &gt;" />
+	<wait timeout="2" />
 	
-	<div text="Name" click="true" />
+	<row id="Prospects_full_name" click="true" />
 	<wait timeout="3" />
 	<button value="Next &gt;" />
 	
@@ -58,7 +58,6 @@
 	<var var="report1_name" set="QA_Created_{@stamp}" />
 	<textfield name="save_report_as" set="{@report1_name}" />
 	<button value="Save" />
-	
 	<wait timeout="3" />
 	
 	<link id="moduleTab_ProspectLists" />
@@ -70,14 +69,12 @@
 	
 	<wait timeout="3" />
 	<button id="prospect_list_prospects_select_button" index="2" />
-	
-	<wait timeout="3" />
+		<wait timeout="3" />
 	
 	<textfield name="name" set="{@report1_name}" />
 	
 	<button value="Search" />
-	
-	<wait timeout="2" />
+		<wait timeout="2" />
 	
 	<table class="list view">
 		<browser assert="{@report1_name}" />

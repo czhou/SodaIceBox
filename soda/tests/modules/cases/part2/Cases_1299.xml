@@ -52,6 +52,7 @@
 	<csv file="{@global.scriptsdir}/csvs/cases/Case_1299.csv" var="Case_1299">
 		<div id="list_subpanel_history">
 			<button name="History_createnoteorattachment_button" value="  Create Note or Attachment  " />
+			<wait timeout="3" />
 		</div>
 
 		<!--set data-->
@@ -67,6 +68,7 @@
 		<form id="form_SubpanelQuickCreate_Notes">
 			<textfield id="description" set="{@Case_1299.description}" />
 			<button id="Notes_subpanel_save_button" />
+			<wait timeout="3" />
 		</form>
 
 		<!--verify the create call-->
