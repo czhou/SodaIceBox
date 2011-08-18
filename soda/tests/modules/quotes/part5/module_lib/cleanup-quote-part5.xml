@@ -39,5 +39,6 @@
 	<script file="{@global.scriptsdir}/modules/lib/ContractType_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
+	<script file="tests/modules/lib/Enable_Defaults_Lib.xml" />
 </soda>
 

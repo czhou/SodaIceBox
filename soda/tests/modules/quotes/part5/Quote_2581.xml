@@ -61,6 +61,10 @@
 				<link class="listViewTdToolsS1" index="1" />
 			</table>
 		</div>
+
+		<!-- Edit link displays QuickEdit now, so click Full Form. -->
+		<button value="Full Form" />
+		
 		<form id="EditView">
 			<textfield id="name" set="{@Quote_2581.task_name} {@user.name} {@stamp}" />
 			<select id="priority" set="{@Quote_2581.task_priority}" />
