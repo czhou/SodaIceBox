@@ -55,8 +55,11 @@
 	<!--Modify the note record -->
 	<div id="list_subpanel_history">
 		<link class="listViewTdToolsS1" index="1" />
+		<wait timeout="5" />
 	</div>
-	<wait timeout="5" />
+
+	<!-- Edit link displays QuickEdit now, so click Full Form. -->
+	<button value="Full Form" />
 
 	<textfield id="name" set="Modified note record" />
 	<button id="CANCEL" alert="true" />
