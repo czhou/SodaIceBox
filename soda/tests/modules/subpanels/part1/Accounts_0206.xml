@@ -54,6 +54,10 @@
 	<div id="list_subpanel_bugs">
 		<link class="listViewTdToolsS1" index="1" />
 	</div>
+
+	<!-- Edit link opens QuickEdit now, so click Full Form. -->
+	<button value="Full Form" />
+
 	<div class="moduleTitle">
 		<link href="index.php?module=Bugs&amp;action=index" click="false" />
 		<browser assert="{@pre_bug_name}" />

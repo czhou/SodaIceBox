@@ -24,7 +24,6 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
 	<puts text="Test: Accounts_0053.xml starting." />
 	
@@ -35,6 +34,7 @@
 		<link href="index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
 	
+	<browser assert="{@account_record.name} {@user.name} {@stamp}" />
 	<link text="{@account_record.name} {@user.name} {@stamp}" />
 	<button name="projects_accounts_create_button" />
 	
