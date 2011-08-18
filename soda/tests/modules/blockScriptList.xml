@@ -55,13 +55,6 @@
 	</block>
 
 	<block>
-		<testfile>Leads_11545</testfile>
-		<bugnumber>45965</bugnumber>
-		<reason>JavaScript error on Convert Lead screen.</reason>
-		<modulename>Leads-part1</modulename>
-	</block>
-
-	<block>
 		<testfile>Leads_1946</testfile>
 		<bugnumber>45960</bugnumber>
 		<reason>An email reply initiated from the subpanel edit link doesn't get associated with the parent record.</reason>
