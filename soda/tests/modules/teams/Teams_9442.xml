@@ -33,7 +33,6 @@
 	<!--Go to modules that can edit team info-->        
 	<link id="moduleTab_Notes" />
 	
-
 	<!--Create record with multi teams-->
 	<csv file="{@global.scriptsdir}/csvs/teams/Teams_9442.csv" var="teams_9442">
 		<link text="Create Note or Attachment" />
@@ -53,8 +52,7 @@
 		<!--Remove teams--> 
 		<table id="EditView_team_name_table">
 			<image id="remove_team_name_collection_0" click="true" /> 
-			<radio id="primary_team_name_collection" click="true" />            
-
+			<radio id="primary_team_name_collection_1" click="true" />            
 		</table>
 		<form id="EditView">
 			<textfield id="name" set="{@teams_9442.subject} {@user.name} {@stamp}" />                            
@@ -66,7 +64,6 @@
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Note_delete_Lib.xml" />
-
 
 	<puts text="Test: Teams_9442.xml finished." />
 </soda>

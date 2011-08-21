@@ -57,7 +57,7 @@
 			<checkbox name="massall" click="true" />
 		</table>
 		<button value="  Select  " />
-		<table class="edit view">
+		<table class="yui3-skin-sam edit view dcQuickEdit">
 			<textfield id="name" set="{@teams_9507.subject} {@user.name} {@stamp}" /> 
 		</table>
 		<button value="Save" />

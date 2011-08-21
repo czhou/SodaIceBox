@@ -44,7 +44,7 @@
 			<checkbox name="massall" click="true" />				
 		</table>
 		<button value="  Select  " />
-		<radio id="primary_team_name_collection" index="1" set="true" />
+		<radio id="primary_team_name_collection_0" set="true" />
 		<button value="Save" />
 		<div id="content">
 			<browser assert="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />

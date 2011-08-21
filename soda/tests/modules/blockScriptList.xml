@@ -27,6 +27,63 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Teams_9407</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+	<block>
+		<testfile>Teams_9408</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+	<block>
+		<testfile>Teams_9410</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+	<block>
+		<testfile>Teams_9442</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+	<block>
+		<testfile>Teams_9461</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+	<block>
+		<testfile>Teams_9447</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+	<block>
+		<testfile>Teams_9507</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+
+	<block>
+		<testfile>Teams_9476</testfile>
+		<bugnumber>46249</bugnumber>
+		<reason>Lead data clears when the Edit button is clicked.</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+	<block>
 		<testfile>Home_10400</testfile>
 		<bugnumber>-1</bugnumber>
 		<reason>Blocklisted until I can work out how to interact with email addresses in QuickCreates properly.</reason>

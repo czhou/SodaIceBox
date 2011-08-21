@@ -39,7 +39,7 @@
 	<table id="MassUpdate_team_name_table">
 		<button value="Add" />
 	</table>
-	<textfield id="team_name_collection_1" assert="" />
+	<textfield id="MassUpdate_team_name_collection_1" assert="" />
 
 	<puts text="Test: Teams_9404.xml finished." />
 </soda>
