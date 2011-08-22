@@ -24,23 +24,10 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
 	<script file="tests/modules/integration/goto/module_lib/setup-goto.xml" />
 	<script file="tests/modules/integration/goto/module_lib/Goto_Init.xml" />
 	<script fileset="tests/modules/integration/goto" />
 	<script file="tests/modules/integration/goto/module_lib/Goto_UnInit_Lib.xml" />
 	<script file="tests/modules/integration/goto/module_lib/cleanup-goto.xml" />
-
-	<!-- var var="pre_account_name" set="Haier Air Condition of China admin 110221_145641" />
-	<var var="pre_contact_first_name" set="Mandy admin 110221_145828" />
-	<var var="pre_contact_last_name" set="Westbrooks" />
-	<var var="pre_opp_name" set="WEST ARKANSAS admin 110221_145857" />
-	<var var="pre_Quote_name" set="Quote admin 110221_150101" />
-	<var var="pre_ProductCatalog_name" set="Product1 admin 110221_145802" />
-	<var var="Contract_Create_Lib" set="Contracts admin 110221_150028" />
-	<var var="pre_case_name" set="Case_unique_number admin 110221_150223" />
-	<var var="pre_bug_name" set="soap testing admin 110221_150252" />
-	<script file="tests/modules/integration/lotuslive/LotusLive_10354.xml" /-->
-
 </soda>

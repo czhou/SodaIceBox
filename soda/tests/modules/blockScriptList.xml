@@ -28,6 +28,13 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Campaigns_1177</testfile>
+		<bugnumber>45840</bugnumber>
+		<reason>JS error in Soda test Campaigns_1177.</reason>
+		<modulename>Campaigns/part3</modulename>
+	</block>
+
+	<block>
 		<testfile>Users_0608</testfile>
 		<bugnumber>-1</bugnumber>
 		<reason>When Reports To is changed by Soda, the user's team is not removed from the old supervisor's teams.  Doesn't happen manually.</reason>

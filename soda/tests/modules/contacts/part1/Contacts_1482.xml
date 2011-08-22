@@ -53,12 +53,13 @@
 	<textfield id="addressTO0" set="{@Contacts_1482_Contact.emailAddress0}"/>
 	<textfield id="emailSubject0" set="Contacts_1482_subject_{@stamp}"/>
 	<var var="contact_1482_email_name" set="Contacts_1482_subject_{@stamp}"/>
+	<wait timeout="1" />
 
 	<!--Send the email-->
 	<table id="composeHeaderTable0">
 		<button index="1" alert="true"/>
+		<wait timeout="15"/>
 	</table>
-	<wait timeout="15"/>
 
 	<div id="list_subpanel_history">
 		<link  class="listViewTdToolsS1" index="2" alert="true"/>
