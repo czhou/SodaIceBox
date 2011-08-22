@@ -66,8 +66,6 @@
 		<button value="Save" />
 
 		<div class="moduleTitle">
-			<link href="{@global.url}index.php?module=Cases&amp;action=index" 
-            click="false" />
 			<browser assert="{@case_record.name} {@user.name} {@stamp}" />
 		</div>
 
