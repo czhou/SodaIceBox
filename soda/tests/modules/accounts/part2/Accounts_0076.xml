@@ -35,9 +35,10 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
-	<textfield id="name_basic" set="{@pre_account_name}" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -46,12 +47,14 @@
 	<!--Go case subpanel & click "Select"-->
 	<browser assert="{@pre_account_name}" />
 	<button id="account_cases_select_button" />
-	<textfield id="name_advanced" set="{@pre_case_name}" />
-	<button value="Search" />
-	<table class="list view">
-		<link text="{@pre_case_name}" />
-	</table>
-
+   <attach title="SugarCRM">
+      <textfield id="name_advanced" set="{@pre_case_name}" />
+      <button value="Search" />
+      <table class="list view">
+         <link text="{@pre_case_name}" />
+      </table>
+      <wait timeout="2" />
+   </attach>
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
