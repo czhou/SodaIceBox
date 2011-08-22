@@ -34,16 +34,19 @@
 	<!-- Create an account record. -->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 
+   <li id="moduleTabExtraMenuAll" click="true" />
+   <wait timeout="2" />
 	<link id="moduleTab_Cases" />
-
+   <wait timeout="2" />
+	<link id="moduleTab_Cases" jscriptevent="onmouseover" click="false" />
+   <wait timeout="2" />
 	<link text="Create Case" />
 
 	<csv file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.csv" 
 		var="case_record">
       <textfield id="name" set="{@case_record.name} {@user.name} {@stamp}" />
-      <textfield id="account_name" append="{@pre_account_name}" />
-      <textfield id="account_name" jscriptevent="onkeyup" />
-
+      <textfield id="account_name" set="{@pre_account_name}" />
+      <wait timeout="1" />
       <!--
          need to find the element we want in the dynamic drop down list.
          Since it should always be the first element we are just using
@@ -51,18 +54,20 @@
       -->
       <div id="EditView_account_name_results">
          <div class="yui-ac-bd">
-            <ul index="1">
-               <li index="1" click="true" />
+            <ul index="0">
+               <li index="0" click="true" />
             </ul>
          </div>
       </div>
       <wait timeout="3" />
 
 		<textfield id="name" jscriptevent="onfocus" />
-		<wait timeout="5" />
+		<wait timeout="2" />
 		<button value="Save" />
+
 		<div class="moduleTitle">
-			<link href="index.php?module=Cases&amp;action=index" click="false" />
+			<link href="{@global.url}index.php?module=Cases&amp;action=index" 
+            click="false" />
 			<browser assert="{@case_record.name} {@user.name} {@stamp}" />
 		</div>
 
