@@ -28,18 +28,18 @@
 <soda>
 	<puts text="Lib: SugarInit_Lib.xml starting." />
 	<csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" var="SugarInit">
-      <wait timeout="3" />
-		<button name="cancel" required="false" />
-      <wait timeout="3" />
+      <wait timeout="1" />
+      <button id="next_tab_personalinfo" required="false" />
+      <wait timeout="1" />
 		<textfield id="email1" set="{@SugarInit.email}" required="false" />
-      <wait timeout="3" />
-		<button name="next_tab1" required="false" index="1" />
-      <wait timeout="3" />
-   	<button name="next_tab1" required="false" index="3" />
-      <wait timeout="3" />
-		<button name="next_tab1" required="false" index="5" />
-      <wait timeout="3" />
-		<button name="save" required="false" timeout="3" />
+      <wait timeout="1" />
+      <button id="next_tab_locale" required="false" />
+      <wait timeout="1" />
+      <button id="next_tab_smtp" required="false" />
+      <wait timeout="1" />
+      <button id="next_tab_finish" required="false" />
+      <wait timeout="1" />
+		<button name="save" required="false" />
       <wait timeout="3" />
 		<browser
 			url="{@global.url}/index.php?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DAccounts"
