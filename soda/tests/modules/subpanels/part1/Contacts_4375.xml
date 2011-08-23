@@ -56,7 +56,7 @@
 	<!-- *3* Go to Project subpanel and try to create a project -->
 	<div id="list_subpanel_project">
 		<button id="projects_contacts_create_button" />
-		<wait timeout="3" />
+		<wait timeout="5" />
 	</div>
 
 	<div class="moduleTitle">
@@ -74,7 +74,7 @@
 			<select id="priority" set="{@Contact_4375.priority}"/>
 			
 			<button id="Project_subpanel_save_button"/>
-			<wait timeout="3"/>
+			<wait timeout="5"/>
 		</form>
 	</csv>
 

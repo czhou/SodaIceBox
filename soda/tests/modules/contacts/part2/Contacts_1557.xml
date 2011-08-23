@@ -24,7 +24,6 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
 	<!--
 		Delete quote_Verify that a related quote can be deleted from contact detail view
@@ -35,7 +34,7 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/TaxRate_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Create_Lib.xml" />
-	<script file='{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml'/>
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 
 	<!--Search the Contact record-->
 	<link id="moduleTab_Contacts" />
@@ -49,7 +48,7 @@
 	</table>
 
 	<!--Create quote via quote subpanel-->
-	<button id="Quotes_create_button"/>
+	<button id="Quotes_create_button" />
 	<csv file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.csv" var="Quote_Create_Lib">
 		<timestamp/>
 		<!--User select: 6.0 has a default user value -->
@@ -71,7 +70,7 @@
 		<textfield id="date_quote_expected_closed" set="{@Quote_Create_Lib.date_quote_expected_closed}" />
 		<select name="currency_id" set="{@Quote_Create_Lib.currency_id}" />
 		<select name="taxrate_id" set="{@TaxRate_Create_Lib}" />
-		<checkbox id="calc_grand_total" set="true"/>
+		<checkbox id="calc_grand_total" set="true" />
 		<button id="add_group" />
 		<textfield id="bundle_name_group_0" set="{@Quote_Create_Lib.bundle_name_group_0}" />
 		<select id="bundle_stage_group_0" set="{@Quote_Create_Lib.bundle_stage_group_0}" />
@@ -93,21 +92,20 @@
 
 	<!--Verify created quote show in subpanel-->
 	<div id="list_subpanel_quotes">
-		<link text="{@pre_quote_name}" click="false"  exist="true"/>
-		<browser assert="{@pre_quote_name}"/>
+		<link text="{@pre_quote_name}" click="false"  exist="true" />
+		<browser assert="{@pre_quote_name}" />
 	</div>
 
 	<!--Delete quote from subpanel -->
 	<div id="list_subpanel_quotes">
-		<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
+		<link class="listViewTdToolsS1" text="/rem/" alert="true" />
 	</div>
-
-       <wait timeout="2"/>
+	<wait timeout="3" />
 
 	<!--Verify deleted quote will not show in subpanel-->
 	<div id="list_subpanel_quotes">
-		<link text="{@pre_quote_name}" click="false"  exist="false"/>
-		<browser assertnot="{@pre_quote_name}"/>
+		<link text="{@pre_quote_name}" click="false"  exist="false" />
+		<browser assertnot="{@pre_quote_name}" />
 	</div>
 
 	<!--Delete records-->
@@ -116,5 +114,6 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/TaxRate_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Delete_Lib.xml" />
+
 	<puts text="Test: Contacts_1557.xml finished." />
 </soda>

@@ -24,14 +24,14 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
 	<puts text="Test: Google_10764.xml starting." />
+
 	<link id="moduleTab_Cases"/>
-	<button   id="search_form_clear"/>
-        <form id="search_form">
-            <textfield id="name_basic" set="{@pre_case_name}"/>
-        </form>
+	<button id="search_form_clear"/>
+	<form id="search_form">
+		<textfield id="name_basic" set="{@pre_case_name}"/>
+	</form>
     <button id="search_form_submit"/>
     <wait timeout="2" />
     <table class="list view">
@@ -47,7 +47,7 @@
 		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/google/1.docx" />	
 	</div>
 	<button id="Documents_subpanel_save_button" />
-	<wait timeout='10'/>
+	<wait timeout="10"/>
 	<link text="1.docx" click="false" exist="true"/>
 	
 	<button name="documents_cases_create_button" />
@@ -56,16 +56,16 @@
 		<timestamp />
 		<select id="doc_type" set="Google" />
 		<textfield name="document_name" set="Google_Sub_Xlsx" /> 
-		<wait timeout='2' />
+		<wait timeout="2" />
 		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/google/2.xlsx" />
 		<button value="Save" />
 	</form>
 	<link text="2.xlsx" click="false" exist="true"/>
 
-	<link class='listViewTdToolsS1' index='2' alert='true' />
-	<wait timeout='3'/>
-	<link class='listViewTdToolsS1' index='2' alert='true' />
-	<wait timeout='3'/>
+	<link class="listViewTdToolsS1" index="2" alert="true" />
+	<wait timeout="5"/>
+	<link class="listViewTdToolsS1" index="2" alert="true" />
+	<wait timeout="5"/>
 	<link text="1.docx" click="false" exist="false"/>
 	<link text="2.xlsx" click="false" exist="false"/>
 
@@ -82,6 +82,5 @@
 	<link text="Delete" alert="true" />
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />
 
-	
 	<puts text="Test: Google_10764.xml finished." />
 </soda>

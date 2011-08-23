@@ -40,6 +40,7 @@
             <textfield id="list_order" set="{@category_record_571.list_order}"/>
         </table>
         <button value="Save" name="button"/>
+		<hidden name="record" var="category_id" />
 
         <table class="list view">
             <browser assert="{@category_record_571.name} {@user.name} {@stamp}"/> 

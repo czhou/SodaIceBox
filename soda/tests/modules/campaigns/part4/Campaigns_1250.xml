@@ -24,7 +24,6 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
 	<puts text="Test: Campaigns_1250.xml starting." />
 	<!--
@@ -38,27 +37,31 @@
 	<link id="moduleTab_Reports" />
 	
 	<link text="Create Report" />
-	
 	<wait timeout="2" />
+
 	<div id="report_type_div">
 		<image name="rowsColsImg" jscriptevent="onclick" click="true" />
+		<wait timeout="3" />
 	</div>
 	
 	<table id="Users">
 		<link text="Users" />
+		<wait timeout="3" />
 	</table>
 	
 	<button value="Next &gt;" />
+	<wait timeout="3" />
 	
 	<div text="Full Name" click="true" />
+	<wait timeout="3" />
 	
 	<button value="Next &gt;" />
+	<wait timeout="3" />
 	
 	<timestamp />
 	<var var="report1_name" set="QA_Created_{@stamp}" />
 	<textfield name="save_report_as" set="{@report1_name}" />
 	<button value="Save" />
-	
 	<wait timeout="3" />
 	
 	<link id="moduleTab_ProspectLists" />
@@ -67,16 +70,14 @@
 	<timestamp />
 	<textfield id="name" set="TargetList_{@stamp}" />
 	<button id="SAVE_HEADER" />
-	
 	<wait timeout="3" />
+
 	<button id="prospect_list_users_select_button" index="2" />
-	
 	<wait timeout="3" />
 	
 	<textfield name="name" set="{@report1_name}" />
 	
 	<button value="Search" />
-	
 	<wait timeout="2" />
 	
 	<table class="list view">

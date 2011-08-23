@@ -26,12 +26,12 @@
 -->
 
 <soda>
-
-	<puts text="Test Case 2860: Delete Held Meeting -- Project Management_Verify that Held Meeting for History can be deleted for Project."/>
+	<!-- Delete Held Meeting -- Project Management_Verify that Held Meeting for History can be deleted for Project. -->
+	<puts text="Test: Project_2860.xml starting."/>
 
 	<!--Search out the project record created in lib-->
 	<csv file="{@global.scriptsdir}/csvs/projects/Project_2858.csv" var="Project_2858">
-        	<link id="moduleTab_Project"/>
+		<link id="moduleTab_Project"/>
 		<div class="moduleTitle">
 			<link href="index.php?module=Project&action=index" click="false"/>
 		</div>
@@ -46,16 +46,17 @@
 		<select id="status" set="{@Project_2858.meeting_status}"/>
 		
 		<button id="Meetings_subpanel_save_button"/>
-		
 		<wait timeout="5"/>
+
 		<link text="{@Project_2858.meeting_name}" click="false"/>
 		<link class="listViewTdToolsS1" index="2" click="true" alert="true"/>
-		<wait timeout="3"/>
-		<link text="{@Project_2858.meeting_name}" exist="false" click="false"/>
+		<wait timeout="5"/>
+
+		<link text="{@Project_2858.meeting_name}" exists="false" click="false"/>
 		
 		<!--Delete the meeting record create in this case-->
-                <script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
+		<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 	</csv>
 
-        <puts text="Test Case 2860 is finished!"/>
+	<puts text="Test: Project_2860.xml finished."/>
 </soda>

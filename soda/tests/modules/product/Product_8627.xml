@@ -29,16 +29,16 @@
 	<!--
 		Product_relationship_with_quote
 	-->
-	<puts text="Test: Product_8627.xml starting" />
+	<puts text="Test: Product_8627.xml starting." />
 	<script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.xml" />
 
 	<!--Goto created product detail view-->
-	<link id='moduleTab_Products'/>
+	<link id="moduleTab_Products"/>
 	<browser assert="Products"/>
-	<link text="Basic Search" required="false"/>
+
 	<button id="search_form_clear"/>
 	<form id="search_form">
-	<textfield id="name_basic" set="{@pre_product_name}"/>
+		<textfield id="name_basic" set="{@pre_product_name}"/>
 	</form>
 	<button id="search_form_submit"/>
 
@@ -60,5 +60,6 @@
 	<script file="{@global.scriptsdir}/modules/lib/Manufacturer_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/ProductType_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Delete_Lib.xml" />
-	<puts text="Test: Product_8627.xml finished" />
+
+	<puts text="Test: Product_8627.xml finished." />
 </soda>

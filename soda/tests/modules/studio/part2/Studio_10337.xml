@@ -29,6 +29,7 @@
     
     <!-- Chain reaction of calculated field -->
     <puts text="Test: Studio_10337.xml starting" />
+
     <!-- Create 3 calculated fields -->
     <link text="Admin" />
     <link text="Studio" assertPage="false" />
@@ -82,7 +83,7 @@
     <form id="popup_form_id" >
       <button name="fsavebtn" assertPage="false" />
     </form>
-    <wait timeout="5" />
+    <wait timeout="7" />
     <browser assert="Add Field" />
     
     <!--Create account-->  

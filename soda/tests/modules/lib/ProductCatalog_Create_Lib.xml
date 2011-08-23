@@ -39,6 +39,7 @@
    <link text="Create Product for Catalog" />
    <textfield name="name" 
       set="{@ProductCatalog_Create_Lib.name} {@user.name} {@stamp}" />
+	<var var="pre_product_name" set="{@ProductCatalog_Create_Lib.name} {@user.name} {@stamp}" />
    <button id="btn_category_name" />
 
    <table class="list view">

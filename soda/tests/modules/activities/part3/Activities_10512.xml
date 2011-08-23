@@ -43,7 +43,7 @@
 		</ul>
 	</div>
 
-	<div id="TabGroupMenu_All">
+	<div id="themeTabGroupMenu_All">
 		<link text="All" />
 	</div>
 	<wait timeout="2" />

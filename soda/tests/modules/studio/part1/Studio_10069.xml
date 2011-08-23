@@ -70,7 +70,7 @@
     <form id="popup_form_id" >
       <button name="fsavebtn" assertPage="false" />
     </form>
-    <wait timeout="10" />
+    <wait timeout="12" />
     <browser assert="Add Field" />
     
     <!-- Now uncalculated the description field -->

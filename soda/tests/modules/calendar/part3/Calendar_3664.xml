@@ -24,7 +24,6 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
 	<!--
 		Action:
@@ -37,22 +36,24 @@
 		Expectation:
 			6. The note record for call/meeting disappears in "Notes" sub-panel.
 	-->
-	
 	<puts text="Test: Calendar_3664.xml starting." />
-	
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
 	<var var="meeting1_name" set="{@pre_meeting_name}" />
 	
 	<button id="History_createnoteorattachment_button" />
+	<wait timeout="3" />
 	<textfield id="name" set="Note for {@meeting1_name}" />
 	<button id="Notes_subpanel_save_button" />
+	<wait timeout="3" />
 	
 	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
 	<var var="call1_name" set="{@pre_call_name}" />
 	
 	<button id="History_createnoteorattachment_button" />
+	<wait timeout="3" />
 	<textfield id="name" set="Note for {@call1_name}" />
 	<button id="Notes_subpanel_save_button" />
+	<wait timeout="3" />
 	
 	<link id="moduleTab_Meetings" />
 	<table class="list view">
@@ -68,7 +69,11 @@
 		<wait timeout="5" />
 		<browser assertnot="Note for {@meeting1_name}" />
 	</div>
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> refs/remotes/origin/6_2_0
 	<link id="moduleTab_Calls" />
 	<table class="list view">
 		<link text="{@call1_name}" />

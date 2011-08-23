@@ -40,28 +40,23 @@
 	<puts text="Test: Calendar_0724.xml starting." />
 	
 	<!-- First, Calls -->
-	
 	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
 	
 	<button value="  Create Note or Attachment  " />
-	
 	<wait timeout="4" />
 	
 	<timestamp />
 	<var var="note_name" set="Note_{@stamp}" />
-	
 	<textfield id="name" set="{@note_name}" />
 	
 	<textarea id="description" set="Something about a Note..." />
 	
 	<button id="Notes_subpanel_save_button" />
-	
 	<wait timeout="5" />
 	
 	<div id="list_subpanel_history">
 		<link class="listViewTdToolsS1" index="2" alert="true" />
 	</div>
-
 	<wait timeout="3" />
 	
 	<div id="list_subpanel_history">
@@ -69,29 +64,22 @@
 	</div>
 	
 	<!-- now do Meetings -->
-	
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
 	
 	<button value="  Create Note or Attachment  " />
-	
 	<wait timeout="4" />
 	
 	<timestamp />
 	<var var="note_name" set="Note_{@stamp}" />
-	
 	<textfield id="name" set="{@note_name}" />
-	
 	<textarea id="description" set="Something about a Note..." />
-	
 	<button id="Notes_subpanel_save_button" />
-	
 	<wait timeout="3" />
 	
 	<div id="list_subpanel_history">
-	<link class="listViewTdToolsS1" index="2" alert="true" />
+		<link class="listViewTdToolsS1" index="2" alert="true" />
 	</div>
-
-	<wait timeout="3" />
+	<wait timeout="5" />
 	
 	<div id="list_subpanel_history">
 		<browser assertnot="{@note_name}" />

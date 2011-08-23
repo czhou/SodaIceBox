@@ -34,6 +34,7 @@
 	<browser assert="Email Templates" />
 
 	<button id="search_form_clear" />
+	<textfield id="name_basic" set="QA_Created" />
 	<button id="search_form_submit" />
 
 	<checkbox name="massall" click="true" />

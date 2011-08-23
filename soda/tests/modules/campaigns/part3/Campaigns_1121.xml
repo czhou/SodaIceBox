@@ -89,7 +89,7 @@
 	</form>
 
 	<link id="moduleTab_Home" click="false" jscriptevent="onmouseover" />
-	<wait timeout="3" />
+	<wait timeout="5" />
 	<ul id="lastViewedContainerHome">
 		<link href="index.php?module=EmailTemplates&amp;action=DetailView&amp;record={@Campaign_1121_et_id}" click="false" />
 	</ul>
