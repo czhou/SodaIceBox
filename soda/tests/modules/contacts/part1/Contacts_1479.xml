@@ -61,7 +61,7 @@
 		<select id="date_start_hours" set="{@contact_record_1477.date_start_hours}" />
 		<select id="date_start_minutes" set="{@contact_record_1477.date_start_minutes}" />
 		<button value="Save" />
-		<wait timeout="5" />
+		<wait timeout="7" />
 
 		<!--Verify the task record created in subpanel-->
 		<div id="list_subpanel_activities">

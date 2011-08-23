@@ -61,6 +61,7 @@
 	</div>
 	<form id="form_SubpanelQuickCreate_Notes">
 		<button id="Notes_subpanel_cancel_button" alert="true" />
+		<wait timeout="3" />
 	</form>
 	
 	<div id="list_subpanel_history">

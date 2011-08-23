@@ -56,7 +56,7 @@
 		<select id="parent_type" set="Contact" />
 		<textfield id="parent_name" set="{@contact_name}" jscriptevent="onkeydown" />
 		<textfield id="parent_name" jscriptevent="onkeyup" click="false" />
-		<wait timeout="2" />
+		<wait timeout="3" />
 		
 		<textfield id="date_start_date" set="{@call_record.date_start_date}" />
 		<select id="date_start_hours" set="{@call_record.date_start_hours}" />
