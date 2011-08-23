@@ -26,7 +26,7 @@
 -->
 
 <soda>
-	<puts text="Lib: LotusLive_Init.xml starting." />
+	<puts text="Lib: Google_Init.xml starting." />
 	
 	<button name="cancel" required="false" timeout="2" />
 	<button name="next_tab1" required="false" timeout="2" />
@@ -141,15 +141,16 @@
 	</form>
 	
 	<!-- Init some module level records-->
-	<script file='{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml'/>
-    <script file='{@global.scriptsdir}/modules/lib/ProductCatalog_Create_Lib.xml'/>
-    <script file='{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml'/>
-    <script file='{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml'/>
-    <script file='{@global.scriptsdir}/modules/lib/TaxRate_Create_Lib.xml'/>
-	<script file='{@global.scriptsdir}/modules/lib/Contract_Create_Lib_NoDep.xml'/>
-    <script file='{@global.scriptsdir}/modules/lib/Quote_Create_Lib_NoDep.xml'/>
-    <script file='{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml'/>
-	<script file='{@global.scriptsdir}/modules/lib/Case_Create_Lib_NoDep.xml'/>
-	<script file='{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml'/>
-	<puts text="Lib: LotusLive_Init.xml finished." />
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Create_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/TaxRate_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contract_Create_Lib_NoDep.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib_NoDep.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib_NoDep.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
+
+	<puts text="Lib: Google_Init.xml finished." />
 </soda>

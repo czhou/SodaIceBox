@@ -48,13 +48,13 @@
 	<csv file="{@global.scriptsdir}/csvs/cases/Case_1346.csv" var="Case_1346">
 		<div id="list_subpanel_contacts">
 			<button id="contacts_cases_create_button" />
-			<wait timeout="3" />
+			<wait timeout="5" />
 		</div>
 		
 		<form id="form_SubpanelQuickCreate_Contacts">
 			<textfield id="last_name" set="{@Case_1346.last_name}" />
 			<button id="Contacts_subpanel_save_button" />
-			<wait timeout="3" />
+			<wait timeout="5" />
 		</form>
 
 		<div id="list_subpanel_contacts">

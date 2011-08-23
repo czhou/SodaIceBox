@@ -32,7 +32,6 @@
 	-->
 	<puts text="Test: Contacts_4341.xml starting." />
 
-
 	<!--Create contact record & task subpanel-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 
@@ -41,14 +40,10 @@
 	<div class="moduleTitle">
 		<link href="index.php?module=Contacts&amp;action=index" click="false" />
 	</div>
-	<link text="Basic Search" required="false" />
-	<button id="search_form_clear" />
-	<textfield id="search_name_basic" set="{@pre_contact_first_name}" />
-	<button id="search_form_submit" />
+
 	<table class="list view">
 		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	</table>
-
 	<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 
 	<!--goto Activities subpanel & click "Schedule Meeting"-->
@@ -79,7 +74,6 @@
 		<wait timeout="3" />
 		
 		<button value="Save" />
-
 		<wait timeout="5" />
 
 		<!--Verify the task record created in subpanel-->
@@ -92,11 +86,11 @@
 	<div id="list_subpanel_activities">
 		<table class="list view">
 			<link class="listViewTdToolsS1" text="/rem/" alert="true" />
+			<wait timeout="3" />
 		</table>
 	</div>
-	<wait timeout="2"/>
 
-	<!--Verify delete action works-->
+	<!--Verify remove action works-->
 	<div id="list_subpanel_activities">
 		<table class="list view">
 			<link text="{@contact_record_4341.name} {@user.name} {@stamp}" exist="false" click="false" />

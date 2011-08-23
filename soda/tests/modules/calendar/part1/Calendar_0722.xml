@@ -24,7 +24,6 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
 	<!--
 		Action:
@@ -51,7 +50,7 @@
 	<textfield id="name" set="{@note_name}" />
 	<textarea id="description" set="Something about a Note..." />
 	<button id="Notes_subpanel_save_button" />
-	<wait timeout="3" />
+	<wait timeout="5" />
 	
 	<div id="subpanel_history">
 		<link class="listViewTdToolsS1" index="1" />

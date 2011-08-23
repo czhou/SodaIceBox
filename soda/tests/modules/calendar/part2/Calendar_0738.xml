@@ -126,6 +126,7 @@
 			document.getElementById('date_start_date').onchange();
 		</javascript>
 		<wait timeout="4" />
+		<textfield id="date_start_date" assert="/\//" />
 
 		<textfield id="location" set="{@meeting_record.location}" />
 		<textfield id="description" set="{@meeting_record.description}" />

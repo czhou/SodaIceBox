@@ -45,7 +45,7 @@
 		</table>
 		<form id="formformNotes">
 			<button id="History_createnoteorattachment_button" />
-			<wait timeout="3" />
+			<wait timeout="5" />
 		</form>
 
 		<timestamp />
@@ -53,7 +53,7 @@
 			<textfield id="name" set="{@Quote_2588.note_name} {@user.name} {@stamp}" />
 			<textarea id="description" set="{@Quote_2588.note_description}" />
 			<button id="Notes_subpanel_save_button" />
-			<wait timeout="3" />
+			<wait timeout="5" />
 		</form>
 
 		<div id="list_subpanel_history">

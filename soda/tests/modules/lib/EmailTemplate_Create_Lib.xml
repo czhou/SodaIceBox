@@ -29,20 +29,18 @@
 	<puts text="Lib: EmailTemplate_Create_Lib.xml starting." />
 	<timestamp />
 
-	<link href='index.php?module=Emails&amp;action=index' />
+	<link id="moduleTab_Emails" />
 
 	<wait timeout="4" /> <!-- give the email UI time to load -->
 	
 	<link text="Create Email Template" />
 
-	<csv file="{@global.scriptsdir}/modules/lib/EmailTemplate_Create_Lib.csv"
-	var="New_EmailTemplate">
+	<csv file="{@global.scriptsdir}/modules/lib/EmailTemplate_Create_Lib.csv" var="New_EmailTemplate">
 		<button value="Select" />
 		<textfield name="name" set="{@New_EmailTemplate.team}" />
 		<button value="Search" />
 		<link text="{@New_EmailTemplate.team}" />
-		<textfield name="name"
-		set="{@New_EmailTemplate.name} {@user.name} {@stamp}" />
+		<textfield name="name"  set="{@New_EmailTemplate.name} {@user.name} {@stamp}" />
 		<textfield name="description" set="{@New_EmailTemplate.description}" />
 		<link id="body_text_code" />
 		<browser assert="HTML Source Editor" />

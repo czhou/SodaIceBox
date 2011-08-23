@@ -24,26 +24,16 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
 	<puts text="Test: Accounts_0035.xml starting." />
 
 	<!--Create a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 
-	<!--Search the record-->
-	<link id="moduleTab_Accounts" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
-	</div>
-	<textfield id="name_basic" set="{@pre_account_name}" />
-	<button id="search_form_submit" />
-	<table class="list view">
-		<link text="{@pre_account_name}" />
-	</table>
-
 	<!--Go its contact subpanel -->
 	<button id="accounts_contacts_create_button" />
+	<wait timeout="3" />
+	
 	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0035.csv" var="contact_record_0035">
 		<form id="form_SubpanelQuickCreate_Contacts">
 			<textfield id="first_name"
@@ -75,6 +65,7 @@
 		<link text="{@contact_record_0035.assigned_user_name}" />
 
 		<button value="Save" />
+		<wait timeout="3" />
 
 		<!--Verify the contact record has been created-->
 		<div id="list_subpanel_contacts">
@@ -91,7 +82,9 @@
 		<var var="pre_contact_subpanel_name"
 			set="{@contact_record_0035.first_name} {@user.name} {@stamp} {@contact_record_0035.last_name}" />
 	</csv>
+
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+
 	<puts text="Test: Accounts_0035.xml finished." />
 </soda>

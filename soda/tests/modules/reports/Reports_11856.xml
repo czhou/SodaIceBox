@@ -26,46 +26,43 @@
 -->
 
 <soda>
-	<!-- show password rules -->
-	<puts text="Test: passwordmanagement_9432.xml starting." />
+	<!-- MSSQL: Verify No Error in Reports When Grouping by Opportunity Amount -->
+	<puts text="Test: Reports_11856.xml starting." />
 
-	<div id="globalLinks">
-		<link text="Admin" />
-	</div>
-	<csv file="{@global.scriptsdir}/csvs/passwordmanagement/PM_9432.csv" var="pm9432">	
-	
-		<link text="Password Management" />
-		<table id="passRequirementId">
-			<browser assert="Password Requirements " />
-			<textfield name="passwordsetting_maxpwdlength" set="{@pm9432.max_len}" />
-		</table>
-		<button id="btn_save" />
-		<div id="welcome">
-			<link text="Administrator" />
-		</div>
-		<form id="EditView">
-			<browser assert="User Profile" />
-			<link text="Password" />
-			<table class="x-sqs-list">
-				<div id="1upcase" class="bad" assert="" />
-				<div id="lengths" class="bad" assert="" />
-				
-				<browser assert="Must contain one upper case letter (A-Z)" />
-				<browser assert="Minimum Length =3 and Maximum Length ={@pm9432.max_len}" />
-			</table>
-			<button value="Cancel" />
-		</form>
-	</csv>
-	
-	<div id="globalLinks">
-		<link text="Admin" />
-	</div>
-	<link text="Password Management" />
-	<table id="passRequirementId">
-		<browser assert="Password Requirements " />
-		<textfield name="passwordsetting_maxpwdlength" set="" />
+	<!-- Create Summation with Details Report -->
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<image name="summationWithDetailsImg" click="true" />
+
+	<table id="Opportunities">
+		<link text="Opportunities" />
 	</table>
-	<button id="btn_save" />
 
-	<puts text="Test: passwordmanagement_9432.xml finished." />
-</soda>
+	<button name="Next &gt;" />
+	<wait timeout="2" />
+	<div id="module_fields">
+		<div text="Opportunity Amount" click="true" />
+	</div>
+	
+	<button name="Next &gt;" />
+	<wait timeout="2" />
+	<button name="Next &gt;" />
+	<wait timeout="2" />
+
+	<div text="Opportunity Name" click="true" />
+	<wait timeout="1" />
+	<div text="Opportunity Amount" click="true" />
+	<wait timeout="1" />
+	<button name="Next &gt;" />
+
+	<textfield name="save_report_as" set="QA_Created for Reports_11856.xml." />
+	<button name="Save and Run" />
+
+	<browser assertnot="Database failure." />
+
+	<!-- Cleanup: Delete the report created above. -->
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
+
+	<puts text="Test: Reports_11856.xml finished." />
+</soda>	
+	

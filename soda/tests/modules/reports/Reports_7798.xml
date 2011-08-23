@@ -42,9 +42,9 @@
 
 	<button name="Next &gt;" />
 	<div text="Quote Subject" click="true" />
-	<wait timeout="2" />
+	<wait timeout="5" />
 	<div text="discount total" click="true" />
-	<wait timeout="2" />
+	<wait timeout="5" />
 
 	<div id="display_cols_div">
 		<browser assert="Quotes &gt; Quote Subject" />

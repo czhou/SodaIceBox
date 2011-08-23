@@ -58,7 +58,7 @@
 	<!--Delete the archived email link-->
 	<div id="list_subpanel_history">
 		<link class="listViewTdToolsS1" index="2" alert="true"/>
-		<wait timeout="3" />
+		<wait timeout="5" />
 	</div>
 	<!--Verify the in the History subpanel of contact-->
 	<div id="list_subpanel_history">

@@ -44,6 +44,7 @@
 	<div class="dashletToolSet">
 		<link index="1" />
 	</div>
+	<browser assertnot="Warning" />
 	<wait timeout="5" />
 	<div id="dlg_c">
 		<browser assertnot="Auto-Refresh Interval" />
@@ -59,12 +60,14 @@
 	<select id="dashlet_auto_refresh_min" set="Every 5 minutes" />
 	<button value="  Save  " />
 	<wait timeout="3" />
+
 	<link id="moduleTab_Home" />
 
 	<div class="hd" jscriptevent="onmouseover" />
 	<div class="dashletToolSet">
 		<link index="1" />
 	</div>
+	<browser assertnot="Warning" />
 	<wait timeout="5" />
 	<div id="dlg_c">
 		<browser assert="Auto-Refresh" />
