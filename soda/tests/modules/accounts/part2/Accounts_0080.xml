@@ -34,9 +34,10 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
-	<textfield id="name_basic" set="{@pre_account_name}" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -45,9 +46,44 @@
 	<!--Create Member Organization & click "Full Form"-->
 	<browser assert="{@pre_account_name}" />
 	<button name="member_accounts_create_button" />
-	<button id="Accounts_subpanel_full_form_button" />
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv" var="member_record_0080">
-		<textfield id="name" set="{@member_record_0080.name} {@user.name} {@stamp}" />
+
+
+   <!--
+      You may notice, though I don't think anyone ever will, that I do the
+      user & team search's before going into the full form mode.  This is
+      because of how the product interacts with webdriver.  I don't think this
+      is a webdriver bug, but I can't prove it is a product bug yet.
+   -->
+
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0001.csv" 
+      var="member_record_0080">
+		<!--user select-->
+		<button id="btn_assigned_user_name" />
+      <attach title="SugarCRM">
+         <browser assert="User Search" />
+         <textfield name="last_name_advanced" 
+            set="{@member_record_0080.assigned_user_name}" />
+         <button id="search_form_submit" />
+         <wait timeout="2" />
+         <link text="{@member_record_0080.assigned_user_name}" />
+      </attach>
+
+		<!--teams select-->
+		<button id="teamSelect" />
+      <wait timeout="1" />
+   
+      <attach title="SugarCRM">
+         <browser assert="Team Search" />
+         <textfield name="name" set="{@member_record_0080.team_name}" />
+         <button value="Search" />
+         <link text="{@member_record_0080.team_name}" />
+         <wait timeout="2" />
+      </attach>
+      <wait timeout="1" />
+	   <button id="Accounts_subpanel_full_form_button" />
+
+		<textfield id="name" 
+         set="{@member_record_0080.name} {@user.name} {@stamp}" />
 		<textfield id="website" set="{@member_record_0080.website}" />
 		<textfield id="ticker_symbol" set="{@member_record_0080.ticker_symbol}" />
 		<textfield id="ownership" set="{@member_record_0080.ownership}" />
@@ -58,38 +94,31 @@
 		<textfield id="employees" set="{@member_record_0080.employees}" />
 		<textfield id="rating" set="{@member_record_0080.rating}" />
 		<textfield id="sic_code" set="{@member_record_0080.sic_code}" />
-		<textfield id="annual_revenue" set="{@member_record_0080.annual_revenue}" />
-
-		<textfield id="billing_address_street" set="{@member_record_0080.billing_address_street}" />
-		<textfield id="billing_address_city" set="{@member_record_0080.billing_address_city}" />
-		<textfield id="billing_address_state" set="{@member_record_0080.billing_address_state}" />
-		<textfield id="billing_address_postalcode" set="{@member_record_0080.billing_address_postalcode}" />
-		<textfield id="billing_address_country" set="{@member_record_0080.billing_address_country}" />
-
-		<textfield id="shipping_address_street" set="{@member_record_0080.shipping_address_street}" />
-		<textfield id="shipping_address_city" set="{@member_record_0080.shipping_address_city}" />
-		<textfield id="shipping_address_state" set="{@member_record_0080.shipping_address_state}" />
-		<textfield id="shipping_address_postalcode" set="{@member_record_0080.shipping_address_postalcode}" />
-		<textfield id="shipping_address_country" set="{@member_record_0080.shipping_address_country}" />
-
-		<textfield id="Accounts0emailAddress0" set="{@member_record_0080.emailAddress0}" />
+		<textfield id="annual_revenue" 
+         set="{@member_record_0080.annual_revenue}" />
+		<textfield id="billing_address_street" 
+         set="{@member_record_0080.billing_address_street}" />
+		<textfield id="billing_address_city" 
+         set="{@member_record_0080.billing_address_city}" />
+		<textfield id="billing_address_state" 
+         set="{@member_record_0080.billing_address_state}" />
+		<textfield id="billing_address_postalcode" 
+         set="{@member_record_0080.billing_address_postalcode}" />
+		<textfield id="billing_address_country" 
+         set="{@member_record_0080.billing_address_country}" />
+		<textfield id="shipping_address_street" 
+         set="{@member_record_0080.shipping_address_street}" />
+		<textfield id="shipping_address_city" 
+         set="{@member_record_0080.shipping_address_city}" />
+		<textfield id="shipping_address_state" 
+         set="{@member_record_0080.shipping_address_state}" />
+		<textfield id="shipping_address_postalcode" 
+         set="{@member_record_0080.shipping_address_postalcode}" />
+		<textfield id="shipping_address_country" 
+         set="{@member_record_0080.shipping_address_country}" />
+		<textfield id="Accounts0emailAddress0" 
+         set="{@member_record_0080.emailAddress0}" />
 		<textfield id="description" set="{@member_record_0080.description}" />
-
-		<!--user select-->
-		<button id="btn_assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield name="last_name_advanced" set="{@member_record_0080.assigned_user_name}" />
-		<button value="Search" />
-		<link text="{@member_record_0080.assigned_user_name}" />
-
-		<!--teams select-->
-		<table id="EditView_team_name_table">
-			<button value="Select" />
-		</table>
-		<browser assert="Team Search" />
-		<textfield name="name" set="{@member_record_0080.team_name}" />
-		<button value="Search" />
-		<link text="{@member_record_0080.team_name}" />
 
 
 		<!--click "Cancel"-->
@@ -103,5 +132,5 @@
 	<!--Delete a account record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0080.xml finished." />
-
 </soda>
+
