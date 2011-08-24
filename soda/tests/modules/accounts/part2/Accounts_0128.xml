@@ -34,12 +34,15 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
+
 	<button id="search_form_clear" />
 	<wait timeout="3" />
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
+
 	<table class="list view">
 		<link text="{@pre_account_name}" />
 	</table>
@@ -50,12 +53,14 @@
 	</div>
 
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="true" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="true" />
 	</div>
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
-
 
 	<puts text="Test: Accounts_0128.xml finished." />
 </soda>
+
