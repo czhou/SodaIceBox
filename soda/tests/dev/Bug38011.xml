@@ -1,0 +1,76 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Module Name Does Not Show Properly on Display Filters / Show Display Columns Steps -->
+	<puts text="Test: Bug38011.xml started." />
+
+	<csv file="{@global.scriptsdir}/dev/Bug38011.csv" var="Bug38011">
+		<link id="admin_link" />
+		<link text="Rename Tabs" />
+
+		<span id="slot1_value" click="true" />
+		<textfield id="slot1_text" set="{@Bug38011.contacts_label}" />
+		<textfield id="slot1_text" jscriptevent="onchange" />
+		 
+		<span id="slot2_value" click="true" />
+		<textfield id="slot2_text" set="{@Bug38011.accounts_label}" />
+		<textfield id="slot2_text" jscriptevent="onchange" />	
+		
+		<button name="Save" />
+		
+		<!-- Go to reports creating page -->
+		<link id="moduleTab_Reports" />
+		<link text="Create Report" />
+		
+		<wait timeout="6" />
+		<image name="rowsColsImg" click="true" />
+		
+		<wait timeout="6" />
+		<div id="module_select_div">
+			<link text="{@Bug38011.accounts_label}" />
+		</div>
+		
+		<!-- verify that elements have new labels -->
+		<link id="/ygtvlabelel/" text="{@Bug38011.accounts_label}" exist="true" />
+		<link id="/ygtvlabelel/" text="{@Bug38011.contacts_label}" exist="true" />
+		
+		<!-- clear test modifications -->
+		<link id="admin_link" />
+		<link text="Rename Tabs" />
+
+		<span id="slot1_value" click="true" />
+		<textfield id="slot1_text" set="Contacts" />
+		<textfield id="slot1_text" jscriptevent="onchange" />
+		<span id="slot2_value" click="true" />
+		<textfield id="slot2_text" set="Accounts" />
+		<textfield id="slot2_text" jscriptevent="onchange" />	
+		<button name="Save" />
+	</csv>
+	
+	<puts text="Test: Bug38011.xml finished." />
+</soda>
