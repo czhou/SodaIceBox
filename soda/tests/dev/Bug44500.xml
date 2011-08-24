@@ -1,0 +1,111 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+	<script file="{@global.scriptsdir}/modules/lib/Role_Create_Lib.xml" />
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--  Duplicating workflow does not duplicate invitees for created activites. -->
+	<puts text="Test: Bug44500 starting." />
+	
+	<csv file="{@global.scriptsdir}/dev/Bug44500.csv" var="Bug44500">
+		<link id="admin_link" />
+		
+		<!-- todo: change locator to id -->
+		<link text="Workflow Management" />
+		
+		<!-- todo: change locator to id -->
+		<link text="Create" />
+		
+		<!-- todo: change locator to id -->
+		<textfield name="name" set="{@Bug44500.workflow_name}" />
+		
+		<!-- todo: change locator to id -->
+		<button value="/Save/" />
+		
+		<!-- create Actions -->
+		<!-- todo: change locator to id -->
+		<form id="ComponentView">
+			<button name="New" />
+		</form>
+		
+		<radio id="action_type2" click="true" />
+		
+		<wait timeout="2" />
+		<tr id="lang_new">
+			<link text="record" />
+		</tr>
+		<select id="selector" set="Call" />
+		<button value="Save" />
+		<button value="Next" />
+		
+		<link text="Subject" />
+		<textfield name="field_0__field_value" set="Subject" />
+		<button value="Save" />
+		
+		<link text="Duration Hours" />
+		<textfield name="field_5__field_value" set="1" />
+		<button value="Save" />
+		
+		<link text="Start Date" />
+		<button value="Save" />
+		
+		<link text="Status" />
+		<button value="Save" />
+		
+		<button value="/Save/" />
+		
+		<!-- Add Invitees -->
+		<browser assert="Invitees" />
+		<link text="Invitees" />
+		<button value="/Create/" />
+		<radio id="user_type4" click="true" />
+		<link id="href_specific_user" />
+		<select id="selector" set="{@Bug44500.invite_user_name}" />
+		<button value="Save" />
+		<button value="Save" />
+		<browser assert="Send alert to the following recipient" />
+		
+		<!-- Duplicating workflow  -->
+		<link text="Return to Workflow Definition" />
+		
+		<!-- todo: change locator to id -->
+		<button value="/Duplicate/" />
+		<textfield name="name" set="{@Bug44500.workflow_name} copy" />
+		<button value="/Save/" />
+		
+		<browser assert="Invitees" />
+		<link text="Invitees" />
+		<browser assert="Send alert to the following recipient" />
+		
+		<table class="list view">
+			<td text="/{@Bug44500.invite_user_name}/" exists="true" />
+		</table>
+		
+		<!-- deleting test data -->
+		<script file="{@global.scriptsdir}/modules/lib/Workflow_Delete_Lib.xml" />
+	</csv>
+	<puts text="Test: Bug44500 finished." />
+</soda>
