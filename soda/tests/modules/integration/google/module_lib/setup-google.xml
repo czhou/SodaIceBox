@@ -28,4 +28,121 @@
 <soda>
 	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
 	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+	<browser url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DAccounts" assertPage="false" />
+	<wait timeout="5" />
+	<table id="layoutEditorButtons">
+		<button id="historyDefault" assertPage="false" />
+		<wait timeout="5" />
+		<checkbox id="tabsCheckbox" click="true" assertPage="false" />
+		<button id="publishBtn" assertPage="false" />
+	</table>
+
+	<browser url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddetailview%26view_module%3DAccounts" assertPage="false" />
+	<wait timeout="5" />
+	<table id="layoutEditorButtons">
+		<button id="historyDefault" assertPage="false" />
+		<wait timeout="5" />
+		<checkbox id="tabsCheckbox" click="true" assertPage="false" />
+		<button id="publishBtn" assertPage="false" />
+	</table>
+
+	<browser url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DProspects" assertPage="false" />
+	<wait timeout="5" />
+	<table id="layoutEditorButtons">
+		<button id="historyDefault" assertPage="false" />
+		<wait timeout="5" />
+		<checkbox id="tabsCheckbox" click="true" assertPage="false" />
+		<button id="publishBtn" assertPage="false" />
+	</table>
+
+	<browser url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddetailview%26view_module%3DProspects" assertPage="false" />
+	<wait timeout="5" />
+	<table id="layoutEditorButtons">
+		<button id="historyDefault" assertPage="false" />
+		<wait timeout="5" />
+		<checkbox id="tabsCheckbox" click="true" assertPage="false" />
+		<button id="publishBtn" assertPage="false" />
+	</table>
+
+	<browser url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DContacts" assertPage="false" />
+	<wait timeout="5" />
+	<table id="layoutEditorButtons">
+		<button id="historyDefault" assertPage="false" />
+		<wait timeout="5" />
+		<checkbox id="tabsCheckbox" click="true" assertPage="false" />
+		<button id="publishBtn" assertPage="false" />
+	</table>
+
+	<browser url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddetailview%26view_module%3DContacts" assertPage="false" />
+	<wait timeout="5" />
+	<table id="layoutEditorButtons">
+		<button id="historyDefault" assertPage="false" />
+		<wait timeout="5" />
+		<checkbox id="tabsCheckbox" click="true" assertPage="false" />
+		<button id="publishBtn" assertPage="false" />
+	</table>
+
+	<browser url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DLeads" assertPage="false" />
+	<wait timeout="5" />
+	<table id="layoutEditorButtons">
+		<button id="historyDefault" assertPage="false" />
+		<wait timeout="5" />
+		<checkbox id="tabsCheckbox" click="true" assertPage="false" />
+		<button id="publishBtn" assertPage="false" />
+	</table>
+
+	<browser url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddetailview%26view_module%3DLeads" assertPage="false" />
+	<wait timeout="5" />
+	<table id="layoutEditorButtons">
+		<button id="historyDefault" assertPage="false" />
+		<wait timeout="5" />
+		<checkbox id="tabsCheckbox" click="true" assertPage="false" />
+		<button id="publishBtn" assertPage="false" />
+	</table>
+
+	<browser url="{@global.url}?module=Administration&amp;action=SaveTabs&amp;enabled_tabs=%5B%22Home%22%2C%22ProspectLists%22%2C%22Prospects%22%2C%22Products%22%2C%22Bugs%22%2C%22KBDocuments%22%2C%22Contracts%22%2C%22Project%22%2C%22Accounts%22%2C%22Contacts%22%2C%22Opportunities%22%2C%22Leads%22%2C%22Notes%22%2C%22Meetings%22%2C%22Calls%22%2C%22Tasks%22%2C%22Calendar%22%2C%22Reports%22%2C%22Documents%22%2C%22Emails%22%2C%22Campaigns%22%2C%22Quotes%22%2C%22Forecasts%22%2C%22Cases%22%5D" />
+	
+	<link text="{@user.logname}" />
+	<link text="External Accounts" />
+	<button name="EAPM_create_button" />
+	<browser assert="Application:" />
+	<select id="application" set="Google" />
+	<textfield id="name" set="sugarqa3@gmail.com" />
+	<textfield id="password" set="sugarcrm1" />
+	<button id="EditViewSave" />	
+
+	<link text="Google" click="false" exist="true" />
+
+	<!-- Create one sugar and one LL docs-->
+	<link id="moduleTab_Documents" />
+
+	<link text="Create Document" />
+	<form id="EditView">
+		<timestamp />
+		<textfield name="document_name" set="Sugar_Doc" /> 
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/google/sugarcrm.txt" />
+		<button value="Save" />
+	</form>
+	
+	<link text="Create Document" />
+	<form id="EditView">
+		<timestamp />
+		<select id="doc_type" set="Google" />
+		<textfield name="document_name" set="Google_Doc" /> 
+		<filefield id="filename_file" set="{@global.scriptsdir}/csvs/integration/google/google.txt" />
+		<button value="Save" />
+	</form>
+	
+	<!-- Init some module level records-->
+	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Create_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/TaxRate_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contract_Create_Lib_NoDep.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib_NoDep.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib_NoDep.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml" />
 </soda>

@@ -27,8 +27,6 @@
 
 <soda>
 	<script file="tests/modules/integration/google/module_lib/setup-google.xml" />
-	<script file="tests/modules/integration/google/module_lib/Google_Init.xml" />
 	<script fileset="tests/modules/integration/google" />
-	<script file="tests/modules/integration/google/module_lib/Google_UnInit_Lib.xml" />
 	<script file="tests/modules/integration/google/module_lib/cleanup-Google.xml" />
 </soda>
