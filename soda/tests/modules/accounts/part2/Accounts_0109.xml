@@ -32,30 +32,40 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
-	<link text="/Advanced Search/" />
+
+	<link id="advanced_search_link" />
 	<!--Save a advance search-->
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0109.csv" var="account_record_0109">
-		<textfield id="name_advanced" set="{@account_record_0109.name_advanced}" />
-		<textfield id="address_city_advanced" set="{@account_record_0109.billing_address_city_advanced}" />
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0109.csv" 
+      var="account_record_0109">
+		<textfield id="name_advanced" 
+         set="{@account_record_0109.name_advanced}" />
+		<textfield id="address_city_advanced" 
+         set="{@account_record_0109.billing_address_city_advanced}" />
 		<textfield id="address_state_advanced"
 			set="{@account_record_0109.billing_address_state_advanced}" />
 		<textfield id="billing_address_country_advanced"
 			set="{@account_record_0109.billing_address_country_advanced}" />
-		<textfield name="saved_search_name" set="{@account_record_0109.saved_search_name} {@stamp}" />
-
+		<textfield name="saved_search_name" 
+         set="{@account_record_0109.saved_search_name} {@stamp}" />
 		<button name="saved_search_submit" />
-		<select id="saved_search_select" include="{@account_record_0109.saved_search_name} {@stamp}" />
+		<select id="saved_search_select" 
+         include="{@account_record_0109.saved_search_name} {@stamp}" />
 	</csv>
+
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
-	<link text="/Basic Search/" />
-        <wait timeout="3" />
+
+	<link id="basic_search_link" />
+   <wait timeout="3" />
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
 	<wait timeout="3" />
 	<puts text="Test: Accounts_0109.xml finished." />
 </soda>
+
