@@ -32,7 +32,8 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
 	<form id="search_form">
 		<link text="Basic Search" required="false" />
@@ -42,3 +43,4 @@
 
 	<puts text="Test: Accounts_0125.xml finished." />
 </soda>
+
