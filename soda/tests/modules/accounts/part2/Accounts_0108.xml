@@ -38,8 +38,10 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
+
 	<link text="Basic Search" required="false" />
 	<form id="search_form">
 		<button id="search_form_clear" />
@@ -63,7 +65,8 @@
 	<browser assert="Create" />
 
 	<!--in contact edit view-->
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0108.csv" var="contact_record_0108">
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0108.csv" 
+      var="contact_record_0108">
 		<textfield name="first_name"
 			set="{@contact_record_0108.first_name} {@user.name} {@stamp}" />
 		<textfield id="last_name" set="{@contact_record_0108.last_name}" />
@@ -71,21 +74,32 @@
 		<textfield id="phone_work" set="{@contact_record_0108.phone_work}" />
 		<textfield id="phone_mobile" set="{@contact_record_0108.phone_mobile}" />
 		<textfield id="phone_fax" set="{@contact_record_0108.phone_fax}" />
-		<textfield id="Contacts0emailAddress0" set="{@contact_record_0108.emailAddress0}" />
 		<select id="lead_source" set="{@contact_record_0108.lead_source}" />
 		<checkbox id="do_not_call" set="{@contact_record_0108.do_not_call}" />
 		<checkbox id="sync_contact" set="{@contact_record_0108.sync_contact}" />
-		<textfield id="primary_address_street" set="{@contact_record_0108.primary_address_street}" />
-		<textfield id="primary_address_city" set="{@contact_record_0108.primary_address_city}" />
-		<textfield id="primary_address_state" set="{@contact_record_0108.primary_address_state}" />
-		<textfield id="primary_address_postalcode" set="{@contact_record_0108.primary_address_postalcode}" />
-		<textfield id="primary_address_country" set="{@contact_record_0108.primary_address_country}" />
-		<textfield id="alt_address_street" set="{@contact_record_0108.alt_address_street}" />
-		<textfield id="alt_address_city" set="{@contact_record_0108.alt_address_city}" />
-		<textfield id="alt_address_state" set="{@contact_record_0108.alt_address_state}" />
-		<textfield id="alt_address_postalcode" set="{@contact_record_0108.alt_address_postalcode}" />
-		<textfield id="alt_address_country" set="{@contact_record_0108.alt_address_country}" />
+		<textfield id="primary_address_street" 
+         set="{@contact_record_0108.primary_address_street}" />
+		<textfield id="primary_address_city" 
+         set="{@contact_record_0108.primary_address_city}" />
+		<textfield id="primary_address_state" 
+         set="{@contact_record_0108.primary_address_state}" />
+		<textfield id="primary_address_postalcode" 
+         set="{@contact_record_0108.primary_address_postalcode}" />
+		<textfield id="primary_address_country" 
+         set="{@contact_record_0108.primary_address_country}" />
+		<textfield id="alt_address_street" 
+         set="{@contact_record_0108.alt_address_street}" />
+		<textfield id="alt_address_city" 
+         set="{@contact_record_0108.alt_address_city}" />
+		<textfield id="alt_address_state" 
+         set="{@contact_record_0108.alt_address_state}" />
+		<textfield id="alt_address_postalcode" 
+         set="{@contact_record_0108.alt_address_postalcode}" />
+		<textfield id="alt_address_country" 
+         set="{@contact_record_0108.alt_address_country}" />
 		<textarea id="description" set="{@contact_record_0108.description}" />
+		<textfield id="Contacts0emailAddress0" 
+         set="{@contact_record_0108.emailAddress0}" />
 		<!--teams select: use default value-->
 		<!--user select: use default value-->
 		<button value="Save" />
@@ -104,3 +118,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0108.xml finished." />
 </soda>
+
