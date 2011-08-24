@@ -27,46 +27,71 @@
 
 <soda>
 	<!--
-		Search Account: Verify that the saved search is deleted from "Saved search"
-		drop down list in navigation shortcuts.
+		Search Account: Verify that the saved search is deleted from 
+      "Saved search" drop down list in navigation shortcuts.
 	-->
+
 	<puts text="Test: Accounts_0110.xml starting." />
 
 	<!--Create and save an advanced search-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
-	<link text="Advanced Search" required="false" />
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0110.csv" var="account_record_0110">
+	<link id="advanced_search_link" required="false" />
+   <wait timeout="4" />
+
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0110.csv" 
+      var="account_record_0110">
 		<form id="search_form">
 			<button id="search_form_clear" />
-			<textfield id="name_advanced" set="{@account_record_0110.name_advanced}" />
-			<select name="account_type_advanced[]" set="{@account_record_0110.type}" />
-			<select name="industry_advanced[]" set="{@account_record_0110.industry}" />
-			<textfield name="saved_search_name" set="{@account_record_0110.name_advanced} {@stamp}" />
+			<textfield id="name_advanced" 
+            set="{@account_record_0110.name_advanced}" />
+			<select name="account_type_advanced[]" 
+            set="{@account_record_0110.type}" />
+			<select name="industry_advanced[]" 
+            set="{@account_record_0110.industry}" />
+			<textfield name="saved_search_name" 
+            set="{@account_record_0110.name_advanced} {@stamp}" />
 			<button name="saved_search_submit" />
+         <wait timeout="3" />
 			<!--Verify it is saved-->
-			<select id="saved_search_select" include="{@account_record_0110.name_advanced} {@stamp}" />
+      </form>
+
+		<form id="search_form">
+			<select id="saved_search_select" 
+            include="{@account_record_0110.name_advanced} {@stamp}" />
+         
 			<!--Select it-->
-			<select id="saved_search_select" set="{@account_record_0110.name_advanced} {@stamp}" />
+			<select id="saved_search_select" 
+            set="{@account_record_0110.name_advanced} {@stamp}" />
+
 			<!--Delete it-->
 			<button id="ss_delete" alert="true" />
+      </form>
+
+   	<link id="advanced_search_link" required="false" />
+      <wait timeout="3" />
+		<form id="search_form">
 			<!--Verify it is deleted-->
-			<link text="Advanced Search" required="false" />
-			<select id="saved_search_select" noninclude="{@account_record_0110.name_advanced} {@stamp}" />
+			<select id="saved_search_select" 
+            noninclude="{@account_record_0110.name_advanced} {@stamp}" />
 		</form>
 	</csv>
+
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
-	<wait timeout="3" />
+
+	<wait timeout="2" />
 	<link text="Basic Search" required="false" />
-	<wait timeout="3" />
+	<wait timeout="2" />
 	<button id="search_form_clear" />
 	<button id="search_form_submit" />
-	<wait timeout="3" />
-
+	<wait timeout="2" />
 	<puts text="Test: Accounts_0110.xml finished." />
 </soda>
+
