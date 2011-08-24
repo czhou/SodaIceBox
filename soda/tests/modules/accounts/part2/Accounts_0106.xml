@@ -38,8 +38,10 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
+
 	<link text="Basic Search" required="false" />
 	<form id="search_form">
 		<button id="search_form_clear" />
@@ -59,11 +61,13 @@
 	<!--Create a case using Full Form in Cases Subpanel-->
 	<button name="account_cases_create_button" />
 	<button id="Cases_subpanel_full_form_button" />
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0106.csv" var="case_record_0106">
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0106.csv" 
+      var="case_record_0106">
 		<select id="priority" set="{@case_record_0106.priority}" />
 		<select id="status" set="{@case_record_0106.status}" />
 		<select id="type" set="{@case_record_0106.type}" />
-		<textfield id="name" set="{@case_record_0106.name} {@user.name} {@stamp}" />
+		<textfield id="name" 
+         set="{@case_record_0106.name} {@user.name} {@stamp}" />
 		<textfield id="description" set="{@case_record_0106.description}" />
 		<!--user select: use default value-->
 		<!--teams select: use default value-->
@@ -89,3 +93,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0106.xml finished." />
 </soda>
+
