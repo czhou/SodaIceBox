@@ -101,7 +101,7 @@
 	<select id="application" set="LotusLive" />
 	<button id="EditViewSave" />	
 	<wait timeout="5" />
-	<textfield id="username" set="sugarqa8@gmail.com" required="false" timeout="2" />
+	<textfield id="username" set="sugarqa5@gmail.com" required="false" timeout="2" />
 	<textfield id="password" set="Sugar123" required="false" timeout="2" />
 	<button id="submit" required="false" timeout="2" />
 	<wait timeout="10" />
