@@ -1,0 +1,81 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+	<script file="{@global.scriptsdir}/modules/lib/Role_Create_Lib.xml" />
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Duplicating workflows does not copy over all condition data -->
+	<puts text="Test: Bug44498 starting." />
+	
+	<csv file="{@global.scriptsdir}/dev/Bug44498.csv" var="Bug44498">
+		<link id="admin_link" />
+		<link text="Workflow Management" />
+		<link text="Create" />
+		<textfield name="name" set="{@Bug44498.workflow_name}" />
+		<button value="/Save/" />
+		
+		<!-- create Conditions -->
+		<button value="/Create/" index="1"/>
+		
+		<radio id="type0" click="true" />
+		<wait timeout="1" />
+		<tr id="lang_compare_specific">
+			<link text="field" />
+		</tr>
+
+		<button value="Save" />
+		<button id="next" />
+		
+		<checkbox id="mod_past_trigger" set="true" />
+		
+		<link id="href_future_trigger" />
+		<textfield id="future_trigger__field_value" set="{@Bug44498.future_trigger_value}" />
+		<button id="save" />
+		
+		<link id="href_past_trigger" />
+		<textfield id="past_trigger__field_value" set="{@Bug44498.past_trigger_value}" />
+		<button id="save" />
+		
+		<button id="save" />
+		
+		<!-- Duplicating workflow  -->
+		<link text="Workflow Definitions" />
+		<link text="{@Bug44498.workflow_name}" />
+		<button value="/Duplicate/" />
+		<textfield name="name" set="{@Bug44498.workflow_name} copy" />
+		<!-- todo: change locator to id -->
+		<button value="/Save/" />
+		
+		<link text="edit" />
+		<browser assert="{@Bug44498.future_trigger_value}" />
+		<browser assert="{@Bug44498.past_trigger_value}" />	
+		<button id="save" />
+			
+		<!-- deleting test data -->
+		<script file="{@global.scriptsdir}/modules/lib/Workflow_Delete_Lib.xml" />
+	</csv>
+	<puts text="Test: Bug44498 finished." />
+</soda>

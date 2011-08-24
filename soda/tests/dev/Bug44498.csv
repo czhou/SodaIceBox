@@ -1,0 +1,2 @@
+workflow_name,future_trigger_value,past_trigger_value
+Test bug 44498 Workflow,123456,111111
