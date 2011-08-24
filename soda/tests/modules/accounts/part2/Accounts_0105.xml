@@ -38,8 +38,10 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
+
 	<link text="Basic Search" required="false" />
 	<form id="search_form">
 		<button id="search_form_clear" />
@@ -58,9 +60,11 @@
 
 	<!--Create a case in Cases Subpanel-->
 	<button name="account_cases_create_button" />
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0105.csv" var="case_record_0105">
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0105.csv" 
+      var="case_record_0105">
 		<form id="form_SubpanelQuickCreate_Cases">
-			<textfield id="name" set="{@case_record_0105.name} {@user.name} {@stamp}" />
+			<textfield id="name" 
+            set="{@case_record_0105.name} {@user.name} {@stamp}" />
 			<select id="status" set="{@case_record_0105.status}" />
 			<select id="priority" set="{@case_record_0105.priority}" />
 			<textfield id="description" set="{@case_record_0105.description}" />
@@ -91,3 +95,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0105.xml finished" />
 </soda>
+
