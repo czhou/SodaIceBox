@@ -19,7 +19,7 @@
 		<form id="form_SubpanelQuickCreate_Prospects">
 			<textfield id="last_name" set="{@Campaign_1006.last_name} {@stamp}" />
 			<button id="Prospects_subpanel_save_button" />
-			<wait timeout="3" />
+			<wait timeout="5" />
 		</form>
 	</csv>
 

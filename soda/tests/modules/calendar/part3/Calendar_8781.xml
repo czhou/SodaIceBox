@@ -14,33 +14,29 @@
 
 	-->
 	<puts text="Test: Calendar_8781.xml starting." />
+	<timestamp />
 
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Create_Lib_FULL.xml" />
 	<var var="account1_name" set="{@Lead_New_Record.account_name}" />
 	<var var="lead1_lname" set="{@pre_lead_last_name}" />
 	<var var="lead1_name" set="{@pre_lead_salutation} {@pre_lead_first_name} {@pre_lead_last_name}" />
-	
-	<link id="moduleTab_Calls" />
-	<link text="Log Call" />
-	
-	<timestamp />
 	<var var="call1_name" set="Call_{@stamp}" />
 	
-	<textfield id="name" set="{@call1_name}" />
+	<link id="moduleTab_Calls" />
 	
+	<link text="Log Call" />
+	
+	<textfield id="name" set="{@call1_name}" />
 	<textfield name="search_last_name" set="{@lead1_lname}" />
 	<button value="Search" click="true" />
 	<wait timeout="5" />
 	<div id="list_div_win">
 		<button value="Add" click="true" />
 		<button value="Add" jscriptevent="onmouseup" />
-		<wait timeout="1" />
+		<wait timeout="3" />
 	</div>
-
 	<button value="Save" />
-	
-	<wait timeout="20" />
-	
+
 	<div id="list_subpanel_leads">
 		<link text="{@lead1_name}" click="false" />
 		<link text="{@account1_name}" exist="false" />

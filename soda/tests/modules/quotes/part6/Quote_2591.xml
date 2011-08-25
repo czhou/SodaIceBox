@@ -1,4 +1,3 @@
-
 <soda>
 	<!-- Relationship - Delete Project_Verify that "Projects" can be successfully deleted on the "Projects" sub-panel. -->
 	<puts text="Test: Quote_2591.xml starting." />

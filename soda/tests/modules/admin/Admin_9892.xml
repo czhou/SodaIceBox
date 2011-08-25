@@ -16,29 +16,16 @@
 	<browser assert="Report Wizard" />
 
 	<!-- select a rows / columns type report -->
-	<div id="report_type_div">
-		<table index="1">
-			<row index="2">
-				<cell index="1">
-					<table index="1">
-						<row index="1">
-							<cell index="1">
-								<image index="1" click="true" />
-								<wait timeout="3" />
-							</cell>
-						</row>
-					</table>
-				</cell>
-			</row>
-		</table>
-	</div>
+	<image name="rowsColsImg" click="true" />
+	<wait timeout="3" />
 	<browser assert="Click an icon to select a Module." />
+
 	<table id="Accounts" click="true" />
 	<browser assert="Define Filters" />
 	<link id="ygtvlabelel1" click="true" />
 
 	<row id="Accounts_name" click="true" />		<!-- Account Name -->
-	<wait timeout="5" />
+	<wait timeout="7" />
 	<select name="qualify" set="Equals" />
 	<textfield name="text_input" set="{@pre_account_name}" />
 	<checkbox id="runtime_filter_Filter.1_table_filter_row_1" set="true" />

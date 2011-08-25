@@ -1,4 +1,3 @@
-
 <soda>
 	<!-- Account Detail - History sub-panel-Duplicate_Verify that duplicating an activity record is canceled. -->
 	<puts text="Test: Accounts_0308.xml starting."/>
@@ -11,11 +10,11 @@
 	</div>
 
 	<button id="Activities_schedulemeeting_button"/>
-	<wait timeout="7" />
+	<wait timeout="15" />
 	<textfield id="name" set="Account meeting record"/>
 	<select id="status" set="Held"/>
 	<button id="Meetings_subpanel_save_button"/>
-	<wait timeout="12"/>
+	<wait timeout="15"/>
 
 	<div id="list_subpanel_history">
 		<browser assert="Account meeting record" />
@@ -29,8 +28,12 @@
 	<textfield id="name_basic" set="Account meeting record"/>
 	<button id="search_form_submit"/>
 	<span class="pageNumbers" assert="(1 - 1 of 1)"/>
-	
-	<!--Delete the record-->
+
+	<!-- Clean Up: Reset the search form. -->
+	<button id="search_form_clear"/>
+	<button id="search_form_submit"/>
+
+	<!-- Clean Up: Delete test data. -->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml"/>
 

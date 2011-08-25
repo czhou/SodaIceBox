@@ -1,6 +1,7 @@
 
 <soda>
-	<puts text="Test Case 234: Account Detail - Member Organizations sub-panel - Create_Verify that error message 'Missing required field: Name' is displayed when creating related new 'Member Organizations' with mandatory fields blank."/>
+	<!-- Account Detail - Member Organizations sub-panel - Create_Verify that error message 'Missing required field: Name' is displayed when creating related new 'Member Organizations' with mandatory fields blank. -->
+	<puts text="Test: Accounts_0234.xml starting." />
 
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 
@@ -8,24 +9,24 @@
 	<div class="moduleTitle">
 		<link href="index.php?module=Accounts&amp;action=index" click="false" />
 	</div>
-	<textfield id="name_basic" set="{@pre_account_name}" />
-	<button id="search_form_submit" />
-	<wait timeout="5"/>
+
 	<table class="list view">
-		<link text="{@pre_account_name}"/> 
+		<link text="{@pre_account_name}" /> 
 	</table>
 
 	<!--Create Member record-->
 	<div id="LBL_ACCOUNT_INFORMATION">
-		<browser assert="{@pre_account_name}"/>
+		<browser assert="{@pre_account_name}" />
 	</div>
 
-	<button id="member_accounts_create_button"/>
-	<textfield id="name" set=""/>
-	<button id="Accounts_subpanel_save_button"/>
+	<button id="member_accounts_create_button" />
+	<wait timeout="3" />
+	<textfield id="name" set="" />
+	<button id="Accounts_subpanel_save_button" />
+	<wait timeout="3" />
 
-	<browser assert="Missing required field: Name"/>
-	<link id="moduleTab_Accounts" alert="true"/>
+	<browser assert="Missing required field: Name" />
+	<link id="moduleTab_Accounts" alert="true" />
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
