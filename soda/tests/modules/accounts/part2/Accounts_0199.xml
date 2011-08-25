@@ -27,8 +27,9 @@
 
 <soda>
 	<!--
-		Account Detail - History sub-panel_Verify that corresponding contact detail
-		view related to the selected account's history record is displayed.
+		Account Detail - History sub-panel_Verify that corresponding contact 
+      detail view related to the selected account's history record is 
+      displayed.
 	-->
 
 	<puts text="Test: Accounts_0199.xml starting." />
@@ -44,22 +45,29 @@
 		<button name="History_createnoteorattachment_button" />
 	</div>
 	<wait timeout="3" />
+
 	<div id="form_SubpanelQuickCreate_Notes_tabs">
 		<textfield id="name" set="Test Note" />
 		<textfield id="name" set="Test Note" />
 		<button id="btn_contact_name" />
 	</div>
 	<wait timeout="3" />
-	<browser assert="Contact Search" />
-	<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
-	<button id="Notes_subpanel_save_button" />
+
+   <attach title="SugarCRM">
+      <browser assert="Contact Search" />
+      <link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+   </attach>
+
+   <wait timeout="2" />
+   <button id="Notes_subpanel_save_button" />
 	<wait timeout="3" />
 
 	<!-- Click on contact related to note via history subpanel -->
 	<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	<wait timeout="3" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Contacts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Contacts&amp;action=index" 
+         click="false" />
 		<browser assert="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	</div>
 
@@ -67,6 +75,6 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
-
 	<puts text="Test: Accounts_0199.xml finished." />
 </soda>
+
