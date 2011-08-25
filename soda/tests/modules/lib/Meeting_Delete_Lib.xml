@@ -26,15 +26,20 @@
 -->
 
 <soda>
-	<puts text="Meeting_Delete_Lib: Starting" />
+	<puts text="Lib: Meeting_Delete_Lib Starting..." />
+   <li id="moduleTabExtraMenuAll" click="true" />
 	<link id="moduleTab_Meetings" />
+   <wait timeout="2" />
+	<link id="moduleTab_Meetings" click="false" jscriptevent="onmouseover" />
+   <wait timeout="2" />
 	<link text="View Meetings" />
+   <wait timeout="2" />
 	<button value="Clear" />
 	<button id="search_form_submit" />
 	<checkbox name="massall" click="true" />
 	<link id="actions_link" />
 	<link text="Delete" alert="true" />
 	<span class="pageNumbers" assert="(0 - 0 of 0)" />
-	<puts text="Meeting_Delete_Lib: Finished" />
+	<puts text="Lib: Meeting_Delete_Lib Finished." />
 </soda>
 
