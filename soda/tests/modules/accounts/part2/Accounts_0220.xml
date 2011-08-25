@@ -27,9 +27,9 @@
 
 <soda>
 	<!--
-		Account Detail - History sub-panel: Archive Email: Verify that error message
-		"Missing required field: Date Start" is displayed when creating a related new
-		"Archive Email" with mandatory fields blank.
+		Account Detail - History sub-panel: Archive Email: Verify that error 
+      message "Missing required field: Date Start" is displayed when creating 
+      a related new "Archive Email" with mandatory fields blank.
 	-->
 	<puts text="Test: Accounts_0220.xml starting." />
 
@@ -39,8 +39,10 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
+
 	<link text="Basic Search" required="false" />
 	<form id="search_form">
 		<button id="search_form_clear" />
@@ -52,19 +54,22 @@
 		<browser assert="{@pre_account_name}" />
 		<link text="{@pre_account_name}" />
 	</table>
+
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
 	<wait timeout="3" />
 
-	
-
 	<!--Click "Create Archived Emails"-->
 	<div id="list_subpanel_history">
-		<button value="  Archive Email  " />
+		<button id="ArchiveEmail_button" />
 	</div>
+   <wait timeout="3" />
+
 	<browser assert="Create Archived Emails" />
-	<button value="  Save  " />
+	<button id="SAVE_HEADER" />
+   <wait timeout="2" />
 	<browser assert="Missing required field: Date Start" />
 	<browser assert="Missing required field: Time Sent" />
 
@@ -72,4 +77,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0220.xml finished." />
 </soda>
-    
+
