@@ -1,0 +1,2 @@
+name,description
+Test Bug43872 Note,&#00 &#39 &quot &amp <script>
