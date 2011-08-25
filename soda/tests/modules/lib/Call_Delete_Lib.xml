@@ -27,7 +27,9 @@
 
 <soda>
 	<puts text="Lib: Call_Delete_Lib.xml starting." />
-	<link id="moduleTab_Calls"/>
+   <li id="moduleTabExtraMenuAll" click="true" />
+   <wait timeout="2" />
+	<link id="moduleTab_Calls" />
 	<button name="clear" />
 	<button id="search_form_submit" />
 	<checkbox name="massall" click="true" />
