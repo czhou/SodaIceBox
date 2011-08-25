@@ -41,8 +41,10 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
+
 	<textfield id="name_basic" set="{@pre_account_name}" />
 	<button id="search_form_submit" />
 	<table class="list view">
@@ -63,9 +65,9 @@
 
 	<!-- Verify All Opp's appear on list view -->
 	<table class="list view">
-		<row class="pagination">
+		<tr class="pagination">
 			<span class="pageNumbers" assert="(1 - 1 of 1)" />
-		</row>
+		</tr>
 	</table>
 
 	<!-- The following step is needed to clean up -->
@@ -79,3 +81,4 @@
 
 	<puts text="Test: Accounts_0225.xml finished." />
 </soda>
+
