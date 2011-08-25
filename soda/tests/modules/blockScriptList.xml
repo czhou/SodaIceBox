@@ -1,6 +1,13 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Studio_10114</testfile>
+		<bugnumber>46358</bugnumber>
+		<reason>SugarLogic does not handle divide by 0 gracefully anymore.</reason>
+		<modulename>Studio/part1</modulename>
+	</block>
+
+	<block>
 		<testfile>Users_0608</testfile>
 		<bugnumber>-1</bugnumber>
 		<reason>Cannot reproduce manually; blocking until I can figure out why.</reason>

@@ -1,15 +1,14 @@
-
 <soda>
-    
     <!-- divide function test -->
-    <puts text="Test: Studio_10114.xml starting" />
-    <!-- set description field as calculated field and define formula -->
+    <puts text="Test: Studio_10114.xml starting." />
     <timestamp />
+
+    <!-- set description field as calculated field and define formula -->
     <link text="Admin" />
-    <link text="Studio" assertPage="false" />
-    <link text="Accounts" class="studiolink" assertPage="false" />
-    <link text="Fields" class="studiolink" assertPage="false" />
-    <link text="description" class="mbLBLL" assertPage="false" />
+    <link text="Studio" />
+    <link text="Accounts" class="studiolink" />
+    <link text="Fields" class="studiolink" />
+    <link text="description" class="mbLBLL" />
     <checkbox id="calculated" set="true" />
     <wait timeout="1" />
     <button value="Edit Formula" />
@@ -21,7 +20,7 @@
     </div>
     <wait timeout="3" />
     <form id="popup_form_id" >
-      <button name="fsavebtn" assertPage="false" />
+      <button name="fsavebtn" />
     </form>
     <wait timeout="3" />
     
@@ -49,14 +48,14 @@
     
     <!-- Now uncalculated the field -->
     <link text="Admin" />
-    <link text="Studio" assertPage="false" />
-    <link text="Accounts" class="studiolink" assertPage="false" />
-    <link text="Fields" class="studiolink" assertPage="false" />
-    <link text="description" class="mbLBLL" assertPage="false" />
+    <link text="Studio" />
+    <link text="Accounts" class="studiolink" />
+    <link text="Fields" class="studiolink" />
+    <link text="description" class="mbLBLL" />
     <checkbox id="calculated" set="false" />
     <form id="popup_form_id" >
       <browser assertnot="Formula Builder" />
-      <button name="fsavebtn" assertPage="false" />
+      <button name="fsavebtn" />
     </form>
     <wait timeout="3" />
     

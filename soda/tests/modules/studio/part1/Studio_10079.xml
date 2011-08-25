@@ -1,8 +1,8 @@
 
 <soda>
-    
     <!--Import is disabled if the field is a calculated field -->
     <puts text="Test: Studio_10079.xml starting" />
+
     <!-- set billing city field as calculated field and define formula -->
     <link text="Admin" />
     <link text="Studio" assertPage="false" />
@@ -28,15 +28,17 @@
     
     <!--Go to account import-->
     <link id="moduleTab_Accounts" />
+
     <link text="Import Accounts" />
     <wait timeout="3" />
-    <browser assert="Step 1: Select Data Source and Import Action" />
-    <button id="gonext" />
-    <browser assert="Step 2: Upload Import File" />
+    <browser assert="Step 1: Upload Import File" />
     <filefield name="userfile" set="{@global.scriptsdir}/modules/lib/Account_Create_Lib.csv" />
     <button id="gonext" />
-    <browser assert="Step 3: Confirm Fields and Import" />
-    <browser assertnot="Billing City" />
+    <browser assert="Step 2: Confirm Import File Properties" />
+    <button id="gonext" />
+    <browser assert="Step 3: Confirm Field Mappings" />
+    <browser assertnot="Billing City" /> 
+	<button id="finished" /> <!-- This is cancel, even though "finished" sounds like confirmation. -->
     
     <!-- Now uncalculated the field -->
     <link text="Admin" />
