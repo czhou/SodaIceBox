@@ -27,8 +27,10 @@
 
 <soda>
    <puts text="Lib: Contact_Create_Lib.xml starting." />
+   
    <timestamp />
    <link id="moduleTab_Contacts" click="false" jscriptevent="onmouseover" />
+
    <csv file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.csv" 
       var="contact_record">
       <link text="Create Contact" />
@@ -37,9 +39,8 @@
 
       <!--fill the fields and "Save"-->
       <form id="EditView">
-         <textfield name="first_name"
-            set="{@contact_record.first_name} {@user.name} {@stamp}" 
-               clear="true" />
+         <textfield name="first_name" clear="true"
+            set="{@contact_record.first_name} {@user.name} {@stamp}" />
          <textfield id="last_name" set="{@contact_record.last_name}" 
             clear="true" />
          <textfield id="title" set="{@contact_record.title}" clear="true" />
@@ -56,13 +57,11 @@
          <textfield id="description" set="{@contact_record.description}" />
          
          <!-- more information -->
-         <link id="tab1" />
          <select id="lead_source" set="{@contact_record.lead_source}" />
          <checkbox id="do_not_call" set="{@contact_record.do_not_call}" />
          <checkbox id="sync_contact" set="{@contact_record.sync_contact}" />
 
           <!-- contact overview -->
-          <link id="tab0" />
          <textfield id="primary_address_street" 
             set="{@contact_record.primary_address_street}" />
          <textfield id="primary_address_city" 
@@ -75,8 +74,10 @@
             set="{@contact_record.primary_address_country}" />
          <textfield id="alt_address_street" 
             set="{@contact_record.alt_address_street}" />
-         <textfield id="alt_address_city" set="{@contact_record.alt_address_city}" />
-         <textfield id="alt_address_state" set="{@contact_record.alt_address_state}" />
+         <textfield id="alt_address_city" 
+            set="{@contact_record.alt_address_city}" />
+         <textfield id="alt_address_state" 
+            set="{@contact_record.alt_address_state}" />
          <textfield id="alt_address_postalcode" 
             set="{@contact_record.alt_address_postalcode}" />
          <textfield id="alt_address_country" 
@@ -93,6 +94,7 @@
          <hidden name="record" var="pre_contact_id" />
       </form>
    </csv>
+
    <var var="pre_contact_first_name" 
       set="{@contact_record.first_name} {@user.name} {@stamp}" />
    <var var="pre_contact_last_name" set="{@contact_record.last_name}" />
