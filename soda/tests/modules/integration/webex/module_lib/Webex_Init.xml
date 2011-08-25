@@ -1,6 +1,6 @@
 
 <soda>
-	<puts text="Lib: LotusLive_Init.xml starting." />
+	<puts text="Lib: Webex_Init.xml starting." />
 	
 	<button name="cancel" required="false" timeout="2" />
 	<button name="next_tab1" required="false" timeout="2" />
@@ -106,5 +106,5 @@
     <script file='{@global.scriptsdir}/modules/lib/Lead_Create_Lib.xml'/>
 	<script file='{@global.scriptsdir}/modules/lib/Case_Create_Lib_NoDep.xml'/>
 	<script file='{@global.scriptsdir}/modules/lib/Bug_Create_Lib.xml'/>
-	<puts text="Lib: LotusLive_Init.xml finished." />
+	<puts text="Lib: Webex_Init.xml finished." />
 </soda>
