@@ -27,9 +27,10 @@
 
 <soda>
 	<!--
-		Account Detail - Cases sub-panel: Verify that error message "Missing required
-		field: Subject" is displayed
+		Account Detail - Cases sub-panel: Verify that error message 
+      "Missing required field: Subject" is displayed
 	-->
+
 	<puts text="Test: Accounts_0230.xml starting." />
 
 	<!--Create an account record-->
@@ -38,8 +39,10 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
+
 	<link text="Basic Search" required="false" />
 	<form id="search_form">
 		<button id="search_form_clear" />
@@ -56,10 +59,14 @@
 	<link text='Accounts' click='false' />
 	<browser assert="{@pre_account_name}" />
 
-	<!--Create a case in Cases Subpanel, and don"t fill in all mandatory fields-->
+	<!--
+      Create a case in Cases Subpanel, and don"t fill in all mandatory fields
+   -->
 	<button name="account_cases_create_button" />
 	<wait timeout="6" />
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0230.csv" var="case_record_0230">
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0230.csv" 
+      var="case_record_0230">
+
 		<form id="form_SubpanelQuickCreate_Cases">
 			<select id="status" set="{@case_record_0230.status}" />
 			<select id="priority" set="{@case_record_0230.priority}" />
@@ -71,9 +78,10 @@
 		<!--Verify-->
 		<browser assert="Missing required field: Subject" />
 	</csv>
+
 	<button value="Cancel" alert="true" />
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0230.xml finished." />
 </soda>
-            
+
