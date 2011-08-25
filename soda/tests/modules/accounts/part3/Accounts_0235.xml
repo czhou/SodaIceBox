@@ -27,9 +27,10 @@
 
 <soda>
 	<!--
-		Account Detail - Contacts sub-panel - Select_Verify that the search condition
-		on the select contacts pop-up box can be cleared.
+		Account Detail - Contacts sub-panel - Select_Verify that the search 
+      condition on the select contacts pop-up box can be cleared.
 	-->
+
 	<puts text="Test: Accounts_0235.xml started." />
 
 	<!--Create a account record-->
@@ -40,10 +41,12 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
-	<wait timeout="7" />
-	<textfield id="name_basic" set="{@pre_account_name}" />
+
+	<wait timeout="3" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -52,28 +55,35 @@
 	<div id="list_subpanel_contacts">
 		<button id="accounts_contacts_select_button" />
 	</div>
-	<textfield id="first_name_advanced" set="Him" />
-	<button value="Search" />
-	<wait timeout="3" />
-	<table class="list view">
-		<row class="pagination">
-			<span class="pageNumbers" assert="(0 - 0 of 0)" />
-		</row>
-	</table>
-	<button value="Clear" />
-	<textfield id="first_name_advanced" assert="" />
-	<button value="Search" />
-	<wait timeout="3" />
-	<table class="list view">
-		<row class="pagination">
-			<span class="pageNumbers" assert="(1 - 1 of 1)" />
-		</row>
-	</table>
-	<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+   <wait timeout="3" />
+
+   <attach title="SugarCRM">
+      <textfield id="first_name_advanced" set="Him" />
+      <button id="search_form_submit" />
+      <wait timeout="3" />
+      <table class="list view">
+         <tr class="pagination">
+            <span class="pageNumbers" assert="(0 - 0 of 0)" />
+         </tr>
+      </table>
+
+      <button id="search_form_clear" />
+      <textfield id="first_name_advanced" assert="" />
+      <button id="search_form_submit" />
+
+      <wait timeout="4" />
+      <table class="list view">
+         <tr class="pagination">
+            <span class="pageNumbers" assert="(1 - 1 of 1)" />
+         </tr>
+      </table>
+      <link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
+      <wait timeout="3" />
+   </attach>
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0235.xml finished." />
 </soda>
-                        
+
