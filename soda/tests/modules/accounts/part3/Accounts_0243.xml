@@ -27,9 +27,10 @@
 
 <soda>
 	<!--
-		Account Detail - Activities sub-panel - Edit Call_Verify that "Schedule Call"
-		is correctly edited on "Cases" sub-panel.
+		Account Detail - Activities sub-panel - Edit Call_Verify that 
+      "Schedule Call" is correctly edited on "Cases" sub-panel.
 	-->
+
 	<puts text="Test: Accounts_0243.xml starting." />
 
 	<!--Create a account record-->
@@ -38,7 +39,8 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
 	<wait timeout="3" />
 	<textfield id="name_basic" set="{@pre_account_name}" />
@@ -48,14 +50,17 @@
 	</table>
 
 	<!--Create Call-->
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0243.csv" var="call_record_243" />
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0243.csv" 
+      var="call_record_243" />
 	<div id="list_subpanel_activities">
-		<button value="  Log Call  " />
+		<button id="Activities_logcall_button" />
 	</div>
+
 	<div id="form_SubpanelQuickCreate_Calls_tabs">
-		<textfield name="name" set="{@call_record_243.name}" />
+		<textfield name="name" set="{@call_record_243.name}" clear="true" />
 		<select id="date_start_hours" set="{@call_record_243.date_start_hours}" />
-		<select id="date_start_minutes" set="{@call_record_243.date_start_minutes}" />
+		<select id="date_start_minutes" 
+         set="{@call_record_243.date_start_minutes}" />
 	</div>
 
 	<button id="Calls_subpanel_save_button" />
@@ -72,3 +77,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0243.xml finished." />
 </soda>
+
