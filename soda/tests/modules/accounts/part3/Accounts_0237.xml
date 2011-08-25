@@ -27,8 +27,8 @@
 
 <soda>
 	<!--
-		Account Detail - Activities sub-panel - Edit Task_Verify that task is closed
-		by clicking "Close and Create New" button on edit view.
+		Account Detail - Activities sub-panel - Edit Task_Verify that task is 
+      closed by clicking "Close and Create New" button on edit view.
 	-->
 	<puts text="Test: Accounts_0237.xml started." />
 
@@ -38,10 +38,12 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
+
 	<wait timeout="3" />
-	<textfield id="name_basic" set="{@pre_account_name}" />
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -50,10 +52,15 @@
 
 	<!-- Create a task -->
 	<div id="list_subpanel_activities">
-		<button value="  Create Task  " />
+		<button id="Activities_createtask_button" />
 	</div>
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0237.csv" var="task_record_237" />
-	<textfield id="name" set="{@task_record_237.subject}" />
+   <wait timeout="7" />
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0237.csv" 
+      var="task_record_237" />
+
+   <div id="Default_Tasks_Subpanel">
+   	<textfield id="name" set="{@task_record_237.subject}" clear="true" />
+   </div>
 	<div id="subpanel_activities_newDiv">
 		<button id="Tasks_subpanel_save_button" />
 	</div>
@@ -65,23 +72,29 @@
 	</div>
 	<div id="list_subpanel_activities">
 		<table class="list view">
-			<link class="listViewTdToolsS1" index="1" />
+         <tr index="4">
+            <td index="2">
+	      		<link text="{@task_record_237.subject}" />
+            </td>
+         </tr>
 		</table>
 	</div>
 
 	<!-- Close and Create New Task -->
 	<button value="Close and Create New" />
 	<wait timeout="3" />
-	<textfield id="name" set="{@task_record_237.new_subject}" />
+	<textfield id="name" set="{@task_record_237.new_subject}" clear="true" />
 	<button id="SAVE" />
 
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
 	<wait timeout="3" />
-	<textfield id="name_basic" set="{@pre_account_name}" />
+
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
@@ -90,8 +103,15 @@
 
 	<!-- Verify new Task and closed Task -->
 	<div id="list_subpanel_activities">
-		<link text="{@task_record_237.new_subject}" click="false" />
+		<table class="list view">
+         <tr index="4">
+            <td index="2">
+               <link text="{@task_record_237.new_subject}" click="false" />
+            </td>
+         </tr>
+		</table>
 	</div>
+
 	<div id="list_subpanel_history">
 		<link text="{@task_record_237.subject}" click="false" />
 	</div>
@@ -100,4 +120,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0237.xml finished." />
 </soda>
-                        
+
