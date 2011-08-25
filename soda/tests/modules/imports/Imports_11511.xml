@@ -17,7 +17,7 @@
 		<browser assert="Step 2: Upload Import File" />
 	</div>
 
-	<filefield name="userfile" set="{@global.scriptsdir}/csvs/imports/Imports_11509.csv" />
+	<filefield name="userfile" set="{@global.scriptsdir}/csvs/imports/Imports_11511.csv" />
 	<button id="gonext" />
 	<wait timeout="5" />
 
@@ -59,18 +59,10 @@
 		<link href="index.php?module=Contacts&amp;action=index" click="false" />
 	</div>
 	
-	<!--Search the record to assert import successfully -->
-	<link id="moduleTab_Contacts" />
-	<div class="moduleTitle">
-		<link href="index.php?module=Contacts&amp;action=index" click="false" />
-	</div>
-	<csv file="{@global.scriptsdir}/export/Imports_11511.csv" var="import_11511">
-		<textfield id="search_name_basic" set="{@import_11511.first_name}" />
-		<button id="search_form_submit" />
-		<table class="list view">
-			<link text="{@import_11511.first_name} {@import_11511.last_name}" />
-		</table>
-	</csv>
+	<div id="pageNumIW_0_div">
+                <span class="pageNumbers" assert="(1 - 1 of 1)"/>
+        </div>
+
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<puts text="Test: Imports_11511.xml finished." />

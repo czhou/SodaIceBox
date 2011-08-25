@@ -55,10 +55,10 @@
 			<link href="index.php?module=Contacts&amp;action=index" click="false" />
 		</div>
 
-		<textfield id="search_name_basic" set="{@import_11499..last_name,}" />
+		<textfield id="search_name_basic" set="{@import_11499..last_name}" />
 		<button id="search_form_submit" />
 		<table class="list view">
-			<link text="{@import_11499..first_name,} {@import_11499..last_name,}" />
+			<link text="{@import_11499.first_name} {@import_11499..last_name}" />
 		</table>
 	</csv>
 

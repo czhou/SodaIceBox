@@ -47,17 +47,10 @@
 			<browser assert="Step 6: View Import Results" />
 		</div>
 
-		<!--Search the record to assert import successfully -->
-		<link id="moduleTab_Contacts" />
-		<div class="moduleTitle">
-			<link href="index.php?module=Contacts&amp;action=index" click="false" />
-		</div>
+		<div id="pageNumIW_0_div">
+                        <span class="pageNumbers" assert="(1 - 1 of 1)"/>
+                </div>
 
-		<textfield id="search_name_basic" set="{@import_11502.last_name}" />
-		<button id="search_form_submit" />
-		<table class="list view">
-			<link text="{@import_11502.first_name} {@import_11502.last_name}" />
-		</table>
 	</csv>
 
 	<!--Delete the record-->

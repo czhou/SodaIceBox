@@ -18,7 +18,7 @@
 			<browser assert="Step 2: Upload Import File" />
 		</div>
 
-		<filefield name="userfile" set="{@global.scriptsdir}/imports/Imports_11523.csv" />
+		<filefield name="userfile" set="{@global.scriptsdir}/csvs/imports/Imports_11523.csv" />
 		<button id="gonext" />
 		<wait timeout="5" />
 
@@ -64,18 +64,10 @@
 		<div id="importWizardDialogTitle">
 			<browser assert="Step 6: View Import Results" />
 		</div>
+		<div id="pageNumIW_0_div">
+                        <span class="pageNumbers" assert="(1 - 1 of 1)"/>
+                </div>
 
-		<!--Search the record to assert import successfully -->
-		<link id="moduleTab_Contacts" />
-		<div class="moduleTitle">
-			<link href="index.php?module=Contacts&amp;action=index" click="false" />
-		</div>
-
-		<textfield id="search_name_basic" set="{@import_11523.last_name}" />
-		<button id="search_form_submit" />
-		<table class="list view">
-			<link text="{@import_11523.first_name} {@import_11523.last_name}" />
-		</table>
 	</csv>
 
 	<!--Delete the record-->
