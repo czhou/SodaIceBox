@@ -27,11 +27,15 @@
 
 <soda>
 	<puts text="Lib: Task_Delete_Lib.xml starting." />
-	<csv file="{@global.scriptsdir}/csvs/calendar/CalendarAssertText.csv" var="calendar" />
+	<csv file="{@global.scriptsdir}/csvs/calendar/CalendarAssertText.csv" 
+      var="calendar" />
 
+   <li id="moduleTabExtraMenuAll" click="true" />
+   <wait timeout="2" />
 	<link id="moduleTab_Tasks" />
 	<div class="moduleTitle">
-		<link href="{@global.url}/index.php?module=Tasks&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Tasks&amp;action=index" 
+         click="false" />
 	</div>
 
 	<button id="search_form_clear" />
@@ -45,3 +49,4 @@
 
 	<puts text="Lib: Task_Delete_Lib.xml finished." />
 </soda>
+
