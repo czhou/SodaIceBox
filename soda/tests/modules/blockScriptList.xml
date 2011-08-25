@@ -652,13 +652,6 @@
 	</block>
 	
 	<block>
-		<testfile>Accounts_0221</testfile>
-		<bugnumber>36446</bugnumber>
-		<reason>bug36446 (Soda: CTRL+W could not work on Firefox)</reason>
-		<modulename>Accounts</modulename>
-	</block>
-	
-	<block>
 		<testfile>Accounts_0365</testfile>
 		<bugnumber>33525</bugnumber>
 		<reason>bug33525</reason>
