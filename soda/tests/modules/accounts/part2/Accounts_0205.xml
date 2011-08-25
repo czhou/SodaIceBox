@@ -39,28 +39,41 @@
 
 	<!-- Establish a Member Organization between first and second account -->
 	<button id="member_accounts_select_button" />
-	<table class="list view">
-		<link text="{@first_account}" />
-	</table>
+   <wait timeout="3" />
+   <attach title="SugarCRM">
+      <table class="list view">
+         <link text="{@first_account}" />
+      </table>
+      <wait timeout="4" />
+   </attach>
 
 	<!-- Search for second account to verify -->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
-	<textfield id="name_basic" set="{@second_account}" />
+
+	<textfield id="name_basic" set="{@second_account}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@second_account}" />
 	</table>
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 		<browser assert="{@second_account}" />
 	</div>
 
-	<!-- Remove relation of first account under Member Org subpanel and verify -->
+	<!-- Remove relation of first account under Member Org subpanel and 
+      verify 
+   -->
 	<div id="list_subpanel_accounts">
-		<link class="listViewTdToolsS1" index="2" alert="true" />
+      <tr index="4">
+         <td index="5">
+	      	<link text=" rem" alert="true" />
+         </td>
+      </tr>
 	</div>
 	<wait timeout="5" />
 	<div id="list_subpanel_accounts">
@@ -71,3 +84,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0205.xml finished." />
 </soda>
+
