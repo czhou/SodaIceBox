@@ -1,6 +1,20 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Reports_11798</testfile>
+		<bugnumber>44880</bugnumber>
+		<reason>Test is for a bug which is not fixed yet.</reason>
+		<modulename>Reports</modulename>
+	</block>
+
+	<block>
+		<testfile>Reports_11821</testfile>
+		<bugnumber>45250</bugnumber>
+		<reason>Test is for a bug which is not fixed yet.</reason>
+		<modulename>Reports</modulename>
+	</block>
+
+	<block>
 		<testfile>Studio_10114</testfile>
 		<bugnumber>46358</bugnumber>
 		<reason>SugarLogic does not handle divide by 0 gracefully anymore.</reason>
