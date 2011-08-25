@@ -27,8 +27,9 @@
 
 <soda>
 	<!--
-		Account Detail - Activities sub-panel - Compose Email_Verify that new "Compose
-		Email" is correctly created for Activities under "Activities" sub-panel.
+		Account Detail - Activities sub-panel - Compose Email_Verify that new 
+      "Compose Email" is correctly created for Activities under "Activities" 
+      sub-panel.
 	-->
 	<puts text="Test: Accounts_0217.xml starting." />
 
@@ -43,17 +44,24 @@
 		<button value="Compose Email" />
 	</div>
 	<wait timeout="5" />
+
 	<table id="composeHeaderTable0">
-		<textfield id="emailSubject0" set="Testing Accounts_0217.xml" />
-		<textfield id="emailSubject0" set="Testing Accounts_0217.xml" />
-		<button index="1" alert="true" />
+		<textfield id="emailSubject0" set="Testing Accounts_0217.xml" 
+         clear="true" />
+		<button index="0" alert="true" />
 	</table>
 
 	<wait timeout="35" />
 
 	<!-- Verify email appears under History Subpanel -->
 	<div id="list_subpanel_history">
-		<link text="Testing Accounts_0217.xml" click="false" />
+      <table class="list view">
+         <tr index="4">
+            <td index="1">
+         		<link text="Testing Accounts_0217.xml" click="false" />
+            </td>
+         </tr>
+      </table>
 	</div>
 
 	<!--Delete the record-->
@@ -61,3 +69,4 @@
 
 	<puts text="Test: Accounts_0217.xml finished." />
 </soda>
+
