@@ -3,63 +3,52 @@
 	<puts text="Test Case 11498: Verify delimiter can be detected from Custom separator file."/>
 
 	<link id="moduleTab_Leads" />
-	<csv file="{@global.scriptsdir}/csvs/imports/Imports_11498.csv" var="import_11498">
 
-		<link text="Import Leads" />
+	<link text="Import Leads" />
 
-		<!--Step1-->
-		<div id="importWizardDialogTitle">
-			<browser assert="Step 1: Select Data Source" />
-		</div>
-		<button id="gonext"/>
+	<!--Step1-->
+	<div id="importWizardDialogTitle">
+		<browser assert="Step 1: Select Data Source" />
+	</div>
+	<button id="gonext"/>
 
-		<!--Step2-->
-		<div id="importWizardDialogTitle">
-			<browser assert="Step 2: Upload Import File" />
-		</div>
+	<!--Step2-->
+	<div id="importWizardDialogTitle">
+		<browser assert="Step 2: Upload Import File" />
+	</div>
 
-		<filefield name="userfile" set="{@global.scriptsdir}/csvs/imports/Imports_11498.csv" />
-		<button id="gonext" />
-		<wait timeout="5" />
+	<filefield name="userfile" set="{@global.scriptsdir}/csvs/imports/Imports_11498.csv" />
+	<button id="gonext" />
+	<wait timeout="5" />
 
-		<!--Step3-->
-		<div id="importWizardDialogTitle">
-			<browser assert="Step 3: Confirm Import File Properties" />
-		</div>
+	<!--Step3-->
+	<div id="importWizardDialogTitle">
+		<browser assert="Step 3: Confirm Import File Properties" />
+	</div>
 
-		<button id="toggleImportOptions" />
-		<textfield id="custom_delimiter" assert="."/>
+	<button id="toggleImportOptions" />
+	<textfield id="custom_delimiter" assert="."/>
 
-		<button id="gonext" />
+	<button id="gonext" />
 	
-		<!--Step4-->
-		<div id="importWizardDialogTitle">
-			<browser assert="Step 4: Confirm Field Mappings" />
-		</div>
-		<button id="gonext" />
+	<!--Step4-->
+	<div id="importWizardDialogTitle">
+	<browser assert="Step 4: Confirm Field Mappings" />
+	</div>
+	<button id="gonext" />
 		
-		<!--Step5-->
-		<button id="importnow" />
-		<wait timeout="10" />
+	<!--Step5-->
+	<button id="importnow" />
+	<wait timeout="10" />
 
-		<!--Step6-->
-		<div id="importWizardDialogTitle">
-			<browser assert="Step 6: View Import Results" />
-		</div>
+	<!--Step6-->
+	<div id="importWizardDialogTitle">
+	<browser assert="Step 6: View Import Results" />
+	</div>
 
-		<!--Search the record to assert import successfully -->
-		<link id="moduleTab_Leads" />
-		<div class="moduleTitle">
-			<link href="index.php?module=Leads&amp;action=index" click="false" />
-		</div>
-
-		<textfield id="search_name_basic" set="{@import_11498.last_name}" />
-		<button id="search_form_submit" />
-		<table class="list view">
-			<link text="{@import_11498.first_name} {@import_11498.last_name}" />
-		</table>
-	</csv>
-
+	<div id="pageNumIW_0_div">
+                <span class="pageNumbers" assert="(1 - 1 of 1)"/>
+        </div>
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Lead_Delete_Lib.xml" />
 	<puts text="Test: Imports_11498.xml finished." />

@@ -6,6 +6,7 @@
 	<csv file="{@global.scriptsdir}/csvs/imports/Imports_11502.csv" var="import_11502">
 
 		<link text="Import Contacts" />
+		<wait timeout="3"/>
 
 		<!--Step1-->
 		<div id="importWizardDialogTitle">
