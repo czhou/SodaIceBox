@@ -39,32 +39,38 @@
 	<!--Search the record-->
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">
-		<link href="index.php?module=Accounts&amp;action=index" click="false" />
+		<link href="{@global.url}/index.php?module=Accounts&amp;action=index" 
+         click="false" />
 	</div>
 	<wait timeout="3" />
-	<textfield id="name_basic" set="{@pre_account_name}" />
+
+	<textfield id="name_basic" set="{@pre_account_name}" clear="true" />
 	<button id="search_form_submit" />
 	<table class="list view">
 		<link text="{@pre_account_name}" />
 	</table>
 
 	<!--Create Note/Attachment but cancel it-->
-	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0246.csv" var="note_248" />
+	<csv file="{@global.scriptsdir}/csvs/accounts/Accounts_0246.csv" 
+      var="note_248" />
 	<div id="list_subpanel_history">
-		<button value="  Create Note or Attachment  " />
+		<button id="History_createnoteorattachment_button" />
 	</div>
 	<wait timeout="3" />
 	<div id="form_SubpanelQuickCreate_Notes_tabs">
 		<textfield id="name" set="{@note_248.name}" />
 	</div>
-	<button id="Notes_subpanel_cancel_button" alert="true" />
+	<button id="Notes_subpanel_cancel_button" />
+   <wait timeout="2" />
+   <alert alert="true" />
+
 	<wait timeout="5" />
 	<div id="list_subpanel_history">
-		<link text="{@note_248.name}" exists="false" />
+		<link text="{@note_248.name}" exist="false" />
 	</div>
-
 
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<puts text="Test: Accounts_0248.xml finished." />
 </soda>
+
