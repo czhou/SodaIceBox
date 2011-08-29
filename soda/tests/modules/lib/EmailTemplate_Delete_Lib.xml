@@ -15,7 +15,15 @@
 	<link id="actions_link" />
 	<link text="Delete" alert="true" />
 	<wait timeout="3" />
-	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+
+	<!-- Asserting on "(0 - 0 of 0)" was failing even when it should pass.  Trying this instead.  -->
+	<table class="list view">
+		<tr class="oddListRowS1">
+			<td index="1">
+				<browser assert="No Data" />
+			</td>
+		</tr>
+	</table>
 
 	<puts text="Lib: EmailTemplate_Delete_Lib.xml finished." />
 </soda>

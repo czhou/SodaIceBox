@@ -78,7 +78,7 @@
 	<button value="  Create Note or Attachment  " />
 	<textfield id="name" set="Note_{@pre_meeting_name}" />
 	<button id="Notes_subpanel_save_button" />
-	<wait timeout="5" />
+	<wait timeout="7" />
 	
 	<div id="subpanel_history">
 		<browser assert="Note_{@pre_meeting_name}" />

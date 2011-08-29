@@ -1,4 +1,3 @@
-
 <soda>
     
     <!-- strToUpper function test -->
@@ -62,4 +61,5 @@
     <script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
     
     <puts text="Test: Studio_10150.xml finished." />
+
 </soda>

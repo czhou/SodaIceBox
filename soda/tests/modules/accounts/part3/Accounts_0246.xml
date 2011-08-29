@@ -31,7 +31,7 @@
 		<textfield id="name" set="{@note_246.name}" />
 	</div>
 	<button id="Notes_subpanel_save_button" />
-	<wait timeout="5" />
+	<wait timeout="7" />
 	<div id="list_subpanel_history">
 		<link text="{@note_246.name}" click="false" />
 	</div>
@@ -55,9 +55,9 @@
 		<link text="{@note_246.name2}" click="false" />
 	</div>
 
-
 	<!--Delete the record-->
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
+
 	<puts text="Test: Accounts_0246.xml finished." />
 </soda>

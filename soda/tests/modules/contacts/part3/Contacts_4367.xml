@@ -24,49 +24,38 @@
   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
-
 <soda>
 	<!--
 		Delete case_Verify that related case can be deleted from contact detail view.
 	-->
 	<puts text="Test: Contacts_4367.xml starting." />
 
-	<!--Create contact record & task subpanel-->
+	<!-- Create contact record & task subpanel -->
 	<script file="{@global.scriptsdir}/modules/lib/Case_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 
-	<!--goto Cases subpanel & select a case -->
+	<!-- Goto Cases subpanel & select a case -->
 	<button id="contacts_cases_select_button" />
-	<wait timeout="2"/>
-	<textfield id="name_advanced" set="{@pre_case_name}"/>
-	<button value="Search"/>
-	<link text="{@pre_case_name}"/>
+	<wait timeout="2" />
+	<textfield id="name_advanced" set="{@pre_case_name}" />
+	<button value="Search" />
+	<link text="{@pre_case_name}" />
 
 	<div id="list_subpanel_cases">
 		<table class="list view">
-			<link text="{@pre_case_name}" click="false" exist="true"/>
-		</table>
-	</div>
+			<link text="{@pre_case_name}" click="false" exists="true" />
 
-	<!--Delet the case-->
-	<div id="list_subpanel_cases">
-		<table class="list view">
-			<link text="/rem/" class="listViewTdToolsS1" click="true" alert="true"/>
+			<!-- Delete the case and verify. -->
+			<link text="/rem/" class="listViewTdToolsS1" click="true" alert="true" />
+			<wait timeout="5" />
+			<link text="{@pre_case_name}" click="false" exists="false" />
 		</table>
 	</div>
-	<wait timeout="3"/>
-
-	<!--Verify this deleting action works-->
-	<div id="list_subpanel_cases">
-		<table class="list view">
-			<link text="{@pre_case_name}" click="false" exists="false"/>
-		</table>
-	</div>
-	
 
 	<!--Delete related record-->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Case_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
+
 	<puts text="Test: Contacts_4367.xml finished." />
 </soda>

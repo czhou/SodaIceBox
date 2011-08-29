@@ -21,6 +21,7 @@
 			</li>
 		</div>
 	</div>
+	<wait timeout="1" />
 	
 	<div id="ext_rest_twitter:enabled_div" assert="/.*Accounts.*/" />
 	<div id="ext_rest_twitter:enabled_div" assert="/.*Contacts.*/" />

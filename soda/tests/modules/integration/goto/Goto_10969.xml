@@ -1,45 +1,47 @@
 
 <soda>
 	<puts text="Test: Goto_10969.xml starting." />
+
 	<link id="moduleTab_Accounts"/>
-	<button   id="search_form_clear"/>
-        <form id="search_form">
-            <textfield id="name_basic" set="{@pre_account_name}"/>
-        </form>
-    <button id="search_form_submit"/>
+	<button id="search_form_clear"/>
+	<form id="search_form">
+		<textfield id="name_basic" set="{@pre_account_name}"/>
+	</form>
+	<button id="search_form_submit"/>
     <wait timeout="2" />
-    <table class="list view">
+    
+	<table class="list view">
         <link text="{@pre_account_name}"/>
     </table>
     <browser assert="{@pre_account_name}"/>
 	
 	<button id="Activities_schedulemeeting_button" />
+	<wait timeout="3" />
 	<div id="form_SubpanelQuickCreate_Meetings_tabs">
-		<timestamp />
 		<select id="type" set="GoToMeeting" />
 		<textfield id="name" set="GotoMeeting_Sub_AjaxForm" /> 
 	</div>
 	<button id="Meetings_subpanel_save_button" />
-	<wait timeout='10'/>
-	<link text="GotoMeeting_Sub_AjaxForm" click="false" exist="true"/>
+	<wait timeout="10"/>
+	<link text="GotoMeeting_Sub_AjaxForm" click="false" exists="true"/>
 
 	<button id="Activities_schedulemeeting_button" />
+	<wait timeout="3" />
 	<button id="Meetings_subpanel_full_form_button" />
 	<form id="EditView">
-		<timestamp />
 		<select id="type" set="GoToMeeting" />
 		<textfield name="name" set="GotoMeeting_Sub_FullForm" /> 
 		<button value="Save" />
 	</form>
-	<wait timeout='10'/>
-	<link text="GotoMeeting_Sub_FullForm" click="false" exist="true"/>
+	<wait timeout="10"/>
+	<link text="GotoMeeting_Sub_FullForm" click="false" exists="true"/>
 
-	<link class='listViewTdToolsS1' index='2' alert='true' />
-	<wait timeout='3'/>
-	<link class='listViewTdToolsS1' index='2' alert='true' />
-	<wait timeout='3'/>
-	<link text="GotoMeeting_Sub_AjaxForm" click="false" exist="false"/>
-	<link text="GotoMeeting_Sub_FullForm" click="false" exist="false"/>
+	<link class="listViewTdToolsS1" index="2" alert="true" />
+	<wait timeout="3"/>
+	<link class="listViewTdToolsS1" index="2" alert="true" />
+	<wait timeout="3"/>
+	<link text="GotoMeeting_Sub_AjaxForm" click="false" exists="false"/>
+	<link text="GotoMeeting_Sub_FullForm" click="false" exists="false"/>
 
 	<link id="moduleTab_Meetings" />
 	<link text="View Meetings" />

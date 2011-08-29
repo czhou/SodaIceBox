@@ -18,6 +18,7 @@
 		<link text="{@pre_contact_first_name} {@pre_contact_last_name}" />
 	</table>
 	<button id="Activities_createtask_button"/>
+	<wait timeout="3" />
 	<csv file="{@global.scriptsdir}/modules/lib/Task_Create_Lib.csv" var="Contacts_7884_Task">
 		<textfield id="name" set="{@Contacts_7884_Task.name} {@user.name} {@stamp}" />
 		<select id="priority" set="{@Contacts_7884_Task.priority}" />
@@ -28,13 +29,11 @@
 		<textfield id="date_due_date" set="{@Contacts_7884_Task.date_due_date}" />
 		<select id="date_due_hours" set="{@Contacts_7884_Task.date_due_hours}" />
 		<select id="date_due_minutes" set="{@Contacts_7884_Task.date_due_minutes}" />
-		
 
 		<!--Start Date-->
 		<textfield id="date_start_date" set="{@Contacts_7884_Task.date_start_date}" />
 		<select id="date_start_hours" set="{@Contacts_7884_Task.date_start_hours}" />
 		<select id="date_start_minutes" set="{@Contacts_7884_Task.date_start_minutes}" />
-		
 
 		<button id="Tasks_subpanel_save_button" />
 		<wait timeout="5" />
@@ -57,5 +56,4 @@
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
 	<puts text="Test: Contacts_7884.xml finished." />
-
 </soda>

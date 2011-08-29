@@ -1,7 +1,5 @@
 <soda>
 	<script file="tests/modules/integration/goto/module_lib/setup-goto.xml" />
-	<script file="tests/modules/integration/goto/module_lib/Goto_Init.xml" />
 	<script fileset="tests/modules/integration/goto" />
-	<script file="tests/modules/integration/goto/module_lib/Goto_UnInit_Lib.xml" />
 	<script file="tests/modules/integration/goto/module_lib/cleanup-goto.xml" />
 </soda>
