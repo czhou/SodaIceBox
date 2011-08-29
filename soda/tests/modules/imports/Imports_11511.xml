@@ -7,13 +7,13 @@
 	<link text="Import Contacts" />
 
 	<!--Step1-->
-	<div id="importWizardDialogTitle">
+	<div class="moduleTitle">
 		<browser assert="Step 1: Select Data Source" />
 	</div>
 	<button id="gonext"/>
 
 	<!--Step2-->
-	<div id="importWizardDialogTitle">
+	<div class="moduleTitle">
 		<browser assert="Step 2: Upload Import File" />
 	</div>
 
@@ -22,7 +22,7 @@
 	<wait timeout="5" />
 
 	<!--Step3-->
-	<div id="importWizardDialogTitle">
+	<div class="moduleTitle">
 		<browser assert="Step 3: Confirm Import File Properties" />
 	</div>
 	
@@ -38,7 +38,7 @@
 	<button id="gonext" />
 
 	<!--Step4-->
-	<div id="importWizardDialogTitle">
+	<div class="moduleTitle">
 		<browser assert="Step 4: Confirm Field Mappings" />
 	</div>
 	<button id="gonext" />
@@ -49,7 +49,7 @@
 	<wait timeout="10" />
 
 	<!--Step6-->
-	<div id="importWizardDialogTitle">
+	<div class="moduleTitle">
 		<browser assert="Step 6: View Import Results" />
 	</div>
 
