@@ -5,27 +5,29 @@
 	<link id="moduleTab_Campaigns"/>
 	
 	<link text="Set Up Email"/>
-	<browser assert="Fill out the form below to modify your system settings so that campaign emails can be sent out. "/>
-	<textfield id="mail_smtpserver" set="qa.sugar.qa@gmail.com"/>
-	<textfield id="mail_smtppass" set="sugarcrm"/>
-	<checkbox id="massemailer_tracking_entities_location_type" set="true"/>      
-        <textfield id="massemailer_tracking_entities_location" set="/user"/> 
+	<browser assert="Fill out the form below to modify your system settings so that campaign emails can be sent out."/>
+	<textfield id="notify_fromname" set="Sugar_Campaign" />
+	<textfield id="notify_fromaddress" set="Sugar_Campaign@sugarcrm.com" />
+	<textfield id="mail_smtpserver" set="smtp.gmail.com"/>
+	<textfield id="mail_smtpport" set="587"/>
+	<checkbox id="mail_smtpauth_req" set="true"/>
+	<select id="mail_smtpssl" set="2" />
+	<textfield id="mail_smtpuser" set="sugarqa8@gmail.com"/>
+	<textfield id="mail_smtpserver" set="smtp.gmail.com"/>
+	<textfield id="mail_smtppass" set="sugarcrm1"/>
 	<button id="wiz_next_button"/>
 
 	<browser assert="No mail accounts with bounce handling were detected, please create a new one below. ."/>
 	<select id="protocol" set="imap"/>
+	<checkbox id="ssl" set="true"/>
 	<button id="wiz_next_button"/>
 
-	<browser assert="Location of campaign tracking files (like campaign_tracker.php):"/>
 	<button id="wiz_submit_button"/>
 
 	<link text="Set Up Email"/>
 
 	<browser assert="Fill out the form below to modify your system settings so that campaign emails can be sent out. "/>
-	<checkbox id="massemailer_tracking_entities_location_type" assert="true"/>
-	<textfield id="massemailer_tracking_entities_location" assert="/user"/>	
-	
-	<link id="moduleTab_Campaigns"/>
+	<textfield id="mail_smtpserver" assert="smtp.gmail.com" />	
 
 	<puts text="Test: Campaigns_11814.xml finished." />
 </soda>

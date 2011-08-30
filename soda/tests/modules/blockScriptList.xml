@@ -1109,31 +1109,31 @@
 	
 	<!-- Gino's modules -->
 	<block>
-		<testfile>Accounts_0037.xml</testfile>
+		<testfile>Accounts_0037</testfile>
 		<bugnumber>45397</bugnumber>
 		<reason>Save not working from Contact edit view subpanel</reason>
 		<modulename>Accounts</modulename>
 	</block>	
 	<block>
-		<testfile>Accounts_0041.xml</testfile>
+		<testfile>Accounts_0041</testfile>
 		<bugnumber>45397</bugnumber>
 		<reason>Save not working from Contact edit view subpanel</reason>
 		<modulename>Accounts</modulename>
 	</block>	
 	<block>
-		<testfile>Accounts_0046.xml</testfile>
+		<testfile>Accounts_0046</testfile>
 		<bugnumber>45397</bugnumber>
 		<reason>Save not working from Contact edit view subpanel</reason>
 		<modulename>Accounts</modulename>
 	</block>
 	<block>
-		<testfile>Accounts_0119.xml</testfile>
+		<testfile>Accounts_0119</testfile>
 		<bugnumber>45397</bugnumber>
 		<reason>Save not working from Contact edit view subpanel</reason>
 		<modulename>Accounts</modulename>
 	</block>
 	<block>
-		<testfile>Accounts_0198.xml</testfile>
+		<testfile>Accounts_0198</testfile>
 		<bugnumber>45397</bugnumber>
 		<reason>Save not working from Contact edit view subpanel</reason>
 		<modulename>Accounts</modulename>
@@ -1141,9 +1141,36 @@
 	<!-- End of Gino's modules -->
 	
 	<block>
-		<testfile>Imports_11497.xml</testfile>
+		<testfile>Imports_11497</testfile>
 		<bugnumber>46190</bugnumber>
 		<reason>SODA can't recognize the "	" (Tab).</reason>
 		<modulename>imports</modulename>
 	</block>
+	
+	<!-- Eric's Modules -->
+	<block>
+		<testfile>Campaigns_1172</testfile>
+		<bugnumber>46460</bugnumber>
+		<reason>Production bug</reason>
+		<modulename>campaigns</modulename>
+	</block>
+	<block>
+		<testfile>Campaigns_1181</testfile>
+		<bugnumber>46460</bugnumber>
+		<reason>Production bug</reason>
+		<modulename>campaigns</modulename>
+	</block>
+	<block>
+		<testfile>Campaigns_1182</testfile>
+		<bugnumber>46460</bugnumber>
+		<reason>Production bug</reason>
+		<modulename>campaigns</modulename>
+	</block>
+	<block>
+		<testfile>Campaigns_1166</testfile>
+		<bugnumber>46460</bugnumber>
+		<reason>Production bug</reason>
+		<modulename>campaigns</modulename>
+	</block>
+	<!-- End of Eric's modules -->
 </soda>

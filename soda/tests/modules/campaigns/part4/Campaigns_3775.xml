@@ -22,10 +22,14 @@
 	
 	<!-- edit button -->
 	<table class="list view">
-		<row class="oddListRowS1" index="1">
-			<link index="1" />
-		</row>
+		<tr class="oddListRowS1" index="1">
+			<link id="/edit*/" />
+		</tr>
 	</table>
+	
+	<form id="form_DCEditView_ProspectLists">
+		<button id="ProspectLists_subpanel_full_form_button" />
+	</form>
 	
 	<textfield id="name" set="{@targetlist1_mod_name}" />
 	<button id="SAVE_HEADER" />
