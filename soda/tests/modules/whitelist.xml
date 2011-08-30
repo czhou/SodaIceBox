@@ -1,5 +1,4 @@
-﻿
-<soda>
+﻿<soda>
    <white>
       <data>Warning: An SMTP server for outbound emails is not configured in Email Settings.</data>
       <reason>Bug: 37777</reason>

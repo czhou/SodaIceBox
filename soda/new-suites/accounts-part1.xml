@@ -1,4 +1,3 @@
-
 <soda>
 	<script file="tests/modules/accounts/module_lib/setup-accounts.xml" />
 	<script fileset="tests/modules/accounts/part1" />

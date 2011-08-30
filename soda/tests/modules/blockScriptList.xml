@@ -1,6 +1,20 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Users_0599</testfile>
+		<bugnumber>46482</bugnumber>
+		<reason>Need the ability to interact with iframes.</reason>
+		<modulename>Users</modulename>
+	</block>
+
+	<block>
+		<testfile>Users_8240</testfile>
+		<bugnumber>46473</bugnumber>
+		<reason>Sugar is not creating users for newly-added employees.</reason>
+		<modulename>Users</modulename>
+	</block>
+
+	<block>
 		<testfile>Reports_11798</testfile>
 		<bugnumber>44880</bugnumber>
 		<reason>Test is for a bug which is not fixed yet.</reason>
