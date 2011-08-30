@@ -18,7 +18,7 @@
 	<link id="moduleTab_Meetings" />
 	<textfield id="name_basic" set="{@meeting_name}" />
 	<button id="search_form_submit" />
-	<browser action="refresh" alert="true" />
+	<wait timeout="2" />
 	<table class="list view">
 		<row class="oddListRowS1">
 			<cell index="4">

@@ -30,11 +30,7 @@
 	
 	<link id="moduleTab_Meetings" />
 	<table class="list view">
-		<tr class="oddListRowS1" index="1">
-			<td index="6">
-				<link text="/{@meeting1_name}/" />
-			</td>
-		</tr>
+		<link text="{@meeting1_name}" />
 	</table>
 	
 	<div id="list_subpanel_history">

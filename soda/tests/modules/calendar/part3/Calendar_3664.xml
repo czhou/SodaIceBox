@@ -43,11 +43,6 @@
 		<wait timeout="5" />
 		<browser assertnot="Note for {@meeting1_name}" />
 	</div>
-<<<<<<< HEAD
-	
-=======
-
->>>>>>> refs/remotes/origin/6_2_0
 	<link id="moduleTab_Calls" />
 	<table class="list view">
 		<link text="{@call1_name}" />

@@ -36,7 +36,6 @@
 		<button value="Save" />
 		
 		<div id="LBL_CALL_INFORMATION">
-			<browser assert="Invalid Value: date_start" />
 			<browser assert="Invalid Value: Start Date" />
 			<browser assert="Invalid Value: Duration Hours" />
 		</div>
