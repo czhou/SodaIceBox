@@ -1,6 +1,34 @@
 <soda>
 	<!-- David's Modules -->
 	<block>
+		<testfile>Workflow_8976</testfile>
+		<bugnumber>46496</bugnumber>
+		<reason>A workflow to modify a task when an account name is changed generates an error.</reason>
+		<modulename>Workflows</modulename>
+	</block>
+
+	<block>
+		<testfile>Workflow_8908</testfile>
+		<bugnumber>46496</bugnumber>
+		<reason>A workflow to modify a task when an account name is changed generates an error.</reason>
+		<modulename>Workflows</modulename>
+	</block>
+
+	<block>
+		<testfile>Workflow_8146</testfile>
+		<bugnumber>46494</bugnumber>
+		<reason>A workflow to create a task associated with a related lead when an account industry is changed generates an error.</reason>
+		<modulename>Workflows</modulename>
+	</block>
+
+	<block>
+		<testfile>Workflow_8914</testfile>
+		<bugnumber>46491</bugnumber>
+		<reason>A workflow to create a task when an account name is changed generates an error.</reason>
+		<modulename>Workflows</modulename>
+	</block>
+
+	<block>
 		<testfile>Users_0599</testfile>
 		<bugnumber>46482</bugnumber>
 		<reason>Need the ability to interact with iframes.</reason>

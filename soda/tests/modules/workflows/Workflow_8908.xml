@@ -27,6 +27,7 @@
          <button value="  Create" />
       </table>
       <browser assert="Define Condition for Workflow Execution" />
+	  <!-- When a field in the target module contains a specified value  -->
       <radio id="type4" set="true"/>	
       <button id="next" />
       <link id="href_trigger" click="true" />
@@ -41,6 +42,7 @@
       <table class="formHeader h3Row" index="3">
          <button value="  Create" />
       </table>
+	  <!-- Update fields in a related module -->
       <radio id="action_type1" set="true" />
       <wait timeout="5" />
       <link id="href_update_rel" />

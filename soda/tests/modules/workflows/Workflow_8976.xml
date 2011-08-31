@@ -27,6 +27,7 @@
          <button value="  Create" />
       </table>
       <browser assert="Define Condition for Workflow Execution" />
+	  <!-- When the target module changes and a field in a related module contains a specified value -->
       <radio id="type5" set="true" />
       <link id="href_filter_rel_field_1" />
       <select id="selector" set="{@wf_8976.selector}" />
@@ -45,6 +46,7 @@
       <table class="formHeader h3Row" index="3">
          <button value="  Create" />
       </table>
+	  <!-- Create a record associated with a module related to the target module  -->
       <radio id="action_type3" set="true" />
       <wait timeout="2" />
       <link id="href_new_rel" />
