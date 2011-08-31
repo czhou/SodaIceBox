@@ -54,6 +54,10 @@
 
 			<link class="listViewTdToolsS1" index="1" />
 		</div>
+
+		<!-- The edit link pops up a QuickEdit now, so click Full Form. -->
+		<button value="Full Form" />
+
 		<image id="remove_team_name_collection_0" click="true" />
 		<form id="EditView">
 			<button value="Save" />

@@ -43,6 +43,9 @@
 			</table>
 		</div>
 
+		<!-- The edit link pops up a QuickEdit now, so click Full Form. -->
+		<button value="Full Form" />
+
 		<form id="EditView">
 			<textfield id="name" set="{@Case_1380.new_name} {@user.name} {@stamp}" />
 			<button value="Save" />
