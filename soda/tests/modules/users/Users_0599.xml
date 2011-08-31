@@ -1,92 +1,76 @@
-﻿<!--
-  Copyright (c) 2011, SugarCRM, Inc.
-  All rights reserved.
+﻿<soda>
+	<!-- verify current user can't view records when records whose assigned team not including current user -->
+   <puts text="Test: User_0599.xml starting." />
 
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions are met:
-  * Redistributions of source code must retain the above copyright
-  notice, this list of conditions and the following disclaimer.
-  * Redistributions in binary form must reproduce the above copyright
-  notice, this list of conditions and the following disclaimer in the
-  documentation and/or other materials provided with the distribution.
-  * Neither the name of SugarCRM, Inc. nor the
-  names of its contributors may be used to endorse or promote products
-  derived from this software without specific prior written permission.
+   <csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" var="SugarInit0599" />
 
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
-  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
+   <csv file="{@global.scriptsdir}/csvs/users/Users_0599.csv" var="user_record_0599">
+	   <!--Create record-->
+	   <script file="{@global.scriptsdir}/modules/lib/{@user_record_0599.module}" />
 
-<soda>
-    	   <puts text="---User_0599:verify current user can't view records when records whose assigned team not including current user'---Start!"/>
-           <csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" var="SugarInit0599">
-           </csv>
-           <csv file="{@global.scriptsdir}/csvs/users/Users_0599.csv" var="user_record_0599">
-               <!--Create record-->
-               <script file='{@global.scriptsdir}/modules/lib/{@user_record_0599.module}'/>
-              
-                <link id='{@user_record_0599.modulelink}'/>
-                
-                <button value='Clear'/>
-                <browser assert='{@user_record_0599.modulecheck}'/>           
-                <textfield id='name_basic' set='{@pre_account_name}'/>
-                <button id='search_form_submit'/>
-                <table class='list view'>
-                    <span class='pageNumbers' assert='(1 - 1 of 1)'/>
-                </table> 
-                <!--Login in as normal user-->
-                <link text="Log Out"/>
-                <textfield id='user_name' set='{@SugarInit0599.last_name}' />
-                <textfield id='user_password' set='{@SugarInit0599.pass}'/>
-                <button id="login_button" />
-                
-                
-                <link id='{@user_record_0599.modulelink}'/>
-                <button id='search_form_clear' />
-               
-                <browser assert='{@user_record_0599.modulecheck}'/>
-                <textfield id='name_basic' set='{@pre_account_name}'/>
-                <button id='search_form_submit'/>
-                <table class='list view'>
-                    <span class='pageNumbers' assert='(1 - 1 of 1)'/>
-                </table> 
-                
-                <whitelist action="add" name="tmp-white">Error retrieving</whitelist>
-                
-                <link text='{@pre_account_name}'/>
-                <button id='edit_button'/>
-                <table id='EditView_team_name_table'>
-                    <image id='remove_team_name_collection_0' click='true'/>
-                    <button value='Select'/>
-                </table>    
-                <browser assert='Team Search'/>
-                <textfield name='name' set='{@user_record_0599.Notcurrent_team}'/> 
-                <button value='Search'/>
-                <link text='{@user_record_0599.Notcurrent_team}'/>
-                <radio id='primary_team_name_collection_0' set='true'/>
-                <button id='btn_assigned_user_name'/>
-                <browser assert='User Search'/>                        
-                <textfield name='last_name_advanced' set='{@user_record_0599.Notcurrent_user}'/>                        
-                <button value='Search'/>
-                <link text='{@user_record_0599.Notcurrent_user}'/>
-                <button value='Save'/>
-                <wait timeout='2'/>
-                <browser assert='Error retrieving record.  This record may be deleted or you may not be authorized to view it.'/>
-                
-                <whitelist action="delete" name="tmp-white" />
-                <!--Login back to Admin-->
-                <link text='Log Out'/>
-                <script file='{@global.scriptsdir}/modules/lib/login.xml'/>
-                <!--delete record-->
-                <script file='{@global.scriptsdir}/modules/lib/{@user_record_0599.deletemodule}'/>
-                <puts text="---User_0599:current user can't view records when records whose assigned team not including current user---Finished!"/>
-            </csv>
+		<!-- Navigate to that module. -->
+		<link id="{@user_record_0599.modulelink}" />
+		<browser assert="{@user_record_0599.modulecheck}" />           
+		
+		<!-- Verify one record is present. -->
+		<button value="Clear" />
+		<textfield id="name_basic" set="{@pre_account_name}" />
+		<button id="search_form_submit" />
+		<table class="list view">
+			<span class="pageNumbers" assert="(1 - 1 of 1)" />
+		</table> 
+		
+		<!-- Login in as normal user -->
+		<link text="Log Out" />
+		<textfield id="user_name" set="{@SugarInit0599.last_name}" />
+		<textfield id="user_password" set="{@SugarInit0599.pass}" />
+		<button id="login_button" />
+
+		<link id="{@user_record_0599.modulelink}" />
+		<browser assert="{@user_record_0599.modulecheck}" />
+
+		<!-- Verify one record is present. -->
+		<button id="search_form_clear" />
+		<textfield id="name_basic" set="{@pre_account_name}" />
+		<button id="search_form_submit" />
+		<table class="list view">
+			<span class="pageNumbers" assert="(1 - 1 of 1)" />
+		</table> 
+		
+		<whitelist action="add" name="tmp-white">Error retrieving</whitelist>
+		
+		<!-- Change the user and the team so this user does not have access. -->
+		<link text="{@pre_account_name}" />
+		<button id="edit_button" />
+		<table id="EditView_team_name_table">
+			<image id="remove_team_name_collection_0" click="true" />
+			<button value="Select" />
+		</table>    
+		<browser assert="Team Search" />
+		<textfield name="name" set="{@user_record_0599.Notcurrent_team}" /> 
+		<button value="Search" />
+		<link text="{@user_record_0599.Notcurrent_team}" />
+		<radio id="primary_team_name_collection_0" set="true" />
+
+		<button id="btn_assigned_user_name" />
+		<browser assert="User Search" />                        
+		<textfield name="last_name_advanced" set="{@user_record_0599.Notcurrent_user}" />                        
+		<button value="Search" />
+		<link text="{@user_record_0599.Notcurrent_user}" />
+
+		<button value="Save" />
+		<wait timeout="5" />
+		<browser assert="Error retrieving record.  This record may be deleted or you may not be authorized to view it." />
+		
+		<whitelist action="delete" name="tmp-white" />
+
+		<!--Login back to Admin-->
+		<link text="Log Out" />
+		<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+
+		<!--delete record-->
+		<script file="{@global.scriptsdir}/modules/lib/{@user_record_0599.deletemodule}" />
+	</csv>
+
+	<puts text="Test: User_0599.xml starting." />
 </soda>

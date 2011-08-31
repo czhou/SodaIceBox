@@ -1,0 +1,41 @@
+
+<soda>
+	<puts text="Test: Home_11865.xml check the default expected close date starting." />	
+	
+	<link id="moduleTab_Home" />
+	<link id="add_dashlets" />
+	<wait timeout="3" />
+	<link id="chartCategoryAnchor" />
+	<wait timeout="2" />
+	<link text="Pipeline By Sales Stage" />
+	<wait timeout="2" />
+	<div id="dashletsDialogHeader">
+		<link index="1" />
+	</div>
+	
+	<wait timeout="3" />
+	<ul id="col_0_0">
+		<browser assert="Pipeline By Sales Stage" />
+		<div class="dashletToolSet" index="1">
+			<link index="1"/>
+		</div>		
+	</ul>	
+	<div id="dlg">
+		<textfield id="pbss_date_start" assertnot="" />
+		<textfield id="pbss_date_end" assertnot="" />
+		<button value="Save" />
+	</div>
+	
+	<!-- delete the dashlet-->
+	<div class="dashletToolSet" index="1">
+		<link index="3" alert="true" />
+	</div>
+	
+	<wait timeout="3" />
+	<ul id="col_0_0">
+		<browser assertnot="Pipeline by Sales Stage" />
+	</ul>
+	
+	
+	<puts text="Test: Home_11865.xml finished." />
+</soda>	

@@ -1,85 +1,62 @@
-<!--
-  Copyright (c) 2011, SugarCRM, Inc.
-  All rights reserved.
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions are met:
-  * Redistributions of source code must retain the above copyright
-  notice, this list of conditions and the following disclaimer.
-  * Redistributions in binary form must reproduce the above copyright
-  notice, this list of conditions and the following disclaimer in the
-  documentation and/or other materials provided with the distribution.
-  * Neither the name of SugarCRM, Inc. nor the
-  names of its contributors may be used to endorse or promote products
-  derived from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
-  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
-
 <soda>
-    <csv file='{@global.scriptsdir}/csvs/quote/Quote_2541.csv' var='Quote_2541'>
-        <puts text='----Quote_2541.xml----Quote Detail - History sub-panel_Verify that onte related to this Quote can be modified.----Start!----'/>            
-        <link id='moduleTab_Quotes'/>
-        <browser assert='Quotes'/>
-        <form id='search_form'>
-            <button id='search_form_clear'/>
-            <textfield id='name_basic' set='{@pre_Quote_name}'/>
-            <button id='search_form_submit'/>
-        </form>
+	<!-- Quote Detail - History sub-panel_Verify that onte related to this Quote can be modified. -->
+	<puts text="Test: Quote_2541.xml starting." />
 
-        <table class='list view'>
-            <link text='{@pre_Quote_name}'/>
+    <csv file="{@global.scriptsdir}/csvs/quote/Quote_2541.csv" var="Quote_2541">
+        <link id="moduleTab_Quotes" />
+        <browser assert="Quotes" />
+
+        <table class="list view">
+            <link text="{@pre_Quote_name}" />
         </table>
-        
          
-         <form id='formformNotes'>
-            <button value='  Create Note or Attachment  '/>
+         <form id="formformNotes">
+            <button value="  Create Note or Attachment  " />
+			<wait timeout="3" />
          </form>         
+
          <timestamp/>
         <!--teams select-->
-        <table id='form_SubpanelQuickCreate_Notes_team_name_table'>
-            <button value='Select'/>
+        <table id="form_SubpanelQuickCreate_Notes_team_name_table">
+            <button value="Select" />
         </table>
-        <browser assert='Team Search'/>
-        <textfield name='name' set='{@Quote_2541.team_name}'/> 
-        <button value='Search'/>
-        <link text='{@Quote_2541.team_name}'/>
+        <browser assert="Team Search" />
+        <textfield name="name" set="{@Quote_2541.team_name}" /> 
+        <button value="Search" />
+        <link text="{@Quote_2541.team_name}" />
             
-        <form id='form_SubpanelQuickCreate_Notes'>
-            <textfield id='name' set='{@Quote_2541.note_name} {@user.name} {@stamp}'/>
-            <textarea id='description' set='{@Quote_2541.note_description}'/>           
-            <button id='Notes_subpanel_save_button'/>
+        <form id="form_SubpanelQuickCreate_Notes">
+            <textfield id="name" set="{@Quote_2541.note_name} {@user.name} {@stamp}" />
+            <textarea id="description" set="{@Quote_2541.note_description}" />           
+            <button id="Notes_subpanel_save_button" />
+			<wait timeout="10" />
         </form>
-        <wait timeout="10"/>
-        <div id='list_subpanel_history'>
-            <table class='list view'>             
-                <browser assert='{@Quote_2541.note_name} {@user.name} {@stamp}'/>
-                <link class='listViewTdToolsS1' index='1' />
+        <div id="list_subpanel_history">
+            <table class="list view">             
+                <browser assert="{@Quote_2541.note_name} {@user.name} {@stamp}" />
+                <link class="listViewTdToolsS1" index="1" />
+				<wait timeout="2" />
             </table>
         </div>
-        <wait timeout='2'/>
-        <form id='EditView'>
-            <textfield id='name' set='{@Quote_2541.note_name_edit}'/>
-            <textarea id='description' set='{@Quote_2541.note_description_edit}'/>           
-            <button value='Save'/>
+		
+		<!-- Edit link pops up QuickEdit now, so click Full Form. -->
+		<button value="Full Form" />
+		
+        <form id="EditView">
+            <textfield id="name" set="{@Quote_2541.note_name_edit}" />
+            <textarea id="description" set="{@Quote_2541.note_description_edit}" />           
+            <button value="Save" />
+			<wait timeout="2" />
         </form>
-        <wait timeout='2'/>
-        <div id='list_subpanel_history'>
-            <table class='list view'>             
-                <browser assert='{@Quote_2541.note_name_edit}'/>             
+        <div id="list_subpanel_history">
+            <table class="list view">             
+                <browser assert="{@Quote_2541.note_name_edit}" />             
             </table>
         </div>
     </csv>
+
     <!--Run Delete XML-->
-    <script file='{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml'/>
-    <puts text='---Quote_2541.xml---Finished!'/>   
+    <script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
+
+	<puts text="Test: Quote_2541.xml finished." />
 </soda>

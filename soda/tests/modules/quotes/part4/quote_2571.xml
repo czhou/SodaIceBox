@@ -1,94 +1,65 @@
-<!--
-  Copyright (c) 2011, SugarCRM, Inc.
-  All rights reserved.
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions are met:
-  * Redistributions of source code must retain the above copyright
-  notice, this list of conditions and the following disclaimer.
-  * Redistributions in binary form must reproduce the above copyright
-  notice, this list of conditions and the following disclaimer in the
-  documentation and/or other materials provided with the distribution.
-  * Neither the name of SugarCRM, Inc. nor the
-  names of its contributors may be used to endorse or promote products
-  derived from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
-  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
 
 <soda>
-	
-	<puts text="Test Case 2571: Relationship - inline_create_call"/>
-    	<csv file='{@global.scriptsdir}/csvs/quote/Quote_2572.csv' var='Quote_2572'>
+	<!-- Relationship - inline_create_call -->
+	<puts text="Test: quote_2571.xml starting." />
 
-	<!--Go to quote detail view-->
-        <link id='moduleTab_Quotes'/>
-        <browser assert='Quotes'/>
-        <form id='search_form'>
-            <button id='search_form_clear'/>
-            <textfield id='name_basic' set='{@pre_Quote_name}'/>
-            <button id='search_form_submit'/>
-        </form>
+	<csv file="{@global.scriptsdir}/csvs/quote/Quote_2572.csv" var="Quote_2572">
 
-        <table class='list view'>
-            <link text='{@pre_Quote_name}'/>
-        </table>
-        
-	<!--Log Call-->
-        <div id='list_subpanel_activities'>
-            <table class='list view'>
-                <button value='  Log Call  '/>
-            </table>
-        </div>
-        <timestamp/>
-        
-        <!--teams select-->
-        <table id='form_SubpanelQuickCreate_Calls_team_name_table'>
-            <button value='Select'/>
-        </table>
-        <browser assert='Team Search'/>
-        <textfield name='name' set='{@Quote_2572.team_name}'/> 
-        <button value='Search'/>
-        <link text='{@Quote_2572.team_name}'/>
-            
-        <form id='form_SubpanelQuickCreate_Calls'>
-            <textfield id='name' set='{@Quote_2572.call_name} {@user.name} {@stamp}'/>
-            <textfield id='date_start_date' set='{@Quote_2572.call_date_start_date}'/>
-            <select id='date_start_hours' set='{@Quote_2572.call_date_start_hours}'/>
-            <select id='date_start_minutes' set='{@Quote_2572.call_date_start_minutes}'/>
+		<!--Go to quote detail view-->
+		<link id="moduleTab_Quotes" />
+		<browser assert="Quotes" />
 
-            <textfield name='duration_hours' set='{@Quote_2572.call_duration_hours}'/>
-            <select name='duration_minutes' set='{@Quote_2572.call_duration_minutes}'/>
+		<table class="list view">
+			<link text="{@pre_Quote_name}" />
+		</table>
 
-            <select id='direction' set='{@Quote_2572.call_direction}'/>
-            <select id='status' set='{@Quote_2572.call_status}'/>
+		<!--Log Call-->
+		<div id="list_subpanel_activities">
+			<table class="list view">
+				<button value="  Log Call  " />
+				<wait timeout="3" />
+			</table>
+		</div>
+		<timestamp/>
 
-            <checkbox name='reminder_checked' set='{@Quote_2572.call_reminder_checked}'/>
-            <textfield id='description' set='{@Quote_2572.call_description}'/>             
-            <button id="Calls_subpanel_save_button" /> 
-        </form>
-	<wait timeout="2"/>
-         
-        <div id='list_subpanel_activities'>
-            <table class='list view'>             
-                <link text="{@Quote_2572.call_name} {@user.name} {@stamp}" click="false"/> 
-            </table>
-        </div>               
-	
-	<!--Delete Call record created in this case-->
-        <link text="{@Quote_2572.call_name} {@user.name} {@stamp}"/> 
-	<wait timeout="3"/>
-	<button value="Delete" alert="true"/>
+		<!--teams select-->
+		<table id="form_SubpanelQuickCreate_Calls_team_name_table">
+			<button value="Select" />
+		</table>
+		<browser assert="Team Search" />
+		<textfield name="name" set="{@Quote_2572.team_name}" /> 
+		<button value="Search" />
+		<link text="{@Quote_2572.team_name}" />
+			
+		<form id="form_SubpanelQuickCreate_Calls">
+			<textfield id="name" set="{@Quote_2572.call_name} {@user.name} {@stamp}" />
+			<textfield id="date_start_date" set="{@Quote_2572.call_date_start_date}" />
+			<select id="date_start_hours" set="{@Quote_2572.call_date_start_hours}" />
+			<select id="date_start_minutes" set="{@Quote_2572.call_date_start_minutes}" />
+
+			<textfield name="duration_hours" set="{@Quote_2572.call_duration_hours}" />
+			<select name="duration_minutes" set="{@Quote_2572.call_duration_minutes}" />
+
+			<select id="direction" set="{@Quote_2572.call_direction}" />
+			<select id="status" set="{@Quote_2572.call_status}" />
+
+			<checkbox name="reminder_checked" set="{@Quote_2572.call_reminder_checked}" />
+			<textfield id="description" set="{@Quote_2572.call_description}" />             
+			<button id="Calls_subpanel_save_button" /> 
+			<wait timeout="3" />
+		</form>
+		 
+		<div id="list_subpanel_activities">
+			<table class="list view">             
+				<link text="{@Quote_2572.call_name} {@user.name} {@stamp}" click="false" /> 
+			</table>
+		</div>               
+
+		<!--Delete Call record created in this case-->
+		<link text="{@Quote_2572.call_name} {@user.name} {@stamp}" /> 
+		<wait timeout="3" />
+		<button value="Delete" alert="true" />
     </csv>
 
-    <puts text="Test Case: quote 2571 finished."/>   
+    <puts text="Test Case: quote 2571 finished." />   
 </soda>

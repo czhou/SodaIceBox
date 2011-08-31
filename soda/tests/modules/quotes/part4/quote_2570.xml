@@ -1,74 +1,54 @@
-<!--
-  Copyright (c) 2011, SugarCRM, Inc.
-  All rights reserved.
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions are met:
-  * Redistributions of source code must retain the above copyright
-  notice, this list of conditions and the following disclaimer.
-  * Redistributions in binary form must reproduce the above copyright
-  notice, this list of conditions and the following disclaimer in the
-  documentation and/or other materials provided with the distribution.
-  * Neither the name of SugarCRM, Inc. nor the
-  names of its contributors may be used to endorse or promote products
-  derived from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
-  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
 
 <soda>
-        <puts text="Test Case 2570: Relationship - Edit Meeting_Verify that modifying 'Schedule Meeting' can be successful canceled on the 'Cases' sub-panel."/>
+	<!-- Relationship - Edit Meeting_Verify that modifying "Schedule Meeting" can be successful canceled on the "Cases" sub-panel. -->
+	<puts text="Test: quote_2570.xml starting." />
 
-        <!--Go to Quotes module and search out the quote record create in lib-->
-        <link id='moduleTab_Quotes'/>
-        <browser assert='Quotes'/>
-        <form id='search_form'>
-            <button id='search_form_clear'/>
-            <textfield id='name_basic' set='{@pre_Quote_name}'/>
-            <button id='search_form_submit'/>
-        </form>
+	<!--Go to Quotes module and search out the quote record create in lib-->
+	<link id="moduleTab_Quotes" />
+	<browser assert="Quotes" />
+	<form id="search_form">
+		<button id="search_form_clear" />
+		<textfield id="name_basic" set="{@pre_Quote_name}" />
+		<button id="search_form_submit" />
+	</form>
 
-        <table class='list view'>
-            <link text='{@pre_Quote_name}'/>
-        </table>
+	<table class="list view">
+		<link text="{@pre_Quote_name}" />
+	</table>
 
-        <!--Create a task in Activities subpanel.-->
-        <browser assert="Overview"/>
-        <button id="Activities_schedulemeeting_button"/>
-        <wait timeout="2"/>
-        <textfield id="name" set="New meeting record"/>
-        <button id="Meetings_subpanel_save_button"/>
-        <wait timeout="15"/>
-        <browser assert="New meeting record"/>
+	<!--Create a task in Activities subpanel.-->
+	<browser assert="Overview" />
+	<button id="Activities_schedulemeeting_button" />
+	<wait timeout="2" />
+	<textfield id="name" set="New meeting record" />
+	<button id="Meetings_subpanel_save_button" />
+	<wait timeout="15" />
+	<browser assert="New meeting record" />
 
-        <!--Modify the task record-->
-        <table class="list view">
-                <link class="listViewTdToolsS1" index="1"/>
-        </table>
-        <wait timeout="2"/>
-        <textfield id="name" set="Modified meeting record"/>
-        <button id="CANCEL" alert="true"/>
-        <wait timeout="5"/>
-        <browser assert="New meeting record"/>
+	<!--Modify the task record-->
+	<table class="list view">
+			<link class="listViewTdToolsS1" index="1" />
+			<wait timeout="2" />
+	</table>
 
-        <!--Delete the note record created in this case.-->
-        <link id="moduleTab_Meetings"/>
-        <button id="search_form_clear"/>
-        <textfield id="name_basic" set="New meeting record"/>
-        <button id="search_form_submit"/>
-        <checkbox id="massall" click="true"/>
-        <link id="actions_link"/>
-        <link text="Delete" alert="true"/>
-        <span class="pageNumbers" assert="(0 - 0 of 0)" />
-        <puts text='Quote_2570.xml---Finished!'/>
+	<!-- Edit link pops up QuickEdit now, so click Full Form. -->
+	<button value="Full Form" />
+
+	<textfield id="name" set="Modified meeting record" />
+	<button id="CANCEL" alert="true" />
+	<wait timeout="5" />
+	<browser assert="New meeting record" />
+
+	<!--Delete the note record created in this case.-->
+	<link id="moduleTab_Meetings" />
+	<button id="search_form_clear" />
+	<textfield id="name_basic" set="New meeting record" />
+	<button id="search_form_submit" />
+	<checkbox id="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />
+
+	<puts text="Quote_2570.xml---Finished!" />
 </soda>
 

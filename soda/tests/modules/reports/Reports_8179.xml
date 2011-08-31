@@ -1,32 +1,5 @@
-<!--
-  Copyright (c) 2011, SugarCRM, Inc.
-  All rights reserved.
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions are met:
-  * Redistributions of source code must retain the above copyright
-  notice, this list of conditions and the following disclaimer.
-  * Redistributions in binary form must reproduce the above copyright
-  notice, this list of conditions and the following disclaimer in the
-  documentation and/or other materials provided with the distribution.
-  * Neither the name of SugarCRM, Inc. nor the
-  names of its contributors may be used to endorse or promote products
-  derived from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
-  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
 
 <soda>
-	<puts text="Test: Reports_8179.xml starting." />
 	<!--
 	Action:
 		1. Login to SugarCRM as admin to create a call report as below:
@@ -47,6 +20,7 @@
 		1. Chart is displayed as what is set in step1.
 		2. Chart is displayed as what is set in step1.
 	-->
+	<puts text="Test: Reports_8179.xml starting." />
 	
 	<script file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.xml" />
 	<var var="call1_name" set="{@pre_call_name}" />
@@ -54,54 +28,47 @@
 	<link id="moduleTab_Reports" />
 	
 	<link text="Create Report" />
-	
 	<wait timeout="3" />
 	
 	<div id="report_type_div">
 		<image name="summationImg" jscriptevent="onclick" click="true" />
 	</div>
-	
 	<wait timeout="3" />
 	
 	<table id="Calls">
 		<link text="Calls" />
+		<wait timeout="4" />
 	</table>
-		
-	<wait timeout="4" />
+
 	<!-- filters -->
 	<div text="Start Date" click="true" />
-	
 	<table id="Filter.1_table">
 		<select index="1" set="After" />
 		<textfield id="jscal_field" set="06/04/2007" />
 	</table>
-	
-	
+
 	<button value="Next &gt;" />
+	<wait timeout="4" />
+
 	<!-- Group By -->
-	<wait timeout="4" />
 	<div text="Month: Start Date" click="true" />
-	
 	<button value="Next &gt;" />
-	<!-- Summaries -->
 	<wait timeout="4" />
+
+	<!-- Summaries -->
 	<div text="Count" click="true" />
-	
 	<button value="Next &gt;" />
-	<!-- Chart Type -->
 	<wait timeout="2" />
+
+	<!-- Chart Type -->
 	<select id="chart_type" set="Vertical Bar" />
 	
 	<button value="Next &gt;" />
-	
-	
+
 	<timestamp />
 	<var var="report_title" set="QA_Created_{@stamp}" />
-	
 	<textfield name="save_report_as" set="{@report_title}" />
-	
 	<button value="Save" />
-	
 	<wait timeout="4" />
 	
 	<link id="moduleTab_Reports" />
@@ -122,8 +89,7 @@
 	</span>
 	
 	<link text="{@report_title}" />
-
-	<wait timeout="4" />
+	<wait timeout="5" />
 	
 	<ul id="col_0_0">
 		<browser assert="{@report_title}" />
@@ -134,7 +100,6 @@
 	<div class="dashletToolSet" index="1">
 		<link index="2" alert="true" />
 	</div>
-
 	<wait timeout="4" />
 
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />

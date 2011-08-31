@@ -1,31 +1,96 @@
-<!--
-  Copyright (c) 2011, SugarCRM, Inc.
-  All rights reserved.
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions are met:
-  * Redistributions of source code must retain the above copyright
-  notice, this list of conditions and the following disclaimer.
-  * Redistributions in binary form must reproduce the above copyright
-  notice, this list of conditions and the following disclaimer in the
-  documentation and/or other materials provided with the distribution.
-  * Neither the name of SugarCRM, Inc. nor the
-  names of its contributors may be used to endorse or promote products
-  derived from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
-  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
 <soda>
 	<!-- David's Modules -->
+	<block>
+		<testfile>Users_0599</testfile>
+		<bugnumber>46482</bugnumber>
+		<reason>Need the ability to interact with iframes.</reason>
+		<modulename>Users</modulename>
+	</block>
+
+	<block>
+		<testfile>Users_8240</testfile>
+		<bugnumber>46473</bugnumber>
+		<reason>Sugar is not creating users for newly-added employees.</reason>
+		<modulename>Users</modulename>
+	</block>
+
+	<block>
+		<testfile>Reports_11798</testfile>
+		<bugnumber>44880</bugnumber>
+		<reason>Test is for a bug which is not fixed yet.</reason>
+		<modulename>Reports</modulename>
+	</block>
+
+	<block>
+		<testfile>Reports_11821</testfile>
+		<bugnumber>45250</bugnumber>
+		<reason>Test is for a bug which is not fixed yet.</reason>
+		<modulename>Reports</modulename>
+	</block>
+
+	<block>
+		<testfile>Studio_10114</testfile>
+		<bugnumber>46358</bugnumber>
+		<reason>SugarLogic does not handle divide by 0 gracefully anymore.</reason>
+		<modulename>Studio/part1</modulename>
+	</block>
+
+	<block>
+		<testfile>Users_0608</testfile>
+		<bugnumber>-1</bugnumber>
+		<reason>Cannot reproduce manually; blocking until I can figure out why.</reason>
+		<modulename>Users</modulename>
+	</block>
+
+	<block>
+		<testfile>Teams_9407</testfile>
+		<bugnumber>46254</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+	<block>
+		<testfile>Teams_9408</testfile>
+		<bugnumber>46254</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+	<block>
+		<testfile>Teams_9410</testfile>
+		<bugnumber>46254</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+	<block>
+		<testfile>Teams_9442</testfile>
+		<bugnumber>46254</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+	<block>
+		<testfile>Teams_9461</testfile>
+		<bugnumber>46254</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+	<block>
+		<testfile>Teams_9447</testfile>
+		<bugnumber>46254</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
+	<block>
+		<testfile>Teams_9507</testfile>
+		<bugnumber>46254</bugnumber>
+		<reason>Sugar EASe archiving user</reason>
+		<modulename>Teams</modulename>
+	</block>
+
 	<block>
 		<testfile>Home_10400</testfile>
 		<bugnumber>-1</bugnumber>
@@ -52,13 +117,6 @@
 		<bugnumber>-1</bugnumber>
 		<reason>Temporary blocklist until I figure out how to trigger the JS on an email field.</reason>
 		<modulename>Leads-part2</modulename>
-	</block>
-
-	<block>
-		<testfile>Leads_11545</testfile>
-		<bugnumber>45965</bugnumber>
-		<reason>JavaScript error on Convert Lead screen.</reason>
-		<modulename>Leads-part1</modulename>
 	</block>
 
 	<block>
@@ -230,6 +288,13 @@
 	</block>
 	
 	<!-- Mazen's Modules -->
+	<block>
+		<testfile>Reports_11856</testfile>
+		<bugnumber>45728</bugnumber>
+		<reason>Verify No Error in Reports When Grouping by Opportunity Amount</reason>
+		<modulename>Reports</modulename>
+	</block>
+	
 	<block>
 		<testfile>Campaigns_11831</testfile>
 		<bugnumber>45586</bugnumber>
@@ -1058,31 +1123,31 @@
 	
 	<!-- Gino's modules -->
 	<block>
-		<testfile>Accounts_0037.xml</testfile>
+		<testfile>Accounts_0037</testfile>
 		<bugnumber>45397</bugnumber>
 		<reason>Save not working from Contact edit view subpanel</reason>
 		<modulename>Accounts</modulename>
 	</block>	
 	<block>
-		<testfile>Accounts_0041.xml</testfile>
+		<testfile>Accounts_0041</testfile>
 		<bugnumber>45397</bugnumber>
 		<reason>Save not working from Contact edit view subpanel</reason>
 		<modulename>Accounts</modulename>
 	</block>	
 	<block>
-		<testfile>Accounts_0046.xml</testfile>
+		<testfile>Accounts_0046</testfile>
 		<bugnumber>45397</bugnumber>
 		<reason>Save not working from Contact edit view subpanel</reason>
 		<modulename>Accounts</modulename>
 	</block>
 	<block>
-		<testfile>Accounts_0119.xml</testfile>
+		<testfile>Accounts_0119</testfile>
 		<bugnumber>45397</bugnumber>
 		<reason>Save not working from Contact edit view subpanel</reason>
 		<modulename>Accounts</modulename>
 	</block>
 	<block>
-		<testfile>Accounts_0198.xml</testfile>
+		<testfile>Accounts_0198</testfile>
 		<bugnumber>45397</bugnumber>
 		<reason>Save not working from Contact edit view subpanel</reason>
 		<modulename>Accounts</modulename>
@@ -1096,4 +1161,37 @@
 	</block>
 	<!-- End of Gino's modules -->
 	
+	<block>
+		<testfile>Imports_11497</testfile>
+		<bugnumber>46190</bugnumber>
+		<reason>SODA can't recognize the "	" (Tab).</reason>
+		<modulename>imports</modulename>
+	</block>
+	
+	<!-- Eric's Modules -->
+	<block>
+		<testfile>Campaigns_1172</testfile>
+		<bugnumber>46460</bugnumber>
+		<reason>Production bug</reason>
+		<modulename>campaigns</modulename>
+	</block>
+	<block>
+		<testfile>Campaigns_1181</testfile>
+		<bugnumber>46460</bugnumber>
+		<reason>Production bug</reason>
+		<modulename>campaigns</modulename>
+	</block>
+	<block>
+		<testfile>Campaigns_1182</testfile>
+		<bugnumber>46460</bugnumber>
+		<reason>Production bug</reason>
+		<modulename>campaigns</modulename>
+	</block>
+	<block>
+		<testfile>Campaigns_1166</testfile>
+		<bugnumber>46460</bugnumber>
+		<reason>Production bug</reason>
+		<modulename>campaigns</modulename>
+	</block>
+	<!-- End of Eric's modules -->
 </soda>

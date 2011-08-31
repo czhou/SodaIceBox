@@ -1,0 +1,27 @@
+
+<soda>
+	<!--
+		Action:
+			1. Login to SugarCRM as a valid user.
+			2. Click the "Log Call" in Calls module navigation shortcuts.
+			3. Fill the required filed and set the "Duration" to 0h 00m.
+			4. Click the "Save" button.
+		Expectation:
+			4. Warning message is displayed.
+
+	-->
+	<puts text="Test: Activities_0672.xml starting." />
+
+	<link id="moduleTab_Calls" />
+	<wait timeout="2" />
+	<link text="Log Call" />
+	<wait timeout="2" />
+	
+	<textfield id="name" set="call_0672" />
+	<textfield name="duration_hours" set="0" />
+	<select name="duration_minutes" set="00" />
+	<button value="Save" alert="true" />
+	<button value="Cancel" />
+	
+	<puts text="Test: Activities_0672.xml finished." />
+</soda>

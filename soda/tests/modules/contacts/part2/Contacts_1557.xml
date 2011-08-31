@@ -1,30 +1,3 @@
-<!--
-  Copyright (c) 2011, SugarCRM, Inc.
-  All rights reserved.
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions are met:
-  * Redistributions of source code must retain the above copyright
-  notice, this list of conditions and the following disclaimer.
-  * Redistributions in binary form must reproduce the above copyright
-  notice, this list of conditions and the following disclaimer in the
-  documentation and/or other materials provided with the distribution.
-  * Neither the name of SugarCRM, Inc. nor the
-  names of its contributors may be used to endorse or promote products
-  derived from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
-  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
-
 <soda>
 	<!--
 		Delete quote_Verify that a related quote can be deleted from contact detail view
@@ -35,7 +8,7 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/TaxRate_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Create_Lib.xml" />
-	<script file='{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml'/>
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
 
 	<!--Search the Contact record-->
 	<link id="moduleTab_Contacts" />
@@ -49,7 +22,7 @@
 	</table>
 
 	<!--Create quote via quote subpanel-->
-	<button id="Quotes_create_button"/>
+	<button id="Quotes_create_button" />
 	<csv file="{@global.scriptsdir}/modules/lib/Quote_Create_Lib.csv" var="Quote_Create_Lib">
 		<timestamp/>
 		<!--User select: 6.0 has a default user value -->
@@ -71,7 +44,7 @@
 		<textfield id="date_quote_expected_closed" set="{@Quote_Create_Lib.date_quote_expected_closed}" />
 		<select name="currency_id" set="{@Quote_Create_Lib.currency_id}" />
 		<select name="taxrate_id" set="{@TaxRate_Create_Lib}" />
-		<checkbox id="calc_grand_total" set="true"/>
+		<checkbox id="calc_grand_total" set="true" />
 		<button id="add_group" />
 		<textfield id="bundle_name_group_0" set="{@Quote_Create_Lib.bundle_name_group_0}" />
 		<select id="bundle_stage_group_0" set="{@Quote_Create_Lib.bundle_stage_group_0}" />
@@ -93,21 +66,20 @@
 
 	<!--Verify created quote show in subpanel-->
 	<div id="list_subpanel_quotes">
-		<link text="{@pre_quote_name}" click="false"  exist="true"/>
-		<browser assert="{@pre_quote_name}"/>
+		<link text="{@pre_quote_name}" click="false"  exist="true" />
+		<browser assert="{@pre_quote_name}" />
 	</div>
 
 	<!--Delete quote from subpanel -->
 	<div id="list_subpanel_quotes">
-		<link class="listViewTdToolsS1" text="/rem/" alert="true"/>
+		<link class="listViewTdToolsS1" text="/rem/" alert="true" />
 	</div>
-
-       <wait timeout="2"/>
+	<wait timeout="3" />
 
 	<!--Verify deleted quote will not show in subpanel-->
 	<div id="list_subpanel_quotes">
-		<link text="{@pre_quote_name}" click="false"  exist="false"/>
-		<browser assertnot="{@pre_quote_name}"/>
+		<link text="{@pre_quote_name}" click="false"  exist="false" />
+		<browser assertnot="{@pre_quote_name}" />
 	</div>
 
 	<!--Delete records-->
@@ -116,5 +88,6 @@
 	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/TaxRate_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/ProductCatalog_Delete_Lib.xml" />
+
 	<puts text="Test: Contacts_1557.xml finished." />
 </soda>

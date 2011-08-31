@@ -1,0 +1,42 @@
+
+<soda>
+	<!-- MSSQL: Verify No Error in Reports When Grouping by Opportunity Amount -->
+	<puts text="Test: Reports_11856.xml starting." />
+
+	<!-- Create Summation with Details Report -->
+	<link id="moduleTab_Reports" />
+	<link text="Create Report" />
+	<image name="summationWithDetailsImg" click="true" />
+
+	<table id="Opportunities">
+		<link text="Opportunities" />
+	</table>
+
+	<button name="Next &gt;" />
+	<wait timeout="2" />
+	<div id="module_fields">
+		<div text="Opportunity Amount" click="true" />
+	</div>
+	
+	<button name="Next &gt;" />
+	<wait timeout="2" />
+	<button name="Next &gt;" />
+	<wait timeout="2" />
+
+	<div text="Opportunity Name" click="true" />
+	<wait timeout="1" />
+	<div text="Opportunity Amount" click="true" />
+	<wait timeout="1" />
+	<button name="Next &gt;" />
+
+	<textfield name="save_report_as" set="QA_Created for Reports_11856.xml." />
+	<button name="Save and Run" />
+
+	<browser assertnot="Database failure." />
+
+	<!-- Cleanup: Delete the report created above. -->
+	<script file="{@global.scriptsdir}/modules/lib/Report_Delete_Lib.xml" />
+
+	<puts text="Test: Reports_11856.xml finished." />
+</soda>	
+	
