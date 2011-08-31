@@ -976,6 +976,13 @@
 		<reason>accounts_opportunities_select_button has been removed</reason>
 		<modulename>Accounts</modulename>
 	</block>
+
+    <block>
+		<testfile>Accounts_11930</testfile>
+		<bugnumber>46077</bugnumber>
+		<reason>please check the bug</reason>
+		<modulename>Accounts</modulename>
+	</block>
 	 
 	<block>
 		<testfile>Calendar_0706</testfile>
