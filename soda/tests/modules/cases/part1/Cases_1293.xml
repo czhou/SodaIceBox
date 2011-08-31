@@ -1,4 +1,3 @@
-
 <soda>
 	<!-- Edit Scheduled Call: Verify that the information of a scheduled call for case cannot be modified when entering non-existing data (such as entering non-existing data in "Team" field) when using "Edit" function in "Activities" sub-panel. -->
 	<puts text="Test: Cases_1293.xml starting." />
@@ -28,6 +27,10 @@
 				<link text="edit" />
 			</table>
 		</div>
+
+		<!-- The edit link pops up a QuickEdit now, so click Full Form. -->
+		<button value="Full Form" />
+
 		<div class="moduleTitle">
 			<link href="index.php?module=Calls&amp;action=index" click="false" exists="true" />
 			<link text="{@Case_1293.call_subject}" click="false" exists="true" />

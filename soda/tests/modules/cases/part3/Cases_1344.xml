@@ -34,6 +34,9 @@
 			<link class="listViewTdToolsS1" index="1" alert="true" />
 		</div>
 
+		<!-- The edit link pops up a QuickEdit now, so click Full Form. -->
+		<button value="Full Form" />
+
 		<div class="moduleTitle">
 			<link href="index.php?module=Contacts&amp;action=index" click="false" />
 			<browser assert="{@Case_1344.last_name}" />
