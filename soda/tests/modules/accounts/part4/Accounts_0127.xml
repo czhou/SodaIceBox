@@ -1,12 +1,6 @@
-
 <soda>
-
-<<<<<<< HEAD
 	<puts text="Test Case 127: Create Account - Quick _Verify that a new account which is created on 'New Account' box is not saved when the 'Save' button" />
-=======
-	<puts text="Test Case 127: Create Account - Quick _Verify that a new account which is created on 'New Account' box is not saved when the 'Save' button"/>
 	<timestamp />
->>>>>>> refs/remotes/origin/6_2_0
 
 	<link id="moduleTab_Accounts" />
 	<div class="moduleTitle">

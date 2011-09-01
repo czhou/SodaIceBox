@@ -69,7 +69,7 @@
 	<!-- Edit button opens in-place now, so navigate to Full Form. -->
 	<button id="Meetings_subpanel_full_form_button" />
 
-	<browser assert="Meeting Overview"/>
+	<browser assert="Overview"/>
 	<select id="status" set="Planned"/>
 	<button value="Save"/>
 	<wait timeout="6"/>
