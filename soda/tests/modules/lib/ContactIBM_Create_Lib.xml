@@ -1,0 +1,35 @@
+<soda>
+	<puts text="Lib: ContactIBM_Create_Lib.xml starting." />
+	<timestamp />
+	<link id="moduleTab_Contacts" />
+	<csv file="{@global.scriptsdir}/modules/lib/ContactIBM_Create_Lib.csv" var="IBMcontact_record">
+		<link text="Create Contact" />
+		<browser assert="Contact Overview" />
+
+		<!--fill the fields and "Save"-->
+		<form id="EditView">
+			<textfield name="first_name" set="{@IBMcontact_record.first_name} {@user.name} {@stamp}" />
+			<textfield id="last_name" set="{@IBMcontact_record.last_name}" />
+			<textfield id="phone_work" set="{@IBMcontact_record.phone_work}" />
+			<textfield id="Contacts0emailAddress0" set="{@stamp}{@IBMcontact_record.emailAddress0}" />
+			<textfield id="phone_mobile" click="true" />
+			<wait timeout="2" />
+			<textfield id="phone_mobile" set="{@IBMcontact_record.phone_mobile}" />
+
+			<button value="Save" />
+		</form>
+
+		<browser assert="{@IBMcontact_record.first_name} {@user.name} {@stamp} {@IBMcontact_record.last_name}" />
+
+		<!--Save the contact id & name-->
+		<form name="DetailView">
+			<hidden name="record" var="pre_contact_id" />
+		</form>
+
+	</csv>
+	<var var="pre_IBMcontact_first_name" set="{@IBMcontact_record.first_name} {@user.name} {@stamp}" />
+	<var var="pre_IBMcontact_last_name" set="{@IBMcontact_record.last_name}" />
+	<var var="pre_IBMcontact_email" set="{@stamp}{@IBMcontact_record.emailAddress0}" />
+	<puts text="Lib: ContactIBM_Create_Lib.xml finished." />
+</soda>
+
