@@ -1,6 +1,6 @@
-
 <soda>
-    <puts text="Test: Admin_11114.xml starting"/>
+    <puts text="Test: Admin_11114.xml starting." />
+
     <!-- Go to password manager -->
     <browser url="{@global.url}?module=Administration&amp;action=index" />
     <link text="Password Management" />
@@ -11,6 +11,8 @@
     <select name="variable_module" exists="true" />
     <select name="variable_name" exists="true" />
     <textfield name="variable_text" exists="true" />
+	
+	<button value="Cancel" />
 
-    <puts text="Test: Admin_11114.xml finished"/>
+    <puts text="Test: Admin_11114.xml finished." />
 </soda>

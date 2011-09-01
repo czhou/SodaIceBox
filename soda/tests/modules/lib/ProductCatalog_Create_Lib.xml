@@ -1,6 +1,6 @@
 
 <soda>
-   <puts text="ProductCatalog_Create_Lib: Starting" />
+   <puts text="Lib: ProductCatalog_Create_Lib.xml starting." />
    <csv file="{@global.scriptsdir}/modules/lib/ProductCatalog_Create_Lib.csv"
       var="ProductCatalog_Create_Lib">
    <script 
@@ -58,6 +58,7 @@
       <button name="button" value="Save" />
    </form>           
  
+	<browser assert="missouri" />
    <table id="detailpanel_1">
       <browser 
          assert="{@ProductCatalog_Create_Lib.name} {@user.name} {@stamp}" />
@@ -65,6 +66,5 @@
    <var var="pre_ProductCatalog_name" 
       set="{@ProductCatalog_Create_Lib.name} {@user.name} {@stamp}" />
    </csv>
-   <puts text="ProductCatalog_Create_Lib: Finished" />   
+   <puts text="Lib: ProductCatalog_Create_Lib.xml finished." />   
 </soda>
-

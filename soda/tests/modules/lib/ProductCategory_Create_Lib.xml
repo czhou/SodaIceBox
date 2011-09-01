@@ -21,6 +21,7 @@
       <var var="ProductCategory_Create_Lib" 
          set="{@ProductCategory_Create_Lib.name} {@user.name} {@stamp}" />
    </csv>
-   <puts text="ProductCategory_Create_Lib: Finished" />
+
+   <puts text="Lib: ProductCategory_Create_Lib.xml finished." />
 </soda>
 

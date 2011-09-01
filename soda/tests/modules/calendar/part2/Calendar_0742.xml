@@ -19,51 +19,42 @@
 	<csv file="{@global.scriptsdir}/modules/lib/Call_Create_Lib.csv" var="call_record">
 		<textfield id="name" set="{@call_record.name} {@user.name} {@stamp}" />
 
+		<!-- This JS is flawed and will fail on the 1st of the month if there are 31 days. -->
 		<javascript>
-				var theDate = new Date();
+			var theDate = new Date();
 
-                
-                theDate.setDate(theDate.getDate() + 30);
+			theDate.setDate(theDate.getDate() + 30);
 
-                
-                var day;
-                if (theDate.getDate() &lt; 10) {
-                    day = '0' + theDate.getDate();
-                } else {
-                    day = '' + theDate.getDate();
-                }
+			var day;
+			if (theDate.getDate() &lt; 10) {
+				day = '0' + theDate.getDate();
+			} else {
+				day = '' + theDate.getDate();
+			}
 
-                
-                var month;
-                if (theDate.getMonth() + 1 &lt; 10) {
-                    month = '0' + (theDate.getMonth()+1);
-                } else {
-                    month = '' + (theDate.getMonth()+1);
-                }
-                
-                var year;
-                year = theDate.getFullYear();
-                
-				var sugardate;
-				sugardate = month+'/'+day+'/'+year;
-				
-				var date_field;
-				date_field = document.getElementById('date_start_date');
-				
-				document.getElementById('date_start_date').value = sugardate;
-				document.getElementById('date_start_date').onchange();
-			</javascript>
-		
-		
+			var month;
+			if (theDate.getMonth() + 1 &lt; 10) {
+				month = '0' + (theDate.getMonth()+1);
+			} else {
+				month = '' + (theDate.getMonth()+1);
+			}
+			
+			var year;
+			year = theDate.getFullYear();
+			
+			var sugardate;
+			sugardate = month+'/'+day+'/'+year;
+			
+			var date_field;
+			date_field = document.getElementById('date_start_date');
+			
+			document.getElementById('date_start_date').value = sugardate;
+			document.getElementById('date_start_date').onchange();
+		</javascript>
 		<wait timeout="4" />
-		
-		
-		
-		
+
 		<textfield name="duration_hours" set="{@call_record.duration_hours}" />
 		<select name="duration_minutes" set="{@call_record.duration_minutes}" />
-		
-
 
 		<select id="direction" set="{@call_record.direction}" />
 		<select id="status" set="{@call_record.status}" />
@@ -77,91 +68,78 @@
 
 		<var var="pre_call_name" set="{@call_record.name} {@user.name} {@stamp}" />
 	</csv>
-	
 
-	
 	<!-- now make a meeting for next month -->
 	<timestamp />
-		<link id="moduleTab_Meetings" />
-		<link text="Schedule Meeting" />
-		<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record">
-			<textfield id="name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+	<link id="moduleTab_Meetings" />
+	<link text="Schedule Meeting" />
+	<csv file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.csv" var="meeting_record">
+		<textfield id="name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+		
+		<!-- This JS is flawed and will fail on the 1st of the month if there are 31 days. -->
+		<javascript>
+			var theDate = new Date();
+
+			theDate.setDate(theDate.getDate() + 30);
+
+			var day;
+			if (theDate.getDate() &lt; 10) {
+				day = '0' + theDate.getDate();
+			} else {
+				day = '' + theDate.getDate();
+			}
+
+			var month;
+			if (theDate.getMonth() + 1 &lt; 10) {
+				month = '0' + (theDate.getMonth()+1);
+			} else {
+				month = '' + (theDate.getMonth()+1);
+			}
 			
-			<javascript>
-				var theDate = new Date();
-
-                
-                theDate.setDate(theDate.getDate() + 30);
-
-                
-                var day;
-                if (theDate.getDate() &lt; 10) {
-                    day = '0' + theDate.getDate();
-                } else {
-                    day = '' + theDate.getDate();
-                }
-
-                
-                var month;
-                if (theDate.getMonth() + 1 &lt; 10) {
-                    month = '0' + (theDate.getMonth()+1);
-                } else {
-                    month = '' + (theDate.getMonth()+1);
-                }
-                
-                var year;
-                year = theDate.getFullYear();
-                
-				var sugardate;
-				sugardate = month+'/'+day+'/'+year;
-				
-				var date_field;
-				date_field = document.getElementById('date_start_date');
-				
-				document.getElementById('date_start_date').value = sugardate;
-				document.getElementById('date_start_date').onchange();
-			</javascript>
+			var year;
+			year = theDate.getFullYear();
 			
+			var sugardate;
+			sugardate = month+'/'+day+'/'+year;
 			
+			var date_field;
+			date_field = document.getElementById('date_start_date');
 			
-			<textfield id="location" set="{@meeting_record.location}" />
-			<textfield id="description" set="{@meeting_record.description}" />
-			<select id="status" set="{@meeting_record.status}" />
-			
-			<select id="date_start_hours" set="{@meeting_record.date_start_hours}" />
-			<select id="date_start_minutes" set="{@meeting_record.date_start_minutes}" />
-			<textfield name="duration_hours" set="{@meeting_record.duration_hours}" />
-			<select name="duration_minutes" set="{@meeting_record.duration_minutes}" />
-			<checkbox name="reminder_checked" set="{@meeting_record.reminder_checked}" />
+			document.getElementById('date_start_date').value = sugardate;
+			document.getElementById('date_start_date').onchange();
+		</javascript>
 
+		<textfield id="location" set="{@meeting_record.location}" />
+		<textfield id="description" set="{@meeting_record.description}" />
+		<select id="status" set="{@meeting_record.status}" />
+		<select id="date_start_hours" set="{@meeting_record.date_start_hours}" />
+		<select id="date_start_minutes" set="{@meeting_record.date_start_minutes}" />
+		<textfield name="duration_hours" set="{@meeting_record.duration_hours}" />
+		<select name="duration_minutes" set="{@meeting_record.duration_minutes}" />
+		<checkbox name="reminder_checked" set="{@meeting_record.reminder_checked}" />
 
-			<button value="Save" />
+		<button value="Save" />
 
-			<browser assert="{@meeting_record.name} {@user.name} {@stamp}" />
+		<browser assert="{@meeting_record.name} {@user.name} {@stamp}" />
 
-			<!--Save the account id & name-->
-			<form name="DetailView">
-				<hidden name="record" var="pre_meeting_id" />
-			</form>
-			<var var="pre_meeting_name" set="{@meeting_record.name} {@user.name} {@stamp}" />
-		</csv>
-	
-	
-	
+		<!--Save the account id & name-->
+		<form name="DetailView">
+			<hidden name="record" var="pre_meeting_id" />
+		</form>
+		<var var="pre_meeting_name" set="{@meeting_record.name} {@user.name} {@stamp}" />
+	</csv>
+
 	<!-- now check for calendar presence -->
-	
 	<link id="moduleTab_Calendar" />
 	
 	<button value=" Month " />
 	<link text="Next Month" />
-	
-	
+
 	<table id="daily_cal_table">
 		<browser assert="{@call_record.status}: {@pre_call_name}" />
 		<browser assert="{@meeting_record.status}: {@pre_meeting_name}" />
 	</table>
-	
-	
+
 	<script file="{@global.scriptsdir}/modules/lib/Call_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Meeting_Delete_Lib.xml" />
 	
