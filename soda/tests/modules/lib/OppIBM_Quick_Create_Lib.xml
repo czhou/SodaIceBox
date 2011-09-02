@@ -1,0 +1,40 @@
+<soda>
+	<puts text="Lib: Opp_Create_Lib.xml starting." />
+	<script file="{@global.scriptsdir}/modules/lib/Client_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+    <timestamp />
+	<link id="moduleTab_Opportunities" />
+	<link text="Create an Opportunity" /> 
+	<csv file="{@global.scriptsdir}/modules/lib/OppIBM_Quick_Create_Lib.csv" var="opp_quickrec">
+		<textfield id="description" set="{@opp_quickrec.description} {@user.name} {@stamp}" />
+		
+		<!-- Primary Contact Select -->
+		<button id="btn_pcontact_id_c" />
+		<browser assert="Contact Search" />
+		<textfield id="name_advanced" set="{@pre_contact_first_name} {@contact_record.last_name}" /> 
+		<button value="Search" />
+		<link text="{@pre_contact_first_name} {@contact_record.last_name}" />
+		
+		<!-- Client Select -->
+		<button id="account_name" />
+		<browser assert="Client Search" />
+		<textfield id="name_advanced" set="{@pre_client_name}" /> 
+		<button value="Search" />
+		<link text="{@pre_client_name}" />
+		
+		<!-- Opportunity owner Select -->
+		<button id="assigned_user_name" />
+		<browser assert="User Search" />
+		<textfield id="name_advanced" set="{@opp_quickrec.opportunity_owner}" /> 
+		<button value="Search" />
+		<link text="{@opp_quickrec.opportunity_owner}" />
+		
+		<select id="sales_stage" set="{@opp_quickrec.sales_stage}" />
+		<select id="lead_source" set="{@opp_quickrec.lead_source}" />
+		
+		<button id="Opportunities_dcmenu_save_button" />
+		
+		<browser assert="{@opp_quickrec.description} {@user.name} {@stamp}" />
+	</csv>
+    <puts text="Lib: Opp_Create_Lib.xml finished." />
+</soda>
