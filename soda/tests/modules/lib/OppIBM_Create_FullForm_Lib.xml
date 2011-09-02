@@ -1,0 +1,47 @@
+<soda>
+	<puts text="Lib: OppIBM_Create_FullForm_Lib.xml starting." />
+	<script file="{@global.scriptsdir}/modules/lib/Client_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ContactIBM_Create_Lib.xml" />
+    
+	<csv file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.csv" var="opp_fullrec">
+		<timestamp />
+		<link id="moduleTab_Opportunities" />
+		<link text="Create an opportunity" /> 
+		<button id="Opportunities_subpanel_full_form_button" />
+		
+		<textfield id="description" set="{@opp_fullrec.description} {@user.name} {@stamp}" />
+		
+		<!-- Primary Contact Select -->
+		<button id="btn_pcontact_id_c" />
+		<browser assert="Contact Search" />
+		<textfield id="name_advanced" set="{@pre_IBMcontact_first_name} {@pre_IBMcontact_last_name}" /> 
+		<button value="Search" />
+		<link text="{@pre_IBMcontact_first_name} {@pre_IBMcontact_last_name}" />
+		<wait timeout="1" />
+		
+		<!-- Client Select -->
+		<button id="btn_account_name" />
+		<browser assert="Client Search" />
+		<textfield id="name_advanced" set="{@pre_client_name}" /> 
+		<button value="Search" />
+		<link text="{@pre_client_name}" />
+		<wait timeout="1" />
+		
+		<!-- Opportunity owner Select -->
+		<button id="btn_assigned_user_name" />
+		<browser assert="User Search" />
+		<textfield id="last_name_advanced" set="{@opp_fullrec.opportunity_owner}" /> 
+		<button value="Search" />
+		<link text="{@opp_fullrec.opportunity_owner}" />
+		<wait timeout="1" />
+		
+		<select id="sales_stage" set="{@opp_fullrec.sales_stage}" />
+		<select id="lead_source" set="{@opp_fullrec.lead_source}" />
+		
+		<button id="SAVE_FOOTER" />
+		
+		<browser assert="{@opp_fullrec.description} {@user.name} {@stamp}" />
+		
+	</csv>
+    <puts text="Lib: OppIBM_Create_FullForm_Lib.xml finished." />
+</soda>
