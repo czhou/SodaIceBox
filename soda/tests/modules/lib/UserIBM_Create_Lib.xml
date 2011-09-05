@@ -1,0 +1,31 @@
+<soda>
+	<puts text="Lib: UserIBM_Create_Lib.xml starting." />
+	<!--Create New User-->
+	<link id="admin_link" />
+	<link id="user_management" />
+	
+	<csv file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.csv" var="usercr">
+		<link text="Create New User" />
+		<browser assert="Users" />
+		<wait timeout="1" />
+		<textfield name="sugar_user_name" set="{@usercr.last_name}" />
+		<textfield id="last_name" set="{@usercr.last_name}" />
+		<textfield id="Users0emailAddress0" set="{@usercr.email}" />
+
+		<link href="#tab2" />
+		<wait timeout="1" />
+		<textfield id="new_password" set="{@usercr.pass}" jscriptevent="onkeyup" />
+		<textfield id="confirm_pwd" set="{@usercr.pass}" jscriptevent="onkeyup" />
+
+		<button id="Save" />
+		<link text="View Users" />
+		<link text="Basic Search" required="false" />
+		<button id="search_form_clear" />
+		<textfield id="search_name_basic" set="{@usercr.last_name}" />
+		<button id="search_form_submit" />
+
+		<link text="{@usercr.last_name}" exists="true" click="false" />
+	</csv>
+	<puts text="Lib: UserIBM_Create_Lib.xml finished." />
+</soda>
+ 
