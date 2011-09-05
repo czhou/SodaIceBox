@@ -1,0 +1,118 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Case 11927: Opportunities EditView/QuickCreate - Additional team members widget -->
+	<script file="{@global.scriptsdir}/modules/lib/Client_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ContactIBM_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.xml" />
+    
+	<csv file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.csv" var="opp_fullrec" />
+	<link id="moduleTab_Opportunities" />
+	<link text="Create an opportunity" /> 
+	<wait timeout="3" />
+	<button id="Opportunities_subpanel_full_form_button" />
+		
+	<textfield id="description" set="{@opp_fullrec.description} {@user.name} {@stamp}" />
+		
+	<!-- Primary Contact Select -->
+	<button id="btn_pcontact_id_c" />
+	<browser assert="Contact Search" />
+	<textfield id="email_advanced" set="{@pre_IBMcontact_email}" /> 
+	<button value="Search" />
+	<link text="{@pre_IBMcontact_first_name} {@pre_IBMcontact_last_name}" />
+	<wait timeout="1" />
+		
+	<!-- Client Select -->
+	<button id="btn_account_name" />
+	<browser assert="Client Search" />
+	<textfield id="name_advanced" set="{@pre_client_name}" /> 
+	<button value="Search" />
+	<link text="{@pre_client_name}" />
+	<wait timeout="1" />
+		
+	<!-- Opportunity owner Select -->
+	<button id="btn_assigned_user_name" />
+	<browser assert="User Search" />
+	<textfield id="last_name_advanced" set="{@opp_fullrec.opportunity_owner}" /> 
+	<button value="Search" />
+	<link text="{@opp_fullrec.opportunity_owner}" />
+	<wait timeout="1" />
+		
+	<select id="sales_stage" set="{@opp_fullrec.sales_stage}" />
+	<select id="lead_source" set="{@opp_fullrec.lead_source}" />
+		
+	<!-- Additional Team Members Select -->
+	<button id="additional_users_btn_select" />
+	<browser assert="User Search" />
+	<textfield id="user_name_advanced" set="user1" /> 
+	<button value="Search" />
+	<link text="user1" />
+	<wait timeout="1" />
+		
+	<!-- Verifying that new field with selected user appeared -->
+	<textfield id="additional_users_user_name_1" assert="user1" />
+		
+	<!-- Verifying that new Team Member Saved -->
+	<button id="SAVE_FOOTER" />
+	<div id="LBL_PANEL_ASSIGNMENT">
+		<link text="user1" exists="true" click="false" />
+	</div>
+		
+	<!-- Edit Opportunity and add new Team Member -->
+	<button id="edit_button" />
+	<button id="additional_users_btn_add" />
+	<textfield id="additional_users_user_name_3" set="user2" />
+		
+	<!-- Verifying that new Team Member Saved -->
+	<button id="SAVE_FOOTER" />
+	<div id="LBL_PANEL_ASSIGNMENT">
+		<link text="user1" exists="true" click="false" />
+		<link text="user2" exists="true" click="false" />
+	</div>
+	
+	<!-- Delete Team Member and save -->
+	<button id="edit_button" />
+	<image id="additional_users_btn_remove_3" click="true" />
+	<wait timeout="2" />
+	<textfield id="additional_users_user_name_3" exists="false" />
+	
+	<!-- Verifying that new Team Member was deleted -->
+	<button id="SAVE_FOOTER" />
+	<div id="LBL_PANEL_ASSIGNMENT">
+		<link text="user1" exists="true" click="false" />
+		<link text="user2" exists="false" click="false" />
+	</div>
+	
+	<!-- Delete Test Data -->
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Client_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/UserIBM_Delete_Lib.xml" />
+	
+    <puts text="Test: Case11927.xml finished." />
+</soda>
