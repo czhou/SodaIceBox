@@ -1,2 +1,2 @@
-description,primary_contact,client_name,opportunity_owner,sales_stage,lead_source,add_team_members
-test description,,,Administrator,Identified,Conference,qauser
+description,primary_contact,client_name,opportunity_owner,sales_stage,lead_source,add_team_members,date_closed
+test description,,,Administrator,Identified,Conference,qauser,09/30/2011

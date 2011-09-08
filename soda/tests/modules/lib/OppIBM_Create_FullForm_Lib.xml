@@ -7,6 +7,7 @@
 		<timestamp />
 		<link id="moduleTab_Opportunities" />
 		<link text="Create an opportunity" /> 
+		<wait timeout="3" />
 		<button id="Opportunities_subpanel_full_form_button" />
 		
 		<textfield id="description" set="{@opp_fullrec.description} {@user.name} {@stamp}" />
@@ -14,7 +15,7 @@
 		<!-- Primary Contact Select -->
 		<button id="btn_pcontact_id_c" />
 		<browser assert="Contact Search" />
-		<textfield id="name_advanced" set="{@pre_IBMcontact_first_name} {@pre_IBMcontact_last_name}" /> 
+		<textfield id="email_advanced" set="{@pre_IBMcontact_email}" /> 
 		<button value="Search" />
 		<link text="{@pre_IBMcontact_first_name} {@pre_IBMcontact_last_name}" />
 		<wait timeout="1" />
@@ -35,6 +36,7 @@
 		<link text="{@opp_fullrec.opportunity_owner}" />
 		<wait timeout="1" />
 		
+		<textfield id="date_closed" set="{@opp_fullrec.date_closed}" />
 		<select id="sales_stage" set="{@opp_fullrec.sales_stage}" />
 		<select id="lead_source" set="{@opp_fullrec.lead_source}" />
 		
