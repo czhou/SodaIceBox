@@ -67,7 +67,7 @@
 	<select id="lead_source" set="{@opp_fullrec.lead_source}" />
 		
 	<!-- Additional Team Members Select -->
-	<button id="additional_users_btn_select" />
+	<link text="Add another +" />
 	<browser assert="User Search" />
 	<textfield id="user_name_advanced" set="user1" /> 
 	<button value="Search" />
@@ -85,7 +85,7 @@
 		
 	<!-- Edit Opportunity and add new Team Member -->
 	<button id="edit_button" />
-	<button id="additional_users_btn_add" />
+	<link text="Add another +" />
 	<textfield id="additional_users_user_name_3" set="user2" />
 		
 	<!-- Verifying that new Team Member Saved -->
@@ -97,15 +97,15 @@
 	
 	<!-- Delete Team Member and save -->
 	<button id="edit_button" />
-	<image id="additional_users_btn_remove_3" click="true" />
+	<image id="additional_users_btn_remove_2" click="true" />
 	<wait timeout="2" />
-	<textfield id="additional_users_user_name_3" exists="false" />
+	<textfield id="additional_users_user_name_2" exists="false" />
 	
 	<!-- Verifying that new Team Member was deleted -->
 	<button id="SAVE_FOOTER" />
 	<div id="LBL_PANEL_ASSIGNMENT">
-		<link text="user1" exists="true" click="false" />
-		<link text="user2" exists="false" click="false" />
+		<link text="user1" exists="false" click="false" />
+		<link text="user2" exists="true" click="false" />
 	</div>
 	
 	<!-- Delete Test Data -->
