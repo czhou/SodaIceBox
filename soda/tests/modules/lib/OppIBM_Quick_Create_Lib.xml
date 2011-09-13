@@ -11,9 +11,9 @@
 		<!-- Primary Contact Select -->
 		<button id="btn_pcontact_id_c" />
 		<browser assert="Contact Search" />
-		<textfield id="name_advanced" set="{@pre_contact_first_name} {@contact_record.last_name}" /> 
+		<textfield id="email_advanced" set="{@pre_IBMcontact_email}" /> 
 		<button value="Search" />
-		<link text="{@pre_contact_first_name} {@contact_record.last_name}" />
+		<link text="{@pre_IBMcontact_first_name} {@IBMcontact_record.last_name}" />
 		
 		<!-- Client Select -->
 		<button id="account_name" />
