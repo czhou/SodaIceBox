@@ -1,0 +1,134 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Case 11928: Validate Primary Contact field uses My Items functionality based on Client information -->
+	<puts text="Test: Case11928.xml starting." />
+	<script file="{@global.scriptsdir}/modules/lib/Client_Create_Lib.xml" />
+	
+	<!-- Create contact without indicated client -->
+	<script file="{@global.scriptsdir}/modules/lib/ContactIBM_Create_Lib.xml" />
+	
+	<!-- Quick opportunity create -->
+	<link id="moduleTab_Opportunities" />
+	<link text="Create an opportunity" />
+	<wait timeout="3" />
+	
+	<!-- Select primary contact -->
+	<button id="btn_pcontact_id_c" />
+	<browser assert="Contact Search" />
+	<textfield id="email_advanced" set="{@pre_IBMcontact_email}" /> 
+	<button value="Search" />
+	<link text="{@pre_IBMcontact_first_name} {@IBMcontact_record.last_name}" />
+	
+	<!-- Verify that Client field is empty -->
+	<textfield id="account_name" assert="" />
+	
+	<!-- Open Full Form opportunity creation -->
+	<button id="Opportunities_subpanel_full_form_button" />
+	
+	<!-- Verify if Contact already selected and Client is empty -->
+	<textfield id="pcontact_id_c" assert="{@pre_IBMcontact_first_name} {@IBMcontact_record.last_name}" />
+	<textfield id="account_name" assert="" />
+	
+	<!-- Clear Contact and verify if field was cleared-->
+	<button id="btn_clr_pcontact_id_c" />
+	<wait timeout="1" />
+	<textfield id="pcontact_id_c" assert="" />
+	
+	<!-- Select primary contact -->
+	<button id="btn_pcontact_id_c" />
+	<browser assert="Contact Search" />
+	<textfield id="email_advanced" set="{@pre_IBMcontact_email}" /> 
+	<button value="Search" />
+	<link text="{@pre_IBMcontact_first_name} {@IBMcontact_record.last_name}" />
+	
+	<!-- Verify that Client field is empty -->
+	<textfield id="account_name" assert="" />
+	
+	<!-- Edit Contact and add default Client for it -->
+	<link id="moduleTab_Contacts" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	<textfield id="email_basic" set="{@pre_IBMcontact_email}" />
+	<button id="search_form_submit" />
+	<link text="{@pre_IBMcontact_first_name} {@IBMcontact_record.last_name}" />
+	<button id="edit_button" />
+	
+	<!-- Select client -->
+	<button id="btn_account_name" />
+	<textfield id="name_advanced" set="{@pre_client_name}" />
+	<button id="search_form_submit" />
+	<link text="{@pre_client_name}" />
+	<textfield id="account_name" assert="{@pre_client_name}" />
+	<button id="SAVE_HEADER" />
+	
+	<!-- Quick opportunity create -->
+	<link id="moduleTab_Opportunities" />
+	<link text="Create an opportunity" />
+	<wait timeout="3" />
+	
+	<!-- Select primary contact -->
+	<button id="btn_pcontact_id_c" />
+	<browser assert="Contact Search" />
+	<textfield id="email_advanced" set="{@pre_IBMcontact_email}" /> 
+	<button value="Search" />
+	<link text="{@pre_IBMcontact_first_name} {@IBMcontact_record.last_name}" />
+	
+	<!-- Verify that Client field has correct value -->
+	<textfield id="account_name" assert="{@pre_client_name}" />
+	
+	<!-- Open Full Form opportunity creation -->
+	<button id="Opportunities_subpanel_full_form_button" />
+	
+	<!-- Verify if Contact and Client already selected -->
+	<textfield id="pcontact_id_c" assert="{@pre_IBMcontact_first_name} {@IBMcontact_record.last_name}" />
+	<textfield id="account_name" assert="{@pre_client_name}" />
+	
+	<!-- Clear Contact and Client, verify if field was cleared-->
+	<button id="btn_clr_pcontact_id_c" />
+	<wait timeout="1" />
+	<textfield id="pcontact_id_c" assert="" />
+	<button id="btn_clr_account_name" />
+	<textfield id="account_name" assert="" />
+	
+	<!-- Select primary contact -->
+	<button id="btn_pcontact_id_c" />
+	<browser assert="Contact Search" />
+	<textfield id="email_advanced" set="{@pre_IBMcontact_email}" /> 
+	<button value="Search" />
+	<link text="{@pre_IBMcontact_first_name} {@IBMcontact_record.last_name}" />
+	
+	<!-- Verify that Client field has correct value-->
+	<textfield id="account_name" assert="{@pre_client_name}" />
+	
+	<!-- Delete Test Data -->
+	<script file="{@global.scriptsdir}/modules/lib/Client_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	
+	<puts text="Test: Case11928.xml finished." />
+</soda>
