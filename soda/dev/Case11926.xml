@@ -35,8 +35,10 @@
 	<!-- Clear all fields -->
 	<button id="btn_clr_pcontact_id_c" />
 	<button id="btn_clr_account_name" />
-	<button id="btn-clear-lead_source-input" />
 	<button id="btn_clr_assigned_user_name" />
+	<button id="btn_clr_assigned_user_name_1" />
+	<textfield id="additional_users_user_name_1" set="" />
+	<textfield id="decision_date_1" set="" />
 	<!-- Save and verify -->
 	<button id="Opportunities_dcmenu_save_button" />
 	<div id="dcboxbody">
@@ -44,6 +46,12 @@
 		<browser assert="Missing required field: Primary contact" />
 		<browser assert="Missing required field: Client Name" />
 		<browser assert="Missing required field: Source" />
+		<browser assert="Missing required field: Owner" />
+		<browser assert="Missing required field: Additional team members" />
+		<browser assert="Missing required field: Offering" />
+		<browser assert="Missing required field: Amount" />
+		<browser assert="Missing required field: Assigned to" />
+		<browser assert="Missing required field: Decision date" />
 	</div>
 	
 	<!-- Full Form Create Opportunity -->
@@ -51,18 +59,20 @@
 	<!-- Clear all fields -->
 	<button id="btn_clr_pcontact_id_c" />
 	<button id="btn_clr_account_name" />
-	<button id="btn-clear-lead_source-input" />
 	<button id="btn_clr_assigned_user_name" />
+	<button id="btn_clr_assigned_user_name_1" />
+	<button id="btn-clear-lead_source-input" />
+	<textfield id="additional_users_user_name_1" set="" />
+	<textfield id="decision_date_1" set="" />
 	<!-- Save and verify -->
-	<button id="SAVE_HEADER" />
-	<div id="Default_Opportunities_Subpanel">
-		<browser assert="Missing required field: Description" />
-		<browser assert="Missing required field: Primary contact" />
-		<browser assert="Missing required field: Client Name" />
-		<browser assert="Missing required field: Source" />
-	</div>
-	<div id="LBL_EDITVIEW_PANEL1">
-		<browser assert="Missing required field: Opportunity owner" />
+	<button value="Save" />
+	<div id="dcboxbody">
+		<textfield id="description" exists="true" />
+		<textfield id="assigned_user_name" exists="true" />
+		<select id="lead_source" exists="true" />
+		<textfield id="pcontact_id_c" exists="true" />
+		<textfield id="offering_template-input" exists="true" />
+		<textfield id="revenue_amount_template" exists="true" />
 	</div>
 	
     <puts text="Test: Case11926.xml finished." />
