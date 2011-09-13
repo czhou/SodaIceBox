@@ -24,7 +24,7 @@
 			<textfield id="Accounts0emailAddress0" set="{@stamp}{@client_record.emailAddress0}" />
 			<textfield id="description" set="{@client_record.description}" />
 			<textfield id="description" set="{@client_record.description}" />
-			<button value="Save" />
+			<button value="Save" alert="true"/>
 		</form>
 		<wait timeout="3" />
 		<browser assert="{@client_record.name} {@user.name} {@stamp}" />
