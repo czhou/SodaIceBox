@@ -28,17 +28,50 @@
 		<link text="{@pre_client_name}" />
 		<wait timeout="1" />
 		
-		<!-- Opportunity owner Select -->
-		<button id="btn_assigned_user_name" />
+		<image id="solution_codes_c_img" click="true" />
+		<wait timeout="1" />
+		<li text="{@opp_fullrec.solution_code}" click="true" />
+		
+		<select id="sales_stage" set="{@opp_fullrec.sales_stage}" />
+		
+		<textfield id="lead_source-input" jscriptevent="onkeyup" />
+		<wait timeout="3" />
+		<li text="{@opp_fullrec.lead_source}" click="true" />
+		
+		<textfield id="offering_1-input" append="Le" jscriptevent="onkeyup" />
+		<wait timeout="3" />
+		<li text="{@opp_fullrec.offering}" click="true" />
+		
+		<select id="probability_1" set="{@opp_fullrec.probability}" />
+		<textfield id="revenue_amount_1" set="{@opp_fullrec.revenue_amount}" />
+		
+		<!-- Select Assigned To -->
+		<button id="btn_assigned_user_name_1" />
 		<browser assert="User Search" />
-		<textfield id="last_name_advanced" set="{@opp_fullrec.opportunity_owner}" /> 
+		<textfield id="last_name_advanced" set="{@opp_fullrec.assigned_to}" /> 
 		<button value="Search" />
-		<link text="{@opp_fullrec.opportunity_owner}" />
+		<link text="{@opp_fullrec.assigned_to}" />
 		<wait timeout="1" />
 		
-		<textfield id="date_closed" set="{@opp_fullrec.date_closed}" />
-		<select id="sales_stage" set="{@opp_fullrec.sales_stage}" />
-		<select id="lead_source" set="{@opp_fullrec.lead_source}" />
+		<textfield id="decision_date_1" set="{@opp_fullrec.decision_date}" />
+		
+		<!-- Select Owner -->
+		<button id="btn_assigned_user_name" />
+		<browser assert="User Search" />
+		<textfield id="last_name_advanced" set="{@opp_fullrec.owner}" /> 
+		<button value="Search" />
+		<link text="{@opp_fullrec.owner}" />
+		<wait timeout="1" />
+		
+		<!-- Additional User Select -->
+		<button id="additional_users_btn_select" />
+		<browser assert="User Search" />
+		<textfield id="last_name_advanced" set="{@opp_fullrec.add_user}" /> 
+		<button value="Search" />
+		<link text="{@opp_fullrec.add_user}" />
+		<wait timeout="1" />
+		
+		<select id="additional_users_role_id_1" set="{@opp_fullrec.add_user_role}" />
 		
 		<button id="SAVE_FOOTER" />
 		

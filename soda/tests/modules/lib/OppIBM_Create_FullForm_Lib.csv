@@ -1,2 +1,2 @@
-description,primary_contact,client_name,opportunity_owner,sales_stage,lead_source,add_team_members,date_closed
-test description,,,Administrator,Identified,Conference,qauser,09/30/2011
+description,primary_contact,client_name,solution_code,sales_stage,offering,probability,revenue_amount,assigned_to,decision_date,owner,add_user,add_user_role
+test description,,,IT Security,Closed,Level 15: Product Lifecycle Management,25%,12345,Administrator,12/12/2012,Administrator,Administrator,Business Partner
