@@ -1,11 +1,15 @@
 <soda>
 	<puts text="Lib: Opp_Create_Lib.xml starting." />
 	<script file="{@global.scriptsdir}/modules/lib/Client_Create_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Contact_Create_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ContactIBM_Create_Lib.xml" />
     <timestamp />
-	<link id="moduleTab_Opportunities" />
-	<link text="Create an Opportunity" /> 
+	
 	<csv file="{@global.scriptsdir}/modules/lib/OppIBM_Quick_Create_Lib.csv" var="opp_quickrec">
+		<timestamp />
+		<link id="moduleTab_Opportunities" />
+		<link text="Create an opportunity" /> 
+		<wait timeout="3" />
+		
 		<textfield id="description" set="{@opp_quickrec.description} {@user.name} {@stamp}" />
 		
 		<!-- Primary Contact Select -->
@@ -13,28 +17,29 @@
 		<browser assert="Contact Search" />
 		<textfield id="email_advanced" set="{@pre_IBMcontact_email}" /> 
 		<button value="Search" />
-		<link text="{@pre_IBMcontact_first_name} {@IBMcontact_record.last_name}" />
+		<link text="{@pre_IBMcontact_first_name} {@pre_IBMcontact_last_name}" />
+		<wait timeout="1" />
 		
 		<!-- Client Select -->
-		<button id="account_name" />
+		<button id="btn_account_name" />
 		<browser assert="Client Search" />
 		<textfield id="name_advanced" set="{@pre_client_name}" /> 
 		<button value="Search" />
 		<link text="{@pre_client_name}" />
-		
-		<!-- Opportunity owner Select -->
-		<button id="assigned_user_name" />
-		<browser assert="User Search" />
-		<textfield id="name_advanced" set="{@opp_quickrec.opportunity_owner}" /> 
-		<button value="Search" />
-		<link text="{@opp_quickrec.opportunity_owner}" />
+		<wait timeout="1" />
 		
 		<select id="sales_stage" set="{@opp_quickrec.sales_stage}" />
 		<select id="lead_source" set="{@opp_quickrec.lead_source}" />
 		
-		<button id="Opportunities_dcmenu_save_button" />
+		<!-- Create revenue line item  -->
+		<textfield id="offering_1-input" append="Le" />
+		<wait timeout="3" />
+		<li text="{@opp_quickrec.offering}" click="true" />
 		
-		<browser assert="{@opp_quickrec.description} {@user.name} {@stamp}" />
+		<select id="probability_1" set="{@opp_quickrec.probability}" />
+		<textfield id="revenue_amount_1" set="{@opp_quickrec.revenue_amount}" />
+		<textfield id="decision_date_1" set="{@opp_quickrec.decision_date}" />	
+		<button id="Opportunities_dcmenu_save_button" />
 	</csv>
     <puts text="Lib: Opp_Create_Lib.xml finished." />
 </soda>
