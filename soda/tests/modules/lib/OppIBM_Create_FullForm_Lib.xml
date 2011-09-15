@@ -37,7 +37,7 @@
 		<textfield id="lead_source-input" jscriptevent="onkeyup" />
 		<wait timeout="3" />
 		<li text="{@opp_fullrec.lead_source}" click="true" />
-		<!-- THIS FUNCTIONALITY WAS REMOVED IN LAST VERSION
+		
 		<textfield id="offering_1-input" append="Le" jscriptevent="onkeyup" />
 		<wait timeout="3" />
 		<li text="{@opp_fullrec.offering}" click="true" />
@@ -45,7 +45,7 @@
 		<select id="probability_1" set="{@opp_fullrec.probability}" />
 		<textfield id="revenue_amount_1" set="{@opp_fullrec.revenue_amount}" />
 		
-		<!-- Select Assigned To 
+		<!-- Select Assigned To -->
 		<button id="btn_assigned_user_name_1" />
 		<browser assert="User Search" />
 		<textfield id="last_name_advanced" set="{@opp_fullrec.assigned_to}" /> 
@@ -55,7 +55,7 @@
 		
 		<textfield id="decision_date_1" set="{@opp_fullrec.decision_date}" />
 		
-		<!-- Select Owner 
+		<!-- Select Owner -->
 		<button id="btn_assigned_user_name" />
 		<browser assert="User Search" />
 		<textfield id="last_name_advanced" set="{@opp_fullrec.owner}" /> 
@@ -63,6 +63,7 @@
 		<link text="{@opp_fullrec.owner}" />
 		<wait timeout="1" />
 		
+		<!-- This functionality doesn't work in build #170
 		<!-- Additional User Select 
 		<button id="additional_users_btn_select" />
 		<browser assert="User Search" />
