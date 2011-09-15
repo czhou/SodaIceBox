@@ -28,7 +28,7 @@
 <soda>
 	<!-- Case 11922: Creates one-time revenue line item (using Find) for an existing opportunity -->
 	<puts text="Test: Case11922.xml starting." />
-	<script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
 	
 	<!-- Create Revenue Line Item -->
 	<button id="opportunities_ibm_revenuelineitems_create_button" />
@@ -45,7 +45,9 @@
 	<textfield id="level40-input" assert="" />
 	<button id="SAVE_HEADER" />
 	
-	<!-- NEED TO ADD: verify that record displayed in subpanel -->
+	<div class="moduleTitle">
+		<browser assert="Revenue Line Items" />
+	</div>
 	
 	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Client_Delete_Lib.xml" />
