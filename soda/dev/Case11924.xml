@@ -51,7 +51,9 @@
 	
 	<button id="SAVE_HEADER" />
 	
-	<!-- NEED TO ADD: verify that record displayed in subpanel -->
+	<div class="moduleTitle">
+		<browser assert="Revenue Line Items" />
+	</div>
 	
 	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Client_Delete_Lib.xml" />
