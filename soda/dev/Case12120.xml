@@ -1,0 +1,62 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Case 12120: Allow users the ability to copy an Opportunity with fields pre populated on the copy -->
+	<puts text="Test: Case12120.xml starting." />
+    <script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
+	<!-- Open opportunity in detail view and verify that Probability /Amount / Decision Date are blanked /Default -->
+	<csv file="{@global.scriptsdir}/dev/Case12120.csv" var="Case12120"/>
+	<button id="duplicate_button" />
+	<textfield id="offering_1-input" assert="{@Case12120.offering}" />
+	<textfield id="revenue_amount_1" assert="{@Case12120.revenue_amount}"/>
+	<select id="probability_1" assert="{@Case12120.probability}" />
+	<textfield id="decision_date_1" assert="{@Case12120.decision_date}" />
+	<!-- Save opportunity, verify if pop-up appeared and add required fields -->
+	<button value="Save" />
+	<div id="dctitle">
+		<textfield id="offering_template-input" set="le" />
+		<wait timeout="3" />
+		<li text="{@Case12120.revenue_amount_template}" click="true" />
+		<textfield id="revenue_amount_template" set="{@Case12120.revenue_amount_template}" />
+		<textfield id="decision_date_template" set="{@Case12120.decision_date_template}" />
+		<button value="true" />
+	</div>
+	
+	<!-- Verify that changes applied
+		FOR FUTURE: add amount verification-->
+	<div id="detailpanel_1">
+		<browser assert="{@Case12120.probability}%" />
+		<browser assert="{@Case12120.decision_date_template}" />
+	</div>
+	
+	<!-- Delete test data -->
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Client_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+    <puts text="Test: 12120.xml finished." />
+</soda>
