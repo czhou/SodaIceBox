@@ -28,12 +28,10 @@
 <soda>
 	<!-- Case 12122: User removes detail line item via the opportunity view when multiple detail line item exist.-->
 	<puts text="Test: Case12122.xml starting." />
-    <!-- <script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
 	<!-- Open Opportunity for edit and and new revenue line item -->
-	<link id="moduleTab_Opportunities" />
-	<link text="/J3-WQ8A0QJ/" />
-	<textfield id="revenue_amount_1" set="100" />
 	<button id="edit_button" />
+	<textfield id="revenue_amount_1" set="100" />
 	<csv file="{@global.scriptsdir}/dev/Case12122.csv" var="Case12122">
 		<div id="LBL_REVENUE_LINE_ITEM">
 			<link text="+ Add another" />
