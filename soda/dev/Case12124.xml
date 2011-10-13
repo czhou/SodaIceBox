@@ -1,0 +1,58 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Case 12122: User removes detail line item via the opportunity view when multiple detail line item exist.-->
+	<puts text="Test: Case12122.xml starting." />
+    <script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
+	<!--Click "rem" and cancel. Verify that nothing changed -->
+	<link text="rem" alert="false" />
+	<div id="LBL_OPP_MAIN">
+		<browser assertnot="0%" />
+		<browser assertnot="0.00" />
+	</div>
+	
+	<!--Click "rem" and confirm. Verify that probability with amount are changed -->
+	<link text="rem" alert="true" />
+	<div id="LBL_OPP_MAIN">
+		<browser assert="0%" />
+		<browser assert="0.00" />
+	</div>
+	
+	<!-- Open revenue line item and verify that Roadmap status is NIR -->
+	<div id="list_subpanel_opportun_revenuelineitems">
+		<link text="edit" />
+	</div>
+	<button id="ibm_RevenueLineItems_subpanel_full_form_button" />
+	<select id="roadmap_status" assert="NIR" />
+	
+	<!-- Delete test data -->
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Client_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+    <puts text="Test: 12122.xml finished." />
+</soda>
