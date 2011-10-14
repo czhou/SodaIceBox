@@ -27,7 +27,7 @@
 
 <soda>
 		<!--
-				This test ensures that you can delete an opp from its detailview
+				This test ensures that you cannot delete an opp if you are not admin
 		-->
 		
 		<!--	For IBM script creations, the dependencies of opportunity creation have
@@ -69,14 +69,26 @@
         </table>   
              
         <form id="form">
-            <button value="Delete" alert='true'/>
+            <button value="Delete" click="false" exists="false" />
         </form>
         
 		<link id='moduleTab_Opportunities'/>
 		
+		<button id="search_form_clear" />
+		<textfield id="name_basic" set="{@pre_opp_name}"/>
+        <button id="search_form_submit"/>
+		
 		<table class="list view">
-			<browser assertnot="{@pre_opp_name}" />
+			<browser assert="{@pre_opp_name}" />
         </table>
+		
+		<form id="MassUpdate">
+			<checkbox name="massall" click="true" />
+			<link id="actions_link" />
+			<link text="Delete" click="false" exists="false" />
+		</form>
+	
+		
         <var var="pre_opp_name" set="{@pre_opp_name_a}" />               
         <puts text="Test: Opportunity_2241.xml finished."/>
 		

@@ -27,28 +27,42 @@
 
 <soda>
 	<puts text="Test: Opportunity_9153.xml starting" />
-	<csv file="{@global.scriptsdir}/csvs/opportunity/Opportunity_9153.csv" var="Opportunity_9153">
-		<var var="pre_opp_name_a" set="{@pre_opp_name}"/>
-		<script file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml" />
-		<link id="moduleTab_Opportunities" />
-		<browser assert="Opportunities" />
-		<button id="search_form_clear" />
-		<form id="search_form">
-			<textfield id="name_basic" set="{@pre_opp_name}" />
-		</form>
-		<button id="search_form_submit" />
+	
+	<!--IBM - Commented out, next two lines, pending creation of the following script
+		<script file="tests/modules/opportunities/part4/module_lib/setup-opportunity-part4.xml" />
+		which crerates the seed data for the suite, including the @pre_opp_name variable.
+				
+        <script file='{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml'/>
+		<var var="pre_opp_name_a" set="{@pre_opp_name}" />
+	-->
+		
+	<!--To test the script prior to the create opportunity dependent scripts
+		the opportunity variable name is hard coded, from an existing opportunity which
+		needs to be manually created.
+	-->
+		
+	<var var="pre_opp_name" set="2H-UA8ORKT" />
+	<var var="pre_opp_name_a" set="{@pre_opp_name}" />	
+	
+	<link id="moduleTab_Opportunities" />
+	<browser assert="Opportunities" />
+	<button id="search_form_clear" />
+	<form id="search_form">
+		<textfield id="name_basic" set="{@pre_opp_name}" />
+	</form>
+	<button id="search_form_submit" />
 
-		<form id="MassUpdate">
-			<browser assert="{@pre_opp_name}" />
-			<checkbox name="massall" class="checkbox" set="false" />
-			<link id="actions_link" />
-			<link text="Delete" alert="true" />
-			<checkbox name="massall" click="true" />
-			<link id="actions_link" />
-			<link text="Delete" alert="true" />
-			<span class="pageNumbers" assert="(0 - 0 of 0)" />
-		</form>
-		<var var="pre_opp_name" set="{@pre_opp_name_a}"/>
-	</csv>
+	<form id="MassUpdate">
+		<browser assert="{@pre_opp_name}" />
+		<checkbox name="massall" class="checkbox" set="false" />
+		<link id="actions_link" />
+		<link text="Delete" alert="true" />
+		<checkbox name="massall" click="true" />
+		<link id="actions_link" />
+		<link text="Delete" alert="true" />
+		<span class="pageNumbers" assert="(0 - 0 of 0)" />
+	</form>
+	<var var="pre_opp_name" set="{@pre_opp_name_a}"/>
+	
 	<puts text="Test: Opportunity_9153.xml finished" />
 </soda>
