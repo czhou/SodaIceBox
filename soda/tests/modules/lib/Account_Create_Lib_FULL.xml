@@ -30,18 +30,18 @@
 	<timestamp />
 	<link id="moduleTab_Accounts" />
 	<wait condition="true">
-		<link text="Create Account" />
+		<link text="Create Client" />
 	</wait>
 	<csv file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.csv" var="account_record">
 
-		<link text="Create Account" />
+		<link text="Create Client" />
 		<browser assert="Create" />
 		<button id="btn_assigned_user_name" />
 		<browser assert="User Search" />
 		<textfield id="last_name_advanced" set="{@account_record.assigned_user_name}" />
-		<form id="popup_query_form">
+		<table class="edit view">
 			<button value="Search" />
-		</form>
+		</table>
 		<link text="{@account_record.assigned_user_name}" />
 
 		<form id="EditView">

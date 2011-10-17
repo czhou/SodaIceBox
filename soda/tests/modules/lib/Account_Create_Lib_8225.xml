@@ -30,11 +30,11 @@
 	<timestamp />
 	<link id="moduleTab_Accounts" />
 	<wait condition="true">
-		<link text="Create Account" />
+		<link text="Create Client" />
 	</wait>
 	<csv file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.csv" var="account_record">
 
-		<link text="Create Account" />
+		<link text="Create Client" />
 		<browser assert="Create" />
 
 		<!-- This will force a screen dump from Soda:
