@@ -34,7 +34,7 @@
 				been commented out until they have been written.
 		-->
 
-        <puts text="Test: Opportunity_2241.xml starting." />
+        <puts text="Test: Opportunity_12261.xml starting." />
 		
 		<!--	IBM - Commented out, next two lines, pending creation of the following script
 				<script file="tests/modules/opportunities/part4/module_lib/setup-opportunity-part4.xml" />
@@ -90,6 +90,6 @@
 	
 		
         <var var="pre_opp_name" set="{@pre_opp_name_a}" />               
-        <puts text="Test: Opportunity_2241.xml finished."/>
+        <puts text="Test: Opportunity_12261.xml finished."/>
 		
 </soda>
