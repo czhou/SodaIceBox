@@ -34,23 +34,26 @@
 	<script file="{@global.scriptsdir}/modules/lib/IBMaddRLI.xml" />
 	
 	<!-- Verify that amount calculated correct -->
-	<csv file="{@global.scriptsdir}/dev/Case12122_1.csv" var="Case12122" />
+	<csv file="{@global.scriptsdir}/dev/Case12122.csv" var="Case12122" />
 	<div id="LBL_OPP_MAIN">
-		<browser assert="{@Case12122.initial}" />
+		<browser assert="12,456.00" />
+		<browser assert="30%" />
 	</div>
 	
 	<!-- Click "Rem" and cancel: Verify that amount value not changed -->
 	<link text="rem" alert="false" />
 	<wait timeout="3" />
 	<div id="LBL_OPP_MAIN">
-		<browser assert="{@Case12122.not_changed}" />
+		<browser assert="12,456.00" />
+		<browser assert="30%" />
 	</div>
 	
 	<!-- Click "Rem" and confirm: Verify that amount value changed -->
 	<link text="rem" alert="true" />
 	<wait timeout="3" />
 	<div id="LBL_OPP_MAIN">
-		<browser assert="{@Case12122.changed}" />
+		<browser assert="12,345.00" />
+		<browser assert="25%" />
 	</div>
 	
 	<!-- Delete test data -->
