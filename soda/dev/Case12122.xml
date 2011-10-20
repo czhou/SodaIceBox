@@ -29,47 +29,28 @@
 	<!-- Case 12122: User removes detail line item via the opportunity view when multiple detail line item exist.-->
 	<puts text="Test: Case12122.xml starting." />
     <script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
+	
 	<!-- Open Opportunity for edit and and new revenue line item -->
-	<button id="edit_button" />
-	<textfield id="revenue_amount_1" set="100" />
-	<csv file="{@global.scriptsdir}/dev/Case12122.csv" var="Case12122">
-		<div id="LBL_REVENUE_LINE_ITEM">
-			<link text="+ Add another" />
-		</div>
-		<textfield id="offering_{@Case12122.id}-input" append="le" />
-		<wait timeout="3" />
-		<li text="{@Case12122.offering}" click="true" />
-		
-		<textfield id="revenue_amount_{@Case12122.id}" set="{@Case12122.amount}" />
-		<select id="probability_{@Case12122.id}" set="{@Case12122.probability}" />
-		<!-- Select owner -->
-		<button id="btn_assigned_user_name_{@Case12122.id}" />
-		<button id="search_form_clear" />
-		<textfield id="user_name_advanced" set="{@Case12122.owner}" />
-		<button id="search_form_submit" />
-		<link text="{@Case12122.owner}" />
-		
-		<textfield id="decision_date_{@Case12122.id}" set="{@Case12122.date}" />
-	</csv>
-	<button value="save" />
+	<script file="{@global.scriptsdir}/modules/lib/IBMaddRLI.xml" />
+	
 	<!-- Verify that amount calculated correct -->
-	<csv file="{@global.scriptsdir}/dev/Case12122_1.csv" var="Case12122_1">
+	<csv file="{@global.scriptsdir}/dev/Case12122_1.csv" var="Case12122" />
 	<div id="LBL_OPP_MAIN">
-		<browser assert="{@Case12122_1.initial}" />
+		<browser assert="{@Case12122.initial}" />
 	</div>
 	
 	<!-- Click "Rem" and cancel: Verify that amount value not changed -->
 	<link text="rem" alert="false" />
 	<wait timeout="3" />
 	<div id="LBL_OPP_MAIN">
-		<browser assert="{@Case12122_1.not_changed}" />
+		<browser assert="{@Case12122.not_changed}" />
 	</div>
 	
 	<!-- Click "Rem" and confirm: Verify that amount value changed -->
 	<link text="rem" alert="true" />
 	<wait timeout="3" />
 	<div id="LBL_OPP_MAIN">
-		<browser assert="{@Case12122_1.changed}" />
+		<browser assert="{@Case12122.changed}" />
 	</div>
 	
 	<!-- Delete test data -->
