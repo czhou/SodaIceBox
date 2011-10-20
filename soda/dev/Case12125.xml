@@ -1,0 +1,75 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Case 12125: User is not Opportunity Owner and/or Line Item Owner and attempts to remove a detail line item via the opportunity view -->
+	<puts text="Test: Case12125.xml starting." />
+    	<script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
+	
+	<!-- Create and log in as different user -->
+	<script file="{@global.scriptsdir}/modules/lib/UserIBM_Create_lib.xml" />
+	<link id="logout_link" />
+	<textfield id="user_name" set="{@usercr.last_name}" />
+	<textfield id="user_password" set="{@usercr.pass}" />
+	<button id="login_button" /> 
+	
+	<!-- Skip not required startup wizard -->
+	<button id="next_tab_personalinfo" required="false" />
+	<button id="next_tab_locale" required="false" />
+	<button id="next_tab_finish" required="false" />
+	<button value="/Finish/" required="false" />
+	
+	<!-- Go to Opportunities and open it in detail view -->
+	<link id="moduleTab_Opportunities" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	<image src="/edit/" click="true" />
+	<button id="Opportunities_subpanel_full_form_button" />
+	<button id="CANCEL_HEADER" alert="true" />
+	
+	<!-- Verify if user not able to remove RLI -->
+	<div id="list_subpanel_opportun_revenuelineitems">
+		<link text="rem" alert="true" />
+	</div>
+	<div id="Opportunities_detailview_tabs">
+		<browser assert="{@pre_opp_descr}" />
+		<browser assert="12,345.00" />
+		<browser assert="25%" />
+	</div>
+	
+	<!-- Login as Admin and delete test data -->
+	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user" />
+	<textfield id="user_name" set="{@user.name}" default="admin" />
+	<textfield id="user_password" set="{@user.password}" default="admin" />
+	<button id="login_button" />
+	
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Client_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/UserIBM_Delete_lib.xml" />
+    	<puts text="Test: 12125.xml finished." />
+</soda>
