@@ -3,7 +3,7 @@
 	<!--Create New User-->
 	<link id="admin_link" />
 	<link id="user_management" />
-	
+
 	<csv file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.csv" var="usercr">
 		<link text="Create New User" />
 		<browser assert="Users" />
@@ -11,7 +11,8 @@
 		<textfield name="sugar_user_name" set="{@usercr.last_name}" />
 		<textfield id="last_name" set="{@usercr.last_name}" />
 		<textfield id="Users0emailAddress0" set="{@usercr.email}" />
-
+		<select id="UserType" set="{@usercr.UserType}" />
+		
 		<link href="#tab2" />
 		<wait timeout="1" />
 		<textfield id="new_password" set="{@usercr.pass}" jscriptevent="onkeyup" />

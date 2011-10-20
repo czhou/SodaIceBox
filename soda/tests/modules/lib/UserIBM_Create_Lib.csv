@@ -1,3 +1,3 @@
-last_name,email,pass
-user1,user1@mailinator.com,123asdFG
-user2,user2@mailinator.com,123asdFG
+last_name,email,pass,UserType
+user1,user1@mailinator.com,123asdFG,System Administrator User
+user2,user2@mailinator.com,123asdFG,System Administrator User
