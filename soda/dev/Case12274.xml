@@ -26,9 +26,9 @@
 -->
 
 <soda>
-	<!-- Case 12274: Changes of "Team members" should be tracked and logged to "Change log". -->
+	<!-- Case 12274: Changes of "Tags" should be tracked and logged to "Change log". -->
 	<puts text="Test: Case12274.xml starting." />
-    <script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
+    	<script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
 		
 	<csv file="{@global.scriptsdir}/dev/Case12274.csv" var="Case12274">
 		<!-- Add team member and verify if it appear in history log -->
