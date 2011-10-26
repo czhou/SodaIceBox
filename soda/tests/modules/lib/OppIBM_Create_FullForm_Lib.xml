@@ -6,7 +6,7 @@
 	<csv file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.csv" var="opp_fullrec">
 		<timestamp />
 		<link id="moduleTab_Opportunities" />
-		<link text="Create an opportunity" /> 
+		<link text="Create Opportunity" /> 
 		<wait timeout="3" />
 		<button id="Opportunities_subpanel_full_form_button" />
 		
