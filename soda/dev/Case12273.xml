@@ -1,0 +1,61 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Case 12273: Changes of "Team members" should be tracked and logged to "Change log". -->
+	<puts text="Test: Case12273.xml starting." />
+	<script file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.xml" />
+    <script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
+	
+	<!-- Open history log and make sure that team member not displayed -->
+	<button id="btn_view_change_log" />
+	<browser assertnot="{@usercr.last_name}" />
+	<javascript>
+		window.close();
+	</javascript>
+	<wait timeout="3" />
+	
+	<!-- Add team member and verify if it appear in history log -->
+	<button id="edit_button" />
+	<link text="+ Add another" />
+	<textfield id="additional_users_user_name_4" append="{@usercr.last_name}" />
+	<li text="{@usercr.last_name}" click="true" />
+	<button value="Save" />
+	<button id="btn_view_change_log" />
+	<browser assert="{@usercr.last_name}" />
+	<javascript>
+		window.close();
+	</javascript>
+	<wait timeout="3" />
+	
+	<!-- Delete test data  -->
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Client_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/UserIBM_Delete_Lib.xml" />
+	<puts text="Test: 12273.xml finished." />
+</soda>
