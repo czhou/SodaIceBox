@@ -1,2 +1,2 @@
-id,offering,amount,probability,owner,date
-2,Level 20: Global Financing - Cust Fin - Lenovo,111,25,admin,12/12/2012
+search_str,select_str,decision_date,roadmap_status,probability,revenue_amount
+le,Level 15: Product Lifecycle Management,12/12/2012,Solid,25,111
