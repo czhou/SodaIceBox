@@ -60,5 +60,5 @@
 	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Client_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
-	<puts text="Test: 12277.xml finished." />
+	<puts text="Test: Case12277.xml finished." />
 </soda>
