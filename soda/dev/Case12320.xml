@@ -1,0 +1,61 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Case 12320: Verify module tabs and QuickCreate icons are hidden -->
+	<puts text="Test: Case12320.xml starting." />
+	
+	<!-- Verify that QuickCreate icons (across the top navigation bar) do NOT appear for the following modules: Leads, Documents -->
+	<image id="dcMenu_Leads_quick_create_icon" exists="false" />
+	<image id="dcMenu_Documents_quick_create_icon" exists="false" />
+	
+	<!-- Verify that the following module tabs do NOT appear: Leads, Quotes, Documents, Campaigns, Cases, Targets, Target Lists -->
+	<link id="moduleTab_Leads" exists="false" click="false" />
+	<link id="moduleTab_Quotes" exists="false" click="false" />
+	<link id="moduleTab_Documents" exists="false" click="false" />
+	<link id="moduleTab_Campaigns" exists="false" click="false" />
+	<link id="moduleTab_Cases" exists="false" click="false" />
+	<link id="moduleTab_Prospects" exists="false" click="false" />
+	<link id="moduleTab_ProspectLists" exists="false" click="false" />
+	
+	<!-- Verify that the Documents subpanel appears on Opportunity detail view -->
+    <script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
+	
+	<div id="subpanel_title_documents" exists="true" />
+	<div id="subpanel_title_leads" exists="false" />
+	<div id="subpanel_title_quotes" exists="false" />
+	<div id="subpanel_title_campaigns" exists="false" />
+	<div id="subpanel_title_cases" exists="false" />
+	<div id="subpanel_title_targets" exists="false" />
+	<div id="subpanel_title_prospectlists" exists="false" />
+	
+	<!-- Delete test data -->
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Client_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<puts text="Test: Case12320.xml finished." />
+</soda>
