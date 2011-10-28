@@ -1,0 +1,120 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Case 12325: Verify function of "i" hover, "Total probability" results GUI, and "Client name"/"Team member" search fields -->
+	<puts text="Test: Case12325.xml starting." />
+	
+	<script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
+	<link id="moduleTab_Opportunities" />
+	<!-- Verify function of "i" hover -->
+	<image src="/info_inline.png/" jscriptevent="onmouseover" />
+	<wait timeout="1" />
+	<div class="olFontClass">
+		<browser assert="{@opp_fullrec.probability}%" />
+		<browser assert="{@opp_fullrec.decision_date}" />
+	</div>
+	
+	<!-- Verify "Edit" image functionality -->
+	<td class="olCgClass">
+		<image src="/edit_inline.png/" click="true" />
+	</td>
+	<div class="moduleTitle">
+		<browser assert="Edit" />
+	</div>
+	<button id="CANCEL_HEADER" alert="true" />
+	
+	<!-- Verify "View" image functionality -->
+	<image src="/info_inline.png/" jscriptevent="onmouseover" />
+	<wait timeout="1" />
+	<td class="olCgClass">
+		<image src="/view_inline.png/" click="true" />
+	</td>
+	<browser assert="Opportunity overview" />
+	
+	<!-- Open advanced search and select client -->
+	<link text="View Opportunities" />
+	<link id="advanced_search_link" required="false" />
+	<button id="btn_account_name_advanced" />
+	<textfield id="name_advanced" set="{@pre_client_name}" />
+	<button id="search_form_submit" />
+	<link text="{@pre_client_name}" />
+	
+	<!-- Verify if client was selected -->
+	<wait timeout="3" />
+	<div id="Opportunitiesadvanced_searchSearchForm">
+		<browser assert="{@pre_client_name}" />
+	</div>
+	
+	<!-- Create new client and verify is several clients can be selected in advanced search -->
+	<var var="old_client" set="{@pre_client_name}" />
+	<script file="{@global.scriptsdir}/modules/lib/Client_Create_Lib.xml" />
+	<link id="moduleTab_Opportunities" />
+	<link id="advanced_search_link" required="false" />
+	<button id="search_form_clear" />
+	
+	<button id="btn_account_name_advanced" />
+	<textfield id="name_advanced" set="{@pre_client_name}" />
+	<button id="search_form_submit" />
+	<link text="{@pre_client_name}" />
+	
+	<!-- Add old client to advanced search filter -->
+	<button id="btn_account_name_advanced" />
+	<textfield id="name_advanced" set="{@old_client}" />
+	<button id="search_form_submit" />
+	<link text="{@old_client}" />
+	
+	<!-- Verify if both clients are displayed -->
+	<wait timeout="3" />
+	<div id="Opportunitiesadvanced_searchSearchForm">
+		<browser assert="{@pre_client_name}" />
+		<browser assert="{@old_client}" />
+	</div>
+	
+	<!-- Create Team Members and verify if multiselect works -->
+	<script file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.xml" />
+	<link id="moduleTab_Opportunities" />
+	<link id="advanced_search_link" required="false" />
+	<button id="search_form_clear" />
+	<csv file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.csv" var="user_cr">
+		<button id="btn_assigned_user_id_advanced" />
+		<textfield id="user_name_advanced" set="{@user_cr.last_name}" />
+		<button id="search_form_submit" />
+		<link text="{@user_cr.last_name}" />
+	</csv>
+	<csv file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.csv" var="user_cr">
+		<div id="Opportunitiesadvanced_searchSearchForm">
+			<browser assert="{@user_cr.last_name}" />
+		</div>
+	</csv>
+	
+	<!-- Delete test data -->
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Client_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<puts text="Test: Case12325.xml finished." />
+</soda>
