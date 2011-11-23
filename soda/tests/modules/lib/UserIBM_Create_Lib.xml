@@ -1,7 +1,7 @@
 <soda>
 	<puts text="Lib: UserIBM_Create_Lib.xml starting." />
 	<!--Create New User-->
-	<link id="admin_link" />
+	<link text="Admin" />
 	<link id="user_management" />
 
 	<csv file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.csv" var="usercr">
