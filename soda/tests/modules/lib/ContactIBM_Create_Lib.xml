@@ -18,14 +18,11 @@
 
 			<button value="Save" />
 		</form>
-
-		<browser assert="{@IBMcontact_record.first_name} {@user.name} {@stamp} {@IBMcontact_record.last_name}" />
-
-		<!--Save the contact id & name-->
-		<form name="DetailView">
-			<hidden name="record" var="pre_contact_id" />
-		</form>
-
+		<button id="search_form_clear" />
+		<button id="search_form_submit" />
+		<form id="MassUpdate">
+			<browser assert="{@IBMcontact_record.first_name} {@user.name} {@stamp} {@IBMcontact_record.last_name}" />
+		</form>	
 	</csv>
 	<var var="pre_IBMcontact_first_name" set="{@IBMcontact_record.first_name} {@user.name} {@stamp}" />
 	<var var="pre_IBMcontact_last_name" set="{@IBMcontact_record.last_name}" />
