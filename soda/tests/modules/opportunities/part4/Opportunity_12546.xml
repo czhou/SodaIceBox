@@ -1,0 +1,105 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+		<!--
+				This test verifies the creation of an OM Revenue line item Services product with a Contract
+				Type change, for a Services Seller
+		-->
+		
+		<!--	For IBM script creations, the dependencies of opportunity creation have
+				been commented out until they have been written.
+		-->
+
+        <puts text="Test: Opportunity_12546.xml starting." />
+		
+		<!--	IBM - Commented out, next two lines, pending creation of the following script
+				<script file="tests/modules/opportunities/part4/module_lib/setup-opportunity-part4.xml" />
+				which crerates the seed data for the suite, including the @pre_opp_name variable.
+				
+        <script file='{@global.scriptsdir}/modules/lib/Opp_Create_Lib_NoDep.xml'/>
+		<var var="pre_opp_name_a" set="{@pre_opp_name}" />
+		-->
+		
+        <link id='moduleTab_Opportunities'/>
+     
+        <!-- <link text="Basic Search" required="false" /> -->
+        <button id="search_form_clear" />
+        
+		<!--	To test the script prior to the create opportunity dependent scripts
+				the opportunity variable name is hard coded, from an existing opportunity which
+				needs to be manually created.
+			
+		-->
+		
+		<var var="pre_opp_name" set="LB-9RVWHKG" />  
+			
+		<textfield id="name_basic" set="{@pre_opp_name}"/>
+   
+        <button id="search_form_submit"/>
+        
+        <table class="list view">
+            <browser assert="{@pre_opp_name}"/>
+            <link text="{@pre_opp_name}" click="true"/>             
+        </table>
+
+		<button id="opportunities_ibm_revenuelineitems_create_button" />
+             
+        <csv file="{@global.scriptsdir}/modules/lib/Opp_Create_Lib.csv" var="opp_record">
+		
+			<textfield id="level_search-input" click="true" />
+			<textfield id="level_search-input" set="a" /> 
+			<textfield id="level_search-input" click="true" />
+			<wait timeout="1" />
+	  
+			<li text="Level 15: Strategic Outsourcing" click="true" />
+			
+			<wait timeout="5" />
+			
+			<select id="probability" set="{@opp_record.probability}" />
+			<select id="roadmap_status" set="Solid" />
+	  		<textfield id="revenue_amount" set="{@opp_record.amount}" />
+			<textfield id="total_contract_value" set="200" />
+			
+			<textfield id="level10-input" assert="IBM Global Services" />
+			<textfield id="level15-input" assert="Strategic Outsourcing" />
+			
+			<radio id='revenue_type' value='Transactional'/>
+			
+			<wait timeout="3" />
+			
+			<textfield id="level10-input" assert="" />
+			<textfield id="level15-input" assert="" />
+			
+			<button id="CANCEL_FOOTER" alert="true" />
+					
+		</csv>
+		
+       
+        <puts text="Test: Opportunity_12546.xml finished."/>
+		
+</soda>
