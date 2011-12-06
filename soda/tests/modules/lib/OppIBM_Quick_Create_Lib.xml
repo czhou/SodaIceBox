@@ -1,5 +1,5 @@
 <soda>
-	<puts text="Lib: Opp_Create_Lib.xml starting." />
+	<puts text="Lib: OppIBM_Quick_Create_Lib.xml starting." />
 	<script file="{@global.scriptsdir}/modules/lib/Client_Create_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/ContactIBM_Create_Lib.xml" />
     <timestamp />
@@ -7,7 +7,7 @@
 	<csv file="{@global.scriptsdir}/modules/lib/OppIBM_Quick_Create_Lib.csv" var="opp_quickrec">
 		<timestamp />
 		<link id="moduleTab_Opportunities" />
-		<link text="Create an opportunity" /> 
+		<link text="Create Opportunity" /> 
 		<wait timeout="3" />
 		
 		<textfield id="description" set="{@opp_quickrec.description} {@user.name} {@stamp}" />
@@ -29,17 +29,19 @@
 		<wait timeout="1" />
 		
 		<select id="sales_stage" set="{@opp_quickrec.sales_stage}" />
+		<select id="reason_lost_c" set="{@opp_quickrec.reason_lost_c}" required="false" />
+		<select id="reason_won_c" set="{@opp_quickrec.reason_won_c}" required="false" />
 		<select id="lead_source" set="{@opp_quickrec.lead_source}" />
 		
 		<!-- Create revenue line item  -->
-		<textfield id="offering_1-input" append="Le" />
+		<textfield id="offering_1-input" append="{@opp_quickrec.Offering_search}" />
 		<wait timeout="3" />
 		<li text="{@opp_quickrec.offering}" click="true" />
 		
-		<select id="probability_1" set="{@opp_quickrec.probability}" />
 		<textfield id="revenue_amount_1" set="{@opp_quickrec.revenue_amount}" />
+		<select id="probability_1" set="{@opp_quickrec.probability}" />
 		<textfield id="decision_date_1" set="{@opp_quickrec.decision_date}" />	
-		<button id="Opportunities_dcmenu_save_button" />
+		<button value="Save" />
 	</csv>
-    <puts text="Lib: Opp_Create_Lib.xml finished." />
+    <puts text="Lib: OppIBM_Quick_Create_Lib.xml finished." />
 </soda>
