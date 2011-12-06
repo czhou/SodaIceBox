@@ -1,0 +1,121 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Case 12543: Contact create through subpanel - display duplicates list in popup -->
+	<puts text="Test: Case12543.xml starting." />
+	
+	<!-- Create contact with unique Name and Email -->
+	<script file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/ContactIBM_Create_Lib.xml" />
+	
+	<!-- Verify if it was created successfully -->
+	<link text="View Contacts" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	<div class="listViewBody">
+		<link text="{@pre_IBMcontact_email}" exists="true" click="false" />
+	</div>
+	
+	<!-- Open opportunity Opportunity -->
+	<link id="moduleTab_Opportunities" />
+	<form id="MassUpdate">
+		<link href="/DetailView/" />
+	</form>
+	
+	<!-- Create new contact with duplicated name\email -->
+	<button id="opportunities_contacts_create_button" />
+	<textfield id="first_name" set="{@pre_IBMcontact_first_name}" />
+	<textfield id="last_name" set="{@pre_IBMcontact_last_name}" />
+	<textfield id="phone_work" set="+1 234 891321" />
+	<textfield id="Contacts0emailAddress0" set="{@pre_IBMcontact_email}" />
+	<textfield id="phone_mobile" click="true" />
+	<wait timeout="2" />
+	<textfield id="phone_mobile" set="+1 234 891321" />
+	<button id="Contacts_subpanel_save_button" />
+	
+	<!-- Verifying that Pop-up with diplicates appeared -->
+	<div id="dlg">
+		<browser assert="{@pre_IBMcontact_first_name} {@pre_IBMcontact_last_name}" />
+		<browser assert="{@pre_IBMcontact_email}" />
+	</div>
+	
+	<!-- Click cancel and verify if changes not saved -->
+	<div id="dlg">
+		<button value="Cancel" />
+	</div>
+	<wait timeout="5" />
+	<div id="list_subpanel_contacts">
+		<link text="{@pre_IBMcontact_email}" exists="false" click="false" />
+	</div>
+	
+	<!-- Save, verify if pop-up appeared  and select "use selected" option-->
+	<button id="Contacts_subpanel_save_button" />
+	<div id="dlg">
+		<browser assert="{@pre_IBMcontact_first_name} {@pre_IBMcontact_last_name}" />
+		<browser assert="{@pre_IBMcontact_email}" />
+		<button value="Use selected" />
+	</div>
+	
+	<!-- Verify if contact was selected -->
+	<wait timeout="5" />
+	<div id="list_subpanel_contacts">
+		<link text="{@pre_IBMcontact_email}" exists="true" click="false" />
+	</div>
+	
+	<!-- Create new contact with duplicated name\email -->
+	<button id="opportunities_contacts_create_button" />
+	<textfield id="first_name" set="{@pre_IBMcontact_first_name}_1" />
+	<textfield id="last_name" set="{@pre_IBMcontact_last_name}_1" />
+	<textfield id="phone_work" set="+1 234 891321" />
+	<textfield id="Contacts0emailAddress0" set="{@pre_IBMcontact_email}" />
+	<textfield id="phone_mobile" click="true" />
+	<wait timeout="2" />
+	<textfield id="phone_mobile" set="+1 234 891321" />
+	<button id="Contacts_subpanel_save_button" />
+	
+	<!-- Verifying that Pop-up with diplicates appeared -->
+	<div id="dlg">
+		<browser assert="{@pre_IBMcontact_first_name} {@pre_IBMcontact_last_name}" />
+		<browser assert="{@pre_IBMcontact_email}" />
+		<button value="Confirm Create" />
+	</div>
+	
+	<!-- Verify if contact created successfully -->
+	<wait timeout="5" />
+	<div id="list_subpanel_contacts">
+		<browser assert="{@pre_IBMcontact_first_name}_1 {@pre_IBMcontact_last_name}_1" />
+	</div>
+	
+	<!-- Delete test data -->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Client_Delete_Lib.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
+	
+
+	<puts text="Test: Case12543.xml finished." />
+</soda>
