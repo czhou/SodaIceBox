@@ -1,0 +1,96 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Case 12544: Contact create through QuickForm - display duplicates list in popup -->
+	<puts text="Test: Case12544.xml starting." />
+	
+	<!-- Create contact with unique Name and Email -->
+	<script file="{@global.scriptsdir}/modules/lib/ContactIBM_Create_Lib.xml" />
+	
+	<!-- Verify if it was created successfully -->
+	<link text="View Contacts" />
+	<button id="search_form_clear" />
+	<button id="search_form_submit" />
+	<div class="listViewBody">
+		<link text="{@pre_IBMcontact_email}" exists="true" click="false" />
+	</div>
+	
+	<!-- Create new contact with duplicated name\email throgh QuickCreate form-->
+	<image id="dcMenu_Contacts_quick_create_icon" click="true" />
+	<div class="dccontent">
+		<textfield name="first_name" set="{@pre_IBMcontact_first_name}" />
+		<textfield id="last_name" set="{@pre_IBMcontact_last_name}" />
+		<textfield id="phone_work" set="+1 234 891321" />
+		<textfield id="Contacts0emailAddress0" set="{@pre_IBMcontact_email}" />
+		<textfield id="phone_mobile" click="true" />
+		<wait timeout="2" />
+		<textfield id="phone_mobile" set="+1 234 891321" />
+		<button id="Contacts_dcmenu_save_button" />
+	</div>
+	
+	<!-- Verify if pop-up with diplicates appeared and contain similar contact -->
+	<div id="dlg">
+		<browser assert="{@pre_IBMcontact_first_name} {@pre_IBMcontact_last_name}" />
+		<browser assert="{@pre_IBMcontact_email}" />
+		
+	<!-- Click Cancel and verify if changes not saved --> 
+		<button value="Cancel" />
+	</div>
+	
+	<div id="dctitle">
+		<browser assert="/Create Contact/" />
+	</div>
+	<div id="dcboxbody">
+		<textfield name="first_name" assert="{@pre_IBMcontact_first_name}" />
+		<textfield id="last_name" assert="{@pre_IBMcontact_last_name}" />
+		<textfield id="Contacts0emailAddress0" assert="{@pre_IBMcontact_email}" />
+		<button id="Contacts_dcmenu_save_button" />
+	</div>
+	
+	<!-- Confirm creation and verify if duplicate was created successfully -->
+	<div id="dlg">
+		<browser assert="{@pre_IBMcontact_first_name} {@pre_IBMcontact_last_name}" />
+		<browser assert="{@pre_IBMcontact_email}" />
+		<button value="Confirm Create" />
+	</div>
+	
+	<link text="View Contacts" />
+	<button id="search_form_clear" />
+	<textfield id="email_basic" set="{@pre_IBMcontact_email}" />
+	<button id="search_form_submit" />
+	<form id="MassUpdate">
+		<browser assert="{@pre_IBMcontact_first_name} {@pre_IBMcontact_last_name}" />
+		<browser assert="+1 234 891321" />
+	</form>
+	
+	
+	<!-- Delete test data -->
+	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
+
+	<puts text="Test: Case12544.xml finished." />
+</soda>
