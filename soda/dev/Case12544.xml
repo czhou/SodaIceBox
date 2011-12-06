@@ -88,7 +88,6 @@
 		<browser assert="+1 234 891321" />
 	</form>
 	
-	
 	<!-- Delete test data -->
 	<script file="{@global.scriptsdir}/modules/lib/Contact_Delete_Lib.xml" />
 
