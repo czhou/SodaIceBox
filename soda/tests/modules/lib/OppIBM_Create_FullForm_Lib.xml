@@ -63,14 +63,14 @@
 		<link text="{@opp_fullrec.owner}" />
 		<wait timeout="1" />
 		
-		<select id="additional_users_role_id_1" set="{@opp_fullrec.add_user_role}" />
+		<select id="EditView_additional_users_role_id_1" set="{@opp_fullrec.add_user_role}" />
 		
 		<image id="detailpanel_4_img_show" click="true" />
 		
 		<image id="campaign_code_c_img" click="true" />
 		<wait timeout="1" />
 		<li text="{@opp_fullrec.campaign_code}" click="true" />
-		<select id="reason_won_lost_c" set="{@opp_fullrec.reason_won}" />
+		
 		<checkbox id="restricted_c" set="{@opp_fullrec.restricted}" />
 		<checkbox id="international_c" set="{@opp_fullrec.international}" />
 		<checkbox id="itar_compliance_c" set="{@opp_fullrec.compliance}" />
