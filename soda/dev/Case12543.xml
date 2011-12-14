@@ -48,6 +48,9 @@
 	</form>
 	
 	<!-- Create new contact with duplicated name\email -->
+	<div id="subpanel_title_contacts">
+		<image src="/custom/" click="true" />
+	</div>
 	<button id="opportunities_contacts_create_button" />
 	<textfield id="first_name" set="{@pre_IBMcontact_first_name}" />
 	<textfield id="last_name" set="{@pre_IBMcontact_last_name}" />
