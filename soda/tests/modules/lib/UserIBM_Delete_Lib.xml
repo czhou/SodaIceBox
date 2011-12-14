@@ -2,7 +2,7 @@
 	<puts text="Lib: UserIBM_Delete_Lib.xml starting." />
 	<csv file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.csv" var="userdel">
 		<!-- Delete User -->
-		<link test="Admin" />
+		<link text="Admin" />
 		<link id="user_management" />
 		<link text="View Users" />
 		<link text="Basic Search" required="false" />
