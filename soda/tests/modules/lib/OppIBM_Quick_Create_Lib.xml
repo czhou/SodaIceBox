@@ -39,8 +39,7 @@
 		<li text="{@opp_quickrec.offering}" click="true" />
 		
 		<textfield id="revenue_amount_1" set="{@opp_quickrec.revenue_amount}" />
-		<select id="probability_1" set="{@opp_quickrec.probability}" />
-		<textfield id="decision_date_1" set="{@opp_quickrec.decision_date}" />	
+		<select id="probability_1" set="{@opp_quickrec.probability}" />	
 		<button value="Save" />
 	</csv>
     <puts text="Lib: OppIBM_Quick_Create_Lib.xml finished." />
