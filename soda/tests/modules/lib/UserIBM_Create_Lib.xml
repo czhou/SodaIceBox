@@ -8,7 +8,7 @@
 		<link text="Create New User" />
 		<browser assert="Users" />
 		<wait timeout="1" />
-		<textfield name="sugar_user_name" set="{@usercr.last_name}" />
+		<textfield id="user_name" set="{@usercr.last_name}" />
 		<textfield id="last_name" set="{@usercr.last_name}" />
 		<textfield id="Users0emailAddress0" set="{@usercr.email}" />
 		<select id="UserType" set="{@usercr.UserType}" />
