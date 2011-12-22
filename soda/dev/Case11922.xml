@@ -32,7 +32,6 @@
 	
 	<!-- Create Revenue Line Item -->
 	<button id="opportunities_ibm_revenuelineitems_create_button" />
-	<button id="ibm_RevenueLineItems_subpanel_full_form_button" />
 	<textfield id="level_search-input" set="" />
 	<textfield id="level_search-input" append="level" jscriptevent="onkeyup" />
 	<wait timeout="3" />
@@ -43,7 +42,7 @@
 	<textfield id="level20-input" assert="Software: Tivoli Automation" />
 	<textfield id="level30-input" assert="Tivoli Service Level Advisor" />
 	<textfield id="level40-input" assert="" />
-	<button id="SAVE_HEADER" />
+	<button value="Save" />
 	
 	<div class="moduleTitle">
 		<browser assert="Revenue Line Items" />
