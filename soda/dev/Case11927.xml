@@ -33,7 +33,7 @@
     
 	<csv file="{@global.scriptsdir}/modules/lib/OppIBM_Create_FullForm_Lib.csv" var="opp_fullrec" />
 	<link id="moduleTab_Opportunities" />
-	<link text="Create an opportunity" /> 
+	<link text="Create Opportunity" /> 
 	<wait timeout="3" />
 	<button id="Opportunities_subpanel_full_form_button" />
 		
@@ -55,41 +55,51 @@
 	<link text="{@pre_client_name}" />
 	<wait timeout="1" />
 		
-	<!-- Opportunity owner Select -->
-	<button id="btn_assigned_user_name" />
-	<browser assert="User Search" />
-	<textfield id="last_name_advanced" set="{@opp_fullrec.opportunity_owner}" /> 
-	<button value="Search" />
-	<link text="{@opp_fullrec.opportunity_owner}" />
+	<image id="solution_codes_c_img" click="true" />
 	<wait timeout="1" />
+	<li text="{@opp_fullrec.solution_code}" click="true" />
 		
 	<select id="sales_stage" set="{@opp_fullrec.sales_stage}" />
-	<select id="lead_source" set="{@opp_fullrec.lead_source}" />
+		
+	<textfield id="lead_source-input" jscriptevent="onkeyup" />
+	<wait timeout="3" />
+	<li text="{@opp_fullrec.lead_source}" click="true" />
+		
+	<textfield id="offering_1-input" append="Le" jscriptevent="onkeyup" />
+	<wait timeout="3" />
+	<li text="{@opp_fullrec.offering}" click="true" />
+		
+	<select id="probability_1" set="{@opp_fullrec.probability}" />
+	<textfield id="revenue_amount_1" set="{@opp_fullrec.revenue_amount}" />
 		
 	<!-- Additional Team Members Select -->
-	<link text="Add another +" />
-	<browser assert="User Search" />
-	<textfield id="user_name_advanced" set="user1" /> 
-	<button value="Search" />
-	<link text="user1" />
+	<div id="LBL_EDITVIEW_PANEL1">
+		<link text="/Add another/" />
+	</div>
+	<textfield id="EditView_additional_users_user_name_2" append="user" /> 
 	<wait timeout="1" />
+	<li text="user1" click="true" />
 		
 	<!-- Verifying that new field with selected user appeared -->
-	<textfield id="additional_users_user_name_1" assert="user1" />
+	<textfield id="EditView_additional_users_user_name_2" assert="user1" />
 		
 	<!-- Verifying that new Team Member Saved -->
-	<button id="SAVE_FOOTER" />
+	<button value="Save" />
 	<div id="LBL_PANEL_ASSIGNMENT">
 		<link text="user1" exists="true" click="false" />
 	</div>
 		
 	<!-- Edit Opportunity and add new Team Member -->
 	<button id="edit_button" />
-	<link text="Add another +" />
-	<textfield id="additional_users_user_name_3" set="user2" />
+	<div id="LBL_EDITVIEW_PANEL1">
+		<link text="/Add another/" />
+	</div>
+	<textfield id="EditView_additional_users_user_name_3" append="user" /> 
+	<wait timeout="1" />
+	<li text="user2" click="true" />
 		
 	<!-- Verifying that new Team Member Saved -->
-	<button id="SAVE_FOOTER" />
+	<button value="Save" />
 	<div id="LBL_PANEL_ASSIGNMENT">
 		<link text="user1" exists="true" click="false" />
 		<link text="user2" exists="true" click="false" />
@@ -97,12 +107,12 @@
 	
 	<!-- Delete Team Member and save -->
 	<button id="edit_button" />
-	<image id="additional_users_btn_remove_2" click="true" />
+	<image id="EditView_additional_users_btn_remove_2" click="true" />
 	<wait timeout="2" />
-	<textfield id="additional_users_user_name_2" exists="false" />
+	<textfield id="EditView_additional_users_user_name_2" exists="false" />
 	
 	<!-- Verifying that new Team Member was deleted -->
-	<button id="SAVE_FOOTER" />
+	<button value="Save" />
 	<div id="LBL_PANEL_ASSIGNMENT">
 		<link text="user1" exists="false" click="false" />
 		<link text="user2" exists="true" click="false" />
