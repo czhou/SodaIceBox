@@ -32,12 +32,12 @@
 	
 	<!-- Create Revenue Line Item -->
 	<button id="opportunities_ibm_revenuelineitems_create_button" />
-	<button id="ibm_RevenueLineItems_subpanel_full_form_button" />
-	
+		
 	<textfield id="level30-input" set="" />
 	<textfield id="level30-input" append="Learning" />
 	<wait timeout="3" />
 	<li text="Learning" click="true" />
+	<wait timeout="3" />
 	<textfield id="level10-input" assert="IBM Global Services" />
 	<textfield id="level15-input" assert="Managed Business Process Services (MBPS)" />
 	<textfield id="level20-input" assert="GS - MBPS/Human Resources" />
@@ -52,12 +52,11 @@
 	<textfield id="level20-input" assert="Software: Tivoli Automation" />
 	<textfield id="level30-input" assert="Tivoli Service Level Advisor" />
 	<textfield id="level40-input" assert="" />
-		
-	<button id="SAVE_HEADER" />
+	<textfield id="revenue_amount" set="123" />
 	
-	<div class="moduleTitle">
-		<browser assert="Revenue Line Items" />
-	</div>
+	<button value="Save" />
+	
+	<browser assert="Revenue Line Items" />
 	
 	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
 	<script file="{@global.scriptsdir}/modules/lib/Client_Delete_Lib.xml" />
