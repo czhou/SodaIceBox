@@ -36,32 +36,23 @@
 	<div id="list_subpanel_opportun_revenuelineitems">
 		<link text="edit" />
 	</div>
-	<button id="ibm_RevenueLineItems_subpanel_full_form_button" />
 	
 	<textfield id="level30-input" set="" />
 	<textfield id="level30-input" append="{@Case11938.level30}" />
-	<wait timeout="3" />
+	<wait timeout="2" />
 	<li text="Learning" click="true" />
+	<wait timeout="2" />
 	<textfield id="level10-input" assert="{@Case11938.level10}" />
 	<textfield id="level15-input" assert="{@Case11938.level15}" />
 	<textfield id="level20-input" assert="{@Case11938.level20}" />
-	
-	<select id="competitor" set="{@Case11938.competitor}" />
-	<textfield id="proj_start_date" set="{@Case11938.proj_start_date}" />
-	<textfield id="proj_end_date" set="{@Case11938.proj_end_date}" />
-	
+
 	<!-- Change Owner -->
 	<button id="btn_assigned_user_name" />
 	<link text="user1" />
 	
-	<textfield id="decision_date" set="{@Case11938.decision_date}" />
-	<select id="probability" set="{@Case11938.probability}" />
-	<textfield id="revenue_amount" set="{@Case11938.flow_code}" />
-	<select id="flow_code" set="{@Case11938.proj_end_date}" />
-	<textfield id="igf_odds" set="{@Case11938.igf_odds}" />
-	<textfield id="financed_rev_amount" set="{@Case11938.financed_rev_amount}" />
+	<textfield id="revenue_amount" set="{@Case11938.revenue_amount}" />
 	
-	<button id="SAVE_FOOTER" />
+	<button value="Save" />
 	
 	<!-- Verify if new owner applied -->
 	<div id="LBL_PANEL_ASSIGNMENT">
@@ -72,11 +63,10 @@
 	<div id="list_subpanel_opportun_revenuelineitems">
 		<link text="edit" />
 	</div>
-	<button id="ibm_RevenueLineItems_subpanel_full_form_button" />
 	
 	<button id="btn_assigned_user_name" />
 	<link text="user2" />
-	<button id="SAVE_FOOTER" />
+	<button value="Save" />
 	
 	<!-- Verify if new owner applied, old owner removed -->
 	<div id="LBL_PANEL_ASSIGNMENT">
