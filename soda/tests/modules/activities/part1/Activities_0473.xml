@@ -31,13 +31,12 @@
 	-->
 	<puts text="Test: Activities_0473.xml starting." />
 
-	<!--create note record-->
+	<!--create 2 note records-->
 	<script file="{@global.scriptsdir}/modules/lib/Note_Create_Lib.xml" />
 	<var var="first_note" set="{@pre_note_name}" />
 	<script file="{@global.scriptsdir}/modules/lib/Note_Create_Lib.xml" />
 	<var var="second_note" set="{@pre_note_name}" />
-	<script file="{@global.scriptsdir}/modules/lib/Account_Create_Lib.xml" />
-
+	
 	<link id="moduleTab_Notes" />
 	<link text="View Notes" />
 
@@ -47,31 +46,22 @@
 	<link id="actions_link" />
 	<link text="Mass Update" />
 
-	<select id="mass_parent_type" set="Account" />
-	<button name="button_parent_name" />
-	<browser assert="Account Search" />
-	<textfield id="name_advanced" set="{@pre_account_name}" />
-	<button value="Search" />
-	<link text="{@pre_account_name}" />
-	<wait timeout="3" />
+	<textarea id="description" set="Mass Update description" />
+	<textfield id="name" set="{@first_note}" />
 	<button id="update_button" alert="true" />
-	<wait timeout="3" />
-	<!--first note record-->
-	<link id="moduleTab_Calendar" />
-	<browser assert="Task List" />
-	<link text="View Notes" />
-
-	<textfield id="name_basic" set="{@first_note}" />
+	
 	<button id="search_form_submit" />
 	<wait timeout="2" />
+	
+	<!-- Verify the first note record has the same name and description as the mass update-->
 	<table class="list view">
 		<link text="{@first_note}" />
 	</table>
-	<wait timeout="5" />
-	<browser assert="{@pre_account_name}" />
-
-	<!--create note record-->
-	<script file="{@global.scriptsdir}/modules/lib/Note_Delete_Lib.xml" />
-	<script file="{@global.scriptsdir}/modules/lib/Account_Delete_Lib.xml" />
-	<puts text="Test: Activities_0473.xml finished." />
+	
+	<button id="edit_button" />
+	<textfield name='name' assert="{@first_note}" />
+	<textarea id="description" assert="Mass Update description" />
+	<button id="CANCEL" />
+	
+	<puts text="Test: Activities_0473.xml finished." /> -->
 </soda>
