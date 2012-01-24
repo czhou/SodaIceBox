@@ -32,8 +32,8 @@
 	<!--Create a task record-->
 	<script file="{@global.scriptsdir}/modules/lib/Task_Create_Lib.xml" />
 
-	<link id="moduleTab_Calendar" />
-	<browser assert="Task List" />
+	<link id="moduleTab_Tasks" />
+	<browser assert="My tasks" />
 	<link text="View Tasks" />
 
 	<button id="search_form_clear" />
@@ -47,6 +47,5 @@
 	</table>
 	<button id="update_button" alert="true" />
 
-	<script file="{@global.scriptsdir}/modules/lib/Task_Delete_Lib.xml" />
 	<puts text="Test: Activities_0488.xml finished." />
 </soda>
