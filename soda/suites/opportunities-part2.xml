@@ -26,14 +26,10 @@
 -->
 
 <soda>
-	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user">
-		<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-		<script file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.xml" />
-		<script file="{@global.scriptsdir}/modules/lib/Opp_Init_Lib.xml" />
-		<script fileset="{@global.scriptsdir}/modules/opportunity/part2" />
-		<script file="{@global.scriptsdir}/modules/lib/Opp_UnInit_Lib.xml" />
-		<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
-	</csv>
-
-	<browser action="close" />
+	<script file="tests/modules/opportunities/module_lib/setup-opportunity.xml" />
+	<script file="tests/modules/opportunities/part2/module_lib/setup-opportunity-part2.xml" />
+	<script fileset="tests/modules/opportunities/part2" />
+	<script file="tests/modules/opportunities/part2/module_lib/cleanup-opportunity-part2.xml" />
+	<script file="tests/modules/opportunities/module_lib/cleanup-opportunity.xml" />
 </soda>
+

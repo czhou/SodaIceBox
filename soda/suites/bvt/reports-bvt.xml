@@ -26,10 +26,7 @@
 -->
 
 <soda>
-	<csv file='{@global.scriptsdir}/csvs/users.csv' var='user'/>
-	<script file='{@global.scriptsdir}/modules/lib/login.xml'/>
-	<script file='{@global.scriptsdir}/modules/lib/SugarInit_Lib.xml'/>
-	<script file='{@global.scriptsdir}/modules/reports/Reports_7734.xml'/>
-	<script file='{@global.scriptsdir}/modules/lib/logout.xml'/>
-	<browser action='close'/>
+	<script file='tests/modules/reports/module_lib/setup-reports.xml'/>
+	<script file='tests/modules/reports/Reports_7734.xml'/>
+	<script file='tests/modules/reports/module_lib/cleanup-reports.xml'/>
 </soda>
