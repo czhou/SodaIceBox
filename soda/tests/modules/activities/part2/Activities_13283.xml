@@ -1,0 +1,67 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!--
+		Verify that Meetings can be modified by Mass Update function.
+	-->
+	<puts text="Test: Activities_13283.xml starting." />
+
+	<!--create 2 meeting records-->
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
+	<var var="first_meeting" set="{@pre_meeting_name}" />
+	<script file="{@global.scriptsdir}/modules/lib/Meeting_Create_Lib.xml" />
+	<var var="second_meeting" set="{@pre_meeting_name}" />
+	
+	<link id="moduleTab_Meetings" />
+	<link text="View Meetings" />
+
+	<button id="search_form_clear" />
+
+	<checkbox name="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Mass Update" />
+
+	<textarea id="description" set="Mass Update description" />
+	<select id="mass_status" set="Not Held" />
+	<button id="update_button" alert="true" />
+	
+	<button id="search_form_submit" />
+	<wait timeout="2" />
+	
+	<!-- Verify the first Meeting record has the same name and description as the mass update-->
+	<table class="list view">
+		<link text="{@first_meeting}" />
+	</table>
+	
+	<button id="edit_button" />
+	<select id="status" assert="Not Held" />
+	<textarea id="description" assert="Mass Update description" />
+	<button id="CANCEL" />
+	
+	<puts text="Test: Activities_13283.xml finished." /> -->
+</soda>
