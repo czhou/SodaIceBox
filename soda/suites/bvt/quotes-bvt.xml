@@ -26,22 +26,22 @@
 -->
 
 <soda>
-    <csv file='{@global.scriptsdir}/csvs/users.csv' var='user'>
-            <script file='{@global.scriptsdir}/modules/lib/login.xml'/>
-            <script file='{@global.scriptsdir}/modules/lib/SugarInit_Lib.xml'/>
-            <script file='{@global.scriptsdir}/modules/lib/Quote_Init_Lib.xml'/>
-            <script file='{@global.scriptsdir}/modules/quote/part1/Quotes_2480.xml'/><!--Quote Create Cancel-->
-			<script file='{@global.scriptsdir}/modules/quote/part1/Quotes_2499.xml'/><!--Field Valition-->
-			<script file='{@global.scriptsdir}/modules/quote/part1/Quotes_2506.xml'/><!--Advanced Search-->
-			<script file='{@global.scriptsdir}/modules/quote/part2/Quotes_2515.xml'/><!--Mass Update-->
-			<script file='{@global.scriptsdir}/modules/quote/part2/Quotes_2523.xml'/><!--Subpanel(Task) Edit-->
-			<script file='{@global.scriptsdir}/modules/quote/part2/Quotes_2528.xml'/><!--Subpanel(Meeting) Edit-->
-			<script file='{@global.scriptsdir}/modules/quote/part3/Quotes_2536.xml'/><!--View History-->
-			<script file='{@global.scriptsdir}/modules/quote/part3/Quotes_2549.xml'/><!--Cancel The Subpanel(Task) Full Form Create-->
-			<script file='{@global.scriptsdir}/modules/quote/part3/Quotes_2557.xml'/><!--Cancel The Subpanel(Note) Full Form Create-->
-			<script file='{@global.scriptsdir}/modules/quote/part3/Quotes_2569.xml'/><!--Subpanel(Call) Edit and Delete-->
-            <script file='{@global.scriptsdir}/modules/lib/Quote_UnInit_Lib.xml'/>
-            <script file='{@global.scriptsdir}/modules/lib/logout.xml'/>
-    </csv>
-    <browser action='close'/>
+            		<script file="tests/modules/quote/module_lib/setup-quote.xml" />
+			<script file="tests/modules/quote/part1/module_lib/setup-quote-part1.xml" />
+			<script file='tests/modules/quote/part1/Quotes_2480.xml'/><!--Quote Create Cancel-->
+			<script file='tests/modules/quote/part1/Quotes_2499.xml'/><!--Field Valition-->
+			<script file='tests/modules/quote/part1/Quotes_2506.xml'/><!--Advanced Search-->
+			<script file="tests/modules/quote/part1/module_lib/cleanup-quote-part1.xml" />
+			<script file="tests/modules/quote/part2/module_lib/setup-quote-part2.xml" />
+			<script file='tests/modules/quote/part2/Quotes_2515.xml'/><!--Mass Update-->
+			<script file='tests/modules/quote/part2/Quotes_2523.xml'/><!--Subpanel(Task) Edit-->
+			<script file='tests/modules/quote/part2/Quotes_2528.xml'/><!--Subpanel(Meeting) Edit-->
+			<script file="tests/modules/quote/part2/module_lib/cleanup-quote-part2.xml" />
+			<script file="tests/modules/quote/part3/module_lib/setup-quote-part3.xml" />
+			<script file='tests/modules/quote/part3/Quotes_2536.xml'/><!--View History-->
+			<script file='tests/modules/quote/part3/Quotes_2549.xml'/><!--Cancel The Subpanel(Task) Full Form Create-->
+			<script file='tests/modules/quote/part3/Quotes_2557.xml'/><!--Cancel The Subpanel(Note) Full Form Create-->
+			<script file='tests/modules/quote/part3/Quotes_2569.xml'/><!--Subpanel(Call) Edit and Delete-->
+			<script file="tests/modules/quote/part3/module_lib/cleanup-quote-part3.xml" />
+			<script file="tests/modules/quote/module_lib/cleanup-quote.xml" />
 </soda>

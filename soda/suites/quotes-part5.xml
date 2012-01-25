@@ -26,13 +26,12 @@
 -->
 
 <soda>
-	<csv file="{@global.scriptsdir}/csvs/users.csv" var="user">
-		<script file="{@global.scriptsdir}/modules/lib/login.xml" />
-		<script file="{@global.scriptsdir}/modules/quote/part5/module_lib/setup-quote-part5.xml"/>
-		<script file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.xml" />
-		<script fileset="{@global.scriptsdir}/modules/quote/part5" />
-		<script file="@glabal.scriptsdir}/modules/quote/part5/module_lib/cleanup-quote-part5.xml"/>
-		<script file="{@global.scriptsdir}/modules/lib/logout.xml" />
-	</csv>
-	<browser action="close" />
+	<script file="tests/modules/quotes/module_lib/setup-quote.xml" />
+	<script file="tests/modules/lib/Enable_All_Lib.xml" />
+	<script file="tests/modules/quotes/part5/module_lib/setup-quote-part5.xml"/>
+	<script fileset="tests/modules/quotes/part5" />
+	<script file="tests/modules/quotes/part5/module_lib/cleanup-quote-part5.xml"/>
+	<script file="tests/modules/lib/Enable_Defaults_Lib.xml" />
+	<script file="tests/modules/quotes/module_lib/cleanup-quote.xml" />
 </soda>
+

@@ -26,11 +26,8 @@
 -->
 
 <soda>
-	<csv file='{@global.scriptsdir}/csvs/users.csv' var='user'/>
-	<script file='{@global.scriptsdir}/modules/lib/login.xml'/>
-	<script file='{@global.scriptsdir}/modules/lib/SugarInit_Lib.xml'/>
-	<script file='{@global.scriptsdir}/modules/roles/Roles_0595.xml'/>
-	<script file='{@global.scriptsdir}/modules/roles/Roles_0629.xml'/>
-	<script file='{@global.scriptsdir}/modules/lib/logout.xml'/>
-	<browser action='close'/>
+	<script file='tests/modules/roles/module_lib/setup-roles.xml'/>
+	<script file='tests/modules/roles/Roles_0595.xml'/>
+	<script file='tests/modules/roles/Roles_0629.xml'/>
+	<script file='tests/modules/roles/module_lib/cleanup-roles.xml'/>
 </soda>
