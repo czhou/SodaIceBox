@@ -35,7 +35,7 @@
 	<image src="/info_inline.png/" jscriptevent="onmouseover" />
 	<wait timeout="1" />
 	<div class="olFontClass">
-		<browser assert="{@opp_fullrec.probability}%" />
+		<browser assert="{@opp_fullrec.probability}" />
 		<browser assert="{@opp_fullrec.decision_date}" />
 	</div>
 	
@@ -95,7 +95,9 @@
 		<browser assert="{@old_client}" />
 	</div>
 	
-	<!-- Create Team Members and verify if multiselect works -->
+	<!-- Create Team Members and verify if multiselect works 
+	NOTE: this functionality was removed 
+	
 	<script file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.xml" />
 	<link id="moduleTab_Opportunities" />
 	<link id="advanced_search_link" required="false" />
@@ -110,7 +112,7 @@
 		<div id="Opportunitiesadvanced_searchSearchForm">
 			<browser assert="{@user_cr.last_name}" />
 		</div>
-	</csv>
+	</csv> -->
 	
 	<!-- Delete test data -->
 	<script file="{@global.scriptsdir}/modules/lib/Opp_Delete_Lib.xml" />
