@@ -34,6 +34,8 @@
 		
 		<select id="sales_stage" set="{@opp_fullrec.sales_stage}" />
 		
+		<textfield id="date_closed" set="{@opp_fullrec.date_closed}" />
+		
 		<image id="lead_source-image" click="true" />
 		<wait timeout="3" />
 		<li text="{@opp_fullrec.lead_source}" click="true" />
