@@ -1,0 +1,25 @@
+<soda>
+	<puts text="Lib: UserIBM_Delete_Lib.xml starting." />
+	<csv file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.csv" var="userdel">
+		<!-- Delete User -->
+		<link test="Admin" />
+		<link id="user_management" />
+		<link text="View Users" />
+		<link text="Basic Search" required="false" />
+		<button id="search_form_clear" />
+		<textfield id="search_name_basic" set="{@userdel.last_name}" />
+		<button id="search_form_submit" />
+		<link text="{@userdel.last_name}" />
+		<button value="Delete" />
+		<button value="OK" />
+		
+		<!-- Verify that user deleted -->
+		<link text="View Users" />
+		<link text="Basic Search" required="false" />
+		<button id="search_form_clear" />
+		<textfield id="search_name_basic" set="{@userdel.last_name}" />
+		<button id="search_form_submit" />
+		<link text="{@userdel.last_name}" exists="false" click="false" />
+	</csv>
+	<puts text="Lib: UserIBM_Delete_Lib.xml finished." />
+</soda>
