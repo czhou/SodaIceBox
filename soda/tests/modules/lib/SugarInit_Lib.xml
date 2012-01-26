@@ -1,47 +1,7 @@
-<!--
-  Copyright (c) 2011, SugarCRM, Inc.
-  All rights reserved.
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions are met:
-  * Redistributions of source code must retain the above copyright
-  notice, this list of conditions and the following disclaimer.
-  * Redistributions in binary form must reproduce the above copyright
-  notice, this list of conditions and the following disclaimer in the
-  documentation and/or other materials provided with the distribution.
-  * Neither the name of SugarCRM, Inc. nor the
-  names of its contributors may be used to endorse or promote products
-  derived from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
-  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
-
 <soda>
 	<puts text="Lib: SugarInit_Lib.xml starting." />
 	<csv file="{@global.scriptsdir}/modules/lib/SugarInit_Lib.csv" var="SugarInit">
-		<!--
-			browser url='{@global.url}?module=Configurator&mp;action=AdminWizard'/>
-			<button name='next_tab1' required='false' timeout='2'/> <button
-			name='next_tab1' required='false' timeout='2'/> <button name='next_tab1'
-			required='false' timeout='2'/> <button id='gmail-button' required='false'
-			timeout='2'/> <button name='btn_clear' required='false' timeout='2'/>
-			<textfield id="mail_smtpuser" set="{@SugarInit.gmail}" required='false'
-			timeout='2'/> <textfield id="mail_smtppass" set="{@SugarInit.gmail_pass}"
-			required='false' timeout='2'/> <checkbox id="notify_allow_default_outbound"
-			set="true" required='false' timeout='2'/> <button name='next_tab1'
-			required='false' timeout='2'/> <button name='continue' required='false'
-			timeout='2'/
-		-->
-
+	
 		<button name="cancel" required="false" timeout="2" />
 		<button name="next_tab1" required="false" timeout="2" />
 		<textfield id="email1" set="{@SugarInit.email}" required="false"
@@ -51,27 +11,17 @@
 		<button name="next_tab1" required="false" timeout="2" />
 		<button name="save" required="false" timeout="2" />
 
-		<!--
-			browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DAccounts"/>
-			<wait timeout="5"/> <table id="layoutEditorButtons"> <checkbox index="1"
-			set="false"/> </table> <button id="publishBtn"/
-		-->
 		<browser
 			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DAccounts"
 			assertPage="false" />
-		<!--
-			link text="Admin"/> <link text="Studio" assertPage="false"/> <link
-			text="Accounts" class="studiolink" assertPage="false"/> <link text="Layouts"
-			class="studiolink" assertPage="false"/> <link text="EditView"
-			class="studiolink" assertPage="false"/
-		-->
+
 		<wait timeout="5" />
 		<table id="layoutEditorButtons">
 			<button id="historyDefault" assertPage="false" />
 			<wait timeout="5" />
 			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
 			<button id="publishBtn" assertPage="false" />
+			<wait timeout="5" />
 		</table>
 
 		<browser
@@ -83,29 +33,7 @@
 			<wait timeout="5" />
 			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
 			<button id="publishBtn" assertPage="false" />
-		</table>
-
-
-		<browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DProspects"
-			assertPage="false" />
-		<wait timeout="5" />
-		<table id="layoutEditorButtons">
-			<button id="historyDefault" assertPage="false" />
 			<wait timeout="5" />
-			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
-		</table>
-
-		<browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddetailview%26view_module%3DProspects"
-			assertPage="false" />
-		<wait timeout="5" />
-		<table id="layoutEditorButtons">
-			<button id="historyDefault" assertPage="false" />
-			<wait timeout="5" />
-			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
 		</table>
 
 		<browser
@@ -116,7 +44,8 @@
 			<button id="historyDefault" assertPage="false" />
 			<wait timeout="5" />
 			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
+			<button id="publishBtn" assertPage="false" alert="true" />
+			<wait timeout="5" />
 		</table>
 
 		<browser
@@ -127,36 +56,11 @@
 			<button id="historyDefault" assertPage="false" />
 			<wait timeout="5" />
 			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
-		</table>
-
-		<browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Deditview%26view_module%3DLeads"
-			assertPage="false" />
-		<wait timeout="5" />
-		<table id="layoutEditorButtons">
-			<button id="historyDefault" assertPage="false" />
+			<button id="publishBtn" assertPage="false" alert="true" />
 			<wait timeout="5" />
-			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
 		</table>
 
-		<browser
-			url="{@global.url}?module=ModuleBuilder&amp;action=index&amp;type=studio#mbContent=module%3DModuleBuilder%26action%3DeditLayout%26view%3Ddetailview%26view_module%3DLeads"
-			assertPage="false" />
-		<wait timeout="5" />
-		<table id="layoutEditorButtons">
-			<button id="historyDefault" assertPage="false" />
-			<wait timeout="5" />
-			<checkbox id="tabsCheckbox" click="true" assertPage="false" />
-			<button id="publishBtn" assertPage="false" />
-		</table>
-
-		<!--
-			Turn off auto-generated passwords: Note: This is currently disabled until
-			bug: 36234 is fixed.
-		-->
-
+		<!-- Turn off auto-generated passwords -->
 		<link text="Admin" />
 		<link text="Password Management" />
 		<textfield name="passwordsetting_minpwdlength" set="{@SugarInit.min}" />
@@ -166,24 +70,22 @@
 		<checkbox id="SystemGeneratedPassword_checkbox" set="false" />
 		<button id="btn_save" />
 
-
-		<!--change the date formation and navigation paradigm for Admin-->
+		<!-- change the date formation and navigation paradigm for Admin -->
 		<link text="Administrator" />
 		<link text="Advanced" />
 		<select name="dateformat" set="{@SugarInit.dateformat}" />
 		<select name="timeformat" set="{@SugarInit.timeformat}" />
 		<button id="Save" />
 
-		<!--Create a new normal user-->
+		<!-- Create a new normal user -->
 		<link
 			href="index.php?module=Users&amp;action=EditView&amp;return_module=Users&amp;return_action=DetailView" />
-		<!--link text="Create New User" /-->
+		<!-- link text="Create New User" /-->
 		<browser assert="Users" />
 		<wait timeout="1" />
-		<textfield name="sugar_user_name" set="{@SugarInit.last_name}" />
+		<textfield id="user_name" set="{@SugarInit.last_name}" />
 		<textfield id="last_name" set="{@SugarInit.last_name}" />
-		<textfield id="Users0emailAddress0" set="{@SugarInit.email}" />
-
+		
 		<link href="#tab2" />
 		<wait timeout="1" />
 		<textfield id="new_password" set="{@SugarInit.pass}" jscriptevent="onkeyup" />
@@ -209,8 +111,7 @@
 		<button name="next_tab1" required="false" timeout="2" />
 		<button name="next_tab1" required="false" timeout="2" />
 		<button name="save" required="false" timeout="2" />
-		<button name="save" required="false" timeout="2" />
-		<browser assert="Welcome, " />
+		<browser assert="/Welcome(, | to Sugar!)/" />
 
 		<!--Save the new user to a var-->
 		<var var="pre_user_name" set="{@SugarInit.last_name}" />
