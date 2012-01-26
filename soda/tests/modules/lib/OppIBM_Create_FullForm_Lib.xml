@@ -34,11 +34,11 @@
 		
 		<select id="sales_stage" set="{@opp_fullrec.sales_stage}" />
 		
-		<textfield id="lead_source-input" jscriptevent="onkeyup" />
+		<image id="lead_source-image" click="true" />
 		<wait timeout="3" />
 		<li text="{@opp_fullrec.lead_source}" click="true" />
 		
-		<textfield id="offering_1-input" append="Le" jscriptevent="onkeyup" />
+		<textfield id="offering_1-input" append="Lev" jscriptevent="onkeyup" />
 		<wait timeout="3" />
 		<li text="{@opp_fullrec.offering}" click="true" />
 		

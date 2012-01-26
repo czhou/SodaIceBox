@@ -1,2 +1,2 @@
 description,primary_contact,client_name,solution_code,lead_source,sales_stage,offering,probability,revenue_amount,assigned_to,decision_date,owner,add_user,add_user_role,campaign_code,reason_won,roadmap_status,restricted,international,compliance
-test description,,,IT Security,IBM Services,Noticing,Level 15: Product Lifecycle Management,50,12345,Administrator,12/12/2012,Administrator,Administrator,Business Partner,Not yet specified,Lost-Entered in Error,Won,true,true,true
+test description,,,IT Security,IBM Services,Noticing,Level 30: Tivoli Service Level Advisor,50,12345,Administrator,12/12/2012,Administrator,Administrator,Business Partner,Not yet specified,Lost-Entered in Error,Won,true,true,true
