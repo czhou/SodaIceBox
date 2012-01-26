@@ -65,7 +65,6 @@
 	<browser assert="{@Case12578.timeformat}" />
 	<browser assert="{@Case12578.sigDigits}" />
 	<textfield id="default_decimal_seperator" assert="{@Case12578.decimal_seperator}" />
-	<textfield id="default_locale_name_format" assert="{@Case12578.name_format}" />
 	<textfield id="default_number_grouping_seperator" assert="{@Case12578.grouping_seperator}" />
 	
 	<!-- Delete test data -->
