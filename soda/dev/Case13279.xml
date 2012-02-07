@@ -1,0 +1,88 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<soda>
+	<!-- Case 13279: Opportunity team rules: Role filtering -->
+	<puts text="Test: Case13279.xml starting." />
+	<timestamp />
+	
+	<!-- Create employee -->
+	<script file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.xml" />
+	
+	<!-- Create Bussiness Partner -->
+	<browser url="{@global.url}index.php?module=ibm_BusinessPartners&action=index" />
+	<link id="Createibm_BusinessPartners_link" />
+	<csv file="{@global.scriptsdir}/dev/Case13279.csv" var="Case13279" />
+	<textfield id="name" set="{@Case13279.BP_name} {@stamp}" />
+	<button id="SAVE_HEADER" />
+	
+	<!-- Create Opportunity -->
+	<link id="CreateOpportunities_link" />
+	<wait timeout="3" />
+	<link id="addAdditionalUsersLink" />
+	
+	<!-- Select Employee as Team Member -->
+	<div id="form_DCQuickCreate_Opportunities_additional_users_row_3">
+		<button id="form_DCQuickCreate_Opportunities_additional_users_btn_select" />
+	</div>
+	<radio id="EmployeeOrBPRadio_input_employee" />
+	<csv file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.csv" var="usercr" />
+	<textfield id="email_advanced" set="{@usercr.email}" />
+	<button id="search_form_submit" />
+	<link text="{@usercr.email}" />
+	
+	<!-- Verifying list of roles for employee-->
+	<csv file="{@global.scriptsdir}/dev/Case13279.csv" var="Case13279" >
+		<select id="form_DCQuickCreate_Opportunities_additional_users_role_id_3" set="{@Case13279.employee_roles}" required="true" />
+	</csv>
+	
+	<!-- Changing Team member to Bussiness Partner -->
+	<div id="form_DCQuickCreate_Opportunities_additional_users_row_3">
+		<button id="form_DCQuickCreate_Opportunities_additional_users_btn_select" />
+	</div>
+	<radio id="EmployeeOrBPRadio_input_bp" />
+	<textfield id="name_advanced" set="{@Case13279.BP_name} {@stamp}" />
+	<checkbox id="favorites_only_ctm_advanced" set="false" />
+	<button id="search_form_submit" />
+	<link text="{@Case13279.BP_name} {@stamp}" />
+	
+	<!-- Verifying list of roles for Bussiness Partner-->
+	<csv file="{@global.scriptsdir}/dev/Case13279.csv" var="Case13279" >
+		<select id="form_DCQuickCreate_Opportunities_additional_users_role_id_3" set="{@Case13279.BP_roles}" required="true" />
+	</csv>
+	<button id="Opportunities_dcmenu_cancel_button" alert="true" />
+	
+	<!-- Delete test data --> 
+	<link id="moduleTab_ibm_BusinessPartners" />
+	<checkbox id="massall" click="true" />
+	<link id="actions_link" />
+	<link text="Delete" alert="true" />
+	<span class="pageNumbers" assert="(0 - 0 of 0)" />	
+	<script file="{@global.scriptsdir}/modules/lib/UserIBM_Delete_Lib.xml" />
+	
+	<puts text="Test: Case13279.xml finished." />
+</soda>
