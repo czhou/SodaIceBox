@@ -43,7 +43,7 @@
 		<select id="probability_1" set="{@opp_quickrec.probability}" />	
 		<button value="Save" />
 		
-		<link id="Opportunities_link" />
+		<link id="moduleTab_Opportunities" />
 		<browser assert="{@opp_quickrec.description} {@user.name} {@stamp}" />
 	</csv>
     <puts text="Lib: OppIBM_Quick_Create_Lib.xml finished." />
