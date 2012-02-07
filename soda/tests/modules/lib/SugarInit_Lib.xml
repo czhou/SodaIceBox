@@ -85,6 +85,7 @@
 		<wait timeout="1" />
 		<textfield id="user_name" set="{@SugarInit.last_name}" />
 		<textfield id="last_name" set="{@SugarInit.last_name}" />
+		<textfield id="Users0emailAddress0" set="{@SugarInit.email}" />
 		
 		<link href="#tab2" />
 		<wait timeout="1" />
