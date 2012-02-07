@@ -37,10 +37,14 @@
 		<textfield id="offering_1-input" append="{@opp_quickrec.Offering_search}" />
 		<wait timeout="3" />
 		<li text="{@opp_quickrec.offering}" click="true" />
+		<wait timeout="3" />
 		
 		<textfield id="revenue_amount_1" set="{@opp_quickrec.revenue_amount}" />
 		<select id="probability_1" set="{@opp_quickrec.probability}" />	
 		<button value="Save" />
+		
+		<link id="Opportunities_link" />
+		<browser assert="{@opp_quickrec.description} {@user.name} {@stamp}" />
 	</csv>
     <puts text="Lib: OppIBM_Quick_Create_Lib.xml finished." />
 </soda>
