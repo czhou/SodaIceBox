@@ -45,14 +45,7 @@
 	</div>
 	
 	<!-- Verify if additional currency options not available for user without Business admin role -->
-	<link text="Admin" />
-	<link id="currencies_management" />
-	<div id="main">
-		<browser assertnot="Issuing country" />
-		<browser assertnot="Rate type" />
-		<browser assertnot="Scale" />
-		<browser assertnot="Exchange date" />
-	</div>
+	<!-- No ability to check this yet -->
 	
 	<!-- Login as Business Admin and verify additional currency fields -->
 	<link text="Log Out" />
