@@ -1,0 +1,68 @@
+<!--
+  Copyright (c) 2011, SugarCRM, Inc.
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+  * Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  * Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  * Neither the name of SugarCRM, Inc. nor the
+  names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  ARE DISCLAIMED. IN NO EVENT SHALL SugarCRM, Inc. BE LIABLE FOR ANY
+  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+  ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<soda>
+	<!-- Case 13288: Verify custom placeholder links at admin screen for Business Admin role -->
+	<puts text="Test: Case13288.xml starting." />
+	<timestamp />
+	
+	<!-- Create new Bussiness Admin -->
+	<script file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.xml" />
+	<link text="Admin" />
+	<link id="roles_management" />
+	<link text="/Business Administrator/" />
+	<button id="acl_roles_users_select_button" />
+	<csv file="{@global.scriptsdir}/modules/lib/UserIBM_Create_Lib.csv" var="usercr" />
+	<button id="search_form_clear" />
+	<textfield id="email_advanced" set="{@usercr.email}" />
+	<button id="search_form_submit" />
+	<link text="{@usercr.email}" />
+	<div id="list_subpanel_users">
+		<browser assert="{@usercr.email}" />
+	</div>
+	
+	<!-- Login as Business Admin -->
+	<link text="Log Out" />
+	<textfield id="user_name" set="{@usercr.last_name}" />
+	<textfield id="user_password" set="{@usercr.pass}" />
+	<button id="login_button" />
+	<button id="next_tab_finish" required="false" />
+	<button value="/Finish/" required="false" />
+	<link text="Admin" />
+	
+	<!-- Verify custom links -->
+	<link text="Manage solution catalog" click="false" exists="true" />
+	<link text="Approval and deployment" click="false" exists="true" />
+	<link text="Manage restricted clients" click="false" exists="true" />
+	<link text="Custom Call Log templates" click="false" exists="true" />
+	<link text="RLI Product Module" click="false" exists="true" />
+	
+	<!-- Delete test data -->
+	<script file="{@global.scriptsdir}/modules/lib/login.xml" />
+	<script file="{@global.scriptsdir}/modules/lib/UserIBM_Delete_Lib.xml" />
+	
+	<puts text="Test: Case13288.xml finished." />
+</soda>
